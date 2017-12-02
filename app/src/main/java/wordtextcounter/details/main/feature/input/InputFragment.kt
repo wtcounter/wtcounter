@@ -1,7 +1,10 @@
 package wordtextcounter.details.main.feature.input
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,10 +23,13 @@ import wordtextcounter.details.main.util.RxBus
  */
 class InputFragment : BaseFragment() {
 
+  lateinit var viewModel: InputViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)
+
+    viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
   }
 
   override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -35,11 +41,14 @@ class InputFragment : BaseFragment() {
   override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
+
+    viewModel.viewState.observe(this, Observer { Log.d("No of chars ", it?.noOfChars.toString()) })
   }
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     return when (item?.itemId) {
       R.id.confirm -> {
+        viewModel.confirmClicked("Hello from the other side")
         true
       }
       else -> super.onOptionsItemSelected(item)
@@ -55,6 +64,7 @@ class InputFragment : BaseFragment() {
     inflater.inflate(R.menu.menu_fragment_input, menu)
     super.onCreateOptionsMenu(menu, inflater)
   }
+
 
   companion object {
 

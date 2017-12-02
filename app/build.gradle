@@ -27,10 +27,11 @@ android {
 }
 
 ext {
-  versions = [support    : "26.1.0",
-              butterknife: "8.8.1",
-              rxjava     : "2.1.7",
-              sdp        : "1.0.5"]
+  versions = [support           : "26.1.0",
+              butterknife       : "8.8.1",
+              rxjava            : "2.1.7",
+              androidArchVersion: "1.0.0",
+              sdp               : "1.0.5"]
 
 
 
@@ -64,4 +65,10 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.1'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
+  // Lifecycle
+  implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
+  implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
+  annotationProcessor "android.arch.lifecycle:compiler:$versions.androidArchVersion"
 }
