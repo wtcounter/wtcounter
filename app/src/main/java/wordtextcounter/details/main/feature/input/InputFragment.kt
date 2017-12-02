@@ -33,7 +33,7 @@ class InputFragment : BaseFragment() {
 
   override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    RxBus.instance.send(ToolbarTitle("Input"))
+    RxBus.instance.send(ToolbarTitle(R.string.title_input))
   }
 
   override fun onDetach() {

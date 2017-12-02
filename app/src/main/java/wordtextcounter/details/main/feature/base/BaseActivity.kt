@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import butterknife.ButterKnife
-import butterknife.Unbinder
 import wordtextcounter.details.main.R
 
 /**
@@ -13,16 +13,16 @@ import wordtextcounter.details.main.R
  */
 abstract class BaseActivity : AppCompatActivity() {
 
-  private var unbinder: Unbinder? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    Log.d("onCreate", BaseActivity::class.toString())
     setContentView(getLayout())
-    unbinder = ButterKnife.bind(this)
+    ButterKnife.bind(this)
   }
 
   override fun onDestroy() {
-    unbinder?.unbind()
+    Log.d("onDestroy", BaseActivity::class.toString())
     super.onDestroy()
   }
 

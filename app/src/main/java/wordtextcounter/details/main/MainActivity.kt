@@ -1,6 +1,7 @@
 package wordtextcounter.details.main
 
 import android.os.Bundle
+import android.support.annotation.StringRes
 import android.support.v7.widget.Toolbar
 import butterknife.BindView
 import io.reactivex.functions.Consumer
@@ -20,7 +21,7 @@ class MainActivity : BaseActivity() {
 
     RxBus.instance.subscribe(ToolbarTitle::class.java,
         Consumer {
-          toolbar.title = it.title
+          toolbar.setTitle(it.title)
         })
 
   }
@@ -28,5 +29,5 @@ class MainActivity : BaseActivity() {
   override fun getLayout() = R.layout.activity_main
 
 
-  class ToolbarTitle(var title: String)
+  class ToolbarTitle(@StringRes var title: Int)
 }
