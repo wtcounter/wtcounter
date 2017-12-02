@@ -1,12 +1,32 @@
 package wordtextcounter.details.main
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
+import butterknife.BindView
+import io.reactivex.functions.Consumer
+import wordtextcounter.details.main.feature.base.BaseActivity
+import wordtextcounter.details.main.feature.input.InputFragment
+import wordtextcounter.details.main.util.RxBus
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+
+  @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+
+    setSupportActionBar(toolbar)
+    replaceFragment(InputFragment.newInstance())
+
+    RxBus.instance.subscribe(ToolbarTitle::class.java,
+        Consumer {
+          toolbar.title = it.title
+        })
+
   }
+
+  override fun getLayout() = R.layout.activity_main
+
+
+  class ToolbarTitle(var title: String)
 }
