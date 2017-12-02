@@ -1,33 +1,49 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slidingUpPanelLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="wordtextcounter.details.main.feature.input.InputFragment"
+    android:gravity="bottom"
     >
 
-  <android.support.v7.widget.CardView
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      android:layout_margin="@dimen/_5sdp"
-      android:padding="@dimen/_3sdp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context="wordtextcounter.details.main.feature.input.InputFragment"
       >
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/etInput"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="@string/hint_input"
-        android:overScrollMode="ifContentScrolls"
-        android:padding="@dimen/_4sdp"
-        android:scrollbars="vertical"
-        tools:text="Input text sample"
-        />
 
-  </android.support.v7.widget.CardView>
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+      <android.support.design.widget.TextInputEditText
+          android:id="@+id/etInput"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@null"
+          android:gravity="top"
+          android:hint="@string/hint_input"
+          android:overScrollMode="ifContentScrolls"
+          android:padding="@dimen/_4sdp"
+          android:scrollbars="vertical"
+          tools:text="Input text sample"
+          />
+
+    </android.support.v7.widget.CardView>
+  </android.support.constraint.ConstraintLayout>
+
+  <fragment
+      class="wordtextcounter.details.main.feature.report.ReportFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
