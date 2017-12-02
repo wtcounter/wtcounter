@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.input
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.TextInputEditText
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import butterknife.BindView
 import wordtextcounter.details.main.MainActivity.ToolbarTitle
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -24,6 +26,8 @@ import wordtextcounter.details.main.util.RxBus
 class InputFragment : BaseFragment() {
 
   lateinit var viewModel: InputViewModel
+
+  @BindView(R.id.etInput) lateinit var etInput: TextInputEditText;
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -48,7 +52,7 @@ class InputFragment : BaseFragment() {
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     return when (item?.itemId) {
       R.id.confirm -> {
-        viewModel.confirmClicked("Hello from the other side")
+        viewModel.confirmClicked(etInput.text.toString())
         true
       }
       else -> super.onOptionsItemSelected(item)

@@ -8,7 +8,8 @@ import wordtextcounter.details.main.feature.base.BaseViewModel
  */
 class InputViewModel : BaseViewModel() {
 
-  data class ViewState(val showClearButton: Boolean = false,
+  data class ViewState(val showKeyboard: Boolean = false,
+
       val showReport: Boolean = false,
       val noOfChars: Int = 0)
 
