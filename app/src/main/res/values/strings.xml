@@ -8,4 +8,6 @@
   <!--input-->
   <string name="title_input">Input</string>
   <string name="hint_input">Enter your text here</string>
+  <string name="confirm">Confirm</string>
+
 </resources>
