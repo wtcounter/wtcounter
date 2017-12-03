@@ -1,6 +1,7 @@
 package wordtextcounter.details.main.feature.input
 
 import android.arch.lifecycle.MutableLiveData
+import com.orhanobut.logger.Logger
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.ReportType.CHARS
 import wordtextcounter.details.main.feature.input.ReportType.PARAGRAPHS
@@ -32,6 +33,7 @@ class InputViewModel : BaseViewModel() {
 
 
   init {
+    Logger.d("init")
     viewState.value = ViewState()
   }
 
@@ -58,6 +60,8 @@ class InputViewModel : BaseViewModel() {
   }
 
   fun onStartEdit() {
+    Logger.d("onStartEdit")
+
     if (!currentViewState().showKeyboard)
       viewState.value = currentViewState().copy(showKeyboard = true, showReport = false,
           showKeyboardDelay = true)

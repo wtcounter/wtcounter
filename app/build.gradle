@@ -34,6 +34,8 @@ ext {
               rxjava            : "2.1.7",
               androidArchVersion: "1.0.0",
               slidingpanel      : "3.4.0",
+              bottombar         : "2.3.1",
+              logger            : "2.1.1",
               sdp               : "1.0.5"]
 
 
@@ -62,6 +64,7 @@ dependencies {
 
   //butterknife
   implementation "com.jakewharton:butterknife:$versions.butterknife"
+  implementation 'com.android.support:support-v4:27.0.2'
   kapt "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
   implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -76,4 +79,8 @@ dependencies {
   annotationProcessor "android.arch.lifecycle:compiler:$versions.androidArchVersion"
 
   implementation "com.sothree.slidinguppanel:library:$versions.slidingpanel"
+
+  implementation "com.roughike:bottom-bar:$versions.bottombar"
+
+  implementation "com.orhanobut:logger:$versions.logger"
 }

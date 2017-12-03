@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.TextInputEditText
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -15,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import butterknife.BindView
+import com.orhanobut.logger.Logger
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
@@ -43,6 +43,7 @@ class InputFragment : BaseFragment() {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)
 
+    Logger.d("onCreate")
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
   }
 
@@ -56,10 +57,9 @@ class InputFragment : BaseFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    Log.d("Bundle", savedInstanceState.toString())
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener({ view, motionEvent ->
+    etInput.setOnTouchListener({ _view, _motionEvent ->
       viewModel.onStartEdit()
       false
     })
@@ -69,7 +69,6 @@ class InputFragment : BaseFragment() {
 
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
-    slidingUpPanelLayout.panelState = EXPANDED
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
@@ -95,6 +94,7 @@ class InputFragment : BaseFragment() {
 
   private fun handleViewState(viewState: ViewState) {
 
+    Logger.d(viewState)
     if (viewState.showError) {
       showError(viewState.errorMessage)
     }

@@ -21,6 +21,7 @@ abstract class BaseFragment : Fragment() {
   var imm: InputMethodManager? = null
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    retainInstance = true
     unbinder = view.let { ButterKnife.bind(this, it) }
 
     imm = activity?.getSystemService(Service.INPUT_METHOD_SERVICE) as InputMethodManager
