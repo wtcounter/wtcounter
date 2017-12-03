@@ -3,6 +3,8 @@ package wordtextcounter.details.main.feature.input
 import android.arch.lifecycle.MutableLiveData
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.ReportType.CHARS
+import wordtextcounter.details.main.feature.input.ReportType.WORDS
+import wordtextcounter.details.main.util.Helper
 
 /**
  * Created by hirak on 03/12/17.
@@ -34,7 +36,7 @@ class InputViewModel : BaseViewModel() {
   private fun currentViewState(): ViewState = viewState.value!!
 
 
-  fun confirmClicked(input: String) {
+  fun onClickConfirm(input: String) {
 
     if (input.trim().isEmpty()) {
       viewState.value = currentViewState().copy(showError = true, errorMessage = "No input")
@@ -46,8 +48,16 @@ class InputViewModel : BaseViewModel() {
 
     val reports = mutableListOf<Report>()
     reports.add(Report(input.length, CHARS))
+    reports.add(Report(Helper.countWords(input), WORDS))
 
     reportState.value = ReportState(reports)
 
   }
+
+  fun onStartEdit() {
+    if (!currentViewState().showKeyboard)
+      viewState.value = currentViewState().copy(showKeyboard = true, showReport = false,
+          showKeyboardDelay = true)
+  }
+
 }

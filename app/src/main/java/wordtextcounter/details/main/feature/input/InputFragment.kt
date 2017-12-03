@@ -1,11 +1,13 @@
 package wordtextcounter.details.main.feature.input
 
+import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.TextInputEditText
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -48,8 +50,20 @@ class InputFragment : BaseFragment() {
     return inflater.inflate(R.layout.fragment_input, container, false)
   }
 
+  @SuppressLint("ClickableViewAccessibility")
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
+
+    etInput.setOnTouchListener({ view, motionEvent ->
+      Log.d("on touch", "Calling start edit")
+      viewModel.onStartEdit()
+      false
+    })
+
+    etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
+
+
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
     slidingUpPanelLayout.panelState = EXPANDED
@@ -63,19 +77,23 @@ class InputFragment : BaseFragment() {
   }
 
   private fun handleViewState(viewState: ViewState) {
+
+    Log.d("View ", viewState.toString())
+
     if (viewState.showKeyboard) {
-      etInput.requestFocus()
+      showSoftKeyboard(etInput)
     } else {
       hideSoftKeyboard()
     }
 
     Handler().postDelayed(Runnable {
-      if (viewState.showReport) {
+      if (viewState.showReport)
         slidingUpPanelLayout.panelState = EXPANDED
-      } else {
+      else
         slidingUpPanelLayout.panelState = COLLAPSED
-      }
     }, if (viewState.showKeyboardDelay) 500 else 0)
+
+
   }
 
   private fun handleReportState(reportState: ReportState) {
@@ -85,7 +103,7 @@ class InputFragment : BaseFragment() {
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     return when (item?.itemId) {
       R.id.confirm -> {
-        viewModel.confirmClicked(etInput.text.toString())
+        viewModel.onClickConfirm(etInput.text.toString())
         true
       }
       else -> super.onOptionsItemSelected(item)

@@ -5,6 +5,6 @@ import wordtextcounter.details.main.R
 
 enum class ReportType(var i: Int, @StringRes var characters: Int) {
   CHARS(1, R.string.characters),
-  LINES(1, R.string.words)
-
+  WORDS(1, R.string.words)
+  
 }

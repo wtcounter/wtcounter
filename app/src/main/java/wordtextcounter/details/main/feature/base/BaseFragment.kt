@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.base
 import android.app.Service
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import butterknife.ButterKnife
@@ -31,11 +32,9 @@ abstract class BaseFragment : Fragment() {
     }
   }
 
-  protected fun showSoftKeyboard() {
-    val view = activity?.currentFocus
-    if (view != null) {
-      imm?.showSoftInputFromInputMethod(view.windowToken, 0)
-    }
+  protected fun showSoftKeyboard(focus: View) {
+    Log.d("Show soft keboard ", focus.toString())
+    imm?.showSoftInputFromInputMethod(focus.windowToken, 0)
   }
 
   override fun onDestroyView() {
