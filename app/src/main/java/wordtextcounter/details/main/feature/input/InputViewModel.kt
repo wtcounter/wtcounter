@@ -3,6 +3,8 @@ package wordtextcounter.details.main.feature.input
 import android.arch.lifecycle.MutableLiveData
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.ReportType.CHARS
+import wordtextcounter.details.main.feature.input.ReportType.PARAGRAPHS
+import wordtextcounter.details.main.feature.input.ReportType.SIZE
 import wordtextcounter.details.main.feature.input.ReportType.WORDS
 import wordtextcounter.details.main.util.Helper
 
@@ -19,7 +21,7 @@ class InputViewModel : BaseViewModel() {
 
 
   data class Report(
-      val no: Int = 0,
+      val value: String = "0",
       val reportType: ReportType
   )
 
@@ -44,12 +46,13 @@ class InputViewModel : BaseViewModel() {
     }
 
     viewState.value = currentViewState().copy(showKeyboard = false, showReport = true,
-        showKeyboardDelay = currentViewState().showKeyboard)
+        showKeyboardDelay = currentViewState().showKeyboard, showError = false, errorMessage = "")
 
     val reports = mutableListOf<Report>()
-    reports.add(Report(input.length, CHARS))
-    reports.add(Report(Helper.countWords(input), WORDS))
-
+    reports.add(Report(input.length.toString(), CHARS))
+    reports.add(Report(Helper.countWords(input).toString(), WORDS))
+    reports.add(Report(Helper.countParagraphs(input).toString(), PARAGRAPHS))
+    reports.add(Report(Helper.calculateSize(input), SIZE))
     reportState.value = ReportState(reports)
 
   }

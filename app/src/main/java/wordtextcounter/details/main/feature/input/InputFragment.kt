@@ -80,6 +80,10 @@ class InputFragment : BaseFragment() {
 
     Log.d("View ", viewState.toString())
 
+    if (viewState.showError) {
+      showError(viewState.errorMessage)
+    }
+
     if (viewState.showKeyboard) {
       showSoftKeyboard(etInput)
     } else {

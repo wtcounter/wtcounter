@@ -5,9 +5,9 @@ import android.util.Log
 /**
  * Created by hirak on 03/12/17.
  */
-public class Helper {
+class Helper {
   companion object {
-    public fun countWords(input: String): Int {
+    fun countWords(input: String): Int {
       var s: String = input
       s = s.replace("\n", " ")
       Log.d("String ", s)
@@ -23,6 +23,23 @@ public class Helper {
         }
       }
       return noOfWords + 1
+    }
+
+    fun countParagraphs(input: String): Int {
+      var s: String = input
+      s = s.replace("\n+".toRegex(), "\n")
+
+      var noOfParagraphs = 0
+      for (c in s) {
+        if (c == '\n') {
+          noOfParagraphs++
+        }
+      }
+      return noOfParagraphs + 1
+    }
+
+    fun calculateSize(input: String): String {
+      return input.toByteArray(Charsets.UTF_8).size.toString() + 'B'
     }
   }
 }

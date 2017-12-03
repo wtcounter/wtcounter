@@ -47,7 +47,7 @@ class ReportAdapter : Adapter<ResultViewHolder>() {
     }
 
     fun bind(report: Report) {
-      tvValue.text = report.no.toString()
+      tvValue.text = report.value
       tvResultType.setText(report.reportType.characters)
     }
   }

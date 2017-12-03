@@ -2,6 +2,7 @@ package wordtextcounter.details.main.feature.base
 
 import android.app.Service
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.View
@@ -31,6 +32,11 @@ abstract class BaseFragment : Fragment() {
       imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
   }
+
+  protected fun showError(message: String) {
+    view?.let { Snackbar.make(it, message, Snackbar.LENGTH_LONG).show() }
+  }
+
 
   protected fun showSoftKeyboard(focus: View) {
     Log.d("Show soft keboard ", focus.toString())
