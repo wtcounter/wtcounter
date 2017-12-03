@@ -18,11 +18,11 @@ import butterknife.BindView
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
-import wordtextcounter.details.main.MainActivity.ToolbarTitle
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ReportState
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
+import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
 import wordtextcounter.details.main.util.RxBus
 
 /**
@@ -36,6 +36,8 @@ class InputFragment : BaseFragment() {
 
   @BindView(R.id.etInput) lateinit var etInput: TextInputEditText
   @BindView(R.id.slidingUpPanelLayout) lateinit var slidingUpPanelLayout: SlidingUpPanelLayout
+
+  private val TEXT = "TEXT"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -54,9 +56,10 @@ class InputFragment : BaseFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
+    Log.d("Bundle", savedInstanceState.toString())
+    etInput.setText(savedInstanceState?.getString(TEXT))
 
     etInput.setOnTouchListener({ view, motionEvent ->
-      Log.d("on touch", "Calling start edit")
       viewModel.onStartEdit()
       false
     })
@@ -76,9 +79,21 @@ class InputFragment : BaseFragment() {
     })
   }
 
-  private fun handleViewState(viewState: ViewState) {
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString(TEXT, etInput.text.toString())
+  }
 
-    Log.d("View ", viewState.toString())
+  override fun onDetach() {
+    super.onDetach()
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
+    inflater.inflate(R.menu.menu_fragment_input, menu)
+    super.onCreateOptionsMenu(menu, inflater)
+  }
+
+  private fun handleViewState(viewState: ViewState) {
 
     if (viewState.showError) {
       showError(viewState.errorMessage)
@@ -96,8 +111,6 @@ class InputFragment : BaseFragment() {
       else
         slidingUpPanelLayout.panelState = COLLAPSED
     }, if (viewState.showKeyboardDelay) 500 else 0)
-
-
   }
 
   private fun handleReportState(reportState: ReportState) {
@@ -112,16 +125,6 @@ class InputFragment : BaseFragment() {
       }
       else -> super.onOptionsItemSelected(item)
     }
-  }
-
-
-  override fun onDetach() {
-    super.onDetach()
-  }
-
-  override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
-    inflater.inflate(R.menu.menu_fragment_input, menu)
-    super.onCreateOptionsMenu(menu, inflater)
   }
 
 
