@@ -68,17 +68,18 @@ class InputFragment : BaseFragment() {
     } else {
       hideSoftKeyboard()
     }
-  }
 
-  private fun handleReportState(reportState: ReportState) {
-    Handler().postDelayed({
-      if (reportState.showReport) {
+    Handler().postDelayed(Runnable {
+      if (viewState.showReport) {
         slidingUpPanelLayout.panelState = EXPANDED
       } else {
         slidingUpPanelLayout.panelState = COLLAPSED
       }
-    }, 500)
+    }, if (viewState.showKeyboardDelay) 500 else 0)
+  }
 
+  private fun handleReportState(reportState: ReportState) {
+    RxBus.instance.send(reportState)
   }
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {

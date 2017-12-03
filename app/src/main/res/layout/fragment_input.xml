@@ -41,7 +41,7 @@
   </android.support.constraint.ConstraintLayout>
 
   <fragment
-      class="wordtextcounter.details.main.feature.report.ReportFragment"
+      class="wordtextcounter.details.main.feature.input.report.ReportFragment"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       />

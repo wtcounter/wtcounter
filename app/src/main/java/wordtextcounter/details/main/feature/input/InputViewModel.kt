@@ -2,22 +2,26 @@ package wordtextcounter.details.main.feature.input
 
 import android.arch.lifecycle.MutableLiveData
 import wordtextcounter.details.main.feature.base.BaseViewModel
+import wordtextcounter.details.main.feature.input.ReportType.CHARS
 
 /**
  * Created by hirak on 03/12/17.
  */
 class InputViewModel : BaseViewModel() {
 
-  data class ViewState(val showKeyboard: Boolean = false,
+  data class ViewState(val showKeyboard: Boolean = true,
       val showError: Boolean = false,
+      val showReport: Boolean = false,
+      val showKeyboardDelay: Boolean = false,
       val errorMessage: String = "")
 
 
-  data class ReportState(
-      val showReport: Boolean = false,
-      val noOfChars: Int = 0,
-      val noOfLines: Int = 0,
-      val noOfParagraphs: Int = 0)
+  data class Report(
+      val no: Int = 0,
+      val reportType: ReportType
+  )
+
+  data class ReportState(val list: List<Report>)
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
   val reportState: MutableLiveData<ReportState> = MutableLiveData()
@@ -25,12 +29,10 @@ class InputViewModel : BaseViewModel() {
 
   init {
     viewState.value = ViewState()
-    reportState.value = ReportState()
   }
 
   private fun currentViewState(): ViewState = viewState.value!!
 
-  private fun currentReportState(): ReportState = reportState.value!!
 
   fun confirmClicked(input: String) {
 
@@ -38,7 +40,14 @@ class InputViewModel : BaseViewModel() {
       viewState.value = currentViewState().copy(showError = true, errorMessage = "No input")
       return
     }
-    viewState.value = currentViewState().copy(showKeyboard = false)
-    reportState.value = currentReportState().copy(showReport = true, noOfChars = input.length)
+
+    viewState.value = currentViewState().copy(showKeyboard = false, showReport = true,
+        showKeyboardDelay = currentViewState().showKeyboard)
+
+    val reports = mutableListOf<Report>()
+    reports.add(Report(input.length, CHARS))
+
+    reportState.value = ReportState(reports)
+
   }
 }

@@ -1,13 +1,19 @@
-package wordtextcounter.details.main.feature.report
+package wordtextcounter.details.main.feature.input.report
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import butterknife.BindView
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.functions.Consumer
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
+import wordtextcounter.details.main.feature.input.InputViewModel.ReportState
+import wordtextcounter.details.main.util.RxBus
 
 /**
  * A simple [Fragment] subclass.
@@ -15,6 +21,12 @@ import wordtextcounter.details.main.feature.base.BaseFragment
  * create an instance of this fragment.
  */
 class ReportFragment : BaseFragment() {
+
+  private val compositeDisposable = CompositeDisposable()
+
+  @BindView(R.id.rvResult) lateinit var rvResult: RecyclerView
+
+  private var resultAdapter = ReportAdapter()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -25,6 +37,19 @@ class ReportFragment : BaseFragment() {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_report, container, false)
   }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    rvResult.adapter = resultAdapter
+    compositeDisposable.add(
+        RxBus.instance.subscribe(ReportState::class.java, Consumer { setResult(it) }));
+  }
+
+  private fun setResult(reportState: ReportState) {
+    Log.d("set result ", reportState.toString())
+    resultAdapter.setResults(reportState.list)
+  }
+
 
   companion object {
 

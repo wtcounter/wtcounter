@@ -10,4 +10,9 @@
   <string name="hint_input">Enter your text here</string>
   <string name="confirm">Confirm</string>
 
+  <!--report-->
+  <string name="characters">Characters</string>
+  <string name="words">Words</string>
+  <string name="lines">lines</string>
+
 </resources>
