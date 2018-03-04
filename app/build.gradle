@@ -32,7 +32,7 @@ ext {
   versions = [support           : "27.0.1",
               butterknife       : "8.8.1",
               rxjava            : "2.1.7",
-              androidArchVersion: "1.0.0",
+              androidArchVersion: "1.1.0",
               slidingpanel      : "3.4.0",
               bottombar         : "2.3.1",
               logger            : "2.1.1",
