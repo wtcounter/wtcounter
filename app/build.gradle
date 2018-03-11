@@ -7,14 +7,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-  signingConfigs {
-    Store {
-      keyAlias 'wcounter'
-      keyPassword 'ankit123'
-      storeFile file('/Users/ankit/Downloads/Word Counter_key/wcounter.jks')
-      storePassword 'ankit123'
-    }
-  }
   compileSdkVersion 27
   buildToolsVersion '27.0.1'
   defaultConfig {
