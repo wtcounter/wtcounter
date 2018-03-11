@@ -59,10 +59,10 @@ class InputFragment : BaseFragment() {
 
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener({ _view, _motionEvent ->
+    etInput.setOnTouchListener{ _view, _motionEvent ->
       viewModel.onStartEdit()
       false
-    })
+    }
 
     etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
 
@@ -137,8 +137,7 @@ class InputFragment : BaseFragment() {
      * @return A new instance of fragment InputFragment.
      */
     fun newInstance(): InputFragment {
-      val fragment = InputFragment()
-      return fragment
+      return InputFragment()
     }
   }
 }// Required empty public constructor
