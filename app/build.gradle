@@ -4,10 +4,19 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
+  signingConfigs {
+    Store {
+      keyAlias 'wcounter'
+      keyPassword 'ankit123'
+      storeFile file('/Users/ankit/Downloads/Word Counter_key/wcounter.jks')
+      storePassword 'ankit123'
+    }
+  }
   compileSdkVersion 27
   buildToolsVersion '27.0.1'
-
   defaultConfig {
     applicationId "wordtextcounter.details.main"
     minSdkVersion 16
@@ -33,6 +42,7 @@ ext {
               butterknife       : "8.8.1",
               rxjava            : "2.1.7",
               androidArchVersion: "1.1.0",
+              room              : "1.0.0",
               slidingpanel      : "3.4.0",
               bottombar         : "2.3.1",
               logger            : "2.1.1",
@@ -56,31 +66,28 @@ ext {
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
   implementation supportLibs
   implementation sdpLibs
   implementation rxLibs
-
   //butterknife
   implementation "com.jakewharton:butterknife:$versions.butterknife"
   implementation 'com.android.support:support-v4:27.0.2'
   kapt "com.jakewharton:butterknife-compiler:$versions.butterknife"
-
   implementation 'com.android.support.constraint:constraint-layout:1.0.2'
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.1'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
-
   // Lifecycle
   implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
   implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
   annotationProcessor "android.arch.lifecycle:compiler:$versions.androidArchVersion"
-
+  //room
+  implementation "android.arch.persistence.room:runtime:$versions.room"
+  kapt "android.arch.persistence.room:compiler:$versions.room"
+  implementation "android.arch.persistence.room:rxjava2:$versions.room"
   implementation "com.sothree.slidinguppanel:library:$versions.slidingpanel"
-
   implementation "com.roughike:bottom-bar:$versions.bottombar"
-
   implementation "com.orhanobut:logger:$versions.logger"
 }
