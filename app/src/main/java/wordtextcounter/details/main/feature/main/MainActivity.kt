@@ -9,14 +9,12 @@ import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import com.roughike.bottombar.BottomBar
 import io.reactivex.functions.Consumer
-import io.reactivex.schedulers.Schedulers
 import wordtextcounter.details.main.BuildConfig
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.layout
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
-import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.RxBus
 
 
