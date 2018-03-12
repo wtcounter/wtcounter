@@ -1,7 +1,6 @@
 package wordtextcounter.details.main.feature.input
 
 import android.arch.lifecycle.MutableLiveData
-import com.orhanobut.logger.Logger
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.ReportType.CHARS
 import wordtextcounter.details.main.feature.input.ReportType.PARAGRAPHS
@@ -9,9 +8,6 @@ import wordtextcounter.details.main.feature.input.ReportType.SIZE
 import wordtextcounter.details.main.feature.input.ReportType.WORDS
 import wordtextcounter.details.main.util.Helper
 
-/**
- * Created by hirak on 03/12/17.
- */
 class InputViewModel : BaseViewModel() {
 
   data class ViewState(val showKeyboard: Boolean = true,
@@ -19,8 +15,7 @@ class InputViewModel : BaseViewModel() {
       val showReport: Boolean = false,
       val showKeyboardDelay: Boolean = false,
       val errorMessage: String = "")
-
-
+  
   data class Report(
       val value: String = "0",
       val reportType: ReportType
@@ -30,16 +25,13 @@ class InputViewModel : BaseViewModel() {
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
   val reportState: MutableLiveData<ReportState> = MutableLiveData()
-
-
+  
   init {
-    Logger.d("init")
     viewState.value = ViewState()
   }
 
   private fun currentViewState(): ViewState = viewState.value!!
-
-
+  
   fun onClickConfirm(input: String) {
 
     if (input.trim().isEmpty()) {
@@ -60,11 +52,8 @@ class InputViewModel : BaseViewModel() {
   }
 
   fun onStartEdit() {
-    Logger.d("onStartEdit")
-
     if (!currentViewState().showKeyboard)
       viewState.value = currentViewState().copy(showKeyboard = true, showReport = false,
           showKeyboardDelay = true)
   }
-
 }

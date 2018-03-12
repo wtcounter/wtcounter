@@ -65,8 +65,7 @@ class InputFragment : BaseFragment() {
     }
 
     etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
-
-
+    
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
     viewModel.viewState.observe(this, Observer {
@@ -81,10 +80,6 @@ class InputFragment : BaseFragment() {
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
     outState.putString(TEXT, etInput.text.toString())
-  }
-
-  override fun onDetach() {
-    super.onDetach()
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
@@ -126,8 +121,7 @@ class InputFragment : BaseFragment() {
       else -> super.onOptionsItemSelected(item)
     }
   }
-
-
+  
   companion object {
 
     /**

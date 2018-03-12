@@ -8,5 +8,4 @@ enum class ReportType(var i: Int, @StringRes var characters: Int) {
   WORDS(1, R.string.words),
   PARAGRAPHS(1, R.string.paragraphs),
   SIZE(1, R.string.size)
-
 }

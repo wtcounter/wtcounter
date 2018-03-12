@@ -37,10 +37,8 @@ abstract class BaseFragment : Fragment() {
   protected fun showError(message: String) {
     view?.let { Snackbar.make(it, message, Snackbar.LENGTH_LONG).show() }
   }
-
-
+  
   protected fun showSoftKeyboard(focus: View) {
-    Log.d("Show soft keboard ", focus.toString())
     imm?.showSoftInputFromInputMethod(focus.windowToken, 0)
   }
 
