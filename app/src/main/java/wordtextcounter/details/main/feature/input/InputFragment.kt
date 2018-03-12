@@ -20,7 +20,6 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
-import wordtextcounter.details.main.feature.input.InputViewModel.ReportState
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
 import wordtextcounter.details.main.util.RxBus
@@ -43,7 +42,6 @@ class InputFragment : BaseFragment() {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)
 
-    Logger.d("onCreate")
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
   }
 
@@ -59,22 +57,20 @@ class InputFragment : BaseFragment() {
 
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener{ _view, _motionEvent ->
+    etInput.setOnTouchListener { _view, _motionEvent ->
       viewModel.onStartEdit()
       false
     }
 
     etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
-    
+
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
 
-    viewModel.reportState.observe(this, Observer {
-      it?.let { it1 -> handleReportState(it1) }
-    })
+
   }
 
   override fun onSaveInstanceState(outState: Bundle) {
@@ -108,9 +104,6 @@ class InputFragment : BaseFragment() {
     }, if (viewState.showKeyboardDelay) 500 else 0)
   }
 
-  private fun handleReportState(reportState: ReportState) {
-    RxBus.instance.send(reportState)
-  }
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     return when (item?.itemId) {
@@ -118,10 +111,14 @@ class InputFragment : BaseFragment() {
         viewModel.onClickConfirm(etInput.text.toString())
         true
       }
+      R.id.save -> {
+        viewModel.onClickSaveCurrent()
+        true
+      }
       else -> super.onOptionsItemSelected(item)
     }
   }
-  
+
   companion object {
 
     /**

@@ -7,6 +7,7 @@ import wordtextcounter.details.main.feature.input.ReportType.PARAGRAPHS
 import wordtextcounter.details.main.feature.input.ReportType.SIZE
 import wordtextcounter.details.main.feature.input.ReportType.WORDS
 import wordtextcounter.details.main.util.Helper
+import wordtextcounter.details.main.util.RxBus
 
 class InputViewModel : BaseViewModel() {
 
@@ -15,7 +16,7 @@ class InputViewModel : BaseViewModel() {
       val showReport: Boolean = false,
       val showKeyboardDelay: Boolean = false,
       val errorMessage: String = "")
-  
+
   data class Report(
       val value: String = "0",
       val reportType: ReportType
@@ -24,14 +25,13 @@ class InputViewModel : BaseViewModel() {
   data class ReportState(val list: List<Report>)
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
-  val reportState: MutableLiveData<ReportState> = MutableLiveData()
-  
+
   init {
     viewState.value = ViewState()
   }
 
   private fun currentViewState(): ViewState = viewState.value!!
-  
+
   fun onClickConfirm(input: String) {
 
     if (input.trim().isEmpty()) {
@@ -47,7 +47,9 @@ class InputViewModel : BaseViewModel() {
     reports.add(Report(Helper.countWords(input).toString(), WORDS))
     reports.add(Report(Helper.countParagraphs(input).toString(), PARAGRAPHS))
     reports.add(Report(Helper.calculateSize(input), SIZE))
-    reportState.value = ReportState(reports)
+
+    RxBus.instance.send(ReportState(reports))
+
 
   }
 
@@ -55,5 +57,9 @@ class InputViewModel : BaseViewModel() {
     if (!currentViewState().showKeyboard)
       viewState.value = currentViewState().copy(showKeyboard = true, showReport = false,
           showKeyboardDelay = true)
+  }
+
+  fun onClickSaveCurrent() {
+
   }
 }
