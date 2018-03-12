@@ -38,22 +38,22 @@ class MainActivity : BaseActivity() {
       }
     })
     setSupportActionBar(toolbar)
-    
-    bottombar.setOnTabSelectListener { tabId ->
-      when (tabId) {
-        R.id.tab_input -> replaceFragment(InputFragment.newInstance())
-        R.id.tab_notes -> replaceFragment(NotesFragment.newInstance("", ""))
-      }
-    }
 
     RxBus.instance.subscribe(ToolbarTitle::class.java,
         Consumer {
           toolbar.setTitle(it.title)
         })
 
+    bottombar.setOnTabSelectListener { tabId ->
+      when (tabId) {
+        R.id.tab_input -> replaceFragment(InputFragment.newInstance())
+        R.id.tab_notes -> replaceFragment(NotesFragment.newInstance())
+      }
+    }
+
   }
 
   override fun getLayout() = layout.activity_main
-  
+
   class ToolbarTitle(@StringRes var title: Int)
 }

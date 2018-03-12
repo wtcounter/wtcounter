@@ -17,8 +17,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_48sdp"
-        app:title="Hello world"
+        app:title="@string/app_name"
         app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/secondaryTextColor"
         />
 
   </android.support.design.widget.AppBarLayout>

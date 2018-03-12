@@ -1,12 +1,15 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.R.string
+import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
+import wordtextcounter.details.main.util.RxBus
 
 /**
  * A simple [Fragment] subclass.
@@ -15,18 +18,11 @@ import wordtextcounter.details.main.R
  */
 class NotesFragment : Fragment() {
 
-  // TODO: Rename and change types of parameters
-  private var mParam1: String? = null
-  private var mParam2: String? = null
+  lateinit var viewModel: NotesViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    if (arguments != null) {
-      mParam1 = arguments!!.getString(
-          ARG_PARAM1)
-      mParam2 = arguments!!.getString(
-          ARG_PARAM2)
-    }
+    viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -35,26 +31,24 @@ class NotesFragment : Fragment() {
     return inflater.inflate(R.layout.fragment_notes, container, false)
   }
 
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    RxBus.instance.send(ToolbarTitle(string.title_notes))
+
+    viewModel.getAllSavedNotes()
+  }
+
   companion object {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private const val ARG_PARAM1 = "param1"
-    private const val ARG_PARAM2 = "param2"
 
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment NotesFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    fun newInstance(param1: String, param2: String): NotesFragment {
+    fun newInstance(): NotesFragment {
       val fragment = NotesFragment()
       val args = Bundle()
-      args.putString(ARG_PARAM1, param1)
-      args.putString(ARG_PARAM2, param2)
       fragment.arguments = args
       return fragment
     }

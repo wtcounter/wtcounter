@@ -11,6 +11,9 @@
   <string name="hint_input">Enter your text here</string>
   <string name="confirm">Confirm</string>
 
+
+  <!--notes-->
+  <string name="title_notes">Notes</string>
   <!--report-->
   <string name="characters">Characters</string>
   <string name="words">Words</string>
