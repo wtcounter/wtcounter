@@ -2,14 +2,13 @@ package wordtextcounter.details.main.feature.input.report
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import butterknife.BindView
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
+import kotlinx.android.synthetic.main.fragment_report.rvResult
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ReportState
@@ -24,7 +23,6 @@ class ReportFragment : BaseFragment() {
 
   private val compositeDisposable = CompositeDisposable()
 
-  @BindView(R.id.rvResult) lateinit var rvResult: RecyclerView
 
   private var resultAdapter = ReportAdapter()
 
