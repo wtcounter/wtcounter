@@ -11,5 +11,9 @@
     <item name="windowNoTitle">true</item>
   </style>
 
+  <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:textSize">@dimen/_14sdp</item>
+  </style>
+
 
 </resources>

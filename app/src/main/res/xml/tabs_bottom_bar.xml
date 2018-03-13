@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+
+  <tab
+      icon="@drawable/ic_input"
+      id="@+id/tab_input"
+      title="@string/input"/>
+  <tab
+      icon="@drawable/ic_notes"
+      id="@+id/tab_notes"
+      title="@string/notes"/>
+
+</tabs>

@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.TextInputEditText
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -15,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import butterknife.BindView
+import com.orhanobut.logger.Logger
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
@@ -43,6 +43,7 @@ class InputFragment : BaseFragment() {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)
 
+    Logger.d("onCreate")
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
   }
 
@@ -56,20 +57,17 @@ class InputFragment : BaseFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    Log.d("Bundle", savedInstanceState.toString())
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener({ view, motionEvent ->
+    etInput.setOnTouchListener{ _view, _motionEvent ->
       viewModel.onStartEdit()
       false
-    })
+    }
 
     etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
-
-
+    
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
-    slidingUpPanelLayout.panelState = EXPANDED
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
@@ -84,10 +82,6 @@ class InputFragment : BaseFragment() {
     outState.putString(TEXT, etInput.text.toString())
   }
 
-  override fun onDetach() {
-    super.onDetach()
-  }
-
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
     inflater.inflate(R.menu.menu_fragment_input, menu)
     super.onCreateOptionsMenu(menu, inflater)
@@ -95,6 +89,7 @@ class InputFragment : BaseFragment() {
 
   private fun handleViewState(viewState: ViewState) {
 
+    Logger.d(viewState)
     if (viewState.showError) {
       showError(viewState.errorMessage)
     }
@@ -126,8 +121,7 @@ class InputFragment : BaseFragment() {
       else -> super.onOptionsItemSelected(item)
     }
   }
-
-
+  
   companion object {
 
     /**
@@ -137,8 +131,7 @@ class InputFragment : BaseFragment() {
      * @return A new instance of fragment InputFragment.
      */
     fun newInstance(): InputFragment {
-      val fragment = InputFragment()
-      return fragment
+      return InputFragment()
     }
   }
 }// Required empty public constructor

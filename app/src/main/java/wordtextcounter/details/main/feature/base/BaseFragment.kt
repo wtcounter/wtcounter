@@ -21,6 +21,7 @@ abstract class BaseFragment : Fragment() {
   var imm: InputMethodManager? = null
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    retainInstance = true
     unbinder = view.let { ButterKnife.bind(this, it) }
 
     imm = activity?.getSystemService(Service.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -36,10 +37,8 @@ abstract class BaseFragment : Fragment() {
   protected fun showError(message: String) {
     view?.let { Snackbar.make(it, message, Snackbar.LENGTH_LONG).show() }
   }
-
-
+  
   protected fun showSoftKeyboard(focus: View) {
-    Log.d("Show soft keboard ", focus.toString())
     imm?.showSoftInputFromInputMethod(focus.windowToken, 0)
   }
 
