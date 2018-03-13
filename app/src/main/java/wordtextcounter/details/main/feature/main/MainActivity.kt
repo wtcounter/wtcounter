@@ -38,7 +38,7 @@ class MainActivity : BaseActivity() {
       }
     })
     setSupportActionBar(toolbar)
-
+    
     bottombar.setOnTabSelectListener { tabId ->
       when (tabId) {
         R.id.tab_input -> replaceFragment(InputFragment.newInstance())
@@ -54,7 +54,6 @@ class MainActivity : BaseActivity() {
   }
 
   override fun getLayout() = layout.activity_main
-
-
+  
   class ToolbarTitle(@StringRes var title: Int)
 }

@@ -59,14 +59,13 @@ class InputFragment : BaseFragment() {
 
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener({ _view, _motionEvent ->
+    etInput.setOnTouchListener{ _view, _motionEvent ->
       viewModel.onStartEdit()
       false
-    })
+    }
 
     etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
-
-
+    
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
     viewModel.viewState.observe(this, Observer {
@@ -81,10 +80,6 @@ class InputFragment : BaseFragment() {
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
     outState.putString(TEXT, etInput.text.toString())
-  }
-
-  override fun onDetach() {
-    super.onDetach()
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
@@ -126,8 +121,7 @@ class InputFragment : BaseFragment() {
       else -> super.onOptionsItemSelected(item)
     }
   }
-
-
+  
   companion object {
 
     /**
@@ -137,8 +131,7 @@ class InputFragment : BaseFragment() {
      * @return A new instance of fragment InputFragment.
      */
     fun newInstance(): InputFragment {
-      val fragment = InputFragment()
-      return fragment
+      return InputFragment()
     }
   }
 }// Required empty public constructor
