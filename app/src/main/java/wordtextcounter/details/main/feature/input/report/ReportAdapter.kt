@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
+import kotlinx.android.synthetic.main.item_result.view.tvResultType
+import kotlinx.android.synthetic.main.item_result.view.tvValue
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.input.InputViewModel.Report
 import wordtextcounter.details.main.feature.input.report.ReportAdapter.ResultViewHolder
@@ -34,17 +34,14 @@ class ReportAdapter : Adapter<ResultViewHolder>() {
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultViewHolder {
     return ResultViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_result, parent, false))
-
   }
 
   class ResultViewHolder(itemView: View) : ViewHolder(itemView) {
 
-    @BindView(R.id.tvValue) lateinit var tvValue: TextView
-    @BindView(R.id.tvResultType) lateinit var tvResultType: TextView
 
-    init {
-      ButterKnife.bind(this, itemView)
-    }
+    private val tvValue: TextView = itemView.tvValue
+    private val tvResultType: TextView = itemView.tvResultType
+
 
     fun bind(report: Report) {
       tvValue.text = report.value

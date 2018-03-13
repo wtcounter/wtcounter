@@ -5,7 +5,6 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.TextInputEditText
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -13,11 +12,11 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import butterknife.BindView
 import com.orhanobut.logger.Logger
-import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
+import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.slidingUpPanelLayout
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
@@ -33,8 +32,6 @@ class InputFragment : BaseFragment() {
 
   lateinit var viewModel: InputViewModel
 
-  @BindView(R.id.etInput) lateinit var etInput: TextInputEditText
-  @BindView(R.id.slidingUpPanelLayout) lateinit var slidingUpPanelLayout: SlidingUpPanelLayout
 
   private val TEXT = "TEXT"
 
@@ -57,12 +54,12 @@ class InputFragment : BaseFragment() {
 
     etInput.setText(savedInstanceState?.getString(TEXT))
 
-    etInput.setOnTouchListener { _view, _motionEvent ->
+    etInput.setOnTouchListener { _, _ ->
       viewModel.onStartEdit()
       false
     }
 
-    etInput.onFocusChangeListener = View.OnFocusChangeListener { view, b -> true }
+    etInput.onFocusChangeListener = View.OnFocusChangeListener { _, _ -> true }
 
     RxBus.instance.send(ToolbarTitle(R.string.title_input))
     slidingUpPanelLayout.panelHeight = 0
@@ -75,6 +72,7 @@ class InputFragment : BaseFragment() {
 
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
+    Logger.d("" + etInput.text.toString())
     outState.putString(TEXT, etInput.text.toString())
   }
 
@@ -85,7 +83,6 @@ class InputFragment : BaseFragment() {
 
   private fun handleViewState(viewState: ViewState) {
 
-    Logger.d(viewState)
     if (viewState.showError) {
       showError(viewState.errorMessage)
     }
