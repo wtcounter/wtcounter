@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.orhanobut.logger.Logger
 import wordtextcounter.details.main.R
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -18,10 +19,23 @@ abstract class BaseActivity : AppCompatActivity() {
   fun getLayout(): Int
 
   fun replaceFragment(fragment: Fragment) {
-    supportFragmentManager
-        .beginTransaction()
-        .replace(R.id.container, fragment)
-        .addToBackStack(null)
-        .commit()
+
+    Logger.d("Fragment to replace $fragment")
+
+    Logger.d("Current fragment before replacing " + supportFragmentManager.findFragmentById(
+        R.id.container))
+
+    val backStackName = fragment.javaClass.name
+
+    val fragmentPopped = supportFragmentManager.popBackStackImmediate(backStackName, 0)
+
+    Logger.d("fragment popped $fragmentPopped")
+    if (!fragmentPopped) {
+      supportFragmentManager
+          .beginTransaction()
+          .replace(R.id.container, fragment)
+          .addToBackStack(backStackName)
+          .commit()
+    }
   }
 }

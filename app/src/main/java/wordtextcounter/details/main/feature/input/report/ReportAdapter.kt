@@ -12,9 +12,6 @@ import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.input.InputViewModel.Report
 import wordtextcounter.details.main.feature.input.report.ReportAdapter.ResultViewHolder
 
-/**
- * Created by hirak on 03/12/17.
- */
 class ReportAdapter : Adapter<ResultViewHolder>() {
 
   private var reports: List<Report> = mutableListOf()

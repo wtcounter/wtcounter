@@ -5,9 +5,6 @@ import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 
-/**
- * Created by myglamm on 13/03/18.
- */
 
 class App : Application() {
 

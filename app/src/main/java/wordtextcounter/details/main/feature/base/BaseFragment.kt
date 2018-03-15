@@ -8,9 +8,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 
 
-/**
- * Created by hirak on 02/12/17.
- */
 abstract class BaseFragment : Fragment() {
 
 
