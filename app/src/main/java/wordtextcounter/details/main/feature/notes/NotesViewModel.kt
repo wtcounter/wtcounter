@@ -25,10 +25,10 @@ class NotesViewModel : BaseViewModel() {
 
   private fun getDummyReports(): List<Report> {
     val reports = mutableListOf<Report>()
-    reports.add(Report(1, "Name 1", "Date", "Words", "Characters", "Paragraphs", "Sentences"))
-    reports.add(Report(2, "Name 2", "Date", "Words", "Characters", "Paragraphs", "Sentences"))
-    reports.add(Report(3, "Name 3", "Date", "Words", "Characters", "Paragraphs", "Sentences"))
-    reports.add(Report(4, "Name 4", "Date", "Words", "Characters", "Paragraphs", "Sentences"))
+    reports.add(Report(1, "Name 1", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
+    reports.add(Report(2, "Name 2", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
+    reports.add(Report(3, "Name 3", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
+    reports.add(Report(4, "Name 4", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
     return reports
   }
 }

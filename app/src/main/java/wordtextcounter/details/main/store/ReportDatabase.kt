@@ -8,6 +8,7 @@ import android.arch.persistence.room.migration.Migration
 import android.content.Context
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.store.entities.Report.Companion.TABLE_NAME
 
 @Database(entities = [(Report::class)], version = 2)
 abstract class ReportDatabase : RoomDatabase() {
@@ -24,8 +25,8 @@ abstract class ReportDatabase : RoomDatabase() {
               ReportDatabase::class.java, "Counter.db")
               .addMigrations(object : Migration(1, 2) {
                 override fun migrate(database: SupportSQLiteDatabase) {
-                  // just a dummy migration to get room going.
-                  //no-op
+                  // 1 to 2
+                  database.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN 'time_added' INTEGER;")
                 }
               }).build()
         }
