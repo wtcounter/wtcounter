@@ -72,7 +72,7 @@ class NotesFragment : Fragment() {
     super.onSaveInstanceState(outState)
     Logger.d("onSaveInstanceState")
   }
-  
+
   override fun onDestroyView() {
     super.onDestroyView()
     Logger.d("onDestroyView")
