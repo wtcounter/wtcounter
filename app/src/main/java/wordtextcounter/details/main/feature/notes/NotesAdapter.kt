@@ -12,9 +12,6 @@ import kotlinx.android.synthetic.main.item_note.view.tvWords
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
-/**
- * Created by hirak on 13/03/18.
- */
 class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
   private var reports: List<Report>? = null

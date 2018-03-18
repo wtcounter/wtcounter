@@ -18,10 +18,17 @@ abstract class BaseActivity : AppCompatActivity() {
   fun getLayout(): Int
 
   fun replaceFragment(fragment: Fragment) {
-    supportFragmentManager
-        .beginTransaction()
-        .replace(R.id.container, fragment)
-        .addToBackStack(null)
-        .commit()
+
+    val backStackName = fragment.javaClass.name
+
+    val fragmentPopped = supportFragmentManager.popBackStackImmediate(backStackName, 0)
+
+    if (!fragmentPopped && supportFragmentManager.findFragmentByTag(backStackName) == null) {
+      supportFragmentManager
+          .beginTransaction()
+          .replace(R.id.container, fragment)
+          .addToBackStack(backStackName)
+          .commit()
+    }
   }
 }

@@ -7,14 +7,10 @@ import android.support.v4.app.Fragment
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 
-
-/**
- * Created by hirak on 02/12/17.
- */
 abstract class BaseFragment : Fragment() {
 
-
   var imm: InputMethodManager? = null
+
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     retainInstance = true
@@ -37,7 +33,4 @@ abstract class BaseFragment : Fragment() {
     imm?.showSoftInputFromInputMethod(focus.windowToken, 0)
   }
 
-  override fun onDestroyView() {
-    super.onDestroyView()
-  }
 }

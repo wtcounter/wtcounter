@@ -12,7 +12,6 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.orhanobut.logger.Logger
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -31,8 +30,7 @@ import wordtextcounter.details.main.util.RxBus
 class InputFragment : BaseFragment() {
 
   lateinit var viewModel: InputViewModel
-
-
+  
   private val TEXT = "TEXT"
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +51,6 @@ class InputFragment : BaseFragment() {
     super.onViewCreated(view, savedInstanceState)
 
     etInput.setText(savedInstanceState?.getString(TEXT))
-
     etInput.setOnTouchListener { _, _ ->
       viewModel.onStartEdit()
       false
@@ -72,7 +69,6 @@ class InputFragment : BaseFragment() {
 
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
-    Logger.d("" + etInput.text.toString())
     outState.putString(TEXT, etInput.text.toString())
   }
 
