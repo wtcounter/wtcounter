@@ -2,7 +2,6 @@ package wordtextcounter.details.main.feature.notes
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -10,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.string
@@ -30,15 +28,8 @@ class NotesFragment : Fragment() {
   lateinit var notesAdapter: NotesAdapter
 
 
-  override fun onAttach(context: Context?) {
-    super.onAttach(context)
-    Logger.d("onAttach")
-  }
-
-
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    Logger.d("onCreate")
     viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }
@@ -51,7 +42,6 @@ class NotesFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    Logger.d("onViewCreated")
     RxBus.instance.send(ToolbarTitle(string.title_notes))
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
@@ -63,30 +53,6 @@ class NotesFragment : Fragment() {
     viewModel.getAllSavedNotes()
   }
 
-  override fun onActivityCreated(savedInstanceState: Bundle?) {
-    super.onActivityCreated(savedInstanceState)
-    Logger.d("onActivityCreated")
-  }
-
-  override fun onSaveInstanceState(outState: Bundle) {
-    super.onSaveInstanceState(outState)
-    Logger.d("onSaveInstanceState")
-  }
-
-  override fun onDestroyView() {
-    super.onDestroyView()
-    Logger.d("onDestroyView")
-  }
-
-  override fun onDestroy() {
-    super.onDestroy()
-    Logger.d("onDestroy")
-  }
-
-  override fun onDetach() {
-    super.onDetach()
-    Logger.d("onDetach")
-  }
 
   private fun handleViewState(viewState: ViewState) {
     if (viewState.reports != null) {

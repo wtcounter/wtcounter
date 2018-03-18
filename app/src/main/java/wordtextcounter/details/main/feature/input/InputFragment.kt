@@ -3,7 +3,6 @@ package wordtextcounter.details.main.feature.input
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
@@ -13,7 +12,6 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.orhanobut.logger.Logger
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.COLLAPSED
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState.EXPANDED
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -36,14 +34,9 @@ class InputFragment : BaseFragment() {
 
   private val TEXT = "TEXT"
 
-  override fun onAttach(context: Context?) {
-    super.onAttach(context)
-    Logger.d("onAttach")
-  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    Logger.d("onCreate")
     setHasOptionsMenu(true)
 
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
@@ -59,9 +52,7 @@ class InputFragment : BaseFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    Logger.d("onViewCreated")
     etInput.setText(savedInstanceState?.getString(TEXT))
-
     etInput.setOnTouchListener { _, _ ->
       viewModel.onStartEdit()
       false
@@ -78,30 +69,9 @@ class InputFragment : BaseFragment() {
 
   }
 
-  override fun onActivityCreated(savedInstanceState: Bundle?) {
-    super.onActivityCreated(savedInstanceState)
-    Logger.d("onActivityCreated")
-  }
-
-  override fun onDestroyView() {
-    super.onDestroyView()
-    Logger.d("onDestroyView")
-  }
-
-  override fun onDestroy() {
-    super.onDestroy()
-    Logger.d("onDestroy")
-  }
-
-  override fun onDetach() {
-    super.onDetach()
-    Logger.d("onDetach")
-  }
-
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
-    Logger.d("onCreate")
-    outState.putString(TEXT, etInput.text.toString())
+  g  outState.putString(TEXT, etInput.text.toString())
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
