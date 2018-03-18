@@ -27,7 +27,6 @@ class NotesFragment : Fragment() {
 
   lateinit var notesAdapter: NotesAdapter
 
-
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
@@ -52,7 +51,6 @@ class NotesFragment : Fragment() {
 
     viewModel.getAllSavedNotes()
   }
-
 
   private fun handleViewState(viewState: ViewState) {
     if (viewState.reports != null) {

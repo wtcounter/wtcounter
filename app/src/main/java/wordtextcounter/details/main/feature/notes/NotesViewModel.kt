@@ -4,7 +4,6 @@ import android.arch.lifecycle.MutableLiveData
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.entities.Report
 
-
 class NotesViewModel : BaseViewModel() {
 
   data class ViewState(val reports: List<Report>? = null)

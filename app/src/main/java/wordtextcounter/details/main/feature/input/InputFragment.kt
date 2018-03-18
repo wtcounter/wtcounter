@@ -30,10 +30,8 @@ import wordtextcounter.details.main.util.RxBus
 class InputFragment : BaseFragment() {
 
   lateinit var viewModel: InputViewModel
-
-
+  
   private val TEXT = "TEXT"
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -71,7 +69,7 @@ class InputFragment : BaseFragment() {
 
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
-  g  outState.putString(TEXT, etInput.text.toString())
+    outState.putString(TEXT, etInput.text.toString())
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
