@@ -2,23 +2,22 @@ package wordtextcounter.details.main.feature.main
 
 import android.os.Bundle
 import android.support.annotation.StringRes
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.roughike.bottombar.OnTabSelectListener
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.bottombar
+import kotlinx.android.synthetic.main.activity_main.clMainActivity
 import kotlinx.android.synthetic.main.activity_main.toolbar
-import wordtextcounter.details.main.BuildConfig
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.layout
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
 import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.dpToPx
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +27,31 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
         RxBus.instance.subscribe(ToolbarTitle::class.java,
                 Consumer {
-                    toolbar.setTitle(it.title)
+                    if (it.showBottom) {
+                        bottombar.visibility = VISIBLE
+                    } else {
+                        bottombar.visibility = GONE
+                    }
+                    if (it.showToolbar) {
+                        toolbar.visibility = VISIBLE
+                        toolbar.setTitle(it.title)
+                    } else {
+                        toolbar.visibility = GONE
+                    }
+
                 })
 
+
+        clMainActivity.viewTreeObserver.addOnGlobalLayoutListener {
+            val heightDiff =
+                    clMainActivity.rootView.height - clMainActivity.height
+            if (heightDiff > dpToPx(this@MainActivity,
+                            200F)) { // if more than 200 dp, it's probably a keyboard...
+                bottombar.visibility = GONE
+            } else {
+                bottombar.visibility = VISIBLE
+            }
+        }
         bottombar.setOnTabSelectListener(this)
 
         supportFragmentManager.addOnBackStackChangedListener {
@@ -63,5 +84,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     override fun getLayout() = layout.activity_main
 
-    class ToolbarTitle(@StringRes var title: Int)
+    class ToolbarTitle(@StringRes val title: Int, val showBottom: Boolean = true,
+            val showToolbar: Boolean = true)
 }
