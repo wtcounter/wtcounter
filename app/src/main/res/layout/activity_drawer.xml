@@ -21,7 +21,8 @@
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
       android:layout_gravity="start"
-      android:fitsSystemWindows="true"
+      android:layout_marginTop="?attr/actionBarSize"
+      android:fitsSystemWindows="false"
       app:menu="@menu/activity_drawer_drawer"
       />
 

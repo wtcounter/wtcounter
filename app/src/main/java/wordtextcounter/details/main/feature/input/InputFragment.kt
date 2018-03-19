@@ -102,10 +102,6 @@ class InputFragment : BaseFragment() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
-            R.id.confirm -> {
-                viewModel.onClickConfirm(etInput.text.toString())
-                true
-            }
             R.id.save -> {
                 viewModel.onClickSaveCurrent()
                 true

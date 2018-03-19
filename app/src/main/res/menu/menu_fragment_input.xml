@@ -9,13 +9,5 @@
       app:iconTint="@color/white"
       app:showAsAction="always"
       />
-
-  <item
-      android:id="@+id/confirm"
-      android:icon="@drawable/ic_check_black_40dp"
-      android:title="@string/confirm"
-      app:iconTint="@color/white"
-      app:showAsAction="always"
-      />
-
+  
 </menu>
