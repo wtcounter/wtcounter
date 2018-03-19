@@ -13,9 +13,10 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.R.string
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
-import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
+import wordtextcounter.details.main.feature.main.ToolbarTitle
 import wordtextcounter.details.main.util.RxBus
 
 /**
@@ -54,7 +55,9 @@ class InputFragment : BaseFragment() {
 
         etInput.onFocusChangeListener = View.OnFocusChangeListener { _, _ -> true }
 
-        RxBus.instance.send(ToolbarTitle(R.string.title_input, showToolbar = false))
+        RxBus.instance.send(
+                ToolbarTitle(string.title_input,
+                        showToolbar = false))
 //        slidingUpPanelLayout.panelHeight = 0
         viewModel.viewState.observe(this, Observer {
             it?.let { it1 -> handleViewState(it1) }
@@ -80,7 +83,8 @@ class InputFragment : BaseFragment() {
 
         if (viewState.showKeyboard) {
             RxBus.instance.send(
-                    ToolbarTitle(R.string.title_input, showToolbar = false, showBottom = false))
+                    ToolbarTitle(string.title_input,
+                            showToolbar = false, showBottom = false))
             showSoftKeyboard(etInput)
         } else {
 //            RxBus.instance.send(
