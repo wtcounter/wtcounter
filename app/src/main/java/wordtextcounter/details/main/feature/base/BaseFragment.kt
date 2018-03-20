@@ -6,10 +6,13 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseFragment : Fragment() {
 
   var imm: InputMethodManager? = null
+
+  val disposable = CompositeDisposable()
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
@@ -18,6 +21,10 @@ abstract class BaseFragment : Fragment() {
     imm = activity?.getSystemService(Service.INPUT_METHOD_SERVICE) as InputMethodManager
   }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        disposable.clear()
+    }
   protected fun hideSoftKeyboard() {
     val view = activity?.currentFocus
     if (view != null) {

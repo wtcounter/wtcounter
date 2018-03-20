@@ -12,7 +12,7 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.string
-import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
+import wordtextcounter.details.main.feature.main.ToolbarTitle
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
 import wordtextcounter.details.main.util.RxBus
 

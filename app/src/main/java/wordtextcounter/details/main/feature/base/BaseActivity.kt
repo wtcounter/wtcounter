@@ -10,12 +10,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(getLayout())
   }
 
-  @LayoutRes
-  protected abstract
-  fun getLayout(): Int
 
   fun replaceFragment(fragment: Fragment) {
 
