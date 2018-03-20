@@ -1,11 +1,13 @@
 package wordtextcounter.details.main.feature.notes
 
 import android.arch.lifecycle.MutableLiveData
+import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
+import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
+import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
 
-class NotesViewModel : BaseViewModel() {
-
+class NotesViewModel(private val reportDao : ReportDao) : BaseViewModel() {
   data class ViewState(val reports: List<Report>? = null)
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
@@ -17,15 +19,13 @@ class NotesViewModel : BaseViewModel() {
   fun getCurrentViewState() = viewState.value!!
 
   fun getAllSavedNotes() {
-    viewState.value = getCurrentViewState().copy(reports = getDummyReports())
-  }
-
-  private fun getDummyReports(): List<Report> {
-    val reports = mutableListOf<Report>()
-    reports.add(Report(1, "Name 1", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
-    reports.add(Report(2, "Name 2", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
-    reports.add(Report(3, "Name 3", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
-    reports.add(Report(4, "Name 4", "Date", "Words", "Characters", "Paragraphs", "Sentences", 1521236243340))
-    return reports
+    reportDao.getAllReports()
+        .subscribeOn(io())
+        .observeOn(mainThread())
+        .subscribe({
+          viewState.value = getCurrentViewState().copy(reports = it)
+        }, {
+          // TODO Implement this once we decide how to show errors.
+        })
   }
 }

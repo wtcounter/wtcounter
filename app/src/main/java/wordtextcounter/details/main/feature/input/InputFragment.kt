@@ -63,8 +63,6 @@ class InputFragment : BaseFragment() {
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
-
-
   }
 
   override fun onSaveInstanceState(outState: Bundle) {

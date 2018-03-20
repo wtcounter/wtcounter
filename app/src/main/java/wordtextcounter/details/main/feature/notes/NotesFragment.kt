@@ -14,6 +14,7 @@ import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.string
 import wordtextcounter.details.main.feature.main.MainActivity.ToolbarTitle
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
+import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.RxBus
 
 /**
@@ -23,13 +24,16 @@ import wordtextcounter.details.main.util.RxBus
  */
 class NotesFragment : Fragment() {
 
+  lateinit var viewModelFactory: NotesViewModelFactory
+  
   lateinit var viewModel: NotesViewModel
 
   lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+    viewModelFactory = NotesViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!)?.reportDao()!!)
+    viewModel = ViewModelProviders.of(this, viewModelFactory).get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }
 

@@ -40,7 +40,7 @@ class ReportFragment : BaseFragment() {
     super.onViewCreated(view, savedInstanceState)
     rvResult.adapter = resultAdapter
     compositeDisposable.add(
-        RxBus.instance.subscribe(ReportState::class.java, Consumer { setResult(it) }));
+        RxBus.instance.subscribe(ReportState::class.java, Consumer { setResult(it) }))
   }
 
   private fun setResult(reportState: ReportState) {

@@ -7,7 +7,6 @@ import wordtextcounter.details.main.store.entities.Report.Companion.TABLE_NAME
 
 @Entity(tableName = TABLE_NAME)
 data class Report(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int?,
     @ColumnInfo(name = "name") var name: String?,
     @ColumnInfo(name = "data_text") var dateText: String?,
     @ColumnInfo(name = "word") var words: String?,
@@ -15,6 +14,8 @@ data class Report(
     @ColumnInfo(name = "paragraph") var paragraphs: String?,
     @ColumnInfo(name = "sentence") var sentences: String?,
     @ColumnInfo(name = "time_added") var time_added: Long?) {
+  
+  @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int? = null
   
   companion object {
     internal const val TABLE_NAME = "Details"

@@ -32,6 +32,7 @@ android {
 ext {
   versions = [support           : "27.0.2",
               rxjava            : "2.1.7",
+              rxAndroid         : "2.0.2",
               androidArchVersion: "1.1.0",
               room              : "1.0.0",
               slidingpanel      : "3.4.0",
@@ -52,9 +53,12 @@ ext {
 
   rxjavaDeps = [rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava"]
 
+  rxAndroidDeps = [rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"]
+
   supportLibs = supportDeps.values()
   sdpLibs = sdpDeps.values()
   rxLibs = rxjavaDeps.values()
+  rxAnd = rxAndroidDeps.values()
 }
 
 dependencies {
@@ -63,6 +67,7 @@ dependencies {
   implementation supportLibs
   implementation sdpLibs
   implementation rxLibs
+  implementation rxAnd
   implementation 'com.android.support.constraint:constraint-layout:1.0.2'
   testImplementation 'junit:junit:4.12'
 
@@ -78,6 +83,9 @@ dependencies {
   implementation "android.arch.persistence.room:runtime:$versions.room"
   kapt "android.arch.persistence.room:compiler:$versions.room"
   implementation "android.arch.persistence.room:rxjava2:$versions.room"
+
+  //rxandroid
+  implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
 
   implementation "com.sothree.slidinguppanel:library:$versions.slidingpanel"
 
