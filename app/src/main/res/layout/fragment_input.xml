@@ -25,7 +25,7 @@
       app:layout_constraintTop_toTopOf="parent"
       tools:text="Input text sample"
       />
-  
+
 </android.support.constraint.ConstraintLayout>
 
 
