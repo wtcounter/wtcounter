@@ -74,10 +74,11 @@ class InputFragment : BaseFragment() {
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(TEXT, etInput.text.toString())
-    }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString(TEXT, etInput.text.toString())
+  }
 
     private fun handleViewState(viewState: ViewState) {
 
