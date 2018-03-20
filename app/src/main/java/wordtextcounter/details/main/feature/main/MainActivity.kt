@@ -8,7 +8,6 @@ import com.roughike.bottombar.OnTabSelectListener
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
-import kotlinx.android.synthetic.main.activity_main.toolbar
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
@@ -22,12 +21,12 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
 
         RxBus.instance.subscribe(ToolbarTitle::class.java,
                 Consumer {
                     Logger.d("Subscribe $it")
-                    toolbar.setTitle(it.title)
+//                    toolbar.setTitle(it.title)
                 })
 
         val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)

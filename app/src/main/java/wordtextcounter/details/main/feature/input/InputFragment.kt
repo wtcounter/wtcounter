@@ -5,19 +5,22 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.jakewharton.rxbinding2.widget.RxTextView
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.toolbar
+import kotlinx.android.synthetic.main.report_summary.ibSave
+import kotlinx.android.synthetic.main.report_summary.tvCharacters
+import kotlinx.android.synthetic.main.report_summary.tvSentences
+import kotlinx.android.synthetic.main.report_summary.tvWords
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.R.string
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
-import wordtextcounter.details.main.feature.main.ToolbarTitle
-import wordtextcounter.details.main.util.RxBus
+import java.util.concurrent.TimeUnit
 
 /**
  * A simple [Fragment] subclass.
@@ -32,8 +35,6 @@ class InputFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-
         viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
     }
 
@@ -43,22 +44,30 @@ class InputFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_input, container, false)
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        etInput.setText(savedInstanceState?.getString(TEXT))
-        etInput.setOnTouchListener { _, _ ->
-            viewModel.onStartEdit()
-            false
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+        ibSave.setOnClickListener {
+            viewModel.onClickSaveCurrent()
         }
 
-        etInput.onFocusChangeListener = View.OnFocusChangeListener { _, _ -> true }
+        etInput.setText(savedInstanceState?.getString(TEXT))
 
-        RxBus.instance.send(
-                ToolbarTitle(string.title_input,
-                        showToolbar = false))
-//        slidingUpPanelLayout.panelHeight = 0
+        disposable.add(RxTextView
+                .textChanges(etInput)
+                .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    viewModel.onClickConfirm(it.toString())
+                })
+
+//        RxBus.instance.send(
+//                ToolbarTitle(string.title_input,
+//                        showToolbar = false))
+
         viewModel.viewState.observe(this, Observer {
             it?.let { it1 -> handleViewState(it1) }
         })
@@ -70,44 +79,16 @@ class InputFragment : BaseFragment() {
         outState.putString(TEXT, etInput.text.toString())
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_fragment_input, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
     private fun handleViewState(viewState: ViewState) {
 
         if (viewState.showError) {
             showError(viewState.errorMessage)
         }
 
-        if (viewState.showKeyboard) {
-            RxBus.instance.send(
-                    ToolbarTitle(string.title_input,
-                            showToolbar = false, showBottom = false))
-            showSoftKeyboard(etInput)
-        } else {
-//            RxBus.instance.send(
-//                    ToolbarTitle(R.string.title_input, showToolbar = false, showBottom = true))
-            hideSoftKeyboard()
-        }
+        tvCharacters.text = viewState.noOfCharacters
+        tvWords.text = viewState.noOfWords
+        tvSentences.text = viewState.noOfSentences
 
-//        Handler().postDelayed(Runnable {
-//            if (viewState.showReport)
-//                slidingUpPanelLayout.panelState = EXPANDED
-//            else
-//                slidingUpPanelLayout.panelState = COLLAPSED
-//        }, if (viewState.showKeyboardDelay) 500 else 0)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
-            R.id.save -> {
-                viewModel.onClickSaveCurrent()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     companion object {

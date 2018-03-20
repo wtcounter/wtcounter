@@ -2,21 +2,17 @@ package wordtextcounter.details.main.feature.input
 
 import android.arch.lifecycle.MutableLiveData
 import wordtextcounter.details.main.feature.base.BaseViewModel
-import wordtextcounter.details.main.feature.input.ReportType.CHARS
-import wordtextcounter.details.main.feature.input.ReportType.PARAGRAPHS
-import wordtextcounter.details.main.feature.input.ReportType.SENTENCES
-import wordtextcounter.details.main.feature.input.ReportType.SIZE
-import wordtextcounter.details.main.feature.input.ReportType.WORDS
 import wordtextcounter.details.main.util.Helper
-import wordtextcounter.details.main.util.RxBus
 
 class InputViewModel : BaseViewModel() {
 
-    data class ViewState(val showKeyboard: Boolean = true,
+    data class ViewState(
             val showError: Boolean = false,
-            val showReport: Boolean = false,
-            val showKeyboardDelay: Boolean = false,
-            val errorMessage: String = "")
+            val errorMessage: String = "",
+            val noOfWords: String = "0",
+            val noOfCharacters: String = "0",
+            val noOfSentences: String = "0"
+    )
 
     data class Report(
             val value: String = "0",
@@ -36,30 +32,17 @@ class InputViewModel : BaseViewModel() {
     fun onClickConfirm(input: String) {
 
         if (input.trim().isEmpty()) {
-            viewState.value = currentViewState().copy(showError = true, errorMessage = "No input")
+            viewState.value = ViewState()
             return
         }
 
-        viewState.value = currentViewState().copy(showKeyboard = false, showReport = true,
-                showKeyboardDelay = currentViewState().showKeyboard, showError = false,
-                errorMessage = "")
-
-        val reports = mutableListOf<Report>()
-        reports.add(Report(input.length.toString(), CHARS))
-        reports.add(Report(Helper.countWords(input).toString(), WORDS))
-        reports.add(Report(Helper.countParagraphs(input).toString(), PARAGRAPHS))
-        reports.add(Report(Helper.calculateSize(input), SIZE))
-        reports.add(Report(Helper.countSentences(input).toString(), SENTENCES))
-
-        RxBus.instance.send(ReportState(reports))
+        viewState.value = currentViewState().copy(
+                noOfWords = Helper.countWords(input).toString(),
+                noOfCharacters = input.length.toString(),
+                noOfSentences = Helper.countSentences(input).toString())
 
     }
 
-    fun onStartEdit() {
-        if (!currentViewState().showKeyboard)
-            viewState.value = currentViewState().copy(showKeyboard = true, showReport = false,
-                    showKeyboardDelay = true)
-    }
 
     fun onClickSaveCurrent() {
 
