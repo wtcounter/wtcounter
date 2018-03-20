@@ -1,11 +1,13 @@
 package wordtextcounter.details.main.feature.main
 
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.view.ViewGroup
 import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.bottombar
+import kotlinx.android.synthetic.main.activity_main.container
 import kotlinx.android.synthetic.main.activity_main.toolbar
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseActivity
@@ -35,8 +37,16 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
             if (heightDiff > dpToPx(this@MainActivity,
                             200F)) { // if more than 200 dp, it's probably a keyboard...
                 bottombar.shySettings.hideBar()
+
+                val llp = container.layoutParams as ConstraintLayout.LayoutParams
+                llp.setMargins(0, 0, 0, 0)
+                container.layoutParams = llp
             } else {
                 bottombar.shySettings.showBar()
+                val llp = container.layoutParams as ConstraintLayout.LayoutParams
+                llp.setMargins(0, 0, 0, resources.getDimensionPixelOffset(R.dimen._48sdp))
+                container.layoutParams = llp
+
             }
         }
 
