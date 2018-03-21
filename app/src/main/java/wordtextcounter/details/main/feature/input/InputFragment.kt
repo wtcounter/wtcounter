@@ -35,7 +35,7 @@ class InputFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get( InputViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

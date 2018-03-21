@@ -34,7 +34,6 @@ ext {
               rxjava            : "2.1.7",
               androidArchVersion: "1.1.0",
               room              : "1.0.0",
-              slidingpanel      : "3.4.0",
               rxbinding         : "2.1.1",
               bottombar         : "2.3.1",
               logger            : "2.1.1",
@@ -79,8 +78,6 @@ dependencies {
   implementation "android.arch.persistence.room:runtime:$versions.room"
   kapt "android.arch.persistence.room:compiler:$versions.room"
   implementation "android.arch.persistence.room:rxjava2:$versions.room"
-
-  implementation "com.sothree.slidinguppanel:library:$versions.slidingpanel"
 
   implementation "com.roughike:bottom-bar:$versions.bottombar"
 
