@@ -29,78 +29,74 @@ import java.util.concurrent.TimeUnit
  */
 class InputFragment : BaseFragment() {
 
-    lateinit var viewModel: InputViewModel
+  lateinit var viewModel: InputViewModel
 
-    private val TEXT = "TEXT"
+  private val TEXT = "TEXT"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get( InputViewModel::class.java)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+  }
+
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+      savedInstanceState: Bundle?): View {
+    // Inflate the layout for this fragment
+    return inflater.inflate(R.layout.fragment_input, container, false)
+  }
+
+  @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+    ibSave.setOnClickListener {
+      viewModel.onClickSaveCurrent()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?): View {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_input, container, false)
-    }
+    etInput.setText(savedInstanceState?.getString(TEXT))
 
-    @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-
-        ibSave.setOnClickListener {
-            viewModel.onClickSaveCurrent()
-        }
-
-        etInput.setText(savedInstanceState?.getString(TEXT))
-
-        disposable.add(RxTextView
-                .textChanges(etInput)
-                .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    viewModel.onClickConfirm(it.toString())
-                })
-
-//        RxBus.instance.send(
-//                ToolbarTitle(string.title_input,
-//                        showToolbar = false))
-
-        viewModel.viewState.observe(this, Observer {
-            it?.let { it1 -> handleViewState(it1) }
+    disposable.add(RxTextView
+        .textChanges(etInput)
+        .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe {
+          viewModel.onClickConfirm(it.toString())
         })
 
+    viewModel.viewState.observe(this, Observer {
+      it?.let { it1 -> handleViewState(it1) }
+    })
+
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString(TEXT, etInput.text.toString())
+  }
+
+  private fun handleViewState(viewState: ViewState) {
+
+    if (viewState.showError) {
+      showError(viewState.errorMessage)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(TEXT, etInput.text.toString())
+    tvCharacters.text = viewState.noOfCharacters
+    tvWords.text = viewState.noOfWords
+    tvSentences.text = viewState.noOfSentences
+
+  }
+
+  companion object {
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment InputFragment.
+     */
+    fun newInstance(): InputFragment {
+      return InputFragment()
     }
-
-    private fun handleViewState(viewState: ViewState) {
-
-        if (viewState.showError) {
-            showError(viewState.errorMessage)
-        }
-
-        tvCharacters.text = viewState.noOfCharacters
-        tvWords.text = viewState.noOfWords
-        tvSentences.text = viewState.noOfSentences
-
-    }
-
-    companion object {
-
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @return A new instance of fragment InputFragment.
-         */
-        fun newInstance(): InputFragment {
-            return InputFragment()
-        }
-    }
+  }
 }// Required empty public constructor
