@@ -12,6 +12,8 @@ class InputViewModel : BaseViewModel() {
             val noOfWords: String = "0",
             val noOfCharacters: String = "0",
             val noOfSentences: String = "0",
+            val noOfParagraphs: String = "0",
+            val size: String = "0",
             val reportText: String = ""
     )
 
@@ -40,7 +42,9 @@ class InputViewModel : BaseViewModel() {
         viewState.value = currentViewState().copy(reportText = input,
                 noOfWords = Helper.countWords(input).toString(),
                 noOfCharacters = input.length.toString(),
-                noOfSentences = Helper.countSentences(input).toString())
+                noOfSentences = Helper.countSentences(input).toString(),
+                noOfParagraphs = Helper.countParagraphs(input).toString(),
+                size = Helper.calculateSize(input))
 
     }
 

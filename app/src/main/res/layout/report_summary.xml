@@ -38,6 +38,13 @@
     <include layout="@layout/report_folded"/>
   </com.ramotion.foldingcell.FoldingCell>
 
-
+  <ImageView
+      android:id="@+id/ivExpand"
+      android:layout_width="@dimen/_24sdp"
+      android:layout_height="@dimen/_24sdp"
+      android:src="@drawable/ic_expand_more_black_24dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      />
 </android.support.constraint.ConstraintLayout>
 
