@@ -69,7 +69,6 @@ class InputFragment : BaseFragment() {
       viewModel.onClickSaveCurrent()
     }
 
-
     ivExpand.setOnClickListener {
 
       if (foldingCell.isUnfolded) {
@@ -86,7 +85,7 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxTextView
         .textChanges(etInput)
-        .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+        .debounce(300, TimeUnit.MILLISECONDS) // default Scheduler is Computation
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
           viewModel.onClickConfirm(it.toString())

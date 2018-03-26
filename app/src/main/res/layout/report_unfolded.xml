@@ -38,6 +38,7 @@
         android:maxLines="4"
         android:minHeight="@dimen/_50sdp"
         android:textColor="@color/primaryLightColor"
+        android:textSize="@dimen/_14sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
