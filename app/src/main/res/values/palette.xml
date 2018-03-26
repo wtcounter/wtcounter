@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <color name="teal_800">#00695c</color>
+  <color name="teal_300">#439889</color>
+  <color name="deep_teal">#003d33</color>
+  <color name="orange_500">#ff9800</color>
+  <color name="amber_300">#ffc947</color>
+  <color name="orange_800">#c66900</color>
+  <color name="white">#ffffff</color>
+  <color name="grey_800">#323232</color>
+</resources>
