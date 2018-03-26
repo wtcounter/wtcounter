@@ -6,9 +6,12 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -69,6 +72,7 @@ class InputFragment : BaseFragment() {
       viewModel.onClickSaveCurrent()
     }
 
+    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.grey_200), 0)
     ivExpand.setOnClickListener {
 
       if (foldingCell.isUnfolded) {
@@ -106,6 +110,14 @@ class InputFragment : BaseFragment() {
 
     if (viewState.showError) {
       showError(viewState.errorMessage)
+    }
+
+    ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
+
+    if (!viewState.showExpand && foldingCell.isUnfolded) {
+      ivExpand.setImageDrawable(avLessToMore)
+      avLessToMore?.start()
+      foldingCell.fold(false)
     }
 
     tvCharacters.text = viewState.noOfCharacters

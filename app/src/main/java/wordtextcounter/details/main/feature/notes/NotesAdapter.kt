@@ -66,7 +66,16 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
         R.drawable.avd_less_to_more)
 
     init {
-      tvTitle.setOnClickListener {
+      ivExpand.setOnClickListener {
+
+        if (foldingCell.isUnfolded) {
+          ivExpand.setImageDrawable(avLessToMore)
+          avLessToMore?.start()
+        } else {
+          ivExpand.setImageDrawable(avMoreToLess)
+          avMoreToLess?.start()
+        }
+
         foldingCell.toggle(false)
       }
     }
@@ -84,18 +93,6 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
       tvSentencesContent.text = report.sentences
       tvParagraphsContent.text = report.paragraphs
 
-      ivExpand.setOnClickListener {
-
-        if (foldingCell.isUnfolded) {
-          ivExpand.setImageDrawable(avLessToMore)
-          avLessToMore?.start()
-        } else {
-          ivExpand.setImageDrawable(avMoreToLess)
-          avMoreToLess?.start()
-        }
-
-        foldingCell.toggle(false)
-      }
 //      tvSizeContent.text = report.size
     }
   }
