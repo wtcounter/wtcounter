@@ -18,7 +18,7 @@
 
     <android.support.design.widget.CollapsingToolbarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_height="wrap_content"
         app:titleEnabled="false"
         >
 
@@ -29,7 +29,7 @@
           />
       <android.support.v7.widget.CardView
           android:layout_width="match_parent"
-          android:layout_height="@dimen/_80sdp"
+          android:layout_height="wrap_content"
           android:layout_margin="@dimen/_10sdp"
           app:cardCornerRadius="@dimen/_5sdp"
           >
