@@ -11,7 +11,8 @@ class InputViewModel : BaseViewModel() {
             val errorMessage: String = "",
             val noOfWords: String = "0",
             val noOfCharacters: String = "0",
-            val noOfSentences: String = "0"
+            val noOfSentences: String = "0",
+            val reportText: String = ""
     )
 
     data class Report(
@@ -36,13 +37,12 @@ class InputViewModel : BaseViewModel() {
             return
         }
 
-        viewState.value = currentViewState().copy(
+        viewState.value = currentViewState().copy(reportText = input,
                 noOfWords = Helper.countWords(input).toString(),
                 noOfCharacters = input.length.toString(),
                 noOfSentences = Helper.countSentences(input).toString())
 
     }
-
 
     fun onClickSaveCurrent() {
 

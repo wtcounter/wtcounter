@@ -18,6 +18,10 @@ import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
 import kotlinx.android.synthetic.main.report_summary.foldingCell
 import kotlinx.android.synthetic.main.report_summary.ibSave
+import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
+import kotlinx.android.synthetic.main.report_unfolded.tvReport
+import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
+import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
@@ -89,6 +93,11 @@ class InputFragment : BaseFragment() {
         tvWords.text = viewState.noOfWords
         tvSentences.text = viewState.noOfSentences
 
+
+        tvCharactersContent.text = viewState.noOfCharacters
+        tvWordsContent.text = viewState.noOfWords
+        tvSentencesContent.text = viewState.noOfSentences
+        tvReport.text = viewState.reportText
     }
 
     companion object {
