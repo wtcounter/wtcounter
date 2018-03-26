@@ -72,7 +72,7 @@ class InputFragment : BaseFragment() {
       viewModel.onClickSaveCurrent()
     }
 
-    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.grey_200), 0)
+    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
 
       if (foldingCell.isUnfolded) {
