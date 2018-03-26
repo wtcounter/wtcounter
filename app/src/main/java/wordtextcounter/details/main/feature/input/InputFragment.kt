@@ -4,24 +4,27 @@ import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.toolbar
-import kotlinx.android.synthetic.main.item_note.tvWords
 import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
+import kotlinx.android.synthetic.main.report_folded.tvWords
 import kotlinx.android.synthetic.main.report_summary.foldingCell
 import kotlinx.android.synthetic.main.report_summary.ibSave
 import kotlinx.android.synthetic.main.report_summary.ivExpand
 import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
 import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
-import kotlinx.android.synthetic.main.report_unfolded.tvReport
+import kotlinx.android.synthetic.main.report_unfolded.tvReportText
 import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
 import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
@@ -30,6 +33,7 @@ import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import java.util.concurrent.TimeUnit
 
+
 /**
  * A simple [Fragment] subclass.
  * Use the [InputFragment.newInstance] factory method to
@@ -37,84 +41,100 @@ import java.util.concurrent.TimeUnit
  */
 class InputFragment : BaseFragment() {
 
-    lateinit var viewModel: InputViewModel
+  lateinit var viewModel: InputViewModel
 
-    private val TEXT = "TEXT"
+  private val TEXT = "TEXT"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+  }
+
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+      savedInstanceState: Bundle?): View {
+    // Inflate the layout for this fragment
+    return inflater.inflate(R.layout.fragment_input, container, false)
+  }
+
+  @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+    ibSave.setOnClickListener {
+      viewModel.onClickSaveCurrent()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?): View {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_input, container, false)
+    val animatedVector = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
+
+
+
+    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.secondaryColor), 0)
+    ivExpand.setOnClickListener {
+
+      ivExpand.setImageDrawable(animatedVector)
+      animatedVector?.start()
+      //            if (foldingCell.isUnfolded) {
+//                ivExpand.setImageResource(R.drawable.ic_expand_more_black_24dp)
+//            } else {
+//                ivExpand.setImageResource(R.drawable.ic_expand_less_black_24dp)
+//            }
+      val animation = AnimationUtils.loadAnimation(context, R.anim.rotate)
+      ivExpand.startAnimation(animation)
+
+      foldingCell.toggle(false)
     }
+    etInput.setText(savedInstanceState?.getString(TEXT))
 
-    @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-
-        ibSave.setOnClickListener {
-            viewModel.onClickSaveCurrent()
-        }
-
-        ivExpand.setOnClickListener {
-            foldingCell.toggle(false)
-        }
-        etInput.setText(savedInstanceState?.getString(TEXT))
-
-        disposable.add(RxTextView
-                .textChanges(etInput)
-                .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    viewModel.onClickConfirm(it.toString())
-                })
-
-        viewModel.viewState.observe(this, Observer {
-            it?.let { it1 -> handleViewState(it1) }
+    disposable.add(RxTextView
+        .textChanges(etInput)
+        .debounce(400, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe {
+          viewModel.onClickConfirm(it.toString())
         })
 
+    viewModel.viewState.observe(this, Observer {
+      it?.let { it1 -> handleViewState(it1) }
+    })
+
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString(TEXT, etInput.text.toString())
+  }
+
+  private fun handleViewState(viewState: ViewState) {
+
+    if (viewState.showError) {
+      showError(viewState.errorMessage)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(TEXT, etInput.text.toString())
+    tvCharacters.text = viewState.noOfCharacters
+    tvWords.text = viewState.noOfWords
+    tvSentences.text = viewState.noOfSentences
+
+
+    tvCharactersContent.text = viewState.noOfCharacters
+    tvWordsContent.text = viewState.noOfWords
+    tvSentencesContent.text = viewState.noOfSentences
+    tvReportText.text = viewState.reportText
+    tvParagraphsContent.text = viewState.noOfParagraphs
+    tvSizeContent.text = viewState.size
+  }
+
+  companion object {
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment InputFragment.
+     */
+    fun newInstance(): InputFragment {
+      return InputFragment()
     }
-
-    private fun handleViewState(viewState: ViewState) {
-
-        if (viewState.showError) {
-            showError(viewState.errorMessage)
-        }
-
-        tvCharacters.text = viewState.noOfCharacters
-        tvWords.text = viewState.noOfWords
-        tvSentences.text = viewState.noOfSentences
-
-
-        tvCharactersContent.text = viewState.noOfCharacters
-        tvWordsContent.text = viewState.noOfWords
-        tvSentencesContent.text = viewState.noOfSentences
-        tvReport.text = viewState.reportText
-        tvParagraphsContent.text = viewState.noOfParagraphs
-        tvSizeContent.text = viewState.size
-    }
-
-    companion object {
-
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @return A new instance of fragment InputFragment.
-         */
-        fun newInstance(): InputFragment {
-            return InputFragment()
-        }
-    }
+  }
 }// Required empty public constructor

@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="gone"
-    tools:showIn="@layout/report_summary"
+    tools:showIn="@layout/item_note"
     >
 
   <android.support.constraint.ConstraintLayout
       android:id="@+id/clContent"
       android:layout_width="0dp"
-      android:layout_height="@dimen/_200sdp"
+      android:layout_height="@dimen/_160sdp"
       android:layout_marginBottom="@dimen/_20sdp"
       android:layout_marginEnd="@dimen/_30sdp"
       android:layout_marginLeft="@dimen/_20sdp"
@@ -26,20 +26,6 @@
       app:layout_constraintRight_toRightOf="parent"
       >
 
-    <TextView
-        android:id="@+id/tvReportText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="4"
-        android:minHeight="@dimen/_50sdp"
-        android:textColor="@color/primaryLightColor"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="Hello world whats up"
-        />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/clMainReport"
@@ -49,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@id/clExtraReport"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvReportText"
+        app:layout_constraintTop_toTopOf="parent"
         >
       <TextView
           android:id="@+id/tvCharactersLabelContent"

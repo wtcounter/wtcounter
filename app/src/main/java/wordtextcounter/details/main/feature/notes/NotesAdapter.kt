@@ -4,11 +4,12 @@ import android.support.v7.widget.RecyclerView.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.item_note.view.tvCharacters
+import kotlinx.android.synthetic.main.item_note.view.foldingCell
 import kotlinx.android.synthetic.main.item_note.view.tvDate
-import kotlinx.android.synthetic.main.item_note.view.tvParagraphs
 import kotlinx.android.synthetic.main.item_note.view.tvTitle
-import kotlinx.android.synthetic.main.item_note.view.tvWords
+import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
+import kotlinx.android.synthetic.main.report_folded.view.tvWords
+import kotlinx.android.synthetic.main.report_unfolded.view.tvParagraphsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
@@ -42,7 +43,14 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     private val tvDate = itemView.tvDate
     private val tvCharacters = itemView.tvCharacters
     private val tvWords = itemView.tvWords
-    private val tvParagraphs = itemView.tvParagraphs
+    private val tvParagraphs = itemView.tvParagraphsContent
+    private val foldingCell = itemView.foldingCell
+
+    init {
+      tvTitle.setOnClickListener {
+        foldingCell.toggle(false)
+      }
+    }
 
     fun bindTo(report: Report) {
       tvTitle.text = report.name
@@ -51,6 +59,5 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
       tvWords.text = report.words
       tvParagraphs.text = report.paragraphs
     }
-
   }
 }
