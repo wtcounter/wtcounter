@@ -8,8 +8,13 @@ import kotlinx.android.synthetic.main.item_note.view.foldingCell
 import kotlinx.android.synthetic.main.item_note.view.tvDate
 import kotlinx.android.synthetic.main.item_note.view.tvTitle
 import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
+import kotlinx.android.synthetic.main.report_folded.view.tvSentences
 import kotlinx.android.synthetic.main.report_folded.view.tvWords
+import kotlinx.android.synthetic.main.report_unfolded.view.tvCharactersContent
 import kotlinx.android.synthetic.main.report_unfolded.view.tvParagraphsContent
+import kotlinx.android.synthetic.main.report_unfolded.view.tvSentencesContent
+import kotlinx.android.synthetic.main.report_unfolded.view.tvSizeContent
+import kotlinx.android.synthetic.main.report_unfolded.view.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
@@ -43,7 +48,13 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     private val tvDate = itemView.tvDate
     private val tvCharacters = itemView.tvCharacters
     private val tvWords = itemView.tvWords
-    private val tvParagraphs = itemView.tvParagraphsContent
+    private val tvSentences = itemView.tvSentences
+
+    private val tvCharactersContent = itemView.tvCharactersContent
+    private val tvWordsContent = itemView.tvWordsContent
+    private val tvSentencesContent = itemView.tvSentencesContent
+    private val tvParagraphsContent = itemView.tvParagraphsContent
+    private val tvSizeContent = itemView.tvSizeContent
     private val foldingCell = itemView.foldingCell
 
     init {
@@ -55,9 +66,16 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     fun bindTo(report: Report) {
       tvTitle.text = report.name
       tvDate.text = report.dateText
+
       tvCharacters.text = report.characters
       tvWords.text = report.words
-      tvParagraphs.text = report.paragraphs
+      tvSentences.text = report.sentences
+
+      tvCharactersContent.text = report.characters
+      tvWordsContent.text = report.words
+      tvSentencesContent.text = report.sentences
+      tvParagraphsContent.text = report.paragraphs
+//      tvSizeContent.text = report.size
     }
   }
 }

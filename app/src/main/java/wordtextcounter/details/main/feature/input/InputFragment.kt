@@ -6,12 +6,10 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -66,22 +64,23 @@ class InputFragment : BaseFragment() {
       viewModel.onClickSaveCurrent()
     }
 
-    val animatedVector = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
+    val avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
+    val avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
 
 
-
-    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.secondaryColor), 0)
+//    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.secondaryColor), 0)
     ivExpand.setOnClickListener {
 
-      ivExpand.setImageDrawable(animatedVector)
-      animatedVector?.start()
-      //            if (foldingCell.isUnfolded) {
-//                ivExpand.setImageResource(R.drawable.ic_expand_more_black_24dp)
-//            } else {
-//                ivExpand.setImageResource(R.drawable.ic_expand_less_black_24dp)
-//            }
-      val animation = AnimationUtils.loadAnimation(context, R.anim.rotate)
-      ivExpand.startAnimation(animation)
+      if (foldingCell.isUnfolded) {
+        ivExpand.setImageDrawable(avLessToMore)
+        avLessToMore?.start()
+      } else {
+        ivExpand.setImageDrawable(avMoreToLess)
+        avMoreToLess?.start()
+      }
+
+//      val animation = AnimationUtils.loadAnimation(context, R.anim.rotate)
+//      ivExpand.startAnimation(animation)
 
       foldingCell.toggle(false)
     }
