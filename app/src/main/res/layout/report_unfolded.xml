@@ -13,17 +13,19 @@
       android:id="@+id/clContent"
       android:layout_width="0dp"
       android:layout_height="@dimen/_200sdp"
-      android:layout_marginBottom="@dimen/_20sdp"
+      android:layout_marginBottom="@dimen/_10sdp"
       android:layout_marginEnd="@dimen/_30sdp"
       android:layout_marginLeft="@dimen/_20sdp"
       android:layout_marginRight="@dimen/_30sdp"
       android:layout_marginStart="@dimen/_20sdp"
-      android:layout_marginTop="@dimen/_20sdp"
+      android:layout_marginTop="@dimen/_10sdp"
       android:clipChildren="false"
       android:clipToPadding="false"
       android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
       >
 
     <TextView
@@ -38,6 +40,7 @@
         android:textColor="@color/primaryLightColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Hello world whats up"
         />
 

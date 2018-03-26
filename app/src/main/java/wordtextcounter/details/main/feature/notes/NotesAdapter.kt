@@ -1,10 +1,12 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v7.widget.RecyclerView.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_note.view.foldingCell
+import kotlinx.android.synthetic.main.item_note.view.ivExpand
 import kotlinx.android.synthetic.main.item_note.view.tvDate
 import kotlinx.android.synthetic.main.item_note.view.tvTitle
 import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
@@ -56,6 +58,12 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     private val tvParagraphsContent = itemView.tvParagraphsContent
     private val tvSizeContent = itemView.tvSizeContent
     private val foldingCell = itemView.foldingCell
+    private val ivExpand = itemView.ivExpand
+
+    private val avMoreToLess = AnimatedVectorDrawableCompat.create(itemView.context,
+        R.drawable.avd_more_to_less)
+    private val avLessToMore = AnimatedVectorDrawableCompat.create(itemView.context,
+        R.drawable.avd_less_to_more)
 
     init {
       tvTitle.setOnClickListener {
@@ -75,6 +83,19 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
       tvWordsContent.text = report.words
       tvSentencesContent.text = report.sentences
       tvParagraphsContent.text = report.paragraphs
+
+      ivExpand.setOnClickListener {
+
+        if (foldingCell.isUnfolded) {
+          ivExpand.setImageDrawable(avLessToMore)
+          avLessToMore?.start()
+        } else {
+          ivExpand.setImageDrawable(avMoreToLess)
+          avMoreToLess?.start()
+        }
+
+        foldingCell.toggle(false)
+      }
 //      tvSizeContent.text = report.size
     }
   }

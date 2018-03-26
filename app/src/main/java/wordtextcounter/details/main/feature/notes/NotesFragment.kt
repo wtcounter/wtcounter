@@ -41,7 +41,7 @@ class NotesFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    RxBus.instance.send(ToolbarTitle(string.title_notes))
+
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
     rvNotes.adapter = notesAdapter

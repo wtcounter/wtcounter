@@ -39,13 +39,18 @@ import java.util.concurrent.TimeUnit
  */
 class InputFragment : BaseFragment() {
 
-  lateinit var viewModel: InputViewModel
+  private lateinit var viewModel: InputViewModel
 
   private val TEXT = "TEXT"
+
+  private var avMoreToLess: AnimatedVectorDrawableCompat? = null
+  private var avLessToMore: AnimatedVectorDrawableCompat? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+    avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
+    avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -64,11 +69,7 @@ class InputFragment : BaseFragment() {
       viewModel.onClickSaveCurrent()
     }
 
-    val avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
-    val avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
 
-
-//    foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.secondaryColor), 0)
     ivExpand.setOnClickListener {
 
       if (foldingCell.isUnfolded) {
@@ -78,9 +79,6 @@ class InputFragment : BaseFragment() {
         ivExpand.setImageDrawable(avMoreToLess)
         avMoreToLess?.start()
       }
-
-//      val animation = AnimationUtils.loadAnimation(context, R.anim.rotate)
-//      ivExpand.startAnimation(animation)
 
       foldingCell.toggle(false)
     }
@@ -123,6 +121,7 @@ class InputFragment : BaseFragment() {
     tvParagraphsContent.text = viewState.noOfParagraphs
     tvSizeContent.text = viewState.size
   }
+
 
   companion object {
 
