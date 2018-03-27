@@ -28,6 +28,7 @@ abstract class ReportDatabase : RoomDatabase() {
                   // 1 to 2
                   database.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN 'time_added' INTEGER;")
                 }
+                
               }).build()
         }
       }

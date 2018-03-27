@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:showIn="@layout/fragment_input"
+    >
+
+  <ImageButton
+      android:id="@+id/ibSave"
+      android:layout_width="@dimen/_32sdp"
+      android:layout_height="@dimen/_32sdp"
+      android:background="@null"
+      android:contentDescription="@string/save"
+      android:src="@drawable/ic_save_black_32dp"
+      android:tint="@color/secondaryTextColor"
+      app:layout_constraintRight_toRightOf="parent"
+      />
+
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:gravity="center"
+      android:text="@string/start_typing"
+      android:textColor="@color/secondaryTextColor"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginBottom="@dimen/_20sdp"
+      android:layout_marginEnd="@dimen/_30sdp"
+      android:layout_marginLeft="@dimen/_20sdp"
+      android:layout_marginRight="@dimen/_30sdp"
+      android:layout_marginStart="@dimen/_20sdp"
+      android:layout_marginTop="@dimen/_20sdp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      >
+    <TextView
+        android:id="@+id/tvCharactersLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/characters"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvCharacters"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvWords"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvCharacters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvWords"
+        app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+        tools:text="2000"
+        />
+
+
+    <TextView
+        android:id="@+id/tvWordsLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/words"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvWords"
+        app:layout_constraintLeft_toRightOf="@id/tvCharactersLabel"
+        app:layout_constraintRight_toLeftOf="@id/tvSentencesLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvWords"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tvCharacters"
+        app:layout_constraintRight_toLeftOf="@id/tvSentences"
+        app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+        tools:text="212"
+        />
+
+
+    <TextView
+        android:id="@+id/tvSentencesLabel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/sentences"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvSentences"
+        app:layout_constraintLeft_toRightOf="@id/tvWordsLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvSentences"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tvWords"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+        tools:text="12"
+        />
+
+  </android.support.constraint.ConstraintLayout>
+
+
+  <!--<TextView-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:layout_margin="@dimen/_3sdp"-->
+      <!--android:text="@string/see_more"-->
+      <!--android:textColor="@color/secondaryTextColor"-->
+      <!--app:layout_constraintBottom_toBottomOf="parent"-->
+      <!--app:layout_constraintRight_toRightOf="parent"-->
+      <!--/>-->
+
+</android.support.constraint.ConstraintLayout>
+
