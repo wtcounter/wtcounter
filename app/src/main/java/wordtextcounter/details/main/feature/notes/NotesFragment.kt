@@ -11,10 +11,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.R.string
-import wordtextcounter.details.main.feature.main.ToolbarTitle
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
-import wordtextcounter.details.main.util.RxBus
 
 /**
  * A simple [Fragment] subclass.
@@ -41,7 +38,7 @@ class NotesFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    RxBus.instance.send(ToolbarTitle(string.title_notes))
+
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
     rvNotes.adapter = notesAdapter

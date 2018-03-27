@@ -4,8 +4,12 @@ import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
+import android.support.v7.app.AppCompatDelegate
+
+
 
 class App : Application() {
+
 
   override fun onCreate() {
     super.onCreate()
