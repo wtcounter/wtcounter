@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.R.string
@@ -28,19 +29,30 @@ class NotesFragment : Fragment() {
   lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
+    Logger.d("onCreate")
     super.onCreate(savedInstanceState)
-    viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+    viewModel = ViewModelProviders.of(this)
+        .get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-      savedInstanceState: Bundle?): View? {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View? {
     // Inflate the layout for this fragment
+    Logger.d("onCreateView")
     return inflater.inflate(R.layout.fragment_notes, container, false)
   }
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+  override fun onViewCreated(
+    view: View,
+    savedInstanceState: Bundle?
+  ) {
     super.onViewCreated(view, savedInstanceState)
+    Logger.d("onViewCreated")
+
     RxBus.instance.send(ToolbarTitle(string.title_notes))
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
@@ -50,6 +62,21 @@ class NotesFragment : Fragment() {
     })
 
     viewModel.getAllSavedNotes()
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    Logger.d("onSaveInstanceState")
+  }
+
+  override fun onDestroyView() {
+    super.onDestroyView()
+    Logger.d("onDestroyView")
+  }
+
+  override fun onDestroy() {
+    super.onDestroy()
+    Logger.d("onDestroy")
   }
 
   private fun handleViewState(viewState: ViewState) {
