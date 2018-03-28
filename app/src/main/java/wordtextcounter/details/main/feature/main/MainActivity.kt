@@ -23,25 +23,19 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     setContentView(R.layout.activity_main)
     Logger.d("onCreate $savedInstanceState")
 
-    if (savedInstanceState != null) {
-      bottombar.onRestoreInstanceState(savedInstanceState)
-      bottombar.setOnTabSelectListener(this, false)
-    } else {
-      bottombar.setOnTabSelectListener(this)
-    }
 
-
+    bottombar.setOnTabSelectListener(this, savedInstanceState == null)
 
     RxBus.instance.subscribe(ToolbarTitle::class.java,
         Consumer {
-          Logger.d("Subscribe $it")
+          //           Logger.d("Subscribe $it")
 //                    toolbar.setTitle(it.title)
         })
 
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
       val heightDiff =
-        activityRootView.rootView.height - activityRootView.height
+          activityRootView.rootView.height - activityRootView.height
       if (heightDiff > dpToPx(
               this@MainActivity,
               200F
@@ -63,6 +57,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     supportFragmentManager.addOnBackStackChangedListener {
       val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
+      Logger.d("Backstack change listener $currentFragment")
       bottombar.removeOnTabSelectListener()
       if (currentFragment is InputFragment) {
         bottombar.selectTabWithId(R.id.tab_input)
@@ -72,6 +67,12 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       bottombar.setOnTabSelectListener(this, false)
     }
 
+  }
+
+  override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    bottombar.removeOnTabSelectListener()
+    super.onRestoreInstanceState(savedInstanceState)
+    bottombar.setOnTabSelectListener(this, false)
   }
 
   override fun onSaveInstanceState(outState: Bundle?) {

@@ -19,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity() {
     Logger.d("Replace fragment $fragment")
     val fragmentPopped = supportFragmentManager.popBackStackImmediate(backStackName, 0)
 
-    Logger.d("Fragment popped $fragmentPopped")
+//    Logger.d("Fragment popped $fragmentPopped")
     if (!fragmentPopped && supportFragmentManager.findFragmentByTag(backStackName) == null) {
       supportFragmentManager
           .beginTransaction()

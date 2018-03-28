@@ -29,7 +29,7 @@ class NotesFragment : Fragment() {
   lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    Logger.d("onCreate")
+//    Logger.d("onCreate")
     super.onCreate(savedInstanceState)
     viewModel = ViewModelProviders.of(this)
         .get(NotesViewModel::class.java)
@@ -42,7 +42,7 @@ class NotesFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     // Inflate the layout for this fragment
-    Logger.d("onCreateView")
+//    Logger.d("onCreateView")
     return inflater.inflate(R.layout.fragment_notes, container, false)
   }
 
@@ -51,7 +51,7 @@ class NotesFragment : Fragment() {
     savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
-    Logger.d("onViewCreated")
+//    Logger.d("onViewCreated")
 
     RxBus.instance.send(ToolbarTitle(string.title_notes))
 
@@ -66,17 +66,17 @@ class NotesFragment : Fragment() {
 
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
-    Logger.d("onSaveInstanceState")
+//    Logger.d("onSaveInstanceState")
   }
 
   override fun onDestroyView() {
     super.onDestroyView()
-    Logger.d("onDestroyView")
+//    Logger.d("onDestroyView")
   }
 
   override fun onDestroy() {
     super.onDestroy()
-    Logger.d("onDestroy")
+//    Logger.d("onDestroy")
   }
 
   private fun handleViewState(viewState: ViewState) {
