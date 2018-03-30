@@ -88,4 +88,8 @@ dependencies {
   implementation "com.orhanobut:logger:$versions.logger"
 
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
+
+  implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+  implementation 'androidx.core:core-ktx:0.2'
 }
