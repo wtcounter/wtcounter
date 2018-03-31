@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.AppCompatEditText
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import android.view.ViewGroup
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.fabSave
 import kotlinx.android.synthetic.main.fragment_input.toolbar
@@ -33,8 +35,12 @@ import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
+import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
+import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.NoEvent
+import wordtextcounter.details.main.util.RxBus
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
@@ -44,6 +50,7 @@ import java.util.concurrent.TimeUnit.MILLISECONDS
  * create an instance of this fragment.
  */
 class InputFragment : BaseFragment() {
+
   private lateinit var viewModel: InputViewModel
 
   private val TEXT = "TEXT"
@@ -110,15 +117,17 @@ class InputFragment : BaseFragment() {
 
       foldingCell.toggle(false)
     }
-    etInput.setText(savedInstanceState?.getString(TEXT))
+//    etInput.setText(savedInstanceState?.getString(TEXT))
+
 
     disposable.add(RxTextView
         .textChanges(etInput)
         .debounce(300, MILLISECONDS) // default Scheduler is Computation
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
-          viewModel.onClickConfirm(it.toString())
+          viewModel.calculateInput(it.toString())
         })
+
 
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
@@ -126,6 +135,35 @@ class InputFragment : BaseFragment() {
 
   }
 
+  override fun onStart() {
+    super.onStart()
+
+    disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
+
+      RxBus.send(NoEvent)
+      if (etInput.text.trim().isNotEmpty()) {
+        AlertDialog.Builder(context!!)
+            .setTitle(R.string.edit_alert_title)
+            .setMessage(R.string.edit_alert_desc)
+            .setPositiveButton(R.string.yes,
+                { dialog, which ->
+                  etInput.setText(it.report.dataText)
+                  dialog.dismiss()
+                })
+            .setNegativeButton(R.string.no,
+                { dialog, which -> dialog.dismiss() })
+            .setIcon(R.drawable.ic_warning_black_24dp)
+            .setOnCancelListener {
+              viewModel.cancelEdit()
+            }
+            .create().show()
+      } else {
+        etInput.setText(it.report.dataText)
+
+      }
+    }))
+
+  }
 
   private fun handleViewState(viewState: ViewState) {
 
@@ -134,6 +172,13 @@ class InputFragment : BaseFragment() {
     }
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
+
+
+    if (viewState.showExpand) {
+      fabSave.show()
+    } else {
+      fabSave.hide()
+    }
 
     if (!viewState.showExpand && foldingCell.isUnfolded) {
       ivExpand.setImageDrawable(avLessToMore)
@@ -153,6 +198,9 @@ class InputFragment : BaseFragment() {
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
   }
+
+  override val baseViewModel: BaseViewModel
+    get() = viewModel
 
 
   companion object {
