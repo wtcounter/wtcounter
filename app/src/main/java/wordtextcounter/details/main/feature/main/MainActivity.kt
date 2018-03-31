@@ -19,6 +19,10 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     setContentView(R.layout.activity_main)
 
+
+    bottombar.setOnTabSelectListener(this, savedInstanceState == null)
+
+
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
       val heightDiff =
@@ -52,6 +56,17 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       bottombar.setOnTabSelectListener(this, false)
     }
 
+  }
+
+  override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    bottombar.removeOnTabSelectListener()
+    super.onRestoreInstanceState(savedInstanceState)
+    bottombar.setOnTabSelectListener(this, false)
+  }
+
+  override fun onSaveInstanceState(outState: Bundle?) {
+    bottombar.onSaveInstanceState()
+    super.onSaveInstanceState(outState)
   }
 
   override fun onBackPressed() {

@@ -100,7 +100,6 @@ class InputFragment : BaseFragment() {
 
     foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
-
       if (foldingCell.isUnfolded) {
         ivExpand.setImageDrawable(avLessToMore)
         avLessToMore?.start()
@@ -125,11 +124,6 @@ class InputFragment : BaseFragment() {
       it?.let { it1 -> handleViewState(it1) }
     })
 
-  }
-
-  override fun onSaveInstanceState(outState: Bundle) {
-    super.onSaveInstanceState(outState)
-    outState.putString(TEXT, etInput.text.toString())
   }
 
 

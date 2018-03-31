@@ -16,7 +16,7 @@ class App : Application() {
   override fun onCreate() {
     super.onCreate()
     val formatStrategy = PrettyFormatStrategy.newBuilder()
-        .methodCount(5)         // (Optional) How many method line to show. Default 2
+        .methodCount(7)       // (Optional) How many method line to show. Default 2
         .tag(
             BuildConfig.APPLICATION_ID)   // (Optional) Global tag for every log. Default PRETTY_LOGGER
         .build()

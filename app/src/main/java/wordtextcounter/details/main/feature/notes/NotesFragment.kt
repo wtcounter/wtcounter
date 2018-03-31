@@ -22,27 +22,33 @@ import wordtextcounter.details.main.store.ReportDatabase
 class NotesFragment : Fragment() {
 
   private lateinit var viewModelFactory: NotesViewModelFactory
-  
+
   private lateinit var viewModel: NotesViewModel
 
   private lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModelFactory = NotesViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
+    viewModelFactory = NotesViewModelFactory(
+        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
     viewModel = ViewModelProviders.of(this, viewModelFactory).get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-      savedInstanceState: Bundle?): View? {
+  override fun onCreateView(
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_notes, container, false)
   }
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+  override fun onViewCreated(
+      view: View,
+      savedInstanceState: Bundle?
+  ) {
     super.onViewCreated(view, savedInstanceState)
-
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
     rvNotes.adapter = notesAdapter
@@ -52,6 +58,7 @@ class NotesFragment : Fragment() {
 
     viewModel.getAllSavedNotes()
   }
+
 
   private fun handleViewState(viewState: ViewState) {
     if (viewState.reports != null) {
