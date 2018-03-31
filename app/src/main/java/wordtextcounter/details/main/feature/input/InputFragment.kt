@@ -3,7 +3,6 @@ package wordtextcounter.details.main.feature.input
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.DialogInterface
 import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
@@ -153,7 +152,8 @@ class InputFragment : BaseFragment() {
                   dialog.dismiss()
                 })
             .setNegativeButton(R.string.no,
-                DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+                { dialog, which -> dialog.dismiss() })
+            .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
               viewModel.cancelEdit()
             }
