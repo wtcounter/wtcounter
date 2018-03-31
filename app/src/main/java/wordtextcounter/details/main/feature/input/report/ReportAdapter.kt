@@ -9,24 +9,24 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.item_result.view.tvResultType
 import kotlinx.android.synthetic.main.item_result.view.tvValue
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.feature.input.InputViewModel.Report
+import wordtextcounter.details.main.feature.input.InputViewModel.ReportMeta
 import wordtextcounter.details.main.feature.input.report.ReportAdapter.ResultViewHolder
 
 class ReportAdapter : Adapter<ResultViewHolder>() {
 
-  private var reports: List<Report> = mutableListOf()
+  private var reportMetas: List<ReportMeta> = mutableListOf()
 
 
-  fun setResults(results: List<Report>) {
-    this.reports = results
+  fun setResults(results: List<ReportMeta>) {
+    this.reportMetas = results
     notifyDataSetChanged()
   }
 
   override fun onBindViewHolder(holder: ResultViewHolder, position: Int) {
-    holder.bind(reports[position])
+    holder.bind(reportMetas[position])
   }
 
-  override fun getItemCount() = reports.size
+  override fun getItemCount() = reportMetas.size
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultViewHolder {
     return ResultViewHolder(
@@ -40,9 +40,9 @@ class ReportAdapter : Adapter<ResultViewHolder>() {
     private val tvResultType: TextView = itemView.tvResultType
 
 
-    fun bind(report: Report) {
-      tvValue.text = report.value
-      tvResultType.setText(report.reportType.characters)
+    fun bind(reportMeta: ReportMeta) {
+      tvValue.text = reportMeta.value
+      tvResultType.setText(reportMeta.reportType.characters)
     }
   }
 }

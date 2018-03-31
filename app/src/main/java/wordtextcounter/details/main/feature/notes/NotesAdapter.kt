@@ -82,7 +82,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
     fun bindTo(report: Report) {
       tvTitle.text = report.name
-      tvDate.text = report.dateText
+      tvDate.text = report.dataText
 
       tvCharacters.text = report.characters
       tvWords.text = report.words

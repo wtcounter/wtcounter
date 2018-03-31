@@ -1,55 +1,83 @@
 package wordtextcounter.details.main.feature.input
 
 import android.arch.lifecycle.MutableLiveData
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
+import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
-import wordtextcounter.details.main.util.Helper
+import wordtextcounter.details.main.store.daos.ReportDao
+import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.Helper.Companion.calculateSize
+import wordtextcounter.details.main.util.Helper.Companion.countParagraphs
+import wordtextcounter.details.main.util.Helper.Companion.countSentences
+import wordtextcounter.details.main.util.Helper.Companion.countWords
+import java.lang.System.currentTimeMillis
 
-class InputViewModel : BaseViewModel() {
-
+class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
+  
   data class ViewState(
       val showError: Boolean = false,
       val errorMessage: String = "",
-      val noOfWords: String = "0",
-      val noOfCharacters: String = "0",
-      val noOfSentences: String = "0",
-      val noOfParagraphs: String = "0",
-      val size: String = "0",
+      val report: Report? = null,
       val reportText: String = "",
       val showExpand: Boolean = false
   )
-
-  data class Report(
+  
+  data class ReportMeta(
       val value: String = "0",
       val reportType: ReportType
   )
-
-  data class ReportState(val list: List<Report>)
-
+  
+  data class ReportState(val list: List<ReportMeta>)
+  
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
-
+  
   init {
     viewState.value = ViewState()
   }
-
+  
   private fun currentViewState(): ViewState = viewState.value!!
-
+  
   fun onClickConfirm(input: String) {
-
+    
     if (input.trim().isEmpty()) {
       viewState.value = ViewState(showExpand = false)
       return
     }
-
+    
+    val report = Report("", input.trim()
+        , countWords(input).toString()
+        , input.length.toString()
+        , countParagraphs(input).toString()
+        , countSentences(input).toString()
+        , 0
+        , calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
-        noOfWords = Helper.countWords(input).toString(),
-        noOfCharacters = input.length.toString(),
-        noOfSentences = Helper.countSentences(input).toString(),
-        noOfParagraphs = Helper.countParagraphs(input).toString(),
-        size = Helper.calculateSize(input), showExpand = true)
-
+        report = report, showExpand = true)
+    
   }
-
-  fun onClickSaveCurrent() {
-
+  
+  fun onClickSaveCurrent(name: String) {
+    val reportState = viewState.value
+    val report = reportState?.report
+    report?.name = name
+    report?.time_added = currentTimeMillis()
+    report?.let { r ->
+      Single.create<Boolean> {
+        try {
+          dao.saveReport(r)
+          it.onSuccess(true)
+        } catch (e: Exception) {
+          it.onError(e)
+        }
+      }
+          .subscribeOn(io())
+          .observeOn(mainThread())
+          .subscribe({
+            //TODO Show nice success message here.
+          }, {
+            viewState.value = currentViewState().copy(showError = true)
+          })
+    }
   }
 }

@@ -22,15 +22,15 @@ import wordtextcounter.details.main.util.RxBus
  */
 class NotesFragment : Fragment() {
 
-  lateinit var viewModelFactory: NotesViewModelFactory
+  private lateinit var viewModelFactory: NotesViewModelFactory
   
-  lateinit var viewModel: NotesViewModel
+  private lateinit var viewModel: NotesViewModel
 
-  lateinit var notesAdapter: NotesAdapter
+  private lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModelFactory = NotesViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!)?.reportDao()!!)
+    viewModelFactory = NotesViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
     viewModel = ViewModelProviders.of(this, viewModelFactory).get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }

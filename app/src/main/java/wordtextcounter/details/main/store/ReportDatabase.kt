@@ -18,14 +18,15 @@ abstract class ReportDatabase : RoomDatabase() {
   
   companion object {
     const val DB_VERSION = 2
-    private lateinit var INSTANCE: ReportDatabase
+    const val DB_NAME = "Counter.db"
+    private var INSTANCE: ReportDatabase? = null
     
     @Suppress("SENSELESS_COMPARISON")
     fun getInstance(context: Context): ReportDatabase {
       if (INSTANCE == null) {
         synchronized(ReportDatabase::class) {
           INSTANCE = Room.databaseBuilder(context.applicationContext,
-              ReportDatabase::class.java, "Counter.db")
+              ReportDatabase::class.java, DB_NAME)
               .addMigrations(object : Migration(1, 2) {
                 override fun migrate(database: SupportSQLiteDatabase) {
                   // 1 to 2
@@ -36,7 +37,7 @@ abstract class ReportDatabase : RoomDatabase() {
               }).build()
         }
       }
-      return INSTANCE
+      return INSTANCE!!
     }
   }
 }

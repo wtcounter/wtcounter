@@ -22,10 +22,5 @@ data class Report(
   
   companion object {
     internal const val TABLE_NAME = "Details"
-  
-    fun fromReportState(state: ViewState) : Report {
-      return Report("", state.reportText, state.noOfWords,
-          state.noOfCharacters, "", state.noOfSentences, 0)
-    }
   }
 }
