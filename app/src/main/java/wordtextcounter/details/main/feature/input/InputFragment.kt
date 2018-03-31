@@ -3,10 +3,12 @@ package wordtextcounter.details.main.feature.input
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.DialogInterface
 import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.AppCompatEditText
 import android.view.LayoutInflater
@@ -14,10 +16,8 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.Toast
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -142,7 +142,26 @@ class InputFragment : BaseFragment() {
 //    etInput.setText("Hello world")
 
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
-      etInput.setText(it.report.dataText)
+
+      if (etInput.text.trim().isNotEmpty()) {
+        AlertDialog.Builder(context!!)
+            .setTitle(R.string.edit_alert_title)
+            .setMessage(R.string.edit_alert_desc)
+            .setPositiveButton(R.string.yes,
+                { dialog, which ->
+                  etInput.setText(it.report.dataText)
+                  dialog.dismiss()
+                })
+            .setNegativeButton(R.string.no,
+                DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+            .setOnCancelListener {
+              viewModel.cancelEdit()
+            }
+            .create().show()
+      } else {
+        etInput.setText(it.report.dataText)
+
+      }
     }))
 
   }

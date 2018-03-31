@@ -110,4 +110,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         }))
   }
 
+  fun cancelEdit() {
+    reportId = null
+  }
 }
