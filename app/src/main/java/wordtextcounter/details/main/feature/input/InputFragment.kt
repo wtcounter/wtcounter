@@ -166,7 +166,6 @@ class InputFragment : BaseFragment() {
 
   }
 
-
   private fun handleViewState(viewState: ViewState) {
 
     if (viewState.showError) {
