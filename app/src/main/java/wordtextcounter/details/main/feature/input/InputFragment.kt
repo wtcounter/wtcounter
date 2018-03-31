@@ -18,12 +18,12 @@ import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.fabSave
 import kotlinx.android.synthetic.main.fragment_input.toolbar
 import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
 import kotlinx.android.synthetic.main.report_folded.tvWords
 import kotlinx.android.synthetic.main.report_summary.foldingCell
-import kotlinx.android.synthetic.main.report_summary.ibSave
 import kotlinx.android.synthetic.main.report_summary.ivExpand
 import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
 import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
@@ -36,7 +36,6 @@ import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import java.util.concurrent.TimeUnit.MILLISECONDS
-
 
 
 /**
@@ -52,14 +51,15 @@ class InputFragment : BaseFragment() {
   private var avMoreToLess: AnimatedVectorDrawableCompat? = null
   private var avLessToMore: AnimatedVectorDrawableCompat? = null
   private lateinit var viewModelFactory: InputViewModelFactory
-  
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModelFactory = InputViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
+    viewModelFactory = InputViewModelFactory(
+        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
     viewModel = ViewModelProviders.of(this, viewModelFactory).get(InputViewModel::class.java)
     avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
     avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
-    
+
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -76,14 +76,14 @@ class InputFragment : BaseFragment() {
 
     val cView = LayoutInflater.from(activity).inflate(R.layout.report_name_edit, null)
     val rName = cView.findViewById<AppCompatEditText>(R.id.rName)
-    ibSave.setOnClickListener {
+    fabSave.setOnClickListener {
       MaterialStyledDialog.Builder(activity)
           .setTitle("") // This is intentional. Not providing this results into weird UI.
-          .setDescription((activity as AppCompatActivity).getString(R.string.save_dialog_desc))
+          .setDescription(getString(R.string.save_dialog_desc))
           .withDarkerOverlay(true)
           .setPositiveText(getString(R.string.bookmark))
           .setNegativeText(getString(R.string.cancel))
-          .setCustomView(cView, 20, 20, 20 ,20)
+          .setCustomView(cView, 20, 20, 20, 20)
           .onPositive { _, _ ->
             if (rName.text.trim().isEmpty()) {
               //TODO Error message
@@ -96,6 +96,7 @@ class InputFragment : BaseFragment() {
           .setIcon(R.drawable.note_add)
           .show()
     }
+
 
     foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
@@ -130,6 +131,7 @@ class InputFragment : BaseFragment() {
     super.onSaveInstanceState(outState)
     outState.putString(TEXT, etInput.text.toString())
   }
+
 
   private fun handleViewState(viewState: ViewState) {
 
