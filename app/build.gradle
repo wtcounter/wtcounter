@@ -40,6 +40,7 @@ ext {
               bottombar         : "2.3.1",
               logger            : "2.1.1",
               foldingcell       : "1.2.2",
+              rxrelay           : "2.0.0",
               sdp               : "1.0.5"]
 
 
@@ -100,4 +101,6 @@ dependencies {
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
 
   implementation 'androidx.core:core-ktx:0.2'
+
+  implementation "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
 }

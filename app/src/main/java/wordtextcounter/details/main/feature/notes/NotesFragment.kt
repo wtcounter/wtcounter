@@ -9,8 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.feature.base.BaseFragment
+import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 
@@ -19,7 +22,7 @@ import wordtextcounter.details.main.store.ReportDatabase
  * Use the [NotesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class NotesFragment : Fragment() {
+class NotesFragment : BaseFragment() {
 
   private lateinit var viewModelFactory: NotesViewModelFactory
 
@@ -51,6 +54,17 @@ class NotesFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+
+    notesAdapter.clickRelay.subscribe {
+      when (it) {
+        is Edit -> {
+          Logger.d("Clicked on edit " + it.position)
+          viewModel.editReport(it.position)
+        }
+        is Share ->
+          Logger.d("Clicked on share " + it.position)
+      }
+    }
     rvNotes.adapter = notesAdapter
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
@@ -66,6 +80,9 @@ class NotesFragment : Fragment() {
     }
   }
 
+  override val baseViewModel: BaseViewModel
+    get() = viewModel
+  
   companion object {
 
     /**

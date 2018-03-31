@@ -33,6 +33,7 @@ import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
+import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import java.util.concurrent.TimeUnit.MILLISECONDS
@@ -44,6 +45,7 @@ import java.util.concurrent.TimeUnit.MILLISECONDS
  * create an instance of this fragment.
  */
 class InputFragment : BaseFragment() {
+
   private lateinit var viewModel: InputViewModel
 
   private val TEXT = "TEXT"
@@ -160,6 +162,9 @@ class InputFragment : BaseFragment() {
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
   }
+
+  override val baseViewModel: BaseViewModel
+    get() = viewModel
 
 
   companion object {
