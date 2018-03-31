@@ -134,6 +134,14 @@
         tools:text="Input text sample"
         />
 
+    <com.hlab.fabrevealmenu.view.FABRevealMenu
+        android:id="@+id/fabMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menuDirection="down"
+        app:animateItems="true"
+        app:showOverlay="false" />
+
   </android.support.constraint.ConstraintLayout>
 
 

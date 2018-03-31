@@ -14,12 +14,9 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_input.etInput
-import kotlinx.android.synthetic.main.fragment_input.fabSave
-import kotlinx.android.synthetic.main.fragment_input.toolbar
+import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
 import kotlinx.android.synthetic.main.report_folded.tvWords
@@ -76,8 +73,12 @@ class InputFragment : BaseFragment() {
 
     val cView = LayoutInflater.from(activity).inflate(R.layout.report_name_edit, null)
     val rName = cView.findViewById<AppCompatEditText>(R.id.rName)
+  
+    fabMenu.customView = cView
+    fabMenu.bindAnchorView(fabSave)
+    
     fabSave.setOnClickListener {
-      MaterialStyledDialog.Builder(activity)
+      /*MaterialStyledDialog.Builder(activity)
           .setTitle("") // This is intentional. Not providing this results into weird UI.
           .setDescription(getString(R.string.save_dialog_desc))
           .withDarkerOverlay(true)
@@ -94,7 +95,7 @@ class InputFragment : BaseFragment() {
             dialog.dismiss()
           }
           .setIcon(R.drawable.note_add)
-          .show()
+          .show()*/
     }
 
 

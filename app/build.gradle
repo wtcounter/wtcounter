@@ -100,4 +100,6 @@ dependencies {
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
 
   implementation 'androidx.core:core-ktx:0.2'
+
+  compile 'com.hlab.fabrevealmenu:fab-reveal-menu:1.0.3'
 }
