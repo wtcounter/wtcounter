@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -21,7 +23,6 @@ import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
 import kotlinx.android.synthetic.main.report_folded.tvWords
 import kotlinx.android.synthetic.main.report_summary.foldingCell
-import kotlinx.android.synthetic.main.report_summary.ibSave
 import kotlinx.android.synthetic.main.report_summary.ivExpand
 import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
 import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
@@ -51,6 +52,8 @@ class InputFragment : BaseFragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    setHasOptionsMenu(true)
     viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
     avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
     avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
@@ -68,9 +71,9 @@ class InputFragment : BaseFragment() {
 
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
-    ibSave.setOnClickListener {
-      viewModel.onClickSaveCurrent()
-    }
+//    ibSave.setOnClickListener {
+//      viewModel.onClickSaveCurrent()
+//    }
 
     foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
@@ -104,6 +107,12 @@ class InputFragment : BaseFragment() {
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
     outState.putString(TEXT, etInput.text.toString())
+  }
+
+
+  override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
+    inflater.inflate(R.menu.menu_fragment_input, menu)
+    super.onCreateOptionsMenu(menu, inflater)
   }
 
   private fun handleViewState(viewState: ViewState) {

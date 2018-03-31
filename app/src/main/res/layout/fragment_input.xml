@@ -22,11 +22,14 @@
         app:titleEnabled="false"
         >
 
+
       <View
           android:layout_width="match_parent"
           android:layout_height="@dimen/_56sdp"
           android:background="@color/primaryDarkColor"
           />
+
+
       <android.support.v7.widget.CardView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -36,7 +39,51 @@
 
         <include layout="@layout/report_summary"/>
 
+
       </android.support.v7.widget.CardView>
+
+      <!--<android.support.v7.widget.CardView-->
+      <!--android:layout_width="@dimen/_32sdp"-->
+      <!--android:layout_height="@dimen/_32sdp"-->
+      <!--app:cardBackgroundColor="@color/primaryDarkColor"-->
+      <!--&gt;-->
+
+      <!--<ImageButton-->
+      <!--android:id="@+id/ibClear"-->
+      <!--android:layout_width="@dimen/_32sdp"-->
+      <!--android:layout_height="@dimen/_32sdp"-->
+      <!--android:layout_gravity="end|top"-->
+      <!--android:background="@color/primaryDarkColor"-->
+      <!--android:contentDescription="@string/save"-->
+      <!--android:tint="@color/white"-->
+      <!--app:layout_constraintRight_toRightOf="parent"-->
+      <!--app:srcCompat="@drawable/ic_clear_black_24dp"-->
+      <!--/>-->
+
+      <!--</android.support.v7.widget.CardView>-->
+
+
+      <!--<android.support.v7.widget.CardView-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:layout_gravity="end|top"-->
+      <!--&gt;-->
+
+      <!--<ImageButton-->
+      <!--android:id="@+id/ibSave"-->
+      <!--android:layout_width="@dimen/_32sdp"-->
+      <!--android:layout_height="@dimen/_32sdp"-->
+      <!--android:layout_gravity="end|top"-->
+      <!--android:background="@color/primaryDarkColor"-->
+      <!--android:contentDescription="@string/save"-->
+      <!--android:tint="@color/white"-->
+      <!--app:layout_constraintRight_toRightOf="parent"-->
+      <!--app:srcCompat="@drawable/ic_save_black_32dp"-->
+      <!--/>-->
+
+
+      <!--</android.support.v7.widget.CardView>-->
+
 
       <android.support.v7.widget.Toolbar
           android:id="@+id/toolbar"
@@ -48,6 +95,17 @@
 
 
   </android.support.design.widget.AppBarLayout>
+
+  <android.support.design.widget.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:layout_marginBottom="@dimen/_10sdp"
+      android:layout_marginEnd="@dimen/_10sdp"
+      android:layout_marginRight="@dimen/_10sdp"
+      android:tint="@color/primaryTextColor"
+      app:srcCompat="@drawable/ic_save_black_32dp"
+      />
 
 
   <android.support.constraint.ConstraintLayout
