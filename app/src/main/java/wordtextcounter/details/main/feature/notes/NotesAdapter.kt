@@ -1,11 +1,15 @@
 package wordtextcounter.details.main.feature.notes
 
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.jakewharton.rxrelay2.BehaviorRelay
 import kotlinx.android.synthetic.main.item_note.view.foldingCell
+import kotlinx.android.synthetic.main.item_note.view.ibEdit
+import kotlinx.android.synthetic.main.item_note.view.ibShare
 import kotlinx.android.synthetic.main.item_note.view.ivExpand
 import kotlinx.android.synthetic.main.item_note.view.tvDate
 import kotlinx.android.synthetic.main.item_note.view.tvTitle
@@ -23,6 +27,9 @@ import wordtextcounter.details.main.store.entities.Report
 class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
   private var reports: List<Report>? = null
+
+
+  val clickRelay = BehaviorRelay.create<NotesAction>()
 
 
   fun setReports(reports: List<Report>) {
@@ -59,6 +66,8 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     private val tvSizeContent = itemView.tvSizeContent
     private val foldingCell = itemView.foldingCell
     private val ivExpand = itemView.ivExpand
+    private val ibShare = itemView.ibShare
+    private val ibEdit = itemView.ibEdit
 
     private val avMoreToLess = AnimatedVectorDrawableCompat.create(itemView.context,
         R.drawable.avd_more_to_less)
@@ -67,6 +76,8 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
     init {
       ivExpand.setOnClickListener {
+
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
 
         if (foldingCell.isUnfolded) {
           ivExpand.setImageDrawable(avLessToMore)
@@ -78,6 +89,18 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
         foldingCell.toggle(false)
       }
+
+
+      ibEdit.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        clickRelay.accept(Edit(adapterPosition))
+      }
+
+      ibShare.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        clickRelay.accept(Share(adapterPosition))
+      }
+
     }
 
     fun bindTo(report: Report) {
@@ -93,7 +116,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
       tvSentencesContent.text = report.sentences
       tvParagraphsContent.text = report.paragraphs
 
-//      tvSizeContent.text = report.size
+      tvSizeContent.text = report.size
     }
   }
 }

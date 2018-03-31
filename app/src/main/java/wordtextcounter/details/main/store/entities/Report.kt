@@ -3,7 +3,6 @@ package wordtextcounter.details.main.store.entities
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
-import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.entities.Report.Companion.TABLE_NAME
 
 
@@ -17,9 +16,11 @@ data class Report(
     @ColumnInfo(name = "sentence") var sentences: String?,
     @ColumnInfo(name = "time_added") var time_added: Long?,
     @ColumnInfo(name = "size") var size: String?) {
-  
-  @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int? = null
-  
+
+  @PrimaryKey(autoGenerate = true)
+  @ColumnInfo(name = "id")
+  var id: Int? = null
+
   companion object {
     internal const val TABLE_NAME = "Details"
   }
