@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.RxBus
 
 /**
  * A simple [Fragment] subclass.

@@ -2,9 +2,6 @@ package wordtextcounter.details.main.feature.main
 
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
-import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
