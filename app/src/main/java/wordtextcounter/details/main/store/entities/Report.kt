@@ -15,7 +15,8 @@ data class Report(
     @ColumnInfo(name = "character") var characters: String?,
     @ColumnInfo(name = "paragraph") var paragraphs: String?,
     @ColumnInfo(name = "sentence") var sentences: String?,
-    @ColumnInfo(name = "time_added") var time_added: Long?) {
+    @ColumnInfo(name = "time_added") var time_added: Long?,
+    @ColumnInfo(name = "size") var size: String?) {
   
   @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int? = null
   

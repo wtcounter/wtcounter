@@ -16,6 +16,7 @@ android {
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    vectorDrawables.useSupportLibrary = true
   }
   buildTypes {
     release {
@@ -35,10 +36,10 @@ ext {
               rxAndroid         : "2.0.2",
               androidArchVersion: "1.1.0",
               room              : "1.0.0",
-              slidingpanel      : "3.4.0",
               rxbinding         : "2.1.1",
               bottombar         : "2.3.1",
               logger            : "2.1.1",
+              foldingcell       : "1.2.2",
               sdp               : "1.0.5"]
 
 
@@ -97,4 +98,8 @@ dependencies {
   implementation "com.orhanobut:logger:$versions.logger"
 
   implementation 'com.github.javiersantos:MaterialStyledDialogs:2.1'
+
+  implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
+
+  implementation 'androidx.core:core-ktx:0.2'
 }
