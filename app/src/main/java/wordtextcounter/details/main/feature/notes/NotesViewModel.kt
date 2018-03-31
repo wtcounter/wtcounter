@@ -5,9 +5,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.base.Input
-import wordtextcounter.details.main.feature.base.Router
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.RxBus
 
 class NotesViewModel(private val reportDao: ReportDao) : BaseViewModel() {
   data class ViewState(val reports: List<Report>? = null)
@@ -32,6 +33,9 @@ class NotesViewModel(private val reportDao: ReportDao) : BaseViewModel() {
   }
 
   fun editReport(position: Int) {
+    viewState.value?.reports?.get(position)?.let {
+      RxBus.send(EditReport(it))
       routerState.value = Input
+    }
   }
 }

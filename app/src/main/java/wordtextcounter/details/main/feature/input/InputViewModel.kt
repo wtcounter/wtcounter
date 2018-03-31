@@ -3,14 +3,17 @@ package wordtextcounter.details.main.feature.input
 import android.arch.lifecycle.MutableLiveData
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
+import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.Helper.calculateSize
 import wordtextcounter.details.main.util.Helper.countParagraphs
 import wordtextcounter.details.main.util.Helper.countSentences
 import wordtextcounter.details.main.util.Helper.countWords
+import wordtextcounter.details.main.util.RxBus
 import java.lang.System.currentTimeMillis
 
 class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
@@ -23,22 +26,21 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val showExpand: Boolean = false
   )
 
-  data class ReportMeta(
-      val value: String = "0",
-      val reportType: ReportType
-  )
-
-  data class ReportState(val list: List<ReportMeta>)
-
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
+
+  private var reportId: Int? = null
 
   init {
     viewState.value = ViewState()
+
+    addDisposable(RxBus.subscribe(EditReport::class.java, Consumer {
+      reportId = it.report.id
+    }))
   }
 
   private fun currentViewState(): ViewState = viewState.value!!
 
-  fun onClickConfirm(input: String) {
+  fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
       viewState.value = ViewState(showExpand = false)
@@ -60,24 +62,52 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   fun onClickSaveCurrent(name: String) {
     val reportState = viewState.value
     val report = reportState?.report
-    report?.name = name
-    report?.time_added = currentTimeMillis()
-    report?.let { r ->
-      Single.create<Boolean> {
-        try {
-          dao.saveReport(r)
-          it.onSuccess(true)
-        } catch (e: Exception) {
-          it.onError(e)
-        }
+    if (report != null) {
+      report.name = name
+      report.time_added = currentTimeMillis()
+
+      if (reportId == null) {
+        saveReport(report)
+      } else {
+        report.id = reportId
+        updateeport(report)
       }
-          .subscribeOn(io())
-          .observeOn(mainThread())
-          .subscribe({
-            //TODO Show nice success message here.
-          }, {
-            viewState.value = currentViewState().copy(showError = true)
-          })
     }
+
   }
+
+  private fun saveReport(report: Report) {
+    addDisposable(Single.create<Boolean> {
+      try {
+        dao.saveReport(report)
+        it.onSuccess(true)
+      } catch (e: Exception) {
+        it.onError(e)
+      }
+    }.subscribeOn(io())
+        .observeOn(mainThread())
+        .subscribe({
+          //TODO Show nice success message here.
+        }, {
+          viewState.value = currentViewState().copy(showError = true)
+        }))
+  }
+
+  private fun updateeport(report: Report) {
+    addDisposable(Single.create<Boolean> {
+      try {
+        dao.updateReport(report)
+        it.onSuccess(true)
+      } catch (e: Exception) {
+        it.onError(e)
+      }
+    }.subscribeOn(io())
+        .observeOn(mainThread())
+        .subscribe({
+          //TODO Show nice success message here.
+        }, {
+          viewState.value = currentViewState().copy(showError = true)
+        }))
+  }
+
 }

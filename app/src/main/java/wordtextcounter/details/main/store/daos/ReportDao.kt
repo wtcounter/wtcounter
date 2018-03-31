@@ -8,13 +8,17 @@ import android.arch.persistence.room.Update
 import io.reactivex.Flowable
 import wordtextcounter.details.main.store.entities.Report
 
-@Dao interface ReportDao {
+@Dao
+interface ReportDao {
   @Query("SELECT * FROM Details")
   fun getAllReports(): Flowable<List<Report>>
-  
+
   @Insert(onConflict = REPLACE)
   fun saveReport(report: Report)
-  
+
   @Update
   fun updateReports(reports: List<Report>)
+
+  @Update
+  fun updateReport(report: Report)
 }

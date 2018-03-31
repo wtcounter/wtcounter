@@ -14,9 +14,12 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.fabSave
 import kotlinx.android.synthetic.main.fragment_input.toolbar
@@ -36,6 +39,8 @@ import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
+import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.RxBus
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
@@ -112,19 +117,33 @@ class InputFragment : BaseFragment() {
 
       foldingCell.toggle(false)
     }
-    etInput.setText(savedInstanceState?.getString(TEXT))
+//    etInput.setText(savedInstanceState?.getString(TEXT))
+
 
     disposable.add(RxTextView
         .textChanges(etInput)
         .debounce(300, MILLISECONDS) // default Scheduler is Computation
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
-          viewModel.onClickConfirm(it.toString())
+          viewModel.calculateInput(it.toString())
         })
+
+
+
 
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
+
+  }
+
+  override fun onStart() {
+    super.onStart()
+//    etInput.setText("Hello world")
+
+    disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
+      etInput.setText(it.report.dataText)
+    }))
 
   }
 

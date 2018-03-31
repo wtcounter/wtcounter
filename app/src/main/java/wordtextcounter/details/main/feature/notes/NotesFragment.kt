@@ -55,16 +55,15 @@ class NotesFragment : BaseFragment() {
 
     rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
 
-    notesAdapter.clickRelay.subscribe {
+    disposable.add(notesAdapter.clickRelay.subscribe {
       when (it) {
         is Edit -> {
-          Logger.d("Clicked on edit " + it.position)
           viewModel.editReport(it.position)
         }
         is Share ->
           Logger.d("Clicked on share " + it.position)
       }
-    }
+    })
     rvNotes.adapter = notesAdapter
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
@@ -82,7 +81,7 @@ class NotesFragment : BaseFragment() {
 
   override val baseViewModel: BaseViewModel
     get() = viewModel
-  
+
   companion object {
 
     /**
