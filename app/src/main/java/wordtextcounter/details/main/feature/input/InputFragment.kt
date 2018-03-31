@@ -39,6 +39,7 @@ import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -128,8 +129,6 @@ class InputFragment : BaseFragment() {
         })
 
 
-
-
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
@@ -138,10 +137,10 @@ class InputFragment : BaseFragment() {
 
   override fun onStart() {
     super.onStart()
-//    etInput.setText("Hello world")
 
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
 
+      RxBus.send(NoEvent)
       if (etInput.text.trim().isNotEmpty()) {
         AlertDialog.Builder(context!!)
             .setTitle(R.string.edit_alert_title)

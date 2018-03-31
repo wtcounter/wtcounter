@@ -4,5 +4,7 @@ import wordtextcounter.details.main.store.entities.Report
 
 sealed class Event
 
+object NoEvent : Event()
+
 data class EditReport(val report: Report) : Event()
 
