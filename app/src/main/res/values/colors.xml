@@ -1,14 +1,13 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <resources>
-  <color name="primaryColor">#00695c</color>
-  <color name="primaryLightColor">#439889</color>
-  <color name="primaryDarkColor">#003d33</color>
-  <color name="secondaryColor">#ff9800</color>
-  <color name="secondaryLightColor">#ffc947</color>
-  <color name="secondaryDarkColor">#c66900</color>
-  <color name="primaryTextColor">#ffffff</color>
-  <color name="secondaryTextColor">#212121</color>
-
-  <color name="white">#ffffff</color>
+  <color name="primaryColor">@color/teal_800</color>
+  <color name="primaryLightColor">@color/teal_300</color>
+  <color name="primaryDarkColor">@color/deep_teal</color>
+  <color name="secondaryColor">@color/orange_500</color>
+  <color name="secondaryLightColor">@color/amber_300</color>
+  <color name="secondaryDarkColor">@color/orange_800</color>
+  <color name="primaryTextColor">@color/white</color>
+  <color name="secondaryTextColor">@color/grey_800</color>
+  <color name="folder_back_side">@color/grey_200</color>
 
 </resources>

@@ -1,18 +1,39 @@
-<android.support.constraint.ConstraintLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="wordtextcounter.details.main.feature.notes.NotesFragment">
+    tools:context="wordtextcounter.details.main.feature.notes.NotesFragment"
+    >
+
+  <android.support.design.widget.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:theme="@style/AppTheme.AppBarOverlay"
+      app:elevation="4sp"
+      >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:title="@string/notes"
+        />
+  </android.support.design.widget.AppBarLayout>
+
 
   <android.support.v7.widget.RecyclerView
       android:id="@+id/rvNotes"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="parent"/>
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      />
 
-</android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+

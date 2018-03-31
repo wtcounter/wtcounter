@@ -46,7 +46,7 @@ class Helper {
         }
 
         fun calculateSize(input: String): String {
-            return input.toByteArray(Charsets.UTF_8).size.toString() + 'B'
+            return input.toByteArray(Charsets.UTF_8).size.toString() + " B"
         }
     }
 }
