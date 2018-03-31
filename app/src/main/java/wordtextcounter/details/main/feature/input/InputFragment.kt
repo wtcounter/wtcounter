@@ -135,6 +135,13 @@ class InputFragment : BaseFragment() {
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
 
+
+    if (viewState.showExpand) {
+      fabSave.show()
+    } else {
+      fabSave.hide()
+    }
+
     if (!viewState.showExpand && foldingCell.isUnfolded) {
       ivExpand.setImageDrawable(avLessToMore)
       avLessToMore?.start()

@@ -93,7 +93,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
       tvSentencesContent.text = report.sentences
       tvParagraphsContent.text = report.paragraphs
 
-//      tvSizeContent.text = report.size
+      tvSizeContent.text = report.size
     }
   }
 }

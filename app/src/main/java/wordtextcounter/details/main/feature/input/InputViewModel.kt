@@ -7,14 +7,14 @@ import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
-import wordtextcounter.details.main.util.Helper.Companion.calculateSize
-import wordtextcounter.details.main.util.Helper.Companion.countParagraphs
-import wordtextcounter.details.main.util.Helper.Companion.countSentences
-import wordtextcounter.details.main.util.Helper.Companion.countWords
+import wordtextcounter.details.main.util.Helper.calculateSize
+import wordtextcounter.details.main.util.Helper.countParagraphs
+import wordtextcounter.details.main.util.Helper.countSentences
+import wordtextcounter.details.main.util.Helper.countWords
 import java.lang.System.currentTimeMillis
 
 class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
-  
+
   data class ViewState(
       val showError: Boolean = false,
       val errorMessage: String = "",
@@ -22,29 +22,29 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val reportText: String = "",
       val showExpand: Boolean = false
   )
-  
+
   data class ReportMeta(
       val value: String = "0",
       val reportType: ReportType
   )
-  
+
   data class ReportState(val list: List<ReportMeta>)
-  
+
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
-  
+
   init {
     viewState.value = ViewState()
   }
-  
+
   private fun currentViewState(): ViewState = viewState.value!!
-  
+
   fun onClickConfirm(input: String) {
-    
+
     if (input.trim().isEmpty()) {
       viewState.value = ViewState(showExpand = false)
       return
     }
-    
+
     val report = Report("", input.trim()
         , countWords(input).toString()
         , input.length.toString()
@@ -54,9 +54,9 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         , calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
         report = report, showExpand = true)
-    
+
   }
-  
+
   fun onClickSaveCurrent(name: String) {
     val reportState = viewState.value
     val report = reportState?.report

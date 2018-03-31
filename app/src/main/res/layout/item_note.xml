@@ -71,7 +71,7 @@
     <View
         android:id="@+id/separator"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_3sdp"
+        android:layout_height="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginRight="@dimen/_4sdp"
