@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
+import wordtextcounter.details.main.store.ReportDatabase
 
 /**
  * A simple [Fragment] subclass.
@@ -20,13 +21,16 @@ import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
  */
 class NotesFragment : Fragment() {
 
-  lateinit var viewModel: NotesViewModel
+  private lateinit var viewModelFactory: NotesViewModelFactory
+  
+  private lateinit var viewModel: NotesViewModel
 
-  lateinit var notesAdapter: NotesAdapter
+  private lateinit var notesAdapter: NotesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+    viewModelFactory = NotesViewModelFactory(ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
+    viewModel = ViewModelProviders.of(this, viewModelFactory).get(NotesViewModel::class.java)
     notesAdapter = NotesAdapter()
   }
 

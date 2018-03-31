@@ -8,14 +8,17 @@ import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.AppCompatEditText
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.fabSave
 import kotlinx.android.synthetic.main.fragment_input.toolbar
 import kotlinx.android.synthetic.main.report_folded.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.tvSentences
@@ -31,7 +34,8 @@ import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
-import java.util.concurrent.TimeUnit
+import wordtextcounter.details.main.store.ReportDatabase
+import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
 /**
@@ -40,20 +44,22 @@ import java.util.concurrent.TimeUnit
  * create an instance of this fragment.
  */
 class InputFragment : BaseFragment() {
-
   private lateinit var viewModel: InputViewModel
 
   private val TEXT = "TEXT"
 
   private var avMoreToLess: AnimatedVectorDrawableCompat? = null
   private var avLessToMore: AnimatedVectorDrawableCompat? = null
+  private lateinit var viewModelFactory: InputViewModelFactory
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
-    viewModel = ViewModelProviders.of(this).get(InputViewModel::class.java)
+    viewModelFactory = InputViewModelFactory(
+        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao())
+    viewModel = ViewModelProviders.of(this, viewModelFactory).get(InputViewModel::class.java)
     avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
     avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
+
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -68,9 +74,29 @@ class InputFragment : BaseFragment() {
 
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
-//    ibSave.setOnClickListener {
-//      viewModel.onClickSaveCurrent()
-//    }
+    val cView = LayoutInflater.from(activity).inflate(R.layout.report_name_edit, null)
+    val rName = cView.findViewById<AppCompatEditText>(R.id.rName)
+    fabSave.setOnClickListener {
+      MaterialStyledDialog.Builder(activity)
+          .setTitle("") // This is intentional. Not providing this results into weird UI.
+          .setDescription(getString(R.string.save_dialog_desc))
+          .withDarkerOverlay(true)
+          .setPositiveText(getString(R.string.bookmark))
+          .setNegativeText(getString(R.string.cancel))
+          .setCustomView(cView, 20, 20, 20, 20)
+          .onPositive { _, _ ->
+            if (rName.text.trim().isEmpty()) {
+              //TODO Error message
+            }
+            viewModel.onClickSaveCurrent(rName.text.toString())
+          }
+          .onNegative { dialog, _ ->
+            dialog.dismiss()
+          }
+          .setIcon(R.drawable.note_add)
+          .show()
+    }
+
 
     foldingCell.initialize(1000, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
@@ -89,7 +115,7 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxTextView
         .textChanges(etInput)
-        .debounce(300, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+        .debounce(300, MILLISECONDS) // default Scheduler is Computation
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
           viewModel.onClickConfirm(it.toString())
@@ -121,17 +147,17 @@ class InputFragment : BaseFragment() {
       foldingCell.fold(false)
     }
 
-    tvCharacters.text = viewState.noOfCharacters
-    tvWords.text = viewState.noOfWords
-    tvSentences.text = viewState.noOfSentences
+    tvCharacters.text = viewState.report?.characters
+    tvWords.text = viewState.report?.words
+    tvSentences.text = viewState.report?.sentences
 
 
-    tvCharactersContent.text = viewState.noOfCharacters
-    tvWordsContent.text = viewState.noOfWords
-    tvSentencesContent.text = viewState.noOfSentences
-    tvReportText.text = viewState.reportText
-    tvParagraphsContent.text = viewState.noOfParagraphs
-    tvSizeContent.text = viewState.size
+    tvCharactersContent.text = viewState.report?.characters
+    tvWordsContent.text = viewState.report?.words
+    tvSentencesContent.text = viewState.report?.sentences
+    tvReportText.text = viewState.report?.dataText
+    tvParagraphsContent.text = viewState.report?.paragraphs
+    tvSizeContent.text = viewState.report?.size
   }
 
 
