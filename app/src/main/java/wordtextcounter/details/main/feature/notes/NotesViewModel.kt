@@ -29,6 +29,7 @@ class NotesViewModel(private val reportDao: ReportDao) : BaseViewModel() {
           viewState.value = getCurrentViewState().copy(reports = it)
         }, {
           // TODO Implement this once we decide how to show errors.
+
         }))
   }
 

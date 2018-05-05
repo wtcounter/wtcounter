@@ -15,11 +15,12 @@ import android.os.Bundle
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
+import android.support.v7.widget.AppCompatEditText
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.view.KeyEvent
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.AppCompatEditText
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -28,6 +29,8 @@ import android.view.ViewAnimationUtils
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
 import android.view.Window
+import android.widget.Button
+import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -50,11 +53,11 @@ import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.backToPosition
-import wordtextcounter.details.main.util.onClick
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.backToPosition
+import wordtextcounter.details.main.util.onClick
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -65,8 +68,6 @@ import java.util.concurrent.TimeUnit.MILLISECONDS
 class InputFragment : BaseFragment() {
 
   private lateinit var viewModel: InputViewModel
-
-  private val TEXT = "TEXT"
 
   private var avMoreToLess: AnimatedVectorDrawableCompat? = null
   private var avLessToMore: AnimatedVectorDrawableCompat? = null
@@ -98,9 +99,9 @@ class InputFragment : BaseFragment() {
   }
 
   override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
   ): View {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_input, container, false)
@@ -108,8 +109,8 @@ class InputFragment : BaseFragment() {
 
   @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
   override fun onViewCreated(
-    view: View,
-    savedInstanceState: Bundle?
+      view: View,
+      savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
 
@@ -167,6 +168,42 @@ class InputFragment : BaseFragment() {
       false
     }
 
+    val etName = dialog.findViewById<AppCompatEditText>(R.id.etName)
+    val btnSave = dialog.findViewById<Button>(R.id.btnSave)
+    val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
+    ivCross.setOnClickListener {
+      hideDialog(cView, dialog)
+    }
+    etName.addTextChangedListener(object : TextWatcher {
+      override fun afterTextChanged(s: Editable?) {
+        Logger.d("After text change ${s}")
+
+        if (s != null && !s.isEmpty()) {
+          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
+          btnSave.isEnabled = true
+        } else {
+          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.grey_200)) }
+          btnSave.isEnabled = false
+        }
+      }
+
+      override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+      }
+
+      override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+      }
+
+    })
+
+    btnSave.setOnClickListener {
+      if (!etName.text.isEmpty()) {
+        viewModel.onClickSaveCurrent(etName.text.toString())
+        hideDialog(cView, dialog)
+      }
+    }
+
     dialog.setCanceledOnTouchOutside(false)
     dialog.window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
     dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -174,8 +211,8 @@ class InputFragment : BaseFragment() {
   }
 
   private fun hideDialog(
-    cView: View,
-    dialog: DialogInterface
+      cView: View,
+      dialog: DialogInterface
   ) {
     val parentView = cView.findViewById<ViewGroup>(R.id.dialogView)
 
@@ -201,7 +238,6 @@ class InputFragment : BaseFragment() {
   }
 
   private fun revealDialog(cView: View) {
-    Logger.d("Cx $cx Cy $cy")
     val parentView = cView.findViewById<ViewGroup>(R.id.dialogView)
 
     val finalRadius = Math.max(parentView.width, parentView.height)

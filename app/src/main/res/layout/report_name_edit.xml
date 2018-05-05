@@ -14,7 +14,7 @@
       android:layout_width="match_parent"
       android:layout_height="@dimen/_120sdp"
       android:layout_centerHorizontal="true"
-      android:background="@color/primaryColor"
+      android:background="@drawable/side_nav_bar"
       android:paddingBottom="@dimen/_30sdp"
       android:paddingTop="@dimen/_30sdp"
       android:tint="@color/grey_100"
@@ -47,7 +47,7 @@
       />
 
   <android.support.v7.widget.AppCompatEditText
-      android:id="@+id/tvName"
+      android:id="@+id/etName"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/tvReportDesc"
@@ -60,16 +60,16 @@
       />
 
   <Button
-      android:id="@+id/button2"
+      android:id="@+id/btnSave"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentEnd="true"
       android:layout_alignParentRight="true"
-      android:layout_below="@id/tvName"
+      android:layout_below="@id/etName"
       android:layout_marginTop="@dimen/_12sdp"
       android:background="@null"
       android:text="@string/save"
-      android:textColor="@color/secondaryColor"
+      android:textColor="@color/grey_200"
       />
 
 

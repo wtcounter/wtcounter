@@ -26,7 +26,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
       val heightDiff =
-        activityRootView.rootView.height - activityRootView.height
+          activityRootView.rootView.height - activityRootView.height
       if (heightDiff > dpToPx(
               this@MainActivity,
               200F
@@ -44,8 +44,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
         container.layoutParams = llp
       }
     }
-
-    bottombar.setOnTabSelectListener(this)
 
     supportFragmentManager.addOnBackStackChangedListener {
       val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
