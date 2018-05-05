@@ -18,4 +18,9 @@
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+  <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:windowBackground">@color/black_filter</item>
+  </style>
 </resources>

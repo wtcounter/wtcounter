@@ -1,50 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center">
+    android:layout_margin="@dimen/_8sdp"
+    android:background="@color/white"
+    >
 
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/rName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginEnd="36dp"
-        android:hint="@string/bookmark_hint"
-        android:textSize="14sp" />
+  <ImageView
+      android:id="@+id/ivSave"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_120sdp"
+      android:layout_centerHorizontal="true"
+      android:background="@color/primaryColor"
+      android:paddingBottom="@dimen/_30sdp"
+      android:paddingTop="@dimen/_30sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_note_add"
+      />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/rName"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_height="wrap_content">
+  <ImageView
+      android:id="@+id/ivCross"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginEnd="@dimen/_8sdp"
+      android:layout_marginRight="@dimen/_8sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_clear_black_24dp"
+      />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"/>
+  <TextView
+      android:id="@+id/tvReportDesc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/ivSave"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_16sdp"
+      android:text="@string/save_dialog_desc"
+      android:textStyle="bold"
+      />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"/>
+  <android.support.v7.widget.AppCompatEditText
+      android:id="@+id/tvName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/tvReportDesc"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:hint="@string/bookmark_hint"
+      android:paddingBottom="@dimen/_12sdp"
+      android:textSize="@dimen/_14ssp"
+      />
 
-    </RelativeLayout>
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/tvName"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="@null"
+      android:text="@string/save"
+      android:textColor="@color/secondaryColor"
+      />
+
+
 </RelativeLayout>
+
+
