@@ -30,4 +30,9 @@
   <string name="start_typing">Start Typing</string>
 
   <string name="save_dialog_desc">Alright! What would you like to call it?</string>
+  <string name="replace_current_text">Replace Current Text</string>
+  <string name="edit_alert_title">Are you sure?</string>
+  <string name="yes">Yes</string>
+  <string name="edit_alert_desc">Thia action will erase current content</string>
+  <string name="no">No</string>
 </resources>
