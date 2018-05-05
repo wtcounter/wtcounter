@@ -8,6 +8,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnticipateInterpolator
+import android.view.animation.AnticipateOvershootInterpolator
 import android.view.animation.TranslateAnimation
 import com.orhanobut.logger.Logger
 
@@ -76,7 +77,7 @@ fun FloatingActionButton.backToPosition() {
       (xDest - originalPosition[0]).toFloat(), 0f,
       (yDest - originalPosition[1]).toFloat(), 0f
   )
-  anim.interpolator = AnticipateInterpolator()
+  anim.interpolator = AnticipateOvershootInterpolator()
   anim.duration = 400
   anim.setAnimationListener(object : AnimationListener {
     override fun onAnimationRepeat(animation: Animation?) {
