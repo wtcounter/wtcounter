@@ -10,7 +10,6 @@ import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnticipateInterpolator
 import android.view.animation.AnticipateOvershootInterpolator
 import android.view.animation.TranslateAnimation
-import com.orhanobut.logger.Logger
 
 infix fun FloatingActionButton.onClick(function: () -> Unit) {
 
@@ -92,7 +91,9 @@ fun FloatingActionButton.backToPosition() {
     }
 
   })
-  startAnimation(anim)
+  post({
+    startAnimation(anim)
+  })
 }
 
 private fun View.getActivity(): Activity? {

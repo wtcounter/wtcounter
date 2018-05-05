@@ -27,12 +27,10 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewAnimationUtils
 import android.view.ViewGroup
-import android.view.ViewGroup.LayoutParams
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -176,8 +174,6 @@ class InputFragment : BaseFragment() {
     }
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
-        Logger.d("After text change ${s}")
-
         if (s != null && !s.isEmpty()) {
           context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
           btnSave.isEnabled = true
@@ -205,7 +201,7 @@ class InputFragment : BaseFragment() {
     }
 
     dialog.setCanceledOnTouchOutside(false)
-    dialog.window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+//    dialog.window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
     dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     dialog.show()
   }
@@ -274,7 +270,6 @@ class InputFragment : BaseFragment() {
             .create().show()
       } else {
         etInput.setText(it.report.dataText)
-
       }
     }))
 

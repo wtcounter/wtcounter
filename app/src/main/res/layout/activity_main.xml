@@ -24,7 +24,6 @@
       app:bb_activeTabColor="#E0E0E0"
       app:bb_behavior="shy"
       app:bb_tabXmlResource="@xml/tabs_bottom_bar"
-      app:layout_constraintBottom_toBottomOf="parent"
       />
 
 </android.support.design.widget.CoordinatorLayout>
