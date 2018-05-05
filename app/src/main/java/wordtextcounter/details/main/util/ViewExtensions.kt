@@ -68,7 +68,6 @@ fun FloatingActionButton.backToPosition() {
 
   getLocationOnScreen(originalPosition)
 
-  Logger.d("Original position ${originalPosition[0]} ${originalPosition[1]}")
 
   val xDest = dm.widthPixels / 2 - measuredWidth / 2
   val yDest = dm.heightPixels / 2 - measuredHeight / 2 - statusBarHeight

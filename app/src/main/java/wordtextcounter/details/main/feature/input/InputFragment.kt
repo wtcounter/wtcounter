@@ -110,7 +110,6 @@ class InputFragment : BaseFragment() {
 
     foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
     ivExpand.setOnClickListener {
-
       if (foldingCell.isUnfolded) {
         ivExpand.setImageDrawable(avLessToMore)
         avLessToMore?.start()
