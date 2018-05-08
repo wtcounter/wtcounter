@@ -76,43 +76,34 @@
         android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginRight="@dimen/_4sdp"
         android:background="@color/grey_200"
-        app:layout_constraintBottom_toTopOf="@id/clAction"
+        app:layout_constraintBottom_toTopOf="@id/ibEdit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
         />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/clAction"
+
+    <ImageButton
+        android:id="@+id/ibEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:srcCompat="@drawable/ic_edit_black_24dp"
+        />
+
+    <ImageButton
+        android:id="@+id/ibShare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:srcCompat="@drawable/ic_share_black_24dp"
+        />
 
-        >
-
-      <ImageButton
-          android:id="@+id/ibEdit"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:background="@null"
-          app:layout_constraintLeft_toLeftOf="parent"
-          app:layout_constraintRight_toLeftOf="@id/ibShare"
-          app:srcCompat="@drawable/ic_edit_black_24dp"
-          />
-
-      <ImageButton
-          android:id="@+id/ibShare"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:background="@null"
-          app:layout_constraintLeft_toRightOf="@id/ibEdit"
-          app:layout_constraintRight_toRightOf="parent"
-          app:srcCompat="@drawable/ic_share_black_24dp"
-          />
-
-    </android.support.constraint.ConstraintLayout>
 
   </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -11,199 +11,175 @@
 
   <android.support.constraint.ConstraintLayout
       android:id="@+id/clContent"
-      android:layout_width="0dp"
+      android:layout_width="match_parent"
       android:layout_height="@dimen/_160sdp"
-      android:layout_marginBottom="@dimen/_20sdp"
+      android:layout_marginBottom="@dimen/_30sdp"
       android:layout_marginEnd="@dimen/_30sdp"
       android:layout_marginLeft="@dimen/_20sdp"
       android:layout_marginRight="@dimen/_30sdp"
       android:layout_marginStart="@dimen/_20sdp"
-      android:layout_marginTop="@dimen/_20sdp"
+      android:layout_marginTop="@dimen/_30sdp"
       android:clipChildren="false"
       android:clipToPadding="false"
-      android:visibility="visible"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
       >
 
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/clMainReport"
+    <TextView
+        android:id="@+id/tvCharactersLabelContent"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/_8sdp"
-        app:layout_constraintBottom_toTopOf="@id/clExtraReport"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:gravity="center"
+        android:text="@string/characters"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.33"
+        />
+
+    <TextView
+        android:id="@+id/tvCharactersContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCharactersLabelContent"
+        app:layout_constraintWidth_percent="0.33"
+        tools:text="2000"
+        />
+
+
+    <TextView
+        android:id="@+id/tvWordsLabelContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:gravity="center"
+        android:text="@string/words"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintLeft_toRightOf="@id/tvCharactersLabelContent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.33"
+        />
+
+    <TextView
+        android:id="@+id/tvWordsContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintLeft_toRightOf="@id/tvCharactersContent"
+        app:layout_constraintTop_toBottomOf="@id/tvWordsLabelContent"
+        app:layout_constraintWidth_percent="0.33"
+        tools:text="212"
+        />
+
+
+    <TextView
+        android:id="@+id/tvSentencesLabelContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:gravity="center"
+        android:text="@string/sentences"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
-      <TextView
-          android:id="@+id/tvCharactersLabelContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="@string/characters"
-          android:textColor="@color/secondaryTextColor"
-          android:visibility="visible"
-          app:layout_constraintBottom_toTopOf="@id/tvCharactersContent"
-          app:layout_constraintLeft_toLeftOf="parent"
-          app:layout_constraintRight_toLeftOf="@id/tvWordsContent"
-          app:layout_constraintTop_toTopOf="parent"
-          />
+        app:layout_constraintWidth_percent="0.33"
+        />
 
-      <TextView
-          android:id="@+id/tvCharactersContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textColor="@color/secondaryTextColor"
-          android:textSize="@dimen/_16sdp"
-          android:textStyle="bold"
-          android:visibility="visible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toLeftOf="parent"
-          app:layout_constraintRight_toLeftOf="@id/tvWordsContent"
-          app:layout_constraintTop_toBottomOf="@id/tvCharactersLabelContent"
-          tools:text="2000"
-          />
-
-
-      <TextView
-          android:id="@+id/tvWordsLabelContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="@string/words"
-          android:textColor="@color/secondaryTextColor"
-          android:visibility="visible"
-          app:layout_constraintBottom_toTopOf="@id/tvWordsContent"
-          app:layout_constraintLeft_toRightOf="@id/tvCharactersLabelContent"
-          app:layout_constraintRight_toLeftOf="@id/tvSentencesLabelContent"
-          app:layout_constraintTop_toTopOf="parent"
-          />
-
-      <TextView
-          android:id="@+id/tvWordsContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textColor="@color/secondaryTextColor"
-          android:textSize="@dimen/_16sdp"
-          android:textStyle="bold"
-          android:visibility="visible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toRightOf="@id/tvCharactersContent"
-          app:layout_constraintRight_toLeftOf="@id/tvSentencesContent"
-          app:layout_constraintTop_toBottomOf="@id/tvWordsLabelContent"
-          tools:text="212"
-          />
-
-
-      <TextView
-          android:id="@+id/tvSentencesLabelContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="@string/sentences"
-          android:textColor="@color/secondaryTextColor"
-          android:visibility="visible"
-          app:layout_constraintBottom_toTopOf="@id/tvSentencesContent"
-          app:layout_constraintLeft_toRightOf="@id/tvWordsLabelContent"
-          app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          />
-
-      <TextView
-          android:id="@+id/tvSentencesContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textColor="@color/secondaryTextColor"
-          android:textSize="@dimen/_16sdp"
-          android:textStyle="bold"
-          android:visibility="visible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toRightOf="@id/tvWordsContent"
-          app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvCharactersLabelContent"
-          tools:text="12"
-          />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/clExtraReport"
+    <TextView
+        android:id="@+id/tvSentencesContent"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCharactersLabelContent"
+        app:layout_constraintWidth_percent="0.33"
+        tools:text="12"
+        />
+
+
+    <TextView
+        android:id="@+id/tvParagraphsLabelContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center"
+        android:text="@string/paragraphs"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvParagraphsContent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        />
+
+    <TextView
+        android:id="@+id/tvParagraphsContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        tools:text="212"
+        />
+
+
+    <TextView
+        android:id="@+id/tvSizeLabelContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center"
+        android:text="@string/size"
+        android:textColor="@color/secondaryTextColor"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvSizeContent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clMainReport"
-        >
+        app:layout_constraintWidth_percent="0.5"
+        />
 
-      <TextView
-          android:id="@+id/tvParagraphsLabelContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="@string/paragraphs"
-          android:textColor="@color/secondaryTextColor"
-          android:visibility="visible"
-          app:layout_constraintBottom_toTopOf="@id/tvParagraphsContent"
-          app:layout_constraintLeft_toLeftOf="parent"
-          app:layout_constraintRight_toLeftOf="@id/tvSizeLabelContent"
-          app:layout_constraintTop_toTopOf="parent"
-          />
+    <TextView
+        android:id="@+id/tvSizeContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:gravity="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        tools:text="12"
+        />
 
-      <TextView
-          android:id="@+id/tvParagraphsContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textColor="@color/secondaryTextColor"
-          android:textSize="@dimen/_16sdp"
-          android:textStyle="bold"
-          android:visibility="visible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toLeftOf="parent"
-          app:layout_constraintRight_toLeftOf="@id/tvSizeContent"
-          app:layout_constraintTop_toBottomOf="@id/tvParagraphsLabelContent"
-          tools:text="212"
-          />
-
-
-      <TextView
-          android:id="@+id/tvSizeLabelContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="@string/size"
-          android:textColor="@color/secondaryTextColor"
-          android:visibility="visible"
-          app:layout_constraintBottom_toTopOf="@id/tvSizeContent"
-          app:layout_constraintLeft_toRightOf="@id/tvParagraphsLabelContent"
-          app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          />
-
-      <TextView
-          android:id="@+id/tvSizeContent"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textColor="@color/secondaryTextColor"
-          android:textSize="@dimen/_16sdp"
-          android:textStyle="bold"
-          android:visibility="visible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toRightOf="@id/tvParagraphsContent"
-          app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvSizeLabelContent"
-          tools:text="12"
-          />
-
-
-    </android.support.constraint.ConstraintLayout>
 
   </android.support.constraint.ConstraintLayout>
 
