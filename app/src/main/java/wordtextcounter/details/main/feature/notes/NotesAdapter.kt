@@ -1,6 +1,7 @@
 package wordtextcounter.details.main.feature.notes
 
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
 import android.view.LayoutInflater
@@ -75,6 +76,9 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
         R.drawable.avd_less_to_more)
 
     init {
+      foldingCell.initialize(500,
+          ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0)
+
       ivExpand.setOnClickListener {
 
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener

@@ -19,8 +19,6 @@
   <string name="words">Words</string>
   <string name="paragraphs">Paragraphs</string>
   <string name="size">Size</string>
-  <string name="bookmark">BOOKMARK</string>
-  <string name="cancel">CANCEL</string>
   <string name="bookmark_hint">Enter Report name</string>
 
   <string name="save">Save</string>
