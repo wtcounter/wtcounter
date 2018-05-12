@@ -13,7 +13,10 @@ import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.RxBus
 
 class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
-  data class ViewState(val reports: List<Report>? = null)
+  data class ViewState(val reports: List<Report>? = null,
+                       val showError: Boolean = false,
+                       val successDeletion: Boolean = false,
+                       val errorMessage: String? = null)
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
 
@@ -30,8 +33,7 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
         .subscribe({
           viewState.value = getCurrentViewState().copy(reports = it)
         }, {
-          // TODO Implement this once we decide how to show errors.
-
+          viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
         }))
   }
   
@@ -46,10 +48,11 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
             if (it) {
               getAllSavedNotes()
               RxBus.send(DeleteReport(report))
+              viewState.value = getCurrentViewState().copy(successDeletion = true)
             }
           }, {
             it.printStackTrace()
-            //TODO Propogate error.
+            viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
           }))
     }
   }

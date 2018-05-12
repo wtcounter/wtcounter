@@ -1,9 +1,13 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.content.Context
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.content.ContextCompat
+import android.support.v4.util.TimeUtils
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
+import android.text.format.DateUtils
+import android.text.format.DateUtils.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -103,7 +107,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
     fun bindTo(report: Report) {
       tvTitle.text = report.name
-      tvDate.text = report.time_added.toString()
+      tvDate.text = report.time_added?.let { getRelativeTimeSpanString(it, System.currentTimeMillis(), 0) }
 
       tvCharacters.text = report.characters
       tvWords.text = report.words

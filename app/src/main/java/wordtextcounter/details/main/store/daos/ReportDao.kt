@@ -7,7 +7,7 @@ import wordtextcounter.details.main.store.entities.Report
 
 @Dao
 interface ReportDao {
-  @Query("SELECT * FROM Details")
+  @Query("SELECT * FROM Details ORDER BY time_added DESC")
   fun getAllReports(): Flowable<List<Report>>
 
   @Insert(onConflict = REPLACE)

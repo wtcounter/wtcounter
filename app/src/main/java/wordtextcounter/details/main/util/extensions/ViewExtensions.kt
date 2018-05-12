@@ -1,4 +1,4 @@
-package wordtextcounter.details.main.util
+package wordtextcounter.details.main.util.extensions
 
 import android.app.Activity
 import android.content.ContextWrapper

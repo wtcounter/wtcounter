@@ -54,8 +54,8 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.backToPosition
-import wordtextcounter.details.main.util.onClick
+import wordtextcounter.details.main.util.extensions.backToPosition
+import wordtextcounter.details.main.util.extensions.onClick
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
