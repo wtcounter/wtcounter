@@ -21,6 +21,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   data class ViewState(
       val showError: Boolean = false,
       val additionSuccess: Boolean = false,
+      val updateSuccess: Boolean = false,
       val errorMessage: String = "",
       val report: Report? = null,
       val reportText: String = "",
@@ -88,7 +89,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          //TODO Show nice success message here.
+          viewState.value = currentViewState().copy(additionSuccess = true)
         }, {
           viewState.value = currentViewState().copy(showError = true)
         }))
@@ -105,7 +106,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          viewState.value = currentViewState().copy(additionSuccess = true)
+          viewState.value = currentViewState().copy(updateSuccess = true)
         }, {
           viewState.value = currentViewState().copy(showError = true)
         }))
