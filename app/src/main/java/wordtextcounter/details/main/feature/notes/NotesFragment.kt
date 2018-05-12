@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -60,8 +59,9 @@ class NotesFragment : BaseFragment() {
         is Edit -> {
           viewModel.editReport(it.position)
         }
-        is Share ->
-          Logger.d("Clicked on share " + it.position)
+        is Delete -> {
+          viewModel.deleteReport(it.position)
+        }
       }
     })
     rvNotes.adapter = notesAdapter

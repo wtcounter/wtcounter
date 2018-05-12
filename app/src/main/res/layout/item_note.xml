@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_4sdp"
-    app:cardCornerRadius="@dimen/_1sdp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_4sdp"
     >
   <android.support.constraint.ConstraintLayout
       xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,6 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
@@ -94,14 +97,14 @@
         />
 
     <ImageButton
-        android:id="@+id/ibShare"
+        android:id="@+id/ibDelete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintWidth_percent="0.5"
-        app:srcCompat="@drawable/ic_share_black_24dp"
+        app:srcCompat="@drawable/ic_delete"
         />
 
 
