@@ -7,6 +7,7 @@ import android.content.Context.INPUT_METHOD_SERVICE
 import android.support.design.widget.Snackbar
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.view.inputmethod.InputMethodManager.HIDE_NOT_ALWAYS
 
 inline fun Activity.showSnackBar(message: String) {
   val snackbar = Snackbar.make(findViewById<View>(android.R.id.content),
@@ -16,5 +17,5 @@ inline fun Activity.showSnackBar(message: String) {
 
 inline fun Activity.hideKeyboard() {
   val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-  imm.hideSoftInputFromInputMethod(window.currentFocus.windowToken, 0)
+  imm.hideSoftInputFromInputMethod(window.currentFocus.windowToken, HIDE_NOT_ALWAYS)
 }

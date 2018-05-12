@@ -57,7 +57,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         , 0
         , calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
-        report = report, showExpand = true)
+        report = report, showExpand = true, showError = false, additionSuccess = false, updateSuccess = false)
 
   }
 

@@ -287,7 +287,7 @@ class InputFragment : BaseFragment() {
 
     if (viewState.additionSuccess || viewState.updateSuccess) {
       activity?.hideKeyboard()
-      if (viewState.updateSuccess) {
+      if (viewState.additionSuccess) {
         activity?.showSnackBar(getString(R.string.addition_success))
       } else {
         activity?.showSnackBar(getString(R.string.update_success))

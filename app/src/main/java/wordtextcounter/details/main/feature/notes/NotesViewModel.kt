@@ -31,7 +31,7 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
         .subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          viewState.value = getCurrentViewState().copy(reports = it)
+          viewState.value = getCurrentViewState().copy(reports = it, showError = false, successDeletion = false)
         }, {
           viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
         }))
