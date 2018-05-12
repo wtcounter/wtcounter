@@ -55,7 +55,9 @@ import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.extensions.backToPosition
+import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
+import wordtextcounter.details.main.util.extensions.showSnackBar
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -283,6 +285,10 @@ class InputFragment : BaseFragment() {
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
 
+    if (viewState.additionSuccess) {
+      activity?.hideKeyboard()
+      activity?.showSnackBar(getString(R.string.addition_success))
+    }
 
     if (viewState.showExpand) {
       fabSave.show()

@@ -38,4 +38,5 @@
   <string name="no">No</string>
   <string name="generic_error_message">Looks like something went wrong. Please try again later…</string>
   <string name="deletion_success">Report deleted successfully.</string>
+  <string name="addition_success">Report added successfully.</string>
 </resources>

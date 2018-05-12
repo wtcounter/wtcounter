@@ -97,7 +97,7 @@ dependencies {
 
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
 
-  implementation 'androidx.core:core-ktx:0.2'
+  implementation 'androidx.core:core-ktx:0.3'
 
   implementation "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
 }
