@@ -1,19 +1,18 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.content.Context
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.content.ContextCompat
+import android.support.v4.util.TimeUtils
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
+import android.text.format.DateUtils
+import android.text.format.DateUtils.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jakewharton.rxrelay2.BehaviorRelay
-import kotlinx.android.synthetic.main.item_note.view.foldingCell
-import kotlinx.android.synthetic.main.item_note.view.ibEdit
-import kotlinx.android.synthetic.main.item_note.view.ibShare
-import kotlinx.android.synthetic.main.item_note.view.ivExpand
-import kotlinx.android.synthetic.main.item_note.view.tvDate
-import kotlinx.android.synthetic.main.item_note.view.tvTitle
+import kotlinx.android.synthetic.main.item_note.view.*
 import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.view.tvSentences
 import kotlinx.android.synthetic.main.report_folded.view.tvWords
@@ -67,7 +66,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     private val tvSizeContent = itemView.tvSizeContent
     private val foldingCell = itemView.foldingCell
     private val ivExpand = itemView.ivExpand
-    private val ibShare = itemView.ibShare
+    private val ibDelete = itemView.ibDelete
     private val ibEdit = itemView.ibEdit
 
     private val avMoreToLess = AnimatedVectorDrawableCompat.create(itemView.context,
@@ -78,6 +77,11 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     init {
       foldingCell.initialize(500,
           ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0)
+  
+      ibDelete.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        clickRelay.accept(Delete(adapterPosition))
+      }
 
       ivExpand.setOnClickListener {
 
@@ -99,17 +103,11 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Edit(adapterPosition))
       }
-
-      ibShare.setOnClickListener {
-        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
-        clickRelay.accept(Share(adapterPosition))
-      }
-
     }
 
     fun bindTo(report: Report) {
       tvTitle.text = report.name
-      tvDate.text = report.time_added.toString()
+      tvDate.text = report.time_added?.let { getRelativeTimeSpanString(it, System.currentTimeMillis(), 0) }
 
       tvCharacters.text = report.characters
       tvWords.text = report.words

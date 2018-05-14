@@ -33,6 +33,11 @@
   <string name="replace_current_text">Replace Current Text</string>
   <string name="edit_alert_title">Are you sure?</string>
   <string name="yes">Yes</string>
-  <string name="edit_alert_desc">Thia action will erase current content</string>
+  <string name="edit_alert_desc">This action will erase current content. Are you sure you want to continue?</string>
+  <string name="delete_alert_desc">Are you sure you want to delete this report?</string>
   <string name="no">No</string>
+  <string name="generic_error_message">Looks like something went wrong. Please try again later…</string>
+  <string name="deletion_success">Report deleted successfully.</string>
+  <string name="addition_success">Report added successfully.</string>
+  <string name="update_success">Report updated successfully.</string>
 </resources>

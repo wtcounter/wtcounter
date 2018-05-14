@@ -1,16 +1,13 @@
 package wordtextcounter.details.main.store.daos
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Insert
+import android.arch.persistence.room.*
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
-import android.arch.persistence.room.Query
-import android.arch.persistence.room.Update
 import io.reactivex.Flowable
 import wordtextcounter.details.main.store.entities.Report
 
 @Dao
 interface ReportDao {
-  @Query("SELECT * FROM Details")
+  @Query("SELECT * FROM Details ORDER BY time_added DESC")
   fun getAllReports(): Flowable<List<Report>>
 
   @Insert(onConflict = REPLACE)
@@ -21,4 +18,7 @@ interface ReportDao {
 
   @Update
   fun updateReport(report: Report)
+  
+  @Delete
+  fun deleteReport(report: Report)
 }

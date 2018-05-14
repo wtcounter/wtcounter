@@ -54,8 +54,10 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.backToPosition
-import wordtextcounter.details.main.util.onClick
+import wordtextcounter.details.main.util.extensions.backToPosition
+import wordtextcounter.details.main.util.extensions.hideKeyboard
+import wordtextcounter.details.main.util.extensions.onClick
+import wordtextcounter.details.main.util.extensions.showSnackBar
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -257,12 +259,12 @@ class InputFragment : BaseFragment() {
             .setTitle(R.string.edit_alert_title)
             .setMessage(R.string.edit_alert_desc)
             .setPositiveButton(R.string.yes,
-                { dialog, which ->
+                { dialog, _ ->
                   etInput.setText(it.report.dataText)
                   dialog.dismiss()
                 })
             .setNegativeButton(R.string.no,
-                { dialog, which -> dialog.dismiss() })
+                { dialog, _ -> dialog.dismiss() })
             .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
               viewModel.cancelEdit()
@@ -283,6 +285,14 @@ class InputFragment : BaseFragment() {
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
 
+    if (viewState.additionSuccess || viewState.updateSuccess) {
+      activity?.hideKeyboard()
+      if (viewState.additionSuccess) {
+        activity?.showSnackBar(getString(R.string.addition_success))
+      } else {
+        activity?.showSnackBar(getString(R.string.update_success))
+      }
+    }
 
     if (viewState.showExpand) {
       fabSave.show()
