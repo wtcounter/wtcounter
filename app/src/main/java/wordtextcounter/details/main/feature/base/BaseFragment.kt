@@ -18,7 +18,10 @@ abstract class BaseFragment : Fragment() {
 
   val disposable = CompositeDisposable()
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+  override fun onViewCreated(
+    view: View,
+    savedInstanceState: Bundle?
+  ) {
     super.onViewCreated(view, savedInstanceState)
     retainInstance = true
 
@@ -32,8 +35,8 @@ abstract class BaseFragment : Fragment() {
   }
 
   override fun onDestroyView() {
-    super.onDestroyView()
     disposable.clear()
+    super.onDestroyView()
   }
 
   protected fun hideSoftKeyboard() {
@@ -44,7 +47,10 @@ abstract class BaseFragment : Fragment() {
   }
 
   protected fun showError(message: String) {
-    view?.let { Snackbar.make(it, message, Snackbar.LENGTH_LONG).show() }
+    view?.let {
+      Snackbar.make(it, message, Snackbar.LENGTH_LONG)
+          .show()
+    }
   }
 
   protected fun showSoftKeyboard(focus: View) {

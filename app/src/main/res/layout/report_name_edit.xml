@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.AppCompatEditText
-    android:id="@+id/rName"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:hint="@string/bookmark_hint"
-    android:textSize="14sp"/>
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+  <ImageView
+      android:id="@+id/ivSave"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_120sdp"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/side_nav_bar"
+      android:paddingBottom="@dimen/_30sdp"
+      android:paddingTop="@dimen/_30sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_note_add"
+      />
+
+  <ImageView
+      android:id="@+id/ivCross"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginEnd="@dimen/_8sdp"
+      android:layout_marginRight="@dimen/_8sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_clear_black_24dp"
+      />
+
+  <TextView
+      android:id="@+id/tvReportDesc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/ivSave"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_16sdp"
+      android:text="@string/save_dialog_desc"
+      android:textStyle="bold"
+      />
+
+  <android.support.v7.widget.AppCompatEditText
+      android:id="@+id/etName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/tvReportDesc"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:hint="@string/bookmark_hint"
+      android:paddingBottom="@dimen/_12sdp"
+      android:textSize="@dimen/_14ssp"
+      />
+
+  <Button
+      android:id="@+id/btnSave"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/etName"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="@null"
+      android:text="@string/save"
+      android:textColor="@color/grey_200"
+      />
+
+
+</RelativeLayout>
+
+

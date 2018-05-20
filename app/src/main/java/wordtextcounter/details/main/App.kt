@@ -1,7 +1,7 @@
 package wordtextcounter.details.main
 
 import android.app.Application
-import androidx.content.edit
+import androidx.core.content.edit
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
