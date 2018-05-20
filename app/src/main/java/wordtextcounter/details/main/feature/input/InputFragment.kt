@@ -12,7 +12,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -69,8 +68,7 @@ class InputFragment : BaseFragment() {
 
   private lateinit var viewModel: InputViewModel
 
-  private var avMoreToLess: AnimatedVectorDrawableCompat? = null
-  private var avLessToMore: AnimatedVectorDrawableCompat? = null
+
   private lateinit var viewModelFactory: InputViewModelFactory
 
   var cx: Int = -1
@@ -93,8 +91,7 @@ class InputFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
-    avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
-    avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
+
 
   }
 
@@ -119,17 +116,20 @@ class InputFragment : BaseFragment() {
     fabSave onClick showDialog()
 
     foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
-    ivExpand.setOnClickListener {
-      if (foldingCell.isUnfolded) {
-        ivExpand.setImageDrawable(avLessToMore)
-        avLessToMore?.start()
-      } else {
-        ivExpand.setImageDrawable(avMoreToLess)
-        avMoreToLess?.start()
-      }
 
-      foldingCell.toggle(false)
-    }
+    ivExpand onClick toggleCell()
+
+//    ivExpand.setOnClickListener {
+//      if (foldingCell.isUnfolded) {
+//        ivExpand.setImageDrawable(avLessToMore)
+//        avLessToMore?.start()
+//      } else {
+//        ivExpand.setImageDrawable(avMoreToLess)
+//        avMoreToLess?.start()
+//      }
+//
+//      foldingCell.toggle(false)
+//    }
 //    etInput.setText(savedInstanceState?.getString(TEXT))
 
 
@@ -146,6 +146,10 @@ class InputFragment : BaseFragment() {
       it?.let { it1 -> handleViewState(it1) }
     })
 
+  }
+
+  private fun toggleCell(): () -> Unit = {
+    foldingCell.toggle(false)
   }
 
   private fun showDialog(): () -> Unit = {
@@ -300,11 +304,11 @@ class InputFragment : BaseFragment() {
       fabSave.hide()
     }
 
-    if (!viewState.showExpand && foldingCell.isUnfolded) {
-      ivExpand.setImageDrawable(avLessToMore)
-      avLessToMore?.start()
-      foldingCell.fold(false)
-    }
+//    if (!viewState.showExpand && foldingCell.isUnfolded) {
+//      ivExpand.setImageDrawable(avLessToMore)
+//      avLessToMore?.start()
+//      foldingCell.fold(false)
+//    }
 
     tvCharacters.text = viewState.report?.characters
     tvWords.text = viewState.report?.words
