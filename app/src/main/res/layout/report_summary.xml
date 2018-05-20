@@ -25,7 +25,7 @@
     <include layout="@layout/report_folded"/>
   </com.ramotion.foldingcell.FoldingCell>
 
-  <ImageView
+  <wordtextcounter.details.main.util.view.ExpandImageButton
       android:id="@+id/ivExpand"
       android:layout_width="@dimen/_24sdp"
       android:layout_height="@dimen/_24sdp"
