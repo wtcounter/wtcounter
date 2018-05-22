@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -89,9 +88,10 @@ class NotesFragment : BaseFragment() {
 
   private fun handleViewState(viewState: ViewState) {
     if (viewState.reports != null) {
-      notesAdapter.setReports(viewState.reports)
+      notesAdapter.submitList(viewState.reports)
+//      notesAdapter.setReports(viewState.reports)
     }
-    
+
     if (viewState.showError) {
       if (viewState.errorMessage == null) {
         activity?.showSnackBar(getString(R.string.generic_error_message))
@@ -99,7 +99,7 @@ class NotesFragment : BaseFragment() {
         activity?.showSnackBar(viewState.errorMessage)
       }
     }
-    
+
     if (viewState.successDeletion) {
       activity?.showSnackBar(getString(R.string.deletion_success))
     }

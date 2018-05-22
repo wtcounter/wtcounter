@@ -1,18 +1,20 @@
 package wordtextcounter.details.main.feature.notes
 
-import android.content.Context
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.content.ContextCompat
-import android.support.v4.util.TimeUtils
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.Adapter
-import android.text.format.DateUtils
-import android.text.format.DateUtils.*
+import android.text.format.DateUtils.getRelativeTimeSpanString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jakewharton.rxrelay2.BehaviorRelay
-import kotlinx.android.synthetic.main.item_note.view.*
+import kotlinx.android.synthetic.main.item_note.view.foldingCell
+import kotlinx.android.synthetic.main.item_note.view.ibDelete
+import kotlinx.android.synthetic.main.item_note.view.ibEdit
+import kotlinx.android.synthetic.main.item_note.view.ivExpand
+import kotlinx.android.synthetic.main.item_note.view.tvDate
+import kotlinx.android.synthetic.main.item_note.view.tvTitle
 import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
 import kotlinx.android.synthetic.main.report_folded.view.tvSentences
 import kotlinx.android.synthetic.main.report_folded.view.tvWords
@@ -24,26 +26,15 @@ import kotlinx.android.synthetic.main.report_unfolded.view.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
-class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
-
-  private var reports: List<Report>? = null
+class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallback()) {
 
 
   val clickRelay = BehaviorRelay.create<NotesAction>()
 
-
-  fun setReports(reports: List<Report>) {
-    this.reports = reports
-    notifyDataSetChanged()
-  }
-
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    holder.bindTo(reports!![position])
+    holder.bindTo(getItem(position))
   }
 
-  override fun getItemCount(): Int {
-    return reports?.size ?: 0
-  }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
     return ViewHolder(
@@ -77,7 +68,7 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
     init {
       foldingCell.initialize(500,
           ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0)
-  
+
       ibDelete.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Delete(adapterPosition))
@@ -107,7 +98,9 @@ class NotesAdapter : Adapter<NotesAdapter.ViewHolder>() {
 
     fun bindTo(report: Report) {
       tvTitle.text = report.name
-      tvDate.text = report.time_added?.let { getRelativeTimeSpanString(it, System.currentTimeMillis(), 0) }
+      tvDate.text = report.time_added?.let {
+        getRelativeTimeSpanString(it, System.currentTimeMillis(), 0)
+      }
 
       tvCharacters.text = report.characters
       tvWords.text = report.words
