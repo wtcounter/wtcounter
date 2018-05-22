@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
+import android.support.v4.content.ContextCompat
+import android.support.v7.content.res.AppCompatResources
 import android.util.AttributeSet
 import android.widget.ImageView
 import com.orhanobut.logger.Logger
@@ -23,11 +25,10 @@ class ExpandImageButton : ImageView {
   private val avLessToMore: AnimatedVectorDrawableCompat?
 
   init {
-    Logger.d("In init block")
     expanded = false
     avMoreToLess = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_more_to_less)
     avLessToMore = AnimatedVectorDrawableCompat.create(context!!, R.drawable.avd_less_to_more)
-    setImageResource(R.drawable.ic_expand_more_black_24dp)
+    setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_expand_more_black_24dp))
   }
 
   infix fun onClick(action: () -> Unit) {
@@ -38,14 +39,14 @@ class ExpandImageButton : ImageView {
           setImageDrawable(avMoreToLess)
           avMoreToLess?.start()
         } else {
-          setImageResource(R.drawable.ic_expand_less_black_24dp)
+          setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_expand_less_black_24dp))
         }
       } else {
         if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
           setImageDrawable(avLessToMore)
           avLessToMore?.start()
         } else {
-          setImageResource(R.drawable.ic_expand_more_black_24dp)
+          setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_expand_more_black_24dp))
         }
       }
       expanded = !expanded

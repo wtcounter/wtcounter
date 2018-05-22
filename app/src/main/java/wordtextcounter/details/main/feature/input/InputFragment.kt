@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.os.Looper
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -30,6 +31,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -111,27 +113,11 @@ class InputFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
 
-//    (activity as AppCompatActivity).setSupportActionBar(toolbar)
-
     fabSave onClick showDialog()
 
     foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
 
     ivExpand onClick toggleCell()
-
-//    ivExpand.setOnClickListener {
-//      if (foldingCell.isUnfolded) {
-//        ivExpand.setImageDrawable(avLessToMore)
-//        avLessToMore?.start()
-//      } else {
-//        ivExpand.setImageDrawable(avMoreToLess)
-//        avMoreToLess?.start()
-//      }
-//
-//      foldingCell.toggle(false)
-//    }
-//    etInput.setText(savedInstanceState?.getString(TEXT))
-
 
     disposable.add(RxTextView
         .textChanges(etInput)
@@ -153,6 +139,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun showDialog(): () -> Unit = {
+    Logger.d("Fab clicked.")
     val cView = LayoutInflater.from(activity)
         .inflate(R.layout.report_name_edit, null)
 
@@ -303,12 +290,6 @@ class InputFragment : BaseFragment() {
     } else {
       fabSave.hide()
     }
-
-//    if (!viewState.showExpand && foldingCell.isUnfolded) {
-//      ivExpand.setImageDrawable(avLessToMore)
-//      avLessToMore?.start()
-//      foldingCell.fold(false)
-//    }
 
     tvCharacters.text = viewState.report?.characters
     tvWords.text = viewState.report?.words
