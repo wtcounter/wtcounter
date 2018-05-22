@@ -16,6 +16,10 @@ inline fun Activity.showSnackBar(message: String) {
 }
 
 inline fun Activity.hideKeyboard() {
-  val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-  imm.hideSoftInputFromInputMethod(window.currentFocus.windowToken, HIDE_NOT_ALWAYS)
+  try {
+    val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromInputMethod(window.currentFocus.windowToken, HIDE_NOT_ALWAYS)
+  } catch (ignored: Exception) {
+    //ignored.
+  }
 }
