@@ -12,7 +12,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
-import android.os.Looper
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -139,7 +138,6 @@ class InputFragment : BaseFragment() {
   }
 
   private fun showDialog(): () -> Unit = {
-    Logger.d("Fab clicked.")
     val cView = LayoutInflater.from(activity)
         .inflate(R.layout.report_name_edit, null)
 
