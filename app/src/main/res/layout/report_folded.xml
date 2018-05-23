@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:visibility="visible"
     android:background="@color/white"
+    android:visibility="visible"
     tools:showIn="@layout/report_summary"
+    tools:visibility="gone"
     >
 
   <android.support.constraint.ConstraintLayout

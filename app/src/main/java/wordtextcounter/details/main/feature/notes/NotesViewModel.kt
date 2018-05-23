@@ -59,7 +59,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
           .observeOn(mainThread())
           .subscribe({
             if (it) {
-              getAllSavedNotes()
               RxBus.send(DeleteReport(report))
               viewState.value = getCurrentViewState().copy(successDeletion = true)
             }
