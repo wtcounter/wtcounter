@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_4sdp"
-    app:cardUseCompatPadding="true"
     app:cardCornerRadius="@dimen/_4sdp"
+    app:cardUseCompatPadding="true"
     >
   <android.support.constraint.ConstraintLayout
       xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,11 +21,11 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
-        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/tvDate"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
         android:gravity="center"
@@ -46,11 +46,9 @@
 
     <com.ramotion.foldingcell.FoldingCell
         android:id="@+id/foldingCell"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/separator"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDate"
         >
 
@@ -59,17 +57,15 @@
       <include layout="@layout/report_folded"/>
     </com.ramotion.foldingcell.FoldingCell>
 
-
     <ImageButton
         android:id="@+id/ivExpand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintBottom_toTopOf="@id/separator"
+        app:layout_constraintBottom_toBottomOf="@id/foldingCell"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_expand_more_black_24dp"
         />
-
 
     <View
         android:id="@+id/separator"
@@ -79,9 +75,9 @@
         android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginRight="@dimen/_4sdp"
         android:background="@color/grey_200"
-        app:layout_constraintBottom_toTopOf="@id/ibEdit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foldingCell"
         />
 
 
@@ -90,8 +86,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/ic_edit_black_24dp"
         />
@@ -101,8 +97,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/ic_delete"
         />

@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.view.View
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.fragment_notes.progressBar
 import wordtextcounter.details.main.feature.input.InputFragment
 
 abstract class BaseFragment : Fragment() {
@@ -15,8 +16,8 @@ abstract class BaseFragment : Fragment() {
   val disposable = CompositeDisposable()
 
   override fun onViewCreated(
-    view: View,
-    savedInstanceState: Bundle?
+      view: View,
+      savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
     retainInstance = true
@@ -24,6 +25,16 @@ abstract class BaseFragment : Fragment() {
     baseViewModel.routerState.observe(this, Observer {
       when (it) {
         is Input -> (activity as BaseActivity).replaceFragment(InputFragment.newInstance())
+      }
+    })
+
+    baseViewModel.loaderState.observe(this, Observer {
+      it?.let {
+        if (it) {
+          progressBar.visibility = View.VISIBLE
+        } else {
+          progressBar.visibility = View.GONE
+        }
       }
     })
   }

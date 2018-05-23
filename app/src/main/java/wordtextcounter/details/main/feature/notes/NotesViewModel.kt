@@ -14,9 +14,10 @@ import wordtextcounter.details.main.util.RxBus
 
 class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
   data class ViewState(val reports: List<Report>? = null,
-                       val showError: Boolean = false,
-                       val successDeletion: Boolean = false,
-                       val errorMessage: String? = null)
+      val showError: Boolean = false,
+      val successDeletion: Boolean = false,
+      val noReports: Boolean = false,
+      val errorMessage: String? = null)
 
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
 
@@ -27,16 +28,28 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
   private fun getCurrentViewState() = viewState.value!!
 
   fun getAllSavedNotes() {
+
+    loaderState.value = true
     addDisposable(dao.getAllReports()
         .subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          viewState.value = getCurrentViewState().copy(reports = it, showError = false, successDeletion = false)
+          loaderState.value = false
+          if (it.isEmpty()) {
+            viewState.value = getCurrentViewState().copy(noReports = true, reports = null,
+                showError = false,
+                successDeletion = false)
+          } else {
+            viewState.value = getCurrentViewState().copy(noReports = false, reports = it,
+                showError = false,
+                successDeletion = false)
+          }
         }, {
+          loaderState.value = false
           viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
         }))
   }
-  
+
   fun deleteReport(position: Int) {
     viewState.value?.reports?.get(position)?.let { report ->
       addDisposable(Single.create<Boolean> { e ->
@@ -46,7 +59,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
           .observeOn(mainThread())
           .subscribe({
             if (it) {
-              getAllSavedNotes()
               RxBus.send(DeleteReport(report))
               viewState.value = getCurrentViewState().copy(successDeletion = true)
             }
