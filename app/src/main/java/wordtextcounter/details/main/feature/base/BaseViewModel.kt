@@ -10,6 +10,7 @@ abstract class BaseViewModel : ViewModel() {
   private val compositeDisposable = CompositeDisposable()
 
   val routerState: MutableLiveData<Router> = MutableLiveData()
+  val loaderState: MutableLiveData<Boolean> = MutableLiveData()
 
   override fun onCleared() {
     if (!compositeDisposable.isDisposed) {

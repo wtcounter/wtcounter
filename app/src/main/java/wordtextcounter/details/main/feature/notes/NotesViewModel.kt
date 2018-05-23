@@ -28,10 +28,13 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
   private fun getCurrentViewState() = viewState.value!!
 
   fun getAllSavedNotes() {
+
+    loaderState.value = true
     addDisposable(dao.getAllReports()
         .subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
+          loaderState.value = false
           if (it.isEmpty()) {
             viewState.value = getCurrentViewState().copy(noReports = true, reports = null,
                 showError = false,
@@ -42,6 +45,7 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
                 successDeletion = false)
           }
         }, {
+          loaderState.value = false
           viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
         }))
   }
