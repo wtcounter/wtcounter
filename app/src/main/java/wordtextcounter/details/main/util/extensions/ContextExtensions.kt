@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package wordtextcounter.details.main
+package wordtextcounter.details.main.util.extensions
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
