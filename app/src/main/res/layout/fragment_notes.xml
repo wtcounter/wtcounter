@@ -1,4 +1,4 @@
-<android.support.design.widget.CoordinatorLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,8 +16,19 @@
       tools:listitem="@layout/item_note"
       />
 
+  <TextView
+      android:id="@+id/tvEmptyNotes"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="@string/no_saved_notes"
+      android:textColor="@color/primaryTextColor"
+      android:textSize="@dimen/_18sdp"
+      android:visibility="gone"
+      />
 
-</android.support.design.widget.CoordinatorLayout>
+
+</FrameLayout>
 
 
 

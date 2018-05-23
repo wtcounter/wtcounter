@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
+import kotlinx.android.synthetic.main.fragment_notes.tvEmptyNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -87,10 +88,20 @@ class NotesFragment : BaseFragment() {
 
 
   private fun handleViewState(viewState: ViewState) {
+
+    if (viewState.noReports) {
+      tvEmptyNotes.visibility = View.VISIBLE
+      rvNotes.visibility = View.GONE
+    } else {
+      tvEmptyNotes.visibility = View.GONE
+      rvNotes.visibility = View.VISIBLE
+    }
+
     if (viewState.reports != null) {
       notesAdapter.submitList(viewState.reports)
-//      notesAdapter.setReports(viewState.reports)
     }
+
+
 
     if (viewState.showError) {
       if (viewState.errorMessage == null) {

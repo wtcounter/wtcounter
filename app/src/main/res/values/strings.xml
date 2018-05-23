@@ -40,4 +40,5 @@
   <string name="deletion_success">Report deleted successfully.</string>
   <string name="addition_success">Report added successfully.</string>
   <string name="update_success">Report updated successfully.</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing to see here</string>
 </resources>
