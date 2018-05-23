@@ -130,7 +130,24 @@ class InputFragment : BaseFragment() {
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
-
+    
+    viewModel.additionLiveData.observe(this, Observer {
+      it?.let {
+        if (it) {
+          activity?.hideKeyboard()
+          activity?.showSnackBar(getString(R.string.addition_success))
+        }
+      }
+    })
+  
+    viewModel.updateLiveData.observe(this, Observer {
+      it?.let {
+        if (it) {
+          activity?.hideKeyboard()
+          activity?.showSnackBar(getString(R.string.update_success))
+        }
+      }
+    })
   }
 
   private fun toggleCell(): () -> Unit = {
@@ -267,21 +284,11 @@ class InputFragment : BaseFragment() {
   }
 
   private fun handleViewState(viewState: ViewState) {
-
     if (viewState.showError) {
       showError(viewState.errorMessage)
     }
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
-
-    if (viewState.additionSuccess || viewState.updateSuccess) {
-      activity?.hideKeyboard()
-      if (viewState.additionSuccess) {
-        activity?.showSnackBar(getString(R.string.addition_success))
-      } else {
-        activity?.showSnackBar(getString(R.string.update_success))
-      }
-    }
 
     if (viewState.showExpand) {
       fabSave.show()
@@ -300,6 +307,13 @@ class InputFragment : BaseFragment() {
     tvReportText.text = viewState.report?.dataText
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
+  }
+  
+  override fun onDestroyView() {
+    super.onDestroyView()
+    viewModel.updateLiveData.removeObservers(this)
+    viewModel.additionLiveData.removeObservers(this)
+    viewModel.viewState.removeObservers(this)
   }
 
   override val baseViewModel: BaseViewModel
