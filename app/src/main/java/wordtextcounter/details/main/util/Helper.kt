@@ -23,13 +23,13 @@ object Helper {
     s = s.replace("\t", " ")
     s = s.trim().replace(" +".toRegex(), " ")
 
-    var noOfWords = 0
+    var noOfSentences = 0
     for (c in s) {
       if (c == '.' || c == '\n') {
-        noOfWords++
+        noOfSentences++
       }
     }
-    return noOfWords + 1
+    return noOfSentences
   }
 
   fun countParagraphs(input: String): Int {
