@@ -1,6 +1,5 @@
 package wordtextcounter.details.main.feature.notes
 
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
@@ -60,10 +59,6 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
     private val ibDelete = itemView.ibDelete
     private val ibEdit = itemView.ibEdit
 
-    private val avMoreToLess = AnimatedVectorDrawableCompat.create(itemView.context,
-        R.drawable.avd_more_to_less)
-    private val avLessToMore = AnimatedVectorDrawableCompat.create(itemView.context,
-        R.drawable.avd_less_to_more)
 
     init {
       foldingCell.initialize(500,
@@ -78,15 +73,8 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
 
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
 
-        if (foldingCell.isUnfolded) {
-          ivExpand.setImageDrawable(avLessToMore)
-          avLessToMore?.start()
-        } else {
-          ivExpand.setImageDrawable(avMoreToLess)
-          avMoreToLess?.start()
-        }
+        ivExpand onClick toggle()
 
-        foldingCell.toggle(false)
       }
 
 
@@ -94,6 +82,10 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Edit(adapterPosition))
       }
+    }
+
+    private fun toggle(): () -> Unit = {
+      foldingCell.toggle(false)
     }
 
     fun bindTo(report: Report) {
