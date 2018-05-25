@@ -74,6 +74,8 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
+  
+  var reportNameEditMode: String? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -136,6 +138,7 @@ class InputFragment : BaseFragment() {
         if (it) {
           activity?.hideKeyboard()
           activity?.showSnackBar(getString(R.string.addition_success))
+          clearCurrentInputState()
         }
       }
     })
@@ -145,9 +148,15 @@ class InputFragment : BaseFragment() {
         if (it) {
           activity?.hideKeyboard()
           activity?.showSnackBar(getString(R.string.update_success))
+          clearCurrentInputState()
         }
       }
     })
+  }
+  
+  private fun clearCurrentInputState() {
+    etInput.text = null
+    reportNameEditMode = null
   }
 
   private fun toggleCell(): () -> Unit = {
@@ -260,6 +269,7 @@ class InputFragment : BaseFragment() {
     super.onStart()
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
+      reportNameEditMode = it.report.name
       if (etInput.text.trim().isNotEmpty()) {
         AlertDialog.Builder(context!!)
             .setTitle(R.string.edit_alert_title)
@@ -274,6 +284,7 @@ class InputFragment : BaseFragment() {
             .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
               viewModel.cancelEdit()
+              reportNameEditMode = null
             }
             .create().show()
       } else {

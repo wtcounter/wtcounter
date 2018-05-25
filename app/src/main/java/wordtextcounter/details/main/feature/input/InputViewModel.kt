@@ -72,7 +72,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         saveReport(report)
       } else {
         report.id = reportId
-        updateeport(report)
+        updateReport(report)
       }
     }
 
@@ -99,7 +99,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         }))
   }
 
-  private fun updateeport(report: Report) {
+  private fun updateReport(report: Report) {
     addDisposable(Single.create<Boolean> {
       try {
         dao.updateReport(report)
@@ -110,6 +110,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
+          reportId = null
           updateLiveData.value = true
           // This is to prevent showing msg continuously when fragment is popped out from backstack.
           // because liveData's onChanged() gets fired every time that happens.
