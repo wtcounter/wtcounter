@@ -18,18 +18,15 @@ object Helper {
   }
 
   fun countSentences(input: String): Int {
-    var s: String = input
-    s = s.replace("\n", " ")
-    s = s.replace("\t", " ")
-    s = s.trim().replace(" +".toRegex(), " ")
+    val s: String = input
+    val sentences = s.split("[!?.:]+".toRegex())
 
-    var noOfWords = 0
-    for (c in s) {
-      if (c == '.' || c == '\n') {
-        noOfWords++
-      }
+    //decrease count if last sentence is  an empty string
+    return if (sentences[sentences.size - 1].trim().isEmpty()) {
+      sentences.size - 1
+    } else {
+      sentences.size
     }
-    return noOfWords + 1
   }
 
   fun countParagraphs(input: String): Int {
