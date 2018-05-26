@@ -148,7 +148,7 @@ class InputFragment : BaseFragment() {
       revealDialog(cView)
     }
 
-    dialog.setOnKeyListener { dialog1, keyCode, event ->
+    dialog.setOnKeyListener { dialog1, keyCode, _ ->
       if (keyCode == KeyEvent.KEYCODE_BACK) {
         hideDialog(cView, dialog1)
         return@setOnKeyListener true
