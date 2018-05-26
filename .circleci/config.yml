@@ -1,0 +1,36 @@
+version: 2.0
+
+cache_key: &cache_key
+  key: jars-{{ checksum "build.gradle" }}-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
+jobs:
+  build:
+    working_directory: ~/wtcounter
+
+    docker:
+      - image: circleci/android:api-27-alpha
+
+    environment:
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          <<: *cache_key
+
+      - run:
+          name: Assemble
+          command: ./gradlew build
+
+      - save_cache:
+          <<: *cache_key
+          paths:
+            - ~/.gradle/caches
+            - ~/.gradle/wrapper
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
