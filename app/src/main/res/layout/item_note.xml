@@ -6,7 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_1sdp"
+    android:layout_marginEnd="@dimen/_3sdp"
+    android:layout_marginStart="@dimen/_3sdp"
+    android:layout_marginTop="@dimen/_1sdp"
     app:cardCornerRadius="@dimen/_4sdp"
     app:cardUseCompatPadding="true"
     >
@@ -15,8 +18,8 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/_4sdp"
-      android:paddingBottom="@dimen/_3sdp"
+      android:layout_margin="@dimen/_2sdp"
+      android:paddingBottom="@dimen/_2sdp"
       >
 
     <TextView
@@ -84,6 +87,7 @@
         android:id="@+id/ibEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
         android:background="@null"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/separator"
@@ -95,6 +99,7 @@
         android:id="@+id/ibDelete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
         android:background="@null"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/separator"
