@@ -188,6 +188,12 @@ class InputFragment : BaseFragment() {
     ivCross.setOnClickListener {
       hideDialog(cView, dialog)
     }
+    if (reportNameEditMode != null) {
+      etName.setText(reportNameEditMode)
+      etName.post {
+        reportNameEditMode?.length?.let { etName.setSelection(it) }
+      }
+    }
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
         if (s != null && !s.isEmpty()) {
