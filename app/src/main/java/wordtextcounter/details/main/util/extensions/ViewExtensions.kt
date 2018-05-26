@@ -8,7 +8,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnticipateInterpolator
-import android.view.animation.AnticipateOvershootInterpolator
+import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
 
 infix fun FloatingActionButton.onClick(function: () -> Unit) {
@@ -75,8 +75,8 @@ fun FloatingActionButton.backToPosition() {
       (xDest - originalPosition[0]).toFloat(), 0f,
       (yDest - originalPosition[1]).toFloat(), 0f
   )
-  anim.interpolator = AnticipateOvershootInterpolator()
-  anim.duration = 400
+  anim.interpolator = LinearInterpolator()
+  anim.duration = 300
   anim.setAnimationListener(object : AnimationListener {
     override fun onAnimationRepeat(animation: Animation?) {
 
