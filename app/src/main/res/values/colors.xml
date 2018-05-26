@@ -9,5 +9,6 @@
   <color name="primaryTextColor">@color/white</color>
   <color name="secondaryTextColor">@color/grey_800</color>
   <color name="folder_back_side">@color/grey_200</color>
+  <color name="saveButtonDisabled">@color/grey_400</color>
 
 </resources>

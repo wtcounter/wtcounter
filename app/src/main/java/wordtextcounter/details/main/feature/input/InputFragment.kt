@@ -30,7 +30,6 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.etInput
@@ -169,7 +168,7 @@ class InputFragment : BaseFragment() {
           context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
           btnSave.isEnabled = true
         } else {
-          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.grey_200)) }
+          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.saveButtonDisabled)) }
           btnSave.isEnabled = false
         }
       }

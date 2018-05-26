@@ -8,11 +8,9 @@
   <color name="amber_300">#ffc947</color>
   <color name="orange_800">#c66900</color>
   <color name="white">#ffffff</color>
-  <color name="grey_800">#323232</color>
-
   <color name="grey_100">#f5f5f5</color>
-
   <color name="grey_200">#eeeeee</color>
-
+  <color name="grey_400">#bdbdbd</color>
+  <color name="grey_800">#323232</color>
   <color name="black_filter">#30000000</color>
 </resources>
