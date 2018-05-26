@@ -325,13 +325,6 @@ class InputFragment : BaseFragment() {
     tvSizeContent.text = viewState.report?.size
   }
   
-  override fun onDestroyView() {
-    super.onDestroyView()
-    viewModel.updateLiveData.removeObservers(this)
-    viewModel.additionLiveData.removeObservers(this)
-    viewModel.viewState.removeObservers(this)
-  }
-
   override val baseViewModel: BaseViewModel
     get() = viewModel
 
