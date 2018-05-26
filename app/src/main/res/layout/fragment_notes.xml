@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryLightColor"
+    android:background="@drawable/side_nav_bar"
     tools:context="wordtextcounter.details.main.feature.notes.NotesFragment"
     >
 

@@ -70,8 +70,8 @@
       android:layout_marginBottom="@dimen/_10sdp"
       android:layout_marginEnd="@dimen/_10sdp"
       android:layout_marginRight="@dimen/_10sdp"
-      android:tint="@color/primaryColor"
-      app:srcCompat="@drawable/ic_save_black_32dp"
+      android:tint="@color/secondaryTextColor"
+      app:srcCompat="@drawable/ic_add_black_24dp"
       />
 
 
