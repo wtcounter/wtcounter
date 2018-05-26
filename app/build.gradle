@@ -7,6 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+  signingConfigs {
+    release {
+      keyAlias WTC_KEY_ALIAS
+      keyPassword WTC_SIGNING_PASSWORD
+      storeFile file(KEY_STORE_FILE_PATH_WTC)
+      storePassword WTC_SIGNING_PASSWORD
+    }
+  }
   compileSdkVersion 27
   buildToolsVersion '27.0.3'
   defaultConfig {
@@ -23,8 +31,10 @@ android {
   }
   buildTypes {
     release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
     }
   }
   compileOptions {
@@ -73,32 +83,22 @@ dependencies {
   implementation rxAnd
   implementation 'com.android.support.constraint:constraint-layout:1.1.0'
   testImplementation 'junit:junit:4.12'
-
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
   // Lifecycle
   implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
   implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
   annotationProcessor "android.arch.lifecycle:compiler:$versions.androidArchVersion"
-
   //room
   implementation "android.arch.persistence.room:runtime:$versions.room"
   kapt "android.arch.persistence.room:compiler:$versions.room"
   implementation "android.arch.persistence.room:rxjava2:$versions.room"
-
   //rxandroid
   implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-
   implementation "com.roughike:bottom-bar:$versions.bottombar"
-
   implementation "com.jakewharton.rxbinding2:rxbinding-design:$versions.rxbinding"
-
   implementation "com.orhanobut:logger:$versions.logger"
-
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
-
   implementation 'androidx.core:core-ktx:0.3'
-
   implementation "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
 }
