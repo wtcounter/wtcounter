@@ -7,6 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+  signingConfigs {
+    release {
+      keyAlias WTC_KEY_ALIAS
+      keyPassword WTC_SIGNING_PASSWORD
+      storeFile file(KEY_STORE_FILE_PATH_WTC)
+      storePassword WTC_SIGNING_PASSWORD
+    }
+  }
   compileSdkVersion 27
   buildToolsVersion '27.0.3'
   defaultConfig {
@@ -23,8 +31,10 @@ android {
   }
   buildTypes {
     release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
     }
   }
   compileOptions {
@@ -99,6 +109,6 @@ dependencies {
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
 
   implementation 'androidx.core:core-ktx:0.3'
-
+  
   implementation "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
 }
