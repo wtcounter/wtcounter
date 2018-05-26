@@ -4,6 +4,8 @@
     <item name="colorPrimary">@color/primaryColor</item>
     <item name="colorPrimaryDark">@color/primaryDarkColor</item>
     <item name="colorAccent">@color/secondaryColor</item>
+    <item name="android:fontFamily">@font/rubik</item>
+    <item name="fontFamily">@font/rubik</item>
   </style>
 
   <style name="AppTheme.NoActionBar" parent="AppTheme">

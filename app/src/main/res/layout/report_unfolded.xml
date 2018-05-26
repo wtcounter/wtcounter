@@ -40,7 +40,7 @@
         android:textColor="@color/primaryLightColor"
         android:textSize="@dimen/_14sdp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hello world whats up dsjaldha dsajdhalsh jdasdlasjldksa  dsalkjdlkasd  dsjadjlka  dalsjdlkaj"
+        tools:text="Hello world whats up"
         />
 
     <TextView
