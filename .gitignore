@@ -10,3 +10,5 @@
 .externalNativeBuild
 *.jks
 keystore.credentials
+*.apk
+output.json
