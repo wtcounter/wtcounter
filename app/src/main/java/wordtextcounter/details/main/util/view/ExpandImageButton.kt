@@ -4,21 +4,28 @@ import android.content.Context
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat
-import android.support.v4.content.ContextCompat
 import android.support.v7.content.res.AppCompatResources
 import android.util.AttributeSet
 import android.widget.ImageView
-import com.orhanobut.logger.Logger
 import wordtextcounter.details.main.R
 
 class ExpandImageButton : ImageView {
 
   constructor(context: Context) : super(context)
 
-  constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet)
+  constructor(
+    context: Context,
+    attributeSet: AttributeSet
+  ) : super(context, attributeSet)
 
-  constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) : super(context,
-      attributeSet, defStyleAttr)
+  constructor(
+    context: Context,
+    attributeSet: AttributeSet,
+    defStyleAttr: Int
+  ) : super(
+      context,
+      attributeSet, defStyleAttr
+  )
 
   var expanded: Boolean
   private val avMoreToLess: AnimatedVectorDrawableCompat?
@@ -33,24 +40,34 @@ class ExpandImageButton : ImageView {
 
   infix fun onClick(action: () -> Unit) {
     setOnClickListener({
+
+      expandArrow()
       action()
-      if (!expanded) {
-        if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-          setImageDrawable(avMoreToLess)
-          avMoreToLess?.start()
-        } else {
-          setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_expand_less_black_24dp))
-        }
-      } else {
-        if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-          setImageDrawable(avLessToMore)
-          avLessToMore?.start()
-        } else {
-          setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_expand_more_black_24dp))
-        }
-      }
-      expanded = !expanded
     })
+
+  }
+
+  internal fun expandArrow() {
+    if (!expanded) {
+      if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+        setImageDrawable(avMoreToLess)
+        avMoreToLess?.start()
+      } else {
+        setImageDrawable(
+            AppCompatResources.getDrawable(context, R.drawable.ic_expand_less_black_24dp)
+        )
+      }
+    } else {
+      if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+        setImageDrawable(avLessToMore)
+        avLessToMore?.start()
+      } else {
+        setImageDrawable(
+            AppCompatResources.getDrawable(context, R.drawable.ic_expand_more_black_24dp)
+        )
+      }
+    }
+    expanded = !expanded
 
   }
 }

@@ -27,21 +27,27 @@ import wordtextcounter.details.main.store.entities.Report
 
 class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallback()) {
 
-
   val clickRelay = BehaviorRelay.create<NotesAction>()
 
-  override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+  override fun onBindViewHolder(
+    holder: ViewHolder,
+    position: Int
+  ) {
     holder.bindTo(getItem(position))
   }
 
-
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+  override fun onCreateViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): ViewHolder {
     return ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false))
+        LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
+    )
   }
 
   inner class ViewHolder(itemView: View) : android.support.v7.widget.RecyclerView.ViewHolder(
-      itemView) {
+      itemView
+  ) {
 
     private val tvTitle = itemView.tvTitle
     private val tvDate = itemView.tvDate
@@ -59,10 +65,11 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
     private val ibDelete = itemView.ibDelete
     private val ibEdit = itemView.ibEdit
 
-
     init {
-      foldingCell.initialize(500,
-          ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0)
+      foldingCell.initialize(
+          500,
+          ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0
+      )
 
       ibDelete.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
@@ -72,20 +79,15 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
       ivExpand.setOnClickListener {
 
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
-
-        ivExpand onClick toggle()
+        ivExpand.expandArrow()
+        foldingCell.toggle(false)
 
       }
-
 
       ibEdit.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Edit(adapterPosition))
       }
-    }
-
-    private fun toggle(): () -> Unit = {
-      foldingCell.toggle(false)
     }
 
     fun bindTo(report: Report) {
