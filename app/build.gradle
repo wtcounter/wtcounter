@@ -7,14 +7,18 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+  Properties props = new Properties()
+  props.load(new FileInputStream(file("keystore.credentials")))
+
   signingConfigs {
     release {
-      keyAlias WTC_KEY_ALIAS
-      keyPassword WTC_SIGNING_PASSWORD
-      storeFile file(KEY_STORE_FILE_PATH_WTC)
-      storePassword WTC_SIGNING_PASSWORD
+      storeFile file(props['keystore'])
+      storePassword props['keystore.password']
+      keyAlias props['keyAlias']
+      keyPassword props['keyPassword']
     }
   }
+
   compileSdkVersion 27
   buildToolsVersion '27.0.3'
   defaultConfig {
@@ -109,6 +113,6 @@ dependencies {
   implementation "com.ramotion.foldingcell:folding-cell:$versions.foldingcell"
 
   implementation 'androidx.core:core-ktx:0.3'
-  
+
   implementation "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
 }

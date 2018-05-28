@@ -22,7 +22,6 @@
 
 -dontwarn com.roughike.bottombar.**
 -dontwarn wordtextcounter.details.main.store.**
--dontwarn wordtextcounter.details.main.util.RxBus
 
 -keep class wordtextcounter.details.main.store.** { *; }
 
@@ -49,6 +48,3 @@
 -keep class * implements android.arch.lifecycle.LifecycleObserver {
     <init>(...);
 }
--keepclassmembers class android.arch.** { *; }
--keep class android.arch.** { *; }
-

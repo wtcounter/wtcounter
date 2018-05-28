@@ -11,6 +11,7 @@ object RxBus {
     bus.accept(event)
   }
 
+  @Suppress("UNCHECKED_CAST")
   fun <T> subscribe(clazz: Class<T>, consumer: Consumer<T>): Disposable {
     return bus.filter { t -> t.javaClass == clazz }.map { t -> t as T }.subscribe(consumer)
   }
