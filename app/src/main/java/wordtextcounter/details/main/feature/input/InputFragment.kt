@@ -73,6 +73,8 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
+  
+  var reportNameEditMode: String? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -129,7 +131,31 @@ class InputFragment : BaseFragment() {
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
-
+    
+    viewModel.additionLiveData.observe(this, Observer {
+      it?.let {
+        if (it) {
+          activity?.hideKeyboard()
+          activity?.showSnackBar(getString(R.string.addition_success))
+          clearCurrentInputState()
+        }
+      }
+    })
+  
+    viewModel.updateLiveData.observe(this, Observer {
+      it?.let {
+        if (it) {
+          activity?.hideKeyboard()
+          activity?.showSnackBar(getString(R.string.update_success))
+          clearCurrentInputState()
+        }
+      }
+    })
+  }
+  
+  private fun clearCurrentInputState() {
+    etInput.text = null
+    reportNameEditMode = null
   }
 
   private fun toggleCell(): () -> Unit = {
@@ -161,6 +187,12 @@ class InputFragment : BaseFragment() {
     val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
     ivCross.setOnClickListener {
       hideDialog(cView, dialog)
+    }
+    if (reportNameEditMode != null) {
+      etName.setText(reportNameEditMode)
+      etName.post {
+        reportNameEditMode?.length?.let { etName.setSelection(it) }
+      }
     }
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
@@ -242,6 +274,7 @@ class InputFragment : BaseFragment() {
     super.onStart()
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
+      reportNameEditMode = it.report.name
       if (etInput.text.trim().isNotEmpty()) {
         AlertDialog.Builder(context!!)
             .setTitle(R.string.edit_alert_title)
@@ -256,6 +289,7 @@ class InputFragment : BaseFragment() {
             .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
               viewModel.cancelEdit()
+              reportNameEditMode = null
             }
             .create().show()
       } else {
@@ -266,21 +300,11 @@ class InputFragment : BaseFragment() {
   }
 
   private fun handleViewState(viewState: ViewState) {
-
     if (viewState.showError) {
       showError(viewState.errorMessage)
     }
 
     ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
-
-    if (viewState.additionSuccess || viewState.updateSuccess) {
-      activity?.hideKeyboard()
-      if (viewState.additionSuccess) {
-        activity?.showSnackBar(getString(R.string.addition_success))
-      } else {
-        activity?.showSnackBar(getString(R.string.update_success))
-      }
-    }
 
     if (viewState.showExpand) {
       fabSave.show()
@@ -300,7 +324,7 @@ class InputFragment : BaseFragment() {
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
   }
-
+  
   override val baseViewModel: BaseViewModel
     get() = viewModel
 

@@ -20,14 +20,14 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
 
   data class ViewState(
       val showError: Boolean = false,
-      val additionSuccess: Boolean = false,
-      val updateSuccess: Boolean = false,
       val errorMessage: String = "",
       val report: Report? = null,
       val reportText: String = "",
       val showExpand: Boolean = false
   )
-
+  
+  val updateLiveData: MutableLiveData<Boolean> = MutableLiveData()
+  val additionLiveData: MutableLiveData<Boolean> = MutableLiveData()
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
 
   private var reportId: Int? = null
@@ -57,7 +57,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         , 0
         , calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
-        report = report, showExpand = true, showError = false, additionSuccess = false, updateSuccess = false)
+        report = report, showExpand = true, showError = false)
 
   }
 
@@ -72,7 +72,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         saveReport(report)
       } else {
         report.id = reportId
-        updateeport(report)
+        updateReport(report)
       }
     }
 
@@ -89,13 +89,17 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          viewState.value = currentViewState().copy(additionSuccess = true)
+          additionLiveData.value = true
+          // This is to prevent showing msg continuously when fragment is popped out from backstack.
+          // because liveData's onChanged() gets fired every time that happens.
+          // TODO Remove this once said bug is resolved.
+          additionLiveData.value = false
         }, {
           viewState.value = currentViewState().copy(showError = true)
         }))
   }
 
-  private fun updateeport(report: Report) {
+  private fun updateReport(report: Report) {
     addDisposable(Single.create<Boolean> {
       try {
         dao.updateReport(report)
@@ -106,7 +110,12 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          viewState.value = currentViewState().copy(updateSuccess = true)
+          reportId = null
+          updateLiveData.value = true
+          // This is to prevent showing msg continuously when fragment is popped out from backstack.
+          // because liveData's onChanged() gets fired every time that happens.
+          // TODO Remove this once said bug is resolved.
+          updateLiveData.value = false
         }, {
           viewState.value = currentViewState().copy(showError = true)
         }))
