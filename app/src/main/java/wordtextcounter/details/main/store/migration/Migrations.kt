@@ -1,6 +1,7 @@
 package wordtextcounter.details.main.store.migration
 
 import android.content.Context
+import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.Helper
@@ -13,14 +14,18 @@ class Migrations(val context: Context) {
     val dao = db.reportDao()
     dao.getAllReports()
         .subscribeOn(io())
-        .flatMapIterable { t -> t }
-        .map { t ->
-          t.size = t.dataText?.let { Helper.calculateSize(it) }
-          return@map t
+        .flatMap { t ->
+          return@flatMap Flowable.fromIterable(t)
+              .map { r ->
+                r.size = r.dataText?.let { Helper.calculateSize(it) }
+                return@map r
+              }
+              .toList()
+              .toFlowable()
         }
-        .toList()
+        .take(1)
         .subscribe { t ->
-           dao.updateReports(ArrayList(t))
+          dao.updateReports(ArrayList(t))
         }
   }
 }
