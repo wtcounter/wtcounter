@@ -73,7 +73,7 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
-  
+
   var reportNameEditMode: String? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,7 +131,7 @@ class InputFragment : BaseFragment() {
     viewModel.viewState.observe(this, Observer {
       it?.let { it1 -> handleViewState(it1) }
     })
-    
+
     viewModel.additionLiveData.observe(this, Observer {
       it?.let {
         if (it) {
@@ -141,7 +141,7 @@ class InputFragment : BaseFragment() {
         }
       }
     })
-  
+
     viewModel.updateLiveData.observe(this, Observer {
       it?.let {
         if (it) {
@@ -152,7 +152,7 @@ class InputFragment : BaseFragment() {
       }
     })
   }
-  
+
   private fun clearCurrentInputState() {
     etInput.text = null
     reportNameEditMode = null
@@ -188,19 +188,16 @@ class InputFragment : BaseFragment() {
     ivCross.setOnClickListener {
       hideDialog(cView, dialog)
     }
-    if (reportNameEditMode != null) {
-      etName.setText(reportNameEditMode)
-      etName.post {
-        reportNameEditMode?.length?.let { etName.setSelection(it) }
-      }
-    }
+
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
         if (s != null && !s.isEmpty()) {
           context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
           btnSave.isEnabled = true
         } else {
-          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.saveButtonDisabled)) }
+          context?.let {
+            btnSave.setTextColor(ContextCompat.getColor(it, R.color.saveButtonDisabled))
+          }
           btnSave.isEnabled = false
         }
       }
@@ -214,6 +211,12 @@ class InputFragment : BaseFragment() {
       }
 
     })
+
+
+    reportNameEditMode?.let {
+      etName.setText(it)
+      etName.post { etName.setSelection(it.length) }
+    }
 
     btnSave.setOnClickListener {
       if (!etName.text.isEmpty()) {
@@ -324,7 +327,7 @@ class InputFragment : BaseFragment() {
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
   }
-  
+
   override val baseViewModel: BaseViewModel
     get() = viewModel
 
