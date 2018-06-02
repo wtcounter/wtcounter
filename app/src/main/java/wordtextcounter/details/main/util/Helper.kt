@@ -1,55 +1,28 @@
 package wordtextcounter.details.main.util
 
-import com.orhanobut.logger.Logger
 import java.text.BreakIterator
 
 object Helper {
 
   fun countWords(input: String): Int {
-//    var s: String = input
-//    s = s.replace("\n", " ")
-//    s = s.replace("\t", " ")
-//    s = s.trim().replace(" +".toRegex(), " ")
-//
-//    var noOfWords = 0
-//    for (c in s) {
-//      if (c == ' ') {
-//        noOfWords++
-//      }
-//    }
-//    return noOfWords + 1
 
-
-    var s = input
-
+    val wordIterator = BreakIterator.getWordInstance()
+    wordIterator.setText(input)
+    var start = wordIterator.first()
+    var end = wordIterator.next()
 
     var wordCount = 0
-    val graphemeCounter = BreakIterator.getWordInstance()
-    graphemeCounter.setText(s)
-    while (graphemeCounter.next() != BreakIterator.DONE) {
-      wordCount++
+    while (end != BreakIterator.DONE) {
+      val word = input.substring(start, end)
+      if (Character.isLetterOrDigit(word[0])) {
+        wordCount++
+      }
+      start = end
+      end = wordIterator.next()
     }
 
-    Logger.d("Word count $wordCount")
+    return wordCount
 
-
-//    s = s.replace("[^-<(\\[{^=\$!|\\]})?*+.>]+|[^\\s]+".toRegex(), "")
-
-//    Logger.d("After removing special characters spaces count ${s}")
-
-//    Logger.d("After removing special characters spaces count ${s.length}")
-//    val noOfWords = s.length
-    Logger.d("total length ${s.length}")
-
-
-    Logger.d("Space removed string ${s.replace("\\s+".toRegex(), "")}")
-
-    Logger.d("Space removed string length " + s.replace("\\s+".toRegex(), "").length)
-
-
-
-    return wordCount - (s.length - s.replace("\\s+".toRegex(), "").replace(
-        "[-<~/:_@#%&(\\[{^=\$!|\\]})?*+;'\".>]".toRegex(), "").length)
   }
 
 
