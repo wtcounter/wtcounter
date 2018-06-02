@@ -94,7 +94,7 @@ dependencies {
   // Lifecycle
   implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
   implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
-  annotationProcessor "android.arch.lifecycle:compiler:$versions.androidArchVersion"
+  kapt "android.arch.lifecycle:compiler:$versions.androidArchVersion"
 
   //room
   implementation "android.arch.persistence.room:runtime:$versions.room"
