@@ -1,6 +1,5 @@
 <resources>
-  <string name="app_name">Word Text Counter</string>
-
+  <string name="app_name">Word Counter</string>
 
   <!--main-->
   <string name="input">Input</string>
