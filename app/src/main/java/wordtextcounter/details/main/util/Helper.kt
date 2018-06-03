@@ -41,15 +41,17 @@ object Helper {
 
 
   fun countSentences(input: String): Int {
-    val s: String = input
-    val sentences = s.split("[!?.:]+".toRegex())
 
-    //decrease count if last sentence is  an empty string
-    return if (sentences[sentences.size - 1].trim().isEmpty()) {
-      sentences.size - 1
-    } else {
-      sentences.size
+    var graphemeCount = 0
+    val boundary = BreakIterator.getSentenceInstance()
+    boundary.setText(input)
+    var end = boundary.next()
+    while (end != BreakIterator.DONE) {
+      graphemeCount++
+      end = boundary.next()
     }
+    return graphemeCount
+
   }
 
   fun countParagraphs(input: String): Int {

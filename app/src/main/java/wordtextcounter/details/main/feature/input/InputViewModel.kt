@@ -51,12 +51,12 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }
 
     val report = Report("", input.trim()
-        , countWords(input).toString()
-        , countCharacters(input).toString()
-        , countParagraphs(input).toString()
-        , countSentences(input).toString()
-        , 0
-        , calculateSize(input))
+        , words = countWords(input).toString()
+        , characters = countCharacters(input).toString()
+        , paragraphs = countParagraphs(input).toString()
+        , sentences = countSentences(input).toString()
+        , time_added = 0
+        , size = calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
         report = report, showExpand = true, showError = false)
 
