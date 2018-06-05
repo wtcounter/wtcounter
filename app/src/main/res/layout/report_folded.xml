@@ -8,7 +8,7 @@
     android:background="@color/white"
     android:visibility="visible"
     tools:showIn="@layout/report_summary"
-    tools:visibility="gone"
+    tools:visibility="visible"
     >
 
   <android.support.constraint.ConstraintLayout
@@ -33,6 +33,7 @@
         android:text="@string/characters"
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintBottom_toTopOf="@id/tvCharacters"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33"
         />
@@ -46,8 +47,8 @@
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/tvWords"
+        app:layout_constraintEnd_toStartOf="@id/tvWords"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
         tools:text="2000"
         />
@@ -61,7 +62,7 @@
         android:text="@string/words"
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintBottom_toTopOf="@id/tvWords"
-        app:layout_constraintLeft_toRightOf="@id/tvCharactersLabel"
+        app:layout_constraintStart_toEndOf="@id/tvCharactersLabel"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33"
         />
@@ -75,8 +76,8 @@
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/tvCharacters"
-        app:layout_constraintRight_toLeftOf="@id/tvSentences"
+        app:layout_constraintEnd_toStartOf="@id/tvSentences"
+        app:layout_constraintStart_toEndOf="@id/tvCharacters"
         app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
         tools:text="212"
         />
@@ -90,7 +91,7 @@
         android:text="@string/sentences"
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintBottom_toTopOf="@id/tvSentences"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.33"
         />
@@ -104,8 +105,8 @@
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/tvWords"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvWords"
         app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
         tools:text="12"
         />

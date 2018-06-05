@@ -10,6 +10,7 @@ import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.Helper.calculateSize
+import wordtextcounter.details.main.util.Helper.countCharacters
 import wordtextcounter.details.main.util.Helper.countParagraphs
 import wordtextcounter.details.main.util.Helper.countSentences
 import wordtextcounter.details.main.util.Helper.countWords
@@ -25,7 +26,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val reportText: String = "",
       val showExpand: Boolean = false
   )
-  
+
   val updateLiveData: MutableLiveData<Boolean> = MutableLiveData()
   val additionLiveData: MutableLiveData<Boolean> = MutableLiveData()
   val viewState: MutableLiveData<ViewState> = MutableLiveData()
@@ -50,12 +51,12 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }
 
     val report = Report("", input.trim()
-        , countWords(input).toString()
-        , input.length.toString()
-        , countParagraphs(input).toString()
-        , countSentences(input).toString()
-        , 0
-        , calculateSize(input))
+        , words = countWords(input).toString()
+        , characters = countCharacters(input).toString()
+        , paragraphs = countParagraphs(input).toString()
+        , sentences = countSentences(input).toString()
+        , time_added = 0
+        , size = calculateSize(input))
     viewState.value = currentViewState().copy(reportText = input,
         report = report, showExpand = true, showError = false)
 
