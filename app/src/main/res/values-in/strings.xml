@@ -16,7 +16,7 @@
     <string name="hint_input">Masukkan teks Anda di sini</string>
     <string name="input">Memasukkan</string>
     <string name="no">Tidak</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Tidak ada di sini!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nTidak ada di sini!</string>
     <string name="notes">Catatan</string>
     <string name="paragraphs">Paragraf</string>
     <string name="replace_current_text">Ganti Teks Saat Ini</string>

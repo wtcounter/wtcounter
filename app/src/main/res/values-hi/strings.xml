@@ -16,7 +16,7 @@
     <string name="hint_input">अपना टेक्स्ट यहां दर्ज करें</string>
     <string name="input">इनपुट</string>
     <string name="no">नहीं</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ यहां कुछ भी नहीं!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nयहां कुछ भी नहीं!</string>
     <string name="notes">टिप्पणियाँ</string>
     <string name="paragraphs">पैराग्राफ</string>
     <string name="replace_current_text">वर्तमान पाठ को बदलें</string>

@@ -16,7 +16,7 @@
     <string name="hint_input">તમારો ટેક્સ્ટ અહીં દાખલ કરો</string>
     <string name="input">ઇનપુટ</string>
     <string name="no">ના</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ કંઈ અહીં નથી!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nઅહીં કંઈ નથી!</string>
     <string name="notes">નોંધો</string>
     <string name="paragraphs">ફકરા</string>
     <string name="replace_current_text">વર્તમાન ટેક્સ્ટ બદલો</string>

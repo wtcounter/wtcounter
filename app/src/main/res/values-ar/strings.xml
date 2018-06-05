@@ -16,7 +16,7 @@
     <string name="hint_input">أدخل النص هنا</string>
     <string name="input">إدخال</string>
     <string name="no">لا</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ لا شيء هنا!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nلا شيء هنا!</string>
     <string name="notes">ملاحظات</string>
     <string name="paragraphs">الفقرات</string>
     <string name="replace_current_text">استبدال النص الحالي</string>

@@ -16,7 +16,7 @@
     <string name="hint_input">Írja be ide a szöveget</string>
     <string name="input">Bemenet</string>
     <string name="no">Nem</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Semmi sem itt!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nSemmi sem itt!</string>
     <string name="notes">Megjegyzések</string>
     <string name="paragraphs">bekezdések</string>
     <string name="replace_current_text">Az aktuális szöveg cseréje</string>
