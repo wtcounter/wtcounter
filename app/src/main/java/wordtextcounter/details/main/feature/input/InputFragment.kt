@@ -255,6 +255,7 @@ class InputFragment : BaseFragment() {
       revealAnimator.start()
     } else {
       dialog.dismiss()
+      fabSave.backToPosition()
     }
   }
 
