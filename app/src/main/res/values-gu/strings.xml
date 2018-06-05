@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">સેટિંગ્સ</string>
     <string name="addition_success">રિપોર્ટ સફળતાપૂર્વક ઉમેરવામાં આવ્યો</string>
-    <string name="app_name">વર્ડ ટેક્સ્ટ કાઉન્ટર</string>
+    <string name="app_name">શબ્દ કાઉન્ટર</string>
     <string name="bookmark_hint">રિપોર્ટ નામ દાખલ કરો</string>
     <string name="characters">કેરેક્ટર્સ</string>
     <string name="confirm">પુષ્ટિ કરો</string>

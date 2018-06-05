@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">सेटिंग्स</string>
     <string name="addition_success">रिपोर्ट सफलतापूर्वक जोड़ा गया</string>
-    <string name="app_name">वर्ड टेक्स्ट काउंटर</string>
+    <string name="app_name">वर्ड काउंटर</string>
     <string name="bookmark_hint">रिपोर्ट नाम दर्ज करें</string>
     <string name="characters">केरेक्टर्स</string>
     <string name="confirm">की पुष्टि करें</string>

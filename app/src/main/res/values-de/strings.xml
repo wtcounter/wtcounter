@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">die Einstellungen</string>
     <string name="addition_success">Der Bericht wurde erfolgreich hinzugefügt</string>
-    <string name="app_name">Word-Text-Zähler</string>
+    <string name="app_name">Wort-Zähler</string>
     <string name="bookmark_hint">Geben Sie den Berichtsnamen ein</string>
     <string name="characters">Figuren</string>
     <string name="confirm">Bestätigen</string>

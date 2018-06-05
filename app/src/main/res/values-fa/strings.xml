@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">تنظیمات</string>
     <string name="addition_success">گزارش با موفقیت اضافه شد</string>
-    <string name="app_name">شمارش متن کلمه</string>
+    <string name="app_name">شمارنده کلمه</string>
     <string name="bookmark_hint">نام گزارش را وارد کنید</string>
     <string name="characters">شخصیت ها</string>
     <string name="confirm">تایید</string>

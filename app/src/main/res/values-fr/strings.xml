@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Paramètres</string>
     <string name="addition_success">Rapport ajouté avec succès</string>
-    <string name="app_name">Compteur de texte Word</string>
+    <string name="app_name">Compteur de mots</string>
     <string name="bookmark_hint">Entrez le nom du rapport</string>
     <string name="characters">Personnages</string>
     <string name="confirm">Confirmer</string>

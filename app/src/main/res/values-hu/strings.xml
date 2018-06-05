@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Beállítások</string>
     <string name="addition_success">A jelentés sikeresen hozzá lett adva</string>
-    <string name="app_name">Word szöveges számláló</string>
+    <string name="app_name">Word számláló</string>
     <string name="bookmark_hint">Adja meg a jelentés nevét</string>
     <string name="characters">Karakterek</string>
     <string name="confirm">megerősít</string>

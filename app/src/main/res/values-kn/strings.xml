@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">ಸೆಟ್ಟಿಂಗ್ಗಳು</string>
     <string name="addition_success">ವರದಿ ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲಾಗಿದೆ</string>
-    <string name="app_name">ಪದಗಳ ಪಠ್ಯ ಕೌಂಟರ್</string>
+    <string name="app_name">ಪದ ಕೌಂಟರ್</string>
     <string name="bookmark_hint">ವರದಿ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>
     <string name="characters">ಪಾತ್ರಗಳು</string>
     <string name="confirm">ದೃಢೀಕರಿಸಿ</string>

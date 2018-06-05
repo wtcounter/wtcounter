@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Roghainnean</string>
     <string name="addition_success">Aithisg air a chur ris gu soirbheachail</string>
-    <string name="app_name">Count Text Text</string>
+    <string name="app_name">Counter Word</string>
     <string name="bookmark_hint">Cuir a-steach ainm an fhiosrachaidh</string>
     <string name="characters">Caractaran</string>
     <string name="confirm">Dearbhaich</string>
