@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Generated using www.stringx.io-->
+
+<resources>
+    <string name="action_settings">Nastavení</string>
+    <string name="addition_success">Zpráva byla úspěšně přidána</string>
+    <string name="app_name">Word Text Counter</string>
+    <string name="bookmark_hint">Zadejte název sestavy</string>
+    <string name="characters">Postavy</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="delete_alert_desc">Opravdu chcete smazat tento přehled?</string>
+    <string name="deletion_success">Zpráva byla úspěšně smazána</string>
+    <string name="edit_alert_desc">Tato akce vymaže aktuální obsah. Jste si jistý, že chcete pokračovat?</string>
+    <string name="edit_alert_title">Jsi si jistá?</string>
+    <string name="generic_error_message">Vypadá to, že se něco pokazilo. Prosím zkuste to znovu později…</string>
+    <string name="hint_input">Zadejte svůj text zde</string>
+    <string name="input">Vstup</string>
+    <string name="no">Ne</string>
+    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nic zde!</string>
+    <string name="notes">Poznámky</string>
+    <string name="paragraphs">Odstavce</string>
+    <string name="replace_current_text">Nahradit aktuální text</string>
+    <string name="save">Uložit</string>
+    <string name="save_dialog_desc">V pořádku! Co byste chtěl říkat?</string>
+    <string name="see_more">Zobrazit úplnou zprávu</string>
+    <string name="sentences">Věty</string>
+    <string name="size">Velikost</string>
+    <string name="start_typing">Začněte psát</string>
+    <string name="title_input">Vstup</string>
+    <string name="title_notes">Poznámky</string>
+    <string name="update_success">Zpráva byla úspěšně aktualizována</string>
+    <string name="words">Slova</string>
+    <string name="yes">Ano</string>
+</resources>
