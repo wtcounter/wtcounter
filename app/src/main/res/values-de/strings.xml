@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Generated using www.stringx.io-->
+
+<resources>
+    <string name="action_settings">die Einstellungen</string>
+    <string name="addition_success">Der Bericht wurde erfolgreich hinzugefügt</string>
+    <string name="app_name">Word-Text-Zähler</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout $ ScrollingViewBehavior</string>
+    <string name="bookmark_hint">Geben Sie den Berichtsnamen ein</string>
+    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="character_counter_pattern">%d/%d</string>
+    <string name="characters">Figuren</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="delete_alert_desc">Möchten Sie diesen Bericht wirklich löschen?</string>
+    <string name="deletion_success">Der Bericht wurde erfolgreich gelöscht</string>
+    <string name="edit_alert_desc">Diese Aktion löscht den aktuellen Inhalt. Bist du dir sicher, dass du weitermachen willst?</string>
+    <string name="edit_alert_title">Bist du sicher?</string>
+    <string name="generic_error_message">Sieht so aus, als wäre etwas schief gelaufen. Bitte versuchen Sie es später erneut ...</string>
+    <string name="hint_input">Gib deinen Text hier ein</string>
+    <string name="input">Eingang</string>
+    <string name="no">Nein</string>
+    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nichts hier!</string>
+    <string name="notes">Anmerkungen</string>
+    <string name="paragraphs">Absätze</string>
+    <string name="password_toggle_content_description">Sichtbarkeit des Passwortes umschalten</string>
+    <string name="path_password_eye">M12,4,5C7,4,5 2,73,7,61 1,12c1,73,4,39 6,7,5 11,7,5s9,27, -3,11 11, -7,5c-1,73, -4,39 -6, -7,5 -11, -7,5zM12, 17c-2,76,0 -5, -2,24 -5, -5s2,24, -5 5, -5 5,2,24 5,5 -2,24,5 -5,5zM12,9c-1,66,0 -3,1,34 -3 , 3s1, 34, 3, 3, 1, 34, 3, -1, 34, -3, -3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4,27 L19,73,22 L22,27,19,46 L4,54,1,73 L4,54,1 L23,1 L23,23 L1,23 L1,4,27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4,27 L2,4,27 L4,54,1,73 L4,54,1,73 L4,54,1 L23,1 L23,23 L1,23 L1,4,27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="replace_current_text">Aktuellen Text ersetzen</string>
+    <string name="save">sparen</string>
+    <string name="save_dialog_desc">In Ordung! Wie würdest du es nennen?</string>
+    <string name="see_more">Gesamten Bericht anzeigen</string>
+    <string name="sentences">Sätze</string>
+    <string name="size">Größe</string>
+    <string name="start_typing">Anfangen zu tippen</string>
+    <string name="title_input">Eingang</string>
+    <string name="title_notes">Anmerkungen</string>
+    <string name="update_success">Bericht erfolgreich aktualisiert</string>
+    <string name="words">Wörter</string>
+    <string name="yes">Ja</string>
+</resources>

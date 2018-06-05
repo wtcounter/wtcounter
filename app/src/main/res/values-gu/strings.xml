@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Generated using www.stringx.io-->
+
+<resources>
+    <string name="action_settings">સેટિંગ્સ</string>
+    <string name="addition_success">રિપોર્ટ સફળતાપૂર્વક ઉમેરવામાં આવ્યો</string>
+    <string name="app_name">વર્ડ ટેક્સ્ટ કાઉન્ટર</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout $ ScrollingViewBehavior</string>
+    <string name="bookmark_hint">રિપોર્ટ નામ દાખલ કરો</string>
+    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="character_counter_pattern">%d/%d</string>
+    <string name="characters">પાત્રો</string>
+    <string name="confirm">પુષ્ટિ કરો</string>
+    <string name="delete_alert_desc">શું તમે ખરેખર આ રિપોર્ટ કાઢી નાખવા માંગો છો?</string>
+    <string name="deletion_success">રિપોર્ટ સફળતાપૂર્વક કાઢી નાખ્યો</string>
+    <string name="edit_alert_desc">આ ક્રિયા વર્તમાન સામગ્રીને કાઢી નાખશે. શું તમે ખરેખર ચાલુ રાખવા માંગો છો?</string>
+    <string name="edit_alert_title">શું તમને ખાતરી છે?</string>
+    <string name="generic_error_message">એવું લાગે છે કે કંઈક ખોટું થયું છે. પછીથી ફરી પ્રયત્ન કરો…</string>
+    <string name="hint_input">તમારો ટેક્સ્ટ અહીં દાખલ કરો</string>
+    <string name="input">ઇનપુટ</string>
+    <string name="no">ના</string>
+    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ કંઈ અહીં નથી!</string>
+    <string name="notes">નોંધો</string>
+    <string name="paragraphs">ફકરા</string>
+    <string name="password_toggle_content_description">પાસવર્ડ દૃશ્યતા ટૉગલ કરો</string>
+    <string name="path_password_eye">એમ 12,4,5 સી 7,4,5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s 9.27, -3.11 11, -7.5 સી -173, -4.39 -6, -7.5 -11, -7.5zM12, 17c-2.76,0 -5, -2.24 -5, -5s2.24, -5 5, -5 5.2.24 5,5 -2.24,5 -5,5 મીમ 12 9સી-1.66,0 -3,1.34 -3 , 3s1.34,3,3,3, -1.34 3, -3 -1.34, -3 -3, -3ઝ</string>
+    <string name="path_password_eye_mask_strike_through">એમ 2,4.27 એલ19.73,22 એલ 22.27,19.46 એલ 4.54,1.73 એલ 4.54,1 એલ23,1 એલ23, 23 એલ 1, 23 L1,4.27 ઝેડ</string>
+    <string name="path_password_eye_mask_visible">એમ 2,4,27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 ઝેડ</string>
+    <string name="path_password_strike_through">એમ 3,27,4.27 એલ19.74,20.74</string>
+    <string name="replace_current_text">વર્તમાન ટેક્સ્ટ બદલો</string>
+    <string name="save">સાચવો</string>
+    <string name="save_dialog_desc">બરાબર! તમે તેને શું કહેવા માંગો છો?</string>
+    <string name="see_more">પૂર્ણ રિપોર્ટ જુઓ</string>
+    <string name="sentences">વાક્યો</string>
+    <string name="size">કદ</string>
+    <string name="start_typing">ટાઈપીંગ શરૂ કરો</string>
+    <string name="title_input">ઇનપુટ</string>
+    <string name="title_notes">નોંધો</string>
+    <string name="update_success">રિપોર્ટ સફળતાપૂર્વક અપડેટ થયો</string>
+    <string name="words">શબ્દો</string>
+    <string name="yes">હા</string>
+</resources>
