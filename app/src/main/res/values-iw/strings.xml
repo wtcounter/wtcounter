@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">הגדרות</string>
     <string name="addition_success">הדוח נוסף בהצלחה</string>
-    <string name="app_name">Word טקסט מונה</string>
+    <string name="app_nam">מונה מילים</string>
     <string name="bookmark_hint">הזן שם דוח</string>
     <string name="characters">דמויות</string>
     <string name="confirm">לְאַשֵׁר</string>

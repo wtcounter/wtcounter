@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Configuraciones</string>
     <string name="addition_success">Informe agregado con éxito</string>
-    <string name="app_name">Word Text Counter</string>
+    <string name="app_name">Word Counter</string>
     <string name="bookmark_hint">Ingrese el nombre del informe</string>
     <string name="characters">Caracteres</string>
     <string name="confirm">Confirmar</string>

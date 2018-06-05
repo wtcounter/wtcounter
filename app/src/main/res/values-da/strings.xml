@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Indstillinger</string>
     <string name="addition_success">Rapport tilføjet med succes</string>
-    <string name="app_name">Word Text Counter</string>
+    <string name="app_name">Word Counter</string>
     <string name="bookmark_hint">Indtast rapportnavn</string>
     <string name="characters">tegn</string>
     <string name="confirm">Bekræfte</string>

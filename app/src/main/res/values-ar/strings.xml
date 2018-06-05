@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">إعدادات</string>
     <string name="addition_success">تمت إضافة التقرير بنجاح</string>
-    <string name="app_name">كلمة نص عداد</string>
+    <string name="app_name">عداد الكلمات</string>
     <string name="bookmark_hint">أدخل اسم التقرير</string>
     <string name="characters">الشخصيات</string>
     <string name="confirm">تؤكد</string>

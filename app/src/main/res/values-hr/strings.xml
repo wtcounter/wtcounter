@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">postavke</string>
     <string name="addition_success">Izvješće je uspješno dodano</string>
-    <string name="app_name">Kontrolor teksta riječi</string>
+    <string name="app_name">Kontrolor riječi</string>
     <string name="bookmark_hint">Unesite naziv izvješća</string>
     <string name="characters">likovi</string>
     <string name="confirm">potvrditi</string>

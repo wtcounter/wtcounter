@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Pengaturan</string>
     <string name="addition_success">Laporan berhasil ditambahkan</string>
-    <string name="app_name">Penghitung Teks Word</string>
+    <string name="app_name">Penghitung Word</string>
     <string name="bookmark_hint">Masukkan nama Laporan</string>
     <string name="characters">Karakter</string>
     <string name="confirm">Memastikan</string>

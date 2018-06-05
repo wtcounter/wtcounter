@@ -4,7 +4,7 @@
 <resources>
     <string name="action_settings">Nastavení</string>
     <string name="addition_success">Zpráva byla úspěšně přidána</string>
-    <string name="app_name">Word Text Counter</string>
+    <string name="app_name">Word Counter</string>
     <string name="bookmark_hint">Zadejte název sestavy</string>
     <string name="characters">Postavy</string>
     <string name="confirm">Potvrdit</string>
