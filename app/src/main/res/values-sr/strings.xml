@@ -5,10 +5,7 @@
     <string name="action_settings">Подешавања</string>
     <string name="addition_success">Извештај успешно додан</string>
     <string name="app_name">Ворд Ворд Цоунтер</string>
-    <string name="appbar_scrolling_view_behavior">андроид.суппорт.десигн.видгет.АппБарЛаиоут $ СцроллингВиевБехавиор</string>
     <string name="bookmark_hint">Унесите име извештаја</string>
-    <string name="bottom_sheet_behavior">андроид.суппорт.десигн.видгет.БоттомСхеетБехавиор</string>
-    <string name="character_counter_pattern">%d/%d</string>
     <string name="characters">Карактери</string>
     <string name="confirm">Потврди</string>
     <string name="delete_alert_desc">Да ли сте сигурни да желите да избришете овај извештај?</string>
@@ -22,11 +19,6 @@
     <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ништа овде!</string>
     <string name="notes">Напомене</string>
     <string name="paragraphs">Параграфи</string>
-    <string name="password_toggle_content_description">Пребаците видљивост лозинке</string>
-    <string name="path_password_eye">М12,4,5Ц7,4,5 2,73,7,61 1,12ц1,73,4,39 6,7,5 11,7,5с9,27, -3,11 11, -7,5ц-1,73, -4,39 -6, -7,5 -11, -7,5зМ12, 17ц-2.76,0 -5, -2,24 -5, -5с2,24, -5 5, -5 5,2,24 5,5 -2,24,5 -5,5зМ12,9ц-1.66,0 -3,1,34 -3 , 3с1.34,3 3,3 3, -1,34 3, -3 -1,34, -3 -3, -3з</string>
-    <string name="path_password_eye_mask_strike_through">М2,4.27 Л19.73,22 Л22.27,19.46 Л4.54,1.73 Л4.54,1 Л23,1 Л23,23 Л1,23 Л1,4.27 З</string>
-    <string name="path_password_eye_mask_visible">М2,4.27 Л2,4.27 Л4.54,1.73 Л4.54,1.73 Л4.54,1 Л23,1 Л23,23 Л1,23 Л1,4.27 З</string>
-    <string name="path_password_strike_through">М3.27,4.27 Л19.74,20.74</string>
     <string name="replace_current_text">Замените тренутни текст</string>
     <string name="save">сачувати</string>
     <string name="save_dialog_desc">У реду! Шта желите да назовете?</string>

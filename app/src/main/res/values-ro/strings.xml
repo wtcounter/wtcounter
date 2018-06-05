@@ -5,10 +5,7 @@
     <string name="action_settings">Setări</string>
     <string name="addition_success">Raportul a fost adăugat cu succes</string>
     <string name="app_name">Word Text Counter</string>
-    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout $ ScrollingViewBehavior</string>
     <string name="bookmark_hint">Introduceți numele raportului</string>
-    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="character_counter_pattern">%d/%d</string>
     <string name="characters">caractere</string>
     <string name="confirm">A confirma</string>
     <string name="delete_alert_desc">Sigur doriți să ștergeți acest raport?</string>
@@ -22,11 +19,6 @@
     <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nimic aici!</string>
     <string name="notes">notițe</string>
     <string name="paragraphs">alineatele</string>
-    <string name="password_toggle_content_description">Schimbați vizibilitatea parolei</string>
-    <string name="path_password_eye">M12, 4,5, 7, 7, 7, 7, 7, 17c-2,76,0-5, -2,24-5, -5s2,24, -5 5, -5 5,2,24 5,5 -2,24,5 -5,5zM12,9c-1,66,0 -3,1,34 -3 , 3s1,34,3,3,33, -1,34 3, -3 -1,34, -3-3, -3z</string>
-    <string name="path_password_eye_mask_strike_through">M2,4,27 L19,73,22 L22,27,19,46 L4,54,1,73 L4,54,1 L23,1 L23,23 L1,23 L1,4,27 Z</string>
-    <string name="path_password_eye_mask_visible">M2,4,27 L2,4,27 L4,54,1,73 L4,54,1,73 L4,54,1 L23,1 L23,23 L1,23 L1,4,27 Z</string>
-    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
     <string name="replace_current_text">Înlocuiți textul curent</string>
     <string name="save">Salvați</string>
     <string name="save_dialog_desc">În regulă! Ce vrei să spui?</string>

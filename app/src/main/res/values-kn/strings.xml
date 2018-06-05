@@ -5,10 +5,7 @@
     <string name="action_settings">ಸೆಟ್ಟಿಂಗ್ಗಳು</string>
     <string name="addition_success">ವರದಿ ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲಾಗಿದೆ</string>
     <string name="app_name">ಪದಗಳ ಪಠ್ಯ ಕೌಂಟರ್</string>
-    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout $ ಸ್ಕ್ರೋಲ್ ವೀಕ್ಷಣೆ ಬಿಹೇವಿಯರ್</string>
     <string name="bookmark_hint">ವರದಿ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>
-    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="character_counter_pattern">%d/%d</string>
     <string name="characters">ಪಾತ್ರಗಳು</string>
     <string name="confirm">ದೃಢೀಕರಿಸಿ</string>
     <string name="delete_alert_desc">ಈ ವರದಿಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>
@@ -22,11 +19,6 @@
     <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ ಇಲ್ಲಿ ಏನೂ ಇಲ್ಲ!</string>
     <string name="notes">ಟಿಪ್ಪಣಿಗಳು</string>
     <string name="paragraphs">ಪ್ಯಾರಾಗಳು</string>
-    <string name="password_toggle_content_description">ಪಾಸ್ವರ್ಡ್ ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ</string>
-    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27, -3.11 11, -7.5c-1.73, -4.39 -6, -7.5 -11, -7.5zM12, 17c-2.76,0 -5, -2.24 -5, -5s2.24, -5 5, -5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3 , 3s1.34,3 3,3 3, -1.34 3, -3 -1.34, -3 -3, -3z</string>
-    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
-    <string name="path_password_eye_mask_visible">M2,4.27 L2.4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
-    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
     <string name="replace_current_text">ಪ್ರಸ್ತುತ ಪಠ್ಯವನ್ನು ಬದಲಾಯಿಸಿ</string>
     <string name="save">ಉಳಿಸಿ</string>
     <string name="save_dialog_desc">ಸರಿ! ನೀವು ಅದನ್ನು ಏನನ್ನು ಕರೆಯಲು ಬಯಸುತ್ತೀರಿ?</string>

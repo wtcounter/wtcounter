@@ -5,10 +5,7 @@
     <string name="action_settings">設置</string>
     <string name="addition_success">報告已成功添加</string>
     <string name="app_name">Word文本計數器</string>
-    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout $ ScrollingViewBehavior</string>
     <string name="bookmark_hint">輸入報告名稱</string>
-    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="character_counter_pattern">%d/%d</string>
     <string name="characters">人物</string>
     <string name="confirm">確認</string>
     <string name="delete_alert_desc">您確定要刪除此報告嗎？</string>
@@ -22,11 +19,6 @@
     <string name="no_saved_notes">¯\ _（ツ）_ /¯這裡沒有！</string>
     <string name="notes">筆記</string>
     <string name="paragraphs">段落</string>
-    <string name="password_toggle_content_description">切換密碼可見性</string>
-    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27，-3.11 11，-7.5c-1.73，-4.39 -6，-7.5 -11，-7.5zM12， 17c-2.76,0 -5，-2.24 -5，-5s2.24，-5 5，-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3 ，3s1.34,3.33，-1.34 3，-3-1.34，-3-3，-3z</string>
-    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
-    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
-    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
     <string name="replace_current_text">替換當前文本</string>
     <string name="save">保存</string>
     <string name="save_dialog_desc">好的！你想叫什麼？</string>
