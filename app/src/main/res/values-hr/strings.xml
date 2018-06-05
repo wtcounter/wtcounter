@@ -16,7 +16,7 @@
     <string name="hint_input">Unesite svoj tekst ovdje</string>
     <string name="input">Ulazni</string>
     <string name="no">Ne</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ništa ovdje!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNišta ovdje!</string>
     <string name="notes">Bilješke</string>
     <string name="paragraphs">stavci</string>
     <string name="replace_current_text">Zamijenite trenutačni tekst</string>

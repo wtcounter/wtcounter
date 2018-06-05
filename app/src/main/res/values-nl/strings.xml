@@ -16,7 +16,7 @@
     <string name="hint_input">Voer hier uw tekst in</string>
     <string name="input">Invoer</string>
     <string name="no">Nee</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Niets hier!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNiets hier!</string>
     <string name="notes">Notes</string>
     <string name="paragraphs">De leden</string>
     <string name="replace_current_text">Vervang huidige tekst</string>

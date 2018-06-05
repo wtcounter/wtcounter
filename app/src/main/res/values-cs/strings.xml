@@ -16,7 +16,7 @@
     <string name="hint_input">Zadejte svůj text zde</string>
     <string name="input">Vstup</string>
     <string name="no">Ne</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nic zde!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNic zde!</string>
     <string name="notes">Poznámky</string>
     <string name="paragraphs">Odstavce</string>
     <string name="replace_current_text">Nahradit aktuální text</string>

@@ -16,7 +16,7 @@
     <string name="hint_input">Nhập văn bản của bạn ở đây</string>
     <string name="input">Đầu vào</string>
     <string name="no">Không</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Không có gì ở đây!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nKhông có gì ở đây!</string>
     <string name="notes">Ghi chú</string>
     <string name="paragraphs">Đoạn</string>
     <string name="replace_current_text">Thay thế văn bản hiện tại</string>

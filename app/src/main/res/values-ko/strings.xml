@@ -16,7 +16,7 @@
     <string name="hint_input">여기에 텍스트를 입력하십시오.</string>
     <string name="input">입력</string>
     <string name="no">아니</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ 아무것도 없어!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\n아무것도 없어!</string>
     <string name="notes">노트</string>
     <string name="paragraphs">단락</string>
     <string name="replace_current_text">현재 텍스트 바꾸기</string>

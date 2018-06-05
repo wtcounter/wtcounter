@@ -16,7 +16,7 @@
     <string name="hint_input">Introduceți textul aici</string>
     <string name="input">Intrare</string>
     <string name="no">Nu</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nimic aici!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNimic aici!</string>
     <string name="notes">notițe</string>
     <string name="paragraphs">alineatele</string>
     <string name="replace_current_text">Înlocuiți textul curent</string>

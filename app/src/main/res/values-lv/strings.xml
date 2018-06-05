@@ -16,7 +16,7 @@
     <string name="hint_input">Ievadiet savu tekstu šeit</string>
     <string name="input">Ievade</string>
     <string name="no">Nē</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nekas šeit!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNekas šeit!</string>
     <string name="notes">Piezīmes</string>
     <string name="paragraphs">Punktus</string>
     <string name="replace_current_text">Nomainiet pašreizējo tekstu</string>

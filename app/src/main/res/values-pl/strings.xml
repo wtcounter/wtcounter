@@ -16,7 +16,7 @@
     <string name="hint_input">Tutaj wpisz swój tekst</string>
     <string name="input">Wkład</string>
     <string name="no">Nie</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nic tutaj!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNic tutaj!</string>
     <string name="notes">Uwagi</string>
     <string name="paragraphs">Akapity</string>
     <string name="replace_current_text">Zastąp bieżący tekst</string>

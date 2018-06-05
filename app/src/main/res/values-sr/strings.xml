@@ -16,7 +16,7 @@
     <string name="hint_input">Унесите свој текст овде</string>
     <string name="input">Улазни</string>
     <string name="no">Не</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ништа овде!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nНишта овде!</string>
     <string name="notes">Напомене</string>
     <string name="paragraphs">Параграфи</string>
     <string name="replace_current_text">Замените тренутни текст</string>

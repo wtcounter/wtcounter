@@ -16,7 +16,7 @@
     <string name="hint_input">在這裡輸入你的文字</string>
     <string name="input">輸入</string>
     <string name="no">沒有</string>
-    <string name="no_saved_notes">¯\ _（ツ）_ /¯這裡沒有！</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\n這裡沒有！</string>
     <string name="notes">筆記</string>
     <string name="paragraphs">段落</string>
     <string name="replace_current_text">替換當前文本</string>

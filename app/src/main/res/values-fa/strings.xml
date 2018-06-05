@@ -16,7 +16,7 @@
     <string name="hint_input">متن خود را در اینجا وارد کنید</string>
     <string name="input">ورودی</string>
     <string name="no">نه</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ هیچ چیز اینجا نیست!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nهیچ چیز اینجا نیست!</string>
     <string name="notes">یادداشت</string>
     <string name="paragraphs">پاراگراف ها</string>
     <string name="replace_current_text">جایگزین متن فعلی</string>

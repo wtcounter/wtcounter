@@ -16,7 +16,7 @@
     <string name="hint_input">Metninizi buraya girin</string>
     <string name="input">Giriş</string>
     <string name="no">Yok hayır</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Burada bir şey yok!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nBurada bir şey yok!</string>
     <string name="notes">notlar</string>
     <string name="paragraphs">Paragraflar</string>
     <string name="replace_current_text">Geçerli Metni Değiştir</string>

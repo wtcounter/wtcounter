@@ -16,7 +16,7 @@
     <string name="hint_input">Inserisci il tuo testo qui</string>
     <string name="input">Ingresso</string>
     <string name="no">No</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Niente qui!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNiente qui!</string>
     <string name="notes">Gli appunti</string>
     <string name="paragraphs">I paragrafi</string>
     <string name="replace_current_text">Sostituisci testo corrente</string>

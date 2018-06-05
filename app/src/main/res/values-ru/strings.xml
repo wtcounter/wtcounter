@@ -16,7 +16,7 @@
     <string name="hint_input">Введите текст здесь</string>
     <string name="input">вход</string>
     <string name="no">нет</string>
-    <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ничего здесь!</string>
+    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nНичего здесь!</string>
     <string name="notes">Заметки</string>
     <string name="paragraphs">Пункты</string>
     <string name="replace_current_text">Заменить текущий текст</string>
