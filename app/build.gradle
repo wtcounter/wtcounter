@@ -7,15 +7,21 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-  Properties props = new Properties()
-  props.load(new FileInputStream(file("keystore.credentials")))
 
-  signingConfigs {
-    release {
-      storeFile file(props['keystore'])
-      storePassword props['keystore.password']
-      keyAlias props['keyAlias']
-      keyPassword props['keyPassword']
+  def file = new File("keystore.credentials")
+
+  if (file.exists()) {
+
+    Properties props = new Properties()
+    props.load(new FileInputStream(file("keystore.credentials")))
+
+    signingConfigs {
+      release {
+        storeFile file(props['keystore'])
+        storePassword props['keystore.password']
+        keyAlias props['keyAlias']
+        keyPassword props['keyPassword']
+      }
     }
   }
 
@@ -38,7 +44,9 @@ android {
       minifyEnabled true
       shrinkResources true
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-      signingConfig signingConfigs.release
+      if (file.exists()) {
+        signingConfig signingConfigs.release
+      }
     }
   }
   compileOptions {
