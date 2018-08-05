@@ -10,13 +10,14 @@
     tools:showIn="@layout/fragment_input"
     >
 
+
   <com.ramotion.foldingcell.FoldingCell
       android:id="@+id/foldingCell"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       >
 
@@ -24,6 +25,16 @@
 
     <include layout="@layout/report_folded"/>
   </com.ramotion.foldingcell.FoldingCell>
+
+  <ImageButton
+      android:id="@+id/ivMoreStats"
+      android:layout_width="@dimen/_24sdp"
+      android:layout_height="@dimen/_24sdp"
+      android:background="@android:color/transparent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_more_black_24dp"
+      />
 
   <wordtextcounter.details.main.util.view.ExpandImageButton
       android:id="@+id/ivExpand"

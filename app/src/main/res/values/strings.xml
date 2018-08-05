@@ -40,4 +40,7 @@
   <string name="addition_success">Report added successfully</string>
   <string name="update_success">Report updated successfully</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

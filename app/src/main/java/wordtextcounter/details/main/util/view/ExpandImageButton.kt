@@ -14,14 +14,14 @@ class ExpandImageButton : ImageView {
   constructor(context: Context) : super(context)
 
   constructor(
-    context: Context,
-    attributeSet: AttributeSet
+      context: Context,
+      attributeSet: AttributeSet
   ) : super(context, attributeSet)
 
   constructor(
-    context: Context,
-    attributeSet: AttributeSet,
-    defStyleAttr: Int
+      context: Context,
+      attributeSet: AttributeSet,
+      defStyleAttr: Int
   ) : super(
       context,
       attributeSet, defStyleAttr
@@ -39,12 +39,10 @@ class ExpandImageButton : ImageView {
   }
 
   infix fun onClick(action: () -> Unit) {
-    setOnClickListener({
-
+    setOnClickListener {
       expandArrow()
       action()
-    })
-
+    }
   }
 
   internal fun expandArrow() {

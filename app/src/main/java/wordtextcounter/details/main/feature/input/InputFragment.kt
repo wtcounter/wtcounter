@@ -24,6 +24,7 @@ import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.*
@@ -101,6 +102,12 @@ class InputFragment : BaseFragment() {
     foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
 
     ivExpand onClick toggleCell()
+
+    ivMoreStats.setOnClickListener {
+      Logger.d("More stats clicked")
+      val dialogFragment = ExtraStatsFragment()
+      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+    }
 
     disposable.add(RxTextView
         .textChanges(etInput)
