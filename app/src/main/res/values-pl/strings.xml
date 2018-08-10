@@ -33,5 +33,5 @@
   <string name="deletion_success">Raport został pomyślnie usunięty</string>
   <string name="addition_success">Raport został pomyślnie dodany</string>
   <string name="update_success">Raport zaktualizowano pomyślnie</string>
-  <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatekj!</string>
+  <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
 </resources>
