@@ -1,4 +1,4 @@
-# wtcounter
+# Word Counter
 
 Simple Android App to get number of characters, words, lines from given input.
 
@@ -14,7 +14,10 @@ Features:
 Architecture:
   App is developed using MVVM pattern. It uses AAC - viewmodel and livedata for reactive UI.
   
-
+ ## Translation
+ 
+ Join the project on Crowdin at https://crowdin.com/project/word-counter, if you'd like to add new translation or improve current translations for word counter.
+ 
  ## License
 Word Text Counter is licensed under [GNU General Public License v3](LICENSE).
 
