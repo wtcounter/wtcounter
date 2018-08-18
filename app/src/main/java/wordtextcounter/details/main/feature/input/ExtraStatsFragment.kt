@@ -1,14 +1,12 @@
 package wordtextcounter.details.main.feature.input
 
 
+import android.app.Dialog
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
+import android.support.design.widget.BottomSheetDialogFragment
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import kotlinx.android.synthetic.main.fragment_extra_stats.*
-
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Stat
 
@@ -19,7 +17,7 @@ import wordtextcounter.details.main.store.entities.Stat
  * create an instance of this fragment.
  *
  */
-class ExtraStatsFragment : DialogFragment() {
+class ExtraStatsFragment : BottomSheetDialogFragment() {
 
   private lateinit var adapter: ExtraStatsAdapter
 
@@ -34,7 +32,6 @@ class ExtraStatsFragment : DialogFragment() {
     return inflater.inflate(R.layout.fragment_extra_stats, container, false)
   }
 
-
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
@@ -42,9 +39,22 @@ class ExtraStatsFragment : DialogFragment() {
     adapter.setStats(getStats())
   }
 
+  override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+    val dialog = super.onCreateDialog(savedInstanceState)
+    dialog.window.requestFeature(Window.FEATURE_NO_TITLE)
+    return dialog
+  }
+
+
+  override fun onStart() {
+    super.onStart()
+    dialog.window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+        WindowManager.LayoutParams.WRAP_CONTENT)
+  }
+
   private fun getStats(): List<Stat> {
-    var stats = mutableListOf<Stat>()
-    for (i in 0..10) {
+    val stats = mutableListOf<Stat>()
+    for (i in 0..50) {
       stats.add(Stat("Name of Stats ", i.toString()))
     }
     return stats
