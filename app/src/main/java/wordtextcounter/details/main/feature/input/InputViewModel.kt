@@ -1,10 +1,11 @@
 package wordtextcounter.details.main.feature.input
 
-import android.arch.lifecycle.MutableLiveData
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers.io
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.ReplaySubject
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
@@ -27,14 +28,14 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val showExpand: Boolean = false
   )
 
-  val updateLiveData: MutableLiveData<Boolean> = MutableLiveData()
-  val additionLiveData: MutableLiveData<Boolean> = MutableLiveData()
-  val viewState: MutableLiveData<ViewState> = MutableLiveData()
+  val updateLiveData: PublishSubject<Boolean> = PublishSubject.create()
+  val additionLiveData: PublishSubject<Boolean> = PublishSubject.create()
+  val viewState: ReplaySubject<ViewState> = ReplaySubject.create()
 
   private var reportId: Int? = null
 
   init {
-    viewState.value = ViewState()
+    viewState.onNext(ViewState())
 
     addDisposable(RxBus.subscribe(EditReport::class.java, Consumer {
       reportId = it.report.id
@@ -46,7 +47,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
-      viewState.value = ViewState(showExpand = false)
+      viewState.onNext(ViewState(showExpand = false))
       return
     }
 
@@ -57,9 +58,8 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         , sentences = countSentences(input).toString()
         , time_added = 0
         , size = calculateSize(input))
-    viewState.value = currentViewState().copy(reportText = input,
-        report = report, showExpand = true, showError = false)
-
+    viewState.onNext(currentViewState().copy(reportText = input,
+        report = report, showExpand = true, showError = false))
   }
 
   fun onClickSaveCurrent(name: String) {
@@ -90,13 +90,9 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          additionLiveData.value = true
-          // This is to prevent showing msg continuously when fragment is popped out from backstack.
-          // because liveData's onChanged() gets fired every time that happens.
-          // TODO Remove this once said bug is resolved.
-          additionLiveData.value = false
+          additionLiveData.onNext(true)
         }, {
-          viewState.value = currentViewState().copy(showError = true)
+          viewState.onNext(currentViewState().copy(showError = true))
         }))
   }
 
@@ -112,13 +108,9 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         .observeOn(mainThread())
         .subscribe({
           reportId = null
-          updateLiveData.value = true
-          // This is to prevent showing msg continuously when fragment is popped out from backstack.
-          // because liveData's onChanged() gets fired every time that happens.
-          // TODO Remove this once said bug is resolved.
-          updateLiveData.value = false
+          updateLiveData.onNext(true)
         }, {
-          viewState.value = currentViewState().copy(showError = true)
+          viewState.onNext(currentViewState().copy(showError = true))
         }))
   }
 
