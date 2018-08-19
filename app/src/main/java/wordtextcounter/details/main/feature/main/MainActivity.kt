@@ -10,6 +10,7 @@ import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
+import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
 import wordtextcounter.details.main.util.dpToPx
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
@@ -81,6 +82,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     when (tabId) {
       R.id.tab_input -> replaceFragment(InputFragment.newInstance())
       R.id.tab_notes -> replaceFragment(NotesFragment.newInstance())
+      R.id.tab_settings -> replaceFragment(SettingsFlowFragment.newInstance())
     }
   }
 }
