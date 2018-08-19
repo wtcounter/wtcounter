@@ -1,6 +1,5 @@
 package wordtextcounter.details.main.feature.notes
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,8 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import kotlinx.android.synthetic.main.fragment_notes.rvNotes
-import kotlinx.android.synthetic.main.fragment_notes.tvEmptyNotes
+import kotlinx.android.synthetic.main.fragment_notes.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -87,9 +85,9 @@ class NotesFragment : BaseFragment() {
       }
     })
     rvNotes.adapter = notesAdapter
-    viewModel.viewState.observe(this, Observer {
+    viewModel.viewState.subscribe {
       it?.let { it1 -> handleViewState(it1) }
-    })
+    }
 
     viewModel.getAllSavedNotes()
   }

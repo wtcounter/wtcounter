@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.DialogInterface
 import android.graphics.Color
@@ -19,33 +18,19 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
+import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.ViewAnimationUtils
-import android.view.ViewGroup
-import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.example.rateus.RateusCore
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
-import kotlinx.android.synthetic.main.fragment_input.etInput
-import kotlinx.android.synthetic.main.fragment_input.fabSave
-import kotlinx.android.synthetic.main.report_folded.tvCharacters
-import kotlinx.android.synthetic.main.report_folded.tvSentences
-import kotlinx.android.synthetic.main.report_folded.tvWords
-import kotlinx.android.synthetic.main.report_summary.foldingCell
-import kotlinx.android.synthetic.main.report_summary.ivExpand
-import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
-import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
-import kotlinx.android.synthetic.main.report_unfolded.tvReportText
-import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
-import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
-import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
+import kotlinx.android.synthetic.main.fragment_input.*
+import kotlinx.android.synthetic.main.report_folded.*
+import kotlinx.android.synthetic.main.report_summary.*
+import kotlinx.android.synthetic.main.report_unfolded.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -96,8 +81,6 @@ class InputFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
-
-
   }
 
   override fun onCreateView(
@@ -131,11 +114,10 @@ class InputFragment : BaseFragment() {
         })
 
 
-    viewModel.viewState.observe(this, Observer {
+    viewModel.viewState.subscribe {
       it?.let { it1 -> handleViewState(it1) }
-    })
-
-    viewModel.additionLiveData.observe(this, Observer {
+    }
+    viewModel.additionLiveData.subscribe {
       it?.let {
         if (it) {
           activity?.hideKeyboard()
@@ -144,9 +126,8 @@ class InputFragment : BaseFragment() {
           this@InputFragment.activity?.parent?.let { it1 -> RateusCore.showRateUsDialog(it1) }
         }
       }
-    })
-
-    viewModel.updateLiveData.observe(this, Observer {
+    }
+    viewModel.updateLiveData.subscribe {
       it?.let {
         if (it) {
           activity?.hideKeyboard()
@@ -154,7 +135,7 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
-    })
+    }
   }
 
   private fun clearCurrentInputState() {
