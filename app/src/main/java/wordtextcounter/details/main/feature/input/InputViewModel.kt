@@ -1,11 +1,11 @@
 package wordtextcounter.details.main.feature.input
 
+import com.jakewharton.rxrelay2.BehaviorRelay
+import com.jakewharton.rxrelay2.PublishRelay
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers.io
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.ReplaySubject
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
@@ -28,14 +28,14 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val showExpand: Boolean = false
   )
 
-  val updateLiveData: PublishSubject<Boolean> = PublishSubject.create()
-  val additionLiveData: PublishSubject<Boolean> = PublishSubject.create()
-  val viewState: ReplaySubject<ViewState> = ReplaySubject.create()
+  val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
+  val additionLiveData: PublishRelay<Boolean> = PublishRelay.create()
+  val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
 
   private var reportId: Int? = null
 
   init {
-    viewState.onNext(ViewState())
+    viewState.accept(ViewState())
 
     addDisposable(RxBus.subscribe(EditReport::class.java, Consumer {
       reportId = it.report.id
@@ -47,7 +47,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
-      viewState.onNext(ViewState(showExpand = false))
+      viewState.accept(ViewState(showExpand = false))
       return
     }
 
@@ -58,7 +58,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         , sentences = countSentences(input).toString()
         , time_added = 0
         , size = calculateSize(input))
-    viewState.onNext(currentViewState().copy(reportText = input,
+    viewState.accept(currentViewState().copy(reportText = input,
         report = report, showExpand = true, showError = false))
   }
 
@@ -90,9 +90,9 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
     }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          additionLiveData.onNext(true)
+          additionLiveData.accept(true)
         }, {
-          viewState.onNext(currentViewState().copy(showError = true))
+          viewState.accept(currentViewState().copy(showError = true))
         }))
   }
 
@@ -108,9 +108,9 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         .observeOn(mainThread())
         .subscribe({
           reportId = null
-          updateLiveData.onNext(true)
+          updateLiveData.accept(true)
         }, {
-          viewState.onNext(currentViewState().copy(showError = true))
+          viewState.accept(currentViewState().copy(showError = true))
         }))
   }
 

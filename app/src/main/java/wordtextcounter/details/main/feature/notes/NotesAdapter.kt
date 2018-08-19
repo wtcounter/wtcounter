@@ -7,27 +7,16 @@ import android.text.format.DateUtils.getRelativeTimeSpanString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jakewharton.rxrelay2.BehaviorRelay
-import kotlinx.android.synthetic.main.item_note.view.foldingCell
-import kotlinx.android.synthetic.main.item_note.view.ibDelete
-import kotlinx.android.synthetic.main.item_note.view.ibEdit
-import kotlinx.android.synthetic.main.item_note.view.ivExpand
-import kotlinx.android.synthetic.main.item_note.view.tvDate
-import kotlinx.android.synthetic.main.item_note.view.tvTitle
-import kotlinx.android.synthetic.main.report_folded.view.tvCharacters
-import kotlinx.android.synthetic.main.report_folded.view.tvSentences
-import kotlinx.android.synthetic.main.report_folded.view.tvWords
-import kotlinx.android.synthetic.main.report_unfolded.view.tvCharactersContent
-import kotlinx.android.synthetic.main.report_unfolded.view.tvParagraphsContent
-import kotlinx.android.synthetic.main.report_unfolded.view.tvSentencesContent
-import kotlinx.android.synthetic.main.report_unfolded.view.tvSizeContent
-import kotlinx.android.synthetic.main.report_unfolded.view.tvWordsContent
+import com.jakewharton.rxrelay2.PublishRelay
+import kotlinx.android.synthetic.main.item_note.view.*
+import kotlinx.android.synthetic.main.report_folded.view.*
+import kotlinx.android.synthetic.main.report_unfolded.view.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
 class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallback()) {
 
-  val clickRelay = BehaviorRelay.create<NotesAction>()
+  val clickRelay = PublishRelay.create<NotesAction>()
 
   override fun onBindViewHolder(
     holder: ViewHolder,
