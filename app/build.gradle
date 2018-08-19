@@ -106,7 +106,6 @@ dependencies {
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
   // Lifecycle
-  implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
   implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
   kapt "android.arch.lifecycle:compiler:$versions.androidArchVersion"
 

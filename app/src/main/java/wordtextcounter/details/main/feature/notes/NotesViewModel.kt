@@ -1,6 +1,6 @@
 package wordtextcounter.details.main.feature.notes
 
-import android.arch.lifecycle.MutableLiveData
+import com.jakewharton.rxrelay2.BehaviorRelay
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
@@ -19,10 +19,10 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
       val noReports: Boolean = false,
       val errorMessage: String? = null)
 
-  val viewState: MutableLiveData<ViewState> = MutableLiveData()
+  val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
 
   init {
-    viewState.value = ViewState()
+    viewState.accept(ViewState())
   }
 
   private fun getCurrentViewState() = viewState.value!!
@@ -36,17 +36,17 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
         .subscribe({
           loaderState.value = false
           if (it.isEmpty()) {
-            viewState.value = getCurrentViewState().copy(noReports = true, reports = null,
+            viewState.accept(getCurrentViewState().copy(noReports = true, reports = null,
                 showError = false,
-                successDeletion = false)
+                successDeletion = false))
           } else {
-            viewState.value = getCurrentViewState().copy(noReports = false, reports = it,
+            viewState.accept(getCurrentViewState().copy(noReports = false, reports = it,
                 showError = false,
-                successDeletion = false)
+                successDeletion = false))
           }
         }, {
           loaderState.value = false
-          viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
+          viewState.accept(getCurrentViewState().copy(errorMessage = null, showError = true))
         }))
   }
 
@@ -60,11 +60,11 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
           .subscribe({
             if (it) {
               RxBus.send(DeleteReport(report))
-              viewState.value = getCurrentViewState().copy(successDeletion = true)
+              viewState.accept(getCurrentViewState().copy(successDeletion = true))
             }
           }, {
             it.printStackTrace()
-            viewState.value = getCurrentViewState().copy(errorMessage = null, showError = true)
+            viewState.accept(getCurrentViewState().copy(errorMessage = null, showError = true))
           }))
     }
   }
