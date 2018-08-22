@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/dialogView"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white">
+
+  <ImageView
+      android:id="@+id/ivSave"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_120sdp"
+      android:layout_centerHorizontal="true"
+      tools:background="@drawable/bg_dialog"
+      android:paddingBottom="@dimen/_30sdp"
+      android:paddingTop="@dimen/_30sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_rate_star"
+      />
+
+  <ImageView
+      android:id="@+id/ivCross"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:paddingEnd="@dimen/_8sdp"
+      android:paddingStart="@dimen/_8sdp"
+      android:paddingTop="@dimen/_8sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_clear_black_24dp"
+      />
+
+  <TextView
+      android:id="@+id/tvReportDesc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/ivSave"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_16sdp"
+      android:text="@string/rate_us_text"
+      android:textStyle="bold"
+      />
+
+  <Button
+      android:id="@+id/btnSave"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/tvReportDesc"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="@null"
+      android:text="@string/save"
+      android:textColor="@color/secondaryColor"
+      />
+
+
+</RelativeLayout>
+
+
