@@ -1,6 +1,8 @@
 package wordtextcounter.details.main
 
+import android.app.Activity
 import android.app.Application
+import android.os.Bundle
 import androidx.core.content.edit
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -16,6 +18,29 @@ class App : Application() {
   
   override fun onCreate() {
     super.onCreate()
+    registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
+      override fun onActivityPaused(activity: Activity?) {
+      }
+
+      override fun onActivityResumed(activity: Activity?) {
+      }
+
+      override fun onActivityStarted(activity: Activity?) {
+      }
+
+      override fun onActivityDestroyed(activity: Activity?) {
+      }
+
+      override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+      }
+
+      override fun onActivityStopped(activity: Activity?) {
+      }
+
+      override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+      }
+
+    })
     val formatStrategy = PrettyFormatStrategy.newBuilder()
         .methodCount(7)       // (Optional) How many method line to show. Default 2
         .tag(

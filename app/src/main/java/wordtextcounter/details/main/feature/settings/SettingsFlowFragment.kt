@@ -36,6 +36,11 @@ class SettingsFlowFragment: BaseFragment() {
     return inflater.inflate(R.layout.fragment_settings_flow, container, false)
   }
 
+  override fun onActivityCreated(savedInstanceState: Bundle?) {
+    super.onActivityCreated(savedInstanceState)
+    addChildFragment(SettingsFragment.newInstance(), R.id.settings_container)
+  }
+
   override val baseViewModel: BaseViewModel
   get() = viewModel
 
@@ -54,5 +59,4 @@ class SettingsFlowFragment: BaseFragment() {
       return fragment
     }
   }
-
 }
