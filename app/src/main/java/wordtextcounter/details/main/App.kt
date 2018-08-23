@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.core.content.edit
 import com.example.rateus.Config
 import com.example.rateus.RateusCore
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy

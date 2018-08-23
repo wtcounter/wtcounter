@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.main
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
+import com.example.rateus.RateusCore
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
@@ -20,6 +21,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     setContentView(R.layout.activity_main)
 
+    RateusCore.showRateUsDialog(this)
 
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
 
