@@ -46,6 +46,7 @@ import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
 import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
@@ -57,9 +58,10 @@ import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showSnackBar
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
-/**
+/**s
  * A simple [Fragment] subclass.
  * Use the [InputFragment.newInstance] factory method to
  * create an instance of this fragment.
@@ -163,6 +165,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun showDialog(): () -> Unit = {
+    logAnalytics(Click("fab_add_click"))
     val cView = LayoutInflater.from(activity)
         .inflate(R.layout.report_name_edit, null)
 
@@ -186,6 +189,7 @@ class InputFragment : BaseFragment() {
     val btnSave = dialog.findViewById<Button>(R.id.btnSave)
     val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
     ivCross.setOnClickListener {
+      logAnalytics(Click("note_add_dialog_close"))
       hideDialog(cView, dialog)
     }
 
@@ -220,6 +224,7 @@ class InputFragment : BaseFragment() {
 
     btnSave.setOnClickListener {
       if (!etName.text.isEmpty()) {
+        logAnalytics(Click("note_add_dialog_save"))
         viewModel.onClickSaveCurrent(etName.text.toString())
         hideDialog(cView, dialog)
       }
@@ -285,13 +290,18 @@ class InputFragment : BaseFragment() {
             .setMessage(R.string.edit_alert_desc)
             .setPositiveButton(R.string.yes,
                 { dialog, _ ->
+                  logAnalytics(Click("update_warning_dialog_yes"))
                   etInput.setText(it.report.dataText)
                   dialog.dismiss()
                 })
             .setNegativeButton(R.string.no,
-                { dialog, _ -> dialog.dismiss() })
+                { dialog, _ ->
+                  logAnalytics(Click("update_warning_dialog_no"))
+                  dialog.dismiss()
+                })
             .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
+              logAnalytics(Click("update_warning_dialog_cancel"))
               viewModel.cancelEdit()
               reportNameEditMode = null
             }

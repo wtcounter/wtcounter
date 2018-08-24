@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+  <ImageView
+      android:id="@+id/ivSave"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_120sdp"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/bg_dialog"
+      android:paddingBottom="@dimen/_30sdp"
+      android:paddingTop="@dimen/_30sdp"
+      android:tint="@color/grey_100"
+      app:srcCompat="@drawable/ic_note_add"
+      />
+
+  <TextView
+      android:id="@+id/tvReportDesc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/ivSave"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_16sdp"
+      android:text="@string/save_dialog_desc"
+      android:textStyle="bold"
+      />
+
+  <android.support.v7.widget.AppCompatCheckBox
+      android:id="@+id/etName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/tvReportDesc"
+      android:layout_marginEnd="@dimen/_16sdp"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:text="@string/bookmark_hint"
+      android:checked="true"
+      android:paddingBottom="@dimen/_2sdp"
+      android:textSize="@dimen/_14ssp"
+      />
+
+  <Button
+      android:id="@+id/btnSave"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/etName"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="@null"
+      android:text="@string/save"
+      android:textColor="@color/saveButtonDisabled"
+      />
+
+
+</RelativeLayout>
+
+

@@ -8,11 +8,13 @@ import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
 import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
 import wordtextcounter.details.main.util.dpToPx
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
 
@@ -82,9 +84,18 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
   override fun onTabSelected(tabId: Int) {
     when (tabId) {
-      R.id.tab_input -> replaceFragment(InputFragment.newInstance())
-      R.id.tab_notes -> replaceFragment(NotesFragment.newInstance())
-      R.id.tab_settings -> replaceFragment(SettingsFlowFragment.newInstance())
+      R.id.tab_input -> {
+        logAnalytics(Click("bottombar_input"))
+        replaceFragment(InputFragment.newInstance())
+      }
+      R.id.tab_notes -> {
+        logAnalytics(Click("bottombar_notes"))
+        replaceFragment(NotesFragment.newInstance())
+      }
+      R.id.tab_settings -> {
+        logAnalytics(Click("bottombar_settings"))
+        replaceFragment(SettingsFlowFragment.newInstance())
+      }
     }
   }
 }
