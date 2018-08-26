@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.jakewharton.rxrelay2.PublishRelay
 import kotlinx.android.synthetic.main.item_note.view.*
 import kotlinx.android.synthetic.main.report_folded.view.*
-import kotlinx.android.synthetic.main.report_unfolded.view.*
+import kotlinx.android.synthetic.main.report_unfolded_list.view.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
@@ -19,15 +19,15 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
   val clickRelay = PublishRelay.create<NotesAction>()
 
   override fun onBindViewHolder(
-    holder: ViewHolder,
-    position: Int
+      holder: ViewHolder,
+      position: Int
   ) {
     holder.bindTo(getItem(position))
   }
 
   override fun onCreateViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): ViewHolder {
     return ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)

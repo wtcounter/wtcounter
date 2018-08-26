@@ -27,8 +27,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       val showError: Boolean = false,
       val errorMessage: String = "",
       val report: Report? = null,
-      val reportText: String = "",
-      val showExpand: Boolean = false
+      val reportText: String = ""
   )
 
   val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
@@ -51,7 +50,6 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
-      viewState.accept(ViewState(showExpand = false))
       return
     }
 
@@ -69,7 +67,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
             viewState.accept(currentViewState().copy(reportText = input,
-                report = t1, showExpand = true, showError = false))
+                report = t1, showError = false))
           }
           if (t2 != null) {
             //TODO handle error

@@ -3,7 +3,7 @@ package wordtextcounter.details.main.feature.input
 
 import android.app.Dialog
 import android.os.Bundle
-import android.support.design.widget.BottomSheetDialogFragment
+import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.view.*
 import kotlinx.android.synthetic.main.fragment_extra_stats.*
@@ -17,7 +17,7 @@ import wordtextcounter.details.main.store.entities.Stat
  * create an instance of this fragment.
  *
  */
-class ExtraStatsFragment : BottomSheetDialogFragment() {
+class ExtraStatsFragment : DialogFragment() {
 
   private lateinit var adapter: ExtraStatsAdapter
 
@@ -35,7 +35,6 @@ class ExtraStatsFragment : BottomSheetDialogFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
-
     adapter.setStats(getStats())
   }
 
@@ -44,7 +43,6 @@ class ExtraStatsFragment : BottomSheetDialogFragment() {
     dialog.window.requestFeature(Window.FEATURE_NO_TITLE)
     return dialog
   }
-
 
   override fun onStart() {
     super.onStart()

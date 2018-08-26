@@ -2,7 +2,6 @@ package wordtextcounter.details.main.feature.input
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.content.DialogInterface
@@ -19,18 +18,15 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.view.*
-import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.report_folded.*
 import kotlinx.android.synthetic.main.report_summary.*
-import kotlinx.android.synthetic.main.report_unfolded.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -90,7 +86,6 @@ class InputFragment : BaseFragment() {
     return inflater.inflate(R.layout.fragment_input, container, false)
   }
 
-  @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
   override fun onViewCreated(
       view: View,
       savedInstanceState: Bundle?
@@ -99,12 +94,7 @@ class InputFragment : BaseFragment() {
 
     fabSave onClick showDialog()
 
-    foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
-
-    ivExpand onClick toggleCell()
-
     ivMoreStats.setOnClickListener {
-      Logger.d("More stats clicked")
       val dialogFragment = ExtraStatsFragment()
       dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
     }
@@ -144,10 +134,6 @@ class InputFragment : BaseFragment() {
   private fun clearCurrentInputState() {
     etInput.text = null
     reportNameEditMode = null
-  }
-
-  private fun toggleCell(): () -> Unit = {
-    foldingCell.toggle(false)
   }
 
   private fun showDialog(): () -> Unit = {
@@ -296,25 +282,10 @@ class InputFragment : BaseFragment() {
       showError(viewState.errorMessage)
     }
 
-    ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
-
-    if (viewState.showExpand) {
-      fabSave.show()
-    } else {
-      fabSave.hide()
-    }
-
     tvCharacters.text = viewState.report?.characters
     tvWords.text = viewState.report?.words
     tvSentences.text = viewState.report?.sentences
-
-
-    tvCharactersContent.text = viewState.report?.characters
-    tvWordsContent.text = viewState.report?.words
-    tvSentencesContent.text = viewState.report?.sentences
-    tvReportText.text = viewState.report?.dataText
-    tvParagraphsContent.text = viewState.report?.paragraphs
-    tvSizeContent.text = viewState.report?.size
+    tvParagraphs.text = viewState.report?.paragraphs
   }
 
   override val baseViewModel: BaseViewModel
