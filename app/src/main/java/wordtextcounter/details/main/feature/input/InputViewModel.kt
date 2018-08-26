@@ -3,8 +3,11 @@ package wordtextcounter.details.main.feature.input
 import com.jakewharton.rxrelay2.BehaviorRelay
 import com.jakewharton.rxrelay2.PublishRelay
 import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
+import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
+import io.reactivex.rxkotlin.Singles
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.ReportDao
@@ -31,6 +34,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
   val additionLiveData: PublishRelay<Boolean> = PublishRelay.create()
   val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
+  private var counterDisposable: Disposable? = null
 
   private var reportId: Int? = null
 
@@ -51,15 +55,26 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
       return
     }
 
-    val report = Report("", input.trim()
-        , words = countWords(input).toString()
-        , characters = countCharacters(input).toString()
-        , paragraphs = countParagraphs(input).toString()
-        , sentences = countSentences(input).toString()
-        , time_added = 0
-        , size = calculateSize(input))
-    viewState.accept(currentViewState().copy(reportText = input,
-        report = report, showExpand = true, showError = false))
+    counterDisposable?.dispose()
+    counterDisposable = Singles.zip(countWords(input), countCharacters(input),
+        countParagraphs(input),
+        countSentences(input),
+        calculateSize(input))
+    { words, characters, paragraphs, sentences, size ->
+      Report("", input.trim(), words.toString(), characters.toString(),
+          paragraphs.toString(),
+          sentences.toString(), 0, size)
+    }
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe { t1: Report?, t2: Throwable? ->
+          if (t1 != null) {
+            viewState.accept(currentViewState().copy(reportText = input,
+                report = t1, showExpand = true, showError = false))
+          }
+          if (t2 != null) {
+            //TODO handle error
+          }
+        }
   }
 
   fun onClickSaveCurrent(name: String) {
@@ -76,7 +91,6 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         updateReport(report)
       }
     }
-
   }
 
   private fun saveReport(report: Report) {

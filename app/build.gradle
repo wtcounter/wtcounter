@@ -72,6 +72,7 @@ ext {
               logger            : "2.1.1",
               foldingcell       : "1.2.2",
               rxrelay           : "2.0.0",
+              rxkotlin          : "2.2.0",
               sdp               : "1.0.5"]
 
   supportDeps = [appcompat: "com.android.support:appcompat-v7:$versions.support",
@@ -83,7 +84,8 @@ ext {
   sdpDeps = [sdp: "com.intuit.sdp:sdp-android:$versions.sdp",
              ssp: "com.intuit.ssp:ssp-android:$versions.sdp"]
 
-  rxjavaDeps = [rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava"]
+  rxjavaDeps = [rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+                rxKotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlin"]
 
   rxAndroidDeps = [rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"]
 
