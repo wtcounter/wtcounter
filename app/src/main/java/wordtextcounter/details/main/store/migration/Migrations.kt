@@ -7,7 +7,7 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.Helper
 
 class Migrations(val context: Context) {
-  
+
   @Migration(1, 2)
   fun migratefrom1to2() {
     val db = ReportDatabase.getInstance(context)
@@ -17,7 +17,7 @@ class Migrations(val context: Context) {
         .flatMap { t ->
           return@flatMap Flowable.fromIterable(t)
               .map { r ->
-                r.size = r.dataText?.let { Helper.calculateSize(it) }
+                r.size = r.dataText?.let { Helper.calculateSize(it).blockingGet() }
                 return@map r
               }
               .toList()
