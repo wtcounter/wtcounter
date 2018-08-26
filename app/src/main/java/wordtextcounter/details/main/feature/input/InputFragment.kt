@@ -26,7 +26,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.report_folded.*
-import kotlinx.android.synthetic.main.report_summary.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -94,10 +93,10 @@ class InputFragment : BaseFragment() {
 
     fabSave onClick showDialog()
 
-    ivMoreStats.setOnClickListener {
-      val dialogFragment = ExtraStatsFragment()
-      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
-    }
+//    ivMoreStats.setOnClickListener {
+//      val dialogFragment = ExtraStatsFragment()
+//      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+//    }
 
     disposable.add(RxTextView
         .textChanges(etInput)
@@ -106,7 +105,6 @@ class InputFragment : BaseFragment() {
         .subscribe {
           viewModel.calculateInput(it.toString())
         })
-
 
     viewModel.viewState.subscribe {
       it?.let { it1 -> handleViewState(it1) }
