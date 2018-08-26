@@ -26,6 +26,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.report_folded.*
+import kotlinx.android.synthetic.main.report_summary.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -34,9 +35,7 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
-import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -91,12 +90,12 @@ class InputFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
 
-    fabSave onClick showDialog()
+    ibAdd.setOnClickListener { showDialog() }
 
-//    ivMoreStats.setOnClickListener {
-//      val dialogFragment = ExtraStatsFragment()
-//      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
-//    }
+    ibExtraStats.setOnClickListener {
+      val dialogFragment = ExtraStatsFragment()
+      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+    }
 
     disposable.add(RxTextView
         .textChanges(etInput)
@@ -134,7 +133,7 @@ class InputFragment : BaseFragment() {
     reportNameEditMode = null
   }
 
-  private fun showDialog(): () -> Unit = {
+  private fun showDialog() {
     val cView = LayoutInflater.from(activity)
         .inflate(R.layout.report_name_edit, null)
 
@@ -184,7 +183,6 @@ class InputFragment : BaseFragment() {
 
     })
 
-
     reportNameEditMode?.let {
       etName.setText(it)
       etName.post { etName.setSelection(it.length) }
@@ -220,14 +218,12 @@ class InputFragment : BaseFragment() {
           super.onAnimationEnd(animation)
           dialog.dismiss()
           cView.visibility = View.INVISIBLE
-          fabSave.backToPosition()
         }
       })
       revealAnimator.duration = 400
       revealAnimator.start()
     } else {
       dialog.dismiss()
-      fabSave.backToPosition()
     }
   }
 

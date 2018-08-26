@@ -2,6 +2,7 @@ package wordtextcounter.details.main.feature.main
 
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
+import android.view.View
 import android.view.ViewGroup
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +19,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     setContentView(R.layout.activity_main)
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
-    bottombar.shySettings.hideBar()
 
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
@@ -30,11 +30,16 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
           )
       ) { // if more than 200 dp, it's probably a keyboard...
         bottombar.shySettings.hideBar()
+
         val llp = container.layoutParams as CoordinatorLayout.LayoutParams
         llp.setMargins(0, 0, 0, 0)
         container.layoutParams = llp
       } else {
+        if (bottombar.visibility == View.GONE) {
+          bottombar.visibility = View.VISIBLE
+        }
         bottombar.shySettings.showBar()
+
         val llp = container.layoutParams as CoordinatorLayout.LayoutParams
         llp.setMargins(0, 0, 0, resources.getDimensionPixelOffset(R.dimen._48sdp))
         container.layoutParams = llp

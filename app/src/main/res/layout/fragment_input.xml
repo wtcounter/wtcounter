@@ -42,7 +42,6 @@
 
     </android.support.design.widget.CollapsingToolbarLayout>
 
-
   </android.support.design.widget.AppBarLayout>
 
   <android.support.design.widget.TextInputEditText
@@ -60,18 +59,6 @@
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
       tools:text="Input text sample"
       />
-
-  <android.support.design.widget.FloatingActionButton
-      android:id="@+id/fabSave"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="bottom|end"
-      android:layout_marginBottom="@dimen/_10sdp"
-      android:layout_marginEnd="@dimen/_6sdp"
-      android:layout_marginRight="@dimen/_6sdp"
-      app:srcCompat="@drawable/ic_add_black_24dp"
-      />
-
 
 </android.support.design.widget.CoordinatorLayout>
 

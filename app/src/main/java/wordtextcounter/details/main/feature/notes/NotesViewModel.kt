@@ -8,7 +8,6 @@ import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.base.Input
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
-import wordtextcounter.details.main.util.DeleteReport
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.RxBus
 
@@ -28,7 +27,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
   private fun getCurrentViewState() = viewState.value!!
 
   fun getAllSavedNotes() {
-
     loaderState.value = true
     addDisposable(dao.getAllReports()
         .subscribeOn(io())
@@ -59,7 +57,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
           .observeOn(mainThread())
           .subscribe({
             if (it) {
-              RxBus.send(DeleteReport(report))
               viewState.accept(getCurrentViewState().copy(successDeletion = true))
             }
           }, {

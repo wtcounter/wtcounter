@@ -22,8 +22,10 @@
       android:layout_height="@dimen/_48sdp"
       android:layout_gravity="bottom"
       android:background="@color/primaryDarkColor"
-      app:bb_activeTabColor="#E0E0E0"
+      android:visibility="gone"
+      app:bb_activeTabColor="@color/grey_300"
       app:bb_behavior="shy"
+      app:bb_showShadow="true"
       app:bb_tabXmlResource="@xml/tabs_bottom_bar"
       />
 
