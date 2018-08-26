@@ -26,33 +26,33 @@
       app:layout_constraintTop_toBottomOf="@id/report"
       />
 
-  <ImageButton
-      android:id="@+id/ibExtraStats"
-      android:layout_width="0dp"
+  <LinearLayout
+      android:id="@+id/llButtons"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginBottom="@dimen/_4sdp"
       android:layout_marginTop="@dimen/_8sdp"
-      android:background="@null"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/horizontalLine"
-      app:layout_constraintWidth_percent="0.5"
-      app:srcCompat="@drawable/ic_expand_more_black_24dp"
-      />
+      >
+    <ImageButton
+        android:id="@+id/ibExtraStats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_expand_more_black_24dp"
+        />
 
-  <ImageButton
-      android:id="@+id/ibAdd"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/_4sdp"
-      android:layout_marginTop="@dimen/_8sdp"
-      android:background="@null"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toEndOf="@id/ibExtraStats"
-      app:layout_constraintTop_toBottomOf="@id/horizontalLine"
-      app:layout_constraintWidth_percent="0.5"
-      app:srcCompat="@drawable/ic_add_black_24dp"
-      />
-
+    <ImageButton
+        android:id="@+id/ibAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        />
+  </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 

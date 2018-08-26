@@ -7,5 +7,5 @@ sealed class Event
 object NoEvent : Event()
 
 data class EditReport(val report: Report) : Event()
-
+data class ReportText(val text: String) : Event()
 

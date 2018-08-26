@@ -39,7 +39,6 @@
       android:textSize="@dimen/_16sdp"
       android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/tvWords"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
       app:layout_constraintWidth_percent="0.25"

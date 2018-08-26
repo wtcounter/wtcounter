@@ -26,6 +26,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   data class ViewState(
       val showError: Boolean = false,
       val errorMessage: String = "",
+      val showAddExpand: Boolean = false,
       val report: Report? = null)
 
   val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
@@ -48,6 +49,7 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
   fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
+      viewState.accept(ViewState(showAddExpand = false))
       return
     }
 
@@ -64,7 +66,8 @@ class InputViewModel(private val dao: ReportDao) : BaseViewModel() {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
-            viewState.accept(currentViewState().copy(report = t1, showError = false))
+            viewState.accept(
+                currentViewState().copy(report = t1, showAddExpand = true, showError = false))
           }
           if (t2 != null) {
             //TODO handle error

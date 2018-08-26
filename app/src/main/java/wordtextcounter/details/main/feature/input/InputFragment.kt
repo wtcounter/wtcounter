@@ -18,6 +18,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.view.*
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
@@ -34,6 +35,7 @@ import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
+import wordtextcounter.details.main.util.ReportText
 import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.showSnackBar
@@ -93,8 +95,11 @@ class InputFragment : BaseFragment() {
     ibAdd.setOnClickListener { showDialog() }
 
     ibExtraStats.setOnClickListener {
-      val dialogFragment = ExtraStatsFragment()
-      dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+      viewModel.viewState.value.report?.dataText?.let { text ->
+        RxBus.send(ReportText(text))
+        val dialogFragment = ExtraStatsFragment()
+        dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+      }
     }
 
     disposable.add(RxTextView
@@ -125,6 +130,18 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
+    }
+  }
+
+  private fun showButtons() {
+    if (llButtons.visibility == GONE) {
+      llButtons.visibility = VISIBLE
+    }
+  }
+
+  private fun hideButtons() {
+    if (llButtons.visibility == VISIBLE) {
+      llButtons.visibility = GONE
     }
   }
 
@@ -220,7 +237,7 @@ class InputFragment : BaseFragment() {
           cView.visibility = View.INVISIBLE
         }
       })
-      revealAnimator.duration = 400
+      revealAnimator.duration = 300
       revealAnimator.start()
     } else {
       dialog.dismiss()
@@ -233,11 +250,12 @@ class InputFragment : BaseFragment() {
     val finalRadius = Math.max(parentView.width, parentView.height)
 
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+
       val revealAnimator = ViewAnimationUtils.createCircularReveal(
           parentView, cx, cy, 0f, finalRadius.toFloat()
       )
       parentView.visibility = VISIBLE
-      revealAnimator.duration = 400
+      revealAnimator.duration = 300
       revealAnimator.start()
     }
   }
@@ -274,6 +292,12 @@ class InputFragment : BaseFragment() {
   private fun handleViewState(viewState: ViewState) {
     if (viewState.showError) {
       showError(viewState.errorMessage)
+    }
+
+    if (viewState.showAddExpand) {
+      showButtons()
+    } else {
+      hideButtons()
     }
 
     tvCharacters.text = viewState.report?.characters
