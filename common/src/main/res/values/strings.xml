@@ -42,6 +42,15 @@
   <string name="update_success">Report updated successfully</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
 
+
+  <!-- Rate us strings -->
+
   <string name="rate_us_text">5 star aapo please</string>
+
+  <!-- Analytics consent string -->
+
+  <string name="analytics_consent" translatable="false">We wish to monitor the app\'s behaviour to understand how to make it better. is that okay?</string>
+  <string name="analytics_report" translatable="false">Report Analytics</string>
+
 
 </resources>

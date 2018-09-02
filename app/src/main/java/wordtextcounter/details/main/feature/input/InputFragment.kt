@@ -29,6 +29,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
+import com.example.rateus.RateusCore
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
@@ -140,6 +141,7 @@ class InputFragment : BaseFragment() {
           activity?.hideKeyboard()
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
+          this@InputFragment.activity?.parent?.let { it1 -> RateusCore.showRateUsDialog(it1) }
         }
       }
     })

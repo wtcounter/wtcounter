@@ -75,6 +75,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   override fun onBackPressed() {
+    RateusCore.showRateUsDialog(this)
     if (supportFragmentManager.backStackEntryCount == 1) {
       finish()
     } else {

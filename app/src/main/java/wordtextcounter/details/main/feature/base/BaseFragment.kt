@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.example.rateus.RateusCore
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_notes.progressBar
 import wordtextcounter.details.main.R
@@ -40,6 +41,7 @@ abstract class BaseFragment : Fragment() {
         }
       }
     })
+    this@BaseFragment.activity?.parent?.let { it1 -> RateusCore.showRateUsDialog(it1) }
   }
 
   fun addChildFragment(fragment: Fragment, @IdRes id: Int) {

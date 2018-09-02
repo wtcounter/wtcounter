@@ -7,6 +7,7 @@ import com.example.rateus.RateusCore
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
+import wordtextcounter.details.main.analytics.AnalyticsConsent
 import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_NAME
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_VERSION
@@ -21,8 +22,9 @@ class App : Application() {
   override fun onCreate() {
     super.onCreate()
     val preferences = getPreference()
-    val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
+    AnalyticsConsent.init(this)
     RateusCore.init(this, Config())
+    val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
     if (analyticsEnabled) {
       AnalyticsLogger.init(this)
     }
