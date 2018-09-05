@@ -13,21 +13,20 @@ import wordtextcounter.details.main.util.dbExists
 import wordtextcounter.details.main.util.extensions.getPreference
 
 class App : Application() {
-  
+
   override fun onCreate() {
     super.onCreate()
+
     val formatStrategy = PrettyFormatStrategy.newBuilder()
-        .methodCount(7)       // (Optional) How many method line to show. Default 2
-        .tag(
-            BuildConfig.APPLICATION_ID)   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+        .methodCount(7)
+        .tag(BuildConfig.APPLICATION_ID)
         .build()
-    
     Logger.addLogAdapter(object : AndroidLogAdapter(formatStrategy) {
       override fun isLoggable(priority: Int, tag: String?): Boolean {
         return BuildConfig.DEBUG
       }
     })
-    
+
     val preferences = getPreference()
     val storedVersion = preferences.getString(PREF_DB_STORED, "0")
     if (storedVersion.toInt() < DB_VERSION && dbExists(this, DB_NAME)) {
