@@ -2,7 +2,6 @@ package wordtextcounter.details.main
 
 import android.app.Application
 import androidx.core.content.edit
-import com.example.rateus.Config
 import com.example.rateus.RateusCore
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -23,7 +22,7 @@ class App : Application() {
     super.onCreate()
     val preferences = getPreference()
     AnalyticsConsent.init(this)
-    RateusCore.init(this, Config())
+    RateusCore.init(this)
     val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
     if (analyticsEnabled && !BuildConfig.DEBUG) {
       AnalyticsLogger.init(this)

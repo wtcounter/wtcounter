@@ -22,7 +22,7 @@ object RateusCore {
   private const val TIME_SPENT = "rateus.time_spent"
   private const val INTERACTION = "rateus.interaction"
 
-  fun init(app: Application, config: Config) {
+  fun init(app: Application) {
     val ratePreference = app.getSharedPreferences(RATE_PREFERENCE, MODE_PRIVATE)
     var timeSpent = ratePreference.getLong(TIME_SPENT, 0L)
     var sessionStartTime = 0L

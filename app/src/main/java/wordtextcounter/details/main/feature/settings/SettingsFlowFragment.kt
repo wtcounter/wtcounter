@@ -18,6 +18,7 @@ class SettingsFlowFragment: BaseFragment() {
 
   private lateinit var viewModelFactory: NotesViewModelFactory
 
+  //TODO Replace this with Setting's ViewModel
   private lateinit var viewModel: NotesViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class SettingsFlowFragment: BaseFragment() {
     addChildFragment(SettingsFragment.newInstance(), R.id.settings_container)
   }
 
+  //TODO Replace this with Setting's ViewModel
   override val baseViewModel: BaseViewModel
   get() = viewModel
 

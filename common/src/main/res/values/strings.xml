@@ -43,7 +43,7 @@
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
 
 
-  <!-- Analytics consent string -->
+  <!-- Analytics consent strings -->
 
   <string name="analytics_consent" translatable="false">We wish to monitor behaviour of the app to understand how to make it better. is that okay?</string>
   <string name="analytics_report" translatable="false">Report Analytics</string>

@@ -47,7 +47,7 @@ import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
-/**s
+/**
  * A simple [Fragment] subclass.
  * Use the [InputFragment.newInstance] factory method to
  * create an instance of this fragment.
