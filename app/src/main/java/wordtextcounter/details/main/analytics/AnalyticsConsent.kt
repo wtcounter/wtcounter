@@ -34,12 +34,10 @@ object AnalyticsConsent {
         val pf = p0?.getPreference()
         val consent = pf?.getBoolean(PREF_ANALYTICS_CONSENT, false)
         consent?.let {
-          if (it) {
+          if (!it) {
             showConsentDialog(p0, pf)
           }
         }
-
-
       }
 
       override fun onActivityDestroyed(p0: Activity?) {

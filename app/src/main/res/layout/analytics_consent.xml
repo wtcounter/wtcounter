@@ -1,64 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/dialogView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/dialogView"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white">
 
   <ImageView
-      android:id="@+id/ivSave"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/_120sdp"
-      android:layout_centerHorizontal="true"
-      android:background="@drawable/bg_dialog"
-      android:paddingBottom="@dimen/_30sdp"
-      android:paddingTop="@dimen/_30sdp"
-      android:tint="@color/grey_100"
-      app:srcCompat="@drawable/analytic_cloud"
-      />
+    android:id="@+id/ivSave"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_120sdp"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/bg_dialog"
+    android:paddingBottom="@dimen/_30sdp"
+    android:paddingTop="@dimen/_30sdp"
+    android:tint="@color/grey_100"
+    app:srcCompat="@drawable/analytic_cloud" />
 
   <TextView
-      android:id="@+id/tvReportDesc"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/ivSave"
-      android:layout_marginEnd="@dimen/_16sdp"
-      android:layout_marginStart="@dimen/_16sdp"
-      android:layout_marginTop="@dimen/_16sdp"
-      android:text="@string/analytics_consent"
-      android:textSize="@dimen/_14ssp"
-      android:textStyle="bold"
-      />
+    android:id="@+id/tvReportDesc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/ivSave"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:layout_marginStart="@dimen/_16sdp"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:text="@string/analytics_consent"
+    android:textSize="@dimen/_14ssp" />
 
   <android.support.v7.widget.AppCompatCheckBox
-      android:id="@+id/cbConsent"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/tvReportDesc"
-      android:layout_marginEnd="@dimen/_12sdp"
-      android:layout_marginStart="@dimen/_12sdp"
-      android:layout_marginTop="@dimen/_12sdp"
-      android:text="@string/analytics_report"
-      android:checked="true"
-      android:textStyle="bold"
-      android:paddingBottom="@dimen/_2sdp"
-      android:textSize="@dimen/_14ssp"
-      />
+    android:id="@+id/cbConsent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvReportDesc"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:checked="true"
+    android:text="@string/analytics_report"
+    android:textSize="@dimen/_14ssp"
+    android:textStyle="italic" />
 
   <Button
-      android:id="@+id/btSave"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentEnd="true"
-      android:layout_alignParentRight="true"
-      android:layout_below="@id/cbConsent"
-      android:layout_marginTop="@dimen/_12sdp"
-      android:background="@null"
-      android:text="@string/save"
-      />
+    android:id="@+id/btSave"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/cbConsent"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:background="@null"
+    android:textColor="@color/secondaryColor"
+    android:text="@string/save" />
 
 
 </RelativeLayout>

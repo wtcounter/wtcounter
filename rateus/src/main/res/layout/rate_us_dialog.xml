@@ -40,19 +40,22 @@
       android:layout_marginStart="@dimen/_16sdp"
       android:layout_marginTop="@dimen/_16sdp"
       android:text="@string/rate_us_text"
-      android:textStyle="bold"
+      android:textStyle="italic"
       />
 
   <Button
       android:id="@+id/btnSave"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentEnd="true"
-      android:layout_alignParentRight="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentLeft="true"
       android:layout_below="@id/tvReportDesc"
+      android:layout_marginStart="@dimen/_16sdp"
+      android:layout_marginLeft="@dimen/_16sdp"
       android:layout_marginTop="@dimen/_12sdp"
       android:background="@null"
-      android:text="@string/save"
+      android:textAllCaps="false"
+      android:text="@string/rate_us_yes"
       android:textColor="@color/secondaryColor"
       />
 

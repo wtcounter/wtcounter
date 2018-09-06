@@ -25,7 +25,7 @@ class App : Application() {
     AnalyticsConsent.init(this)
     RateusCore.init(this, Config())
     val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
-    if (analyticsEnabled) {
+    if (analyticsEnabled && !BuildConfig.DEBUG) {
       AnalyticsLogger.init(this)
     }
     val formatStrategy = PrettyFormatStrategy.newBuilder()
@@ -39,7 +39,7 @@ class App : Application() {
         return BuildConfig.DEBUG
       }
     })
-    
+
     val storedVersion = preferences.getString(PREF_DB_STORED, "0")
     if (storedVersion.toInt() < DB_VERSION && dbExists(this, DB_NAME)) {
       MigrationProcessor.process(this, storedVersion.toInt())

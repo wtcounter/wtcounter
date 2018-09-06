@@ -23,10 +23,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     setContentView(R.layout.activity_main)
 
-    RateusCore.showRateUsDialog(this)
-
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
-
 
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
@@ -50,6 +47,11 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
     }
 
+    bottombar.setTabSelectionInterceptor { _, _ ->
+      RateusCore.showRateUsDialog(this)
+      return@setTabSelectionInterceptor false
+    }
+
     supportFragmentManager.addOnBackStackChangedListener {
       val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
       bottombar.removeOnTabSelectListener()
@@ -60,7 +62,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
       bottombar.setOnTabSelectListener(this, false)
     }
-
   }
 
   override fun onRestoreInstanceState(savedInstanceState: Bundle?) {

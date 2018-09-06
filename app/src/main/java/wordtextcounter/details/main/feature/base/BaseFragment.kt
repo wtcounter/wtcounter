@@ -41,7 +41,6 @@ abstract class BaseFragment : Fragment() {
         }
       }
     })
-    this@BaseFragment.activity?.parent?.let { it1 -> RateusCore.showRateUsDialog(it1) }
   }
 
   fun addChildFragment(fragment: Fragment, @IdRes id: Int) {
