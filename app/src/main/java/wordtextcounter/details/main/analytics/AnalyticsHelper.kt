@@ -42,5 +42,4 @@ object AnalyticsLogger {
     data class Click(val name :String) : AnalyticsEvents(name)
     data class NoteMilestone(val int: Int) : AnalyticsEvents("total_notes_" + int.toString())
   }
-
 }

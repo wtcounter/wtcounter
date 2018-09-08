@@ -45,6 +45,7 @@ object RateUsHelper {
         }
       }
 
+      dialog.setCancelable(false)
       dialog.show()
     }
   }

@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.main
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
+import com.example.rateus.RateusCore.shouldShowRateUsDialog
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
@@ -89,9 +90,12 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   override fun onBackPressed() {
-    showRateUsDialog(this)
     if (supportFragmentManager.backStackEntryCount == 1) {
-      finish()
+      if (shouldShowRateUsDialog(this)) {
+        showRateUsDialog(this)
+      } else {
+        finish()
+      }
     } else {
       super.onBackPressed()
     }
