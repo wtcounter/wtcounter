@@ -18,33 +18,33 @@ object RateusCore {
     var sessionStartTime = 0L
 
     app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
-      override fun onActivityPaused(p0: Activity?) {
+      override fun onActivityPaused(p0: Activity) {
         //no-op
       }
 
-      override fun onActivityResumed(p0: Activity?) {
+      override fun onActivityResumed(p0: Activity) {
         //no-op
       }
 
-      override fun onActivityStarted(p0: Activity?) {
+      override fun onActivityStarted(p0: Activity) {
         timeSpent = ratePreference.getLong(TIME_SPENT, 0L)
         sessionStartTime = System.currentTimeMillis()
       }
 
-      override fun onActivityDestroyed(p0: Activity?) {
+      override fun onActivityDestroyed(p0: Activity) {
         //no-op
       }
 
-      override fun onActivitySaveInstanceState(p0: Activity?, p1: Bundle?) {
+      override fun onActivitySaveInstanceState(p0: Activity, p1: Bundle?) {
       }
 
-      override fun onActivityStopped(p0: Activity?) {
+      override fun onActivityStopped(p0: Activity) {
         ratePreference.edit {
           putLong(TIME_SPENT, (System.currentTimeMillis() - sessionStartTime) + timeSpent)
         }
       }
 
-      override fun onActivityCreated(p0: Activity?, p1: Bundle?) {
+      override fun onActivityCreated(p0: Activity, p1: Bundle?) {
         //no-op
       }
 

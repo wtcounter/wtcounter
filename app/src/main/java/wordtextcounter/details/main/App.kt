@@ -21,7 +21,6 @@ class App : Application() {
   override fun onCreate() {
     super.onCreate()
     val preferences = getPreference()
-    AnalyticsConsent.init(this)
     RateusCore.init(this)
     val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
     if (analyticsEnabled && !BuildConfig.DEBUG) {

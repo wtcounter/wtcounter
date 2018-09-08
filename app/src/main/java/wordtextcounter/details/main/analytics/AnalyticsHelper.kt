@@ -16,6 +16,13 @@ object AnalyticsLogger {
 
   fun disableAnalytics() {
     analyticsInstance?.setAnalyticsCollectionEnabled(false)
+    analyticsInstance = null
+  }
+
+  fun enableAnalytics(context: Context) {
+    if (analyticsInstance == null) {
+      analyticsInstance = FirebaseAnalytics.getInstance(context)
+    }
   }
 
   fun logNoteMilestones(totalNotes : Int) {
@@ -33,7 +40,7 @@ object AnalyticsLogger {
 
   sealed class AnalyticsEvents(val eventName: String) {
     data class Click(val name :String) : AnalyticsEvents(name)
-    data class NoteMilestone(val int: Int) : AnalyticsEvents(int.toString())
+    data class NoteMilestone(val int: Int) : AnalyticsEvents("total_notes_" + int.toString())
   }
 
 }
