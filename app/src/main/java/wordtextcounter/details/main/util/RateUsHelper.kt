@@ -11,10 +11,10 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import com.example.rateus.R
 import com.example.rateus.RateusCore.onCancelSelected
 import com.example.rateus.RateusCore.onYesSelected
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
+import wordtextcounter.details.main.R
 
 object RateUsHelper {
   fun showRateUsDialog(activity: Activity) {
