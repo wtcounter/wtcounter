@@ -18,18 +18,32 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.view.ViewAnimationUtils
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
-import kotlinx.android.synthetic.main.fragment_input.*
-import kotlinx.android.synthetic.main.report_folded.*
-import kotlinx.android.synthetic.main.report_summary.*
-import kotlinx.android.synthetic.main.report_unfolded.*
+import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.fabSave
+import kotlinx.android.synthetic.main.report_folded.tvCharacters
+import kotlinx.android.synthetic.main.report_folded.tvSentences
+import kotlinx.android.synthetic.main.report_folded.tvWords
+import kotlinx.android.synthetic.main.report_summary.foldingCell
+import kotlinx.android.synthetic.main.report_summary.ivExpand
+import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
+import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
+import kotlinx.android.synthetic.main.report_unfolded.tvReportText
+import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
+import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
+import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -52,7 +66,6 @@ import java.util.concurrent.TimeUnit.MILLISECONDS
 class InputFragment : BaseFragment() {
 
   private lateinit var viewModel: InputViewModel
-
 
   private lateinit var viewModelFactory: InputViewModelFactory
 
@@ -81,9 +94,9 @@ class InputFragment : BaseFragment() {
   }
 
   override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
   ): View {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_input, container, false)
@@ -91,8 +104,8 @@ class InputFragment : BaseFragment() {
 
   @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
   override fun onViewCreated(
-      view: View,
-      savedInstanceState: Bundle?
+    view: View,
+    savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
 
@@ -131,6 +144,11 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
+    }
+
+    if (null != arguments) {
+      val shareText = arguments?.getString(SHARE_TEXT, null)
+      if (null != shareText) etInput.text.insert(0, shareText)
     }
   }
 
@@ -183,11 +201,21 @@ class InputFragment : BaseFragment() {
         }
       }
 
-      override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+      override fun beforeTextChanged(
+        s: CharSequence?,
+        start: Int,
+        count: Int,
+        after: Int
+      ) {
 
       }
 
-      override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+      override fun onTextChanged(
+        s: CharSequence?,
+        start: Int,
+        before: Int,
+        count: Int
+      ) {
 
       }
 
@@ -213,8 +241,8 @@ class InputFragment : BaseFragment() {
   }
 
   private fun hideDialog(
-      cView: View,
-      dialog: DialogInterface
+    cView: View,
+    dialog: DialogInterface
   ) {
     val parentView = cView.findViewById<ViewGroup>(R.id.dialogView)
 
@@ -276,7 +304,8 @@ class InputFragment : BaseFragment() {
               viewModel.cancelEdit()
               reportNameEditMode = null
             }
-            .create().show()
+            .create()
+            .show()
       } else {
         etInput.setText(it.report.dataText)
       }
@@ -313,9 +342,8 @@ class InputFragment : BaseFragment() {
   override val baseViewModel: BaseViewModel
     get() = viewModel
 
-
   companion object {
-
+    private val SHARE_TEXT: String = "SHARE_TEXT"
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -324,6 +352,15 @@ class InputFragment : BaseFragment() {
      */
     fun newInstance(): InputFragment {
       return InputFragment()
+    }
+
+    fun newInstance(shareText: String): InputFragment {
+      val inputFragment = InputFragment()
+
+      val args = Bundle()
+      args.putString(SHARE_TEXT, shareText)
+      inputFragment.arguments = args
+      return inputFragment
     }
   }
 }// Required empty public constructor
