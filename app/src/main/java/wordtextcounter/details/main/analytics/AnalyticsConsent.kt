@@ -72,9 +72,9 @@ object AnalyticsConsent {
 
     btSave.setOnClickListener {
       pf.edit {
+        putBoolean(PREF_ANALYTICS_CONSENT, true)
         cbConsent?.isChecked?.let {
           putBoolean(PREF_ANALYTICS_ENABLED, it)
-          putBoolean(PREF_ANALYTICS_CONSENT, true)
           if (!it) {
             disableAnalytics()
           }

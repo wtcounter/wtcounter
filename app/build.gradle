@@ -134,5 +134,4 @@ dependencies {
   implementation project(':rateus')
   implementation project(':common')
 }
-apply plugin: 'com.google.gms.google-services'
 
