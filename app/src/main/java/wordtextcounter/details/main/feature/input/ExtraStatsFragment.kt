@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment
 import android.view.*
 import kotlinx.android.synthetic.main.fragment_extra_stats.*
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.store.entities.Stat
 
 
 /**
@@ -50,10 +49,14 @@ class ExtraStatsFragment : DialogFragment() {
         WindowManager.LayoutParams.WRAP_CONTENT)
   }
 
-  private fun getStats(): List<Stat> {
-    val stats = mutableListOf<Stat>()
-    for (i in 0..50) {
-      stats.add(Stat("Name of Stats ", i.toString()))
+  private fun getStats(): List<ExtraStatGroup> {
+    val stats = mutableListOf<ExtraStatGroup>()
+    for (i in 0..5) {
+      val extraStats = mutableListOf<ExtraStat>()
+      for (j in 0..10) {
+        extraStats.add(ExtraStat("Extra stat ", ((i * 100) + j).toString()))
+      }
+      stats.add(ExtraStatGroup("Extra Stat Group $i", extraStats))
     }
     return stats
   }
