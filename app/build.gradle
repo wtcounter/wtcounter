@@ -132,6 +132,5 @@ dependencies {
   implementation 'com.google.firebase:firebase-core:16.0.1'
 
   implementation project(':rateus')
-  implementation project(':common')
 }
 

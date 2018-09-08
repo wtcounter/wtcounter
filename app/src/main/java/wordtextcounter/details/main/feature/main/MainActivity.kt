@@ -3,7 +3,6 @@ package wordtextcounter.details.main.feature.main
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
-import com.example.rateus.RateusCore
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
@@ -15,6 +14,7 @@ import wordtextcounter.details.main.feature.notes.NotesFragment
 import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
 import wordtextcounter.details.main.util.dpToPx
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
 
@@ -48,7 +48,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     }
 
     bottombar.setTabSelectionInterceptor { _, _ ->
-      RateusCore.showRateUsDialog(this)
+      showRateUsDialog(this)
       return@setTabSelectionInterceptor false
     }
 
@@ -76,7 +76,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   override fun onBackPressed() {
-    RateusCore.showRateUsDialog(this)
+    showRateUsDialog(this)
     if (supportFragmentManager.backStackEntryCount == 1) {
       finish()
     } else {

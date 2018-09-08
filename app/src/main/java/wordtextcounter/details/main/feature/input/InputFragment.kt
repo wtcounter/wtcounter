@@ -23,7 +23,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
-import com.example.rateus.RateusCore
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
@@ -45,6 +44,8 @@ import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.util.RateUsHelper
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -123,7 +124,7 @@ class InputFragment : BaseFragment() {
           activity?.hideKeyboard()
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
-          this@InputFragment.activity?.parent?.let { it1 -> RateusCore.showRateUsDialog(it1) }
+          this@InputFragment.activity?.parent?.let { it1 -> showRateUsDialog(it1) }
         }
       }
     }
