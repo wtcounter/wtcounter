@@ -1,43 +1,39 @@
 package wordtextcounter.details.main.feature.input
 
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.item_extra_stat.view.*
-import wordtextcounter.details.main.R
-import wordtextcounter.details.main.store.entities.Stat
 
 class ExtraStatsAdapter : RecyclerView.Adapter<ExtraStatsAdapter.ViewHolder>() {
 
-  private var stats: List<Stat> = mutableListOf()
+  private var statGroups: List<ExtraStatGroup> = mutableListOf()
 
-  fun setStats(reports: List<Stat>) {
-    this.stats = reports
-    notifyDataSetChanged()
+  fun setStats(statGroups: List<ExtraStatGroup>) {
+    this.statGroups = statGroups
+  }
+
+  override fun getItemViewType(position: Int): Int {
+    return super.getItemViewType(position)
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-    return ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_extra_stat, parent, false))
+    TODO(
+        "not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun getItemCount(): Int {
-    return stats.size
+    var totalCount = 0
+    statGroups.forEach {
+      totalCount += it.stats.size
+    }
+    return totalCount + statGroups.size
   }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    holder.bindTo(stats[position])
   }
 
-  inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+  inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    private val tvName = itemView.tvStatName
-    private val tvStatValue = itemView.tvStatValue
-
-    fun bindTo(stat: Stat) {
-      tvName.text = stat.name
-      tvStatValue.text = stat.value
-    }
   }
+
 }

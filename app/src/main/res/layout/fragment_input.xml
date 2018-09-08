@@ -32,7 +32,9 @@
       <android.support.v7.widget.CardView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_margin="@dimen/_10sdp"
+          android:layout_marginEnd="@dimen/_10sdp"
+          android:layout_marginStart="@dimen/_10sdp"
+          android:layout_marginTop="@dimen/_10sdp"
           app:cardBackgroundColor="@color/white"
           app:cardCornerRadius="@dimen/_5sdp"
           >
@@ -49,21 +51,19 @@
       android:id="@+id/etInput"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:layout_marginEnd="@dimen/_4sdp"
+      android:layout_marginStart="@dimen/_4sdp"
+      android:layout_marginTop="@dimen/_4sdp"
       android:background="@android:color/transparent"
       android:gravity="center"
       android:hint="@string/hint_input"
       android:overScrollMode="ifContentScrolls"
-      android:padding="@dimen/_4sdp"
       android:scrollbars="vertical"
       android:textColor="@color/primaryTextColor"
-      android:textSize="@dimen/_18ssp"
+      android:textSize="@dimen/_16ssp"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
-      tools:text="Input text sample"
       />
 
 </android.support.design.widget.CoordinatorLayout>
-
-
-
 
 

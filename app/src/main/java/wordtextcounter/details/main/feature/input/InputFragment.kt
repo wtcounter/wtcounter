@@ -296,14 +296,17 @@ class InputFragment : BaseFragment() {
 
     if (viewState.showAddExpand) {
       showButtons()
+      tvCharacters.text = viewState.report?.characters
+      tvWords.text = viewState.report?.words
+      tvSentences.text = viewState.report?.sentences
+      tvParagraphs.text = viewState.report?.paragraphs
     } else {
       hideButtons()
+      tvCharacters.text = "-"
+      tvWords.text = "-"
+      tvSentences.text = "-"
+      tvParagraphs.text = "-"
     }
-
-    tvCharacters.text = viewState.report?.characters
-    tvWords.text = viewState.report?.words
-    tvSentences.text = viewState.report?.sentences
-    tvParagraphs.text = viewState.report?.paragraphs
   }
 
   override val baseViewModel: BaseViewModel
