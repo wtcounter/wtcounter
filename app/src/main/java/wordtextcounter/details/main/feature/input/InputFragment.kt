@@ -200,7 +200,7 @@ class InputFragment : BaseFragment() {
     }
 
     snackbar.setAction("PASTE", View.OnClickListener {
-      etInput.text.insert(0, copiedText)
+      etInput.setText(copiedText)
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
@@ -370,7 +370,7 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
       RxBus.send(NoEvent)
-      if (it?.shareText != null) etInput.text.insert(0, it.shareText)
+      if (it?.shareText != null) etInput.setText(it.shareText)
     }))
   }
 
