@@ -23,9 +23,14 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.view.ViewAnimationUtils
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -45,10 +50,6 @@ import kotlinx.android.synthetic.main.report_unfolded.tvReportText
 import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
 import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
-import kotlinx.android.synthetic.main.fragment_input.*
-import kotlinx.android.synthetic.main.report_folded.*
-import kotlinx.android.synthetic.main.report_summary.*
-import kotlinx.android.synthetic.main.report_unfolded.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -57,6 +58,7 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
@@ -198,7 +200,7 @@ class InputFragment : BaseFragment() {
     }
 
     snackbar.setAction("PASTE", View.OnClickListener {
-      etInput.text.insert(0, copiedText)
+      etInput.setText(copiedText)
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
@@ -366,6 +368,10 @@ class InputFragment : BaseFragment() {
       }
     }))
 
+    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      if (it?.shareText != null) etInput.setText(it.shareText)
+    }))
   }
 
   private fun handleViewState(viewState: ViewState) {
@@ -398,7 +404,6 @@ class InputFragment : BaseFragment() {
     get() = viewModel
 
   companion object {
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
