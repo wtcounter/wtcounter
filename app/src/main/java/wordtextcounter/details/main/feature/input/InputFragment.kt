@@ -52,6 +52,7 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
@@ -144,11 +145,6 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
-    }
-
-    if (null != arguments) {
-      val shareText = arguments?.getString(SHARE_TEXT, null)
-      if (null != shareText) etInput.text.insert(0, shareText)
     }
   }
 
@@ -311,6 +307,10 @@ class InputFragment : BaseFragment() {
       }
     }))
 
+    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      if (it?.shareText != null) etInput.text.insert(0, it.shareText)
+    }))
   }
 
   private fun handleViewState(viewState: ViewState) {
@@ -343,7 +343,6 @@ class InputFragment : BaseFragment() {
     get() = viewModel
 
   companion object {
-    private val SHARE_TEXT: String = "SHARE_TEXT"
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -352,15 +351,6 @@ class InputFragment : BaseFragment() {
      */
     fun newInstance(): InputFragment {
       return InputFragment()
-    }
-
-    fun newInstance(shareText: String): InputFragment {
-      val inputFragment = InputFragment()
-
-      val args = Bundle()
-      args.putString(SHARE_TEXT, shareText)
-      inputFragment.arguments = args
-      return inputFragment
     }
   }
 }// Required empty public constructor

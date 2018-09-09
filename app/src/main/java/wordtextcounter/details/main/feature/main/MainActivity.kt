@@ -12,6 +12,8 @@ import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
+import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
@@ -69,7 +71,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     intent.getStringExtra(Intent.EXTRA_TEXT)
         ?.let {
           Logger.d("Intent text $it")
-          replaceFragment(InputFragment.newInstance(it))
+          RxBus.send(ShareText(it))
         }
 
   }
