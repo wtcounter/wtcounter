@@ -45,7 +45,6 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   override fun getItemCount(): Int {
     var totalCount = 0
     viewTypes.clear()
-    var collapsedCount = 0
     for (i in 0 until groupCount()) {
       viewTypes.put(totalCount, ViewType(i, TYPE_HEADER))
       totalCount++
@@ -56,9 +55,6 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
           viewTypes.put(totalCount, ViewType(j, TYPE_CHILD, i))
           totalCount++
         }
-      } else {
-        //collapsed
-        collapsedCount += childCount
       }
     }
     return totalCount

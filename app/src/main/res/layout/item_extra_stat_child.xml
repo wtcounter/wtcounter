@@ -2,25 +2,30 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
 
   <TextView
       android:id="@+id/tvExtraStatName"
-      android:layout_width="match_parent"
+      android:layout_width="0dp"
+      android:layout_marginEnd="@dimen/_6sdp"
+      android:layout_marginStart="@dimen/_6sdp"
       android:layout_height="wrap_content"
-      android:text="@string/paragraphs"
       android:textSize="@dimen/_12ssp"
       app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/tvExtraStatValue"
+      tools:text="New extra stat blah blah blah what are you doing why is this not working"
       />
 
   <TextView
       android:id="@+id/tvExtraStatValue"
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textSize="@dimen/_12ssp"
       app:layout_constraintRight_toRightOf="parent"
+      tools:text="700"
       />
 
 
