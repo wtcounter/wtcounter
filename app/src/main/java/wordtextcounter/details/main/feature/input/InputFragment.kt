@@ -5,12 +5,17 @@ import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
+import android.content.ClipData
+import android.content.ClipData.Item
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -31,6 +36,7 @@ import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
+import kotlinx.android.synthetic.main.fragment_input.cl
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.fabSave
 import kotlinx.android.synthetic.main.report_folded.tvCharacters
@@ -56,6 +62,7 @@ import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
+import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -72,8 +79,12 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
+  var isPaste = true
 
   var reportNameEditMode: String? = null
+  private lateinit var clipData: ClipData
+
+  // Get clip data from clipboard.
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -92,6 +103,10 @@ class InputFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
+
+    val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
+    val clipboardManager = clipboardService as ClipboardManager
+    clipData = clipboardManager.primaryClip
   }
 
   override fun onCreateView(
@@ -131,7 +146,7 @@ class InputFragment : BaseFragment() {
     viewModel.additionLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
         }
@@ -140,12 +155,58 @@ class InputFragment : BaseFragment() {
     viewModel.updateLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.update_success))
           clearCurrentInputState()
         }
       }
     }
+
+    if (isPaste) {
+      activity?.hideKeyboard(etInput)
+      paste()
+      isPaste = false
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun paste() {
+    // Get item count.
+
+    val itemCount: Int = clipData.itemCount
+    if (itemCount > 0) {
+      val item: Item = clipData.getItemAt(0)
+      val copiedText: String = item.text.toString();
+      // Show a snackbar to tell user text has been pasted.
+      showSnackBar(copiedText = copiedText)
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun showSnackBar(copiedText: String) {
+    val snackbar: Snackbar = Snackbar.make(etInput, copiedText, Snackbar.LENGTH_INDEFINITE)
+    val layout = snackbar.view as Snackbar.SnackbarLayout
+
+    layout.setOnClickListener {
+      snackbar.dismiss()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+
+    snackbar.setAction("PASTE", View.OnClickListener {
+      etInput.text.insert(0, copiedText)
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    })
+
+    snackbar.show()
   }
 
   private fun clearCurrentInputState() {
