@@ -1,3 +1,5 @@
 package wordtextcounter.details.main.feature.input
 
-data class ExtraStatGroup(val groupName: String, val stats: List<ExtraStat>)
+import android.support.annotation.StringRes
+
+data class ExtraStatGroup(@StringRes val groupName: Int, val stats: List<ExtraStat>)

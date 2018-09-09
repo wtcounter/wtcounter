@@ -14,11 +14,20 @@
   <!--notes-->
   <string name="title_notes">Notes</string>
   <!--report-->
+  <string name="basic_stats">Basic Stats</string>
   <string name="characters">Characters</string>
+  <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Words</string>
   <string name="paragraphs">Paragraphs</string>
   <string name="size">Size</string>
   <string name="bookmark_hint">Enter Report name</string>
+
+  <!--Extra Stats-->
+  <string name="extra_stats">Extra Stats</string>
+  <string name="unique_words">Unique Words</string>
+  <string name="average_word_length">Average Word Length</string>
+  <string name="avg_sentence_length_words">Avg Sentence Length(Words)</string>
+  <string name="avg_sentence_length_characters">Avg Sentence Length(Characters)</string>
 
   <string name="save">Save</string>
   <string name="sentences">Sentences</string>
@@ -41,7 +50,4 @@
   <string name="update_success">Report updated successfully</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
 
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="extra_stats">Extra Stats</string>
 </resources>

@@ -1,3 +1,5 @@
 package wordtextcounter.details.main.feature.input
 
-data class ExtraStat(val name: String, val value: String)
+import android.support.annotation.StringRes
+
+data class ExtraStat(@StringRes val name: Int, val value: String)

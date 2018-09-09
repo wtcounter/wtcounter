@@ -2,6 +2,7 @@ package wordtextcounter.details.main.feature.input
 
 
 import android.app.Dialog
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
@@ -19,10 +20,13 @@ import wordtextcounter.details.main.R
 class ExtraStatsFragment : DialogFragment() {
 
   private lateinit var adapter: ExtraStatsAdapter
+  private lateinit var viewModel: ExtraStatsViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     adapter = ExtraStatsAdapter()
+    viewModel = ViewModelProviders.of(this)
+        .get(ExtraStatsViewModel::class.java)
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +38,11 @@ class ExtraStatsFragment : DialogFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
-    adapter.setStats(getStats())
+    viewModel.viewState.subscribe {
+      adapter.setStats(it.extraStatGroups)
+    }
+    viewModel.getAllStats(
+        "This is the test input string boys is. It should not be confused ")
   }
 
   override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -47,18 +55,6 @@ class ExtraStatsFragment : DialogFragment() {
     super.onStart()
     dialog.window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
         WindowManager.LayoutParams.WRAP_CONTENT)
-  }
-
-  private fun getStats(): List<ExtraStatGroup> {
-    val stats = mutableListOf<ExtraStatGroup>()
-    for (i in 0..5) {
-      val extraStats = mutableListOf<ExtraStat>()
-      for (j in 0..10) {
-        extraStats.add(ExtraStat("Extra stat ", ((i * 100) + j).toString()))
-      }
-      stats.add(ExtraStatGroup("Extra Stat Group $i", extraStats))
-    }
-    return stats
   }
 
   companion object {

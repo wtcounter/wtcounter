@@ -14,6 +14,7 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
 
   fun setStats(statGroups: List<ExtraStatGroup>) {
     this.statGroups = statGroups
+    notifyDataSetChanged()
   }
 
   override fun createGroupViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
@@ -46,10 +47,9 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
     private val tvExtraStatGroupName = view.tvExtraStatGroupName
 
     fun bindTo(statGroup: ExtraStatGroup) {
-      tvExtraStatGroupName.text = statGroup.groupName
+      tvExtraStatGroupName.setText(statGroup.groupName)
     }
   }
-
 
   inner class ChildViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -57,7 +57,7 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
     private val tvExtraStatValue = view.tvExtraStatValue
 
     fun bindTo(extraStat: ExtraStat) {
-      tvExtraStatName.text = extraStat.name
+      tvExtraStatName.setText(extraStat.name)
       tvExtraStatValue.text = extraStat.value
     }
   }

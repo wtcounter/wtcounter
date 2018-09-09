@@ -26,6 +26,32 @@ object Helper {
     }.subscribeOn(Schedulers.computation())
   }
 
+  /**
+   * This will return triple where first is total word count, second is avg word length and third is unique words in text
+   */
+  fun extraWordStats(input: String): Single<Triple<Int, Double, Int>> {
+    return Single.fromCallable {
+      val wordIterator = BreakIterator.getWordInstance()
+      val wordSet = mutableSetOf<String>()
+      wordIterator.setText(input)
+      var start = wordIterator.first()
+      var end = wordIterator.next()
+      var wordCount = 0
+      var totalLength = 0
+      while (end != BreakIterator.DONE) {
+        val word = input.substring(start, end)
+        if (Character.isLetterOrDigit(word[0])) {
+          wordSet.add(word)
+          wordCount++
+          totalLength += word.length
+        }
+        start = end
+        end = wordIterator.next()
+      }
+      Triple(wordCount, totalLength.toDouble() / wordCount, wordSet.size)
+    }.subscribeOn(Schedulers.computation())
+  }
+
 
   fun countCharacters(input: String): Single<Int> {
     return Single.fromCallable {
@@ -37,6 +63,23 @@ object Helper {
       }
 
       graphemeCount
+    }.subscribeOn(Schedulers.computation())
+  }
+
+  fun countCharactersAndSpaces(input: String): Single<Pair<Int, Int>> {
+    return Single.fromCallable {
+      var graphemeCount = 0
+      var whiteSpaceCount = 0
+      val graphemeCounter = BreakIterator.getCharacterInstance()
+      graphemeCounter.setText(input)
+      while (graphemeCounter.next() != BreakIterator.DONE) {
+        graphemeCount++
+        if (Character.isWhitespace(input[graphemeCounter.current() - 1])) {
+          whiteSpaceCount++
+        }
+      }
+
+      Pair(graphemeCount, graphemeCount - whiteSpaceCount)
     }.subscribeOn(Schedulers.computation())
   }
 
