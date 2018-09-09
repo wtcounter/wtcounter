@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.ClipData
 import android.content.ClipData.Item
@@ -24,14 +23,9 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
+import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.ViewAnimationUtils
-import android.view.ViewGroup
-import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -51,6 +45,10 @@ import kotlinx.android.synthetic.main.report_unfolded.tvReportText
 import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
 import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
 import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
+import kotlinx.android.synthetic.main.fragment_input.*
+import kotlinx.android.synthetic.main.report_folded.*
+import kotlinx.android.synthetic.main.report_summary.*
+import kotlinx.android.synthetic.main.report_unfolded.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -140,11 +138,10 @@ class InputFragment : BaseFragment() {
         })
 
 
-    viewModel.viewState.observe(this, Observer {
+    viewModel.viewState.subscribe {
       it?.let { it1 -> handleViewState(it1) }
-    })
-
-    viewModel.additionLiveData.observe(this, Observer {
+    }
+    viewModel.additionLiveData.subscribe {
       it?.let {
         if (it) {
           activity?.hideKeyboard(etInput)
@@ -152,9 +149,8 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
-    })
-
-    viewModel.updateLiveData.observe(this, Observer {
+    }
+    viewModel.updateLiveData.subscribe {
       it?.let {
         if (it) {
           activity?.hideKeyboard(etInput)
@@ -162,7 +158,8 @@ class InputFragment : BaseFragment() {
           clearCurrentInputState()
         }
       }
-    })
+    }
+
     if (isPaste) {
       activity?.hideKeyboard(etInput)
       paste()

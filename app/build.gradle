@@ -7,17 +7,27 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-  /*Properties props = new Properties()
-  props.load(new FileInputStream(file("keystore.credentials")))
-*/
-//  signingConfigs {
-//    release {
-//      storeFile file(props['keystore'])
-//      storePassword props['keystore.password']
-//      keyAlias props['keyAlias']
-//      keyPassword props['keyPassword']
-//    }
-//  }
+
+  def file = new File("keystore.credentials")
+  def fileExists = false
+  if (file.exists()) {
+    fileExists = true
+  }
+  if (fileExists) {
+    Properties props = new Properties()
+    props.load(new FileInputStream(file("keystore.credentials")))
+  }
+
+  signingConfigs {
+    if (fileExists) {
+      release {
+        storeFile file(props['keystore'])
+        storePassword props['keystore.password']
+        keyAlias props['keyAlias']
+        keyPassword props['keyPassword']
+      }
+    }
+  }
 
   compileSdkVersion 27
   buildToolsVersion '27.0.3'
@@ -34,11 +44,16 @@ android {
     abortOnError false
   }
   buildTypes {
-    release {
-      minifyEnabled true
-      shrinkResources true
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-      //signingConfig signingConfigs.release
+    if (fileExists) {
+      release {
+        minifyEnabled true
+        shrinkResources true
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        signingConfig signingConfigs.release
+      }
+    }
+    debug {
+      applicationIdSuffix ".test"
     }
   }
   compileOptions {
@@ -58,6 +73,7 @@ ext {
               logger            : "2.1.1",
               foldingcell       : "1.2.2",
               rxrelay           : "2.0.0",
+              rxkotlin          : "2.2.0",
               sdp               : "1.0.5"]
 
   supportDeps = [appcompat: "com.android.support:appcompat-v7:$versions.support",
@@ -68,7 +84,8 @@ ext {
   sdpDeps = [sdp: "com.intuit.sdp:sdp-android:$versions.sdp",
              ssp: "com.intuit.ssp:ssp-android:$versions.sdp"]
 
-  rxjavaDeps = [rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava"]
+  rxjavaDeps = [rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+                rxKotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlin"]
 
   rxAndroidDeps = [rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"]
 
@@ -92,7 +109,6 @@ dependencies {
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
   // Lifecycle
-  implementation "android.arch.lifecycle:runtime:$versions.androidArchVersion"
   implementation "android.arch.lifecycle:extensions:$versions.androidArchVersion"
   kapt "android.arch.lifecycle:compiler:$versions.androidArchVersion"
 

@@ -8,7 +8,6 @@ import io.reactivex.disposables.Disposable
 abstract class BaseViewModel : ViewModel() {
 
   private val compositeDisposable = CompositeDisposable()
-
   val routerState: MutableLiveData<Router> = MutableLiveData()
   val loaderState: MutableLiveData<Boolean> = MutableLiveData()
 
@@ -22,6 +21,4 @@ abstract class BaseViewModel : ViewModel() {
   fun addDisposable(disposable: Disposable) {
     compositeDisposable.add(disposable)
   }
-
-
 }
