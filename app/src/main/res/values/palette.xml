@@ -18,6 +18,7 @@
   <color name="grey_300">#E0E0E0</color>
   <color name="grey_400">#bdbdbd</color>
   <color name="grey_800">#323232</color>
+  <color name="grey_900">#212121</color>
 
   <color name="black_filter">#30000000</color>
 

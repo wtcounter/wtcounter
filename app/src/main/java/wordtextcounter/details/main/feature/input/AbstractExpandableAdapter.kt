@@ -12,6 +12,9 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   private val headerExpandTracker = SparseIntArray()
   private val viewTypes: SparseArray<ViewType> = SparseArray()
 
+  private var allExpandedUsed = false
+  open val showAllExpanded = false
+
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
     return if (viewType == TYPE_HEADER) {
       val holder = createGroupViewHolder(parent, viewType)
@@ -45,6 +48,18 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   override fun getItemCount(): Int {
     var totalCount = 0
     viewTypes.clear()
+
+    if (groupCount() > 0) {
+      if (!allExpandedUsed) {
+        allExpandedUsed = true
+        if (showAllExpanded) {
+          for (i in 0 until groupCount()) {
+            headerExpandTracker[i] = 1
+          }
+        }
+      }
+    }
+
     for (i in 0 until groupCount()) {
       viewTypes.put(totalCount, ViewType(i, TYPE_HEADER))
       totalCount++

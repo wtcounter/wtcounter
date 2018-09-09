@@ -9,17 +9,6 @@
     tools:context=".feature.input.ExtraStatsFragment"
     >
 
-  <TextView
-      android:id="@+id/tvHeader"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/extra_stats"
-      android:textSize="@dimen/_14ssp"
-      android:textStyle="bold"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
-
   <android.support.v7.widget.RecyclerView
       android:id="@+id/rvStats"
       android:layout_width="match_parent"
@@ -28,7 +17,7 @@
       android:paddingTop="@dimen/_8sdp"
       app:layoutManager="android.support.v7.widget.LinearLayoutManager"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/tvHeader"
+      app:layout_constraintTop_toTopOf="parent"
       tools:listitem="@layout/item_extra_stat"
       />
 

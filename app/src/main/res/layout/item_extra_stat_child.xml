@@ -5,15 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:layout_marginTop="@dimen/_4sdp"
     >
 
   <TextView
       android:id="@+id/tvExtraStatName"
       android:layout_width="0dp"
+      android:layout_height="wrap_content"
       android:layout_marginEnd="@dimen/_6sdp"
       android:layout_marginStart="@dimen/_6sdp"
-      android:layout_height="wrap_content"
-      android:textSize="@dimen/_12ssp"
+      android:textColor="@color/secondaryTextColor"
+      android:textSize="@dimen/_11ssp"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toLeftOf="@id/tvExtraStatValue"
       tools:text="New extra stat blah blah blah what are you doing why is this not working"
@@ -23,7 +26,8 @@
       android:id="@+id/tvExtraStatValue"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textSize="@dimen/_12ssp"
+      android:textColor="@color/grey_900"
+      android:textSize="@dimen/_13ssp"
       app:layout_constraintRight_toRightOf="parent"
       tools:text="700"
       />

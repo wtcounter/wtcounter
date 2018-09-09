@@ -12,6 +12,8 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
 
   private var statGroups: List<ExtraStatGroup> = mutableListOf()
 
+  override val showAllExpanded = true
+
   fun setStats(statGroups: List<ExtraStatGroup>) {
     this.statGroups = statGroups
     notifyDataSetChanged()

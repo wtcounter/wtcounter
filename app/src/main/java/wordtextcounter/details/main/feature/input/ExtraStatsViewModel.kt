@@ -38,12 +38,12 @@ class ExtraStatsViewModel : BaseViewModel() {
             Helper.calculateSize(input))
         { words, characters, paragraphs, sentences, size ->
           val extraStats = mutableListOf<ExtraStat>()
-          extraStats.add(ExtraStat(R.string.words, words.toString()))
           extraStats.add(ExtraStat(R.string.characters, characters.first.toString()))
           extraStats.add(
               ExtraStat(R.string.characters_without_spaces, characters.second.toString()))
-          extraStats.add(ExtraStat(R.string.paragraphs, paragraphs.toString()))
+          extraStats.add(ExtraStat(R.string.words, words.toString()))
           extraStats.add(ExtraStat(R.string.sentences, sentences.toString()))
+          extraStats.add(ExtraStat(R.string.paragraphs, paragraphs.toString()))
           extraStats.add(ExtraStat(R.string.size, size.toString()))
 
           ExtraStatGroup(R.string.basic_stats, extraStats)
