@@ -153,7 +153,7 @@ class InputFragment : BaseFragment() {
           activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
-          this@InputFragment.activity?.parent?.let { it1 -> showRateUsDialog(it1) }
+          this@InputFragment.activity?.let { it1 -> showRateUsDialog(it1) }
         }
       }
     }

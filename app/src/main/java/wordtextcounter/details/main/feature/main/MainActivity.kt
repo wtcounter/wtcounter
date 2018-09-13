@@ -76,10 +76,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
         handleSendText(intent) // Handle text being sent
       }
     }
-  }
 
-  override fun onStart() {
-    super.onStart()
     val pf = getPreference()
     val consent = pf.getBoolean(Constants.PREF_ANALYTICS_CONSENT, false)
     if (!consent) {

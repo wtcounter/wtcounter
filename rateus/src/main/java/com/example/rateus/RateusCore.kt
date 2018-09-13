@@ -55,7 +55,7 @@ object RateusCore {
     val ratePreference = activity.getSharedPreferences(RATE_PREFERENCE, MODE_PRIVATE)
     val interacted = ratePreference.getBoolean(INTERACTION, false)
     val timeSpent = ratePreference.getLong(TIME_SPENT, 0L)
-    return timeSpent > 180000 && !interacted
+    return timeSpent > 300000 && !interacted
   }
 
   fun onCancelSelected(activity: Activity) {
