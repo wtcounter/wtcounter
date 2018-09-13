@@ -5,12 +5,17 @@ import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
+import android.content.ClipData
+import android.content.ClipData.Item
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -18,18 +23,33 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.view.ViewAnimationUtils
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
-import kotlinx.android.synthetic.main.fragment_input.*
-import kotlinx.android.synthetic.main.report_folded.*
-import kotlinx.android.synthetic.main.report_summary.*
-import kotlinx.android.synthetic.main.report_unfolded.*
+import kotlinx.android.synthetic.main.fragment_input.cl
+import kotlinx.android.synthetic.main.fragment_input.etInput
+import kotlinx.android.synthetic.main.fragment_input.fabSave
+import kotlinx.android.synthetic.main.report_folded.tvCharacters
+import kotlinx.android.synthetic.main.report_folded.tvSentences
+import kotlinx.android.synthetic.main.report_folded.tvWords
+import kotlinx.android.synthetic.main.report_summary.foldingCell
+import kotlinx.android.synthetic.main.report_summary.ivExpand
+import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
+import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
+import kotlinx.android.synthetic.main.report_unfolded.tvReportText
+import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
+import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
+import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
@@ -39,9 +59,11 @@ import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
+import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.util.RateUsHelper
@@ -57,13 +79,16 @@ class InputFragment : BaseFragment() {
 
   private lateinit var viewModel: InputViewModel
 
-
   private lateinit var viewModelFactory: InputViewModelFactory
 
   var cx: Int = -1
   var cy: Int = -1
+  var isPaste = true
 
   var reportNameEditMode: String? = null
+  private lateinit var clipData: ClipData
+
+  // Get clip data from clipboard.
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -82,12 +107,16 @@ class InputFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
+
+    val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
+    val clipboardManager = clipboardService as ClipboardManager
+    clipData = clipboardManager.primaryClip
   }
 
   override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
   ): View {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_input, container, false)
@@ -95,8 +124,8 @@ class InputFragment : BaseFragment() {
 
   @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
   override fun onViewCreated(
-      view: View,
-      savedInstanceState: Bundle?
+    view: View,
+    savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
 
@@ -121,7 +150,7 @@ class InputFragment : BaseFragment() {
     viewModel.additionLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
           this@InputFragment.activity?.parent?.let { it1 -> showRateUsDialog(it1) }
@@ -131,12 +160,58 @@ class InputFragment : BaseFragment() {
     viewModel.updateLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.update_success))
           clearCurrentInputState()
         }
       }
     }
+
+    if (isPaste) {
+      activity?.hideKeyboard(etInput)
+      paste()
+      isPaste = false
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun paste() {
+    // Get item count.
+
+    val itemCount: Int = clipData.itemCount
+    if (itemCount > 0) {
+      val item: Item = clipData.getItemAt(0)
+      val copiedText: String = item.text.toString();
+      // Show a snackbar to tell user text has been pasted.
+      showSnackBar(copiedText = copiedText)
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun showSnackBar(copiedText: String) {
+    val snackbar: Snackbar = Snackbar.make(etInput, copiedText, Snackbar.LENGTH_INDEFINITE)
+    val layout = snackbar.view as Snackbar.SnackbarLayout
+
+    layout.setOnClickListener {
+      snackbar.dismiss()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+
+    snackbar.setAction("PASTE", View.OnClickListener {
+      etInput.setText(copiedText)
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    })
+
+    snackbar.show()
   }
 
   private fun clearCurrentInputState() {
@@ -190,11 +265,21 @@ class InputFragment : BaseFragment() {
         }
       }
 
-      override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+      override fun beforeTextChanged(
+        s: CharSequence?,
+        start: Int,
+        count: Int,
+        after: Int
+      ) {
 
       }
 
-      override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+      override fun onTextChanged(
+        s: CharSequence?,
+        start: Int,
+        before: Int,
+        count: Int
+      ) {
 
       }
 
@@ -221,8 +306,8 @@ class InputFragment : BaseFragment() {
   }
 
   private fun hideDialog(
-      cView: View,
-      dialog: DialogInterface
+    cView: View,
+    dialog: DialogInterface
   ) {
     val parentView = cView.findViewById<ViewGroup>(R.id.dialogView)
 
@@ -289,12 +374,17 @@ class InputFragment : BaseFragment() {
               viewModel.cancelEdit()
               reportNameEditMode = null
             }
-            .create().show()
+            .create()
+            .show()
       } else {
         etInput.setText(it.report.dataText)
       }
     }))
 
+    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      if (it?.shareText != null) etInput.setText(it.shareText)
+    }))
   }
 
   private fun handleViewState(viewState: ViewState) {
@@ -326,9 +416,7 @@ class InputFragment : BaseFragment() {
   override val baseViewModel: BaseViewModel
     get() = viewModel
 
-
   companion object {
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

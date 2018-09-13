@@ -1,20 +1,23 @@
 package wordtextcounter.details.main.feature.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
+import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsConsent
 import wordtextcounter.details.main.analytics.AnalyticsConsent.showConsentDialog
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
 import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
+import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.util.Constants
@@ -33,7 +36,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
       val heightDiff =
-          activityRootView.rootView.height - activityRootView.height
+        activityRootView.rootView.height - activityRootView.height
       if (heightDiff > dpToPx(
               this@MainActivity,
               200F
@@ -67,6 +70,12 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
       bottombar.setOnTabSelectListener(this, false)
     }
+
+    if (intent?.action == Intent.ACTION_SEND) {
+      if ("text/plain" == intent.type) {
+        handleSendText(intent) // Handle text being sent
+      }
+    }
   }
 
   override fun onStart() {
@@ -76,6 +85,14 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     if (!consent) {
       showConsentDialog(this, pf)
     }
+  }
+
+  private fun handleSendText(intent: Intent) {
+    intent.getStringExtra(Intent.EXTRA_TEXT)
+        ?.let {
+          Logger.d("Intent text $it")
+          RxBus.send(ShareText(it))
+        }
   }
 
   override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
