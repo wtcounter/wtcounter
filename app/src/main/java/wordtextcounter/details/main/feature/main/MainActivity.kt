@@ -4,17 +4,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
+import com.example.rateus.RateusCore.shouldShowRateUsDialog
 import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsConsent.showConsentDialog
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
+import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
 import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.util.Constants
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
+import wordtextcounter.details.main.util.extensions.getPreference
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
 
@@ -22,7 +30,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     super.onCreate(savedInstanceState)
 
     setContentView(R.layout.activity_main)
-
 
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
 
@@ -48,6 +55,11 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
     }
 
+    bottombar.setTabSelectionInterceptor { _, _ ->
+      showRateUsDialog(this)
+      return@setTabSelectionInterceptor false
+    }
+
     supportFragmentManager.addOnBackStackChangedListener {
       val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
       bottombar.removeOnTabSelectListener()
@@ -59,11 +71,16 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       bottombar.setOnTabSelectListener(this, false)
     }
 
-
     if (intent?.action == Intent.ACTION_SEND) {
       if ("text/plain" == intent.type) {
         handleSendText(intent) // Handle text being sent
       }
+    }
+
+    val pf = getPreference()
+    val consent = pf.getBoolean(Constants.PREF_ANALYTICS_CONSENT, false)
+    if (!consent) {
+      showConsentDialog(this, pf)
     }
   }
 
@@ -73,7 +90,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
           Logger.d("Intent text $it")
           RxBus.send(ShareText(it))
         }
-
   }
 
   override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
@@ -88,17 +104,34 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   override fun onBackPressed() {
-    if (supportFragmentManager.backStackEntryCount == 1) {
-      finish()
+    // if count is more than 1, then we take user directly to InputFragment regardless of what backstack is.
+    if (supportFragmentManager.backStackEntryCount > 1) {
+      replaceFragment(InputFragment.newInstance())
+
     } else {
-      super.onBackPressed()
+      // while leaving, check if we can show Rate us dialog.
+      if (shouldShowRateUsDialog(this)) {
+        showRateUsDialog(this)
+      } else {
+        finish()
+      }
     }
   }
 
   override fun onTabSelected(tabId: Int) {
     when (tabId) {
-      R.id.tab_input -> replaceFragment(InputFragment.newInstance())
-      R.id.tab_notes -> replaceFragment(NotesFragment.newInstance())
+      R.id.tab_input -> {
+        logAnalytics(Click("bottombar_input"))
+        replaceFragment(InputFragment.newInstance())
+      }
+      R.id.tab_notes -> {
+        logAnalytics(Click("bottombar_notes"))
+        replaceFragment(NotesFragment.newInstance())
+      }
+      R.id.tab_settings -> {
+        logAnalytics(Click("bottombar_settings"))
+        replaceFragment(SettingsFlowFragment.newInstance())
+      }
     }
   }
 }

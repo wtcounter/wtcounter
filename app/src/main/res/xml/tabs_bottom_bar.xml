@@ -9,5 +9,9 @@
       icon="@drawable/ic_notes"
       id="@+id/tab_notes"
       title="@string/notes"/>
+  <tab
+      icon="@drawable/ic_settings"
+      id="@+id/tab_settings"
+      title="@string/settings"/>
 
 </tabs>

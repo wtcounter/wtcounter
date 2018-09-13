@@ -4,6 +4,7 @@
   <!--main-->
   <string name="input">Input</string>
   <string name="notes">Notes</string>
+  <string name="settings">Settings</string>
 
   <!--input-->
   <string name="title_input">Input</string>
@@ -40,4 +41,17 @@
   <string name="addition_success">Report added successfully</string>
   <string name="update_success">Report updated successfully</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
+
+
+  <!-- Rate us strings -->
+  <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
+  <string name="rate_us_yes">Sure! Let\'s do it</string>
+  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+
+  <!-- Analytics consent strings -->
+
+  <string name="analytics_consent" translatable="false">We wish to monitor behaviour of the app to understand how to make it better. is that okay?</string>
+  <string name="analytics_report" translatable="false">Report Analytics</string>
+
+
 </resources>
