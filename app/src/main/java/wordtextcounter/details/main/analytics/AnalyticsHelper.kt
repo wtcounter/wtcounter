@@ -22,6 +22,8 @@ object AnalyticsLogger {
   fun enableAnalytics(context: Context) {
     if (analyticsInstance == null) {
       analyticsInstance = FirebaseAnalytics.getInstance(context)
+    } else {
+      analyticsInstance?.setAnalyticsCollectionEnabled(true)
     }
   }
 

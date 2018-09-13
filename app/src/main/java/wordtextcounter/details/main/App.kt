@@ -6,7 +6,6 @@ import com.example.rateus.RateusCore
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
-import wordtextcounter.details.main.analytics.AnalyticsConsent
 import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_NAME
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_VERSION

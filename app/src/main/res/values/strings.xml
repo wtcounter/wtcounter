@@ -46,6 +46,7 @@
   <!-- Rate us strings -->
   <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
   <string name="rate_us_yes">Sure! Let\'s do it</string>
+  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
 
   <!-- Analytics consent strings -->
 

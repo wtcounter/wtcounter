@@ -2,6 +2,7 @@ package wordtextcounter.details.main.util
 
 import android.app.Activity
 import android.app.Dialog
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -38,10 +39,12 @@ object RateUsHelper {
         onYesSelected(activity)
         try {
           val viewIntent = Intent(Intent.ACTION_VIEW,
-              Uri.parse("https://play.google.com/store/apps/details?id=wordtextcounter.details.main"))
+              Uri.parse("market://details?id=wordtextcounter.details.main"))
           activity.startActivity(viewIntent)
-        } catch (e: Exception) {
-          Toast.makeText(activity, "Oops! We were not able to reach play store. Sorry for that!", Toast.LENGTH_LONG).show()
+        } catch (e: ActivityNotFoundException) {
+          activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=wordtextcounter.details.main")))
+        } catch (e : Exception) {
+          Toast.makeText(activity, activity.getString(R.string.rate_us_error), Toast.LENGTH_LONG).show()
         }
       }
 

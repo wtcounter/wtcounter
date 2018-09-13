@@ -90,14 +90,17 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   override fun onBackPressed() {
-    if (supportFragmentManager.backStackEntryCount == 1) {
+    // if count is more than 1, then we take user directly to InputFragment regardless of what backstack is.
+    if (supportFragmentManager.backStackEntryCount > 1) {
+      replaceFragment(InputFragment.newInstance())
+
+    } else {
+      // while leaving, check if we can show Rate us dialog.
       if (shouldShowRateUsDialog(this)) {
         showRateUsDialog(this)
       } else {
         finish()
       }
-    } else {
-      super.onBackPressed()
     }
   }
 
