@@ -11,7 +11,7 @@ data class Draft(
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "id")
-  var id: Int? = null
+  var id: Long? = null
 
   companion object {
     internal const val TABLE_NAME = "Draft"

@@ -103,7 +103,8 @@ class InputFragment : BaseFragment() {
     cy = dm.heightPixels / 2 - statusBarHeight
 
     viewModelFactory = InputViewModelFactory(
-        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao()
+        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao(),
+        ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)

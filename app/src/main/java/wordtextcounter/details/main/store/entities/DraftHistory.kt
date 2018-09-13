@@ -13,11 +13,11 @@ import android.arch.persistence.room.PrimaryKey
 data class DraftHistory(
     @ColumnInfo(name = "text") var text: String,
     @ColumnInfo(name = "createdAt") var createdAt: Long,
-    @ColumnInfo(name = "draftId") var draftId: Int) {
+    @ColumnInfo(name = "draftId") var draftId: Long) {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "id")
-  var id: Int? = null
+  var id: Long? = null
 
   companion object {
     internal const val TABLE_NAME = "DraftHistory"

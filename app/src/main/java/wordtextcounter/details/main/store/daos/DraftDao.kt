@@ -9,7 +9,7 @@ import wordtextcounter.details.main.store.entities.DraftHistory
 @Dao
 interface DraftDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
-  fun saveDraft(draft: Draft)
+  fun saveDraft(draft: Draft) : Long
 
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   fun saveDraftHistory(draftHistory: DraftHistory)
