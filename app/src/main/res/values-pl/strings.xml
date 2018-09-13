@@ -5,6 +5,7 @@
   <!--main-->
   <string name="input">Wprowadź tekst</string>
   <string name="notes">Notatki</string>
+  <string name="settings">Settings</string>
   <!--input-->
   <string name="title_input">Wprowadź tekst</string>
   <string name="hint_input">Tutaj wpisz swój tekst</string>
@@ -34,4 +35,9 @@
   <string name="addition_success">Raport został pomyślnie dodany</string>
   <string name="update_success">Raport zaktualizowano pomyślnie</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
+  <!-- Rate us strings -->
+  <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
+  <string name="rate_us_yes">Sure! Let\'s do it</string>
+  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <!-- Analytics consent strings -->
 </resources>
