@@ -8,16 +8,18 @@ import android.arch.persistence.room.migration.Migration
 import android.content.Context
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_VERSION
 import wordtextcounter.details.main.store.daos.ReportDao
+import wordtextcounter.details.main.store.entities.Draft
+import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.store.entities.Report
 import wordtextcounter.details.main.store.entities.Report.Companion.TABLE_NAME
 
-@Database(entities = [(Report::class)], version = DB_VERSION)
+@Database(entities = [(Report::class), (Draft::class), (DraftHistory::class)], version = DB_VERSION)
 abstract class ReportDatabase : RoomDatabase() {
   
   abstract fun reportDao(): ReportDao
   
   companion object {
-    const val DB_VERSION = 2
+    const val DB_VERSION = 3
     const val DB_NAME = "Counter.db"
     private var INSTANCE: ReportDatabase? = null
     

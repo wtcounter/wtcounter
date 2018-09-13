@@ -1,9 +1,23 @@
 package wordtextcounter.details.main.store.entities
 
+import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.ForeignKey
+import android.arch.persistence.room.PrimaryKey
 
-@Entity(tableName = DraftHistory.TABLE_NAME)
-class DraftHistory {
+@Entity(tableName = DraftHistory.TABLE_NAME
+    , foreignKeys = [(ForeignKey(entity = Draft::class,
+    parentColumns = arrayOf("id"),
+    childColumns = arrayOf("draftId"),
+    onDelete = ForeignKey.CASCADE))])
+data class DraftHistory(
+    @ColumnInfo(name = "text") var text: String,
+    @ColumnInfo(name = "createdAt") var createdAt: Long,
+    @ColumnInfo(name = "draftId") var draftId: Int) {
+
+  @PrimaryKey(autoGenerate = true)
+  @ColumnInfo(name = "id")
+  var id: Int? = null
 
   companion object {
     internal const val TABLE_NAME = "DraftHistory"
