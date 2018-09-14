@@ -34,10 +34,8 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_input.cl
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.fabSave
@@ -68,7 +66,6 @@ import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.util.RateUsHelper
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -114,18 +111,6 @@ class InputFragment : BaseFragment() {
     val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
     val clipboardManager = clipboardService as ClipboardManager
     clipData = clipboardManager.primaryClip
-
-    ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
-        .getAllReports()
-        .subscribeOn(Schedulers.io())
-        .observeOn(Schedulers.newThread())
-        .subscribe {
-          Logger.d("total results : " + it.size)
-          if (it.isNotEmpty()) {
-            Logger.d("history : " + it[0].draftHistories.size)
-            Logger.d("history : " + it[0].draftHistories.size)
-          }
-        }
   }
 
   override fun onCreateView(
