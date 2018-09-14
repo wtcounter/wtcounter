@@ -34,8 +34,10 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_input.cl
 import kotlinx.android.synthetic.main.fragment_input.etInput
 import kotlinx.android.synthetic.main.fragment_input.fabSave
@@ -112,6 +114,18 @@ class InputFragment : BaseFragment() {
     val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
     val clipboardManager = clipboardService as ClipboardManager
     clipData = clipboardManager.primaryClip
+
+    ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
+        .getAllReports()
+        .subscribeOn(Schedulers.io())
+        .observeOn(Schedulers.newThread())
+        .subscribe {
+          Logger.d("total results : " + it.size)
+          if (it.isNotEmpty()) {
+            Logger.d("history : " + it[0].draftHistories.size)
+            Logger.d("history : " + it[0].draftHistories.size)
+          }
+        }
   }
 
   override fun onCreateView(
@@ -304,6 +318,14 @@ class InputFragment : BaseFragment() {
 //    dialog.window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
     dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     dialog.show()
+  }
+
+  override fun onStop() {
+    super.onStop()
+    val editable = etInput.text
+    if (editable != null) {
+      viewModel.addOrUpdateDraftIfTextChanged(editable.toString(), false)
+    }
   }
 
   private fun hideDialog(

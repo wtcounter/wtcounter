@@ -38,6 +38,13 @@ abstract class ReportDatabase : RoomDatabase() {
                   database.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN 'size' TEXT;")
                 }
                 
+              }, object : Migration(2 ,3) {
+                override fun migrate(database: SupportSQLiteDatabase) {
+                  // 2 to 3
+                  database.execSQL("CREATE TABLE IF NOT EXISTS `Draft` (`id` INTEGER, `text` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+                  database.execSQL("CREATE TABLE IF NOT EXISTS `DraftHistory` (`id` INTEGER, `text` TEXT NOT NULL," +
+                      " `createdAt` INTEGER NOT NULL, `draftId` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`draftId`) REFERENCES Draft(`id`))")
+                }
               }).build()
         }
       }

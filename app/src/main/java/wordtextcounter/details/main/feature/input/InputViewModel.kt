@@ -4,6 +4,7 @@ package wordtextcounter.details.main.feature.input
 
 import com.jakewharton.rxrelay2.BehaviorRelay
 import com.jakewharton.rxrelay2.PublishRelay
+import com.orhanobut.logger.Logger
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -12,10 +13,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.Singles
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.DraftDao
 import wordtextcounter.details.main.store.daos.ReportDao
+import wordtextcounter.details.main.store.data.DraftData
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.store.entities.Report
@@ -114,18 +117,23 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     Flowable.create<Any>({
       if (draftState.draftId == null || addNewDraft) {
-        val draft = Draft(text, System.currentTimeMillis())
+        val draftData = DraftData(text, System.currentTimeMillis())
+        val draft = Draft(draftData)
         val id = draftDao.saveDraft(draft)
         draftState.draftId = id
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
+        Logger.d("adding new.")
       } else {
         val draftHistory = DraftHistory(text, System.currentTimeMillis(), draftState.draftId!!)
         draftDao.saveDraftHistory(draftHistory)
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
+        Logger.d("adding history.")
       }
     }, BackpressureStrategy.BUFFER)
+        .subscribeOn(Schedulers.io())
+        .subscribe()
   }
 
   fun onClickSaveCurrent(name: String) {
