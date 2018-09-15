@@ -72,7 +72,7 @@
         android:paddingBottom="@dimen/_2sdp">
 
         <android.support.v7.widget.AppCompatTextView
-          android:id="@+id/tvTitle"
+          android:id="@+id/tvHistoryText"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center"
@@ -90,7 +90,7 @@
           android:layout_marginTop="@dimen/_4sdp"
           android:background="@null"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvTitle"
+          app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
           app:layout_constraintWidth_percent="0.5"
           app:srcCompat="@drawable/ic_edit_black_24dp" />
 
@@ -101,7 +101,7 @@
           android:layout_marginTop="@dimen/_4sdp"
           android:background="@null"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvTitle"
+          app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
           app:layout_constraintWidth_percent="0.5"
           app:srcCompat="@drawable/ic_delete" />
 
