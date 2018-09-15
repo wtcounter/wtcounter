@@ -8,34 +8,49 @@
 
   <View
     android:id="@+id/lineIndicatorTop"
-    android:layout_width="2dp"
+    android:layout_width="4dp"
     android:layout_height="0dp"
-    android:background="@color/yellow_400"
-    app:layout_constraintBottom_toTopOf="@+id/dotIndicator"
+    android:background="@color/secondaryDarkColor"
+    app:layout_constraintBottom_toTopOf="@+id/marginSpacerTop"
     app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
     app:layout_constraintStart_toStartOf="@+id/dotIndicator"
     app:layout_constraintTop_toTopOf="@+id/content"
+    app:layout_constraintVertical_bias="0.0" />
+
+  <android.support.v4.widget.Space
+    android:id="@+id/marginSpacerTop"
+    android:layout_width="0dp"
+    android:layout_height="10dp"
+    android:layout_marginTop="4dp"
+    app:layout_constraintBottom_toBottomOf="@+id/dotIndicator" />
+
+  <android.support.v4.widget.Space
+    android:id="@+id/marginSpacerBottom"
+    android:layout_width="0dp"
+    android:layout_height="10dp"
+    android:layout_marginBottom="4dp"
+    app:layout_constraintBottom_toBottomOf="@+id/dotIndicator" />
+
+  <View
+    android:id="@+id/lineIndicatorBottom"
+    android:layout_width="4dp"
+    android:layout_height="0dp"
+    android:background="@color/secondaryDarkColor"
+    app:layout_constraintBottom_toBottomOf="@+id/content"
+    app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
+    app:layout_constraintStart_toStartOf="@+id/dotIndicator"
+    app:layout_constraintTop_toBottomOf="@+id/marginSpacerBottom"
     app:layout_constraintVertical_bias="0.0" />
 
   <View
     android:id="@+id/dotIndicator"
     android:layout_width="15dp"
     android:layout_height="15dp"
-    android:background="@color/cardview_dark_background"
+    android:layout_marginLeft="@dimen/_12sdp"
+    android:background="@drawable/history_dot_indicator"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
-
-  <View
-    android:id="@+id/lineIndicatorBottom"
-    android:layout_width="2dp"
-    android:layout_height="0dp"
-    android:background="@color/yellow_400"
-    app:layout_constraintBottom_toBottomOf="@+id/content"
-    app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
-    app:layout_constraintStart_toStartOf="@+id/dotIndicator"
-    app:layout_constraintTop_toBottomOf="@+id/dotIndicator"
-    app:layout_constraintVertical_bias="0.0" />
 
   <FrameLayout
     android:id="@+id/content"
@@ -43,8 +58,8 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:paddingBottom="4dp"
-    android:paddingTop="4dp"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintLeft_toRightOf="@+id/lineIndicatorBottom"
