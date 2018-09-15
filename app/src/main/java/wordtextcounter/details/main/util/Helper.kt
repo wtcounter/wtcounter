@@ -61,7 +61,6 @@ object Helper {
       while (graphemeCounter.next() != BreakIterator.DONE) {
         graphemeCount++
       }
-
       graphemeCount
     }.subscribeOn(Schedulers.computation())
   }
@@ -78,7 +77,6 @@ object Helper {
           whiteSpaceCount++
         }
       }
-
       Pair(graphemeCount, graphemeCount - whiteSpaceCount)
     }.subscribeOn(Schedulers.computation())
   }

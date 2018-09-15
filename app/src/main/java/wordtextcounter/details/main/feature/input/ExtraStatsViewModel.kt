@@ -24,9 +24,7 @@ class ExtraStatsViewModel : BaseViewModel() {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: List<ExtraStatGroup>, t2: Throwable? ->
           viewState.accept(ViewState(t1))
-          if (t2 != null) {
-            //TODO handle error
-          }
+          t2?.printStackTrace()
         }
   }
 

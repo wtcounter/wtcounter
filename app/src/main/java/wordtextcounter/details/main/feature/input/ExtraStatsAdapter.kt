@@ -1,5 +1,6 @@
 package wordtextcounter.details.main.feature.input
 
+import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import wordtextcounter.details.main.R
 class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderViewHolder, ExtraStatsAdapter.ChildViewHolder>() {
 
   private var statGroups: List<ExtraStatGroup> = mutableListOf()
+  lateinit var expandMore: Drawable
+  lateinit var expandLess: Drawable
 
   override val showAllExpanded = true
 
@@ -50,6 +53,11 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
 
     fun bindTo(statGroup: ExtraStatGroup) {
       tvExtraStatGroupName.setText(statGroup.groupName)
+      if (isGroupExpanded(adapterPosition)) {
+        tvExtraStatGroupName.setCompoundDrawablesWithIntrinsicBounds(null, null, expandLess, null)
+      } else {
+        tvExtraStatGroupName.setCompoundDrawablesWithIntrinsicBounds(null, null, expandMore, null)
+      }
     }
   }
 

@@ -34,8 +34,8 @@ import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.ExtraStatText
 import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.ReportText
 import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.showSnackBar
@@ -96,8 +96,8 @@ class InputFragment : BaseFragment() {
 
     ibExtraStats.setOnClickListener {
       viewModel.viewState.value.report?.dataText?.let { text ->
-        RxBus.send(ReportText(text))
-        val dialogFragment = ExtraStatsFragment()
+        RxBus.send(ExtraStatText(text))
+        val dialogFragment = ExtraStatsFragment.newInstance()
         dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
       }
     }

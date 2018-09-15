@@ -29,6 +29,8 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
     }
   }
 
+  fun isGroupExpanded(groupPosition: Int) = headerExpandTracker[viewTypes[groupPosition].index] != 0
+
   @Suppress("UNCHECKED_CAST")
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
     val viewType = getItemViewType(position)
@@ -87,6 +89,7 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
       headerExpandTracker[index] = 0
       notifyItemRangeRemoved(position + 1, childCount)
     }
+    notifyItemChanged(position)
   }
 
   abstract fun createGroupViewHolder(parent: ViewGroup, viewType: Int): GVH

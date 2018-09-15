@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingEnd="@dimen/_8sdp"
-    android:paddingStart="@dimen/_8sdp"
     tools:context=".feature.input.ExtraStatsFragment"
     >
 
@@ -13,12 +11,13 @@
       android:id="@+id/rvStats"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:background="@drawable/bg_dialog"
       android:overScrollMode="never"
-      android:paddingTop="@dimen/_8sdp"
       app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      tools:listitem="@layout/item_extra_stat"
+      tools:listitem="@layout/item_extra_stat_child"
       />
 
 </android.support.constraint.ConstraintLayout>

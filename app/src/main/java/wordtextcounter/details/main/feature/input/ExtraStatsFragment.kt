@@ -6,9 +6,15 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.view.*
+import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_extra_stats.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.util.ExtraStatText
+import wordtextcounter.details.main.util.NoEvent
+import wordtextcounter.details.main.util.RxBus
 
 
 /**
@@ -21,6 +27,7 @@ class ExtraStatsFragment : DialogFragment() {
 
   private lateinit var adapter: ExtraStatsAdapter
   private lateinit var viewModel: ExtraStatsViewModel
+  private var disposable: Disposable? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -38,11 +45,24 @@ class ExtraStatsFragment : DialogFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
+    
+    adapter.expandLess = ContextCompat.getDrawable(context!!,
+        R.drawable.ic_expand_less_black_24dp)!!
+    adapter.expandMore = ContextCompat.getDrawable(context!!,
+        R.drawable.ic_expand_more_black_24dp)!!
+
     viewModel.viewState.subscribe {
       adapter.setStats(it.extraStatGroups)
     }
-    viewModel.getAllStats(
-        "This is the test input string boys is. It should not be confused ")
+    disposable = RxBus.subscribe(ExtraStatText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      viewModel.getAllStats(it.text)
+    })
+  }
+
+  override fun onDestroyView() {
+    disposable?.dispose()
+    super.onDestroyView()
   }
 
   override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
