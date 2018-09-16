@@ -62,8 +62,12 @@ import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.util.*
+import wordtextcounter.details.main.util.EditDraft
+import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
+import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.ShareText
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
