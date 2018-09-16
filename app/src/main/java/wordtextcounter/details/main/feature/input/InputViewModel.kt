@@ -128,14 +128,22 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
     Flowable.create<Any>({
       if (addNewDraft) {
         val draftData = DraftData(text, System.currentTimeMillis())
-        val draft = Draft(draftData)
+        val draft = Draft(draftData, System.currentTimeMillis())
         val id = draftDao.saveDraft(draft)
         draftState.draftId = id
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
       } else {
-        val draftHistory = DraftHistory(text, System.currentTimeMillis(), draftState.draftId!!)
+        var histotyText = draftState.text
+        if (histotyText == null) {
+          histotyText = text
+        }
+        val draftHistory = DraftHistory(histotyText, System.currentTimeMillis(), draftState.draftId!!)
         draftDao.saveDraftHistory(draftHistory)
+        val draftData = DraftData(text, System.currentTimeMillis())
+        val draft = Draft(draftData, System.currentTimeMillis())
+        draft.id = draftState.draftId!!
+        draftDao.updateDraft(draft)
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
       }

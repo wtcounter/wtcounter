@@ -11,6 +11,9 @@ interface DraftDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   fun saveDraft(draft: Draft) : Long
 
+  @Update
+  fun updateDraft(draft: Draft)
+
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   fun saveDraftHistory(draftHistory: DraftHistory)
 
