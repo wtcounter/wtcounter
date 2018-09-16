@@ -41,7 +41,9 @@ class DraftsFragment : BaseFragment() {
     }, {
       it.printStackTrace()
     }))
+  }
 
+  private fun initClickListeners() {
     adapter?.clickRelay?.subscribe({
       when(it) {
         is DraftsAdapter.DraftActions.DraftEdit -> {
@@ -60,14 +62,18 @@ class DraftsFragment : BaseFragment() {
     }, {
       showError(getString(R.string.generic_error_message))
     })?.let { disposable.add(it) }
-
   }
 
   private fun handleViewState(state : DraftsViewModel.ViewState) {
-    if (adapter == null && state.drafts != null) {
-      rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-      adapter = DraftsAdapter(state.drafts)
-      rvNotes.adapter = adapter
+    if (state.drafts != null) {
+      if (adapter == null) {
+        rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        adapter = DraftsAdapter(state.drafts.toMutableList())
+        rvNotes.adapter = adapter
+        initClickListeners()
+      } else {
+        adapter?.dispatchUpdates(state.drafts)
+      }
     }
 
     if (state.successDraftDeletion) {

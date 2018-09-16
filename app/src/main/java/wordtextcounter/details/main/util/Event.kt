@@ -9,5 +9,6 @@ object NoEvent : Event()
 data class EditReport(val report: Report) : Event()
 data class EditDraft(val text: String) : Event()
 data class DeleteReport(val report: Report) : Event()
+data class DeleteDraft(val id: Long) : Event()
 data class ShareText(val shareText: String) : Event()
 

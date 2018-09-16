@@ -14,7 +14,7 @@ import wordtextcounter.details.main.store.data.DraftWithHistory
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 
-class DraftsAdapter(val draftsWithHistory: List<DraftWithHistory>) : AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
+class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) : AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay = PublishRelay.create<DraftActions>()
   override fun createGroupViewHolder(parent: ViewGroup, viewType: Int): DraftHolder {
     return DraftHolder(
@@ -67,6 +67,12 @@ class DraftsAdapter(val draftsWithHistory: List<DraftWithHistory>) : AbstractExp
       text.text = draft.draftData.text
       itemView.tag = draft
     }
+  }
+
+  fun dispatchUpdates(drafts: List<DraftWithHistory>) {
+    draftsWithHistory.clear()
+    draftsWithHistory.addAll(drafts)
+    notifyDataSetChanged()
   }
 
   inner class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -22,6 +22,7 @@ import wordtextcounter.details.main.store.data.DraftData
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.DeleteDraft
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.Helper.calculateSize
 import wordtextcounter.details.main.util.Helper.countCharacters
@@ -53,6 +54,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
   val additionLiveData: PublishRelay<Boolean> = PublishRelay.create()
   val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
   private var counterDisposable: Disposable? = null
+  val deletedDrafts = mutableListOf<Long>()
 
   private var reportId: Int? = null
 
@@ -61,6 +63,10 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     addDisposable(RxBus.subscribe(EditReport::class.java, Consumer {
       reportId = it.report.id
+    }))
+
+    addDisposable(RxBus.subscribe(DeleteDraft::class.java, Consumer {
+      deletedDrafts.add(it.id)
     }))
   }
 
@@ -111,25 +117,27 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     var addNewDraft = isNewText
 
-    if (TimeUnit.HOURS.toMillis(2) < (System.currentTimeMillis() - draftState.lastUpdatedTime)) {
+    if (TimeUnit.HOURS.toMillis(2) < (System.currentTimeMillis() - draftState.lastUpdatedTime) || draftState.draftId == null) {
+      addNewDraft = true
+    }
+
+    if (!addNewDraft && draftState.draftId != null && deletedDrafts.contains(draftState.draftId!!)) {
       addNewDraft = true
     }
 
     Flowable.create<Any>({
-      if (draftState.draftId == null || addNewDraft) {
+      if (addNewDraft) {
         val draftData = DraftData(text, System.currentTimeMillis())
         val draft = Draft(draftData)
         val id = draftDao.saveDraft(draft)
         draftState.draftId = id
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
-        Logger.d("adding new.")
       } else {
         val draftHistory = DraftHistory(text, System.currentTimeMillis(), draftState.draftId!!)
         draftDao.saveDraftHistory(draftHistory)
         draftState.text = text
         draftState.lastUpdatedTime = System.currentTimeMillis()
-        Logger.d("adding history.")
       }
     }, BackpressureStrategy.BUFFER)
         .subscribeOn(Schedulers.io())

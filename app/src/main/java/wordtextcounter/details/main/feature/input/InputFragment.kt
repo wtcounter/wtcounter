@@ -56,16 +56,13 @@ import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.extensions.backToPosition
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.util.*
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -356,37 +353,46 @@ class InputFragment : BaseFragment() {
     }
   }
 
+  private fun handleBusEditEvent(text: String) {
+    if (etInput.text.trim().isNotEmpty()) {
+      AlertDialog.Builder(context!!)
+          .setTitle(R.string.edit_alert_title)
+          .setMessage(R.string.edit_alert_desc)
+          .setPositiveButton(R.string.yes,
+              { dialog, _ ->
+                logAnalytics(Click("update_warning_dialog_yes"))
+                etInput.setText(text)
+                dialog.dismiss()
+              })
+          .setNegativeButton(R.string.no,
+              { dialog, _ ->
+                logAnalytics(Click("update_warning_dialog_no"))
+                dialog.dismiss()
+              })
+          .setIcon(R.drawable.ic_warning_black_24dp)
+          .setOnCancelListener {
+            logAnalytics(Click("update_warning_dialog_cancel"))
+            viewModel.cancelEdit()
+            reportNameEditMode = null
+          }
+          .create()
+          .show()
+    } else {
+      etInput.setText(text)
+    }
+  }
+
   override fun onStart() {
     super.onStart()
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
       reportNameEditMode = it.report.name
-      if (etInput.text.trim().isNotEmpty()) {
-        AlertDialog.Builder(context!!)
-            .setTitle(R.string.edit_alert_title)
-            .setMessage(R.string.edit_alert_desc)
-            .setPositiveButton(R.string.yes,
-                { dialog, _ ->
-                  logAnalytics(Click("update_warning_dialog_yes"))
-                  etInput.setText(it.report.dataText)
-                  dialog.dismiss()
-                })
-            .setNegativeButton(R.string.no,
-                { dialog, _ ->
-                  logAnalytics(Click("update_warning_dialog_no"))
-                  dialog.dismiss()
-                })
-            .setIcon(R.drawable.ic_warning_black_24dp)
-            .setOnCancelListener {
-              logAnalytics(Click("update_warning_dialog_cancel"))
-              viewModel.cancelEdit()
-              reportNameEditMode = null
-            }
-            .create()
-            .show()
-      } else {
-        etInput.setText(it.report.dataText)
-      }
+      it.report.dataText?.let { it1 -> handleBusEditEvent(it1) }
+    }))
+
+    disposable.add(RxBus.subscribe(EditDraft::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleBusEditEvent(it.text)
     }))
 
     disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
