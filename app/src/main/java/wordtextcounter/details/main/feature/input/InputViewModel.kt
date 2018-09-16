@@ -101,7 +101,17 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         }
   }
 
-  fun addOrUpdateDraftIfTextChanged(text: String, isNewText : Boolean) {
+  fun onTextCleared() {
+   resetDraftState()
+  }
+
+  private fun resetDraftState() {
+    draftState.draftId = null
+    draftState.lastUpdatedTime = 0
+    draftState.text = null
+  }
+
+  fun addOrUpdateDraftIfTextChanged(text: String) {
     //do nothing if text is empty.
     if (text.trim().isEmpty()) {
       return
@@ -115,7 +125,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
       }
     }
 
-    var addNewDraft = isNewText
+    var addNewDraft = false
 
     if (TimeUnit.HOURS.toMillis(2) < (System.currentTimeMillis() - draftState.lastUpdatedTime) || draftState.draftId == null) {
       addNewDraft = true
@@ -127,29 +137,37 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     Flowable.create<Any>({
       if (addNewDraft) {
-        val draftData = DraftData(text, System.currentTimeMillis())
-        val draft = Draft(draftData, System.currentTimeMillis())
-        val id = draftDao.saveDraft(draft)
-        draftState.draftId = id
-        draftState.text = text
-        draftState.lastUpdatedTime = System.currentTimeMillis()
+        handleAddNewDraft(text)
       } else {
-        var histotyText = draftState.text
-        if (histotyText == null) {
-          histotyText = text
-        }
-        val draftHistory = DraftHistory(histotyText, System.currentTimeMillis(), draftState.draftId!!)
-        draftDao.saveDraftHistory(draftHistory)
-        val draftData = DraftData(text, System.currentTimeMillis())
-        val draft = Draft(draftData, System.currentTimeMillis())
-        draft.id = draftState.draftId!!
-        draftDao.updateDraft(draft)
-        draftState.text = text
-        draftState.lastUpdatedTime = System.currentTimeMillis()
+        handleAddNewHistory(text)
       }
     }, BackpressureStrategy.BUFFER)
         .subscribeOn(Schedulers.io())
         .subscribe()
+  }
+
+  private fun handleAddNewHistory(text: String) {
+    var histotyText = draftState.text
+    if (histotyText == null) {
+      histotyText = text
+    }
+    val draftHistory = DraftHistory(histotyText, System.currentTimeMillis(), draftState.draftId!!)
+    draftDao.saveDraftHistory(draftHistory)
+    val draftData = DraftData(text, System.currentTimeMillis())
+    val draft = Draft(draftData, System.currentTimeMillis())
+    draft.id = draftState.draftId!!
+    draftDao.updateDraft(draft)
+    draftState.text = text
+    draftState.lastUpdatedTime = System.currentTimeMillis()
+  }
+
+  private fun handleAddNewDraft(text: String) {
+    val draftData = DraftData(text, System.currentTimeMillis())
+    val draft = Draft(draftData, System.currentTimeMillis())
+    val id = draftDao.saveDraft(draft)
+    draftState.draftId = id
+    draftState.text = text
+    draftState.lastUpdatedTime = System.currentTimeMillis()
   }
 
   fun onClickSaveCurrent(name: String) {

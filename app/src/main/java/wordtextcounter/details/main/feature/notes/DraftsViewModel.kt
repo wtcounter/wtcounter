@@ -20,7 +20,8 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
     val drafts: List<DraftWithHistory>? = null,
     val successDraftDeletion: Boolean = false,
     val successHistoryDeletion: Boolean = false,
-    val showError: Boolean = false
+    val showError: Boolean = false,
+    val noReports: Boolean = false
   )
 
   val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
@@ -32,6 +33,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
   private fun getCurrentViewState() = viewState.value!!
 
   fun getAllDrafts() {
+    loaderState.value = true
     addDisposable(draftDao.getAllDrafts()
         .subscribeOn(Schedulers.io())
         .flatMap { t ->
@@ -46,18 +48,27 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
         }
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe({
-          if (it != null) {
+          loaderState.value = false
+          if (it != null && !it.isEmpty()) {
             viewState.accept(
                 getCurrentViewState().copy(
                     drafts = it, showError = false, successHistoryDeletion = false,
-                    successDraftDeletion = false
+                    successDraftDeletion = false, noReports = false
+                )
+            )
+          } else {
+            viewState.accept(
+                getCurrentViewState().copy(
+                    showError = false, successHistoryDeletion = false,
+                    successDraftDeletion = false, noReports = true
                 )
             )
           }
         }, {
+          loaderState.value = false
           viewState.accept(
               getCurrentViewState().copy(
-                  showError = true, successHistoryDeletion = false, successDraftDeletion = false
+                  showError = true, successHistoryDeletion = false, successDraftDeletion = false, noReports = false
               )
           )
         })
@@ -84,14 +95,14 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
                 viewState.accept(
                     ViewState(
                         successDraftDeletion = true, successHistoryDeletion = false,
-                        showError = false
+                        showError = false, noReports = false
                     )
                 )
               }
             }, {
               viewState.accept(
                   ViewState(
-                      showError = true, successHistoryDeletion = false, successDraftDeletion = false
+                      showError = true, successHistoryDeletion = false, successDraftDeletion = false, noReports = false
                   )
               )
             })
@@ -116,14 +127,14 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
                 viewState.accept(
                     ViewState(
                         successHistoryDeletion = true, successDraftDeletion = false,
-                        showError = false
+                        showError = false, noReports = false
                     )
                 )
               }
             }, {
               viewState.accept(
                   ViewState(
-                      showError = true, successHistoryDeletion = false, successDraftDeletion = false
+                      showError = true, successHistoryDeletion = false, successDraftDeletion = false, noReports = false
                   )
               )
             })

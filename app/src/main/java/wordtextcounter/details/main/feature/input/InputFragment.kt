@@ -142,6 +142,9 @@ class InputFragment : BaseFragment() {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
           viewModel.calculateInput(it.toString())
+          if (it.isEmpty()) {
+            viewModel.onTextCleared()
+          }
         })
 
 
@@ -310,7 +313,7 @@ class InputFragment : BaseFragment() {
     super.onStop()
     val editable = etInput.text
     if (editable != null) {
-      viewModel.addOrUpdateDraftIfTextChanged(editable.toString(), false)
+      viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
     }
   }
 

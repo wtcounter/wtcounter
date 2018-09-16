@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
+import kotlinx.android.synthetic.main.fragment_notes.tvEmptyNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -74,6 +75,14 @@ class DraftsFragment : BaseFragment() {
   }
 
   private fun handleViewState(state: DraftsViewModel.ViewState) {
+    if (state.noReports) {
+      tvEmptyNotes.visibility = View.VISIBLE
+      rvNotes.visibility = View.GONE
+    } else {
+      tvEmptyNotes.visibility = View.GONE
+      rvNotes.visibility = View.VISIBLE
+    }
+
     if (state.drafts != null) {
       if (adapter == null) {
         rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
