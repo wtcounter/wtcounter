@@ -36,17 +36,51 @@ class DraftsFragment : BaseFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     viewModel.getAllDrafts()
-    viewModel.viewState.subscribe({
-      rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-      if (adapter == null && it?.drafts != null) {
-        Logger.d("initng adapter with " + it.drafts.size)
-        adapter = DraftsAdapter(it.drafts)
-        rvNotes.adapter = adapter
-      }
+    disposable.add(viewModel.viewState.subscribe({
+      handleViewState(it)
     }, {
       it.printStackTrace()
-    })
+    }))
 
+    adapter?.clickRelay?.subscribe({
+      when(it) {
+        is DraftsAdapter.DraftActions.DraftEdit -> {
+          viewModel.editDraft(it.draft)
+        }
+        is DraftsAdapter.DraftActions.DraftDelete -> {
+          viewModel.deleteDraft(it.draft)
+        }
+        is DraftsAdapter.DraftActions.DraftHistoryEdit -> {
+          viewModel.editDraftHistory(it.draftHistory)
+        }
+        is DraftsAdapter.DraftActions.DraftHistoryDelete -> {
+          viewModel.deleteDraftHistory(it.draftHistory)
+        }
+      }
+    }, {
+      showError(getString(R.string.generic_error_message))
+    })?.let { disposable.add(it) }
+
+  }
+
+  private fun handleViewState(state : DraftsViewModel.ViewState) {
+    if (adapter == null && state.drafts != null) {
+      rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+      adapter = DraftsAdapter(state.drafts)
+      rvNotes.adapter = adapter
+    }
+
+    if (state.successDraftDeletion) {
+      showError(getString(R.string.draft_deletion_success))
+    }
+
+    if (state.successHistoryDeletion) {
+      showError(getString(R.string.draft_history_deletion_success))
+    }
+
+    if (state.showError) {
+      showError(getString(R.string.generic_error_message))
+    }
   }
 
   override val baseViewModel: BaseViewModel

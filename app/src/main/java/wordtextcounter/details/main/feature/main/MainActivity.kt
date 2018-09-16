@@ -21,6 +21,7 @@ import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.feature.notes.DraftsFragment
+import wordtextcounter.details.main.feature.notes.NotesMainFragment
 import wordtextcounter.details.main.util.Constants
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.getPreference
@@ -127,7 +128,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
       R.id.tab_notes -> {
         logAnalytics(Click("bottombar_notes"))
-        replaceFragment(DraftsFragment.newInstance())
+        replaceFragment(NotesMainFragment.newInstance())
       }
       R.id.tab_settings -> {
         logAnalytics(Click("bottombar_settings"))

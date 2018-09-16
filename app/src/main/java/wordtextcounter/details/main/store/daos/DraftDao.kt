@@ -17,4 +17,10 @@ interface DraftDao {
   @Transaction
   @Query("SELECT * FROM Draft")
   fun getAllDrafts(): Flowable<List<DraftWithHistory>>
+
+  @Delete
+  fun deleteDraft(draft: Draft)
+
+  @Delete
+  fun deleteDraftHisoty(draftHistory: DraftHistory)
 }
