@@ -7,7 +7,11 @@ import android.arch.persistence.room.PrimaryKey
 import wordtextcounter.details.main.store.data.DraftData
 
 @Entity(tableName = Draft.TABLE_NAME)
-data class Draft(@Embedded val draftData: DraftData, @ColumnInfo(name = "lastUpdatedAt") val lastUpdatedAt: Long) {
+data class Draft(
+  @Embedded val draftData: DraftData, @ColumnInfo(
+      name = "lastUpdatedAt"
+  ) val lastUpdatedAt: Long
+) {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "id")

@@ -1,22 +1,36 @@
 package wordtextcounter.details.main.feature.notes
 
 import android.support.v7.widget.RecyclerView
-import android.text.format.DateUtils.*
+import android.text.format.DateUtils.DAY_IN_MILLIS
+import android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE
+import android.text.format.DateUtils.MINUTE_IN_MILLIS
+import android.text.format.DateUtils.getRelativeDateTimeString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jakewharton.rxrelay2.PublishRelay
-import kotlinx.android.synthetic.main.item_draft.view.*
-import kotlinx.android.synthetic.main.item_draft_history.view.*
+import kotlinx.android.synthetic.main.item_draft.view.ibDelete
+import kotlinx.android.synthetic.main.item_draft.view.ibEdit
+import kotlinx.android.synthetic.main.item_draft.view.tvText
+import kotlinx.android.synthetic.main.item_draft_history.view.ibDeleteHistory
+import kotlinx.android.synthetic.main.item_draft_history.view.ibEditHistory
+import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorBottom
+import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorTop
+import kotlinx.android.synthetic.main.item_draft_history.view.tvHistoryText
+import kotlinx.android.synthetic.main.item_draft_history.view.tvTimeStamp
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
 import wordtextcounter.details.main.store.data.DraftWithHistory
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 
-class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) : AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
+class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
+    AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay = PublishRelay.create<DraftActions>()
-  override fun createGroupViewHolder(parent: ViewGroup, viewType: Int): DraftHolder {
+  override fun createGroupViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): DraftHolder {
     return DraftHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft, parent, false)
     )
@@ -30,23 +44,34 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) : Abst
     return draftsWithHistory[groupPosition].draftHistories.size
   }
 
-  override fun createChildViewHolder(parent: ViewGroup, viewType: Int): HistoryHolder {
+  override fun createChildViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): HistoryHolder {
     return HistoryHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft_history, parent, false)
     )
   }
 
-  override fun bindGroupViewHolder(viewHolder: DraftHolder, groupPosition: Int) {
+  override fun bindGroupViewHolder(
+    viewHolder: DraftHolder,
+    groupPosition: Int
+  ) {
     val draft = draftsWithHistory[groupPosition]
     viewHolder.bind(draft.draft)
   }
 
-  override fun bindChildViewHolder(viewHolder: HistoryHolder, groupPosition: Int, childPosition: Int) {
+  override fun bindChildViewHolder(
+    viewHolder: HistoryHolder,
+    groupPosition: Int,
+    childPosition: Int
+  ) {
     val draft = draftsWithHistory[groupPosition]
     val draftHistory = draft.draftHistories[childPosition]
-    viewHolder.bind(draftHistory, childPosition == 0, childPosition == childCount(groupPosition) - 1)
+    viewHolder.bind(
+        draftHistory, childPosition == 0, childPosition == childCount(groupPosition) - 1
+    )
   }
-
 
   inner class DraftHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val text = itemView.tvText
@@ -93,7 +118,11 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) : Abst
       }
     }
 
-    fun bind(draftHistory: DraftHistory, isFirst: Boolean, isLast:Boolean) {
+    fun bind(
+      draftHistory: DraftHistory,
+      isFirst: Boolean,
+      isLast: Boolean
+    ) {
       historyText.text = draftHistory.text
       if (isFirst) {
         topLine.visibility = View.INVISIBLE
@@ -107,15 +136,18 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) : Abst
         bottomLine.visibility = View.VISIBLE
       }
 
-      timeStampText.text = getRelativeDateTimeString(itemView.context, draftHistory.createdAt, MINUTE_IN_MILLIS, DAY_IN_MILLIS,  FORMAT_ABBREV_RELATIVE)
+      timeStampText.text = getRelativeDateTimeString(
+          itemView.context, draftHistory.createdAt, MINUTE_IN_MILLIS, DAY_IN_MILLIS,
+          FORMAT_ABBREV_RELATIVE
+      )
       itemView.tag = draftHistory
     }
   }
 
   sealed class DraftActions {
-    data class DraftEdit(val draft : Draft) : DraftActions()
-    data class DraftDelete(val draft : Draft) : DraftActions()
-    data class DraftHistoryEdit(val draftHistory : DraftHistory) : DraftActions()
+    data class DraftEdit(val draft: Draft) : DraftActions()
+    data class DraftDelete(val draft: Draft) : DraftActions()
+    data class DraftHistoryEdit(val draftHistory: DraftHistory) : DraftActions()
     data class DraftHistoryDelete(val draftHistory: DraftHistory) : DraftActions()
   }
 }

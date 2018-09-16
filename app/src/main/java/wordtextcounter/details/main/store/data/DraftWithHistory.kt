@@ -9,7 +9,9 @@ class DraftWithHistory {
   @Embedded
   lateinit var draft: Draft
 
-  @Relation(parentColumn = "id", entityColumn = "draftId",
-  entity = DraftHistory::class)
+  @Relation(
+      parentColumn = "id", entityColumn = "draftId",
+      entity = DraftHistory::class
+  )
   lateinit var draftHistories: List<DraftHistory>
 }

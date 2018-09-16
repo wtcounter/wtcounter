@@ -12,7 +12,10 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   private val headerExpandTracker = SparseIntArray()
   private val viewTypes: SparseArray<ViewType> = SparseArray()
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+  override fun onCreateViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): RecyclerView.ViewHolder {
     return if (viewType == TYPE_HEADER) {
       val holder = createGroupViewHolder(parent, viewType)
       holder.itemView.setOnClickListener {
@@ -27,7 +30,10 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   }
 
   @Suppress("UNCHECKED_CAST")
-  override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+  override fun onBindViewHolder(
+    holder: RecyclerView.ViewHolder,
+    position: Int
+  ) {
     val viewType = getItemViewType(position)
     val index = viewTypes[position].index
     val groupIndex = viewTypes[position].groupIndex
@@ -74,20 +80,37 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
     }
   }
 
-  abstract fun createGroupViewHolder(parent: ViewGroup, viewType: Int): GVH
+  abstract fun createGroupViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): GVH
 
   abstract fun groupCount(): Int
 
   abstract fun childCount(groupPosition: Int): Int
 
-  abstract fun createChildViewHolder(parent: ViewGroup, viewType: Int): CVH
+  abstract fun createChildViewHolder(
+    parent: ViewGroup,
+    viewType: Int
+  ): CVH
 
-  abstract fun bindGroupViewHolder(viewHolder: GVH, groupPosition: Int)
+  abstract fun bindGroupViewHolder(
+    viewHolder: GVH,
+    groupPosition: Int
+  )
 
-  abstract fun bindChildViewHolder(viewHolder: CVH, groupPosition: Int, childPosition: Int)
+  abstract fun bindChildViewHolder(
+    viewHolder: CVH,
+    groupPosition: Int,
+    childPosition: Int
+  )
 }
 
-data class ViewType(val index: Int, val type: Int, val groupIndex: Int = -1)
+data class ViewType(
+  val index: Int,
+  val type: Int,
+  val groupIndex: Int = -1
+)
 
 const val TYPE_HEADER = 0
 const val TYPE_CHILD = 1

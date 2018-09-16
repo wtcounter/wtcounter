@@ -1,154 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
 
   <View
-    android:id="@+id/lineIndicatorTop"
-    android:layout_width="4dp"
-    android:layout_height="0dp"
-    android:background="@color/secondaryDarkColor"
-    app:layout_constraintBottom_toTopOf="@+id/marginSpacerTop"
-    app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
-    app:layout_constraintStart_toStartOf="@+id/dotIndicator"
-    app:layout_constraintTop_toTopOf="@+id/content"
-    app:layout_constraintVertical_bias="0.0" />
+      android:id="@+id/lineIndicatorTop"
+      android:layout_width="4dp"
+      android:layout_height="0dp"
+      android:background="@color/secondaryDarkColor"
+      app:layout_constraintBottom_toTopOf="@+id/marginSpacerTop"
+      app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
+      app:layout_constraintStart_toStartOf="@+id/dotIndicator"
+      app:layout_constraintTop_toTopOf="@+id/content"
+      app:layout_constraintVertical_bias="0.0"
+      />
 
   <android.support.v4.widget.Space
-    android:id="@+id/marginSpacerTop"
-    android:layout_width="0dp"
-    android:layout_height="10dp"
-    android:layout_marginTop="4dp"
-    app:layout_constraintBottom_toBottomOf="@+id/dotIndicator" />
+      android:id="@+id/marginSpacerTop"
+      android:layout_width="0dp"
+      android:layout_height="10dp"
+      android:layout_marginTop="4dp"
+      app:layout_constraintBottom_toBottomOf="@+id/dotIndicator"
+      />
 
   <android.support.v4.widget.Space
-    android:id="@+id/marginSpacerBottom"
-    android:layout_width="0dp"
-    android:layout_height="10dp"
-    android:layout_marginBottom="4dp"
-    app:layout_constraintBottom_toBottomOf="@+id/dotIndicator" />
+      android:id="@+id/marginSpacerBottom"
+      android:layout_width="0dp"
+      android:layout_height="10dp"
+      android:layout_marginBottom="4dp"
+      app:layout_constraintBottom_toBottomOf="@+id/dotIndicator"
+      />
 
   <View
-    android:id="@+id/lineIndicatorBottom"
-    android:layout_width="4dp"
-    android:layout_height="0dp"
-    android:background="@color/secondaryDarkColor"
-    app:layout_constraintBottom_toBottomOf="@+id/content"
-    app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
-    app:layout_constraintStart_toStartOf="@+id/dotIndicator"
-    app:layout_constraintTop_toBottomOf="@+id/marginSpacerBottom"
-    app:layout_constraintVertical_bias="0.0" />
+      android:id="@+id/lineIndicatorBottom"
+      android:layout_width="4dp"
+      android:layout_height="0dp"
+      android:background="@color/secondaryDarkColor"
+      app:layout_constraintBottom_toBottomOf="@+id/content"
+      app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
+      app:layout_constraintStart_toStartOf="@+id/dotIndicator"
+      app:layout_constraintTop_toBottomOf="@+id/marginSpacerBottom"
+      app:layout_constraintVertical_bias="0.0"
+      />
 
   <View
-    android:id="@+id/dotIndicator"
-    android:layout_width="15dp"
-    android:layout_height="15dp"
-    android:layout_marginLeft="@dimen/_12sdp"
-    android:layout_marginStart="@dimen/_12sdp"
-    android:background="@drawable/history_dot_indicator"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+      android:id="@+id/dotIndicator"
+      android:layout_width="15dp"
+      android:layout_height="15dp"
+      android:layout_marginLeft="@dimen/_12sdp"
+      android:layout_marginStart="@dimen/_12sdp"
+      android:background="@drawable/history_dot_indicator"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
 
   <android.support.v7.widget.AppCompatTextView
-    android:id="@+id/tvTimeStamp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:maxWidth="@dimen/_42sdp"
-    android:textSize="@dimen/_8ssp"
-    android:textColor="@color/white"
-    android:layout_marginLeft="8dp"
-    android:layout_marginStart="8dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/dotIndicator"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:text="Yesterday 12:22 PM" />
+      android:id="@+id/tvTimeStamp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:layout_marginStart="8dp"
+      android:gravity="center"
+      android:maxWidth="@dimen/_42sdp"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_8ssp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/dotIndicator"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Yesterday 12:22 PM"
+      />
 
   <FrameLayout
-    android:id="@+id/content"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:paddingBottom="8dp"
-    android:paddingTop="8dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintLeft_toRightOf="@+id/tvTimeStamp"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0">
+      android:id="@+id/content"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+      android:paddingBottom="8dp"
+      android:paddingTop="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintLeft_toRightOf="@+id/tvTimeStamp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0"
+      >
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/_1sdp"
-      android:layout_marginEnd="@dimen/_3sdp"
-      android:layout_marginStart="@dimen/_3sdp"
-      android:layout_marginTop="@dimen/_1sdp"
-      app:cardCornerRadius="@dimen/_4sdp"
-      app:cardUseCompatPadding="true">
-
-      <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_2sdp"
-        android:paddingBottom="@dimen/_2sdp">
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        >
 
-        <android.support.v7.widget.AppCompatTextView
-          android:id="@+id/tvHistoryText"
+      <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:gravity="center"
-          android:textSize="@dimen/_12ssp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          tools:text="This is a very very very very very very very very very very very very very ver vev ryrv y log ntext" />
+          android:layout_margin="@dimen/_2sdp"
+          android:paddingBottom="@dimen/_2sdp"
+          >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvHistoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="This is a very very very very very very very very very very very very very ver vev ryrv y log ntext"
+            />
 
         <View
-          android:id="@+id/separator"
-          android:layout_width="0dp"
-          android:layout_height="@dimen/_1sdp"
-          android:layout_marginBottom="@dimen/_5sdp"
-          android:layout_marginLeft="@dimen/_4sdp"
-          android:layout_marginRight="@dimen/_4sdp"
-          android:layout_marginTop="@dimen/_8sdp"
-          android:background="@color/grey_200"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvHistoryText" />
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/grey_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
+            />
 
 
         <ImageButton
-          android:id="@+id/ibEditHistory"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="@dimen/_16sdp"
-          android:background="@null"
-          android:scaleType="centerInside"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
-          app:layout_constraintWidth_percent="0.5"
-          app:srcCompat="@drawable/ic_edit_black_24dp" />
+            android:id="@+id/ibEditHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
+            app:layout_constraintWidth_percent="0.5"
+            app:srcCompat="@drawable/ic_edit_black_24dp"
+            />
 
         <ImageButton
-          android:id="@+id/ibDeleteHistory"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="@dimen/_16sdp"
-          android:background="@null"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
-          app:layout_constraintWidth_percent="0.5"
-          app:srcCompat="@drawable/ic_delete" />
+            android:id="@+id/ibDeleteHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHistoryText"
+            app:layout_constraintWidth_percent="0.5"
+            app:srcCompat="@drawable/ic_delete"
+            />
 
 
       </android.support.constraint.ConstraintLayout>

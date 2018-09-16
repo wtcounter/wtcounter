@@ -8,7 +8,8 @@ internal class DraftsViewModelFactory(private val draftDao: DraftDao) : ViewMode
 
   override fun <T : ViewModel?> create(modelClass: Class<T>): T {
     if (modelClass.isAssignableFrom(DraftsViewModel::class.java)) {
-      return modelClass.getConstructor(DraftDao::class.java).newInstance(draftDao)
+      return modelClass.getConstructor(DraftDao::class.java)
+          .newInstance(draftDao)
     }
     throw IllegalStateException("Unknown ViewModel class.")
   }

@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.orhanobut.logger.Logger
-import kotlinx.android.synthetic.main.fragment_notes.*
+import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -20,20 +19,29 @@ class DraftsFragment : BaseFragment() {
 
   private lateinit var viewModel: DraftsViewModel
 
-  private var adapter: DraftsAdapter?= null
+  private var adapter: DraftsAdapter? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     viewModelFactory = DraftsViewModelFactory(
-        ReportDatabase.getInstance(activity?.applicationContext!!).draftDao())
-    viewModel = ViewModelProviders.of(this, viewModelFactory).get(DraftsViewModel::class.java)
+        ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
+    )
+    viewModel = ViewModelProviders.of(this, viewModelFactory)
+        .get(DraftsViewModel::class.java)
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View? {
     return inflater.inflate(R.layout.fragment_notes, container, false)
   }
 
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+  override fun onViewCreated(
+    view: View,
+    savedInstanceState: Bundle?
+  ) {
     super.onViewCreated(view, savedInstanceState)
     viewModel.getAllDrafts()
     disposable.add(viewModel.viewState.subscribe({
@@ -45,7 +53,7 @@ class DraftsFragment : BaseFragment() {
 
   private fun initClickListeners() {
     adapter?.clickRelay?.subscribe({
-      when(it) {
+      when (it) {
         is DraftsAdapter.DraftActions.DraftEdit -> {
           viewModel.editDraft(it.draft)
         }
@@ -61,10 +69,11 @@ class DraftsFragment : BaseFragment() {
       }
     }, {
       showError(getString(R.string.generic_error_message))
-    })?.let { disposable.add(it) }
+    })
+        ?.let { disposable.add(it) }
   }
 
-  private fun handleViewState(state : DraftsViewModel.ViewState) {
+  private fun handleViewState(state: DraftsViewModel.ViewState) {
     if (state.drafts != null) {
       if (adapter == null) {
         rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
