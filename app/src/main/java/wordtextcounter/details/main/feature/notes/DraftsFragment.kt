@@ -116,7 +116,7 @@ class DraftsFragment : BaseFragment() {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment NotesFragment.
+     * @return A new instance of fragment DraftsFragment.
      */
     fun newInstance(): DraftsFragment {
       val fragment = DraftsFragment()

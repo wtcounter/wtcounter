@@ -31,7 +31,7 @@ class NotesMainFragment : Fragment() {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment NotesFragment.
+     * @return A new instance of fragment NotesMainFragment.
      */
     fun newInstance(): NotesMainFragment {
       val fragment = NotesMainFragment()

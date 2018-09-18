@@ -23,6 +23,7 @@ import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.store.entities.Report
 import wordtextcounter.details.main.util.DeleteDraft
+import wordtextcounter.details.main.util.EditDraft
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.Helper.calculateSize
 import wordtextcounter.details.main.util.Helper.countCharacters
@@ -69,6 +70,12 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     addDisposable(RxBus.subscribe(DeleteDraft::class.java, Consumer {
       deletedDrafts.add(it.id)
+    }))
+
+    addDisposable(RxBus.subscribe(EditDraft::class.java, Consumer {
+      draftState.text = it.text
+      draftState.draftId = it.id
+      draftState.lastUpdatedTime = System.currentTimeMillis()
     }))
   }
 

@@ -76,7 +76,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
   }
 
   fun editDraft(draft: Draft) {
-    RxBus.send(EditDraft(draft.draftData.text))
+    RxBus.send(EditDraft(draft.draftData.text, draft.id!!))
     routerState.value = Input
   }
 
@@ -110,7 +110,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
   }
 
   fun editDraftHistory(draftHistory: DraftHistory) {
-    RxBus.send(EditDraft(draftHistory.text))
+    RxBus.send(EditDraft(draftHistory.text, draftHistory.draftId))
     routerState.value = Input
   }
 

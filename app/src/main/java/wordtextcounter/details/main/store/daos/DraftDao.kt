@@ -24,7 +24,7 @@ interface DraftDao {
   fun saveDraftHistory(draftHistory: DraftHistory)
 
   @Transaction
-  @Query("SELECT * FROM Draft")
+  @Query("SELECT * FROM Draft ORDER BY Draft.lastUpdatedAt DESC")
   fun getAllDrafts(): Flowable<List<DraftWithHistory>>
 
   @Delete
