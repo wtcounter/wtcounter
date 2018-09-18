@@ -2,6 +2,7 @@ package wordtextcounter.details.main.feature.notes
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -59,13 +60,42 @@ class DraftsFragment : BaseFragment() {
           viewModel.editDraft(it.draft)
         }
         is DraftsAdapter.DraftActions.DraftDelete -> {
-          viewModel.deleteDraft(it.draft)
+          //TODO Think about generalizing this kind of dialogs. They are spreaded at three places right now.
+          AlertDialog.Builder(context!!)
+              .setTitle(R.string.edit_alert_title)
+              .setMessage(R.string.draft_delete)
+              .setPositiveButton(R.string.yes,
+                  { dialog, _ ->
+                    viewModel.deleteDraft(it.draft)
+                    dialog.dismiss()
+                  })
+              .setNegativeButton(R.string.no,
+                  { dialog, _ ->
+                    dialog.dismiss()
+                  })
+              .setIcon(R.drawable.ic_warning_black_24dp)
+              .create()
+              .show()
         }
         is DraftsAdapter.DraftActions.DraftHistoryEdit -> {
           viewModel.editDraftHistory(it.draftHistory)
         }
         is DraftsAdapter.DraftActions.DraftHistoryDelete -> {
-          viewModel.deleteDraftHistory(it.draftHistory)
+          AlertDialog.Builder(context!!)
+              .setTitle(R.string.edit_alert_title)
+              .setMessage(R.string.draft_history_delete)
+              .setPositiveButton(R.string.yes,
+                  { dialog, _ ->
+                    viewModel.deleteDraftHistory(it.draftHistory)
+                    dialog.dismiss()
+                  })
+              .setNegativeButton(R.string.no,
+                  { dialog, _ ->
+                    dialog.dismiss()
+                  })
+              .setIcon(R.drawable.ic_warning_black_24dp)
+              .create()
+              .show()
         }
       }
     }, {

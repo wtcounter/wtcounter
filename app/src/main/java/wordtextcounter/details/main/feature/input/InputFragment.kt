@@ -35,6 +35,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.widget.toast
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.cl
