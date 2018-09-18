@@ -36,7 +36,7 @@
   <string name="update_success">Raport zaktualizowano pomyślnie</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja czy oceniłbyś nas w sklepie Google Play?</string>
+  <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja prosimy Cię o ocenę w sklepie Google Play</string>
   <string name="rate_us_yes">Pewnie! Zróbmy to</string>
   <string name="rate_us_error">"O nie. Nie byłem w stanie dotrzeć do sklepu Google Play. Przepraszam za to!"</string>
   <!-- Analytics consent strings -->
