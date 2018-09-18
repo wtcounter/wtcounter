@@ -56,6 +56,8 @@
   <string name="drafts">Drafts</string>
   <string name="draft_deletion_success">Draft deleted successfully</string>
   <string name="draft_history_deletion_success">Deletion successful</string>
+  <string name="draft_saved">Draft saved</string>
+  <string name="draft_updated">Draft updated</string>
 
 
 

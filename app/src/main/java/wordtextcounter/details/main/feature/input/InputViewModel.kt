@@ -40,8 +40,10 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
       val errorMessage: String = "",
       val report: Report? = null,
       val reportText: String = "",
-      val showExpand: Boolean = false
-  )
+      val showExpand: Boolean = false,
+      val draftAdded : Boolean = false,
+      val draftUpdated : Boolean = false
+      )
 
   internal data class DraftState(
       var draftId: Long? = null,
@@ -93,7 +95,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
             viewState.accept(currentViewState().copy(reportText = input,
-                report = t1, showExpand = true, showError = false))
+                report = t1, showExpand = true, showError = false, draftAdded = false, draftUpdated = false))
           }
           if (t2 != null) {
             //TODO handle error
@@ -138,8 +140,10 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
     Flowable.create<Any>({
       if (addNewDraft) {
         handleAddNewDraft(text)
+        viewState.accept(currentViewState().copy(showError = true, draftAdded = true, draftUpdated = false))
       } else {
         handleAddNewHistory(text)
+        viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = true))
       }
     }, BackpressureStrategy.BUFFER)
         .subscribeOn(Schedulers.io())
@@ -199,7 +203,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         .subscribe({
           additionLiveData.accept(true)
         }, {
-          viewState.accept(currentViewState().copy(showError = true))
+          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
         }))
   }
 
@@ -217,7 +221,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
           reportId = null
           updateLiveData.accept(true)
         }, {
-          viewState.accept(currentViewState().copy(showError = true))
+          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
         }))
   }
 

@@ -33,6 +33,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.widget.toast
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
@@ -419,6 +420,14 @@ class InputFragment : BaseFragment() {
       fabSave.show()
     } else {
       fabSave.hide()
+    }
+
+    if (viewState.draftAdded) {
+      context?.toast(R.string.draft_saved)
+    }
+
+    if (viewState.draftUpdated) {
+      context?.toast(R.string.draft_updated)
     }
 
     tvCharacters.text = viewState.report?.characters
