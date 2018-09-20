@@ -49,8 +49,9 @@ abstract class ReportDatabase : RoomDatabase() {
                   )
                   database.execSQL(
                       "CREATE TABLE IF NOT EXISTS `DraftHistory` (`id` INTEGER, `text` TEXT NOT NULL," +
-                          " `createdAt` INTEGER NOT NULL, `draftId` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`draftId`) REFERENCES Draft(`id`))"
+                          " `createdAt` INTEGER NOT NULL, `draftId` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`draftId`) REFERENCES Draft(`id`) ON DELETE CASCADE)"
                   )
+                  database.execSQL("CREATE INDEX `index_DraftHistory_draftId` ON `DraftHistory` (`draftId`) ")
                 }
               })
               .build()
