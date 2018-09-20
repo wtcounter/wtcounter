@@ -120,6 +120,14 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     }
   }
 
+  override fun onStop() {
+    super.onStop()
+    val currentFragment = getCurrentFragment()
+    if (currentFragment is InputFragment) {
+      currentFragment.saveDraft()
+    }
+  }
+
   override fun onTabSelected(tabId: Int) {
     when (tabId) {
       R.id.tab_input -> {

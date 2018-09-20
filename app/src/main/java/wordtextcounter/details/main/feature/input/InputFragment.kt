@@ -313,8 +313,12 @@ class InputFragment : BaseFragment() {
     dialog.show()
   }
 
-  override fun onStop() {
-    super.onStop()
+  fun saveDraft() {
+    if (!isAdded) {
+      //if fragment is destroyed, then return silently
+      return
+    }
+
     val editable = etInput.text
     if (editable != null) {
       viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
