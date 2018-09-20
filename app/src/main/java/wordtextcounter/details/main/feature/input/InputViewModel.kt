@@ -4,8 +4,7 @@ package wordtextcounter.details.main.feature.input
 
 import com.jakewharton.rxrelay2.BehaviorRelay
 import com.jakewharton.rxrelay2.PublishRelay
-import io.reactivex.BackpressureStrategy
-import io.reactivex.Flowable
+import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
@@ -33,20 +32,23 @@ import wordtextcounter.details.main.util.RxBus
 import java.lang.System.currentTimeMillis
 import java.util.concurrent.TimeUnit
 
-class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftDao) : BaseViewModel() {
+class InputViewModel(
+  internal val dao: ReportDao,
+  internal val draftDao: DraftDao
+) : BaseViewModel() {
 
   data class ViewState(
-      val showError: Boolean = false,
-      val errorMessage: String = "",
-      val report: Report? = null,
-      val reportText: String = "",
-      val showExpand: Boolean = false
-      )
+    val showError: Boolean = false,
+    val errorMessage: String = "",
+    val report: Report? = null,
+    val reportText: String = "",
+    val showExpand: Boolean = false
+  )
 
   internal data class DraftState(
-      var draftId: Long? = null,
-      var text: String? = null,
-      var lastUpdatedTime: Long = 0
+    var draftId: Long? = null,
+    var text: String? = null,
+    var lastUpdatedTime: Long = 0
   )
 
   internal val draftState = DraftState()
@@ -86,20 +88,28 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
     }
 
     counterDisposable?.dispose()
-    counterDisposable = Singles.zip(countWords(input), countCharacters(input),
+    counterDisposable = Singles.zip(
+        countWords(input), countCharacters(input),
         countParagraphs(input),
         countSentences(input),
-        calculateSize(input))
+        calculateSize(input)
+    )
     { words, characters, paragraphs, sentences, size ->
-      Report("", input.trim(), words.toString(), characters.toString(),
+      Report(
+          "", input.trim(), words.toString(), characters.toString(),
           paragraphs.toString(),
-          sentences.toString(), 0, size)
+          sentences.toString(), 0, size
+      )
     }
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
-            viewState.accept(currentViewState().copy(reportText = input,
-                report = t1, showExpand = true, showError = false))
+            viewState.accept(
+                currentViewState().copy(
+                    reportText = input,
+                    report = t1, showExpand = true, showError = false
+                )
+            )
           }
           if (t2 != null) {
             //TODO handle error
@@ -108,7 +118,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
   }
 
   fun onTextCleared() {
-   resetDraftState()
+    resetDraftState()
   }
 
   private fun resetDraftState() {
@@ -133,35 +143,38 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
     var addNewDraft = false
 
-    if (TimeUnit.HOURS.toMillis(2) < (System.currentTimeMillis() - draftState.lastUpdatedTime) || draftState.draftId == null) {
+    if (TimeUnit.HOURS.toMillis(
+            2
+        ) < (System.currentTimeMillis() - draftState.lastUpdatedTime) || draftState.draftId == null
+    ) {
       addNewDraft = true
     }
 
-    if (!addNewDraft && draftState.draftId != null && deletedDrafts.contains(draftState.draftId!!)) {
+    if (!addNewDraft && draftState.draftId != null && deletedDrafts.contains(
+            draftState.draftId!!
+        )
+    ) {
       addNewDraft = true
     }
 
-    addDisposable(Flowable.create<Int>({
+    addDisposable(Completable.fromCallable {
       if (addNewDraft) {
         handleAddNewDraft(text)
-        it.onNext(DRAFT_ADDED)
       } else {
         handleAddNewHistory(text)
-        it.onNext(DRAFT_UPDATED)
       }
-      it.onComplete()
-    }, BackpressureStrategy.BUFFER)
-        .subscribeOn(io())
+    }.subscribeOn(io())
         .observeOn(mainThread())
         .subscribe({
-          if (it == DRAFT_ADDED) {
+          if (addNewDraft) {
             toastLiveData.accept(R.string.draft_saved)
-          } else if (it == DRAFT_UPDATED) {
+          } else {
             toastLiveData.accept(R.string.draft_updated)
           }
         }, {
           //ignored
-        }))
+        })
+    )
   }
 
   private fun handleAddNewHistory(text: String) {
@@ -218,7 +231,8 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
           additionLiveData.accept(true)
         }, {
           viewState.accept(currentViewState().copy(showError = true))
-        }))
+        })
+    )
   }
 
   private fun updateReport(report: Report) {
@@ -236,15 +250,11 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
           updateLiveData.accept(true)
         }, {
           viewState.accept(currentViewState().copy(showError = true))
-        }))
+        })
+    )
   }
 
   fun cancelEdit() {
     reportId = null
-  }
-
-  companion object {
-    private const val DRAFT_ADDED = 0
-    private const val DRAFT_UPDATED = 1
   }
 }
