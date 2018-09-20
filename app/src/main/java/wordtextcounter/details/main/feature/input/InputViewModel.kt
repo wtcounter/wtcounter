@@ -54,7 +54,6 @@ class InputViewModel(
   internal val draftState = DraftState()
   val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
   val additionLiveData: PublishRelay<Boolean> = PublishRelay.create()
-  val toastLiveData: PublishRelay<Int> = PublishRelay.create()
   val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
   private var counterDisposable: Disposable? = null
   val deletedDrafts = mutableListOf<Long>()
