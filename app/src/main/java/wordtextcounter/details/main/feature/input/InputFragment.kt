@@ -173,6 +173,8 @@ class InputFragment : BaseFragment() {
       }
     }
 
+    observeToastLiveData()
+
     if (isPaste) {
       activity?.hideKeyboard(etInput)
       paste()
@@ -410,6 +412,12 @@ class InputFragment : BaseFragment() {
     }))
   }
 
+  private fun observeToastLiveData() {
+    viewModel.toastLiveData.subscribe {
+      context?.toast(it)
+    }
+  }
+
   private fun handleViewState(viewState: ViewState) {
     if (viewState.showError) {
       showError(viewState.errorMessage)
@@ -421,14 +429,6 @@ class InputFragment : BaseFragment() {
       fabSave.show()
     } else {
       fabSave.hide()
-    }
-
-    if (viewState.draftAdded) {
-      context?.toast(R.string.draft_saved)
-    }
-
-    if (viewState.draftUpdated) {
-      context?.toast(R.string.draft_updated)
     }
 
     tvCharacters.text = viewState.report?.characters

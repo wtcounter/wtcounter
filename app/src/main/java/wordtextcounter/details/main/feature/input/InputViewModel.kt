@@ -13,6 +13,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.Singles
 import io.reactivex.schedulers.Schedulers.io
+import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.DraftDao
 import wordtextcounter.details.main.store.daos.ReportDao
@@ -39,9 +40,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
       val errorMessage: String = "",
       val report: Report? = null,
       val reportText: String = "",
-      val showExpand: Boolean = false,
-      val draftAdded : Boolean = false,
-      val draftUpdated : Boolean = false
+      val showExpand: Boolean = false
       )
 
   internal data class DraftState(
@@ -53,6 +52,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
   internal val draftState = DraftState()
   val updateLiveData: PublishRelay<Boolean> = PublishRelay.create()
   val additionLiveData: PublishRelay<Boolean> = PublishRelay.create()
+  val toastLiveData: PublishRelay<Int> = PublishRelay.create()
   val viewState: BehaviorRelay<ViewState> = BehaviorRelay.create()
   private var counterDisposable: Disposable? = null
   val deletedDrafts = mutableListOf<Long>()
@@ -99,7 +99,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
             viewState.accept(currentViewState().copy(reportText = input,
-                report = t1, showExpand = true, showError = false, draftAdded = false, draftUpdated = false))
+                report = t1, showExpand = true, showError = false))
           }
           if (t2 != null) {
             //TODO handle error
@@ -155,12 +155,12 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         .observeOn(mainThread())
         .subscribe({
           if (it == DRAFT_ADDED) {
-            viewState.accept(currentViewState().copy(showError = false, draftAdded = true, draftUpdated = false))
+            toastLiveData.accept(R.string.draft_saved)
           } else if (it == DRAFT_UPDATED) {
-            viewState.accept(currentViewState().copy(showError = false, draftAdded = false, draftUpdated = true))
+            toastLiveData.accept(R.string.draft_updated)
           }
         }, {
-          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
+          //ignored
         }))
   }
 
@@ -217,7 +217,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
         .subscribe({
           additionLiveData.accept(true)
         }, {
-          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
+          viewState.accept(currentViewState().copy(showError = true))
         }))
   }
 
@@ -235,7 +235,7 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
           reportId = null
           updateLiveData.accept(true)
         }, {
-          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
+          viewState.accept(currentViewState().copy(showError = true))
         }))
   }
 
