@@ -4,7 +4,6 @@ package wordtextcounter.details.main.feature.input
 
 import com.jakewharton.rxrelay2.BehaviorRelay
 import com.jakewharton.rxrelay2.PublishRelay
-import com.orhanobut.logger.Logger
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -13,7 +12,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.Singles
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.DraftDao
@@ -73,7 +71,6 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
     }))
 
     addDisposable(RxBus.subscribe(EditDraft::class.java, Consumer {
-      draftState.text = it.text
       draftState.draftId = it.id
       draftState.lastUpdatedTime = System.currentTimeMillis()
     }))
@@ -144,17 +141,27 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
       addNewDraft = true
     }
 
-    Flowable.create<Any>({
+    addDisposable(Flowable.create<Int>({
       if (addNewDraft) {
         handleAddNewDraft(text)
-        viewState.accept(currentViewState().copy(showError = true, draftAdded = true, draftUpdated = false))
+        it.onNext(DRAFT_ADDED)
       } else {
         handleAddNewHistory(text)
-        viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = true))
+        it.onNext(DRAFT_UPDATED)
       }
+      it.onComplete()
     }, BackpressureStrategy.BUFFER)
-        .subscribeOn(Schedulers.io())
-        .subscribe()
+        .subscribeOn(io())
+        .observeOn(mainThread())
+        .subscribe({
+          if (it == DRAFT_ADDED) {
+            viewState.accept(currentViewState().copy(showError = false, draftAdded = true, draftUpdated = false))
+          } else if (it == DRAFT_UPDATED) {
+            viewState.accept(currentViewState().copy(showError = false, draftAdded = false, draftUpdated = true))
+          }
+        }, {
+          viewState.accept(currentViewState().copy(showError = true, draftAdded = false, draftUpdated = false))
+        }))
   }
 
   private fun handleAddNewHistory(text: String) {
@@ -234,5 +241,10 @@ class InputViewModel(internal val dao: ReportDao, internal val draftDao : DraftD
 
   fun cancelEdit() {
     reportId = null
+  }
+
+  companion object {
+    private const val DRAFT_ADDED = 0
+    private const val DRAFT_UPDATED = 1
   }
 }
