@@ -8,22 +8,26 @@ object Helper {
 
   fun countWords(input: String): Single<Int> {
     return Single.fromCallable {
-      val wordIterator = BreakIterator.getWordInstance()
-      wordIterator.setText(input)
-      var start = wordIterator.first()
-      var end = wordIterator.next()
-
-      var wordCount = 0
-      while (end != BreakIterator.DONE) {
-        val word = input.substring(start, end)
-        if (Character.isLetterOrDigit(word[0])) {
-          wordCount++
-        }
-        start = end
-        end = wordIterator.next()
-      }
-      wordCount
+      getNoOfWords(input)
     }.subscribeOn(Schedulers.computation())
+  }
+
+  fun getNoOfWords(input: String): Int {
+    val wordIterator = BreakIterator.getWordInstance()
+    wordIterator.setText(input)
+    var start = wordIterator.first()
+    var end = wordIterator.next()
+
+    var wordCount = 0
+    while (end != BreakIterator.DONE) {
+      val word = input.substring(start, end)
+      if (Character.isLetterOrDigit(word[0])) {
+        wordCount++
+      }
+      start = end
+      end = wordIterator.next()
+    }
+    return wordCount
   }
 
   /**
@@ -92,6 +96,34 @@ object Helper {
         end = boundary.next()
       }
       graphemeCount
+    }.subscribeOn(Schedulers.computation())
+  }
+
+  fun extractSentenceStat(input: String): Single<Pair<Int, Int>> {
+    return Single.fromCallable {
+      var minSentenceLength = Int.MAX_VALUE
+      var maxSentenceLength = 0
+      val boundary = BreakIterator.getSentenceInstance()
+      boundary.setText(input)
+      var start = boundary.first()
+      var end = boundary.next()
+      while (end != BreakIterator.DONE) {
+        val sentence = input.substring(start, end)
+        if (sentence.isNotBlank()) {
+          val wordLength = getNoOfWords(sentence)
+          if(wordLength != 0) {
+            if (wordLength < minSentenceLength) {
+              minSentenceLength = wordLength
+            }
+            if (wordLength > maxSentenceLength) {
+              maxSentenceLength = wordLength
+            }
+          }
+        }
+        start = end
+        end = boundary.next()
+      }
+      Pair(minSentenceLength, maxSentenceLength)
     }.subscribeOn(Schedulers.computation())
   }
 

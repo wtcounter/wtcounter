@@ -3,7 +3,7 @@ package wordtextcounter.details.main.feature.input
 import com.jakewharton.rxrelay2.BehaviorRelay
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.BiFunction
+import io.reactivex.functions.Function3
 import io.reactivex.rxkotlin.Singles
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -17,9 +17,9 @@ class ExtraStatsViewModel : BaseViewModel() {
 
   fun getAllStats(input: String) {
 
-    Single.zip(getBasicStats(input), getExtraStats(input),
-        BiFunction<ExtraStatGroup, ExtraStatGroup, List<ExtraStatGroup>> { t1, t2 ->
-          return@BiFunction listOf(t1, t2)
+    Single.zip(getBasicStats(input), getExtraStats(input), getLengthStats(input),
+        Function3<ExtraStatGroup, ExtraStatGroup, ExtraStatGroup, List<ExtraStatGroup>> { t1, t2, t3 ->
+          return@Function3 listOf(t1, t2, t3)
         })
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: List<ExtraStatGroup>, t2: Throwable? ->
@@ -60,10 +60,23 @@ class ExtraStatsViewModel : BaseViewModel() {
           extraStats.add(
               ExtraStat(R.string.average_word_length, String.format("%.3f", words.second)))
           extraStats.add(ExtraStat(R.string.avg_sentence_length_words,
-              (words.first.toDouble() / sentences).toString()))
+              String.format("%.2f", words.first.toDouble() / sentences)))
           extraStats.add(ExtraStat(R.string.avg_sentence_length_characters,
-              (characters.toDouble() / sentences).toString()))
+              String.format("%.2f", characters.toDouble() / sentences)))
           ExtraStatGroup(R.string.extra_stats, extraStats)
         }
   }
+
+  private fun getLengthStats(input: String): Single<ExtraStatGroup> {
+    return Singles
+        .zip(Helper.extractSentenceStat(input), Helper.countWords(input)) { sentences, words ->
+          val extraStats = mutableListOf<ExtraStat>()
+          extraStats.add(
+              ExtraStat(R.string.shortest_sentence, sentences.first.toString()))
+          extraStats.add(
+              ExtraStat(R.string.longest_sentence, sentences.second.toString()))
+          ExtraStatGroup(R.string.length_stats, extraStats)
+        }
+  }
+
 }
