@@ -15,7 +15,7 @@
       android:paddingBottom="@dimen/_30sdp"
       android:paddingTop="@dimen/_30sdp"
       android:tint="@color/grey_100"
-      app:srcCompat="@drawable/ic_rate_star"
+      app:srcCompat="@drawable/ic_google_play"
       />
 
   <ImageView
