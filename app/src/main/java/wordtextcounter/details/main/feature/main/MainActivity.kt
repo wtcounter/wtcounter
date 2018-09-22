@@ -11,19 +11,18 @@ import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsConsent.showConsentDialog
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseActivity
 import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
+import wordtextcounter.details.main.feature.notes.NotesMainFragment
 import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
+import wordtextcounter.details.main.util.Constants
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.feature.notes.DraftsFragment
-import wordtextcounter.details.main.feature.notes.NotesMainFragment
-import wordtextcounter.details.main.util.Constants
-import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.getPreference
 
 class MainActivity : BaseActivity(), OnTabSelectListener {
@@ -31,6 +30,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {

@@ -1,10 +1,11 @@
 package wordtextcounter.details.main.feature.settings
 
 import android.os.Bundle
-import wordtextcounter.details.main.R
 import android.support.v7.preference.PreferenceFragmentCompat
+import wordtextcounter.details.main.R
 
 class SettingsFragment: PreferenceFragmentCompat()  {
+
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     addPreferencesFromResource(R.xml.settings)

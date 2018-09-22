@@ -75,4 +75,8 @@
   <string name="draft_updated">Draft updated</string>
   <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
   <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
+
+  <string name="basic_settings">Basic Settings</string>
+  <string name="copy_clipboard_title">Copy clipboard text automatically</string>
+  <string name="copy_clipboard_summary">Text from clipboard will be copied automatically and stats will get generated automatically</string>
 </resources>
