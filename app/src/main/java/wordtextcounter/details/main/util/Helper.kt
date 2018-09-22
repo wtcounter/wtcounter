@@ -1,6 +1,5 @@
 package wordtextcounter.details.main.util
 
-import com.orhanobut.logger.Logger
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import java.text.BreakIterator
@@ -48,13 +47,17 @@ object Helper {
 
   fun countSentences(input: String): Single<Int> {
     return Single.fromCallable {
-      Logger.d("Count sentences $input")
       var graphemeCount = 0
       val boundary = BreakIterator.getSentenceInstance()
       boundary.setText(input)
+      var start = 0
       var end = boundary.next()
       while (end != BreakIterator.DONE) {
-        graphemeCount++
+        val sentence = input.substring(start, end)
+        if (sentence.isNotBlank()) {
+          graphemeCount++
+        }
+        start = end
         end = boundary.next()
       }
       graphemeCount
