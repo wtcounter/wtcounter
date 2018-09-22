@@ -72,13 +72,6 @@ object RateusCore {
     return timeSpent > TimeUnit.MINUTES.toMillis(5) && !interacted
   }
 
-  fun onCancelSelected(activity: Activity) {
-    val ratePreference = activity.getSharedPreferences(RATE_PREFERENCE, MODE_PRIVATE)
-    ratePreference.edit {
-      putBoolean(RateusCore.INTERACTION, true)
-    }
-  }
-
   private fun markInteractionDone(activity: Activity) {
     val ratePreference = activity.getSharedPreferences(RATE_PREFERENCE, MODE_PRIVATE)
     ratePreference.edit {

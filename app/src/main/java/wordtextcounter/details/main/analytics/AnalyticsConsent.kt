@@ -40,7 +40,7 @@ object AnalyticsConsent {
       dialog.dismiss()
     }
 
-    dialog.setCanceledOnTouchOutside(false)
+    dialog.setCancelable(false)
     dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     dialog.show()
   }
