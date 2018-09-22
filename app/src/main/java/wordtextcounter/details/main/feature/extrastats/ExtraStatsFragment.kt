@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.preference.PreferenceManager
 import android.view.*
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
@@ -32,8 +33,9 @@ class ExtraStatsFragment : DialogFragment() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     adapter = ExtraStatsAdapter()
-    viewModel = ViewModelProviders.of(this)
-        .get(ExtraStatsViewModel::class.java)
+    viewModel = ViewModelProviders.of(this,
+        ExtraStatsViewModelFactory(PreferenceManager.getDefaultSharedPreferences(context!!))).get(
+        ExtraStatsViewModel::class.java)
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +47,7 @@ class ExtraStatsFragment : DialogFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
-    
+
     adapter.expandLess = ContextCompat.getDrawable(context!!,
         R.drawable.ic_expand_less_black_24dp)!!
     adapter.expandMore = ContextCompat.getDrawable(context!!,

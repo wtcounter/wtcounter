@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.main
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
+import android.support.v7.preference.PreferenceManager
 import android.view.View
 import android.view.ViewGroup
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
@@ -30,7 +31,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-
+    PreferenceManager.setDefaultValues(this, R.xml.settings, false)
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {

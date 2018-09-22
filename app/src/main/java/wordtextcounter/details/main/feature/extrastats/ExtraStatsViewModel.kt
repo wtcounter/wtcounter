@@ -1,7 +1,9 @@
 package wordtextcounter.details.main.feature.extrastats
 
+import android.content.SharedPreferences
 import android.text.format.DateUtils
 import com.jakewharton.rxrelay2.BehaviorRelay
+import com.orhanobut.logger.Logger
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.Singles
@@ -9,7 +11,7 @@ import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.util.Helper
 
-class ExtraStatsViewModel : BaseViewModel() {
+class ExtraStatsViewModel(private val prefs: SharedPreferences) : BaseViewModel() {
 
   data class ViewState(val extraStatGroups: List<ExtraStatGroup>)
 
@@ -20,7 +22,8 @@ class ExtraStatsViewModel : BaseViewModel() {
   private lateinit var sentencesStatSingle: Single<Triple<Int, Int, Int>>
 
   fun getAllStats(input: String) {
-
+    Logger.d("Prefs is $prefs")
+    Logger.d("Prefs value ${prefs.getString("reading_wpm", "-1")}")
     characterStatsSingle = Helper.countCharactersAndSpaces(input).cache()
     wordsStatsSingle = Helper.extraWordStats(input).cache()
     sentencesStatSingle = Helper.extractSentenceStat(input).cache()
