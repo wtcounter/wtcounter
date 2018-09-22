@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.view.ViewGroup
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
-import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
@@ -82,7 +81,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   private fun handleNewIntent() {
     if (intent?.action == Intent.ACTION_SEND) {
       if ("text/plain" == intent.type) {
-        Logger.d("text/plain")
         handleSendText(intent) // Handle text being sent
       }
     }
@@ -95,10 +93,8 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   }
 
   private fun handleSendText(intent: Intent) {
-    Logger.d("handleSendText")
     intent.getStringExtra(Intent.EXTRA_TEXT)
         ?.let {
-          Logger.d("Sending new text event")
           RxBus.send(NewText(it))
         }
   }
