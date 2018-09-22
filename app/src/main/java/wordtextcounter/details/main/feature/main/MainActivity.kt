@@ -9,6 +9,7 @@ import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_main.bottombar
 import kotlinx.android.synthetic.main.activity_main.container
+import wordtextcounter.details.main.BuildConfig
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsConsent.showConsentDialog
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
@@ -79,7 +80,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
     val pf = getPreference()
     val consent = pf.getBoolean(Constants.PREF_ANALYTICS_CONSENT, false)
-    if (!consent) {
+    if (!consent || BuildConfig.DEBUG) {
       showConsentDialog(this, pf)
     }
   }

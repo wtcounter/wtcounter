@@ -7,12 +7,15 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
+import android.view.KeyEvent.KEYCODE_BACK
 import android.view.LayoutInflater
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.rateus.RateusCore.onCancelSelected
+import com.example.rateus.RateusCore.onNoSelected
+import com.example.rateus.RateusCore.onRemindLaterSelected
 import com.example.rateus.RateusCore.onYesSelected
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
 import wordtextcounter.details.main.R
@@ -30,6 +33,8 @@ object RateUsHelper {
       dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
       val btClose = dialog.findViewById<ImageView>(R.id.ivCross)
       val btYes = dialog.findViewById<Button>(R.id.btnSave)
+      val btLater = dialog.findViewById<Button>(R.id.btnLater)
+      val btNever = dialog.findViewById<Button>(R.id.btnNever)
       btClose.setOnClickListener {
         onCancelSelected(activity)
         dialog.dismiss()
@@ -46,6 +51,22 @@ object RateUsHelper {
         } catch (e : Exception) {
           Toast.makeText(activity, activity.getString(R.string.rate_us_error), Toast.LENGTH_LONG).show()
         }
+      }
+
+      btLater.setOnClickListener {
+        onRemindLaterSelected(activity)
+      }
+
+      btNever.setOnClickListener {
+        onNoSelected(activity)
+      }
+
+      dialog.setOnKeyListener { _, keyCode, _ ->
+        if (keyCode == KEYCODE_BACK) {
+          onNoSelected(activity)
+          dialog.dismiss()
+        }
+        return@setOnKeyListener true
       }
 
       dialog.setCancelable(false)
