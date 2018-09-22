@@ -55,9 +55,6 @@ object RateusCore {
   private fun isOver24Hours(time: Long) = TimeUnit.DAYS.toMillis(1) < (System.currentTimeMillis() - time)
 
   fun shouldShowRateUsDialog(activity: Activity) : Boolean {
-    if (BuildConfig.DEBUG) {
-      return true
-    }
     val ratePreference = activity.getSharedPreferences(RATE_PREFERENCE, MODE_PRIVATE)
     val remindLaterTime = ratePreference.getLong(REMIND_LATER_TIME, 0)
     if (remindLaterTime > 0) {

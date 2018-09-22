@@ -41,6 +41,7 @@ object RateUsHelper {
       }
 
       btYes.setOnClickListener {
+        dialog.dismiss()
         onYesSelected(activity)
         try {
           val viewIntent = Intent(Intent.ACTION_VIEW,
@@ -55,10 +56,12 @@ object RateUsHelper {
 
       btLater.setOnClickListener {
         onRemindLaterSelected(activity)
+        dialog.dismiss()
       }
 
       btNever.setOnClickListener {
         onNoSelected(activity)
+        dialog.dismiss()
       }
 
       dialog.setOnKeyListener { _, keyCode, _ ->
