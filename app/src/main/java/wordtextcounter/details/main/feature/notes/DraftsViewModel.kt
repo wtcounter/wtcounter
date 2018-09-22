@@ -13,6 +13,7 @@ import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.util.DeleteDraft
 import wordtextcounter.details.main.util.EditDraft
+import wordtextcounter.details.main.util.EditDraftHistory
 import wordtextcounter.details.main.util.RxBus
 
 class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
@@ -109,8 +110,8 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
     )
   }
 
-  fun editDraftHistory(draftHistory: DraftHistory) {
-    RxBus.send(EditDraft(draftHistory.text, draftHistory.draftId))
+  fun editDraftHistory(draftHistory: DraftHistory, parentDraft: DraftWithHistory) {
+    RxBus.send(EditDraftHistory(draftHistory.text, draftHistory.draftId, parentDraft.draft.draftData.text))
     routerState.value = Input
   }
 

@@ -70,7 +70,7 @@ class DraftsAdapter :
     val draft = drafts[groupPosition]
     val draftHistory = draft.draftHistories[childPosition]
     viewHolder.bind(
-        draftHistory, childPosition == 0, childPosition == childCount(groupPosition) - 1
+        draftHistory, draft ,childPosition == 0, childPosition == childCount(groupPosition) - 1
     )
   }
 
@@ -111,7 +111,7 @@ class DraftsAdapter :
 
     init {
       editHistory.setOnClickListener {
-        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory))
+        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory, itemView.getTag(R.id.parent_draft) as DraftWithHistory))
       }
 
       deleteHistory.setOnClickListener {
@@ -121,6 +121,7 @@ class DraftsAdapter :
 
     fun bind(
       draftHistory: DraftHistory,
+      parentDraft: DraftWithHistory,
       isFirst: Boolean,
       isLast: Boolean
     ) {
@@ -141,6 +142,7 @@ class DraftsAdapter :
           itemView.context, draftHistory.createdAt, MINUTE_IN_MILLIS, DAY_IN_MILLIS,
           FORMAT_ABBREV_RELATIVE
       )
+      itemView.setTag(R.id.parent_draft, parentDraft)
       itemView.tag = draftHistory
     }
   }
@@ -148,7 +150,7 @@ class DraftsAdapter :
   sealed class DraftActions {
     data class DraftEdit(val draft: Draft) : DraftActions()
     data class DraftDelete(val draft: Draft) : DraftActions()
-    data class DraftHistoryEdit(val draftHistory: DraftHistory) : DraftActions()
+    data class DraftHistoryEdit(val draftHistory: DraftHistory, val parentDraft: DraftWithHistory) : DraftActions()
     data class DraftHistoryDelete(val draftHistory: DraftHistory) : DraftActions()
   }
 }

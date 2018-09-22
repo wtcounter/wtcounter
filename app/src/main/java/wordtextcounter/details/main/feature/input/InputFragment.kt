@@ -62,7 +62,9 @@ import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.util.ChangeDraftState
 import wordtextcounter.details.main.util.EditDraft
+import wordtextcounter.details.main.util.EditDraftHistory
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
@@ -364,22 +366,24 @@ class InputFragment : BaseFragment() {
     }
   }
 
-  private fun handleBusEditEvent(text: String) {
+  private fun handleBusEditEvent(text: String, overrideListener: TextOverrideListener? = null) {
     if (etInput.text.trim().isNotEmpty()) {
       AlertDialog.Builder(context!!)
           .setTitle(R.string.edit_alert_title)
           .setMessage(R.string.edit_alert_desc)
-          .setPositiveButton(R.string.yes,
-              { dialog, _ ->
-                logAnalytics(Click("update_warning_dialog_yes"))
-                etInput.setText(text)
-                dialog.dismiss()
-              })
-          .setNegativeButton(R.string.no,
-              { dialog, _ ->
-                logAnalytics(Click("update_warning_dialog_no"))
-                dialog.dismiss()
-              })
+          .setPositiveButton(R.string.yes
+          ) { dialog, _ ->
+            logAnalytics(Click("update_warning_dialog_yes"))
+            etInput.setText(text)
+            viewModel.onTextCleared()
+            overrideListener?.onTextOverride()
+            dialog.dismiss()
+          }
+          .setNegativeButton(R.string.no
+          ) { dialog, _ ->
+            logAnalytics(Click("update_warning_dialog_no"))
+            dialog.dismiss()
+          }
           .setIcon(R.drawable.ic_warning_black_24dp)
           .setOnCancelListener {
             logAnalytics(Click("update_warning_dialog_cancel"))
@@ -390,6 +394,7 @@ class InputFragment : BaseFragment() {
           .show()
     } else {
       etInput.setText(text)
+      overrideListener?.onTextOverride()
     }
   }
 
@@ -403,7 +408,20 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxBus.subscribe(EditDraft::class.java, Consumer {
       RxBus.send(NoEvent)
-      handleBusEditEvent(it.text)
+      handleBusEditEvent(it.text, object : TextOverrideListener {
+        override fun onTextOverride() {
+          RxBus.send(ChangeDraftState(it.text, it.id))
+        }
+      })
+    }))
+
+    disposable.add(RxBus.subscribe(EditDraftHistory::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleBusEditEvent(it.text, object : TextOverrideListener {
+        override fun onTextOverride() {
+          RxBus.send(ChangeDraftState(it.parentDraftText, it.id))
+        }
+      })
     }))
 
     disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
@@ -436,6 +454,10 @@ class InputFragment : BaseFragment() {
     tvReportText.text = viewState.report?.dataText
     tvParagraphsContent.text = viewState.report?.paragraphs
     tvSizeContent.text = viewState.report?.size
+  }
+
+  private interface TextOverrideListener {
+    fun onTextOverride()
   }
 
   override val baseViewModel: BaseViewModel

@@ -20,8 +20,8 @@ import wordtextcounter.details.main.store.data.DraftData
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.ChangeDraftState
 import wordtextcounter.details.main.util.DeleteDraft
-import wordtextcounter.details.main.util.EditDraft
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.Helper.calculateSize
 import wordtextcounter.details.main.util.Helper.countCharacters
@@ -71,7 +71,8 @@ class InputViewModel(
       deletedDrafts.add(it.id)
     }))
 
-    addDisposable(RxBus.subscribe(EditDraft::class.java, Consumer {
+    addDisposable(RxBus.subscribe(ChangeDraftState::class.java, Consumer {
+      draftState.text = it.text
       draftState.draftId = it.id
       draftState.lastUpdatedTime = System.currentTimeMillis()
     }))

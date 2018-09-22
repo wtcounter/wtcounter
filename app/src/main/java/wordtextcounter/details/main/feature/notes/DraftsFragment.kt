@@ -82,7 +82,7 @@ class DraftsFragment : BaseFragment() {
               .show()
         }
         is DraftsAdapter.DraftActions.DraftHistoryEdit -> {
-          viewModel.editDraftHistory(it.draftHistory)
+          viewModel.editDraftHistory(it.draftHistory, it.parentDraft)
         }
         is DraftsAdapter.DraftActions.DraftHistoryDelete -> {
           AlertDialog.Builder(context!!)
