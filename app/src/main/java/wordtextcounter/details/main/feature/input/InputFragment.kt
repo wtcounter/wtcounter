@@ -10,6 +10,7 @@ import android.content.ClipData.Item
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
@@ -93,6 +94,7 @@ class InputFragment : BaseFragment() {
 
   var reportNameEditMode: String? = null
   private lateinit var clipData: ClipData
+  lateinit var preferenes : SharedPreferences
 
   // Get clip data from clipboard.
 
@@ -118,6 +120,7 @@ class InputFragment : BaseFragment() {
     val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
     val clipboardManager = clipboardService as ClipboardManager
     clipData = clipboardManager.primaryClip
+    preferenes = context?.getPreference()!!
   }
 
   override fun onCreateView(
@@ -191,8 +194,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun prefillSavedPreferenceText() {
-    val preferences = context?.getPreference()
-    val prefilledText = preferences?.getString(PREF_SAVED_TEXT, "")
+    val prefilledText = preferenes.getString(PREF_SAVED_TEXT, "")
     if (!prefilledText.isNullOrEmpty()) {
       etInput.setText(prefilledText)
       clearSavedTextInPreference()
@@ -336,8 +338,7 @@ class InputFragment : BaseFragment() {
     runIfAdded {
       val editable = etInput.text
       if (editable != null) {
-        val preferences = context?.getPreference()
-        preferences?.edit {
+        preferenes.edit {
           putString(PREF_SAVED_TEXT, editable.toString())
         }
       }
@@ -345,8 +346,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun clearSavedTextInPreference() {
-    val preferences = context?.getPreference()
-    preferences?.edit {
+    preferenes.edit {
       putString(PREF_SAVED_TEXT, null)
     }
   }
