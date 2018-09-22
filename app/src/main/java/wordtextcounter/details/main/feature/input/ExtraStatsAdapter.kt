@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_extra_stat_child.view.*
 import kotlinx.android.synthetic.main.item_extra_stat_header.view.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.feature.AbstractExpandableAdapter
 
 class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderViewHolder, ExtraStatsAdapter.ChildViewHolder>() {
 
