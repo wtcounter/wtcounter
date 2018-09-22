@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.example.rateus.RateusCore
+import androidx.core.widget.toast
+import com.orhanobut.logger.Logger
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_notes.progressBar
-import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.input.InputFragment
 
 abstract class BaseFragment : Fragment() {
@@ -31,6 +30,10 @@ abstract class BaseFragment : Fragment() {
         is Input -> (activity as BaseActivity).replaceFragment(InputFragment.newInstance())
       }
     })
+
+    baseViewModel.toastLiveData.subscribe {
+      context?.toast(it)
+    }
 
     baseViewModel.loaderState.observe(this, Observer {
       it?.let {

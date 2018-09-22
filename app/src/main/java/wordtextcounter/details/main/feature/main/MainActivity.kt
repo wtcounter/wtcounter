@@ -20,6 +20,8 @@ import wordtextcounter.details.main.util.RxBus
 import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.feature.notes.DraftsFragment
+import wordtextcounter.details.main.feature.notes.NotesMainFragment
 import wordtextcounter.details.main.util.Constants
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.getPreference
@@ -114,6 +116,14 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     }
   }
 
+  override fun onStop() {
+    super.onStop()
+    val currentFragment = getCurrentFragment()
+    if (currentFragment is InputFragment) {
+      currentFragment.saveDraft()
+    }
+  }
+
   override fun onTabSelected(tabId: Int) {
     when (tabId) {
       R.id.tab_input -> {
@@ -122,7 +132,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
       R.id.tab_notes -> {
         logAnalytics(Click("bottombar_notes"))
-        replaceFragment(NotesFragment.newInstance())
+        replaceFragment(NotesMainFragment.newInstance())
       }
       R.id.tab_settings -> {
         logAnalytics(Click("bottombar_settings"))

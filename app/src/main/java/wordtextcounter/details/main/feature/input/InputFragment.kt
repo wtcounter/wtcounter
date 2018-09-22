@@ -80,7 +80,8 @@ class InputFragment : BaseFragment() {
     cy = dm.heightPixels / 2 - statusBarHeight
 
     viewModelFactory = InputViewModelFactory(
-        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao()
+        ReportDatabase.getInstance(activity?.applicationContext!!).reportDao(),
+        ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
@@ -121,6 +122,9 @@ class InputFragment : BaseFragment() {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe {
           viewModel.calculateInput(it.toString())
+          if (it.isEmpty()) {
+            viewModel.onTextCleared()
+          }
         })
 
     viewModel.viewState.subscribe {
@@ -286,6 +290,18 @@ class InputFragment : BaseFragment() {
     dialog.show()
   }
 
+  fun saveDraft() {
+    if (!isAdded) {
+      //if fragment is destroyed, then return silently
+      return
+    }
+
+    val editable = etInput.text
+    if (editable != null) {
+      viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
+    }
+  }
+
   private fun hideDialog(
       cView: View,
       dialog: DialogInterface
@@ -328,35 +344,62 @@ class InputFragment : BaseFragment() {
     }
   }
 
+  private fun handleBusEditEvent(text: String, overrideListener: TextOverrideListener? = null) {
+    if (etInput.text.trim().isNotEmpty()) {
+      AlertDialog.Builder(context!!)
+          .setTitle(R.string.edit_alert_title)
+          .setMessage(R.string.edit_alert_desc)
+          .setPositiveButton(R.string.yes
+          ) { dialog, _ ->
+            logAnalytics(Click("update_warning_dialog_yes"))
+            etInput.setText(text)
+            viewModel.onTextCleared()
+            overrideListener?.onTextOverride()
+            dialog.dismiss()
+          }
+          .setNegativeButton(R.string.no
+          ) { dialog, _ ->
+            logAnalytics(Click("update_warning_dialog_no"))
+            dialog.dismiss()
+          }
+          .setIcon(R.drawable.ic_warning_black_24dp)
+          .setOnCancelListener {
+            logAnalytics(Click("update_warning_dialog_cancel"))
+            viewModel.cancelEdit()
+            reportNameEditMode = null
+          }
+          .create()
+          .show()
+    } else {
+      etInput.setText(text)
+      overrideListener?.onTextOverride()
+    }
+  }
+
   override fun onStart() {
     super.onStart()
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
       reportNameEditMode = it.report.name
-      if (etInput.text.trim().isNotEmpty()) {
-        AlertDialog.Builder(context!!)
-            .setTitle(R.string.edit_alert_title)
-            .setMessage(R.string.edit_alert_desc)
-            .setPositiveButton(R.string.yes) { dialog, _ ->
-              logAnalytics(Click("update_warning_dialog_yes"))
-              etInput.setText(it.report.dataText)
-              dialog.dismiss()
-            }
-            .setNegativeButton(R.string.no) { dialog, _ ->
-              logAnalytics(Click("update_warning_dialog_no"))
-              dialog.dismiss()
-            }
-            .setIcon(R.drawable.ic_warning_black_24dp)
-            .setOnCancelListener { _ ->
-              logAnalytics(Click("update_warning_dialog_cancel"))
-              viewModel.cancelEdit()
-              reportNameEditMode = null
-            }
-            .create()
-            .show()
-      } else {
-        etInput.setText(it.report.dataText)
-      }
+      it.report.dataText?.let { it1 -> handleBusEditEvent(it1) }
+    }))
+
+    disposable.add(RxBus.subscribe(EditDraft::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleBusEditEvent(it.text, object : TextOverrideListener {
+        override fun onTextOverride() {
+          RxBus.send(ChangeDraftState(it.text, it.id))
+        }
+      })
+    }))
+
+    disposable.add(RxBus.subscribe(EditDraftHistory::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleBusEditEvent(it.text, object : TextOverrideListener {
+        override fun onTextOverride() {
+          RxBus.send(ChangeDraftState(it.parentDraftText, it.id))
+        }
+      })
     }))
 
     disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
@@ -383,6 +426,10 @@ class InputFragment : BaseFragment() {
       tvSentences.text = "-"
       tvParagraphs.text = "-"
     }
+  }
+
+  private interface TextOverrideListener {
+    fun onTextOverride()
   }
 
   override val baseViewModel: BaseViewModel
