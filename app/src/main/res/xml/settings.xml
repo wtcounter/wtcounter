@@ -29,7 +29,7 @@
 
     <android.support.v7.preference.EditTextPreference
         android:defaultValue="68"
-        android:key="writing_lpm"
+        android:key="writing_lps"
         android:title="Writing Time Letters Per Second"/>
   </android.support.v7.preference.PreferenceCategory>
 
