@@ -4,29 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/side_nav_bar"
     tools:context="wordtextcounter.details.main.feature.notes.NotesFragment"
     >
 
   <android.support.design.widget.TabLayout
-    android:id="@+id/tabLayout"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_40sdp"
-    android:background="@color/primaryLightColor"
-    android:elevation="@dimen/_2sdp"
-    app:tabBackground="@color/primaryLightColor"
-    app:tabIndicatorColor="@color/secondaryColor"
-    app:tabSelectedTextColor="@color/white"
-    app:tabIndicatorHeight="@dimen/_2sdp"
-    app:tabMode="scrollable"
-    />
-
+      android:id="@+id/tabLayout"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_40sdp"
+      android:background="@color/primaryColor"
+      app:elevation="@dimen/_2sdp"
+      app:layout_constraintTop_toTopOf="parent"
+      app:tabBackground="@color/primaryColor"
+      app:tabIndicatorColor="@color/secondaryColor"
+      app:tabIndicatorHeight="@dimen/_2sdp"
+      app:tabMode="scrollable"
+      app:tabSelectedTextColor="@color/white"
+      app:tabTextColor="@color/grey_75"
+      />
 
   <android.support.v4.view.ViewPager
-    android:id="@+id/viewPager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-    />
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="@drawable/side_nav_bar"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+      />
 
 </android.support.constraint.ConstraintLayout>
