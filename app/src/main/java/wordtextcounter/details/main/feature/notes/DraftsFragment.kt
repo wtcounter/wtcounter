@@ -30,9 +30,6 @@ class DraftsFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(DraftsViewModel::class.java)
-    rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-    adapter = DraftsAdapter()
-    rvNotes.adapter = adapter
   }
 
   override fun onCreateView(
@@ -48,8 +45,11 @@ class DraftsFragment : BaseFragment() {
     savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
-    viewModel.getAllDrafts()
+    rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+    adapter = DraftsAdapter()
+    rvNotes.adapter = adapter
     initClickListeners()
+    viewModel.getAllDrafts()
     disposable.add(viewModel.viewState.subscribe({
       handleViewState(it)
     }, {
