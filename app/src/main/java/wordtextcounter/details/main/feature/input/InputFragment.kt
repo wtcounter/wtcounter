@@ -33,7 +33,9 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.content.edit
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.cl
@@ -63,13 +65,16 @@ import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.util.ChangeDraftState
+import wordtextcounter.details.main.util.Constants.PREF_SAVED_TEXT
 import wordtextcounter.details.main.util.EditDraft
 import wordtextcounter.details.main.util.EditDraftHistory
 import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.NewText
 import wordtextcounter.details.main.util.NoEvent
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.ShareText
+import wordtextcounter.details.main.util.extensions.getPreference
+import wordtextcounter.details.main.util.extensions.runIfAdded
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -173,6 +178,8 @@ class InputFragment : BaseFragment() {
       }
     }
 
+    prefillSavedPreferenceText()
+
     if (isPaste) {
       activity?.hideKeyboard(etInput)
       paste()
@@ -181,6 +188,15 @@ class InputFragment : BaseFragment() {
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
+    }
+  }
+
+  private fun prefillSavedPreferenceText() {
+    val preferences = context?.getPreference()
+    val prefilledText = preferences?.getString(PREF_SAVED_TEXT, "")
+    if (!prefilledText.isNullOrEmpty()) {
+      etInput.setText(prefilledText)
+      clearSavedTextInPreference()
     }
   }
 
@@ -210,12 +226,9 @@ class InputFragment : BaseFragment() {
       activity?.showKeyBoard()
     }
 
-    snackbar.setAction("PASTE", View.OnClickListener {
-      etInput.setText(copiedText)
-      cl.clearFocus()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
-    })
+    snackbar.setAction("PASTE") {
+      RxBus.send(NewText(copiedText))
+    }
 
     snackbar.show()
   }
@@ -312,14 +325,30 @@ class InputFragment : BaseFragment() {
   }
 
   fun saveDraft() {
-    if (!isAdded) {
-      //if fragment is destroyed, then return silently
-      return
+    runIfAdded {
+      val editable = etInput.text
+      if (editable != null) {
+        viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
+      }
     }
+  }
 
-    val editable = etInput.text
-    if (editable != null) {
-      viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
+  fun saveCurrentTextToPreference() {
+    runIfAdded {
+      val editable = etInput.text
+      if (editable != null) {
+        val preferences = context?.getPreference()
+        preferences?.edit {
+          putString(PREF_SAVED_TEXT, editable.toString())
+        }
+      }
+    }
+  }
+
+  private fun clearSavedTextInPreference() {
+    val preferences = context?.getPreference()
+    preferences?.edit {
+      putString(PREF_SAVED_TEXT, null)
     }
   }
 
@@ -366,7 +395,7 @@ class InputFragment : BaseFragment() {
     }
   }
 
-  private fun handleBusEditEvent(text: String, overrideListener: TextOverrideListener? = null) {
+  private fun handleNewTextEvent(text: String, overrideListener: TextOverrideListener? = null) {
     if (etInput.text.trim().isNotEmpty()) {
       AlertDialog.Builder(context!!)
           .setTitle(R.string.edit_alert_title)
@@ -375,6 +404,8 @@ class InputFragment : BaseFragment() {
           ) { dialog, _ ->
             logAnalytics(Click("update_warning_dialog_yes"))
             etInput.setText(text)
+            etInput.requestFocus()
+            activity?.showKeyBoard()
             viewModel.onTextCleared()
             overrideListener?.onTextOverride()
             dialog.dismiss()
@@ -400,15 +431,23 @@ class InputFragment : BaseFragment() {
 
   override fun onStart() {
     super.onStart()
+    Logger.d("Start.")
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
       reportNameEditMode = it.report.name
-      it.report.dataText?.let { it1 -> handleBusEditEvent(it1) }
+      it.report.dataText?.let {
+        RxBus.send(NewText(it))
+      }
+    }))
+
+    disposable.add(RxBus.subscribe(NewText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleNewTextEvent(it.newText)
     }))
 
     disposable.add(RxBus.subscribe(EditDraft::class.java, Consumer {
       RxBus.send(NoEvent)
-      handleBusEditEvent(it.text, object : TextOverrideListener {
+      handleNewTextEvent(it.text, object : TextOverrideListener {
         override fun onTextOverride() {
           RxBus.send(ChangeDraftState(it.text, it.id))
         }
@@ -417,16 +456,11 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxBus.subscribe(EditDraftHistory::class.java, Consumer {
       RxBus.send(NoEvent)
-      handleBusEditEvent(it.text, object : TextOverrideListener {
+      handleNewTextEvent(it.text, object : TextOverrideListener {
         override fun onTextOverride() {
           RxBus.send(ChangeDraftState(it.parentDraftText, it.id))
         }
       })
-    }))
-
-    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
-      RxBus.send(NoEvent)
-      if (it?.shareText != null) etInput.setText(it.shareText)
     }))
   }
 

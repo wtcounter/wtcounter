@@ -12,5 +12,5 @@ data class EditDraftHistory(val text: String, val id: Long, val parentDraftText 
 data class ChangeDraftState(val text: String, val id: Long) : Event()
 data class DeleteReport(val report: Report) : Event()
 data class DeleteDraft(val id: Long) : Event()
-data class ShareText(val shareText: String) : Event()
+data class NewText(val newText: String) : Event()
 

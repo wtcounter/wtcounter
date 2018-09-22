@@ -17,12 +17,11 @@ import wordtextcounter.details.main.feature.input.InputFragment
 import wordtextcounter.details.main.feature.notes.NotesFragment
 import wordtextcounter.details.main.feature.settings.SettingsFlowFragment
 import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.ShareText
 import wordtextcounter.details.main.util.dpToPx
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.feature.notes.DraftsFragment
 import wordtextcounter.details.main.feature.notes.NotesMainFragment
 import wordtextcounter.details.main.util.Constants
+import wordtextcounter.details.main.util.NewText
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.getPreference
 
@@ -73,12 +72,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       bottombar.setOnTabSelectListener(this, false)
     }
 
-    if (intent?.action == Intent.ACTION_SEND) {
-      if ("text/plain" == intent.type) {
-        handleSendText(intent) // Handle text being sent
-      }
-    }
-
     val pf = getPreference()
     val consent = pf.getBoolean(Constants.PREF_ANALYTICS_CONSENT, false)
     if (!consent) {
@@ -86,11 +79,27 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
     }
   }
 
+  private fun handleNewIntent() {
+    if (intent?.action == Intent.ACTION_SEND) {
+      if ("text/plain" == intent.type) {
+        Logger.d("text/plain")
+        handleSendText(intent) // Handle text being sent
+      }
+    }
+  }
+
+  override fun onNewIntent(intent: Intent?) {
+    super.onNewIntent(intent)
+    setIntent(intent)
+    handleNewIntent()
+  }
+
   private fun handleSendText(intent: Intent) {
+    Logger.d("handleSendText")
     intent.getStringExtra(Intent.EXTRA_TEXT)
         ?.let {
-          Logger.d("Intent text $it")
-          RxBus.send(ShareText(it))
+          Logger.d("Sending new text event")
+          RxBus.send(NewText(it))
         }
   }
 
@@ -115,8 +124,16 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       if (shouldShowRateUsDialog(this)) {
         showRateUsDialog(this)
       } else {
+        saveCurrentTextIfRequired()
         finish()
       }
+    }
+  }
+
+  private fun saveCurrentTextIfRequired() {
+    val currentFragment = getCurrentFragment()
+    if (currentFragment is InputFragment) {
+      currentFragment.saveCurrentTextToPreference()
     }
   }
 
