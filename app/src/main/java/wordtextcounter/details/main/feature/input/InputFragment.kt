@@ -4,12 +4,17 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
+import android.content.ClipData
+import android.content.ClipData.Item
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
@@ -29,15 +34,16 @@ import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.report_folded.*
 import kotlinx.android.synthetic.main.report_summary.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.ExtraStatText
-import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.*
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.hideKeyboard
+import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
@@ -50,13 +56,16 @@ class InputFragment : BaseFragment() {
 
   private lateinit var viewModel: InputViewModel
 
-
   private lateinit var viewModelFactory: InputViewModelFactory
 
   var cx: Int = -1
   var cy: Int = -1
+  var isPaste = true
 
   var reportNameEditMode: String? = null
+  private lateinit var clipData: ClipData
+
+  // Get clip data from clipboard.
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -75,6 +84,10 @@ class InputFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
+
+    val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
+    val clipboardManager = clipboardService as ClipboardManager
+    clipData = clipboardManager.primaryClip
   }
 
   override fun onCreateView(
@@ -116,21 +129,68 @@ class InputFragment : BaseFragment() {
     viewModel.additionLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
+          this@InputFragment.activity?.let { it1 -> showRateUsDialog(it1) }
         }
       }
     }
     viewModel.updateLiveData.subscribe {
       it?.let {
         if (it) {
-          activity?.hideKeyboard()
+          activity?.hideKeyboard(etInput)
           activity?.showSnackBar(getString(R.string.update_success))
           clearCurrentInputState()
         }
       }
     }
+
+    if (isPaste) {
+      activity?.hideKeyboard(etInput)
+      paste()
+      isPaste = false
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun paste() {
+    // Get item count.
+
+    val itemCount: Int = clipData.itemCount
+    if (itemCount > 0) {
+      val item: Item = clipData.getItemAt(0)
+      val copiedText: String = item.text.toString();
+      // Show a snackbar to tell user text has been pasted.
+      showSnackBar(copiedText = copiedText)
+    } else {
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+  }
+
+  private fun showSnackBar(copiedText: String) {
+    val snackbar: Snackbar = Snackbar.make(etInput, copiedText, Snackbar.LENGTH_INDEFINITE)
+    val layout = snackbar.view as Snackbar.SnackbarLayout
+
+    layout.setOnClickListener {
+      snackbar.dismiss()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    }
+
+    snackbar.setAction("PASTE", View.OnClickListener {
+      etInput.setText(copiedText)
+      cl.clearFocus()
+      etInput.requestFocus()
+      activity?.showKeyBoard()
+    })
+
+    snackbar.show()
   }
 
   private fun showButtons() {
@@ -174,6 +234,7 @@ class InputFragment : BaseFragment() {
     val btnSave = dialog.findViewById<Button>(R.id.btnSave)
     val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
     ivCross.setOnClickListener {
+      logAnalytics(Click("note_add_dialog_close"))
       hideDialog(cView, dialog)
     }
 
@@ -190,11 +251,21 @@ class InputFragment : BaseFragment() {
         }
       }
 
-      override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+      override fun beforeTextChanged(
+          s: CharSequence?,
+          start: Int,
+          count: Int,
+          after: Int
+      ) {
 
       }
 
-      override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+      override fun onTextChanged(
+          s: CharSequence?,
+          start: Int,
+          before: Int,
+          count: Int
+      ) {
 
       }
 
@@ -207,6 +278,7 @@ class InputFragment : BaseFragment() {
 
     btnSave.setOnClickListener {
       if (!etName.text.isEmpty()) {
+        logAnalytics(Click("note_add_dialog_save"))
         viewModel.onClickSaveCurrent(etName.text.toString())
         hideDialog(cView, dialog)
       }
@@ -271,22 +343,32 @@ class InputFragment : BaseFragment() {
             .setMessage(R.string.edit_alert_desc)
             .setPositiveButton(R.string.yes,
                 { dialog, _ ->
+                  logAnalytics(Click("update_warning_dialog_yes"))
                   etInput.setText(it.report.dataText)
                   dialog.dismiss()
                 })
             .setNegativeButton(R.string.no,
-                { dialog, _ -> dialog.dismiss() })
+                { dialog, _ ->
+                  logAnalytics(Click("update_warning_dialog_no"))
+                  dialog.dismiss()
+                })
             .setIcon(R.drawable.ic_warning_black_24dp)
             .setOnCancelListener {
+              logAnalytics(Click("update_warning_dialog_cancel"))
               viewModel.cancelEdit()
               reportNameEditMode = null
             }
-            .create().show()
+            .create()
+            .show()
       } else {
         etInput.setText(it.report.dataText)
       }
     }))
 
+    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      if (it?.shareText != null) etInput.setText(it.shareText)
+    }))
   }
 
   private fun handleViewState(viewState: ViewState) {
@@ -312,9 +394,7 @@ class InputFragment : BaseFragment() {
   override val baseViewModel: BaseViewModel
     get() = viewModel
 
-
   companion object {
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

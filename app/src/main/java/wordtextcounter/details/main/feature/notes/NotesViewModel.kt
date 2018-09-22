@@ -1,9 +1,11 @@
 package wordtextcounter.details.main.feature.notes
 
+import io.reactivex.Flowable
 import com.jakewharton.rxrelay2.BehaviorRelay
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logNoteMilestones
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.base.Input
 import wordtextcounter.details.main.store.daos.ReportDao
@@ -30,6 +32,10 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
     loaderState.value = true
     addDisposable(dao.getAllReports()
         .subscribeOn(io())
+        .flatMap {
+          logNoteMilestones(it.size)
+          return@flatMap Flowable.just(it)
+        }
         .observeOn(mainThread())
         .subscribe({
           loaderState.value = false

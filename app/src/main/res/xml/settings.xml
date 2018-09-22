@@ -1,0 +1,17 @@
+<android.support.v7.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="match_parent"
+  android:layout_width="match_parent">
+
+  <android.support.v7.preference.PreferenceCategory
+    android:title="Basic Settings">
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+      android:key="keysef1"
+      android:title="Copy clipboard text automatically"
+      android:summary="Text from clipboard will be copied automatically and stats will get generated automatically"
+      android:defaultValue="true" />
+
+  </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>
