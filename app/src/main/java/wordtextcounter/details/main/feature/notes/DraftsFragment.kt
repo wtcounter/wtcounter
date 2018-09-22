@@ -21,7 +21,7 @@ class DraftsFragment : BaseFragment() {
 
   private lateinit var viewModel: DraftsViewModel
 
-  private var adapter: DraftsAdapter? = null
+  private lateinit var adapter: DraftsAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -30,6 +30,9 @@ class DraftsFragment : BaseFragment() {
     )
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(DraftsViewModel::class.java)
+    rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+    adapter = DraftsAdapter()
+    rvNotes.adapter = adapter
   }
 
   override fun onCreateView(
@@ -46,6 +49,7 @@ class DraftsFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
     viewModel.getAllDrafts()
+    initClickListeners()
     disposable.add(viewModel.viewState.subscribe({
       handleViewState(it)
     }, {
@@ -54,7 +58,7 @@ class DraftsFragment : BaseFragment() {
   }
 
   private fun initClickListeners() {
-    adapter?.clickRelay?.subscribe({
+    adapter.clickRelay?.subscribe({
       when (it) {
         is DraftsAdapter.DraftActions.DraftEdit -> {
           viewModel.editDraft(it.draft)
@@ -64,15 +68,15 @@ class DraftsFragment : BaseFragment() {
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.draft_delete)
-              .setPositiveButton(R.string.yes,
-                  { dialog, _ ->
-                    viewModel.deleteDraft(it.draft)
-                    dialog.dismiss()
-                  })
-              .setNegativeButton(R.string.no,
-                  { dialog, _ ->
-                    dialog.dismiss()
-                  })
+              .setPositiveButton(R.string.yes
+              ) { dialog, _ ->
+                viewModel.deleteDraft(it.draft)
+                dialog.dismiss()
+              }
+              .setNegativeButton(R.string.no
+              ) { dialog, _ ->
+                dialog.dismiss()
+              }
               .setIcon(R.drawable.ic_warning_black_24dp)
               .create()
               .show()
@@ -84,15 +88,15 @@ class DraftsFragment : BaseFragment() {
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.draft_history_delete)
-              .setPositiveButton(R.string.yes,
-                  { dialog, _ ->
-                    viewModel.deleteDraftHistory(it.draftHistory)
-                    dialog.dismiss()
-                  })
-              .setNegativeButton(R.string.no,
-                  { dialog, _ ->
-                    dialog.dismiss()
-                  })
+              .setPositiveButton(R.string.yes
+              ) { dialog, _ ->
+                viewModel.deleteDraftHistory(it.draftHistory)
+                dialog.dismiss()
+              }
+              .setNegativeButton(R.string.no
+              ) { dialog, _ ->
+                dialog.dismiss()
+              }
               .setIcon(R.drawable.ic_warning_black_24dp)
               .create()
               .show()
@@ -114,14 +118,7 @@ class DraftsFragment : BaseFragment() {
     }
 
     if (state.drafts != null) {
-      if (adapter == null) {
-        rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-        adapter = DraftsAdapter(state.drafts.toMutableList())
-        rvNotes.adapter = adapter
-        initClickListeners()
-      } else {
-        adapter?.dispatchUpdates(state.drafts)
-      }
+      adapter.dispatchUpdates(state.drafts)
     }
 
     if (state.successDraftDeletion) {

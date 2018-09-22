@@ -24,9 +24,10 @@ import wordtextcounter.details.main.store.data.DraftWithHistory
 import wordtextcounter.details.main.store.entities.Draft
 import wordtextcounter.details.main.store.entities.DraftHistory
 
-class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
+class DraftsAdapter :
     AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay = PublishRelay.create<DraftActions>()
+  val drafts : MutableList<DraftWithHistory> = mutableListOf()
   override fun createGroupViewHolder(
     parent: ViewGroup,
     viewType: Int
@@ -37,11 +38,11 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
   }
 
   override fun groupCount(): Int {
-    return draftsWithHistory.size
+    return drafts.size
   }
 
   override fun childCount(groupPosition: Int): Int {
-    return draftsWithHistory[groupPosition].draftHistories.size
+    return drafts[groupPosition].draftHistories.size
   }
 
   override fun createChildViewHolder(
@@ -57,7 +58,7 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
     viewHolder: DraftHolder,
     groupPosition: Int
   ) {
-    val draft = draftsWithHistory[groupPosition]
+    val draft = drafts[groupPosition]
     viewHolder.bind(draft.draft)
   }
 
@@ -66,7 +67,7 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
     groupPosition: Int,
     childPosition: Int
   ) {
-    val draft = draftsWithHistory[groupPosition]
+    val draft = drafts[groupPosition]
     val draftHistory = draft.draftHistories[childPosition]
     viewHolder.bind(
         draftHistory, childPosition == 0, childPosition == childCount(groupPosition) - 1
@@ -94,9 +95,9 @@ class DraftsAdapter(val draftsWithHistory: MutableList<DraftWithHistory>) :
     }
   }
 
-  fun dispatchUpdates(drafts: List<DraftWithHistory>) {
-    draftsWithHistory.clear()
-    draftsWithHistory.addAll(drafts)
+  fun dispatchUpdates(data: List<DraftWithHistory>) {
+    drafts.clear()
+    drafts.addAll(data)
     notifyDataSetChanged()
   }
 
