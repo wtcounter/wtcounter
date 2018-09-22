@@ -8,7 +8,7 @@ object Constants {
   const val PREF_ANALYTICS_ENABLED = "wtc.preferences.analytics_enabled"
   const val PREF_ANALYTICS_CONSENT = "wtc.preferences.analytics_consent"
 
-  const val PREF_READING_TIME_WORDS_PER_MINUTE = "reading_wpm"
-  const val PREF_SPEAKING_TIME_WORDS_PER_MINUTE = "speaking_wpm"
-  const val PREF_WRITING_TIME_LETTERS_PER_SECOND = "writing_lps"
+  const val PREF_READING_SPEED_WORDS_PER_MINUTE = "reading_wpm"
+  const val PREF_SPEAKING_SPEED_WORDS_PER_MINUTE = "speaking_wpm"
+  const val PREF_WRITING_SPEED_LETTERS_PER_MINUTE = "writing_lpm"
 }

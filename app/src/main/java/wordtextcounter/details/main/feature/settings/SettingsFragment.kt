@@ -11,27 +11,27 @@ class SettingsFragment : PreferenceFragmentCompat() {
     addPreferencesFromResource(R.xml.settings)
 
     val readingTimePref = preferenceManager.findPreference(
-        Constants.PREF_READING_TIME_WORDS_PER_MINUTE)
+        Constants.PREF_READING_SPEED_WORDS_PER_MINUTE)
     readingTimePref.summary = preferenceManager.sharedPreferences.getString(
-        Constants.PREF_READING_TIME_WORDS_PER_MINUTE, "")
+        Constants.PREF_READING_SPEED_WORDS_PER_MINUTE, "")
     readingTimePref.setOnPreferenceChangeListener { _, newValue ->
       readingTimePref.summary = newValue.toString()
       true
     }
 
     val speakingTimePref = preferenceManager.findPreference(
-        Constants.PREF_SPEAKING_TIME_WORDS_PER_MINUTE)
+        Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE)
     speakingTimePref.summary = preferenceManager.sharedPreferences.getString(
-        Constants.PREF_SPEAKING_TIME_WORDS_PER_MINUTE, "")
+        Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE, "")
     speakingTimePref.setOnPreferenceChangeListener { _, newValue ->
       speakingTimePref.summary = newValue.toString()
       true
     }
 
     val writingTimePref = preferenceManager.findPreference(
-        Constants.PREF_WRITING_TIME_LETTERS_PER_SECOND)
+        Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE)
     writingTimePref.summary = preferenceManager.sharedPreferences.getString(
-        Constants.PREF_WRITING_TIME_LETTERS_PER_SECOND, "")
+        Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE, "")
     writingTimePref.setOnPreferenceChangeListener { _, newValue ->
       writingTimePref.summary = newValue.toString()
       true

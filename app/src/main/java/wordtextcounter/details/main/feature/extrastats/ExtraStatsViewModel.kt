@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.Singles
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.base.BaseViewModel
+import wordtextcounter.details.main.util.Constants
 import wordtextcounter.details.main.util.Helper
 
 class ExtraStatsViewModel(private val prefs: SharedPreferences) : BaseViewModel() {
@@ -106,15 +107,26 @@ class ExtraStatsViewModel(private val prefs: SharedPreferences) : BaseViewModel(
   private fun getTimeStats(): Single<ExtraStatGroup> {
     return Singles.zip(wordsStatsSingle, characterStatsSingle) { words, characters ->
       val extraStats = mutableListOf<ExtraStat>()
+      Logger.d("Prefs $prefs")
+      val readingSpeedWordsPerMinute = prefs.getString(
+          Constants.PREF_READING_SPEED_WORDS_PER_MINUTE,
+          "275").toLong()
+      val speakingSpeedWordsPerMinute = prefs.getString(
+          Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE,
+          "180").toLong()
+      val writingSpeedLettersPerSecond = prefs.getString(
+          Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE,
+          "68").toLong()
       extraStats.add(
           ExtraStat(R.string.reading_time,
-              DateUtils.formatElapsedTime(words.first * 60 / 275.toLong())))
+              DateUtils.formatElapsedTime(
+                  words.first * 60 / readingSpeedWordsPerMinute)))
       extraStats.add(
           ExtraStat(R.string.speaking_time,
-              DateUtils.formatElapsedTime(words.first * 60 / 180.toLong())))
+              DateUtils.formatElapsedTime(words.first * 60 / speakingSpeedWordsPerMinute)))
       extraStats.add(
           ExtraStat(R.string.writing_time,
-              DateUtils.formatElapsedTime(characters.first * 60 / 68.toLong())))
+              DateUtils.formatElapsedTime(characters.first * 60 / writingSpeedLettersPerSecond)))
       ExtraStatGroup(R.string.time_stats,
           extraStats)
     }

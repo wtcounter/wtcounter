@@ -15,22 +15,22 @@
   </android.support.v7.preference.PreferenceCategory>
 
   <android.support.v7.preference.PreferenceCategory
-      android:title="Basic Settings">
+      android:title="@string/stat_settings">
 
     <android.support.v7.preference.EditTextPreference
         android:defaultValue="275"
         android:key="reading_wpm"
-        android:title="Reading Time Words Per Minute"/>
+        android:title="@string/reading_time_wpm"/>
 
     <android.support.v7.preference.EditTextPreference
         android:defaultValue="180"
         android:key="speaking_wpm"
-        android:title="Speaking Time Words Per Minute"/>
+        android:title="@string/speaking_time_wpm"/>
 
     <android.support.v7.preference.EditTextPreference
         android:defaultValue="68"
-        android:key="writing_lps"
-        android:title="Writing Time Letters Per Second"/>
+        android:key="writing_lpm"
+        android:title="@string/writing_time_lpm"/>
   </android.support.v7.preference.PreferenceCategory>
 
 
