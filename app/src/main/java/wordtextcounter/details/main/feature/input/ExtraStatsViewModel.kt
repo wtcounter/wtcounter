@@ -79,4 +79,15 @@ class ExtraStatsViewModel : BaseViewModel() {
         }
   }
 
+  private fun getTimeStats(input: String): Single<ExtraStatGroup> {
+    return Singles
+        .zip(Helper.extractSentenceStat(input), Helper.countWords(input)) { sentences, words ->
+          val extraStats = mutableListOf<ExtraStat>()
+          extraStats.add(
+              ExtraStat(R.string.shortest_sentence, sentences.first.toString()))
+          extraStats.add(
+              ExtraStat(R.string.longest_sentence, sentences.second.toString()))
+          ExtraStatGroup(R.string.length_stats, extraStats)
+        }
+  }
 }

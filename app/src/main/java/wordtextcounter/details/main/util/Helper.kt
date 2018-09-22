@@ -75,11 +75,16 @@ object Helper {
       var whiteSpaceCount = 0
       val graphemeCounter = BreakIterator.getCharacterInstance()
       graphemeCounter.setText(input)
-      while (graphemeCounter.next() != BreakIterator.DONE) {
+
+      var start = 0
+      var end = graphemeCounter.next()
+      while (end != BreakIterator.DONE) {
         graphemeCount++
-        if (Character.isWhitespace(input[graphemeCounter.current() - 1])) {
+        if (Character.isWhitespace(input[start])) {
           whiteSpaceCount++
         }
+        start = end
+        end = graphemeCounter.next()
       }
       Pair(graphemeCount, graphemeCount - whiteSpaceCount)
     }.subscribeOn(Schedulers.computation())
@@ -111,7 +116,7 @@ object Helper {
         val sentence = input.substring(start, end)
         if (sentence.isNotBlank()) {
           val wordLength = getNoOfWords(sentence)
-          if(wordLength != 0) {
+          if (wordLength != 0) {
             if (wordLength < minSentenceLength) {
               minSentenceLength = wordLength
             }

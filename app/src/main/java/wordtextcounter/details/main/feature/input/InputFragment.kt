@@ -163,7 +163,7 @@ class InputFragment : BaseFragment() {
     val itemCount: Int = clipData.itemCount
     if (itemCount > 0) {
       val item: Item = clipData.getItemAt(0)
-      val copiedText: String = item.text.toString();
+      val copiedText: String = item.text.toString()
       // Show a snackbar to tell user text has been pasted.
       showSnackBar(copiedText = copiedText)
     } else {
@@ -183,12 +183,12 @@ class InputFragment : BaseFragment() {
       activity?.showKeyBoard()
     }
 
-    snackbar.setAction("PASTE", View.OnClickListener {
+    snackbar.setAction("PASTE") {
       etInput.setText(copiedText)
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
-    })
+    }
 
     snackbar.show()
   }
@@ -211,9 +211,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun showDialog() {
-    val cView = LayoutInflater.from(activity)
-        .inflate(R.layout.report_name_edit, null)
-
+    val cView = LayoutInflater.from(activity).inflate(R.layout.report_name_edit, null)
     val dialog = Dialog(activity)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(cView)
@@ -221,7 +219,6 @@ class InputFragment : BaseFragment() {
     dialog.setOnShowListener {
       revealDialog(cView)
     }
-
     dialog.setOnKeyListener { dialog1, keyCode, _ ->
       if (keyCode == KeyEvent.KEYCODE_BACK) {
         hideDialog(cView, dialog1)
@@ -229,7 +226,6 @@ class InputFragment : BaseFragment() {
       }
       false
     }
-
     val etName = dialog.findViewById<AppCompatEditText>(R.id.etName)
     val btnSave = dialog.findViewById<Button>(R.id.btnSave)
     val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
@@ -341,19 +337,17 @@ class InputFragment : BaseFragment() {
         AlertDialog.Builder(context!!)
             .setTitle(R.string.edit_alert_title)
             .setMessage(R.string.edit_alert_desc)
-            .setPositiveButton(R.string.yes,
-                { dialog, _ ->
-                  logAnalytics(Click("update_warning_dialog_yes"))
-                  etInput.setText(it.report.dataText)
-                  dialog.dismiss()
-                })
-            .setNegativeButton(R.string.no,
-                { dialog, _ ->
-                  logAnalytics(Click("update_warning_dialog_no"))
-                  dialog.dismiss()
-                })
+            .setPositiveButton(R.string.yes) { dialog, _ ->
+              logAnalytics(Click("update_warning_dialog_yes"))
+              etInput.setText(it.report.dataText)
+              dialog.dismiss()
+            }
+            .setNegativeButton(R.string.no) { dialog, _ ->
+              logAnalytics(Click("update_warning_dialog_no"))
+              dialog.dismiss()
+            }
             .setIcon(R.drawable.ic_warning_black_24dp)
-            .setOnCancelListener {
+            .setOnCancelListener { _ ->
               logAnalytics(Click("update_warning_dialog_cancel"))
               viewModel.cancelEdit()
               reportNameEditMode = null
