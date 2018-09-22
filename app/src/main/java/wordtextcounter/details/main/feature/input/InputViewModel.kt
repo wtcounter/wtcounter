@@ -178,11 +178,11 @@ class InputViewModel(
   }
 
   private fun handleAddNewHistory(text: String) {
-    var histotyText = draftState.text
-    if (histotyText == null) {
-      histotyText = text
+    var historyText = draftState.text
+    if (historyText == null) {
+      historyText = text
     }
-    val draftHistory = DraftHistory(histotyText, System.currentTimeMillis(), draftState.draftId!!)
+    val draftHistory = DraftHistory(historyText, System.currentTimeMillis(), draftState.draftId!!)
     draftDao.saveDraftHistory(draftHistory)
     val draftData = DraftData(text, System.currentTimeMillis())
     val draft = Draft(draftData, System.currentTimeMillis())

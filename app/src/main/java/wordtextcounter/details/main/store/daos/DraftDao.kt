@@ -31,5 +31,5 @@ interface DraftDao {
   fun deleteDraft(draft: Draft)
 
   @Delete
-  fun deleteDraftHisoty(draftHistory: DraftHistory)
+  fun deleteDraftHistory(draftHistory: DraftHistory)
 }

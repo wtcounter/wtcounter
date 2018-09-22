@@ -26,7 +26,7 @@ import wordtextcounter.details.main.store.entities.DraftHistory
 
 class DraftsAdapter :
     AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
-  val clickRelay = PublishRelay.create<DraftActions>()
+  val clickRelay: PublishRelay<DraftActions> = PublishRelay.create<DraftActions>()
   val drafts : MutableList<DraftWithHistory> = mutableListOf()
   override fun createGroupViewHolder(
     parent: ViewGroup,

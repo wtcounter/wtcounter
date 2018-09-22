@@ -77,7 +77,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
   }
 
   fun editDraft(draft: Draft) {
-    RxBus.send(EditDraft(draft.draftData.text, draft.id!!))
+    RxBus.send(EditDraft(draft.draftData.text, draft.id))
     routerState.value = Input
   }
 
@@ -85,8 +85,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
     addDisposable(
         Single.create<Boolean> {
           draftDao.deleteDraft(draft)
-          draft.id?.let { it1 -> DeleteDraft(it1) }
-              ?.let { it2 -> RxBus.send(it2) }
+          RxBus.send(DeleteDraft(draft.id))
           it.onSuccess(true)
         }
             .subscribeOn(Schedulers.io())
@@ -118,7 +117,7 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
   fun deleteDraftHistory(draftHistory: DraftHistory) {
     addDisposable(
         Single.create<Boolean> {
-          draftDao.deleteDraftHisoty(draftHistory)
+          draftDao.deleteDraftHistory(draftHistory)
           it.onSuccess(true)
         }
             .subscribeOn(Schedulers.io())

@@ -58,7 +58,7 @@ class DraftsFragment : BaseFragment() {
   }
 
   private fun initClickListeners() {
-    adapter.clickRelay?.subscribe({
+    disposable.add(adapter.clickRelay.subscribe({
       when (it) {
         is DraftsAdapter.DraftActions.DraftEdit -> {
           viewModel.editDraft(it.draft)
@@ -68,12 +68,14 @@ class DraftsFragment : BaseFragment() {
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.draft_delete)
-              .setPositiveButton(R.string.yes
+              .setPositiveButton(
+                  R.string.yes
               ) { dialog, _ ->
                 viewModel.deleteDraft(it.draft)
                 dialog.dismiss()
               }
-              .setNegativeButton(R.string.no
+              .setNegativeButton(
+                  R.string.no
               ) { dialog, _ ->
                 dialog.dismiss()
               }
@@ -88,12 +90,14 @@ class DraftsFragment : BaseFragment() {
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.draft_history_delete)
-              .setPositiveButton(R.string.yes
+              .setPositiveButton(
+                  R.string.yes
               ) { dialog, _ ->
                 viewModel.deleteDraftHistory(it.draftHistory)
                 dialog.dismiss()
               }
-              .setNegativeButton(R.string.no
+              .setNegativeButton(
+                  R.string.no
               ) { dialog, _ ->
                 dialog.dismiss()
               }
@@ -104,8 +108,7 @@ class DraftsFragment : BaseFragment() {
       }
     }, {
       showError(getString(R.string.generic_error_message))
-    })
-        ?.let { disposable.add(it) }
+    }))
   }
 
   private fun handleViewState(state: DraftsViewModel.ViewState) {
