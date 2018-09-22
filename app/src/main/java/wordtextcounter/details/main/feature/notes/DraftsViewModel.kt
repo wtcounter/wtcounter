@@ -38,10 +38,10 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
         .subscribeOn(Schedulers.io())
         .flatMap { t ->
           return@flatMap Flowable.fromIterable(t)
-              .map {
-                val histories = it.draftHistories
-                it.draftHistories = histories.sortedByDescending { it.createdAt }
-                return@map it
+              .map { history ->
+                val histories = history.draftHistories
+                history.draftHistories = histories.sortedByDescending { it.createdAt }
+                return@map history
               }
               .toList()
               .toFlowable()
@@ -82,12 +82,12 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
 
   fun deleteDraft(draft: Draft) {
     addDisposable(
-        Single.create<Boolean>({
+        Single.create<Boolean> {
           draftDao.deleteDraft(draft)
           draft.id?.let { it1 -> DeleteDraft(it1) }
               ?.let { it2 -> RxBus.send(it2) }
           it.onSuccess(true)
-        })
+        }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -116,10 +116,10 @@ class DraftsViewModel(private val draftDao: DraftDao) : BaseViewModel() {
 
   fun deleteDraftHistory(draftHistory: DraftHistory) {
     addDisposable(
-        Single.create<Boolean>({
+        Single.create<Boolean> {
           draftDao.deleteDraftHisoty(draftHistory)
           it.onSuccess(true)
-        })
+        }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

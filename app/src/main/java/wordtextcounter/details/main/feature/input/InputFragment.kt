@@ -33,9 +33,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
-import androidx.core.widget.toast
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.cl
@@ -172,8 +170,6 @@ class InputFragment : BaseFragment() {
         }
       }
     }
-
-    observeToastLiveData()
 
     if (isPaste) {
       activity?.hideKeyboard(etInput)
@@ -414,12 +410,6 @@ class InputFragment : BaseFragment() {
       RxBus.send(NoEvent)
       if (it?.shareText != null) etInput.setText(it.shareText)
     }))
-  }
-
-  private fun observeToastLiveData() {
-    viewModel.toastLiveData.subscribe {
-      context?.toast(it)
-    }
   }
 
   private fun handleViewState(viewState: ViewState) {
