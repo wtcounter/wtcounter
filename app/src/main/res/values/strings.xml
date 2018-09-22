@@ -35,6 +35,11 @@
   <string name="shortest_sentence">Shortest Sentence(words)</string>
   <string name="longest_sentence">Longest Sentence(words)</string>
 
+  <string name="time_stats">Time Stats</string>
+  <string name="reading_time">Reading Time</string>
+  <string name="speaking_time">Speaking Time</string>
+  <string name="writing_time">Hand Writing Time</string>
+
   <string name="save">Save</string>
   <string name="sentences">Sentences</string>
   <string name="see_more"><u>View Complete Report</u></string>

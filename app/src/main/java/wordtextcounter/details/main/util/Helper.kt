@@ -1,5 +1,6 @@
 package wordtextcounter.details.main.util
 
+import com.orhanobut.logger.Logger
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import java.text.BreakIterator
@@ -11,51 +12,6 @@ object Helper {
       getNoOfWords(input)
     }.subscribeOn(Schedulers.computation())
   }
-
-  fun getNoOfWords(input: String): Int {
-    val wordIterator = BreakIterator.getWordInstance()
-    wordIterator.setText(input)
-    var start = wordIterator.first()
-    var end = wordIterator.next()
-
-    var wordCount = 0
-    while (end != BreakIterator.DONE) {
-      val word = input.substring(start, end)
-      if (Character.isLetterOrDigit(word[0])) {
-        wordCount++
-      }
-      start = end
-      end = wordIterator.next()
-    }
-    return wordCount
-  }
-
-  /**
-   * This will return triple where first is total word count, second is avg word length and third is unique words in text
-   */
-  fun extraWordStats(input: String): Single<Triple<Int, Double, Int>> {
-    return Single.fromCallable {
-      val wordIterator = BreakIterator.getWordInstance()
-      val wordSet = mutableSetOf<String>()
-      wordIterator.setText(input)
-      var start = wordIterator.first()
-      var end = wordIterator.next()
-      var wordCount = 0
-      var totalLength = 0
-      while (end != BreakIterator.DONE) {
-        val word = input.substring(start, end)
-        if (Character.isLetterOrDigit(word[0])) {
-          wordSet.add(word)
-          wordCount++
-          totalLength += word.length
-        }
-        start = end
-        end = wordIterator.next()
-      }
-      Triple(wordCount, totalLength.toDouble() / wordCount, wordSet.size)
-    }.subscribeOn(Schedulers.computation())
-  }
-
 
   fun countCharacters(input: String): Single<Int> {
     return Single.fromCallable {
@@ -92,6 +48,7 @@ object Helper {
 
   fun countSentences(input: String): Single<Int> {
     return Single.fromCallable {
+      Logger.d("Count sentences $input")
       var graphemeCount = 0
       val boundary = BreakIterator.getSentenceInstance()
       boundary.setText(input)
@@ -104,10 +61,38 @@ object Helper {
     }.subscribeOn(Schedulers.computation())
   }
 
-  fun extractSentenceStat(input: String): Single<Pair<Int, Int>> {
+  /**
+   * This will return triple where first is total word count, second is avg word length and third is unique words in text
+   */
+  fun extraWordStats(input: String): Single<Triple<Int, Double, Int>> {
+    return Single.fromCallable {
+      val wordIterator = BreakIterator.getWordInstance()
+      val wordSet = mutableSetOf<String>()
+      wordIterator.setText(input)
+      var start = wordIterator.first()
+      var end = wordIterator.next()
+      var wordCount = 0
+      var totalLength = 0
+      while (end != BreakIterator.DONE) {
+        val word = input.substring(start, end)
+        if (Character.isLetterOrDigit(word[0])) {
+          wordSet.add(word)
+          wordCount++
+          totalLength += word.length
+        }
+        start = end
+        end = wordIterator.next()
+      }
+      Triple(wordCount, totalLength.toDouble() / wordCount, wordSet.size)
+    }.subscribeOn(Schedulers.computation())
+  }
+
+
+  fun extractSentenceStat(input: String): Single<Triple<Int, Int, Int>> {
     return Single.fromCallable {
       var minSentenceLength = Int.MAX_VALUE
       var maxSentenceLength = 0
+      var totalSentences = 0
       val boundary = BreakIterator.getSentenceInstance()
       boundary.setText(input)
       var start = boundary.first()
@@ -115,6 +100,7 @@ object Helper {
       while (end != BreakIterator.DONE) {
         val sentence = input.substring(start, end)
         if (sentence.isNotBlank()) {
+          totalSentences++
           val wordLength = getNoOfWords(sentence)
           if (wordLength != 0) {
             if (wordLength < minSentenceLength) {
@@ -128,7 +114,7 @@ object Helper {
         start = end
         end = boundary.next()
       }
-      Pair(minSentenceLength, maxSentenceLength)
+      Triple(totalSentences, minSentenceLength, maxSentenceLength)
     }.subscribeOn(Schedulers.computation())
   }
 
@@ -151,5 +137,23 @@ object Helper {
     return Single.fromCallable {
       input.toByteArray(Charsets.UTF_8).size.toString() + " B"
     }.subscribeOn(Schedulers.computation())
+  }
+
+  private fun getNoOfWords(input: String): Int {
+    val wordIterator = BreakIterator.getWordInstance()
+    wordIterator.setText(input)
+    var start = wordIterator.first()
+    var end = wordIterator.next()
+
+    var wordCount = 0
+    while (end != BreakIterator.DONE) {
+      val word = input.substring(start, end)
+      if (Character.isLetterOrDigit(word[0])) {
+        wordCount++
+      }
+      start = end
+      end = wordIterator.next()
+    }
+    return wordCount
   }
 }
