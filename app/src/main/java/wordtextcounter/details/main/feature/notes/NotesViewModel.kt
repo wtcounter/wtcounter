@@ -51,7 +51,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
                 successDeletion = false))
           }
         }, {
-          it.printStackTrace()
           loaderState.value = false
           viewState.accept(getCurrentViewState().copy(errorMessage = null, showError = true))
         }))
