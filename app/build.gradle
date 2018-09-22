@@ -67,7 +67,7 @@ ext {
               rxjava            : "2.1.13",
               rxAndroid         : "2.0.2",
               androidArchVersion: "1.1.1",
-              room              : "1.1.0",
+              room              : "1.1.1",
               rxbinding         : "2.1.1",
               bottombar         : "2.3.1",
               logger            : "2.1.1",
