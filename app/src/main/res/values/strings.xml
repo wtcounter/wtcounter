@@ -49,9 +49,18 @@
   <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
 
   <!-- Analytics consent strings -->
-
   <string name="analytics_consent" translatable="false">We wish to monitor behaviour of the app to understand how to make it better. is that okay?</string>
   <string name="analytics_report" translatable="false">Report Analytics</string>
+
+  <!-- Draft strings -->
+  <string name="drafts">Drafts</string>
+  <string name="draft_deletion_success">Draft deleted successfully</string>
+  <string name="draft_history_deletion_success">Deletion successful</string>
+  <string name="draft_saved">Draft saved</string>
+  <string name="draft_updated">Draft updated</string>
+  <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
+  <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
+
 
 
 </resources>

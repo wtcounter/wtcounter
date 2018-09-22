@@ -20,4 +20,6 @@ abstract class BaseActivity : AppCompatActivity() {
           .commit()
     }
   }
+
+  fun getCurrentFragment() = supportFragmentManager.findFragmentById(R.id.container)
 }
