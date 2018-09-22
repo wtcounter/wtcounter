@@ -38,6 +38,7 @@ import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Cl
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
+import wordtextcounter.details.main.feature.extrastats.ExtraStatsFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.*
