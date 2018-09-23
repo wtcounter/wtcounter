@@ -373,7 +373,6 @@ class InputFragment : BaseFragment() {
           .setOnCancelListener {
             logAnalytics(Click("update_warning_dialog_cancel"))
             cancelEditMode()
-            reportNameEditMode = null
           }
           .create()
           .show()
