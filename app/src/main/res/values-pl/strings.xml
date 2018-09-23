@@ -37,9 +37,9 @@
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja prosimy Cię o ocenę w sklepie Google Play</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
+  <string name="rate_us_yes">Oceń teraz</string>
+  <string name="rate_us_later">Póżniej</string>
+  <string name="rate_us_never">Nigdy</string>
   <string name="rate_us_error">"O nie. Nie byłem w stanie dotrzeć do sklepu Google Play. Przepraszam za to!"</string>
   <!-- Analytics consent strings -->
   <!-- Draft strings -->
