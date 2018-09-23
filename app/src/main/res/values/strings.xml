@@ -83,4 +83,11 @@
   <string name="reading_time_wpm">Reading Time Words Per Minute</string>
   <string name="speaking_time_wpm">Speaking Time Words Per Minute</string>
   <string name="writing_time_lpm">Writing Time Letters Per Minute</string>
+  <string name="size_encoding_format">Size Encoding Format</string>
+
+  <string name="utf_8" translatable="false">UTF-8</string>
+  <string name="utf_16" translatable="false">UTF-16</string>
+  <string name="utf_32" translatable="false">UTF-32</string>
+  <string name="us_ascii" translatable="false">US-ASCII</string>
+  <string name="iso_1" translatable="false">ISO–8859–1</string>
 </resources>
