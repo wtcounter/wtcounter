@@ -10,8 +10,6 @@ import android.net.Uri
 import android.view.KeyEvent.KEYCODE_BACK
 import android.view.LayoutInflater
 import android.view.Window
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import com.example.rateus.RateusCore.onNoSelected
 import com.example.rateus.RateusCore.onRemindLaterSelected
@@ -22,6 +20,8 @@ import kotlinx.android.synthetic.main.rate_us_dialog.btnNever
 import kotlinx.android.synthetic.main.rate_us_dialog.btnSave
 import kotlinx.android.synthetic.main.rate_us_dialog.ivCross
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.util.Constants.PLAY_STORE_MARKET_DEEPLINK
+import wordtextcounter.details.main.util.Constants.PLAY_STORE_URL
 
 object RateUsHelper {
   fun showRateUsDialog(activity: Activity) {
@@ -42,15 +42,7 @@ object RateUsHelper {
       dialog.btnSave.setOnClickListener {
         dialog.dismiss()
         onYesSelected(activity)
-        try {
-          val viewIntent = Intent(Intent.ACTION_VIEW,
-              Uri.parse("market://details?id=wordtextcounter.details.main"))
-          activity.startActivity(viewIntent)
-        } catch (e: ActivityNotFoundException) {
-          activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=wordtextcounter.details.main")))
-        } catch (e : Exception) {
-          Toast.makeText(activity, activity.getString(R.string.rate_us_error), Toast.LENGTH_LONG).show()
-        }
+        redirectToPlayStore(activity)
       }
 
       dialog.btnLater.setOnClickListener {
@@ -73,6 +65,18 @@ object RateUsHelper {
 
       dialog.setCancelable(false)
       dialog.show()
+    }
+  }
+
+  fun redirectToPlayStore(activity: Activity) {
+    try {
+      val viewIntent = Intent(Intent.ACTION_VIEW,
+          Uri.parse(PLAY_STORE_MARKET_DEEPLINK))
+      activity.startActivity(viewIntent)
+    } catch (e: ActivityNotFoundException) {
+      activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PLAY_STORE_URL)))
+    } catch (e : Exception) {
+      Toast.makeText(activity, activity.getString(R.string.rate_us_error), Toast.LENGTH_LONG).show()
     }
   }
 }

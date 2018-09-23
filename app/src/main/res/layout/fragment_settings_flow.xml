@@ -30,18 +30,68 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginStart="@dimen/_4sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         app:cardUseCompatPadding="true"
         >
 
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_marginEnd="@dimen/_12sdp"
-          android:layout_marginStart="@dimen/_12sdp"
-          tools:text="Write nice rate us string here."
-          />
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="@dimen/_8sdp"
+          android:layout_marginRight="@dimen/_8sdp"
+          android:paddingBottom="@dimen/_10sdp"
+          android:paddingTop="@dimen/_10sdp"
+          >
+
+        <TextView
+            android:id="@+id/tvRateUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:drawableLeft="@drawable/ic_google_play"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_google_play"
+            android:gravity="center_vertical"
+            android:text="@string/rate_us_text_short"
+            tools:text="@string/rate_us_text_short"
+            />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/separator_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRateUs"
+            />
+
+
+        <TextView
+            android:id="@+id/tvShareApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_share_black_24dp"
+            android:gravity="center_vertical"
+            android:text="@string/share_ui_text"
+            app:layout_constraintTop_toBottomOf="@+id/separator"
+            tools:text="@string/share_ui_text"
+            />
+
+      </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
 
