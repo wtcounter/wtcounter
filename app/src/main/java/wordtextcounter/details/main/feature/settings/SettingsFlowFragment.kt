@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_settings_flow.tvRateUs
 import kotlinx.android.synthetic.main.fragment_settings_flow.tvShareApp
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.notes.NotesViewModel
@@ -54,12 +56,14 @@ class SettingsFlowFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
     tvRateUs.setOnClickListener {
+      AnalyticsLogger.logAnalytics(Click("settings_rate_app"))
       this@SettingsFlowFragment.activity?.let { activity ->
         redirectToPlayStore(activity)
       }
     }
 
     tvShareApp.setOnClickListener {
+      AnalyticsLogger.logAnalytics(Click("settings_share_app"))
       val shareText = getString(R.string.share_app_text) + "\n" + PLAY_STORE_URL
       context?.let { context ->
         try {

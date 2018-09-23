@@ -13,6 +13,9 @@ import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.Singles
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.DraftDao
 import wordtextcounter.details.main.store.daos.ReportDao
@@ -159,8 +162,10 @@ class InputViewModel(
         .observeOn(mainThread())
         .subscribe({
           if (addNewDraft) {
+            AnalyticsLogger.logAnalytics(Event("draft_save"))
             toastLiveData.accept(R.string.draft_saved)
           } else {
+            AnalyticsLogger.logAnalytics(Event("draft_update"))
             toastLiveData.accept(R.string.draft_updated)
           }
         }, {

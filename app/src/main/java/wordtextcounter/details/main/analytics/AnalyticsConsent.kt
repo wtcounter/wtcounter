@@ -11,7 +11,9 @@ import android.view.Window
 import android.widget.Button
 import androidx.core.content.edit
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.disableAnalytics
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.util.Constants.PREF_ANALYTICS_CONSENT
 import wordtextcounter.details.main.util.Constants.PREF_ANALYTICS_ENABLED
 
@@ -28,6 +30,7 @@ object AnalyticsConsent {
     val btSave = dialog.findViewById<Button>(R.id.btSave)
 
     btSave.setOnClickListener {
+      logAnalytics(Click("consent_save"))
       pf.edit {
         putBoolean(PREF_ANALYTICS_CONSENT, true)
         cbConsent?.isChecked?.let {

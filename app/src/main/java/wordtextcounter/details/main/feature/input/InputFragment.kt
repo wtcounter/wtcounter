@@ -122,9 +122,13 @@ class InputFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
 
-    ibAdd.setOnClickListener { showDialog() }
+    ibAdd.setOnClickListener {
+      logAnalytics(Click("add_new_note"))
+      showDialog()
+    }
 
     ibExtraStats.setOnClickListener {
+      logAnalytics(Click("extra_stat"))
       viewModel.viewState.value.report?.dataText?.let { text ->
         RxBus.send(ExtraStatText(text))
         val dialogFragment = ExtraStatsFragment.newInstance()

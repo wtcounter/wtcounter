@@ -19,6 +19,9 @@ import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorTop
 import kotlinx.android.synthetic.main.item_draft_history.view.tvHistoryText
 import kotlinx.android.synthetic.main.item_draft_history.view.tvTimeStamp
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
 import wordtextcounter.details.main.store.data.DraftWithHistory
 import wordtextcounter.details.main.store.entities.Draft
@@ -86,6 +89,10 @@ class DraftsAdapter :
 
       delete.setOnClickListener {
         clickRelay.accept(DraftActions.DraftDelete(itemView.tag as Draft))
+      }
+
+      itemView.setOnClickListener {
+        logAnalytics(Click("draft_header"))
       }
     }
 

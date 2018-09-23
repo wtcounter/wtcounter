@@ -60,25 +60,25 @@ class NotesFragment : BaseFragment() {
     disposable.add(notesAdapter.clickRelay.subscribe {
       when (it) {
         is Edit -> {
-          logAnalytics(Click("report_edit"))
+          logAnalytics(Click("note_edit"))
           viewModel.editReport(it.position)
         }
         is Delete -> {
-          logAnalytics(Click("report_delete"))
+          logAnalytics(Click("note_delete"))
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.delete_alert_desc)
-              .setPositiveButton(R.string.yes,
-                  { dialog, _ ->
-                    logAnalytics(Click("delete_warning_dialog_yes"))
-                    viewModel.deleteReport(it.position)
-                    dialog.dismiss()
-                  })
-              .setNegativeButton(R.string.no,
-                  { dialog, _ ->
-                    logAnalytics(Click("delete_warning_dialog_no"))
-                    dialog.dismiss()
-                  })
+              .setPositiveButton(R.string.yes
+              ) { dialog, _ ->
+                logAnalytics(Click("delete_warning_dialog_yes"))
+                viewModel.deleteReport(it.position)
+                dialog.dismiss()
+              }
+              .setNegativeButton(R.string.no
+              ) { dialog, _ ->
+                logAnalytics(Click("delete_warning_dialog_no"))
+                dialog.dismiss()
+              }
               .setIcon(R.drawable.ic_warning_black_24dp)
               .create().show()
         }

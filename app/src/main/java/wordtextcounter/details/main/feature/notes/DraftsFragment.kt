@@ -11,6 +11,9 @@ import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.rvNotes
 import kotlinx.android.synthetic.main.fragment_notes.tvEmptyNotes
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.ReportDatabase
@@ -61,9 +64,11 @@ class DraftsFragment : BaseFragment() {
     disposable.add(adapter.clickRelay.subscribe({
       when (it) {
         is DraftsAdapter.DraftActions.DraftEdit -> {
+          logAnalytics(Click("draft_edit"))
           viewModel.editDraft(it.draft)
         }
         is DraftsAdapter.DraftActions.DraftDelete -> {
+          logAnalytics(Click("draft_delete"))
           //TODO Think about generalizing this kind of dialogs. They are spreaded at three places right now.
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
@@ -84,9 +89,11 @@ class DraftsFragment : BaseFragment() {
               .show()
         }
         is DraftsAdapter.DraftActions.DraftHistoryEdit -> {
+          logAnalytics(Click("draft_history_edit"))
           viewModel.editDraftHistory(it.draftHistory, it.parentDraft)
         }
         is DraftsAdapter.DraftActions.DraftHistoryDelete -> {
+          logAnalytics(Click("draft_history_delete"))
           AlertDialog.Builder(context!!)
               .setTitle(R.string.edit_alert_title)
               .setMessage(R.string.draft_history_delete)
