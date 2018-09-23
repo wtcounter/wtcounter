@@ -9,6 +9,7 @@ import android.content.ClipData.Item
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
@@ -27,6 +28,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.content.edit
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
@@ -46,6 +48,16 @@ import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.hideKeyboard
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
+import wordtextcounter.details.main.util.ChangeDraftState
+import wordtextcounter.details.main.util.Constants.PREF_SAVED_TEXT
+import wordtextcounter.details.main.util.EditDraft
+import wordtextcounter.details.main.util.EditDraftHistory
+import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.NewText
+import wordtextcounter.details.main.util.NoEvent
+import wordtextcounter.details.main.util.RxBus
+import wordtextcounter.details.main.util.extensions.getPreference
+import wordtextcounter.details.main.util.extensions.runIfAdded
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -66,6 +78,7 @@ class InputFragment : BaseFragment() {
   var reportNameEditMode: String? = null
   var reportIdEditMode: Int? = null
   private lateinit var clipData: ClipData
+  lateinit var preferenes : SharedPreferences
 
   // Get clip data from clipboard.
 
@@ -91,6 +104,7 @@ class InputFragment : BaseFragment() {
     val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
     val clipboardManager = clipboardService as ClipboardManager
     clipData = clipboardManager.primaryClip
+    preferenes = context?.getPreference()!!
   }
 
   override fun onCreateView(
@@ -152,6 +166,8 @@ class InputFragment : BaseFragment() {
       }
     }
 
+    prefillSavedPreferenceText()
+
     if (isPaste) {
       activity?.hideKeyboard(etInput)
       paste()
@@ -160,6 +176,14 @@ class InputFragment : BaseFragment() {
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
+    }
+  }
+
+  private fun prefillSavedPreferenceText() {
+    val prefilledText = preferenes.getString(PREF_SAVED_TEXT, "")
+    if (!prefilledText.isNullOrEmpty()) {
+      etInput.setText(prefilledText)
+      clearSavedTextInPreference()
     }
   }
 
@@ -190,10 +214,7 @@ class InputFragment : BaseFragment() {
     }
 
     snackbar.setAction("PASTE") {
-      etInput.setText(copiedText)
-      cl.clearFocus()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
+      RxBus.send(NewText(copiedText))
     }
 
     snackbar.show()
@@ -299,14 +320,28 @@ class InputFragment : BaseFragment() {
   }
 
   fun saveDraft() {
-    if (!isAdded) {
-      //if fragment is destroyed, then return silently
-      return
+    runIfAdded {
+      val editable = etInput.text
+      if (editable != null) {
+        viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
+      }
     }
+  }
 
-    val editable = etInput.text
-    if (editable != null) {
-      viewModel.addOrUpdateDraftIfTextChanged(editable.toString())
+  fun saveCurrentTextToPreference() {
+    runIfAdded {
+      val editable = etInput.text
+      if (editable != null) {
+        preferenes.edit {
+          putString(PREF_SAVED_TEXT, editable.toString())
+        }
+      }
+    }
+  }
+
+  private fun clearSavedTextInPreference() {
+    preferenes.edit {
+      putString(PREF_SAVED_TEXT, null)
     }
   }
 
@@ -352,7 +387,7 @@ class InputFragment : BaseFragment() {
     }
   }
 
-  private fun handleBusEditEvent(text: String, overrideListener: TextOverrideListener? = null) {
+  private fun handleNewTextEvent(text: String, overrideListener: TextOverrideListener? = null) {
     if (etInput.text.trim().isNotEmpty()) {
       AlertDialog.Builder(context!!)
           .setTitle(R.string.edit_alert_title)
@@ -361,6 +396,8 @@ class InputFragment : BaseFragment() {
           ) { dialog, _ ->
             logAnalytics(Click("update_warning_dialog_yes"))
             etInput.setText(text)
+            etInput.requestFocus()
+            activity?.showKeyBoard()
             viewModel.onTextCleared()
             overrideListener?.onTextOverride()
             dialog.dismiss()
@@ -389,12 +426,19 @@ class InputFragment : BaseFragment() {
       RxBus.send(NoEvent)
       reportNameEditMode = it.report.name
       reportIdEditMode = it.report.id
-      it.report.dataText?.let { it1 -> handleBusEditEvent(it1) }
+      it.report.dataText?.let {
+        RxBus.send(NewText(it))
+      }
+    }))
+
+    disposable.add(RxBus.subscribe(NewText::class.java, Consumer {
+      RxBus.send(NoEvent)
+      handleNewTextEvent(it.newText)
     }))
 
     disposable.add(RxBus.subscribe(EditDraft::class.java, Consumer {
       RxBus.send(NoEvent)
-      handleBusEditEvent(it.text, object : TextOverrideListener {
+      handleNewTextEvent(it.text, object : TextOverrideListener {
         override fun onTextOverride() {
           RxBus.send(ChangeDraftState(it.text, it.id))
         }
@@ -403,16 +447,11 @@ class InputFragment : BaseFragment() {
 
     disposable.add(RxBus.subscribe(EditDraftHistory::class.java, Consumer {
       RxBus.send(NoEvent)
-      handleBusEditEvent(it.text, object : TextOverrideListener {
+      handleNewTextEvent(it.text, object : TextOverrideListener {
         override fun onTextOverride() {
           RxBus.send(ChangeDraftState(it.parentDraftText, it.id))
         }
       })
-    }))
-
-    disposable.add(RxBus.subscribe(ShareText::class.java, Consumer {
-      RxBus.send(NoEvent)
-      if (it?.shareText != null) etInput.setText(it.shareText)
     }))
 
     disposable.add(RxBus.subscribe(DeleteReport::class.java, Consumer {

@@ -12,4 +12,5 @@ object Constants {
   const val PREF_SPEAKING_SPEED_WORDS_PER_MINUTE = "speaking_wpm"
   const val PREF_WRITING_SPEED_LETTERS_PER_MINUTE = "writing_lpm"
   const val PREF_ENCODING_SET = "encoding_set"
+  const val PREF_SAVED_TEXT = "wtc.preferences.saved_text"
 }
