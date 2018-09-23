@@ -1,7 +1,7 @@
 package wordtextcounter.details.main.feature.notes
 
-import io.reactivex.Flowable
 import com.jakewharton.rxrelay2.BehaviorRelay
+import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
@@ -30,7 +30,6 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
   private fun getCurrentViewState() = viewState.value!!
 
   fun getAllSavedNotes() {
-
     loaderState.value = true
     addDisposable(dao.getAllReports()
         .subscribeOn(io())

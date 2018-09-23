@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -29,8 +28,8 @@
         android:gravity="center"
         android:textSize="@dimen/_18ssp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Note title"
         />
@@ -41,32 +40,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:text="Note date"
         />
 
-    <com.ramotion.foldingcell.FoldingCell
-        android:id="@+id/foldingCell"
+
+    <include
+        layout="@layout/report_folded"
+        android:id="@+id/report"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_76sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDate"
-        >
-
-      <include layout="@layout/report_unfolded_list"/>
-
-      <include layout="@layout/report_folded"/>
-    </com.ramotion.foldingcell.FoldingCell>
-
-    <wordtextcounter.details.main.util.view.ExpandImageButton
-        android:id="@+id/ivExpand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@id/foldingCell"
-        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <View
@@ -76,10 +63,10 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginRight="@dimen/_4sdp"
-        android:background="@color/grey_200"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/separator_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foldingCell"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/report"
         />
 
 
@@ -106,7 +93,5 @@
         app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/ic_delete"
         />
-
-
   </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

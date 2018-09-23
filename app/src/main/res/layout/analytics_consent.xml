@@ -36,10 +36,9 @@
     android:layout_marginEnd="@dimen/_12sdp"
     android:layout_marginStart="@dimen/_12sdp"
     android:layout_marginTop="@dimen/_12sdp"
-    android:checked="true"
+    android:checked="false"
     android:text="@string/analytics_report"
-    android:textSize="@dimen/_14ssp"
-    android:textStyle="italic" />
+    android:textSize="@dimen/_14ssp"/>
 
   <Button
     android:id="@+id/btSave"
