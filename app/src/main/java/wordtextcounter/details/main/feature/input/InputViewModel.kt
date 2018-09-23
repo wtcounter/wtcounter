@@ -23,7 +23,6 @@ import wordtextcounter.details.main.store.entities.Report
 import wordtextcounter.details.main.util.ChangeDraftState
 import wordtextcounter.details.main.util.DeleteDraft
 import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.Helper.calculateSize
 import wordtextcounter.details.main.util.Helper.countCharacters
 import wordtextcounter.details.main.util.Helper.countParagraphs
 import wordtextcounter.details.main.util.Helper.countSentences
@@ -91,15 +90,12 @@ class InputViewModel(
     counterDisposable = Singles.zip(
         countWords(input), countCharacters(input),
         countParagraphs(input),
-        countSentences(input),
-        calculateSize(input)
-    )
-    { words, characters, paragraphs, sentences, size ->
+        countSentences(input))
+    { words, characters, paragraphs, sentences ->
       Report(
           "", input.trim(), words.toString(), characters.toString(),
           paragraphs.toString(),
-          sentences.toString(), 0, size
-      )
+          sentences.toString(), 0, "")
     }
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: Report?, t2: Throwable? ->

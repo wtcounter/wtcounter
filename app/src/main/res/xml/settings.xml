@@ -40,10 +40,10 @@
 
     <!--todo change this to dropdownpreference-->
     <android.support.v7.preference.ListPreference
-        android:defaultValue="UTF-8"
+        android:defaultValue="@string/utf_8"
         android:entries="@array/charset_entries"
         android:entryValues="@array/charset_entries"
-        android:key="size_encoding"
+        android:key="encoding_set"
         android:summary="%s"
         android:title="@string/size_encoding_format"/>
   </android.support.v7.preference.PreferenceCategory>
