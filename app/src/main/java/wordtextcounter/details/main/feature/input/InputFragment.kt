@@ -75,6 +75,7 @@ class InputFragment : BaseFragment() {
   var isPaste = true
 
   var reportNameEditMode: String? = null
+  var reportIdEditMode: Int? = null
   private lateinit var clipData: ClipData
   lateinit var preferenes : SharedPreferences
 
@@ -232,7 +233,13 @@ class InputFragment : BaseFragment() {
 
   private fun clearCurrentInputState() {
     etInput.text = null
+    cancelEditMode()
+  }
+
+  private fun cancelEditMode() {
     reportNameEditMode = null
+    reportIdEditMode = null
+    viewModel.cancelEdit()
   }
 
   private fun showDialog() {
@@ -402,8 +409,7 @@ class InputFragment : BaseFragment() {
           .setIcon(R.drawable.ic_warning_black_24dp)
           .setOnCancelListener {
             logAnalytics(Click("update_warning_dialog_cancel"))
-            viewModel.cancelEdit()
-            reportNameEditMode = null
+            cancelEditMode()
           }
           .create()
           .show()
@@ -418,6 +424,7 @@ class InputFragment : BaseFragment() {
     disposable.add(RxBus.subscribe(EditReport::class.java, Consumer {
       RxBus.send(NoEvent)
       reportNameEditMode = it.report.name
+      reportIdEditMode = it.report.id
       it.report.dataText?.let {
         RxBus.send(NewText(it))
       }
@@ -444,6 +451,12 @@ class InputFragment : BaseFragment() {
           RxBus.send(ChangeDraftState(it.parentDraftText, it.id))
         }
       })
+    }))
+
+    disposable.add(RxBus.subscribe(DeleteReport::class.java, Consumer {
+      if (it.report.id == reportIdEditMode) {
+        cancelEditMode()
+      }
     }))
   }
 
