@@ -53,6 +53,7 @@
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ ¡Nada aquí!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
+  <string name="rate_us_text_short">Rate app on play store</string>
   <string name="rate_us_yes">RATE NOW</string>
   <string name="rate_us_later">LATER</string>
   <string name="rate_us_never">NEVER</string>
@@ -66,6 +67,11 @@
   <string name="draft_updated">Draft updated</string>
   <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
   <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
+  <!-- Share app string -->
+  <string name="share_ui_text">Share app</string>
+  <string name="share_picker_text">Share using</string>
+  <!--  Activity not found errror -->
+  <string name="activity_not_found_error">We could not find an app that could complete this action. Sorry for that!</string>
   <string name="basic_settings">Basic Settings</string>
   <string name="copy_clipboard_title">Copy clipboard text automatically</string>
   <string name="copy_clipboard_summary">Text from clipboard will be copied automatically and stats will get generated automatically</string>
