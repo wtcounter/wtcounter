@@ -60,12 +60,16 @@
       android:background="@android:color/transparent"
       android:focusable="true"
       android:focusableInTouchMode="true"
-      android:gravity="center"
+      android:gravity="top|start"
       android:hint="@string/hint_input"
+      android:lineSpacingExtra="@dimen/_1sdp"
       android:overScrollMode="ifContentScrolls"
+      android:paddingEnd="@dimen/_1sdp"
+      android:paddingStart="@dimen/_1sdp"
       android:scrollbars="vertical"
       android:textColor="@color/primaryTextColor"
-      android:textSize="@dimen/_16ssp"
+      android:textColorHint="@color/grey_400"
+      android:textSize="@dimen/_15ssp"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
       />
 
