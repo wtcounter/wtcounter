@@ -33,22 +33,22 @@ import java.lang.System.currentTimeMillis
 import java.util.concurrent.TimeUnit
 
 class InputViewModel(
-  internal val dao: ReportDao,
-  internal val draftDao: DraftDao
+    internal val dao: ReportDao,
+    internal val draftDao: DraftDao
 ) : BaseViewModel() {
 
   data class ViewState(
-    val showError: Boolean = false,
-    val errorMessage: String = "",
-    val report: Report? = null,
-    val reportText: String = "",
-    val showExpand: Boolean = false
+      val showError: Boolean = false,
+      val errorMessage: String = "",
+      val report: Report? = null,
+      val reportText: String = "",
+      val showAddExpand: Boolean = false
   )
 
   internal data class DraftState(
-    var draftId: Long? = null,
-    var text: String? = null,
-    var lastUpdatedTime: Long = 0
+      var draftId: Long? = null,
+      var text: String? = null,
+      var lastUpdatedTime: Long = 0
   )
 
   internal val draftState = DraftState()
@@ -83,7 +83,7 @@ class InputViewModel(
   fun calculateInput(input: String) {
 
     if (input.trim().isEmpty()) {
-      viewState.accept(ViewState(showExpand = false))
+      viewState.accept(ViewState(showAddExpand = false))
       return
     }
 
@@ -104,12 +104,8 @@ class InputViewModel(
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe { t1: Report?, t2: Throwable? ->
           if (t1 != null) {
-            viewState.accept(
-                currentViewState().copy(
-                    reportText = input,
-                    report = t1, showExpand = true, showError = false
-                )
-            )
+            viewState.accept(currentViewState().copy(reportText = input,
+                report = t1, showAddExpand = true, showError = false))
           }
           if (t2 != null) {
             //TODO handle error

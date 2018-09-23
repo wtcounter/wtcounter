@@ -2,7 +2,6 @@ package wordtextcounter.details.main.feature.input
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
 import android.content.ClipData
@@ -23,53 +22,29 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
+import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.ViewAnimationUtils
-import android.view.ViewGroup
-import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
-import kotlinx.android.synthetic.main.fragment_input.cl
-import kotlinx.android.synthetic.main.fragment_input.etInput
-import kotlinx.android.synthetic.main.fragment_input.fabSave
-import kotlinx.android.synthetic.main.report_folded.tvCharacters
-import kotlinx.android.synthetic.main.report_folded.tvSentences
-import kotlinx.android.synthetic.main.report_folded.tvWords
-import kotlinx.android.synthetic.main.report_summary.foldingCell
-import kotlinx.android.synthetic.main.report_summary.ivExpand
-import kotlinx.android.synthetic.main.report_unfolded.tvCharactersContent
-import kotlinx.android.synthetic.main.report_unfolded.tvParagraphsContent
-import kotlinx.android.synthetic.main.report_unfolded.tvReportText
-import kotlinx.android.synthetic.main.report_unfolded.tvSentencesContent
-import kotlinx.android.synthetic.main.report_unfolded.tvSizeContent
-import kotlinx.android.synthetic.main.report_unfolded.tvWordsContent
+import kotlinx.android.synthetic.main.fragment_input.*
+import kotlinx.android.synthetic.main.report_folded.*
+import kotlinx.android.synthetic.main.report_summary.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.extensions.backToPosition
+import wordtextcounter.details.main.util.*
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.hideKeyboard
-import wordtextcounter.details.main.util.extensions.onClick
 import wordtextcounter.details.main.util.extensions.showKeyBoard
 import wordtextcounter.details.main.util.extensions.showSnackBar
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.util.ChangeDraftState
-import wordtextcounter.details.main.util.EditDraft
-import wordtextcounter.details.main.util.EditDraftHistory
-import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
-import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.ShareText
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -117,26 +92,29 @@ class InputFragment : BaseFragment() {
   }
 
   override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
   ): View {
     // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_input, container, false)
   }
 
-  @SuppressLint("ClickableViewAccessibility", "RxSubscribeOnError", "RxDefaultScheduler")
   override fun onViewCreated(
-    view: View,
-    savedInstanceState: Bundle?
+      view: View,
+      savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
 
-    fabSave onClick showDialog()
+    ibAdd.setOnClickListener { showDialog() }
 
-    foldingCell.initialize(500, ContextCompat.getColor(context!!, R.color.folder_back_side), 0)
-
-    ivExpand onClick toggleCell()
+    ibExtraStats.setOnClickListener {
+      viewModel.viewState.value.report?.dataText?.let { text ->
+        RxBus.send(ExtraStatText(text))
+        val dialogFragment = ExtraStatsFragment.newInstance()
+        dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+      }
+    }
 
     disposable.add(RxTextView
         .textChanges(etInput)
@@ -148,7 +126,6 @@ class InputFragment : BaseFragment() {
             viewModel.onTextCleared()
           }
         })
-
 
     viewModel.viewState.subscribe {
       it?.let { it1 -> handleViewState(it1) }
@@ -190,7 +167,7 @@ class InputFragment : BaseFragment() {
     val itemCount: Int = clipData.itemCount
     if (itemCount > 0) {
       val item: Item = clipData.getItemAt(0)
-      val copiedText: String = item.text.toString();
+      val copiedText: String = item.text.toString()
       // Show a snackbar to tell user text has been pasted.
       showSnackBar(copiedText = copiedText)
     } else {
@@ -210,14 +187,26 @@ class InputFragment : BaseFragment() {
       activity?.showKeyBoard()
     }
 
-    snackbar.setAction("PASTE", View.OnClickListener {
+    snackbar.setAction("PASTE") {
       etInput.setText(copiedText)
       cl.clearFocus()
       etInput.requestFocus()
       activity?.showKeyBoard()
-    })
+    }
 
     snackbar.show()
+  }
+
+  private fun showButtons() {
+    if (llButtons.visibility == GONE) {
+      llButtons.visibility = VISIBLE
+    }
+  }
+
+  private fun hideButtons() {
+    if (llButtons.visibility == VISIBLE) {
+      llButtons.visibility = GONE
+    }
   }
 
   private fun clearCurrentInputState() {
@@ -225,15 +214,8 @@ class InputFragment : BaseFragment() {
     reportNameEditMode = null
   }
 
-  private fun toggleCell(): () -> Unit = {
-    foldingCell.toggle(false)
-  }
-
-  private fun showDialog(): () -> Unit = {
-    logAnalytics(Click("fab_add_click"))
-    val cView = LayoutInflater.from(activity)
-        .inflate(R.layout.report_name_edit, null)
-
+  private fun showDialog() {
+    val cView = LayoutInflater.from(activity).inflate(R.layout.report_name_edit, null)
     val dialog = Dialog(activity)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(cView)
@@ -241,7 +223,6 @@ class InputFragment : BaseFragment() {
     dialog.setOnShowListener {
       revealDialog(cView)
     }
-
     dialog.setOnKeyListener { dialog1, keyCode, _ ->
       if (keyCode == KeyEvent.KEYCODE_BACK) {
         hideDialog(cView, dialog1)
@@ -249,7 +230,6 @@ class InputFragment : BaseFragment() {
       }
       false
     }
-
     val etName = dialog.findViewById<AppCompatEditText>(R.id.etName)
     val btnSave = dialog.findViewById<Button>(R.id.btnSave)
     val ivCross = dialog.findViewById<ImageView>(R.id.ivCross)
@@ -272,25 +252,24 @@ class InputFragment : BaseFragment() {
       }
 
       override fun beforeTextChanged(
-        s: CharSequence?,
-        start: Int,
-        count: Int,
-        after: Int
+          s: CharSequence?,
+          start: Int,
+          count: Int,
+          after: Int
       ) {
 
       }
 
       override fun onTextChanged(
-        s: CharSequence?,
-        start: Int,
-        before: Int,
-        count: Int
+          s: CharSequence?,
+          start: Int,
+          before: Int,
+          count: Int
       ) {
 
       }
 
     })
-
 
     reportNameEditMode?.let {
       etName.setText(it)
@@ -324,8 +303,8 @@ class InputFragment : BaseFragment() {
   }
 
   private fun hideDialog(
-    cView: View,
-    dialog: DialogInterface
+      cView: View,
+      dialog: DialogInterface
   ) {
     val parentView = cView.findViewById<ViewGroup>(R.id.dialogView)
 
@@ -340,14 +319,12 @@ class InputFragment : BaseFragment() {
           super.onAnimationEnd(animation)
           dialog.dismiss()
           cView.visibility = View.INVISIBLE
-          fabSave.backToPosition()
         }
       })
-      revealAnimator.duration = 400
+      revealAnimator.duration = 300
       revealAnimator.start()
     } else {
       dialog.dismiss()
-      fabSave.backToPosition()
     }
   }
 
@@ -357,11 +334,12 @@ class InputFragment : BaseFragment() {
     val finalRadius = Math.max(parentView.width, parentView.height)
 
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+
       val revealAnimator = ViewAnimationUtils.createCircularReveal(
           parentView, cx, cy, 0f, finalRadius.toFloat()
       )
       parentView.visibility = VISIBLE
-      revealAnimator.duration = 400
+      revealAnimator.duration = 300
       revealAnimator.start()
     }
   }
@@ -435,25 +413,19 @@ class InputFragment : BaseFragment() {
       showError(viewState.errorMessage)
     }
 
-    ivExpand.visibility = if (viewState.showExpand) VISIBLE else GONE
-
-    if (viewState.showExpand) {
-      fabSave.show()
+    if (viewState.showAddExpand) {
+      showButtons()
+      tvCharacters.text = viewState.report?.characters
+      tvWords.text = viewState.report?.words
+      tvSentences.text = viewState.report?.sentences
+      tvParagraphs.text = viewState.report?.paragraphs
     } else {
-      fabSave.hide()
+      hideButtons()
+      tvCharacters.text = "-"
+      tvWords.text = "-"
+      tvSentences.text = "-"
+      tvParagraphs.text = "-"
     }
-
-    tvCharacters.text = viewState.report?.characters
-    tvWords.text = viewState.report?.words
-    tvSentences.text = viewState.report?.sentences
-
-
-    tvCharactersContent.text = viewState.report?.characters
-    tvWordsContent.text = viewState.report?.words
-    tvSentencesContent.text = viewState.report?.sentences
-    tvReportText.text = viewState.report?.dataText
-    tvParagraphsContent.text = viewState.report?.paragraphs
-    tvSizeContent.text = viewState.report?.size
   }
 
   private interface TextOverrideListener {

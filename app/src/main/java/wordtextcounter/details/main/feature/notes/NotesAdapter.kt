@@ -1,6 +1,5 @@
 package wordtextcounter.details.main.feature.notes
 
-import android.support.v4.content.ContextCompat
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
 import android.text.format.DateUtils.getRelativeTimeSpanString
@@ -10,24 +9,23 @@ import android.view.ViewGroup
 import com.jakewharton.rxrelay2.PublishRelay
 import kotlinx.android.synthetic.main.item_note.view.*
 import kotlinx.android.synthetic.main.report_folded.view.*
-import kotlinx.android.synthetic.main.report_unfolded.view.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.store.entities.Report
 
 class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallback()) {
 
-  val clickRelay = PublishRelay.create<NotesAction>()
+  val clickRelay: PublishRelay<NotesAction> = PublishRelay.create()
 
   override fun onBindViewHolder(
-    holder: ViewHolder,
-    position: Int
+      holder: ViewHolder,
+      position: Int
   ) {
     holder.bindTo(getItem(position))
   }
 
   override fun onCreateViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): ViewHolder {
     return ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
@@ -43,36 +41,15 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
     private val tvCharacters = itemView.tvCharacters
     private val tvWords = itemView.tvWords
     private val tvSentences = itemView.tvSentences
-
-    private val tvCharactersContent = itemView.tvCharactersContent
-    private val tvWordsContent = itemView.tvWordsContent
-    private val tvSentencesContent = itemView.tvSentencesContent
-    private val tvParagraphsContent = itemView.tvParagraphsContent
-    private val tvSizeContent = itemView.tvSizeContent
-    private val foldingCell = itemView.foldingCell
-    private val ivExpand = itemView.ivExpand
+    private val tvParagraphs = itemView.tvParagraphs
     private val ibDelete = itemView.ibDelete
     private val ibEdit = itemView.ibEdit
 
     init {
-      foldingCell.initialize(
-          500,
-          ContextCompat.getColor(itemView.context, R.color.folder_back_side), 0
-      )
-
       ibDelete.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Delete(adapterPosition))
       }
-
-      ivExpand.setOnClickListener {
-
-        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
-        ivExpand.expandArrow()
-        foldingCell.toggle(false)
-
-      }
-
       ibEdit.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Edit(adapterPosition))
@@ -88,13 +65,7 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
       tvCharacters.text = report.characters
       tvWords.text = report.words
       tvSentences.text = report.sentences
-
-      tvCharactersContent.text = report.characters
-      tvWordsContent.text = report.words
-      tvSentencesContent.text = report.sentences
-      tvParagraphsContent.text = report.paragraphs
-
-      tvSizeContent.text = report.size
+      tvParagraphs.text = report.paragraphs
     }
   }
 }

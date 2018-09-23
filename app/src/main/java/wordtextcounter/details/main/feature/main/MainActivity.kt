@@ -3,12 +3,12 @@ package wordtextcounter.details.main.feature.main
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
+import android.view.View
 import android.view.ViewGroup
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
 import com.orhanobut.logger.Logger
 import com.roughike.bottombar.OnTabSelectListener
-import kotlinx.android.synthetic.main.activity_main.bottombar
-import kotlinx.android.synthetic.main.activity_main.container
+import kotlinx.android.synthetic.main.activity_main.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsConsent.showConsentDialog
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
@@ -29,38 +29,35 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
     setContentView(R.layout.activity_main)
-
     bottombar.setOnTabSelectListener(this, savedInstanceState == null)
-
     val activityRootView = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
     activityRootView.viewTreeObserver.addOnGlobalLayoutListener {
       val heightDiff =
-        activityRootView.rootView.height - activityRootView.height
+          activityRootView.rootView.height - activityRootView.height
       if (heightDiff > dpToPx(
               this@MainActivity,
               200F
           )
       ) { // if more than 200 dp, it's probably a keyboard...
         bottombar.shySettings.hideBar()
-
         val llp = container.layoutParams as CoordinatorLayout.LayoutParams
         llp.setMargins(0, 0, 0, 0)
         container.layoutParams = llp
       } else {
+        if (bottombar.visibility == View.GONE) {
+          bottombar.visibility = View.VISIBLE
+        }
         bottombar.shySettings.showBar()
         val llp = container.layoutParams as CoordinatorLayout.LayoutParams
         llp.setMargins(0, 0, 0, resources.getDimensionPixelOffset(R.dimen._48sdp))
         container.layoutParams = llp
       }
     }
-
     bottombar.setTabSelectionInterceptor { _, _ ->
       showRateUsDialog(this)
       return@setTabSelectionInterceptor false
     }
-
     supportFragmentManager.addOnBackStackChangedListener {
       val currentFragment = supportFragmentManager.findFragmentById(R.id.container)
       bottombar.removeOnTabSelectListener()
@@ -71,7 +68,6 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
       }
       bottombar.setOnTabSelectListener(this, false)
     }
-
     if (intent?.action == Intent.ACTION_SEND) {
       if ("text/plain" == intent.type) {
         handleSendText(intent) // Handle text being sent
