@@ -1,13 +1,13 @@
 package wordtextcounter.details.main.feature.settings
 
 import android.os.Bundle
-import android.support.v7.preference.PreferenceFragmentCompat
+import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.util.Constants
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
-  override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+  override fun onCreatePreferencesFix(savedInstanceState: Bundle?, rootKey: String?) {
     addPreferencesFromResource(R.xml.settings)
 
     val readingTimePref = preferenceManager.findPreference(
