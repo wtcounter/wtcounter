@@ -1,17 +1,51 @@
 <android.support.v7.preference.PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_height="match_parent"
-  android:layout_width="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
   <android.support.v7.preference.PreferenceCategory
-    android:title="Basic Settings">
+      android:title="@string/basic_settings">
 
     <android.support.v7.preference.SwitchPreferenceCompat
-      android:key="keysef1"
-      android:title="Copy clipboard text automatically"
-      android:summary="Text from clipboard will be copied automatically and stats will get generated automatically"
-      android:defaultValue="true" />
+        android:defaultValue="true"
+        android:key="keysef1"
+        android:summary="@string/copy_clipboard_summary"
+        android:title="@string/copy_clipboard_title"/>
 
+  </android.support.v7.preference.PreferenceCategory>
+
+  <android.support.v7.preference.PreferenceCategory
+      android:title="@string/stat_settings">
+
+    <com.takisoft.fix.support.v7.preference.EditTextPreference
+        android:defaultValue="275"
+        android:digits="0123456789"
+        android:inputType="numberDecimal"
+        android:key="reading_wpm"
+        android:title="@string/reading_time_wpm"/>
+
+    <com.takisoft.fix.support.v7.preference.EditTextPreference
+        android:defaultValue="180"
+        android:digits="0123456789"
+        android:inputType="numberDecimal"
+        android:key="speaking_wpm"
+        android:title="@string/speaking_time_wpm"/>
+
+    <com.takisoft.fix.support.v7.preference.EditTextPreference
+        android:defaultValue="68"
+        android:digits="0123456789"
+        android:inputType="numberDecimal"
+        android:key="writing_lpm"
+        android:title="@string/writing_time_lpm"/>
+
+    <!--todo change this to dropdownpreference-->
+    <android.support.v7.preference.ListPreference
+        android:defaultValue="@string/utf_8"
+        android:entries="@array/charset_entries"
+        android:entryValues="@array/charset_entries"
+        android:key="encoding_set"
+        android:summary="%s"
+        android:title="@string/size_encoding_format"/>
   </android.support.v7.preference.PreferenceCategory>
 
 </android.support.v7.preference.PreferenceScreen>

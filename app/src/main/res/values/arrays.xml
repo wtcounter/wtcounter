@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="charset_entries">
+    <item>@string/utf_8</item>
+    <item>@string/utf_16</item>
+    <item>@string/utf_32</item>
+    <item>@string/us_ascii</item>
+    <item>@string/iso_1</item>
+  </string-array>
+</resources>
