@@ -13,11 +13,27 @@
   <!--notes-->
   <string name="title_notes">टिप्पणियाँ</string>
   <!--report-->
+  <string name="basic_stats">Basic Stats</string>
   <string name="characters">केरेक्टर्स</string>
+  <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">शब्द</string>
   <string name="paragraphs">पैराग्राफ</string>
   <string name="size">साइज</string>
   <string name="bookmark_hint">रिपोर्ट नाम दर्ज करें</string>
+  <!--Extra Stats-->
+  <string name="extra_stats">Extra Stats</string>
+  <string name="unique_words">Unique Words</string>
+  <string name="average_word_length">Average Word Length</string>
+  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
+  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <!--Length Stats-->
+  <string name="length_stats">Length Stats</string>
+  <string name="shortest_sentence">Shortest Sentence(Words)</string>
+  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="time_stats">Time Stats</string>
+  <string name="reading_time">Reading Time</string>
+  <string name="speaking_time">Speaking Time</string>
+  <string name="writing_time">Hand Writing Time</string>
   <string name="save">सेव</string>
   <string name="sentences">वाक्य</string>
   <string name="see_more">पूर्ण रिपोर्ट देखें</string>
