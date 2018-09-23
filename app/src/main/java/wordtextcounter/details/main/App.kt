@@ -19,6 +19,7 @@ class App : Application() {
 
   override fun onCreate() {
     super.onCreate()
+    app = this
     val preferences = getPreference()
     RateusCore.init(this)
     val analyticsEnabled = preferences.getBoolean(PREF_ANALYTICS_ENABLED, false)
@@ -42,5 +43,12 @@ class App : Application() {
         putString(PREF_DB_STORED, DB_VERSION.toString())
       }
     }
+  }
+
+  companion object {
+    lateinit var app: App
+
+    @JvmStatic
+    fun getAppInstance() = app
   }
 }

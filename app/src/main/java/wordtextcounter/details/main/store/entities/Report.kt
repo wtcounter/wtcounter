@@ -15,6 +15,8 @@ data class Report(
     @ColumnInfo(name = "paragraph") var paragraphs: String?,
     @ColumnInfo(name = "sentence") var sentences: String?,
     @ColumnInfo(name = "time_added") var time_added: Long?,
+    @Deprecated(
+        "Size will be removed in coming version as its value is now dependent on user prefs")
     @ColumnInfo(name = "size") var size: String?) {
 
   @PrimaryKey(autoGenerate = true)
