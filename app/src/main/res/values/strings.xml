@@ -27,13 +27,13 @@
   <string name="extra_stats">Extra Stats</string>
   <string name="unique_words">Unique Words</string>
   <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Avg Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Avg Sentence Length(Characters)</string>
+  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
+  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
 
   <!--Length Stats-->
   <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(words)</string>
-  <string name="longest_sentence">Longest Sentence(words)</string>
+  <string name="shortest_sentence">Shortest Sentence(Words)</string>
+  <string name="longest_sentence">Longest Sentence(Words)</string>
 
   <string name="time_stats">Time Stats</string>
   <string name="reading_time">Reading Time</string>

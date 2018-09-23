@@ -1,7 +1,7 @@
 package wordtextcounter.details.main.feature.notes
 
-import io.reactivex.Flowable
 import com.jakewharton.rxrelay2.BehaviorRelay
+import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
@@ -10,6 +10,7 @@ import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.base.Input
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
+import wordtextcounter.details.main.util.DeleteReport
 import wordtextcounter.details.main.util.EditReport
 import wordtextcounter.details.main.util.RxBus
 
@@ -63,6 +64,7 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
           .observeOn(mainThread())
           .subscribe({
             if (it) {
+              RxBus.send(DeleteReport(report))
               viewState.accept(getCurrentViewState().copy(successDeletion = true))
             }
           }, {

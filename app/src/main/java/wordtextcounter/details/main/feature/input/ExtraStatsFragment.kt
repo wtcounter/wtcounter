@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import android.support.v7.content.res.AppCompatResources
 import android.view.*
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
@@ -46,9 +46,9 @@ class ExtraStatsFragment : DialogFragment() {
     super.onViewCreated(view, savedInstanceState)
     rvStats.adapter = adapter
     
-    adapter.expandLess = ContextCompat.getDrawable(context!!,
+    adapter.expandLess = AppCompatResources.getDrawable(context!!,
         R.drawable.ic_expand_less_black_24dp)!!
-    adapter.expandMore = ContextCompat.getDrawable(context!!,
+    adapter.expandMore = AppCompatResources.getDrawable(context!!,
         R.drawable.ic_expand_more_black_24dp)!!
 
     viewModel.viewState.subscribe {
