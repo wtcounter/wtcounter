@@ -75,11 +75,11 @@ ext {
               rxkotlin          : "2.2.0",
               sdp               : "1.0.5"]
 
-  supportDeps = [appcompat: "com.android.support:appcompat-v7:$versions.support",
-                 design   : "com.android.support:design:$versions.support",
-                 preference: "com.android.support:preference-v14:$versions.support",
-                 cardview : "com.android.support:cardview-v7:$versions.support",
-                 support  : 'com.android.support:support-v4:$versions.support']
+  supportDeps = [appcompat : "com.android.support:appcompat-v7:$versions.support",
+                 design    : "com.android.support:design:$versions.support",
+                 preference: "com.takisoft.fix:preference-v7:27.1.1.1",
+                 cardview  : "com.android.support:cardview-v7:$versions.support",
+                 support   : 'com.android.support:support-v4:$versions.support']
 
   sdpDeps = [sdp: "com.intuit.sdp:sdp-android:$versions.sdp",
              ssp: "com.intuit.ssp:ssp-android:$versions.sdp"]

@@ -1,4 +1,4 @@
-package wordtextcounter.details.main.feature.input
+package wordtextcounter.details.main.feature.extrastats
 
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView

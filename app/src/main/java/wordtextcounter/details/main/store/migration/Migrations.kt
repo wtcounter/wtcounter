@@ -4,7 +4,6 @@ import android.content.Context
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.util.Helper
 
 class Migrations(val context: Context) {
 
@@ -17,7 +16,7 @@ class Migrations(val context: Context) {
         .flatMap { t ->
           return@flatMap Flowable.fromIterable(t)
               .map { r ->
-                r.size = r.dataText?.let { Helper.calculateSize(it).blockingGet() }
+                r.size = "0b"
                 return@map r
               }
               .toList()

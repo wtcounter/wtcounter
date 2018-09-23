@@ -1,7 +1,10 @@
 package wordtextcounter.details.main.util
 
+import android.text.format.Formatter
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
+import wordtextcounter.details.main.App
+import java.nio.charset.Charset
 import java.text.BreakIterator
 
 object Helper {
@@ -136,9 +139,10 @@ object Helper {
     }.subscribeOn(Schedulers.computation())
   }
 
-  fun calculateSize(input: String): Single<String> {
+  fun calculateSize(input: String, selectedCharSet: Charset): Single<String> {
     return Single.fromCallable {
-      input.toByteArray(Charsets.UTF_8).size.toString() + " B"
+      Formatter.formatFileSize(App.getAppInstance(),
+          input.toByteArray(selectedCharSet).size.toLong())
     }.subscribeOn(Schedulers.computation())
   }
 
