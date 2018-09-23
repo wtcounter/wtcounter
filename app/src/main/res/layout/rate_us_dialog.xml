@@ -15,7 +15,7 @@
       android:paddingBottom="@dimen/_30sdp"
       android:paddingTop="@dimen/_30sdp"
       android:tint="@color/grey_100"
-      app:srcCompat="@drawable/ic_rate_star"
+      app:srcCompat="@drawable/ic_google_play"
       />
 
   <ImageView
@@ -39,23 +39,54 @@
       android:layout_marginEnd="@dimen/_16sdp"
       android:layout_marginStart="@dimen/_16sdp"
       android:layout_marginTop="@dimen/_16sdp"
+      android:minHeight="@dimen/_32sdp"
       android:text="@string/rate_us_text"
-      android:textStyle="italic"
       />
 
   <Button
       android:id="@+id/btnSave"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentLeft="true"
+      android:layout_height="@dimen/_30sdp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
       android:layout_below="@id/tvReportDesc"
-      android:layout_marginStart="@dimen/_16sdp"
-      android:layout_marginLeft="@dimen/_16sdp"
-      android:layout_marginTop="@dimen/_12sdp"
+      android:paddingEnd="@dimen/_16sdp"
+      android:paddingRight="@dimen/_16sdp"
+      android:layout_marginTop="@dimen/_24sdp"
       android:background="@null"
-      android:textAllCaps="false"
+      android:gravity="end"
       android:text="@string/rate_us_yes"
+      android:textColor="@color/secondaryColor"
+      />
+
+  <Button
+      android:id="@+id/btnLater"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/_30sdp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/btnSave"
+      android:paddingEnd="@dimen/_16sdp"
+      android:paddingRight="@dimen/_16sdp"
+      android:background="@null"
+      android:gravity="end"
+      android:text="@string/rate_us_later"
+      android:textColor="@color/secondaryColor"
+      />
+
+  <Button
+      android:id="@+id/btnNever"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/_30sdp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@id/btnLater"
+      android:paddingEnd="@dimen/_16sdp"
+      android:paddingRight="@dimen/_16sdp"
+      android:background="@null"
+      android:gravity="end"
+      android:minHeight="@dimen/_32sdp"
+      android:text="@string/rate_us_never"
       android:textColor="@color/secondaryColor"
       />
 

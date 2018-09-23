@@ -8,6 +8,7 @@ object NoEvent : Event()
 
 data class EditReport(val report: Report) : Event()
 data class ExtraStatText(val text: String) : Event()
+data class DeleteReport(val report: Report) : Event()
 data class EditDraft(val text: String, val id: Long) : Event()
 data class EditDraftHistory(val text: String, val id: Long, val parentDraftText : String) : Event()
 data class ChangeDraftState(val text: String, val id: Long) : Event()

@@ -7,14 +7,20 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
+import android.view.KeyEvent.KEYCODE_BACK
 import android.view.LayoutInflater
 import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import com.example.rateus.RateusCore.onCancelSelected
+import com.example.rateus.RateusCore.onNoSelected
+import com.example.rateus.RateusCore.onRemindLaterSelected
 import com.example.rateus.RateusCore.onYesSelected
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
+import kotlinx.android.synthetic.main.rate_us_dialog.btnLater
+import kotlinx.android.synthetic.main.rate_us_dialog.btnNever
+import kotlinx.android.synthetic.main.rate_us_dialog.btnSave
+import kotlinx.android.synthetic.main.rate_us_dialog.ivCross
 import wordtextcounter.details.main.R
 
 object RateUsHelper {
@@ -28,14 +34,13 @@ object RateUsHelper {
       dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
       dialog.setContentView(cView)
       dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-      val btClose = dialog.findViewById<ImageView>(R.id.ivCross)
-      val btYes = dialog.findViewById<Button>(R.id.btnSave)
-      btClose.setOnClickListener {
-        onCancelSelected(activity)
+      dialog.ivCross.setOnClickListener {
+        onRemindLaterSelected(activity)
         dialog.dismiss()
       }
 
-      btYes.setOnClickListener {
+      dialog.btnSave.setOnClickListener {
+        dialog.dismiss()
         onYesSelected(activity)
         try {
           val viewIntent = Intent(Intent.ACTION_VIEW,
@@ -46,6 +51,24 @@ object RateUsHelper {
         } catch (e : Exception) {
           Toast.makeText(activity, activity.getString(R.string.rate_us_error), Toast.LENGTH_LONG).show()
         }
+      }
+
+      dialog.btnLater.setOnClickListener {
+        onRemindLaterSelected(activity)
+        dialog.dismiss()
+      }
+
+      dialog.btnNever.setOnClickListener {
+        onNoSelected(activity)
+        dialog.dismiss()
+      }
+
+      dialog.setOnKeyListener { _, keyCode, _ ->
+        if (keyCode == KEYCODE_BACK) {
+          onRemindLaterSelected(activity)
+          dialog.dismiss()
+        }
+        return@setOnKeyListener true
       }
 
       dialog.setCancelable(false)

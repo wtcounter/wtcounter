@@ -27,13 +27,13 @@
   <string name="extra_stats">Extra Stats</string>
   <string name="unique_words">Unique Words</string>
   <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Avg Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Avg Sentence Length(Characters)</string>
+  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
+  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
 
   <!--Length Stats-->
   <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(words)</string>
-  <string name="longest_sentence">Longest Sentence(words)</string>
+  <string name="shortest_sentence">Shortest Sentence(Words)</string>
+  <string name="longest_sentence">Longest Sentence(Words)</string>
 
   <string name="time_stats">Time Stats</string>
   <string name="reading_time">Reading Time</string>
@@ -61,7 +61,9 @@
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
-  <string name="rate_us_yes">Sure! Let\'s do it</string>
+  <string name="rate_us_yes">RATE NOW</string>
+  <string name="rate_us_later">LATER</string>
+  <string name="rate_us_never">NEVER</string>
   <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
 
   <!-- Analytics consent strings -->
