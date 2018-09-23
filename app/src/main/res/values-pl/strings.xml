@@ -13,11 +13,27 @@
   <!--notes-->
   <string name="title_notes">Notatki</string>
   <!--report-->
+  <string name="basic_stats">Podstawowe statystyki</string>
   <string name="characters">Znaki</string>
+  <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Słowa</string>
   <string name="paragraphs">Akapity</string>
   <string name="size">Rozmiar</string>
   <string name="bookmark_hint">Wpisz nazwę raportu</string>
+  <!--Extra Stats-->
+  <string name="extra_stats">Extra Stats</string>
+  <string name="unique_words">Unique Words</string>
+  <string name="average_word_length">Average Word Length</string>
+  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
+  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <!--Length Stats-->
+  <string name="length_stats">Length Stats</string>
+  <string name="shortest_sentence">Shortest Sentence(Words)</string>
+  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="time_stats">Time Stats</string>
+  <string name="reading_time">Reading Time</string>
+  <string name="speaking_time">Speaking Time</string>
+  <string name="writing_time">Hand Writing Time</string>
   <string name="save">Zapisz</string>
   <string name="sentences">Zdania</string>
   <string name="see_more">Wyświetl pełny raport</string>
