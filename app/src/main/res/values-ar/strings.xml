@@ -2,12 +2,10 @@
 <!--Generated using www.stringx.io-->
 
 <resources>
-    <string name="action_settings">إعدادات</string>
     <string name="addition_success">تمت إضافة التقرير بنجاح</string>
     <string name="app_name">عداد الكلمات</string>
     <string name="bookmark_hint">أدخل اسم التقرير</string>
     <string name="characters">الشخصيات</string>
-    <string name="confirm">تؤكد</string>
     <string name="delete_alert_desc">هل أنت متأكد من أنك تريد حذف هذا التقرير؟</string>
     <string name="deletion_success">تم حذف التقرير بنجاح</string>
     <string name="edit_alert_desc">سيؤدي هذا الإجراء إلى محو المحتوى الحالي. هل أنت متأكد من أنك تريد المتابعة؟</string>
@@ -19,15 +17,10 @@
     <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nلا شيء هنا!</string>
     <string name="notes">ملاحظات</string>
     <string name="paragraphs">الفقرات</string>
-    <string name="replace_current_text">استبدال النص الحالي</string>
     <string name="save">حفظ</string>
     <string name="save_dialog_desc">حسنا! ماذا تريد أن نسميها؟</string>
-    <string name="see_more">عرض التقرير الكامل</string>
     <string name="sentences">جمل</string>
     <string name="size">بحجم</string>
-    <string name="start_typing">ابدأ الطباعة</string>
-    <string name="title_input">إدخال</string>
-    <string name="title_notes">ملاحظات</string>
     <string name="update_success">تم تحديث التقرير بنجاح</string>
     <string name="words">كلمات</string>
     <string name="yes">نعم فعلا</string>

@@ -2,13 +2,11 @@
 <!--Generated using www.stringx.io-->
 
 <resources>
-    <string name="action_settings">Paramètres</string>
-    <string name="addition_success">Rapport ajouté avec succès</string>
+  <string name="addition_success">Rapport ajouté avec succès</string>
     <string name="app_name">Compteur de mots</string>
     <string name="bookmark_hint">Entrez le nom du rapport</string>
     <string name="characters">Personnages</string>
-    <string name="confirm">Confirmer</string>
-    <string name="delete_alert_desc">Êtes-vous sûr de vouloir supprimer ce rapport?</string>
+  <string name="delete_alert_desc">Êtes-vous sûr de vouloir supprimer ce rapport?</string>
     <string name="deletion_success">Rapport supprimé avec succès</string>
     <string name="edit_alert_desc">Cette action effacera le contenu actuel. Es-tu sur de vouloir continuer?</string>
     <string name="edit_alert_title">Êtes-vous sûr?</string>
@@ -19,16 +17,11 @@
     <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nRien ici!</string>
     <string name="notes">Remarques</string>
     <string name="paragraphs">Paragraphes</string>
-    <string name="replace_current_text">Remplacer le texte actuel</string>
-    <string name="save">sauvegarder</string>
+  <string name="save">sauvegarder</string>
     <string name="save_dialog_desc">Bien! Qu\'aimeriez-vous l\'appeler?</string>
-    <string name="see_more">Voir le rapport complet</string>
-    <string name="sentences">Phrases</string>
+  <string name="sentences">Phrases</string>
     <string name="size">Taille</string>
-    <string name="start_typing">Commencer à écrire</string>
-    <string name="title_input">Contribution</string>
-    <string name="title_notes">Remarques</string>
-    <string name="update_success">Rapport mis à jour avec succès</string>
+  <string name="update_success">Rapport mis à jour avec succès</string>
     <string name="words">Mots</string>
     <string name="yes">Oui</string>
 </resources>

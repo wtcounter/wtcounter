@@ -2,13 +2,11 @@
 <!--Generated using www.stringx.io-->
 
 <resources>
-    <string name="action_settings">設置</string>
-    <string name="addition_success">報告已成功添加</string>
+  <string name="addition_success">報告已成功添加</string>
     <string name="app_name">Word文本計數器</string>
     <string name="bookmark_hint">輸入報告名稱</string>
     <string name="characters">人物</string>
-    <string name="confirm">確認</string>
-    <string name="delete_alert_desc">您確定要刪除此報告嗎？</string>
+  <string name="delete_alert_desc">您確定要刪除此報告嗎？</string>
     <string name="deletion_success">報告已成功刪除</string>
     <string name="edit_alert_desc">此操作將清除當前內容。你確定你要繼續嗎？</string>
     <string name="edit_alert_title">你確定？</string>
@@ -19,16 +17,11 @@
     <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\n這裡沒有！</string>
     <string name="notes">筆記</string>
     <string name="paragraphs">段落</string>
-    <string name="replace_current_text">替換當前文本</string>
-    <string name="save">保存</string>
+  <string name="save">保存</string>
     <string name="save_dialog_desc">好的！你想叫什麼？</string>
-    <string name="see_more">查看完整報告</string>
-    <string name="sentences">句子</string>
+  <string name="sentences">句子</string>
     <string name="size">尺寸</string>
-    <string name="start_typing">開始輸入</string>
-    <string name="title_input">輸入</string>
-    <string name="title_notes">筆記</string>
-    <string name="update_success">報告已成功更新</string>
+  <string name="update_success">報告已成功更新</string>
     <string name="words">話</string>
     <string name="yes">是</string>
 </resources>

@@ -2,13 +2,11 @@
 <!--Generated using www.stringx.io-->
 
 <resources>
-    <string name="action_settings">Cài đặt</string>
-    <string name="addition_success">Đã thêm báo cáo thành công</string>
+  <string name="addition_success">Đã thêm báo cáo thành công</string>
     <string name="app_name">Bộ đếm văn bản Word</string>
     <string name="bookmark_hint">Nhập tên báo cáo</string>
     <string name="characters">Nhân vật</string>
-    <string name="confirm">Xác nhận</string>
-    <string name="delete_alert_desc">Bạn có chắc chắn muốn xóa báo cáo này không?</string>
+  <string name="delete_alert_desc">Bạn có chắc chắn muốn xóa báo cáo này không?</string>
     <string name="deletion_success">Đã xóa báo cáo thành công</string>
     <string name="edit_alert_desc">Tác vụ này sẽ xóa nội dung hiện tại. Bạn có chắc chắn muốn tiếp tục không?</string>
     <string name="edit_alert_title">Bạn có chắc không?</string>
@@ -19,16 +17,11 @@
     <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nKhông có gì ở đây!</string>
     <string name="notes">Ghi chú</string>
     <string name="paragraphs">Đoạn</string>
-    <string name="replace_current_text">Thay thế văn bản hiện tại</string>
-    <string name="save">Tiết kiệm</string>
+  <string name="save">Tiết kiệm</string>
     <string name="save_dialog_desc">Ổn thỏa! Bạn muốn gọi nó là gì?</string>
-    <string name="see_more">Xem báo cáo hoàn chỉnh</string>
-    <string name="sentences">Câu phù hợp</string>
+  <string name="sentences">Câu phù hợp</string>
     <string name="size">Kích thước</string>
-    <string name="start_typing">Bắt đầu gõ</string>
-    <string name="title_input">Đầu vào</string>
-    <string name="title_notes">Ghi chú</string>
-    <string name="update_success">Đã cập nhật thành công báo cáo</string>
+  <string name="update_success">Đã cập nhật thành công báo cáo</string>
     <string name="words">Từ ngữ</string>
     <string name="yes">Vâng</string>
 </resources>

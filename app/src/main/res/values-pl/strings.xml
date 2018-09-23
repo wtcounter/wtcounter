@@ -7,11 +7,8 @@
   <string name="notes">Notatki</string>
   <string name="settings">Ustawienia</string>
   <!--input-->
-  <string name="title_input">Wprowadź tekst</string>
   <string name="hint_input">Tutaj wpisz swój tekst</string>
-  <string name="confirm">Potwierdź</string>
   <!--notes-->
-  <string name="title_notes">Notatki</string>
   <!--report-->
   <string name="characters">Znaki</string>
   <string name="words">Słowa</string>
@@ -20,11 +17,7 @@
   <string name="bookmark_hint">Wpisz nazwę raportu</string>
   <string name="save">Zapisz</string>
   <string name="sentences">Zdania</string>
-  <string name="see_more">Wyświetl pełny raport</string>
-  <string name="action_settings">Ustawienia</string>
-  <string name="start_typing">Rozpocznij wpisywanie</string>
   <string name="save_dialog_desc">W porządku! Jak chciałbyś to nazwać?</string>
-  <string name="replace_current_text">Zastąp bieżący tekst</string>
   <string name="edit_alert_title">Jesteś pewny?</string>
   <string name="yes">tak</string>
   <string name="edit_alert_desc">Ta czynność spowoduje usunięcie aktualnej treści. Jesteś pewien, że chcesz kontynuować?</string>
