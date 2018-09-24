@@ -53,6 +53,7 @@
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja prosimy Cię o ocenę w sklepie Google Play</string>
+  <string name="rate_us_text_short">Oceń aplikację w sklepie Play</string>
   <string name="rate_us_yes">Oceń teraz</string>
   <string name="rate_us_later">Póżniej</string>
   <string name="rate_us_never">Nigdy</string>
@@ -66,4 +67,17 @@
   <string name="draft_updated">Wersja robocza zaktualizowana</string>
   <string name="draft_delete">Czy na pewno chcesz usunąć tę wersję roboczą? Cała historia również zostanie usunięta</string>
   <string name="draft_history_delete">Czy napewno chcesz usunąć historię tej wersji roboczej?</string>
+  <!-- Share app string -->
+  <string name="share_ui_text">Udostępnij aplikacje</string>
+  <string name="share_picker_text">Udostępnij za pomocą</string>
+  <!--  Activity not found errror -->
+  <string name="activity_not_found_error">Nie mogliśmy znaleźć aplikacji, która mogłaby ukończyć tę akcję. Przepraszam za to!</string>
+  <string name="basic_settings">Podstawowe ustawienia</string>
+  <string name="copy_clipboard_title">Skopiuj automatycznie tekst ze schowka</string>
+  <string name="copy_clipboard_summary">Tekst ze schowka zostanie automatycznie skopiowany, a statystyki będą generowane automatycznie</string>
+  <string name="stat_settings">Stat Settings</string>
+  <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
+  <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
+  <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
+  <string name="size_encoding_format">Size Encoding Format</string>
 </resources>
