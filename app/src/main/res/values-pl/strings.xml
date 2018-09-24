@@ -79,5 +79,5 @@
   <string name="reading_time_wpm">Czas czytania (słowa na minutę)</string>
   <string name="speaking_time_wpm">Czas mówienia (słowa na minutę)</string>
   <string name="writing_time_lpm">Czas pisania (litery na minutę)</string>
-  <string name="size_encoding_format">Size Encoding Format</string>
+  <string name="size_encoding_format">Rozmiar formatu kodowania</string>
 </resources>
