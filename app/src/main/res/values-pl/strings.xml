@@ -75,9 +75,9 @@
   <string name="basic_settings">Podstawowe ustawienia</string>
   <string name="copy_clipboard_title">Skopiuj automatycznie tekst ze schowka</string>
   <string name="copy_clipboard_summary">Tekst ze schowka zostanie automatycznie skopiowany, a statystyki będą generowane automatycznie</string>
-  <string name="stat_settings">Stat Settings</string>
-  <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
-  <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
-  <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
+  <string name="stat_settings">Ustawienia statystyk</string>
+  <string name="reading_time_wpm">Czas czytania (słowa na minutę)</string>
+  <string name="speaking_time_wpm">Czas mówienia (słowa na minutę)</string>
+  <string name="writing_time_lpm">Czas pisania (litery na minutę)</string>
   <string name="size_encoding_format">Size Encoding Format</string>
 </resources>
