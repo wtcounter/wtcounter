@@ -5,7 +5,7 @@
   <!--main-->
   <string name="input">Ingresso</string>
   <string name="notes">Gli appunti</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Impostazioni</string>
   <!--input-->
   <string name="title_input">Ingresso</string>
   <string name="hint_input">Inserisci il tuo testo qui</string>
@@ -13,27 +13,27 @@
   <!--notes-->
   <string name="title_notes">Gli appunti</string>
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Statistiche di base</string>
   <string name="characters">Personaggi</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Caratteri senza spazi</string>
   <string name="words">Parole</string>
   <string name="paragraphs">I paragrafi</string>
   <string name="size">Dimensione</string>
   <string name="bookmark_hint">Inserisci il nome del report</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="extra_stats">Statistiche supplementari</string>
+  <string name="unique_words">Parole uniche</string>
+  <string name="average_word_length">Lunghezza media delle parole</string>
+  <string name="avg_sentence_length_words">Lunghezza media della frase (in parole)</string>
+  <string name="avg_sentence_length_characters">Lunghezza media della frase (in caratteri)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
-  <string name="longest_sentence">Longest Sentence(Words)</string>
-  <string name="time_stats">Time Stats</string>
-  <string name="reading_time">Reading Time</string>
-  <string name="speaking_time">Speaking Time</string>
-  <string name="writing_time">Hand Writing Time</string>
+  <string name="length_stats">Statistiche sulla lunghezza</string>
+  <string name="shortest_sentence">Frase più corta (in parole)</string>
+  <string name="longest_sentence">Frase più lunga (in parole)</string>
+  <string name="time_stats">Statistiche di tempo</string>
+  <string name="reading_time">Tempo di lettura</string>
+  <string name="speaking_time">Tempo di esposizione</string>
+  <string name="writing_time">Tempo di scrittura a mano</string>
   <string name="save">Salvare</string>
   <string name="sentences">Frasi</string>
   <string name="see_more">Visualizza il report completo</string>
@@ -52,9 +52,9 @@
   <string name="update_success">Rapporto aggiornato correttamente</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Niente qui!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
+  <string name="rate_us_text">Se ti è piaciuta la nostra app, per favore ci valuti nel Play Store?</string>
+  <string name="rate_us_text_short">Vota l\'app nel Play Store</string>
+  <string name="rate_us_yes">VOTA ORA</string>
   <string name="rate_us_later">LATER</string>
   <string name="rate_us_never">NEVER</string>
   <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
