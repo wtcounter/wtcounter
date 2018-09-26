@@ -102,6 +102,11 @@ class DraftsAdapter :
     }
   }
 
+  override fun onHeaderClicked(position: Int) {
+    logAnalytics(Click("draft_header"))
+    super.onHeaderClicked(position)
+  }
+
   fun dispatchUpdates(data: List<DraftWithHistory>) {
     drafts.clear()
     drafts.addAll(data)

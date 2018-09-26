@@ -20,8 +20,9 @@ import kotlinx.android.synthetic.main.rate_us_dialog.btnNever
 import kotlinx.android.synthetic.main.rate_us_dialog.btnSave
 import kotlinx.android.synthetic.main.rate_us_dialog.ivCross
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.util.Constants.PLAY_STORE_MARKET_DEEPLINK
 import wordtextcounter.details.main.util.Constants.PLAY_STORE_URL
 
@@ -37,32 +38,32 @@ object RateUsHelper {
       dialog.setContentView(cView)
       dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
       dialog.ivCross.setOnClickListener {
-        AnalyticsLogger.logAnalytics(Click("rateus_close"))
+        logAnalytics(Click("rateus_close"))
         onRemindLaterSelected(activity)
         dialog.dismiss()
       }
 
       dialog.btnSave.setOnClickListener {
-        AnalyticsLogger.logAnalytics(Click("rateus_rate_now"))
+        logAnalytics(Click("rateus_rate_now"))
         dialog.dismiss()
         onYesSelected(activity)
         redirectToPlayStore(activity)
       }
 
       dialog.btnLater.setOnClickListener {
-        AnalyticsLogger.logAnalytics(Click("rateus_later"))
+        logAnalytics(Click("rateus_later"))
         onRemindLaterSelected(activity)
         dialog.dismiss()
       }
 
       dialog.btnNever.setOnClickListener {
-        AnalyticsLogger.logAnalytics(Click("rateus_never"))
+        logAnalytics(Click("rateus_never"))
         onNoSelected(activity)
         dialog.dismiss()
       }
 
       dialog.setOnKeyListener { _, keyCode, _ ->
-        AnalyticsLogger.logAnalytics(Click("rateus_backpress"))
+        logAnalytics(Click("rateus_backpress"))
         if (keyCode == KEYCODE_BACK) {
           onRemindLaterSelected(activity)
           dialog.dismiss()
@@ -71,6 +72,7 @@ object RateUsHelper {
       }
 
       dialog.setCancelable(false)
+      logAnalytics(Event("rateus_dialog_shown"))
       dialog.show()
     }
   }

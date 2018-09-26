@@ -1,7 +1,6 @@
 package wordtextcounter.details.main.feature.settings
 
 import android.os.Bundle
-import android.preference.Preference
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
@@ -61,6 +60,17 @@ class SettingsFragment : PreferenceFragmentCompat() {
     writingTimePref.setOnPreferenceChangeListener { _, newValue ->
       logAnalytics(Event("settings_writing_time_change"))
       writingTimePref.summary = newValue.toString()
+      true
+    }
+
+    val encodingPref = preferenceManager.findPreference(
+        Constants.PREF_ENCODING_SET)
+    encodingPref.setOnPreferenceClickListener {
+      logAnalytics(Click("settings_encoding_click"))
+      return@setOnPreferenceClickListener false
+    }
+    encodingPref.setOnPreferenceChangeListener { _, _ ->
+      logAnalytics(Event("settings_encoding_change"))
       true
     }
   }

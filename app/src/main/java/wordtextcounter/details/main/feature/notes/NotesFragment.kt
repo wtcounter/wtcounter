@@ -70,13 +70,13 @@ class NotesFragment : BaseFragment() {
               .setMessage(R.string.delete_alert_desc)
               .setPositiveButton(R.string.yes
               ) { dialog, _ ->
-                logAnalytics(Click("delete_warning_dialog_yes"))
+                logAnalytics(Click("note_delete_warning_yes"))
                 viewModel.deleteReport(it.position)
                 dialog.dismiss()
               }
               .setNegativeButton(R.string.no
               ) { dialog, _ ->
-                logAnalytics(Click("delete_warning_dialog_no"))
+                logAnalytics(Click("note_delete_warning_no"))
                 dialog.dismiss()
               }
               .setIcon(R.drawable.ic_warning_black_24dp)

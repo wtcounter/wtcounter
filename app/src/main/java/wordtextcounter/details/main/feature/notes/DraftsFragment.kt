@@ -76,12 +76,14 @@ class DraftsFragment : BaseFragment() {
               .setPositiveButton(
                   R.string.yes
               ) { dialog, _ ->
+                logAnalytics(Click("draft_delete_warning_yes"))
                 viewModel.deleteDraft(it.draft)
                 dialog.dismiss()
               }
               .setNegativeButton(
                   R.string.no
               ) { dialog, _ ->
+                logAnalytics(Click("draft_delete_warning_no"))
                 dialog.dismiss()
               }
               .setIcon(R.drawable.ic_warning_black_24dp)
@@ -100,12 +102,14 @@ class DraftsFragment : BaseFragment() {
               .setPositiveButton(
                   R.string.yes
               ) { dialog, _ ->
+                logAnalytics(Click("draft_history_delete_warning_yes"))
                 viewModel.deleteDraftHistory(it.draftHistory)
                 dialog.dismiss()
               }
               .setNegativeButton(
                   R.string.no
               ) { dialog, _ ->
+                logAnalytics(Click("draft_history_delete_warning_no"))
                 dialog.dismiss()
               }
               .setIcon(R.drawable.ic_warning_black_24dp)
