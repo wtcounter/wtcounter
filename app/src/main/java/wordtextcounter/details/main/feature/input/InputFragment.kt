@@ -221,6 +221,7 @@ class InputFragment : BaseFragment() {
     }
 
     snackbar.setAction("PASTE") {
+      logAnalytics(Click("clipboard_paste"))
       RxBus.send(NewText(copiedText))
     }
 
