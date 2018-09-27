@@ -4,8 +4,8 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
-import android.content.ClipData
 import android.content.ClipData.Item
+import android.content.ClipDescription.MIMETYPE_TEXT_PLAIN
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
@@ -15,6 +15,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.support.design.widget.BaseTransientBottomBar
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -44,20 +45,9 @@ import wordtextcounter.details.main.feature.extrastats.ExtraStatsFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.*
-import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
-import wordtextcounter.details.main.util.extensions.hideKeyboard
-import wordtextcounter.details.main.util.extensions.showKeyBoard
-import wordtextcounter.details.main.util.extensions.showSnackBar
-import wordtextcounter.details.main.util.ChangeDraftState
 import wordtextcounter.details.main.util.Constants.PREF_SAVED_TEXT
-import wordtextcounter.details.main.util.EditDraft
-import wordtextcounter.details.main.util.EditDraftHistory
-import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.NewText
-import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.extensions.getPreference
-import wordtextcounter.details.main.util.extensions.runIfAdded
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
+import wordtextcounter.details.main.util.extensions.*
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -77,9 +67,9 @@ class InputFragment : BaseFragment() {
 
   var reportNameEditMode: String? = null
   var reportIdEditMode: Int? = null
-  private lateinit var clipData: ClipData
-  lateinit var preferenes : SharedPreferences
+  lateinit var preferenes: SharedPreferences
 
+  lateinit var clipboardManager: ClipboardManager
   // Get clip data from clipboard.
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,9 +91,8 @@ class InputFragment : BaseFragment() {
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
 
-    val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
-    val clipboardManager = clipboardService as ClipboardManager
-    clipData = clipboardManager.primaryClip
+    clipboardManager = context?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
     preferenes = context?.getPreference()!!
   }
 
@@ -188,19 +177,22 @@ class InputFragment : BaseFragment() {
   }
 
   private fun paste() {
-    // Get item count.
 
-    val itemCount: Int = clipData.itemCount
-    if (itemCount > 0) {
-      val item: Item = clipData.getItemAt(0)
-      val copiedText: String = item.text.toString()
-      // Show a snackbar to tell user text has been pasted.
-      showSnackBar(copiedText = copiedText)
-    } else {
-      cl.clearFocus()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
+    if (clipboardManager.hasPrimaryClip() && clipboardManager.primaryClipDescription.hasMimeType(
+            MIMETYPE_TEXT_PLAIN)) {
+
+      val clipData = clipboardManager.primaryClip
+      val itemCount: Int = clipData.itemCount
+      if (itemCount > 0) {
+        val item: Item = clipData.getItemAt(0)
+        val copiedText: String = item.text.toString()
+        showSnackBar(copiedText = copiedText)
+        return
+      }
     }
+    cl.clearFocus()
+    etInput.requestFocus()
+    activity?.showKeyBoard()
   }
 
   private fun showSnackBar(copiedText: String) {
@@ -209,13 +201,18 @@ class InputFragment : BaseFragment() {
 
     layout.setOnClickListener {
       snackbar.dismiss()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
     }
 
-    snackbar.setAction("PASTE") {
+    snackbar.setAction(R.string.paste) {
       RxBus.send(NewText(copiedText))
     }
+
+    snackbar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+      override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+        etInput.requestFocus()
+        activity?.showKeyBoard()
+      }
+    })
 
     snackbar.show()
   }

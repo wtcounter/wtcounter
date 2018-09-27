@@ -18,8 +18,8 @@
       app:tabIndicatorColor="@color/secondaryColor"
       app:tabIndicatorHeight="@dimen/_2sdp"
       app:tabMode="scrollable"
-      app:tabSelectedTextColor="@color/white"
-      app:tabTextColor="@color/grey_75"
+      app:tabSelectedTextColor="@color/secondaryColor"
+      app:tabTextColor="@color/white"
       />
 
   <android.support.v4.view.ViewPager

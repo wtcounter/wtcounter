@@ -87,4 +87,5 @@
   <string name="utf_32" translatable="false">UTF-32</string>
   <string name="us_ascii" translatable="false">US-ASCII</string>
   <string name="iso_1" translatable="false">ISO–8859–1</string>
+  <string name="paste">Paste</string>
 </resources>
