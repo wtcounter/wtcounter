@@ -1,6 +1,5 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/side_nav_bar"
@@ -20,7 +19,7 @@
         android:layout_marginEnd="@dimen/_4sdp"
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
         app:cardUseCompatPadding="true"
         />
 
@@ -30,68 +29,54 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_4sdp"
-        android:layout_marginLeft="@dimen/_4sdp"
         android:layout_marginStart="@dimen/_4sdp"
-        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
         app:cardUseCompatPadding="true"
         >
 
-      <android.support.constraint.ConstraintLayout
-          android:layout_width="wrap_content"
+      <LinearLayout
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginEnd="@dimen/_8sdp"
-          android:layout_marginRight="@dimen/_8sdp"
-          android:paddingBottom="@dimen/_10sdp"
-          android:paddingTop="@dimen/_10sdp"
+          android:divider="@drawable/line_grey_300"
+          android:orientation="vertical"
+          android:showDividers="middle"
           >
 
         <TextView
             android:id="@+id/tvRateUs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_12sdp"
             android:drawableLeft="@drawable/ic_google_play"
-            android:drawablePadding="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_8sdp"
             android:drawableStart="@drawable/ic_google_play"
             android:gravity="center_vertical"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="@string/rate_us_text_short"
-            tools:text="@string/rate_us_text_short"
+            android:textColor="@color/black_alpha_87"
+            android:textSize="@dimen/_12ssp"
             />
-
-        <View
-            android:id="@+id/separator"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_1sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_4sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_4sdp"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@color/separator_color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvRateUs"
-            />
-
 
         <TextView
             android:id="@+id/tvShareApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:drawableLeft="@drawable/ic_share_black_24dp"
-            android:drawablePadding="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_8sdp"
             android:drawableStart="@drawable/ic_share_black_24dp"
             android:gravity="center_vertical"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="@string/share_ui_text"
-            app:layout_constraintTop_toBottomOf="@+id/separator"
-            tools:text="@string/share_ui_text"
+            android:textColor="@color/black_alpha_87"
+            android:textSize="@dimen/_12ssp"
             />
 
-      </android.support.constraint.ConstraintLayout>
+      </LinearLayout>
 
     </android.support.v7.widget.CardView>
 

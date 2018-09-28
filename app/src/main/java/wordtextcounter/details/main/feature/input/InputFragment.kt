@@ -209,8 +209,10 @@ class InputFragment : BaseFragment() {
 
     snackbar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
       override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
-        etInput.requestFocus()
-        activity?.showKeyBoard()
+        runIfAdded {
+          etInput.requestFocus()
+          activity?.showKeyBoard()
+        }
       }
     })
 

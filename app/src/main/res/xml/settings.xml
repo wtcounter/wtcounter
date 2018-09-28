@@ -3,16 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <android.support.v7.preference.PreferenceCategory
-      android:title="@string/basic_settings">
-
-    <android.support.v7.preference.SwitchPreferenceCompat
-        android:defaultValue="true"
-        android:key="keysef1"
-        android:summary="@string/copy_clipboard_summary"
-        android:title="@string/copy_clipboard_title"/>
-
-  </android.support.v7.preference.PreferenceCategory>
+  <android.support.v7.preference.SwitchPreferenceCompat
+      android:defaultValue="true"
+      android:key="keysef1"
+      android:summary="@string/copy_clipboard_summary"
+      android:title="@string/copy_clipboard_title"/>
 
   <android.support.v7.preference.PreferenceCategory
       android:title="@string/stat_settings">

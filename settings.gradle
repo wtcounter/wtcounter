@@ -1,1 +1,1 @@
-include ':app', ':rateus', ':common'
+include ':app', ':rateus'
