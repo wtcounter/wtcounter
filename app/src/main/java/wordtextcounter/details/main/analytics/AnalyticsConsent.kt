@@ -11,7 +11,9 @@ import android.view.Window
 import android.widget.Button
 import androidx.core.content.edit
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.disableAnalytics
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.util.Constants.PREF_ANALYTICS_CONSENT
 import wordtextcounter.details.main.util.Constants.PREF_ANALYTICS_ENABLED
 
@@ -37,6 +39,7 @@ object AnalyticsConsent {
           }
         }
       }
+      logAnalytics(Click("consent_save"))
       dialog.dismiss()
     }
 
