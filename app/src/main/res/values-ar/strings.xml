@@ -1,27 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="addition_success">تمت إضافة التقرير بنجاح</string>
-    <string name="app_name">عداد الكلمات</string>
-    <string name="bookmark_hint">أدخل اسم التقرير</string>
-    <string name="characters">الشخصيات</string>
-    <string name="delete_alert_desc">هل أنت متأكد من أنك تريد حذف هذا التقرير؟</string>
-    <string name="deletion_success">تم حذف التقرير بنجاح</string>
-    <string name="edit_alert_desc">سيؤدي هذا الإجراء إلى محو المحتوى الحالي. هل أنت متأكد من أنك تريد المتابعة؟</string>
-    <string name="edit_alert_title">هل أنت واثق؟</string>
-    <string name="generic_error_message">يبدو أن هناك خطأ ما. الرجاء معاودة المحاولة في وقت لاحق…</string>
-    <string name="hint_input">أدخل النص هنا</string>
-    <string name="input">إدخال</string>
-    <string name="no">لا</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nلا شيء هنا!</string>
-    <string name="notes">ملاحظات</string>
-    <string name="paragraphs">الفقرات</string>
-    <string name="save">حفظ</string>
-    <string name="save_dialog_desc">حسنا! ماذا تريد أن نسميها؟</string>
-    <string name="sentences">جمل</string>
-    <string name="size">بحجم</string>
-    <string name="update_success">تم تحديث التقرير بنجاح</string>
-    <string name="words">كلمات</string>
-    <string name="yes">نعم فعلا</string>
+  <string name="app_name">عداد الكلمات</string>
+
+  <string name="input">إدخال</string>
+  <string name="notes">ملاحظات</string>
+  <string name="settings">إعدادات</string>
+
+  <string name="hint_input">أدخل النص هنا</string>
+
+
+  <string name="basic_stats">الإحصاءات الأساسية</string>
+  <string name="characters">الشخصيات</string>
+  <string name="characters_without_spaces">أحرف بدون مسافات</string>
+  <string name="words">كلمات</string>
+  <string name="paragraphs">الفقرات</string>
+  <string name="size">بحجم</string>
+  <string name="bookmark_hint">أدخل اسم المذكرة</string>
+
+  <string name="extra_stats">إحصائيات إضافية</string>
+  <string name="unique_words">كلمات فريدة</string>
+  <string name="average_word_length">متوسط طول الكلمة</string>
+  <string name="avg_sentence_length_words">متوسط طول الجمل (كلمات)</string>
+  <string name="avg_sentence_length_characters">متوسط طول الجمل (الحروف)</string>
+
+  <string name="length_stats">طول الاحصائيات</string>
+  <string name="shortest_sentence">أقصر جملة (كلمات)</string>
+  <string name="longest_sentence">أطول جملة (كلمات)</string>
+
+  <string name="time_stats">احصائيات الوقت</string>
+  <string name="reading_time">وقت القراءة</string>
+  <string name="speaking_time">وقت التحدث</string>
+  <string name="writing_time">وقت كتابة اليد</string>
+
+  <string name="save">حفظ</string>
+  <string name="sentences">جمل</string>
+
+  <string name="save_dialog_desc">حسنا! ماذا تريد أن نسميها؟</string>
+  <string name="edit_alert_title">هل أنت واثق؟</string>
+  <string name="yes">نعم فعلا</string>
+  <string name="edit_alert_desc">سيؤدي هذا الإجراء إلى محو المحتوى الحالي. هل أنت متأكد من أنك تريد المتابعة؟</string>
+  <string name="delete_alert_desc">هل أنت متأكد من أنك تريد حذف هذا التقرير؟</string>
+  <string name="no">لا</string>
+  <string name="generic_error_message">يبدو أن هناك خطأ ما. الرجاء معاودة المحاولة في وقت لاحق…</string>
+  <string name="deletion_success">تم حذف الملاحظة بنجاح</string>
+  <string name="addition_success">تمت إضافة الملاحظة بنجاح</string>
+  <string name="update_success">ملاحظة تم تحديثها بنجاح</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ n لا شيء هنا!</string>
+
+  <string name="rate_us_text">إذا كنت تحب تطبيقنا ، فهل يمكنك تقييمنا على متجر الألعاب؟</string>
+  <string name="rate_us_text_short">معدل التطبيق على متجر اللعب</string>
+  <string name="rate_us_yes">قيم الآن</string>
+  <string name="rate_us_later">في وقت لاحق</string>
+  <string name="rate_us_never">أبدا</string>
+  <string name="rate_us_error">"أوه لا. لم نتمكن من الوصول إلى متجر الألعاب. نأسف لذلك!"</string>
+
+
+  <string name="drafts">لعبة الداما</string>
+  <string name="draft_deletion_success">تم حذف المسودة بنجاح</string>
+  <string name="draft_history_deletion_success">الحذف ناجح</string>
+  <string name="draft_saved">تم حفظ المسودة</string>
+  <string name="draft_updated">مشروع تحديث</string>
+  <string name="draft_delete">هل أنت متأكد من أنك تريد حذف هذه المسودة؟ سيتم حذف جميع التواريخ أيضًا</string>
+  <string name="draft_history_delete">هل أنت متأكد من أنك تريد حذف محفوظات السجل هذه؟</string>
+
+
+  <string name="share_ui_text">شارك التطبيق</string>
+  <string name="share_picker_text">المشاركة باستخدام</string>
+
+
+  <string name="activity_not_found_error">لم نتمكن من العثور على تطبيق يمكنه إكمال هذا الإجراء. اسف على ذلك!</string>
+
+  <string name="basic_settings">الإعدادات الأساسية</string>
+  <string name="copy_clipboard_title">نسخ نص الحافظة تلقائيا</string>
+  <string name="copy_clipboard_summary">سيطالبك التطبيق بلصق نص من الحافظة تلقائيًا عند تشغيل التطبيق</string>
+  <string name="send_usage_stats_title">إرسال إحصائيات الاستخدام</string>
+  <string name="send_usage_stats_summary">إرسال إحصائيات استخدام مجهولة الهوية للمساعدة في تحسين التطبيق</string>
+  <string name="stat_settings">الإعدادات الإحصائية</string>
+  <string name="reading_time_wpm">وقت القراءة (كلمات في الدقيقة)</string>
+  <string name="speaking_time_wpm">وقت التحدث (كلمات في الدقيقة)</string>
+  <string name="writing_time_lpm">وقت الكتابة (رسائل في الدقيقة)</string>
+  <string name="size_encoding_format">تنسيق ترميز الحجم</string>
+
+  <string name="paste">معجون</string>
 </resources>

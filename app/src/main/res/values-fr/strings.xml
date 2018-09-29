@@ -1,27 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-  <string name="addition_success">Rapport ajouté avec succès</string>
-    <string name="app_name">Compteur de mots</string>
-    <string name="bookmark_hint">Entrez le nom du rapport</string>
-    <string name="characters">Personnages</string>
-  <string name="delete_alert_desc">Êtes-vous sûr de vouloir supprimer ce rapport?</string>
-    <string name="deletion_success">Rapport supprimé avec succès</string>
-    <string name="edit_alert_desc">Cette action effacera le contenu actuel. Es-tu sur de vouloir continuer?</string>
-    <string name="edit_alert_title">Êtes-vous sûr?</string>
-    <string name="generic_error_message">On dirait que quelque chose a mal tourné. Veuillez réessayer plus tard…</string>
-    <string name="hint_input">Entrez votre texte ici</string>
-    <string name="input">Contribution</string>
-    <string name="no">Non</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nRien ici!</string>
-    <string name="notes">Remarques</string>
-    <string name="paragraphs">Paragraphes</string>
+  <string name="app_name">Compteur de mots</string>
+
+  <string name="input">Contribution</string>
+  <string name="notes">Notes</string>
+  <string name="settings">Paramètres</string>
+
+  <string name="hint_input">Entrez votre texte ici</string>
+
+
+  <string name="basic_stats">Statistiques de base</string>
+  <string name="characters">Personnages</string>
+  <string name="characters_without_spaces">Caractères sans espaces</string>
+  <string name="words">Mots</string>
+  <string name="paragraphs">Les paragraphes</string>
+  <string name="size">Taille</string>
+  <string name="bookmark_hint">Entrez le nom de la note</string>
+
+  <string name="extra_stats">Statistiques supplémentaires</string>
+  <string name="unique_words">Mots uniques</string>
+  <string name="average_word_length">Longueur moyenne des mots</string>
+  <string name="avg_sentence_length_words">Durée moyenne de la peine (mots)</string>
+  <string name="avg_sentence_length_characters">Durée moyenne de la peine (caractères)</string>
+
+  <string name="length_stats">Statistiques de longueur</string>
+  <string name="shortest_sentence">Phrase la plus courte (mots)</string>
+  <string name="longest_sentence">Phrase la plus longue (mots)</string>
+
+  <string name="time_stats">Statistiques du temps</string>
+  <string name="reading_time">Temps de lecture</string>
+  <string name="speaking_time">Temps de parole</string>
+  <string name="writing_time">Temps d\'écriture de la main</string>
+
   <string name="save">sauvegarder</string>
-    <string name="save_dialog_desc">Bien! Qu\'aimeriez-vous l\'appeler?</string>
   <string name="sentences">Phrases</string>
-    <string name="size">Taille</string>
-  <string name="update_success">Rapport mis à jour avec succès</string>
-    <string name="words">Mots</string>
-    <string name="yes">Oui</string>
+
+  <string name="save_dialog_desc">Bien! Comment voudriez-vous l\'appeler?</string>
+  <string name="edit_alert_title">Êtes-vous sûr?</string>
+  <string name="yes">Oui</string>
+  <string name="edit_alert_desc">Cette action effacera le contenu actuel. Es-tu sur de vouloir continuer?</string>
+  <string name="delete_alert_desc">Êtes-vous sûr de vouloir supprimer ce rapport?</string>
+  <string name="no">Non</string>
+  <string name="generic_error_message">On dirait que quelque chose s\'est mal passé. Veuillez réessayer plus tard…</string>
+  <string name="deletion_success">Remarque supprimée avec succès</string>
+  <string name="addition_success">Note ajoutée avec succès</string>
+  <string name="update_success">Note mise à jour avec succès</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nRien ici!</string>
+
+  <string name="rate_us_text">Si vous avez aimé notre application, pourriez-vous nous évaluer sur le Play Store?</string>
+  <string name="rate_us_text_short">Évaluer l\'application sur le Play Store</string>
+  <string name="rate_us_yes">TARIF MAINTENANT</string>
+  <string name="rate_us_later">PLUS TARD</string>
+  <string name="rate_us_never">JAMAIS</string>
+  <string name="rate_us_error">"Oh non. Nous n'avons pas pu atteindre le Play Store. Désolé pour ça!"</string>
+
+
+  <string name="drafts">Brouillons</string>
+  <string name="draft_deletion_success">Brouillon supprimé avec succès</string>
+  <string name="draft_history_deletion_success">Suppression réussie</string>
+  <string name="draft_saved">Brouillon enregistré</string>
+  <string name="draft_updated">Projet mis à jour</string>
+  <string name="draft_delete">Êtes-vous sûr de vouloir supprimer ce brouillon? Tous les historiques seront également supprimés</string>
+  <string name="draft_history_delete">Êtes-vous sûr de vouloir supprimer ce brouillon d’historique?</string>
+
+
+  <string name="share_ui_text">Partager l\'application</string>
+  <string name="share_picker_text">Partager en utilisant</string>
+
+
+  <string name="activity_not_found_error">Nous n\'avons pas trouvé d\'application qui pourrait compléter cette action. Désolé!</string>
+
+  <string name="basic_settings">Paramètres de base</string>
+  <string name="copy_clipboard_title">Copier le texte du presse-papiers automatiquement</string>
+  <string name="copy_clipboard_summary">L\'application vous invite à coller automatiquement le texte du presse-papiers au lancement de l\'application.</string>
+  <string name="send_usage_stats_title">Envoyer des statistiques d\'utilisation</string>
+  <string name="send_usage_stats_summary">Envoyer des statistiques d\'utilisation anonymes pour améliorer l\'application</string>
+  <string name="stat_settings">Paramètres de statistiques</string>
+  <string name="reading_time_wpm">Temps de lecture (mots à la minute)</string>
+  <string name="speaking_time_wpm">Temps de parole (mots à la minute)</string>
+  <string name="writing_time_lpm">Temps d\'écriture (lettres par minute)</string>
+  <string name="size_encoding_format">Format d\'encodage de taille</string>
+
+  <string name="paste">Coller</string>
 </resources>
