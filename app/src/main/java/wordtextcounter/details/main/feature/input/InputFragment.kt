@@ -281,7 +281,9 @@ class InputFragment : BaseFragment() {
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
         if (s != null && !s.isEmpty()) {
-          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
+          context?.let {
+            btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor))
+          }
           btnSave.isEnabled = true
         } else {
           context?.let {

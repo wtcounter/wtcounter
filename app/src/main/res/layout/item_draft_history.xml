@@ -99,6 +99,9 @@
       <android.support.constraint.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="?attr/selectableItemBackground"
+          android:clickable="true"
+          android:focusable="true"
           >
 
         <android.support.v7.widget.AppCompatTextView
@@ -124,7 +127,7 @@
             android:layout_marginLeft="@dimen/_4sdp"
             android:layout_marginRight="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            android:background="@color/separator_color"
+            android:background="@color/separatorColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvHistoryText"

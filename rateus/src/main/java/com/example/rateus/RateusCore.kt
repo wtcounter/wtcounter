@@ -2,8 +2,8 @@ package com.example.rateus
 
 import android.app.Activity
 import android.app.Application
-import android.os.Bundle
 import android.content.Context.MODE_PRIVATE
+import android.os.Bundle
 import androidx.core.content.edit
 import java.util.concurrent.TimeUnit
 
@@ -69,7 +69,7 @@ object RateusCore {
     }
     val interacted = ratePreference.getBoolean(INTERACTION, false)
     val timeSpent = ratePreference.getLong(TIME_SPENT, 0L)
-    return timeSpent > TimeUnit.MINUTES.toMillis(5) && !interacted
+    return timeSpent > TimeUnit.MINUTES.toMillis(2) && !interacted
   }
 
   private fun markInteractionDone(activity: Activity) {
