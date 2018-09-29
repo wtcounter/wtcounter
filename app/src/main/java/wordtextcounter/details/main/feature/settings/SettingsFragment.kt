@@ -14,12 +14,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
   override fun onCreatePreferencesFix(savedInstanceState: Bundle?, rootKey: String?) {
     addPreferencesFromResource(R.xml.settings)
 
-    val clipboardPref = preferenceManager.findPreference(
-        Constants.PREF_CLIPBOARD)
-    clipboardPref.onPreferenceChanged { _, _ ->
-      true
-    }
-
     val readingTimePref = preferenceManager.findPreference(
         Constants.PREF_READING_SPEED_WORDS_PER_MINUTE)
     readingTimePref.summary = preferenceManager.sharedPreferences.getString(

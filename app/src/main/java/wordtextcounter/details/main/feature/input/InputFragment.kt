@@ -15,6 +15,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.design.widget.BaseTransientBottomBar
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
@@ -64,14 +65,13 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
-  var isPaste = true
+  var shouldShowPasteSnackbar = true
 
   var reportNameEditMode: String? = null
   var reportIdEditMode: Int? = null
   lateinit var preferenes: SharedPreferences
-
+  lateinit var defaultPreferenes: SharedPreferences
   lateinit var clipboardManager: ClipboardManager
-  // Get clip data from clipboard.
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -95,6 +95,7 @@ class InputFragment : BaseFragment() {
     clipboardManager = context?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
 
     preferenes = context?.getPreference()!!
+    defaultPreferenes = PreferenceManager.getDefaultSharedPreferences(context!!)
   }
 
   override fun onCreateView(
@@ -165,10 +166,12 @@ class InputFragment : BaseFragment() {
 
     prefillSavedPreferenceText()
 
-    if (isPaste) {
+    shouldShowPasteSnackbar = shouldShowPasteSnackbar && defaultPreferenes.getBoolean(
+        Constants.PREF_CLIPBOARD, false)
+    if (shouldShowPasteSnackbar) {
       activity?.hideKeyboard(etInput)
-      paste()
-      isPaste = false
+      showPasteSnackbar()
+      shouldShowPasteSnackbar = false
     } else {
       cl.clearFocus()
       etInput.requestFocus()
@@ -184,7 +187,7 @@ class InputFragment : BaseFragment() {
     }
   }
 
-  private fun paste() {
+  private fun showPasteSnackbar() {
 
     if (clipboardManager.hasPrimaryClip() && clipboardManager.primaryClipDescription.hasMimeType(
             MIMETYPE_TEXT_PLAIN)) {
@@ -396,7 +399,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun handleNewTextEvent(text: String, overrideListener: TextOverrideListener? = null) {
-    if (etInput.text.trim().isNotEmpty()) {
+    if (etInput.text.trim().isNotEmpty() && etInput.text.trim() != text) {
       AlertDialog.Builder(context!!)
           .setTitle(R.string.edit_alert_title)
           .setMessage(R.string.edit_alert_desc)

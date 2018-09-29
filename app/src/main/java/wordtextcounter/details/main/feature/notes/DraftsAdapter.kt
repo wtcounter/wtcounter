@@ -1,5 +1,6 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
 import android.text.format.DateUtils.*
 import android.view.LayoutInflater
@@ -20,6 +21,10 @@ class DraftsAdapter :
     AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay: PublishRelay<DraftActions> = PublishRelay.create<DraftActions>()
   val drafts: MutableList<DraftWithHistory> = mutableListOf()
+
+  lateinit var expandLess: Drawable
+  lateinit var expandMore: Drawable
+
   override fun createGroupViewHolder(
       parent: ViewGroup,
       viewType: Int
@@ -92,6 +97,17 @@ class DraftsAdapter :
     fun bind(draft: Draft) {
       text.text = draft.draftData.text
       itemView.tag = draft
+
+      if (childCount(adapterPosition) > 0) {
+        ibExpand.visibility = View.VISIBLE
+        if (isGroupExpanded(adapterPosition)) {
+          ibExpand.setImageDrawable(expandLess)
+        } else {
+          ibExpand.setImageDrawable(expandMore)
+        }
+      } else {
+        ibExpand.visibility = View.GONE
+      }
     }
   }
 

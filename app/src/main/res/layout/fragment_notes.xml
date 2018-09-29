@@ -14,6 +14,7 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="@dimen/_1sdp"
       android:layout_marginTop="@dimen/_1sdp"
+      app:layoutManager="android.support.v7.widget.LinearLayoutManager"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
       tools:listitem="@layout/item_note"
       />

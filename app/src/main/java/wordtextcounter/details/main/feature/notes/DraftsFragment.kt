@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.notes
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.support.v7.content.res.AppCompatResources
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,7 @@ class DraftsFragment : BaseFragment() {
     viewModelFactory = DraftsViewModelFactory(
         ReportDatabase.getInstance(activity?.applicationContext!!).draftDao()
     )
+    adapter = DraftsAdapter()
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(DraftsViewModel::class.java)
   }
@@ -48,8 +50,11 @@ class DraftsFragment : BaseFragment() {
     savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
-    rvNotes.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-    adapter = DraftsAdapter()
+    adapter.expandLess = AppCompatResources.getDrawable(context!!,
+        R.drawable.ic_expand_less_black_24dp)!!
+    adapter.expandMore = AppCompatResources.getDrawable(context!!,
+        R.drawable.ic_expand_more_black_24dp)!!
+
     rvNotes.adapter = adapter
     initClickListeners()
     viewModel.getAllDrafts()

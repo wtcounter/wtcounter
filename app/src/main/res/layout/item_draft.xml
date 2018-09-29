@@ -55,9 +55,9 @@
         android:background="@null"
         android:paddingBottom="@dimen/_8sdp"
         android:paddingTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@id/ibDelete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/separator"
-        app:layout_constraintWidth_percent="0.33"
         app:srcCompat="@drawable/ic_edit_black_24dp"
         />
 
@@ -68,9 +68,9 @@
         android:background="@null"
         android:paddingBottom="@dimen/_8sdp"
         android:paddingTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@id/ibExpand"
         app:layout_constraintStart_toEndOf="@id/ibEdit"
         app:layout_constraintTop_toBottomOf="@id/separator"
-        app:layout_constraintWidth_percent="0.33"
         app:srcCompat="@drawable/ic_delete"
         />
 
@@ -82,9 +82,9 @@
         android:paddingBottom="@dimen/_8sdp"
         android:paddingTop="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ibDelete"
         app:layout_constraintTop_toBottomOf="@id/separator"
-        app:layout_constraintWidth_percent="0.33"
-        app:srcCompat="@drawable/ic_expand_more_black_24dp"
+        tools:src="@drawable/ic_expand_more_black_24dp"
         />
   </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
