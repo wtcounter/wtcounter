@@ -114,6 +114,7 @@ class InputFragment : BaseFragment() {
     ibAdd.setOnClickListener { showDialog() }
 
     ibExtraStats.setOnClickListener {
+      //todo move this code in viewmodel, use router to show extrastats
       viewModel.viewState.value.report?.dataText?.let { text ->
         RxBus.send(ExtraStatText(text))
         val dialogFragment = ExtraStatsFragment.newInstance()

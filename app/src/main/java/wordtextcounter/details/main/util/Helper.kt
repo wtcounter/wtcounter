@@ -82,7 +82,7 @@ object Helper {
       while (end != BreakIterator.DONE) {
         val word = input.substring(start, end)
         if (Character.isLetterOrDigit(word[0])) {
-          wordSet.add(word)
+          wordSet.add(word.toLowerCase())
           wordCount++
           totalLength += word.length
         }

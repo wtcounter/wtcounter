@@ -7,9 +7,9 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.view.View
 import androidx.core.widget.toast
-import com.orhanobut.logger.Logger
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.fragment_notes.progressBar
+import kotlinx.android.synthetic.main.fragment_notes.*
+import wordtextcounter.details.main.feature.extrastats.ExtraStatsFragment
 import wordtextcounter.details.main.feature.input.InputFragment
 
 abstract class BaseFragment : Fragment() {
@@ -28,6 +28,10 @@ abstract class BaseFragment : Fragment() {
     baseViewModel.routerState.observe(this, Observer {
       when (it) {
         is Input -> (activity as BaseActivity).replaceFragment(InputFragment.newInstance())
+        is ExtraStats -> {
+          val dialogFragment = ExtraStatsFragment.newInstance()
+          dialogFragment.show(fragmentManager, ExtraStatsFragment::class.java.name)
+        }
       }
     })
 

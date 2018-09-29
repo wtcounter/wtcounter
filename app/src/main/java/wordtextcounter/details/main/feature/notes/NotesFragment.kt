@@ -11,12 +11,12 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.fragment_notes.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.feature.notes.NotesViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.util.extensions.showSnackBar
 
 /**
@@ -81,6 +81,9 @@ class NotesFragment : BaseFragment() {
                   })
               .setIcon(R.drawable.ic_warning_black_24dp)
               .create().show()
+        }
+        is MoreStats -> {
+          viewModel.showMoreStats(it.position)
         }
       }
     })

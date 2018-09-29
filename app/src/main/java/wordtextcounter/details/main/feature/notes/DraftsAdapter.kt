@@ -1,23 +1,13 @@
 package wordtextcounter.details.main.feature.notes
 
 import android.support.v7.widget.RecyclerView
-import android.text.format.DateUtils.DAY_IN_MILLIS
-import android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE
-import android.text.format.DateUtils.MINUTE_IN_MILLIS
-import android.text.format.DateUtils.getRelativeDateTimeString
+import android.text.format.DateUtils.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jakewharton.rxrelay2.PublishRelay
-import kotlinx.android.synthetic.main.item_draft.view.ibDelete
-import kotlinx.android.synthetic.main.item_draft.view.ibEdit
-import kotlinx.android.synthetic.main.item_draft.view.tvText
-import kotlinx.android.synthetic.main.item_draft_history.view.ibDeleteHistory
-import kotlinx.android.synthetic.main.item_draft_history.view.ibEditHistory
-import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorBottom
-import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorTop
-import kotlinx.android.synthetic.main.item_draft_history.view.tvHistoryText
-import kotlinx.android.synthetic.main.item_draft_history.view.tvTimeStamp
+import kotlinx.android.synthetic.main.item_draft.view.*
+import kotlinx.android.synthetic.main.item_draft_history.view.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
 import wordtextcounter.details.main.store.data.DraftWithHistory
@@ -78,6 +68,7 @@ class DraftsAdapter :
     private val text = itemView.tvText
     private val edit = itemView.ibEdit
     private val delete = itemView.ibDelete
+    private val ibExpand = itemView.ibExpand
 
     init {
       edit.setOnClickListener {
@@ -86,6 +77,10 @@ class DraftsAdapter :
 
       delete.setOnClickListener {
         clickRelay.accept(DraftActions.DraftDelete(itemView.tag as Draft))
+      }
+
+      ibExpand.setOnClickListener {
+        
       }
     }
 
