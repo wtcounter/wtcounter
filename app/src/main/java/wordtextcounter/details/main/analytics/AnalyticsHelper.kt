@@ -41,7 +41,8 @@ object AnalyticsLogger {
   }
 
   sealed class AnalyticsEvents(val eventName: String) {
-    data class Click(val name :String) : AnalyticsEvents(name)
+    data class Click(val name :String) : AnalyticsEvents("click_$name")
+    data class Event(val name :String) : AnalyticsEvents("event_$name")
     data class NoteMilestone(val int: Int) : AnalyticsEvents("total_notes_" + int.toString())
   }
 }

@@ -1,5 +1,6 @@
 package wordtextcounter.details.main.feature
 
+import android.support.annotation.CallSuper
 import android.support.v7.widget.RecyclerView
 import android.util.SparseArray
 import android.util.SparseIntArray
@@ -77,7 +78,8 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
     return totalCount
   }
 
-  private fun onHeaderClicked(position: Int) {
+  @CallSuper
+  open fun onHeaderClicked(position: Int) {
     val index = viewTypes[position].index
     val childCount = childCount(index)
     if (headerExpandTracker[index] == 0) {

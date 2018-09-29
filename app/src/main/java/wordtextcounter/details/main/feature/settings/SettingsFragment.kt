@@ -4,17 +4,27 @@ import android.os.Bundle
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.util.Constants
+import wordtextcounter.details.main.util.extensions.logAnalyticsOnClick
+import wordtextcounter.details.main.util.extensions.onPreferenceChanged
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
   override fun onCreatePreferencesFix(savedInstanceState: Bundle?, rootKey: String?) {
     addPreferencesFromResource(R.xml.settings)
 
+    val clipboardPref = preferenceManager.findPreference(
+        Constants.PREF_CLIPBOARD)
+    clipboardPref.onPreferenceChanged { _, _ ->
+      true
+    }
+
     val readingTimePref = preferenceManager.findPreference(
         Constants.PREF_READING_SPEED_WORDS_PER_MINUTE)
     readingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_READING_SPEED_WORDS_PER_MINUTE, "")
-    readingTimePref.setOnPreferenceChangeListener { _, newValue ->
+    readingTimePref.logAnalyticsOnClick()
+
+    readingTimePref.onPreferenceChanged { _, newValue ->
       readingTimePref.summary = newValue.toString()
       true
     }
@@ -23,7 +33,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
         Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE)
     speakingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE, "")
-    speakingTimePref.setOnPreferenceChangeListener { _, newValue ->
+    speakingTimePref.logAnalyticsOnClick()
+    speakingTimePref.onPreferenceChanged { _, newValue ->
       speakingTimePref.summary = newValue.toString()
       true
     }
@@ -32,8 +43,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
         Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE)
     writingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE, "")
-    writingTimePref.setOnPreferenceChangeListener { _, newValue ->
+    writingTimePref.logAnalyticsOnClick()
+    writingTimePref.onPreferenceChanged { _, newValue ->
       writingTimePref.summary = newValue.toString()
+      true
+    }
+
+    val encodingPref = preferenceManager.findPreference(
+        Constants.PREF_ENCODING_SET)
+    encodingPref.logAnalyticsOnClick()
+    encodingPref.onPreferenceChanged { _, _ ->
       true
     }
   }

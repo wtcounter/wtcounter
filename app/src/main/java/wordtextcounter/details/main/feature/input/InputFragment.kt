@@ -37,6 +37,7 @@ import kotlinx.android.synthetic.main.report_folded.*
 import kotlinx.android.synthetic.main.report_summary.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.base.BaseFragment
 import wordtextcounter.details.main.feature.base.BaseViewModel
@@ -122,9 +123,13 @@ class InputFragment : BaseFragment() {
   ) {
     super.onViewCreated(view, savedInstanceState)
 
-    ibAdd.setOnClickListener { showDialog() }
+    ibAdd.setOnClickListener {
+      logAnalytics(Click("note_add"))
+      showDialog()
+    }
 
     ibExtraStats.setOnClickListener {
+      logAnalytics(Click("extra_stat"))
       viewModel.viewState.value.report?.dataText?.let { text ->
         RxBus.send(ExtraStatText(text))
         val dialogFragment = ExtraStatsFragment.newInstance()
@@ -150,6 +155,7 @@ class InputFragment : BaseFragment() {
       it?.let {
         if (it) {
           activity?.hideKeyboard(etInput)
+          logAnalytics(Event("note_added"))
           activity?.showSnackBar(getString(R.string.addition_success))
           clearCurrentInputState()
           this@InputFragment.activity?.let { it1 -> showRateUsDialog(it1) }
@@ -160,6 +166,7 @@ class InputFragment : BaseFragment() {
       it?.let {
         if (it) {
           activity?.hideKeyboard(etInput)
+          logAnalytics(Event("note_updated"))
           activity?.showSnackBar(getString(R.string.update_success))
           clearCurrentInputState()
         }
@@ -214,6 +221,7 @@ class InputFragment : BaseFragment() {
     }
 
     snackbar.setAction("PASTE") {
+      logAnalytics(Click("clipboard_paste"))
       RxBus.send(NewText(copiedText))
     }
 

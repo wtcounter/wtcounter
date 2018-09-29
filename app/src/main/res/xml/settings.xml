@@ -8,7 +8,7 @@
 
     <android.support.v7.preference.SwitchPreferenceCompat
         android:defaultValue="true"
-        android:key="keysef1"
+        android:key="clipboard_pref"
         android:summary="@string/copy_clipboard_summary"
         android:title="@string/copy_clipboard_title"/>
 

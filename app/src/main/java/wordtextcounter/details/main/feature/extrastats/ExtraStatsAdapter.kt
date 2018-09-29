@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_extra_stat_child.view.*
 import kotlinx.android.synthetic.main.item_extra_stat_header.view.*
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
+import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
 
 class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderViewHolder, ExtraStatsAdapter.ChildViewHolder>() {
@@ -46,6 +48,11 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
   override fun bindChildViewHolder(viewHolder: ChildViewHolder, groupPosition: Int,
       childPosition: Int) {
     viewHolder.bindTo(statGroups[groupPosition].stats[childPosition])
+  }
+
+  override fun onHeaderClicked(position: Int) {
+    logAnalytics(Click("extra_stat_header"))
+    super.onHeaderClicked(position)
   }
 
   inner class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
