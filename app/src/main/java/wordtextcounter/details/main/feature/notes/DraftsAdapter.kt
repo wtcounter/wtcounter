@@ -9,7 +9,6 @@ import com.jakewharton.rxrelay2.PublishRelay
 import kotlinx.android.synthetic.main.item_draft.view.*
 import kotlinx.android.synthetic.main.item_draft_history.view.*
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
@@ -20,10 +19,10 @@ import wordtextcounter.details.main.store.entities.DraftHistory
 class DraftsAdapter :
     AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay: PublishRelay<DraftActions> = PublishRelay.create<DraftActions>()
-  val drafts : MutableList<DraftWithHistory> = mutableListOf()
+  val drafts: MutableList<DraftWithHistory> = mutableListOf()
   override fun createGroupViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): DraftHolder {
     return DraftHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft, parent, false)
@@ -39,8 +38,8 @@ class DraftsAdapter :
   }
 
   override fun createChildViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): HistoryHolder {
     return HistoryHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft_history, parent, false)
@@ -48,22 +47,22 @@ class DraftsAdapter :
   }
 
   override fun bindGroupViewHolder(
-    viewHolder: DraftHolder,
-    groupPosition: Int
+      viewHolder: DraftHolder,
+      groupPosition: Int
   ) {
     val draft = drafts[groupPosition]
     viewHolder.bind(draft.draft)
   }
 
   override fun bindChildViewHolder(
-    viewHolder: HistoryHolder,
-    groupPosition: Int,
-    childPosition: Int
+      viewHolder: HistoryHolder,
+      groupPosition: Int,
+      childPosition: Int
   ) {
     val draft = drafts[groupPosition]
     val draftHistory = draft.draftHistories[childPosition]
     viewHolder.bind(
-        draftHistory, draft ,childPosition == 0, childPosition == childCount(groupPosition) - 1
+        draftHistory, draft, childPosition == 0, childPosition == childCount(groupPosition) - 1
     )
   }
 
@@ -75,15 +74,18 @@ class DraftsAdapter :
 
     init {
       edit.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(DraftActions.DraftEdit(itemView.tag as Draft))
       }
 
       delete.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(DraftActions.DraftDelete(itemView.tag as Draft))
       }
 
       ibExpand.setOnClickListener {
-        
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        onHeaderClicked(adapterPosition)
       }
     }
 
@@ -114,7 +116,8 @@ class DraftsAdapter :
 
     init {
       editHistory.setOnClickListener {
-        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory, itemView.getTag(R.id.parent_draft) as DraftWithHistory))
+        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory,
+            itemView.getTag(R.id.parent_draft) as DraftWithHistory))
       }
 
       deleteHistory.setOnClickListener {
@@ -123,10 +126,10 @@ class DraftsAdapter :
     }
 
     fun bind(
-      draftHistory: DraftHistory,
-      parentDraft: DraftWithHistory,
-      isFirst: Boolean,
-      isLast: Boolean
+        draftHistory: DraftHistory,
+        parentDraft: DraftWithHistory,
+        isFirst: Boolean,
+        isLast: Boolean
     ) {
       historyText.text = draftHistory.text
       if (isFirst) {
@@ -153,7 +156,9 @@ class DraftsAdapter :
   sealed class DraftActions {
     data class DraftEdit(val draft: Draft) : DraftActions()
     data class DraftDelete(val draft: Draft) : DraftActions()
-    data class DraftHistoryEdit(val draftHistory: DraftHistory, val parentDraft: DraftWithHistory) : DraftActions()
+    data class DraftHistoryEdit(val draftHistory: DraftHistory,
+        val parentDraft: DraftWithHistory) : DraftActions()
+
     data class DraftHistoryDelete(val draftHistory: DraftHistory) : DraftActions()
   }
 }
