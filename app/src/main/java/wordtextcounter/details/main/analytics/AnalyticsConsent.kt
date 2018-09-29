@@ -30,7 +30,6 @@ object AnalyticsConsent {
     val btSave = dialog.findViewById<Button>(R.id.btSave)
 
     btSave.setOnClickListener {
-      logAnalytics(Click("consent_save"))
       pf.edit {
         putBoolean(PREF_ANALYTICS_CONSENT, true)
         cbConsent?.isChecked?.let {
@@ -40,6 +39,7 @@ object AnalyticsConsent {
           }
         }
       }
+      logAnalytics(Click("consent_save"))
       dialog.dismiss()
     }
 

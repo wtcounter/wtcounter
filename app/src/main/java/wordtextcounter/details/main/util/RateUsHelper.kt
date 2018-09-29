@@ -63,8 +63,8 @@ object RateUsHelper {
       }
 
       dialog.setOnKeyListener { _, keyCode, _ ->
-        logAnalytics(Click("rateus_backpress"))
         if (keyCode == KEYCODE_BACK) {
+          logAnalytics(Click("rateus_backpress"))
           onRemindLaterSelected(activity)
           dialog.dismiss()
         }

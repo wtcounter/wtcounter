@@ -90,10 +90,6 @@ class DraftsAdapter :
       delete.setOnClickListener {
         clickRelay.accept(DraftActions.DraftDelete(itemView.tag as Draft))
       }
-
-      itemView.setOnClickListener {
-        logAnalytics(Click("draft_header"))
-      }
     }
 
     fun bind(draft: Draft) {

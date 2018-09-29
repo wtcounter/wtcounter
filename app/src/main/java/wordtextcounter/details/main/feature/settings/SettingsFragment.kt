@@ -3,10 +3,9 @@ package wordtextcounter.details.main.feature.settings
 import android.os.Bundle
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
-import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.util.Constants
+import wordtextcounter.details.main.util.extensions.logAnalyticsOnClick
+import wordtextcounter.details.main.util.extensions.onPreferenceChanged
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
@@ -15,8 +14,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     val clipboardPref = preferenceManager.findPreference(
         Constants.PREF_CLIPBOARD)
-    clipboardPref.setOnPreferenceChangeListener { _, _ ->
-      logAnalytics(Event("settings_clipboard_change"))
+    clipboardPref.onPreferenceChanged { _, _ ->
       true
     }
 
@@ -24,13 +22,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
         Constants.PREF_READING_SPEED_WORDS_PER_MINUTE)
     readingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_READING_SPEED_WORDS_PER_MINUTE, "")
-    readingTimePref.setOnPreferenceClickListener {
-      logAnalytics(Click("settings_reading_time"))
-      return@setOnPreferenceClickListener false
-    }
+    readingTimePref.logAnalyticsOnClick()
 
-    readingTimePref.setOnPreferenceChangeListener { _, newValue ->
-      logAnalytics(Event("settings_reading_time_change"))
+    readingTimePref.onPreferenceChanged { _, newValue ->
       readingTimePref.summary = newValue.toString()
       true
     }
@@ -39,12 +33,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
         Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE)
     speakingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE, "")
-    speakingTimePref.setOnPreferenceClickListener {
-      logAnalytics(Click("settings_speaking_time"))
-      return@setOnPreferenceClickListener false
-    }
-    speakingTimePref.setOnPreferenceChangeListener { _, newValue ->
-      logAnalytics(Event("settings_speaking_time_change"))
+    speakingTimePref.logAnalyticsOnClick()
+    speakingTimePref.onPreferenceChanged { _, newValue ->
       speakingTimePref.summary = newValue.toString()
       true
     }
@@ -53,24 +43,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
         Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE)
     writingTimePref.summary = preferenceManager.sharedPreferences.getString(
         Constants.PREF_WRITING_SPEED_LETTERS_PER_MINUTE, "")
-    writingTimePref.setOnPreferenceClickListener {
-      logAnalytics(Click("settings_writing_time"))
-      return@setOnPreferenceClickListener false
-    }
-    writingTimePref.setOnPreferenceChangeListener { _, newValue ->
-      logAnalytics(Event("settings_writing_time_change"))
+    writingTimePref.logAnalyticsOnClick()
+    writingTimePref.onPreferenceChanged { _, newValue ->
       writingTimePref.summary = newValue.toString()
       true
     }
 
     val encodingPref = preferenceManager.findPreference(
         Constants.PREF_ENCODING_SET)
-    encodingPref.setOnPreferenceClickListener {
-      logAnalytics(Click("settings_encoding_click"))
-      return@setOnPreferenceClickListener false
-    }
-    encodingPref.setOnPreferenceChangeListener { _, _ ->
-      logAnalytics(Event("settings_encoding_change"))
+    encodingPref.logAnalyticsOnClick()
+    encodingPref.onPreferenceChanged { _, _ ->
       true
     }
   }
