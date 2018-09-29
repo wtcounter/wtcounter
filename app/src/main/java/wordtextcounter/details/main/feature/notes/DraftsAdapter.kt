@@ -76,6 +76,7 @@ class DraftsAdapter :
     private val edit = itemView.ibEdit
     private val delete = itemView.ibDelete
     private val ibExpand = itemView.ibExpand
+    private val tvDate = itemView.tvDate
 
     init {
       edit.setOnClickListener {
@@ -97,6 +98,8 @@ class DraftsAdapter :
     fun bind(draft: Draft) {
       text.text = draft.draftData.text
       itemView.tag = draft
+
+      tvDate.text = getRelativeTimeSpanString(draft.lastUpdatedAt, System.currentTimeMillis(), 0)
 
       if (childCount(adapterPosition) > 0) {
         ibExpand.visibility = View.VISIBLE
