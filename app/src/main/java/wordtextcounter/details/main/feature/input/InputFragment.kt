@@ -32,6 +32,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.content.edit
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.fragment_input.*
@@ -47,6 +48,7 @@ import wordtextcounter.details.main.feature.extrastats.ExtraStatsFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.*
+import wordtextcounter.details.main.util.Constants.PREF_CLIPBOARD_LAST_USED_TEXT
 import wordtextcounter.details.main.util.Constants.PREF_SAVED_TEXT
 import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
 import wordtextcounter.details.main.util.extensions.*
@@ -197,7 +199,10 @@ class InputFragment : BaseFragment() {
       if (itemCount > 0) {
         val item: Item = clipData.getItemAt(0)
         val copiedText: String = item.text.toString()
-        showSnackBar(copiedText = copiedText)
+        val lastUsedText = preferenes.getString(PREF_CLIPBOARD_LAST_USED_TEXT, "")
+        if (copiedText != lastUsedText) {
+          showSnackBar(copiedText = copiedText)
+        }
         return
       }
     }
@@ -217,6 +222,9 @@ class InputFragment : BaseFragment() {
     snackbar.setAction(R.string.paste) {
       logAnalytics(Click("clipboard_paste"))
       RxBus.send(NewText(copiedText))
+      preferenes.edit {
+        putString(PREF_CLIPBOARD_LAST_USED_TEXT,copiedText)
+      }
     }
 
     snackbar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
