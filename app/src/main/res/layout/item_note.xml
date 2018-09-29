@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/_1sdp"
-    android:layout_marginEnd="@dimen/_3sdp"
-    android:layout_marginStart="@dimen/_3sdp"
+    android:layout_marginEnd="@dimen/_4sdp"
+    android:layout_marginStart="@dimen/_4sdp"
     android:layout_marginTop="@dimen/_1sdp"
-    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
     app:cardUseCompatPadding="true"
     >
   <android.support.constraint.ConstraintLayout
@@ -17,67 +17,79 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/_2sdp"
-      android:paddingBottom="@dimen/_2sdp"
       >
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="@dimen/_18ssp"
-        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Note title"
+        style="@style/TitleTextStyle"
         />
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:text="Note date"
+        style="@style/LightTextStyle"
         />
 
+    <View
+        android:id="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/separator_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        />
 
     <include
         layout="@layout/report_folded"
         android:id="@+id/report"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_76sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/separator1"
         />
 
     <View
-        android:id="@+id/separator"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_marginLeft="@dimen/_4sdp"
-        android:layout_marginRight="@dimen/_4sdp"
+        android:id="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:background="@color/separator_color"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/report"
         />
-
 
     <ImageButton
         android:id="@+id/ibEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_4sdp"
         android:background="@null"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/separator2"
         app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/ic_edit_black_24dp"
         />
@@ -86,10 +98,11 @@
         android:id="@+id/ibDelete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_4sdp"
         android:background="@null"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toBottomOf="@id/separator2"
         app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/ic_delete"
         />

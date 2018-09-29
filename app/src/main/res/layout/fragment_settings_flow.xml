@@ -55,8 +55,7 @@
             android:paddingStart="@dimen/_12sdp"
             android:paddingTop="@dimen/_12sdp"
             android:text="@string/rate_us_text_short"
-            android:textColor="@color/black_alpha_87"
-            android:textSize="@dimen/_12ssp"
+            style="@style/RegularTextStyle"
             />
 
         <TextView
@@ -72,8 +71,7 @@
             android:paddingStart="@dimen/_12sdp"
             android:paddingTop="@dimen/_12sdp"
             android:text="@string/share_ui_text"
-            android:textColor="@color/black_alpha_87"
-            android:textSize="@dimen/_12ssp"
+            style="@style/RegularTextStyle"
             />
 
       </LinearLayout>

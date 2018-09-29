@@ -23,6 +23,7 @@
 
   <color name="black_filter">#30000000</color>
   <color name="black_alpha_87">#de000000</color>
+  <color name="black_alpha_54">#8a000000</color>
 
   <color name="yellow_600">#ffcd36</color>
   <color name="amber_700">#c89c00</color>

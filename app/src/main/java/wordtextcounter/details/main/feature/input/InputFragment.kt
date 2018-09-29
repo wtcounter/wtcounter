@@ -220,14 +220,14 @@ class InputFragment : BaseFragment() {
   }
 
   private fun showButtons() {
-    if (llButtons.visibility == GONE) {
-      llButtons.visibility = VISIBLE
+    if (buttons.visibility == GONE) {
+      buttons.visibility = VISIBLE
     }
   }
 
   private fun hideButtons() {
-    if (llButtons.visibility == VISIBLE) {
-      llButtons.visibility = GONE
+    if (buttons.visibility == VISIBLE) {
+      buttons.visibility = GONE
     }
   }
 
