@@ -37,6 +37,22 @@
         style="@style/RegularTextStyle"
         />
 
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:lineSpacingExtra="@dimen/_4ssp"
+        android:maxLines="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Yesterday"
+        app:layout_constraintTop_toBottomOf="@id/tvText"
+        style="@style/LightTextStyle"
+        />
+
     <View
         android:id="@+id/separator"
         android:layout_width="0dp"
@@ -47,7 +63,7 @@
         android:background="@color/separatorColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvText"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
         />
 
     <ImageButton
