@@ -43,4 +43,10 @@
         android:title="@string/size_encoding_format"/>
   </android.support.v7.preference.PreferenceCategory>
 
+  <android.support.v7.preference.SwitchPreferenceCompat
+      android:defaultValue="true"
+      android:key="usage_stats"
+      android:summary="@string/send_usage_stats_summary"
+      android:title="@string/send_usage_stats_title"/>
+
 </android.support.v7.preference.PreferenceScreen>
