@@ -1,27 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-  <string name="addition_success">Der Bericht wurde erfolgreich hinzugefügt</string>
-    <string name="app_name">Wort-Zähler</string>
-    <string name="bookmark_hint">Geben Sie den Berichtsnamen ein</string>
-    <string name="characters">Figuren</string>
-  <string name="delete_alert_desc">Möchten Sie diesen Bericht wirklich löschen?</string>
-    <string name="deletion_success">Der Bericht wurde erfolgreich gelöscht</string>
-    <string name="edit_alert_desc">Diese Aktion löscht den aktuellen Inhalt. Bist du dir sicher, dass du weitermachen willst?</string>
-    <string name="edit_alert_title">Bist du sicher?</string>
-    <string name="generic_error_message">Sieht so aus, als wäre etwas schief gelaufen. Bitte versuchen Sie es später erneut …</string>
-    <string name="hint_input">Gib deinen Text hier ein</string>
-    <string name="input">Eingang</string>
-    <string name="no">Nein</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNichts hier!</string>
-    <string name="notes">Anmerkungen</string>
-    <string name="paragraphs">Absätze</string>
+  <string name="app_name">Wort-Zähler</string>
+
+  <string name="input">Eingang</string>
+  <string name="notes">Anmerkungen</string>
+  <string name="settings">die Einstellungen</string>
+
+  <string name="hint_input">Gib deinen Text hier ein</string>
+
+
+  <string name="basic_stats">Grundlegende Statistiken</string>
+  <string name="characters">Figuren</string>
+  <string name="characters_without_spaces">Zeichen ohne Leerzeichen</string>
+  <string name="words">Wörter</string>
+  <string name="paragraphs">Absätze</string>
+  <string name="size">Größe</string>
+  <string name="bookmark_hint">Geben Sie den Namen der Notiz ein</string>
+
+  <string name="extra_stats">Zusätzliche Statistiken</string>
+  <string name="unique_words">Einzigartige Wörter</string>
+  <string name="average_word_length">Durchschnittliche Wortlänge</string>
+  <string name="avg_sentence_length_words">Durchschnittliche Satzlänge (Wörter)</string>
+  <string name="avg_sentence_length_characters">Durchschnittliche Satzlänge (Zeichen)</string>
+
+  <string name="length_stats">Längenstatistik</string>
+  <string name="shortest_sentence">Kürzester Satz (Wörter)</string>
+  <string name="longest_sentence">Längster Satz (Wörter)</string>
+
+  <string name="time_stats">Zeitstatistiken</string>
+  <string name="reading_time">Lesezeit</string>
+  <string name="speaking_time">Sprechzeit</string>
+  <string name="writing_time">Handschrift Zeit</string>
+
   <string name="save">sparen</string>
-    <string name="save_dialog_desc">In Ordnung! Wie würdest du es nennen?</string>
   <string name="sentences">Sätze</string>
-    <string name="size">Größe</string>
-  <string name="update_success">Bericht erfolgreich aktualisiert</string>
-    <string name="words">Wörter</string>
-    <string name="yes">Ja</string>
+
+  <string name="save_dialog_desc">In Ordnung! Wie würdest du es nennen?</string>
+  <string name="edit_alert_title">Bist du sicher?</string>
+  <string name="yes">Ja</string>
+  <string name="edit_alert_desc">Diese Aktion löscht den aktuellen Inhalt. Bist du dir sicher, dass du weitermachen willst?</string>
+  <string name="delete_alert_desc">Möchten Sie diesen Bericht wirklich löschen?</string>
+  <string name="no">Nein</string>
+  <string name="generic_error_message">Sieht so aus, als wäre etwas schief gelaufen. Bitte versuchen Sie es später erneut …</string>
+  <string name="deletion_success">Hinweis erfolgreich gelöscht</string>
+  <string name="addition_success">Notiz wurde erfolgreich hinzugefügt</string>
+  <string name="update_success">Hinweis erfolgreich aktualisiert</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNichts hier!</string>
+
+  <string name="rate_us_text">Wenn Ihnen unsere App gefällt, würden Sie uns bitte im Play Store bewerten?</string>
+  <string name="rate_us_text_short">App im Play Store bewerten</string>
+  <string name="rate_us_yes">JETZT BEWERTEN</string>
+  <string name="rate_us_later">SPÄTER</string>
+  <string name="rate_us_never">NOCH NIE</string>
+  <string name="rate_us_error">"Oh nein. Wir konnten den Spielladen nicht erreichen. Entschuldigung dafür!"</string>
+
+  <string name="drafts">Entwürfe</string>
+  <string name="draft_deletion_success">Entwurf wurde erfolgreich gelöscht</string>
+  <string name="draft_history_deletion_success">Löschung erfolgreich</string>
+  <string name="draft_saved">Entwurf gespeichert</string>
+  <string name="draft_updated">Entwurf aktualisiert</string>
+  <string name="draft_delete">Möchten Sie diesen Entwurf wirklich löschen? Alle Geschichten werden ebenfalls gelöscht</string>
+  <string name="draft_history_delete">Möchten Sie diesen Entwurfshistorie wirklich löschen?</string>
+
+
+  <string name="share_ui_text">App teilen</string>
+  <string name="share_picker_text">Teilen mit</string>
+
+  <string name="activity_not_found_error">Wir konnten keine App finden, die diese Aktion ausführen könnte. Das tut mir leid!</string>
+
+  <string name="basic_settings">Grundeinstellungen</string>
+  <string name="copy_clipboard_title">Kopieren Sie den Text der Zwischenablage automatisch</string>
+  <string name="copy_clipboard_summary">Die App fordert Sie auf, beim Start der App automatisch Text aus der Zwischenablage einzufügen</string>
+  <string name="send_usage_stats_title">Sende Nutzungsstatistiken</string>
+  <string name="send_usage_stats_summary">Senden Sie anonyme Nutzungsstatistiken, um die App zu verbessern</string>
+  <string name="stat_settings">Statistikeinstellungen</string>
+  <string name="reading_time_wpm">Lesezeit (Wörter pro Minute)</string>
+  <string name="speaking_time_wpm">Sprechzeit (Wörter pro Minute)</string>
+  <string name="writing_time_lpm">Schreibzeit (Buchstaben pro Minute)</string>
+  <string name="size_encoding_format">Größencodierungsformat</string>
+
+  <string name="paste">Einfügen</string>
 </resources>

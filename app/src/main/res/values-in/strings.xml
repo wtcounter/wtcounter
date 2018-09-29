@@ -1,27 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="addition_success">Laporan berhasil ditambahkan</string>
-    <string name="app_name">Penghitung Word</string>
-    <string name="bookmark_hint">Masukkan nama Laporan</string>
-    <string name="characters">Karakter</string>
-    <string name="delete_alert_desc">Anda yakin ingin menghapus laporan ini?</string>
-    <string name="deletion_success">Laporan berhasil dihapus</string>
-    <string name="edit_alert_desc">Tindakan ini akan menghapus konten saat ini. Apakah anda yakin ingin melanjutkan?</string>
-    <string name="edit_alert_title">Apakah kamu yakin?</string>
-    <string name="generic_error_message">Sepertinya ada yang salah. Silakan coba lagi nanti ...</string>
-    <string name="hint_input">Masukkan teks Anda di sini</string>
-    <string name="input">Memasukkan</string>
-    <string name="no">Tidak</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nTidak ada di sini!</string>
-    <string name="notes">Catatan</string>
-    <string name="paragraphs">Paragraf</string>
-    <string name="save">Menyimpan</string>
-    <string name="save_dialog_desc">Baik! Anda ingin menyebutnya apa?</string>
-    <string name="sentences">Kalimat</string>
-    <string name="size">Ukuran</string>
-    <string name="update_success">Laporan berhasil diperbarui</string>
-    <string name="words">Kata-kata</string>
-    <string name="yes">iya nih</string>
+  <string name="app_name">Penghitung Word</string>
+
+  <string name="input">Memasukkan</string>
+  <string name="notes">Catatan</string>
+  <string name="settings">Pengaturan</string>
+
+  <string name="hint_input">Masukkan teks Anda di sini</string>
+
+
+  <string name="basic_stats">Statistik Dasar</string>
+  <string name="characters">Karakter</string>
+  <string name="characters_without_spaces">Karakter tanpa Spaces</string>
+  <string name="words">Kata-kata</string>
+  <string name="paragraphs">Paragraf</string>
+  <string name="size">Ukuran</string>
+  <string name="bookmark_hint">Masukkan nama catatan</string>
+
+  <string name="extra_stats">Statistik Ekstra</string>
+  <string name="unique_words">Kata-Kata Unik</string>
+  <string name="average_word_length">Rata-rata Panjang Kata</string>
+  <string name="avg_sentence_length_words">Rata-rata Sentence Length (Words)</string>
+  <string name="avg_sentence_length_characters">Rata-rata Panjang Kalimat (Karakter)</string>
+
+  <string name="length_stats">Statistik Panjang</string>
+  <string name="shortest_sentence">Kalimat Terpendek (Kata)</string>
+  <string name="longest_sentence">Kalimat Terpanjang (Kata)</string>
+
+  <string name="time_stats">Statistik Waktu</string>
+  <string name="reading_time">Waktu membaca</string>
+  <string name="speaking_time">Waktu Berbicara</string>
+  <string name="writing_time">Waktu Menulis Tangan</string>
+
+  <string name="save">Menyimpan</string>
+  <string name="sentences">Kalimat</string>
+
+  <string name="save_dialog_desc">Baik! Anda ingin menyebutnya apa?</string>
+  <string name="edit_alert_title">Apakah kamu yakin?</string>
+  <string name="yes">iya nih</string>
+  <string name="edit_alert_desc">Tindakan ini akan menghapus konten saat ini. Apakah anda yakin ingin melanjutkan?</string>
+  <string name="delete_alert_desc">Anda yakin ingin menghapus laporan ini?</string>
+  <string name="no">Tidak</string>
+  <string name="generic_error_message">Sepertinya ada yang salah. Silakan coba lagi nanti …</string>
+  <string name="deletion_success">Catatan berhasil dihapus</string>
+  <string name="addition_success">Catatan berhasil ditambahkan</string>
+  <string name="update_success">Catatan berhasil diperbarui</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nTidak ada di sini!</string>
+
+  <string name="rate_us_text">Jika Anda menyukai aplikasi kami, maukah Anda menilai kami di play store?</string>
+  <string name="rate_us_text_short">Beri nilai aplikasi di play store</string>
+  <string name="rate_us_yes">RATE SEKARANG</string>
+  <string name="rate_us_later">KEMUDIAN</string>
+  <string name="rate_us_never">TAK PERNAH</string>
+  <string name="rate_us_error">"Oh tidak. Kami tidak bisa mencapai play store. Maaf untuk itu!"</string>
+
+
+  <string name="drafts">Draf</string>
+  <string name="draft_deletion_success">Draf berhasil dihapus</string>
+  <string name="draft_history_deletion_success">Penghapusan berhasil</string>
+  <string name="draft_saved">Draf disimpan</string>
+  <string name="draft_updated">Draf diperbarui</string>
+  <string name="draft_delete">Anda yakin ingin menghapus draf ini? Semua sejarah juga akan dihapus</string>
+  <string name="draft_history_delete">Anda yakin ingin menghapus riwayat draf ini?</string>
+
+
+  <string name="share_ui_text">Bagikan aplikasi</string>
+  <string name="share_picker_text">Bagikan menggunakan</string>
+
+
+  <string name="activity_not_found_error">Kami tidak dapat menemukan aplikasi yang dapat menyelesaikan tindakan ini. Maaf untuk itu!</string>
+
+  <string name="basic_settings">Pengaturan dasar</string>
+  <string name="copy_clipboard_title">Salin teks clipboard secara otomatis</string>
+  <string name="copy_clipboard_summary">Aplikasi akan meminta Anda untuk menempelkan teks dari clipboard secara otomatis saat peluncuran aplikasi</string>
+  <string name="send_usage_stats_title">Kirim statistik penggunaan</string>
+  <string name="send_usage_stats_summary">Kirim statistik penggunaan anonim untuk membantu meningkatkan aplikasi</string>
+  <string name="stat_settings">Pengaturan Stat</string>
+  <string name="reading_time_wpm">Waktu Membaca (Words Per Minute)</string>
+  <string name="speaking_time_wpm">Waktu Berbicara (Words Per Minute)</string>
+  <string name="writing_time_lpm">Waktu Penulisan (Surat Per Menit)</string>
+  <string name="size_encoding_format">Ukuran Encoding Format</string>
+
+  <string name="paste">Pasta</string>
 </resources>

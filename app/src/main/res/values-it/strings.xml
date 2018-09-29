@@ -1,27 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="addition_success">Rapporto aggiunto con successo</string>
-    <string name="app_name">Contatore di parole</string>
-    <string name="bookmark_hint">Inserisci il nome del report</string>
-    <string name="characters">Personaggi</string>
-    <string name="delete_alert_desc">Sei sicuro di voler eliminare questo rapporto?</string>
-    <string name="deletion_success">Rapporto cancellato con successo</string>
-    <string name="edit_alert_desc">Questa azione cancellerà il contenuto corrente. Sei sicuro di voler continuare?</string>
-    <string name="edit_alert_title">Sei sicuro?</string>
-    <string name="generic_error_message">Sembra che qualcosa sia andato storto. Per favore riprova più tardi…</string>
-    <string name="hint_input">Inserisci il tuo testo qui</string>
-    <string name="input">Ingresso</string>
-    <string name="no">No</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNiente qui!</string>
-    <string name="notes">Gli appunti</string>
-    <string name="paragraphs">I paragrafi</string>
-    <string name="save">Salvare</string>
-    <string name="save_dialog_desc">Tutto apposto! Come vorresti chiamarlo?</string>
-    <string name="sentences">Frasi</string>
-    <string name="size">Dimensione</string>
-    <string name="update_success">Rapporto aggiornato correttamente</string>
-    <string name="words">Parole</string>
-    <string name="yes">sì</string>
+  <string name="app_name">Contatore di parole</string>
+
+  <string name="input">Ingresso</string>
+  <string name="notes">Gli appunti</string>
+  <string name="settings">impostazioni</string>
+
+  <string name="hint_input">Inserisci il tuo testo qui</string>
+
+
+  <string name="basic_stats">Statistiche di base</string>
+  <string name="characters">Personaggi</string>
+  <string name="characters_without_spaces">Personaggi senza spazi</string>
+  <string name="words">Parole</string>
+  <string name="paragraphs">I paragrafi</string>
+  <string name="size">Dimensione</string>
+  <string name="bookmark_hint">Inserisci il nome della nota</string>
+
+  <string name="extra_stats">Statistiche extra</string>
+  <string name="unique_words">Parole uniche</string>
+  <string name="average_word_length">Lunghezza media delle parole</string>
+  <string name="avg_sentence_length_words">Lunghezza media delle frasi (parole)</string>
+  <string name="avg_sentence_length_characters">Lunghezza media della frase (caratteri)</string>
+
+  <string name="length_stats">Statistiche di lunghezza</string>
+  <string name="shortest_sentence">Frase più breve (parole)</string>
+  <string name="longest_sentence">Frase più lunga (parole)</string>
+
+  <string name="time_stats">TimeStats</string>
+  <string name="reading_time">Momento della lettura</string>
+  <string name="speaking_time">Tempo di parola</string>
+  <string name="writing_time">Tempo di scrittura a mano</string>
+
+  <string name="save">Salvare</string>
+  <string name="sentences">Frasi</string>
+
+  <string name="save_dialog_desc">Tutto apposto! Come vorresti chiamarlo?</string>
+  <string name="edit_alert_title">Sei sicuro?</string>
+  <string name="yes">sì</string>
+  <string name="edit_alert_desc">Questa azione cancellerà il contenuto corrente. Sei sicuro di voler continuare?</string>
+  <string name="delete_alert_desc">Sei sicuro di voler eliminare questo rapporto?</string>
+  <string name="no">No</string>
+  <string name="generic_error_message">Sembra che qualcosa sia andato storto. Per favore riprova più tardi…</string>
+  <string name="deletion_success">Nota cancellata con successo</string>
+  <string name="addition_success">Nota aggiunta con successo</string>
+  <string name="update_success">Nota aggiornata correttamente</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNiente qui!</string>
+
+  <string name="rate_us_text">Se ti è piaciuta la nostra app, potresti indicarci su Play Store?</string>
+  <string name="rate_us_text_short">Valuta l\'app sul Play Store</string>
+  <string name="rate_us_yes">VOTA ADESSO</string>
+  <string name="rate_us_later">DOPO</string>
+  <string name="rate_us_never">MAI</string>
+  <string name="rate_us_error">"Oh no, non siamo riusciti a raggiungere il Play Store. Scusami!"</string>
+
+
+  <string name="drafts">bozze</string>
+  <string name="draft_deletion_success">Bozza cancellata con successo</string>
+  <string name="draft_history_deletion_success">Cancellazione avvenuta con successo</string>
+  <string name="draft_saved">Bozza salvata</string>
+  <string name="draft_updated">Bozza aggiornata</string>
+  <string name="draft_delete">Sei sicuro di voler eliminare questa bozza? Anche tutte le storie saranno cancellate</string>
+  <string name="draft_history_delete">Sei sicuro di voler eliminare questa bozza di cronologia?</string>
+
+
+  <string name="share_ui_text">Condividi app</string>
+  <string name="share_picker_text">Condividi utilizzando</string>
+
+
+  <string name="activity_not_found_error">Non siamo riusciti a trovare un\'app che potesse completare questa azione. Perdonami per quello!</string>
+
+  <string name="basic_settings">Impostazioni di base</string>
+  <string name="copy_clipboard_title">Copia il testo degli appunti automaticamente</string>
+  <string name="copy_clipboard_summary">L\'app ti chiederà di incollare automaticamente il testo dagli Appunti all\'avvio dell'app</string>
+  <string name="send_usage_stats_title">Invia statistiche di utilizzo</string>
+  <string name="send_usage_stats_summary">Invia statistiche di utilizzo anonime per migliorare l\'app</string>
+  <string name="stat_settings">Impostazioni Stat</string>
+  <string name="reading_time_wpm">Tempo di lettura (parole al minuto)</string>
+  <string name="speaking_time_wpm">Tempo di parola (parole al minuto)</string>
+  <string name="writing_time_lpm">Tempo di scrittura (lettere al minuto)</string>
+  <string name="size_encoding_format">Formato di codifica delle dimensioni</string>
+
+  <string name="paste">Incolla</string>
 </resources>

@@ -1,27 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-  <string name="addition_success">Raportul a fost adăugat cu succes</string>
-    <string name="app_name">Word Text Counter</string>
-    <string name="bookmark_hint">Introduceți numele raportului</string>
-    <string name="characters">caractere</string>
-  <string name="delete_alert_desc">Sigur doriți să ștergeți acest raport?</string>
-    <string name="deletion_success">Raportul a fost șters cu succes</string>
-    <string name="edit_alert_desc">Această acțiune va șterge conținutul curent. Esti sigur ca vrei sa continui?</string>
-    <string name="edit_alert_title">Esti sigur?</string>
-    <string name="generic_error_message">Se pare că sa întâmplat ceva. Vă rugăm să încercați din nou mai târziu…</string>
-    <string name="hint_input">Introduceți textul aici</string>
-    <string name="input">Intrare</string>
-    <string name="no">Nu</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNimic aici!</string>
-    <string name="notes">notițe</string>
-    <string name="paragraphs">alineatele</string>
+  <string name="app_name">Word Counter</string>
+
+  <string name="input">Intrare</string>
+  <string name="notes">notițe</string>
+  <string name="settings">Setări</string>
+
+  <string name="hint_input">Introduceți textul aici</string>
+
+
+  <string name="basic_stats">Statistici fundamentale</string>
+  <string name="characters">caractere</string>
+  <string name="characters_without_spaces">Caractere fără spații</string>
+  <string name="words">cuvinte</string>
+  <string name="paragraphs">alineatele</string>
+  <string name="size">mărimea</string>
+  <string name="bookmark_hint">Introduceți numele notei</string>
+
+  <string name="extra_stats">Statistici suplimentare</string>
+  <string name="unique_words">Cuvinte unice</string>
+  <string name="average_word_length">Lungimea medie a cuvântului</string>
+  <string name="avg_sentence_length_words">Lungimea medie a sentinței (cuvinte)</string>
+  <string name="avg_sentence_length_characters">Lungimea medie a sentinței (caractere)</string>
+
+  <string name="length_stats">Statistici de lungime</string>
+  <string name="shortest_sentence">Cea mai scurtă propoziție (cuvinte)</string>
+  <string name="longest_sentence">Termen lung (cuvinte)</string>
+
+  <string name="time_stats">Statistici de timp</string>
+  <string name="reading_time">Timp de citit</string>
+  <string name="speaking_time">Ora de vorbire</string>
+  <string name="writing_time">Timp de scriere manuală</string>
+
   <string name="save">Salvați</string>
-    <string name="save_dialog_desc">În regulă! Ce vrei să spui?</string>
   <string name="sentences">Propoziții</string>
-    <string name="size">mărimea</string>
-  <string name="update_success">Raportul a fost actualizat cu succes</string>
-    <string name="words">cuvinte</string>
-    <string name="yes">da</string>
+
+  <string name="save_dialog_desc">În regulă! Ce vrei să spui?</string>
+  <string name="edit_alert_title">Esti sigur?</string>
+  <string name="yes">da</string>
+  <string name="edit_alert_desc">Această acțiune va șterge conținutul curent. Esti sigur ca vrei sa continui?</string>
+  <string name="delete_alert_desc">Sigur doriți să ștergeți acest raport?</string>
+  <string name="no">Nu</string>
+  <string name="generic_error_message">Se pare că sa întâmplat ceva. Vă rugăm să încercați din nou mai târziu…</string>
+  <string name="deletion_success">Notă șters cu succes</string>
+  <string name="addition_success">Notă adăugată cu succes</string>
+  <string name="update_success">Notă actualizată cu succes</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNici nimic aici!</string>
+
+  <string name="rate_us_text">Dacă v-ați plăcut aplicația noastră, v-ați fi evaluat în magazinul de jocuri?</string>
+  <string name="rate_us_text_short">Evaluați aplicația din magazinul de jocuri</string>
+  <string name="rate_us_yes">EVALUEAZA ACUM</string>
+  <string name="rate_us_later">MAI TARZIU</string>
+  <string name="rate_us_never">NU</string>
+  <string name="rate_us_error">"Nu, nu am reușit să ajungem la magazinul de jucării. Îmi pare rău pentru asta!"</string>
+
+  <string name="drafts">Schițe</string>
+  <string name="draft_deletion_success">Proiectul a fost șters cu succes</string>
+  <string name="draft_history_deletion_success">Ștergerea a reușit</string>
+  <string name="draft_saved">Proiectul a fost salvat</string>
+  <string name="draft_updated">Proiectul a fost actualizat</string>
+  <string name="draft_delete">Sigur doriți să ștergeți această versiune? Toate istoriile vor fi șterse</string>
+  <string name="draft_history_delete">Sigur doriți să ștergeți acest istoric de proiect?</string>
+
+
+  <string name="share_ui_text">Distribuiți aplicația</string>
+  <string name="share_picker_text">Distribuiți utilizând</string>
+
+
+  <string name="activity_not_found_error">Nu am putut găsi o aplicație care să poată finaliza această acțiune. Imi pare rau pentru asta!</string>
+
+  <string name="basic_settings">Setări de bază</string>
+  <string name="copy_clipboard_title">Copiați automat textul clipboard</string>
+  <string name="copy_clipboard_summary">Aplicația vă va solicita să inserați automat textul din clipboard în momentul lansării aplicației</string>
+  <string name="send_usage_stats_title">Trimiteți statisticile de utilizare</string>
+  <string name="send_usage_stats_summary">Trimiteți statistici de utilizare anonime pentru a îmbunătăți aplicația</string>
+  <string name="stat_settings">Stat Settings</string>
+  <string name="reading_time_wpm">Timp de citire (cuvinte pe minut)</string>
+  <string name="speaking_time_wpm">Timp de vorbire (cuvinte pe minut)</string>
+  <string name="writing_time_lpm">Timp de scriere (scrisori pe minut)</string>
+  <string name="size_encoding_format">Dimensiune codificare format</string>
+
+  <string name="paste">Paste</string>
 </resources>
