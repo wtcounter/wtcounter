@@ -24,14 +24,14 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/ivSave"
-      android:layout_marginEnd="@dimen/_16sdp"
-      android:layout_marginStart="@dimen/_16sdp"
-      android:layout_marginTop="@dimen/_16sdp"
+      android:layout_marginEnd="@dimen/_12sdp"
+      android:layout_marginStart="@dimen/_12sdp"
+      android:layout_marginTop="@dimen/_12sdp"
       android:text="@string/analytics_consent"
-      android:textSize="@dimen/_14ssp"
+      style="@style/LightTextStyle"
       />
 
-  <android.support.v7.widget.AppCompatCheckBox
+  <android.support.v7.widget.SwitchCompat
       android:id="@+id/cbConsent"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -41,6 +41,7 @@
       android:layout_marginTop="@dimen/_12sdp"
       android:checked="false"
       android:text="@string/analytics_report"
+      android:textColor="@color/black_alpha_87"
       android:textSize="@dimen/_14ssp"
       />
 

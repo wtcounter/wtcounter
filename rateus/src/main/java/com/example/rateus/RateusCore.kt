@@ -69,7 +69,7 @@ object RateusCore {
     }
     val interacted = ratePreference.getBoolean(INTERACTION, false)
     val timeSpent = ratePreference.getLong(TIME_SPENT, 0L)
-    return timeSpent > TimeUnit.MINUTES.toMillis(2) && !interacted
+    return timeSpent > TimeUnit.MINUTES.toMillis(5) && !interacted
   }
 
   private fun markInteractionDone(activity: Activity) {

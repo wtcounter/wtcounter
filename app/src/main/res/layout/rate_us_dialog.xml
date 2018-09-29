@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/dialogView"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:background="@color/white">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
 
   <ImageView
       android:id="@+id/ivSave"
@@ -24,6 +24,7 @@
       android:layout_height="wrap_content"
       android:layout_alignParentEnd="true"
       android:layout_alignParentRight="true"
+      android:paddingBottom="@dimen/_8sdp"
       android:paddingEnd="@dimen/_8sdp"
       android:paddingStart="@dimen/_8sdp"
       android:paddingTop="@dimen/_8sdp"
@@ -36,25 +37,26 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/ivSave"
-      android:layout_marginEnd="@dimen/_16sdp"
-      android:layout_marginStart="@dimen/_16sdp"
-      android:layout_marginTop="@dimen/_16sdp"
+      android:layout_marginEnd="@dimen/_8sdp"
+      android:layout_marginStart="@dimen/_8sdp"
+      android:layout_marginTop="@dimen/_12sdp"
       android:minHeight="@dimen/_32sdp"
       android:text="@string/rate_us_text"
+      style="@style/RegularTextStyle"
       />
 
   <Button
-      android:id="@+id/btnSave"
+      android:id="@+id/btnRateNow"
       android:layout_width="wrap_content"
       android:layout_height="@dimen/_30sdp"
       android:layout_alignParentEnd="true"
       android:layout_alignParentRight="true"
       android:layout_below="@id/tvReportDesc"
-      android:paddingEnd="@dimen/_16sdp"
-      android:paddingRight="@dimen/_16sdp"
-      android:layout_marginTop="@dimen/_24sdp"
-      android:background="@null"
-      android:gravity="end"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="?attr/selectableItemBackground"
+      android:gravity="center"
+      android:paddingEnd="@dimen/_12sdp"
+      android:paddingStart="@dimen/_12sdp"
       android:text="@string/rate_us_yes"
       android:textColor="@color/secondaryColor"
       />
@@ -65,11 +67,11 @@
       android:layout_height="@dimen/_30sdp"
       android:layout_alignParentEnd="true"
       android:layout_alignParentRight="true"
-      android:layout_below="@id/btnSave"
-      android:paddingEnd="@dimen/_16sdp"
-      android:paddingRight="@dimen/_16sdp"
-      android:background="@null"
-      android:gravity="end"
+      android:layout_below="@id/btnRateNow"
+      android:background="?attr/selectableItemBackground"
+      android:gravity="center"
+      android:paddingEnd="@dimen/_12sdp"
+      android:paddingStart="@dimen/_12sdp"
       android:text="@string/rate_us_later"
       android:textColor="@color/secondaryColor"
       />
@@ -81,16 +83,13 @@
       android:layout_alignParentEnd="true"
       android:layout_alignParentRight="true"
       android:layout_below="@id/btnLater"
-      android:paddingEnd="@dimen/_16sdp"
-      android:paddingRight="@dimen/_16sdp"
-      android:background="@null"
-      android:gravity="end"
+      android:background="?attr/selectableItemBackground"
+      android:gravity="center"
       android:minHeight="@dimen/_32sdp"
+      android:paddingEnd="@dimen/_12sdp"
+      android:paddingStart="@dimen/_12sdp"
       android:text="@string/rate_us_never"
       android:textColor="@color/secondaryColor"
       />
 
-
 </RelativeLayout>
-
-
