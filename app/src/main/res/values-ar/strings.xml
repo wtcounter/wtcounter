@@ -44,7 +44,7 @@
   <string name="deletion_success">تم حذف الملاحظة بنجاح</string>
   <string name="addition_success">تمت إضافة الملاحظة بنجاح</string>
   <string name="update_success">ملاحظة تم تحديثها بنجاح</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ n لا شيء هنا!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\n لا شيء هنا!</string>
 
   <string name="rate_us_text">إذا كنت تحب تطبيقنا ، فهل يمكنك تقييمنا على متجر الألعاب؟</string>
   <string name="rate_us_text_short">معدل التطبيق على متجر اللعب</string>

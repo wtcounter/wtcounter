@@ -44,7 +44,7 @@
   <string name="deletion_success">Remarque supprimée avec succès</string>
   <string name="addition_success">Note ajoutée avec succès</string>
   <string name="update_success">Note mise à jour avec succès</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nRien ici!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nRien ici!</string>
 
   <string name="rate_us_text">Si vous avez aimé notre application, pourriez-vous nous évaluer sur le Play Store?</string>
   <string name="rate_us_text_short">Évaluer l\'application sur le Play Store</string>

@@ -44,7 +44,7 @@
   <string name="deletion_success">Notă șters cu succes</string>
   <string name="addition_success">Notă adăugată cu succes</string>
   <string name="update_success">Notă actualizată cu succes</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNici nimic aici!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNici nimic aici!</string>
 
   <string name="rate_us_text">Dacă v-ați plăcut aplicația noastră, v-ați fi evaluat în magazinul de jocuri?</string>
   <string name="rate_us_text_short">Evaluați aplicația din magazinul de jocuri</string>

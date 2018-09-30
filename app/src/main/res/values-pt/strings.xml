@@ -44,7 +44,7 @@
   <string name="deletion_success">Nota apagada com sucesso</string>
   <string name="addition_success">Nota adicionada com sucesso</string>
   <string name="update_success">Nota atualizada com sucesso</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNada aqui!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNada aqui!</string>
 
   <string name="rate_us_text">Se você gostou do nosso aplicativo, por favor, avalie-nos na loja de jogos?</string>
   <string name="rate_us_text_short">Avaliar aplicativo na loja de jogos</string>

@@ -44,7 +44,7 @@
   <string name="deletion_success">Заметка удалена успешно</string>
   <string name="addition_success">Заметка добавлена успешно</string>
   <string name="update_success">Замечание обновлено успешно</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nНичего здесь!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nНичего здесь!</string>
 
   <string name="rate_us_text">Если вам понравилось наше приложение, не могли бы вы оценить нас в игровом магазине?</string>
   <string name="rate_us_text_short">Оценить приложение в игровом магазине</string>

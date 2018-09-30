@@ -44,7 +44,7 @@
   <string name="deletion_success">Đã xóa ghi chú thành công</string>
   <string name="addition_success">Đã thêm ghi chú thành công</string>
   <string name="update_success">Đã cập nhật thành công ghi chú</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nKhông có gì ở đây!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nKhông có gì ở đây!</string>
 
   <string name="rate_us_text">Nếu bạn thích ứng dụng của chúng tôi, bạn có vui lòng đánh giá chúng tôi trên cửa hàng chơi không?</string>
   <string name="rate_us_text_short">Xếp hạng ứng dụng trên cửa hàng Play</string>
