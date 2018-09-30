@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.settings
 import android.arch.lifecycle.ViewModelProviders
 import android.content.ActivityNotFoundException
 import android.os.Bundle
+import android.support.v7.content.res.AppCompatResources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,6 +56,8 @@ class SettingsFlowFragment : BaseFragment() {
     savedInstanceState: Bundle?
   ) {
     super.onViewCreated(view, savedInstanceState)
+    val psDrawable = AppCompatResources.getDrawable(context!!, R.drawable.ic_google_play)
+    tvRateUs.setCompoundDrawablesWithIntrinsicBounds(psDrawable, null, null, null)
     tvRateUs.setOnClickListener {
       AnalyticsLogger.logAnalytics(Click("settings_rate_app"))
       this@SettingsFlowFragment.activity?.let { activity ->
@@ -62,6 +65,8 @@ class SettingsFlowFragment : BaseFragment() {
       }
     }
 
+    val shareDrawable = AppCompatResources.getDrawable(context!!, R.drawable.ic_share_black_24dp)
+    tvShareApp.setCompoundDrawablesWithIntrinsicBounds(shareDrawable, null, null, null)
     tvShareApp.setOnClickListener {
       AnalyticsLogger.logAnalytics(Click("settings_share_app"))
       val shareText = getString(R.string.share_app_text) + "\n" + PLAY_STORE_URL

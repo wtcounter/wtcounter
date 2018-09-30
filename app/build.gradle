@@ -22,7 +22,7 @@ android {
   signingConfigs {
     if (fileExists) {
       release {
-        storeFile file
+        storeFile new File(props['keystore'])
         storePassword props['keystore.password']
         keyAlias props['keyAlias']
         keyPassword props['keyPassword']
