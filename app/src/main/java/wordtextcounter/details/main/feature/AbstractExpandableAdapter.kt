@@ -11,7 +11,7 @@ abstract class AbstractExpandableAdapter<GVH : RecyclerView.ViewHolder, CVH : Re
   : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
   private val headerExpandTracker = SparseIntArray()
-  private val viewTypes: SparseArray<ViewType> = SparseArray()
+  val viewTypes: SparseArray<ViewType> = SparseArray()
 
   private var allExpandedUsed = false
   open val showAllExpanded = false
