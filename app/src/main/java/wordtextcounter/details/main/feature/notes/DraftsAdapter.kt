@@ -101,7 +101,7 @@ class DraftsAdapter :
 
       tvDate.text = getRelativeTimeSpanString(draft.lastUpdatedAt, System.currentTimeMillis(), 0)
 
-      if (childCount(adapterPosition) > 0) {
+      if (childCount(viewTypes[adapterPosition].index) > 0) {
         ibExpand.visibility = View.VISIBLE
         if (isGroupExpanded(adapterPosition)) {
           ibExpand.setImageDrawable(expandLess)
@@ -115,7 +115,7 @@ class DraftsAdapter :
   }
 
   override fun onHeaderClicked(position: Int) {
-    logAnalytics(Click("draft_header"))
+    logAnalytics(Click("draft_history"))
     super.onHeaderClicked(position)
   }
 

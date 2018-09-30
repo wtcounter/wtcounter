@@ -11,7 +11,6 @@ import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_NAME
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_VERSION
 import wordtextcounter.details.main.store.migration.MigrationProcessor
-import wordtextcounter.details.main.util.Constants
 import wordtextcounter.details.main.util.Constants.PREF_DB_STORED
 import wordtextcounter.details.main.util.dbExists
 import wordtextcounter.details.main.util.extensions.getPreference

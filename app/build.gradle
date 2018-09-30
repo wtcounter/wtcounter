@@ -13,15 +13,16 @@ android {
   if (file.exists()) {
     fileExists = true
   }
+
+  Properties props = new Properties()
   if (fileExists) {
-    Properties props = new Properties()
-    props.load(new FileInputStream(file("keystore.credentials")))
+    props.load(new FileInputStream(file))
   }
 
   signingConfigs {
     if (fileExists) {
       release {
-        storeFile file(props['keystore'])
+        storeFile file
         storePassword props['keystore.password']
         keyAlias props['keyAlias']
         keyPassword props['keyPassword']
