@@ -47,7 +47,7 @@
         android:title="@string/copy_clipboard_title"/>
 
     <android.support.v7.preference.SwitchPreferenceCompat
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:key="usage_stats"
         android:summary="@string/send_usage_stats_summary"
         android:title="@string/send_usage_stats_title"/>

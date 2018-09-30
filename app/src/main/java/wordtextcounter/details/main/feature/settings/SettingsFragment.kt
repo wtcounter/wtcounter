@@ -3,6 +3,7 @@ package wordtextcounter.details.main.feature.settings
 import android.os.Bundle
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
+import wordtextcounter.details.main.analytics.AnalyticsConsent
 import wordtextcounter.details.main.analytics.AnalyticsLogger.disableAnalytics
 import wordtextcounter.details.main.analytics.AnalyticsLogger.enableAnalytics
 import wordtextcounter.details.main.util.Constants
@@ -26,7 +27,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     val usageStatsPref = preferenceManager.findPreference(Constants.PREF_USAGE_STATS)
-    usageStatsPref.setOnPreferenceChangeListener { preference, newValue ->
+    usageStatsPref.logAnalyticsOnClick()
+    usageStatsPref.setOnPreferenceChangeListener { _, newValue ->
+      AnalyticsConsent.markConsentAsked(context!!)
       if (newValue is Boolean) {
         if (newValue) {
           enableAnalytics(context!!)
