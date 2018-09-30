@@ -44,7 +44,7 @@
   <string name="deletion_success">Poznámka byla úspěšně smazána</string>
   <string name="addition_success">Poznámka byla úspěšně přidána</string>
   <string name="update_success">Poznámka byla úspěšně aktualizována</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNo nic zde!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNo nic zde!</string>
 
   <string name="rate_us_text">Pokud se vám aplikace líbí, rádi byste nás hodnotili v obchodě Play?</string>
   <string name="rate_us_text_short">Ohodnoťte aplikaci v obchodě Play</string>

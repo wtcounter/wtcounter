@@ -45,7 +45,7 @@
   <string name="deletion_success">Hinweis erfolgreich gelöscht</string>
   <string name="addition_success">Notiz wurde erfolgreich hinzugefügt</string>
   <string name="update_success">Hinweis erfolgreich aktualisiert</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNichts hier!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNichts hier!</string>
 
   <string name="rate_us_text">Wenn Ihnen unsere App gefällt, würden Sie uns bitte im Play Store bewerten?</string>
   <string name="rate_us_text_short">App im Play Store bewerten</string>

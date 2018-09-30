@@ -44,7 +44,7 @@
   <string name="deletion_success">Notatka została usunięta pomyślnie</string>
   <string name="addition_success">Notatka została dodana pomyślnie</string>
   <string name="update_success">Notatka zaktualizowana pomyślnie</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nBrak notatek!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nBrak notatek!</string>
 
   <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja czy oceniłbyś nas w sklepie Google Play?</string>
   <string name="rate_us_text_short">Oceń aplikację w sklepie Play</string>

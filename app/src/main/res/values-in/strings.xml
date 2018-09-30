@@ -44,7 +44,7 @@
   <string name="deletion_success">Catatan berhasil dihapus</string>
   <string name="addition_success">Catatan berhasil ditambahkan</string>
   <string name="update_success">Catatan berhasil diperbarui</string>
-  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nTidak ada di sini!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nTidak ada di sini!</string>
 
   <string name="rate_us_text">Jika Anda menyukai aplikasi kami, maukah Anda menilai kami di play store?</string>
   <string name="rate_us_text_short">Beri nilai aplikasi di play store</string>
