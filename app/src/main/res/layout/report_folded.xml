@@ -17,11 +17,63 @@
       android:layout_height="wrap_content"
       android:gravity="center"
       android:text="@string/characters"
+      app:layout_constraintBottom_toTopOf="@id/barrier"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.5"
       app:layout_constraintWidth_percent="0.25"
       tools:text="Characters"
       style="@style/LightTextStyle"
+      />
+
+  <TextView
+      android:id="@+id/tvWordsLabel"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/words"
+      app:layout_constraintBottom_toTopOf="@id/barrier"
+      app:layout_constraintStart_toEndOf="@id/tvCharactersLabel"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_percent="0.25"
+      tools:text="Words"
+      style="@style/LightTextStyle"
+      />
+
+  <TextView
+      android:id="@+id/tvSentencesLabel"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/sentences"
+      app:layout_constraintBottom_toTopOf="@id/barrier"
+      app:layout_constraintStart_toEndOf="@id/tvWordsLabel"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_percent="0.25"
+      tools:text="Sentences"
+      style="@style/LightTextStyle"
+      />
+
+  <TextView
+      android:id="@+id/tvParagraphsLabel"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/paragraphs"
+      app:layout_constraintBottom_toTopOf="@id/barrier"
+      app:layout_constraintStart_toEndOf="@id/tvSentencesLabel"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_percent="0.25"
+      tools:text="Paragraphs"
+      style="@style/LightTextStyle"
+      />
+
+  <android.support.constraint.Barrier
+      android:id="@+id/barrier"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:barrierDirection="bottom"
+      app:constraint_referenced_ids="tvCharactersLabel, tvWordsLabel,tvSentencesLabel,tvParagraphsLabel"
       />
 
   <TextView
@@ -31,23 +83,10 @@
       android:layout_marginTop="@dimen/_8sdp"
       android:gravity="center"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+      app:layout_constraintTop_toBottomOf="@id/barrier"
       app:layout_constraintWidth_percent="0.25"
       tools:text="2000"
       style="@style/TitleTextStyle"
-      />
-
-  <TextView
-      android:id="@+id/tvWordsLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="@string/words"
-      app:layout_constraintStart_toEndOf="@id/tvCharactersLabel"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintWidth_percent="0.25"
-      tools:text="Words"
-      style="@style/LightTextStyle"
       />
 
   <TextView
@@ -57,24 +96,10 @@
       android:layout_marginTop="@dimen/_8sdp"
       android:gravity="center"
       app:layout_constraintStart_toEndOf="@id/tvCharacters"
-      app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+      app:layout_constraintTop_toBottomOf="@id/barrier"
       app:layout_constraintWidth_percent="0.25"
       tools:text="212"
       style="@style/TitleTextStyle"
-      />
-
-
-  <TextView
-      android:id="@+id/tvSentencesLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="@string/sentences"
-      app:layout_constraintStart_toEndOf="@id/tvWordsLabel"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintWidth_percent="0.25"
-      tools:text="Sentences"
-      style="@style/LightTextStyle"
       />
 
   <TextView
@@ -84,23 +109,10 @@
       android:layout_marginTop="@dimen/_8sdp"
       android:gravity="center"
       app:layout_constraintStart_toEndOf="@id/tvWords"
-      app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+      app:layout_constraintTop_toBottomOf="@id/barrier"
       app:layout_constraintWidth_percent="0.25"
       tools:text="12"
       style="@style/TitleTextStyle"
-      />
-
-  <TextView
-      android:id="@+id/tvParagraphsLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="@string/paragraphs"
-      app:layout_constraintStart_toEndOf="@id/tvSentencesLabel"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintWidth_percent="0.25"
-      tools:text="Paragraphs"
-      style="@style/LightTextStyle"
       />
 
   <TextView
@@ -110,7 +122,7 @@
       android:layout_marginTop="@dimen/_8sdp"
       android:gravity="center"
       app:layout_constraintStart_toEndOf="@id/tvSentences"
-      app:layout_constraintTop_toBottomOf="@id/tvCharactersLabel"
+      app:layout_constraintTop_toBottomOf="@id/barrier"
       app:layout_constraintWidth_percent="0.25"
       tools:text="12"
       style="@style/TitleTextStyle"
