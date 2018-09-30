@@ -103,7 +103,7 @@ class DraftsAdapter :
 
       if (childCount(viewTypes[adapterPosition].index) > 0) {
         ibExpand.visibility = View.VISIBLE
-        if (isGroupExpanded(viewTypes[adapterPosition].index)) {
+        if (isGroupExpanded(adapterPosition)) {
           ibExpand.setImageDrawable(expandLess)
         } else {
           ibExpand.setImageDrawable(expandMore)

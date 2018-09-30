@@ -61,7 +61,7 @@ class ExtraStatsAdapter : AbstractExpandableAdapter<ExtraStatsAdapter.HeaderView
 
     fun bindTo(statGroup: ExtraStatGroup) {
       tvExtraStatGroupName.setText(statGroup.groupName)
-      if (isGroupExpanded(viewTypes[adapterPosition].index)) {
+      if (isGroupExpanded(adapterPosition)) {
         tvExtraStatGroupName.setCompoundDrawablesWithIntrinsicBounds(null, null, expandLess, null)
       } else {
         tvExtraStatGroupName.setCompoundDrawablesWithIntrinsicBounds(null, null, expandMore, null)
