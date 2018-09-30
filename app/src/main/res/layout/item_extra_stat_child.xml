@@ -18,8 +18,9 @@
       android:layout_marginStart="@dimen/_6sdp"
       android:textColor="@color/white"
       android:textSize="@dimen/_11ssp"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toLeftOf="@id/tvExtraStatValue"
+      android:gravity="start"
+      app:layout_constraintEnd_toStartOf="@id/tvExtraStatValue"
+      app:layout_constraintStart_toStartOf="parent"
       tools:text="New extra stat"
       />
 
@@ -30,8 +31,9 @@
       android:layout_marginEnd="@dimen/_6sdp"
       android:layout_marginStart="@dimen/_6sdp"
       android:textColor="@color/white"
+      android:gravity="end"
       android:textSize="@dimen/_13ssp"
-      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       tools:text="700"
       />
 

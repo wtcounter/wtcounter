@@ -1,34 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="action_settings">Configurações</string>
-    <string name="addition_success">Relatório adicionado com sucesso</string>
-    <string name="app_name">Contador de texto de palavras</string>
-    <string name="bookmark_hint">Insira o nome do relatório</string>
-    <string name="characters">Personagens</string>
-    <string name="confirm">confirme</string>
-    <string name="delete_alert_desc">Tem certeza de que deseja excluir este relatório?</string>
-    <string name="deletion_success">Relatório excluído com sucesso</string>
-    <string name="edit_alert_desc">Esta ação irá apagar o conteúdo atual. Você tem certeza que quer continuar?</string>
-    <string name="edit_alert_title">Você tem certeza?</string>
-    <string name="generic_error_message">Parece que algo deu errado. Por favor, tente novamente mais tarde…</string>
-    <string name="hint_input">Digite seu texto aqui</string>
-    <string name="input">Entrada</string>
-    <string name="no">Não</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNada aqui!</string>
-    <string name="notes">Notas</string>
-    <string name="paragraphs">Parágrafos</string>
-    <string name="replace_current_text">Substituir texto atual</string>
-    <string name="save">Salve </string>
-    <string name="save_dialog_desc">Bem! O que você gostaria de chamar?</string>
-    <string name="see_more">Visualizar relatório completo</string>
-    <string name="sentences">Frases</string>
-    <string name="size">Tamanho</string>
-    <string name="start_typing">Começe a digitar</string>
-    <string name="title_input">Entrada</string>
-    <string name="title_notes">Notas</string>
-    <string name="update_success">Relatório atualizado com sucesso</string>
-    <string name="words">Palavras</string>
-    <string name="yes">sim</string>
+  <string name="app_name">Contador de palavras</string>
+
+  <string name="input">Entrada</string>
+  <string name="notes">Notas</string>
+  <string name="settings">Configurações</string>
+
+  <string name="hint_input">Digite seu texto aqui</string>
+
+
+  <string name="basic_stats">Estatísticas Básicas</string>
+  <string name="characters">Personagens</string>
+  <string name="characters_without_spaces">Personagens sem espaços</string>
+  <string name="words">Palavras</string>
+  <string name="paragraphs">Parágrafos</string>
+  <string name="size">Tamanho</string>
+  <string name="bookmark_hint">Digite o nome da nota</string>
+
+  <string name="extra_stats">Estatísticas Extra</string>
+  <string name="unique_words">Palavras únicas</string>
+  <string name="average_word_length">Comprimento Médio da Palavra</string>
+  <string name="avg_sentence_length_words">Comprimento Médio de Frase (Palavras)</string>
+  <string name="avg_sentence_length_characters">Comprimento Médio de Frase (Caracteres)</string>
+
+  <string name="length_stats">Estatísticas de comprimento</string>
+  <string name="shortest_sentence">Sentença mais curta (palavras)</string>
+  <string name="longest_sentence">Frase Mais Longa (Palavras)</string>
+
+  <string name="time_stats">Estatísticas de tempo</string>
+  <string name="reading_time">Tempo de leitura</string>
+  <string name="speaking_time">Tempo de fala</string>
+  <string name="writing_time">Tempo de escrita da mão</string>
+
+  <string name="save">Salve </string>
+  <string name="sentences">Frases</string>
+
+  <string name="save_dialog_desc">Bem! O que você gostaria de chamar?</string>
+  <string name="edit_alert_title">Você tem certeza?</string>
+  <string name="yes">sim</string>
+  <string name="edit_alert_desc">Esta ação irá apagar o conteúdo atual. Você tem certeza que quer continuar?</string>
+  <string name="delete_alert_desc">Tem certeza de que deseja excluir este relatório?</string>
+  <string name="no">No</string>
+  <string name="generic_error_message">Parece que algo deu errado. Por favor, tente novamente mais tarde…</string>
+  <string name="deletion_success">Nota apagada com sucesso</string>
+  <string name="addition_success">Nota adicionada com sucesso</string>
+  <string name="update_success">Nota atualizada com sucesso</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNada aqui!</string>
+
+  <string name="rate_us_text">Se você gostou do nosso aplicativo, por favor, avalie-nos na loja de jogos?</string>
+  <string name="rate_us_text_short">Avaliar aplicativo na loja de jogos</string>
+  <string name="rate_us_yes">AVALIE AGORA</string>
+  <string name="rate_us_later">MAIS TARDE</string>
+  <string name="rate_us_never">NUNCA</string>
+  <string name="rate_us_error">"Oh não. Nós não fomos capazes de chegar à loja de jogos. Desculpe por isso!"</string>
+
+  <string name="drafts">Rascunhos</string>
+  <string name="draft_deletion_success">Rascunho excluído com sucesso</string>
+  <string name="draft_history_deletion_success">Exclusão bem sucedida</string>
+  <string name="draft_saved">Rascunho salvo</string>
+  <string name="draft_updated">Rascunho atualizado</string>
+  <string name="draft_delete">Tem certeza de que deseja excluir este rascunho? Todas as histórias serão deletadas também</string>
+  <string name="draft_history_delete">Tem certeza de que deseja excluir este histórico de rascunho?</string>
+
+
+  <string name="share_ui_text">Compartilhe o aplicativo</string>
+  <string name="share_picker_text">Compartilhar usando</string>
+
+  <string name="activity_not_found_error">Não foi possível encontrar um aplicativo que pudesse concluir essa ação. Desculpe por isso!</string>
+
+  <string name="basic_settings">Configurações básicas</string>
+  <string name="copy_clipboard_title">Copiar texto da área de transferência automaticamente</string>
+  <string name="copy_clipboard_summary">O aplicativo solicitará que você cole o texto da área de transferência automaticamente no lançamento do aplicativo</string>
+  <string name="send_usage_stats_title">Enviar estatísticas de uso</string>
+  <string name="send_usage_stats_summary">Enviar estatísticas de uso anônimas para ajudar a melhorar o aplicativo</string>
+  <string name="stat_settings">Configurações de estatísticas</string>
+  <string name="reading_time_wpm">Tempo de leitura (palavras por minuto)</string>
+  <string name="speaking_time_wpm">Tempo Falando (Palavras Por Minuto)</string>
+  <string name="writing_time_lpm">Tempo de Escrita (Letras Por Minuto)</string>
+  <string name="size_encoding_format">Formato de codificação de tamanho</string>
+
+  <string name="paste">Colar</string>
 </resources>

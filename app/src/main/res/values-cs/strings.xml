@@ -1,34 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="action_settings">Nastavení</string>
-    <string name="addition_success">Zpráva byla úspěšně přidána</string>
-    <string name="app_name">Word Counter</string>
-    <string name="bookmark_hint">Zadejte název sestavy</string>
-    <string name="characters">Postavy</string>
-    <string name="confirm">Potvrdit</string>
-    <string name="delete_alert_desc">Opravdu chcete smazat tento přehled?</string>
-    <string name="deletion_success">Zpráva byla úspěšně smazána</string>
-    <string name="edit_alert_desc">Tato akce vymaže aktuální obsah. Jste si jistý, že chcete pokračovat?</string>
-    <string name="edit_alert_title">Jsi si jistá?</string>
-    <string name="generic_error_message">Vypadá to, že se něco pokazilo. Prosím zkuste to znovu později…</string>
-    <string name="hint_input">Zadejte svůj text zde</string>
-    <string name="input">Vstup</string>
-    <string name="no">Ne</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNic zde!</string>
-    <string name="notes">Poznámky</string>
-    <string name="paragraphs">Odstavce</string>
-    <string name="replace_current_text">Nahradit aktuální text</string>
-    <string name="save">Uložit</string>
-    <string name="save_dialog_desc">V pořádku! Co byste chtěl říkat?</string>
-    <string name="see_more">Zobrazit úplnou zprávu</string>
-    <string name="sentences">Věty</string>
-    <string name="size">Velikost</string>
-    <string name="start_typing">Začněte psát</string>
-    <string name="title_input">Vstup</string>
-    <string name="title_notes">Poznámky</string>
-    <string name="update_success">Zpráva byla úspěšně aktualizována</string>
-    <string name="words">Slova</string>
-    <string name="yes">Ano</string>
+  <string name="app_name">Word Counter</string>
+
+  <string name="input">Vstup</string>
+  <string name="notes">Poznámky</string>
+  <string name="settings">Nastavení</string>
+
+  <string name="hint_input">Zadejte svůj text zde</string>
+
+
+  <string name="basic_stats">Základní statistiky</string>
+  <string name="characters">Postavy</string>
+  <string name="characters_without_spaces">Postavy bez mezery</string>
+  <string name="words">Slova</string>
+  <string name="paragraphs">Odstavce</string>
+  <string name="size">Velikost</string>
+  <string name="bookmark_hint">Zadejte název poznámky</string>
+
+  <string name="extra_stats">Další statistiky</string>
+  <string name="unique_words">Jedinečná slova</string>
+  <string name="average_word_length">Průměrná délka slova</string>
+  <string name="avg_sentence_length_words">Průměrná délka věty (slova)</string>
+  <string name="avg_sentence_length_characters">Průměrná délka věty (znaky)</string>
+
+  <string name="length_stats">Statistika délky</string>
+  <string name="shortest_sentence">Nejkratší věta (slova)</string>
+  <string name="longest_sentence">Nejdelší věta (slova)</string>
+
+  <string name="time_stats">Časové statistiky</string>
+  <string name="reading_time">Čas na čtení</string>
+  <string name="speaking_time">Mluvící čas</string>
+  <string name="writing_time">Čas psaní rukou</string>
+
+  <string name="save">Uložit</string>
+  <string name="sentences">Věty</string>
+
+  <string name="save_dialog_desc">V pořádku! Co byste chtěl říkat?</string>
+  <string name="edit_alert_title">Jsi si jistá?</string>
+  <string name="yes">Ano</string>
+  <string name="edit_alert_desc">Tato akce vymaže aktuální obsah. Jste si jistý, že chcete pokračovat?</string>
+  <string name="delete_alert_desc">Opravdu chcete smazat tento přehled?</string>
+  <string name="no">Ne</string>
+  <string name="generic_error_message">Vypadá to, že se něco pokazilo. Prosím zkuste to znovu později…</string>
+  <string name="deletion_success">Poznámka byla úspěšně smazána</string>
+  <string name="addition_success">Poznámka byla úspěšně přidána</string>
+  <string name="update_success">Poznámka byla úspěšně aktualizována</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nNo nic zde!</string>
+
+  <string name="rate_us_text">Pokud se vám aplikace líbí, rádi byste nás hodnotili v obchodě Play?</string>
+  <string name="rate_us_text_short">Ohodnoťte aplikaci v obchodě Play</string>
+  <string name="rate_us_yes">HODNOTIT TEĎ</string>
+  <string name="rate_us_later">POZDĚJI</string>
+  <string name="rate_us_never">NIKDY</string>
+  <string name="rate_us_error">"Ach, ne. Nedokázali jsme se dostat do obchodu.</string>
+
+  <string name="drafts">Pracovní verze</string>
+  <string name="draft_deletion_success">Úprava byla úspěšně smazána</string>
+  <string name="draft_history_deletion_success">Vymazání bylo úspěšné</string>
+  <string name="draft_saved">Koncept byl uložen</string>
+  <string name="draft_updated">Návrh byl aktualizován</string>
+  <string name="draft_delete">Opravdu chcete tento návrh smazat? Všechny historie budou také smazány</string>
+  <string name="draft_history_delete">Opravdu chcete tuto historii výkresů smazat?</string>
+
+
+  <string name="share_ui_text">Sdílejte aplikaci</string>
+  <string name="share_picker_text">Sdílet pomocí</string>
+
+
+  <string name="activity_not_found_error">Nemohli jsme najít žádnou aplikaci, která by tuto akci mohla dokončit. Omlouvám se za to!</string>
+
+  <string name="basic_settings">Základní nastavení</string>
+  <string name="copy_clipboard_title">Kopírovat text schránky automaticky</string>
+  <string name="copy_clipboard_summary">Aplikace vás vyzve k automatickému vkládání textu ze schránky automaticky při spuštění aplikace</string>
+  <string name="send_usage_stats_title">Odeslat statistiky využití</string>
+  <string name="send_usage_stats_summary">Odeslání anonymních statistik využití, které vám pomohou vylepšit aplikaci</string>
+  <string name="stat_settings">Nastavení Stat</string>
+  <string name="reading_time_wpm">Čas čtení (slova za minutu)</string>
+  <string name="speaking_time_wpm">Mluvení (slova za minutu)</string>
+  <string name="writing_time_lpm">Čas psaní (písmena za minutu)</string>
+  <string name="size_encoding_format">Formát kódování velikosti</string>
+
+  <string name="paste">Vložit</string>
 </resources>

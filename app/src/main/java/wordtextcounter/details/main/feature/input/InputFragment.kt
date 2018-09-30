@@ -4,8 +4,8 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.app.Dialog
 import android.arch.lifecycle.ViewModelProviders
-import android.content.ClipData
 import android.content.ClipData.Item
+import android.content.ClipDescription.MIMETYPE_TEXT_PLAIN
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
 import android.content.DialogInterface
@@ -15,6 +15,8 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.preference.PreferenceManager
+import android.support.design.widget.BaseTransientBottomBar
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -45,20 +47,10 @@ import wordtextcounter.details.main.feature.extrastats.ExtraStatsFragment
 import wordtextcounter.details.main.feature.input.InputViewModel.ViewState
 import wordtextcounter.details.main.store.ReportDatabase
 import wordtextcounter.details.main.util.*
-import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
-import wordtextcounter.details.main.util.extensions.hideKeyboard
-import wordtextcounter.details.main.util.extensions.showKeyBoard
-import wordtextcounter.details.main.util.extensions.showSnackBar
-import wordtextcounter.details.main.util.ChangeDraftState
+import wordtextcounter.details.main.util.Constants.PREF_CLIPBOARD_LAST_USED_TEXT
 import wordtextcounter.details.main.util.Constants.PREF_SAVED_TEXT
-import wordtextcounter.details.main.util.EditDraft
-import wordtextcounter.details.main.util.EditDraftHistory
-import wordtextcounter.details.main.util.EditReport
-import wordtextcounter.details.main.util.NewText
-import wordtextcounter.details.main.util.NoEvent
-import wordtextcounter.details.main.util.RxBus
-import wordtextcounter.details.main.util.extensions.getPreference
-import wordtextcounter.details.main.util.extensions.runIfAdded
+import wordtextcounter.details.main.util.RateUsHelper.showRateUsDialog
+import wordtextcounter.details.main.util.extensions.*
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 /**
@@ -74,14 +66,13 @@ class InputFragment : BaseFragment() {
 
   var cx: Int = -1
   var cy: Int = -1
-  var isPaste = true
+  var shouldShowPasteSnackbar = true
 
   var reportNameEditMode: String? = null
   var reportIdEditMode: Int? = null
-  private lateinit var clipData: ClipData
-  lateinit var preferenes : SharedPreferences
-
-  // Get clip data from clipboard.
+  lateinit var preferenes: SharedPreferences
+  lateinit var defaultPreferenes: SharedPreferences
+  lateinit var clipboardManager: ClipboardManager
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -102,10 +93,10 @@ class InputFragment : BaseFragment() {
     viewModel = ViewModelProviders.of(this, viewModelFactory)
         .get(InputViewModel::class.java)
 
-    val clipboardService = context?.getSystemService(CLIPBOARD_SERVICE)
-    val clipboardManager = clipboardService as ClipboardManager
-    clipData = clipboardManager.primaryClip
+    clipboardManager = context?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
     preferenes = context?.getPreference()!!
+    defaultPreferenes = PreferenceManager.getDefaultSharedPreferences(context!!)
   }
 
   override fun onCreateView(
@@ -129,6 +120,7 @@ class InputFragment : BaseFragment() {
     }
 
     ibExtraStats.setOnClickListener {
+      //todo move this code in viewmodel, use router to show extrastats
       logAnalytics(Click("extra_stat"))
       viewModel.viewState.value.report?.dataText?.let { text ->
         RxBus.send(ExtraStatText(text))
@@ -175,10 +167,12 @@ class InputFragment : BaseFragment() {
 
     prefillSavedPreferenceText()
 
-    if (isPaste) {
+    shouldShowPasteSnackbar = shouldShowPasteSnackbar && defaultPreferenes.getBoolean(
+        Constants.PREF_CLIPBOARD, false)
+    if (shouldShowPasteSnackbar) {
       activity?.hideKeyboard(etInput)
-      paste()
-      isPaste = false
+      showPasteSnackbar()
+      shouldShowPasteSnackbar = false
     } else {
       cl.clearFocus()
       etInput.requestFocus()
@@ -194,20 +188,26 @@ class InputFragment : BaseFragment() {
     }
   }
 
-  private fun paste() {
-    // Get item count.
+  private fun showPasteSnackbar() {
 
-    val itemCount: Int = clipData.itemCount
-    if (itemCount > 0) {
-      val item: Item = clipData.getItemAt(0)
-      val copiedText: String = item.text.toString()
-      // Show a snackbar to tell user text has been pasted.
-      showSnackBar(copiedText = copiedText)
-    } else {
-      cl.clearFocus()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
+    if (clipboardManager.hasPrimaryClip() && clipboardManager.primaryClipDescription.hasMimeType(
+            MIMETYPE_TEXT_PLAIN)) {
+
+      val clipData = clipboardManager.primaryClip
+      val itemCount: Int = clipData.itemCount
+      if (itemCount > 0) {
+        val item: Item = clipData.getItemAt(0)
+        val copiedText: String = item.text.toString()
+        val lastUsedText = preferenes.getString(PREF_CLIPBOARD_LAST_USED_TEXT, "")
+        if (copiedText != lastUsedText) {
+          showSnackBar(copiedText = copiedText)
+        }
+        return
+      }
     }
+    cl.clearFocus()
+    etInput.requestFocus()
+    activity?.showKeyBoard()
   }
 
   private fun showSnackBar(copiedText: String) {
@@ -216,27 +216,37 @@ class InputFragment : BaseFragment() {
 
     layout.setOnClickListener {
       snackbar.dismiss()
-      etInput.requestFocus()
-      activity?.showKeyBoard()
     }
 
-    snackbar.setAction("PASTE") {
+    snackbar.setAction(R.string.paste) {
       logAnalytics(Click("clipboard_paste"))
       RxBus.send(NewText(copiedText))
+      preferenes.edit {
+        putString(PREF_CLIPBOARD_LAST_USED_TEXT,copiedText)
+      }
     }
+
+    snackbar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+      override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+        runIfAdded {
+          etInput.requestFocus()
+          activity?.showKeyBoard()
+        }
+      }
+    })
 
     snackbar.show()
   }
 
   private fun showButtons() {
-    if (llButtons.visibility == GONE) {
-      llButtons.visibility = VISIBLE
+    if (buttons.visibility == GONE) {
+      buttons.visibility = VISIBLE
     }
   }
 
   private fun hideButtons() {
-    if (llButtons.visibility == VISIBLE) {
-      llButtons.visibility = GONE
+    if (buttons.visibility == VISIBLE) {
+      buttons.visibility = GONE
     }
   }
 
@@ -278,7 +288,9 @@ class InputFragment : BaseFragment() {
     etName.addTextChangedListener(object : TextWatcher {
       override fun afterTextChanged(s: Editable?) {
         if (s != null && !s.isEmpty()) {
-          context?.let { btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor)) }
+          context?.let {
+            btnSave.setTextColor(ContextCompat.getColor(it, R.color.secondaryColor))
+          }
           btnSave.isEnabled = true
         } else {
           context?.let {
@@ -396,7 +408,7 @@ class InputFragment : BaseFragment() {
   }
 
   private fun handleNewTextEvent(text: String, overrideListener: TextOverrideListener? = null) {
-    if (etInput.text.trim().isNotEmpty()) {
+    if (etInput.text.trim().isNotEmpty() && etInput.text.trim() != text) {
       AlertDialog.Builder(context!!)
           .setTitle(R.string.edit_alert_title)
           .setMessage(R.string.edit_alert_desc)

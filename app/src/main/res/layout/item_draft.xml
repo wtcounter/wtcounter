@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,56 +9,73 @@
     android:layout_marginEnd="@dimen/_3sdp"
     android:layout_marginStart="@dimen/_3sdp"
     android:layout_marginTop="@dimen/_1sdp"
-    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
     app:cardUseCompatPadding="true"
     >
 
-  <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
+  <android.support.constraint.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/_2sdp"
-      android:paddingBottom="@dimen/_2sdp"
+      android:background="?attr/selectableItemBackground"
+      android:clickable="true"
+      android:focusable="true"
       >
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tvText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:textSize="@dimen/_14ssp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:lineSpacingExtra="@dimen/_4ssp"
         android:maxLines="4"
-        android:layout_marginLeft="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="This is a very very very very very very very very very very very very very ver vev ryrv y log ntext"
+        style="@style/RegularTextStyle"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:lineSpacingExtra="@dimen/_4ssp"
+        android:maxLines="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Yesterday"
+        app:layout_constraintTop_toBottomOf="@id/tvText"
+        style="@style/LightTextStyle"
         />
 
     <View
         android:id="@+id/separator"
         android:layout_width="0dp"
         android:layout_height="@dimen/_1sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_marginLeft="@dimen/_4sdp"
-        android:layout_marginRight="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_14sdp"
-        android:background="@color/grey_200"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/separatorColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvText"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
         />
 
     <ImageButton
         android:id="@+id/ibEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_22sdp"
-        android:background="@null"
+        android:background="?attr/selectableItemBackground"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@id/ibDelete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvText"
-        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         app:srcCompat="@drawable/ic_edit_black_24dp"
         />
 
@@ -67,15 +83,27 @@
         android:id="@+id/ibDelete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_22sdp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvText"
-        app:layout_constraintWidth_percent="0.5"
+        android:background="?attr/selectableItemBackground"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@id/ibExpand"
+        app:layout_constraintStart_toEndOf="@id/ibEdit"
+        app:layout_constraintTop_toBottomOf="@id/separator"
         app:srcCompat="@drawable/ic_delete"
         />
 
-
+    <ImageButton
+        android:id="@+id/ibExpand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ibDelete"
+        app:layout_constraintTop_toBottomOf="@id/separator"
+        tools:src="@drawable/ic_expand_more_black_24dp"
+        />
   </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
 

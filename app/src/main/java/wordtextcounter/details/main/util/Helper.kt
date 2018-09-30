@@ -33,7 +33,6 @@ object Helper {
       var whiteSpaceCount = 0
       val graphemeCounter = BreakIterator.getCharacterInstance()
       graphemeCounter.setText(input)
-
       var start = 0
       var end = graphemeCounter.next()
       while (end != BreakIterator.DONE) {
@@ -82,7 +81,7 @@ object Helper {
       while (end != BreakIterator.DONE) {
         val word = input.substring(start, end)
         if (Character.isLetterOrDigit(word[0])) {
-          wordSet.add(word)
+          wordSet.add(word.toLowerCase())
           wordCount++
           totalLength += word.length
         }

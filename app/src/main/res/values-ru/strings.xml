@@ -1,34 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="action_settings">настройки</string>
-    <string name="addition_success">Отчет успешно добавлен</string>
-    <string name="app_name">Текстовый счетчик слов</string>
-    <string name="bookmark_hint">Введите название отчета</string>
-    <string name="characters">Персонажи</string>
-    <string name="confirm">подтвердить</string>
-    <string name="delete_alert_desc">Вы действительно хотите удалить этот отчет?</string>
-    <string name="deletion_success">Отчет удалён успешно</string>
-    <string name="edit_alert_desc">Это действие удалит текущий контент. Вы уверены что хотите продолжить?</string>
-    <string name="edit_alert_title">Ты уверен?</string>
-    <string name="generic_error_message">Похоже, что что-то пошло не так. Пожалуйста, повторите попытку позже…</string>
-    <string name="hint_input">Введите текст здесь</string>
-    <string name="input">вход</string>
-    <string name="no">нет</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nНичего здесь!</string>
-    <string name="notes">Заметки</string>
-    <string name="paragraphs">Пункты</string>
-    <string name="replace_current_text">Заменить текущий текст</string>
-    <string name="save">Сохранить</string>
-    <string name="save_dialog_desc">Хорошо! Что бы вы хотели назвать?</string>
-    <string name="see_more">Просмотреть полный отчет</string>
-    <string name="sentences">Предложения</string>
-    <string name="size">Размер</string>
-    <string name="start_typing">Начать ввод</string>
-    <string name="title_input">вход</string>
-    <string name="title_notes">Заметки</string>
-    <string name="update_success">Отчет успешно обновлен</string>
-    <string name="words">слова</string>
-    <string name="yes">да</string>
+  <string name="app_name">Счетчик слов</string>
+
+  <string name="input">вход</string>
+  <string name="notes">Заметки</string>
+  <string name="settings">настройки</string>
+
+  <string name="hint_input">Введите текст здесь</string>
+
+
+  <string name="basic_stats">Основная статистика</string>
+  <string name="characters">Персонажи</string>
+  <string name="characters_without_spaces">Персонажи без пробелов</string>
+  <string name="words">слова</string>
+  <string name="paragraphs">Пункты</string>
+  <string name="size">Размер</string>
+  <string name="bookmark_hint">Введите название заметки</string>
+
+  <string name="extra_stats">Дополнительная статистика</string>
+  <string name="unique_words">Уникальные слова</string>
+  <string name="average_word_length">Средняя длина слова</string>
+  <string name="avg_sentence_length_words">Средняя длина предложения (слова)</string>
+  <string name="avg_sentence_length_characters">Средняя длина предложения (символы)</string>
+
+  <string name="length_stats">Статистика длины</string>
+  <string name="shortest_sentence">Кратчайшее предложение (слова)</string>
+  <string name="longest_sentence">Самое длинное предложение (слова)</string>
+
+  <string name="time_stats">Статистика времени</string>
+  <string name="reading_time">Время чтения</string>
+  <string name="speaking_time">Время выступления</string>
+  <string name="writing_time">Время письма</string>
+
+  <string name="save">Сохранить</string>
+  <string name="sentences">Предложения</string>
+
+  <string name="save_dialog_desc">Хорошо! Что бы вы хотели назвать?</string>
+  <string name="edit_alert_title">Ты уверен?</string>
+  <string name="yes">да</string>
+  <string name="edit_alert_desc">Это действие удалит текущий контент. Вы уверены что хотите продолжить?</string>
+  <string name="delete_alert_desc">Вы действительно хотите удалить этот отчет?</string>
+  <string name="no">нет</string>
+  <string name="generic_error_message">Похоже, что что-то пошло не так. Пожалуйста, повторите попытку позже…</string>
+  <string name="deletion_success">Заметка удалена успешно</string>
+  <string name="addition_success">Заметка добавлена успешно</string>
+  <string name="update_success">Замечание обновлено успешно</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ nНичего здесь!</string>
+
+  <string name="rate_us_text">Если вам понравилось наше приложение, не могли бы вы оценить нас в игровом магазине?</string>
+  <string name="rate_us_text_short">Оценить приложение в игровом магазине</string>
+  <string name="rate_us_yes">ОЦЕНИТЬ СЕЙЧАС</string>
+  <string name="rate_us_later">ПОЗЖЕ</string>
+  <string name="rate_us_never">НИКОГДА</string>
+  <string name="rate_us_error">«О нет, мы не смогли дойти до игрового магазина. Извините за это!»</string>
+
+
+  <string name="drafts">Черновики</string>
+  <string name="draft_deletion_success">Проект успешно удален</string>
+  <string name="draft_history_deletion_success">Удаленное удаление</string>
+  <string name="draft_saved">Черновик сохранен</string>
+  <string name="draft_updated">Проект обновлен</string>
+  <string name="draft_delete">Вы действительно хотите удалить этот черновик? Все истории будут удалены</string>
+  <string name="draft_history_delete">Вы действительно хотите удалить эту историю проекта?</string>
+
+
+  <string name="share_ui_text">Поделиться приложением</string>
+  <string name="share_picker_text">Совместное использование</string>
+
+
+  <string name="activity_not_found_error">Мы не смогли найти приложение, которое могло бы завершить это действие. Простите за это!</string>
+
+  <string name="basic_settings">Базовые настройки</string>
+  <string name="copy_clipboard_title">Скопировать текст буфера обмена автоматически</string>
+  <string name="copy_clipboard_summary">Приложение предложит вам вставлять текст из буфера обмена автоматически при запуске приложения</string>
+  <string name="send_usage_stats_title">Отправить статистику использования</string>
+  <string name="send_usage_stats_summary">Отправить анонимную статистику использования, чтобы улучшить приложение.</string>
+  <string name="stat_settings">Настройки статистики</string>
+  <string name="reading_time_wpm">Время чтения (слова в минуту)</string>
+  <string name="speaking_time_wpm">Время выступления (слова в минуту)</string>
+  <string name="writing_time_lpm">Время записи (письма в минуту)</string>
+  <string name="size_encoding_format">Формат кодирования размера</string>
+
+  <string name="paste">Вставить</string>
 </resources>

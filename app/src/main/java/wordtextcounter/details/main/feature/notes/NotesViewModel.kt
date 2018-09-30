@@ -7,11 +7,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logNoteMilestones
 import wordtextcounter.details.main.feature.base.BaseViewModel
+import wordtextcounter.details.main.feature.base.ExtraStats
 import wordtextcounter.details.main.feature.base.Input
 import wordtextcounter.details.main.store.daos.ReportDao
 import wordtextcounter.details.main.store.entities.Report
 import wordtextcounter.details.main.util.DeleteReport
 import wordtextcounter.details.main.util.EditReport
+import wordtextcounter.details.main.util.ExtraStatText
 import wordtextcounter.details.main.util.RxBus
 
 class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
@@ -78,6 +80,13 @@ class NotesViewModel(private val dao: ReportDao) : BaseViewModel() {
     viewState.value?.reports?.get(position)?.let {
       RxBus.send(EditReport(it))
       routerState.value = Input
+    }
+  }
+
+  fun showMoreStats(position: Int) {
+    getCurrentViewState().reports?.get(position)?.let {
+      RxBus.send(ExtraStatText(it.dataText!!))
+      routerState.value = ExtraStats
     }
   }
 }

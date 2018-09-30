@@ -15,11 +15,11 @@
       app:elevation="@dimen/_2sdp"
       app:layout_constraintTop_toTopOf="parent"
       app:tabBackground="@color/primaryColor"
-      app:tabIndicatorColor="@color/secondaryColor"
-      app:tabIndicatorHeight="@dimen/_2sdp"
+      app:tabIndicatorColor="@color/secondaryLightColor"
+      app:tabIndicatorHeight="@dimen/_1sdp"
       app:tabMode="scrollable"
-      app:tabSelectedTextColor="@color/white"
-      app:tabTextColor="@color/grey_75"
+      app:tabSelectedTextColor="@color/secondaryLightColor"
+      app:tabTextColor="@color/white"
       />
 
   <android.support.v4.view.ViewPager

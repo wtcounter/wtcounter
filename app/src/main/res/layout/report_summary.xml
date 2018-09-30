@@ -11,7 +11,9 @@
       layout="@layout/report_folded"
       android:id="@+id/report"
       android:layout_width="match_parent"
-      android:layout_height="@dimen/_64sdp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/_8sdp"
+      android:layout_marginTop="@dimen/_8sdp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       />
@@ -20,39 +22,45 @@
       android:id="@+id/horizontalLine"
       android:layout_width="match_parent"
       android:layout_height="@dimen/_1sdp"
+      android:layout_marginEnd="@dimen/_4sdp"
+      android:layout_marginStart="@dimen/_4sdp"
       android:layout_marginTop="@dimen/_4sdp"
-      android:background="@color/separator_color"
+      android:background="@color/separatorColor"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/report"
       />
 
-  <LinearLayout
-      android:id="@+id/llButtons"
-      android:layout_width="match_parent"
+  <ImageButton
+      android:id="@+id/ibExtraStats"
+      android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/_4sdp"
-      android:layout_marginTop="@dimen/_8sdp"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:background="?attr/selectableItemBackground"
+      android:paddingBottom="@dimen/_8sdp"
+      android:paddingTop="@dimen/_8sdp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/horizontalLine"
-      >
-    <ImageButton
-        android:id="@+id/ibExtraStats"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@null"
-        app:srcCompat="@drawable/ic_expand_more_black_24dp"
-        />
+      app:layout_constraintWidth_percent="0.5"
+      app:srcCompat="@drawable/ic_baseline_notes_24px"
+      />
+  <ImageButton
+      android:id="@+id/ibAdd"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="?attr/selectableItemBackground"
+      android:paddingBottom="@dimen/_8sdp"
+      android:paddingTop="@dimen/_8sdp"
+      android:scaleType="fitCenter"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/horizontalLine"
+      app:layout_constraintWidth_percent="0.5"
+      app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
+      />
 
-    <ImageButton
-        android:id="@+id/ibAdd"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@null"
-        app:srcCompat="@drawable/ic_add_black_24dp"
-        />
-  </LinearLayout>
+  <android.support.constraint.Group
+      android:id="@+id/buttons"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:constraint_referenced_ids="ibAdd,ibExtraStats"
+      />
 </android.support.constraint.ConstraintLayout>
 

@@ -1,34 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Generated using www.stringx.io-->
-
 <resources>
-    <string name="action_settings">Configuraciones</string>
-    <string name="addition_success">Informe agregado con éxito</string>
-    <string name="app_name">Word Counter</string>
-    <string name="bookmark_hint">Ingrese el nombre del informe</string>
-    <string name="characters">Caracteres</string>
-    <string name="confirm">Confirmar</string>
-    <string name="delete_alert_desc">¿Seguro que quieres eliminar este informe?</string>
-    <string name="deletion_success">Informe borrado con éxito</string>
-    <string name="edit_alert_desc">Esta acción borrará el contenido actual. Estás seguro de que quieres continuar?</string>
-    <string name="edit_alert_title">¿Estás seguro?</string>
-    <string name="generic_error_message">Parece que algo salió mal. Por favor, inténtelo de nuevo más tarde…</string>
-    <string name="hint_input">Escriba su texto aquí</string>
-    <string name="input">Entrada</string>
-    <string name="no">No</string>
-    <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\n¡Nada aquí!</string>
-    <string name="notes">Notas</string>
-    <string name="paragraphs">Párrafos</string>
-    <string name="replace_current_text">Reemplazar texto actual</string>
-    <string name="save">Salvar</string>
-    <string name="save_dialog_desc">¡Bien! ¿Cómo te gustaría llamarlo?</string>
-    <string name="see_more">Ver informe completo</string>
-    <string name="sentences">Frases</string>
-    <string name="size">tamaño</string>
-    <string name="start_typing">Comience a escribir</string>
-    <string name="title_input">Entrada</string>
-    <string name="title_notes">Notas</string>
-    <string name="update_success">Informe actualizado con éxito</string>
-    <string name="words">Palabras</string>
-    <string name="yes">Sí</string>
+<string name="app_name">Contador de palabras</string>
+
+  <string name="input">Entrada</string>
+  <string name="notes">Notas</string>
+  <string name="settings">Ajustes</string>
+
+  <string name="hint_input">Escriba su texto aquí</string>
+
+
+  <string name="basic_stats">Estadísticas basicas</string>
+  <string name="characters">Caracteres</string>
+  <string name="characters_without_spaces">Personajes sin espacios</string>
+  <string name="words">Palabras</string>
+  <string name="paragraphs">Párrafos</string>
+  <string name="size">tamaño</string>
+  <string name="bookmark_hint">Ingrese el nombre de la nota</string>
+
+  <string name="extra_stats">Estadísticas extra</string>
+  <string name="unique_words">Palabras únicas</string>
+  <string name="average_word_length">Longitud promedio de palabra</string>
+  <string name="avg_sentence_length_words">Duración media de las frases (palabras)</string>
+  <string name="avg_sentence_length_characters">Longitud media de la oración (caracteres)</string>
+
+  <string name="length_stats">Estadísticas de longitud</string>
+  <string name="shortest_sentence">Oración más corta (palabras)</string>
+  <string name="longest_sentence">Oración más larga (palabras)</string>
+
+  <string name="time_stats">Estadísticas de tiempo</string>
+  <string name="reading_time">Tiempo de leer</string>
+  <string name="speaking_time">Tiempo de habla</string>
+  <string name="writing_time">Tiempo de escritura a mano</string>
+
+  <string name="save">Salvar</string>
+  <string name="sentences">Frases</string>
+
+  <string name="save_dialog_desc">¡Bien! ¿Cómo te gustaría llamarlo?</string>
+  <string name="edit_alert_title">¿Estás seguro?</string>
+  <string name="yes">Sí</string>
+  <string name="edit_alert_desc">Esta acción borrará el contenido actual. Estás seguro de que quieres continuar?</string>
+  <string name="delete_alert_desc">¿Estás seguro de que quieres eliminar este informe?</string>
+  <string name="no">No</string>
+  <string name="generic_error_message">Parece que algo salió mal. Por favor, inténtelo de nuevo más tarde…</string>
+  <string name="deletion_success">Nota borrada con éxito</string>
+  <string name="addition_success">Nota agregada exitosamente</string>
+  <string name="update_success">Nota actualizada con éxito</string>
+  <string name="no_saved_notes">¯ \\ _ (ツ) _ / ¯ \ n \ n¡No hay nada aquí!</string>
+
+  <string name="rate_us_text">Si te gustó nuestra aplicación, ¿nos calificarías en Play Store?</string>
+  <string name="rate_us_text_short">Calificar aplicación en Play Store</string>
+  <string name="rate_us_yes">CALIFICA AHORA</string>
+  <string name="rate_us_later">LUEGO</string>
+  <string name="rate_us_never">NUNCA</string>
+  <string name="rate_us_error">"Oh no. No pudimos llegar a Play Store. ¡Lo siento por eso!"</string>
+
+
+  <string name="drafts">Borradores</string>
+  <string name="draft_deletion_success">Borrador eliminado exitosamente</string>
+  <string name="draft_history_deletion_success">Eliminación exitosa</string>
+  <string name="draft_saved">Borrador guardado</string>
+  <string name="draft_updated">Borrador actualizado</string>
+  <string name="draft_delete">¿Estás seguro de que quieres eliminar este borrador? Todas las historias serán borradas también</string>
+  <string name="draft_history_delete">¿Estás seguro de que deseas eliminar este borrador de historial?</string>
+
+
+  <string name="share_ui_text">Compartir aplicación</string>
+  <string name="share_picker_text">Compartir usando</string>
+
+
+  <string name="activity_not_found_error">No pudimos encontrar una aplicación que pudiera completar esta acción. ¡Lo siento por eso!</string>
+
+  <string name="basic_settings">Ajustes básicos</string>
+  <string name="copy_clipboard_title">Copia el texto del portapapeles automáticamente</string>
+  <string name="copy_clipboard_summary">La aplicación le pedirá que pegue el texto del portapapeles automáticamente al iniciar la aplicación</string>
+  <string name="send_usage_stats_title">Enviar estadísticas de uso</string>
+  <string name="send_usage_stats_summary">Envía estadísticas de uso anónimas para ayudar a mejorar la aplicación</string>
+  <string name="stat_settings">Configuración de estadísticas</string>
+  <string name="reading_time_wpm">Tiempo de lectura (palabras por minuto)</string>
+  <string name="speaking_time_wpm">Tiempo de conversación (palabras por minuto)</string>
+  <string name="writing_time_lpm">Tiempo de escritura (Cartas por minuto)</string>
+  <string name="size_encoding_format">Formato de codificación de tamaño</string>
+
+  <string name="paste">Pegar</string>
 </resources>

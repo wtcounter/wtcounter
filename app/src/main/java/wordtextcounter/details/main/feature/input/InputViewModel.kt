@@ -14,7 +14,6 @@ import io.reactivex.rxkotlin.Singles
 import io.reactivex.schedulers.Schedulers.io
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger
-import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
 import wordtextcounter.details.main.feature.base.BaseViewModel
 import wordtextcounter.details.main.store.daos.DraftDao
@@ -96,7 +95,7 @@ class InputViewModel(
         countSentences(input))
     { words, characters, paragraphs, sentences ->
       Report(
-          "", input.trim(), words.toString(), characters.toString(),
+          "", input, words.toString(), characters.toString(),
           paragraphs.toString(),
           sentences.toString(), 0, "")
     }

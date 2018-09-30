@@ -1,25 +1,15 @@
 package wordtextcounter.details.main.feature.notes
 
+import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
-import android.text.format.DateUtils.DAY_IN_MILLIS
-import android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE
-import android.text.format.DateUtils.MINUTE_IN_MILLIS
-import android.text.format.DateUtils.getRelativeDateTimeString
+import android.text.format.DateUtils.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jakewharton.rxrelay2.PublishRelay
-import kotlinx.android.synthetic.main.item_draft.view.ibDelete
-import kotlinx.android.synthetic.main.item_draft.view.ibEdit
-import kotlinx.android.synthetic.main.item_draft.view.tvText
-import kotlinx.android.synthetic.main.item_draft_history.view.ibDeleteHistory
-import kotlinx.android.synthetic.main.item_draft_history.view.ibEditHistory
-import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorBottom
-import kotlinx.android.synthetic.main.item_draft_history.view.lineIndicatorTop
-import kotlinx.android.synthetic.main.item_draft_history.view.tvHistoryText
-import kotlinx.android.synthetic.main.item_draft_history.view.tvTimeStamp
+import kotlinx.android.synthetic.main.item_draft.view.*
+import kotlinx.android.synthetic.main.item_draft_history.view.*
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.logAnalytics
 import wordtextcounter.details.main.feature.AbstractExpandableAdapter
@@ -30,10 +20,14 @@ import wordtextcounter.details.main.store.entities.DraftHistory
 class DraftsAdapter :
     AbstractExpandableAdapter<DraftsAdapter.DraftHolder, DraftsAdapter.HistoryHolder>() {
   val clickRelay: PublishRelay<DraftActions> = PublishRelay.create<DraftActions>()
-  val drafts : MutableList<DraftWithHistory> = mutableListOf()
+  val drafts: MutableList<DraftWithHistory> = mutableListOf()
+
+  lateinit var expandLess: Drawable
+  lateinit var expandMore: Drawable
+
   override fun createGroupViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): DraftHolder {
     return DraftHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft, parent, false)
@@ -49,8 +43,8 @@ class DraftsAdapter :
   }
 
   override fun createChildViewHolder(
-    parent: ViewGroup,
-    viewType: Int
+      parent: ViewGroup,
+      viewType: Int
   ): HistoryHolder {
     return HistoryHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_draft_history, parent, false)
@@ -58,22 +52,22 @@ class DraftsAdapter :
   }
 
   override fun bindGroupViewHolder(
-    viewHolder: DraftHolder,
-    groupPosition: Int
+      viewHolder: DraftHolder,
+      groupPosition: Int
   ) {
     val draft = drafts[groupPosition]
     viewHolder.bind(draft.draft)
   }
 
   override fun bindChildViewHolder(
-    viewHolder: HistoryHolder,
-    groupPosition: Int,
-    childPosition: Int
+      viewHolder: HistoryHolder,
+      groupPosition: Int,
+      childPosition: Int
   ) {
     val draft = drafts[groupPosition]
     val draftHistory = draft.draftHistories[childPosition]
     viewHolder.bind(
-        draftHistory, draft ,childPosition == 0, childPosition == childCount(groupPosition) - 1
+        draftHistory, draft, childPosition == 0, childPosition == childCount(groupPosition) - 1
     )
   }
 
@@ -81,20 +75,42 @@ class DraftsAdapter :
     private val text = itemView.tvText
     private val edit = itemView.ibEdit
     private val delete = itemView.ibDelete
+    private val ibExpand = itemView.ibExpand
+    private val tvDate = itemView.tvDate
 
     init {
       edit.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(DraftActions.DraftEdit(itemView.tag as Draft))
       }
 
       delete.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(DraftActions.DraftDelete(itemView.tag as Draft))
+      }
+
+      ibExpand.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        onHeaderClicked(adapterPosition)
       }
     }
 
     fun bind(draft: Draft) {
       text.text = draft.draftData.text
       itemView.tag = draft
+
+      tvDate.text = getRelativeTimeSpanString(draft.lastUpdatedAt, System.currentTimeMillis(), 0)
+
+      if (childCount(adapterPosition) > 0) {
+        ibExpand.visibility = View.VISIBLE
+        if (isGroupExpanded(adapterPosition)) {
+          ibExpand.setImageDrawable(expandLess)
+        } else {
+          ibExpand.setImageDrawable(expandMore)
+        }
+      } else {
+        ibExpand.visibility = View.GONE
+      }
     }
   }
 
@@ -119,7 +135,8 @@ class DraftsAdapter :
 
     init {
       editHistory.setOnClickListener {
-        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory, itemView.getTag(R.id.parent_draft) as DraftWithHistory))
+        clickRelay.accept(DraftActions.DraftHistoryEdit(itemView.tag as DraftHistory,
+            itemView.getTag(R.id.parent_draft) as DraftWithHistory))
       }
 
       deleteHistory.setOnClickListener {
@@ -128,10 +145,10 @@ class DraftsAdapter :
     }
 
     fun bind(
-      draftHistory: DraftHistory,
-      parentDraft: DraftWithHistory,
-      isFirst: Boolean,
-      isLast: Boolean
+        draftHistory: DraftHistory,
+        parentDraft: DraftWithHistory,
+        isFirst: Boolean,
+        isLast: Boolean
     ) {
       historyText.text = draftHistory.text
       if (isFirst) {
@@ -158,7 +175,9 @@ class DraftsAdapter :
   sealed class DraftActions {
     data class DraftEdit(val draft: Draft) : DraftActions()
     data class DraftDelete(val draft: Draft) : DraftActions()
-    data class DraftHistoryEdit(val draftHistory: DraftHistory, val parentDraft: DraftWithHistory) : DraftActions()
+    data class DraftHistoryEdit(val draftHistory: DraftHistory,
+        val parentDraft: DraftWithHistory) : DraftActions()
+
     data class DraftHistoryDelete(val draftHistory: DraftHistory) : DraftActions()
   }
 }

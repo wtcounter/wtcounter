@@ -15,10 +15,7 @@ import com.example.rateus.RateusCore.onNoSelected
 import com.example.rateus.RateusCore.onRemindLaterSelected
 import com.example.rateus.RateusCore.onYesSelected
 import com.example.rateus.RateusCore.shouldShowRateUsDialog
-import kotlinx.android.synthetic.main.rate_us_dialog.btnLater
-import kotlinx.android.synthetic.main.rate_us_dialog.btnNever
-import kotlinx.android.synthetic.main.rate_us_dialog.btnSave
-import kotlinx.android.synthetic.main.rate_us_dialog.ivCross
+import kotlinx.android.synthetic.main.rate_us_dialog.*
 import wordtextcounter.details.main.R
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Click
 import wordtextcounter.details.main.analytics.AnalyticsLogger.AnalyticsEvents.Event
@@ -43,7 +40,7 @@ object RateUsHelper {
         dialog.dismiss()
       }
 
-      dialog.btnSave.setOnClickListener {
+      dialog.btnRateNow.setOnClickListener {
         logAnalytics(Click("rateus_rate_now"))
         dialog.dismiss()
         onYesSelected(activity)

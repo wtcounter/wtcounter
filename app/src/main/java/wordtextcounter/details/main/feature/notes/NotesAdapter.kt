@@ -44,6 +44,7 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
     private val tvParagraphs = itemView.tvParagraphs
     private val ibDelete = itemView.ibDelete
     private val ibEdit = itemView.ibEdit
+    private val ibMoreStats = itemView.ibMoreStats
 
     init {
       ibDelete.setOnClickListener {
@@ -53,6 +54,10 @@ class NotesAdapter : ListAdapter<Report, NotesAdapter.ViewHolder>(NotesDiffCallb
       ibEdit.setOnClickListener {
         if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
         clickRelay.accept(Edit(adapterPosition))
+      }
+      ibMoreStats.setOnClickListener {
+        if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
+        clickRelay.accept(MoreStats(adapterPosition))
       }
     }
 

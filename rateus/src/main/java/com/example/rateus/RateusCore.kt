@@ -2,8 +2,8 @@ package com.example.rateus
 
 import android.app.Activity
 import android.app.Application
-import android.os.Bundle
 import android.content.Context.MODE_PRIVATE
+import android.os.Bundle
 import androidx.core.content.edit
 import java.util.concurrent.TimeUnit
 
