@@ -16,7 +16,7 @@
   <string name="words">Słowa</string>
   <string name="paragraphs">Akapity</string>
   <string name="size">Rozmiar</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Wpisz nazwę notatki</string>
   <!--Extra Stats-->
   <string name="extra_stats">Dodatkowe statystyki</string>
   <string name="unique_words">Unikalne słowa</string>
@@ -41,9 +41,9 @@
   <string name="delete_alert_desc">Czy na pewno chcesz usunąć ten raport?</string>
   <string name="no">Nie</string>
   <string name="generic_error_message">Wygląda na to, że coś poszło nie tak. Spróbuj ponownie później…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Notatka została usunięta pomyślnie</string>
+  <string name="addition_success">Notatka została dodana pomyślnie</string>
+  <string name="update_success">Notatka zaktualizowana pomyślnie</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Brak notatek!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">Jeśli podoba Ci się nasza aplikacja prosimy Cię o ocenę w sklepie Google Play</string>
@@ -68,13 +68,13 @@
   <string name="activity_not_found_error">Nie mogliśmy znaleźć aplikacji, która mogłaby ukończyć tę akcję. Przepraszam za to!</string>
   <string name="basic_settings">Podstawowe ustawienia</string>
   <string name="copy_clipboard_title">Skopiuj automatycznie tekst ze schowka</string>
-  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
-  <string name="send_usage_stats_title">Send usage stats</string>
-  <string name="send_usage_stats_summary">Send anonymous usage stats to help improve the app</string>
+  <string name="copy_clipboard_summary">Aplikacja wyświetli monit o automatyczne wklejenie tekstu ze schowka przy uruchomieniu aplikacji</string>
+  <string name="send_usage_stats_title">Wyślij statystyki użytkowania</string>
+  <string name="send_usage_stats_summary">Wysyłaj anonimowe statystyki użytkowania by ulepszyć aplikację</string>
   <string name="stat_settings">Ustawienia statystyk</string>
   <string name="reading_time_wpm">Czas czytania (słowa na minutę)</string>
   <string name="speaking_time_wpm">Czas mówienia (słowa na minutę)</string>
   <string name="writing_time_lpm">Czas pisania (litery na minutę)</string>
   <string name="size_encoding_format">Rozmiar formatu kodowania</string>
-  <string name="paste">Paste</string>
+  <string name="paste">Wklej</string>
 </resources>
