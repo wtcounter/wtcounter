@@ -33,7 +33,6 @@ object Helper {
       var whiteSpaceCount = 0
       val graphemeCounter = BreakIterator.getCharacterInstance()
       graphemeCounter.setText(input)
-
       var start = 0
       var end = graphemeCounter.next()
       while (end != BreakIterator.DONE) {
