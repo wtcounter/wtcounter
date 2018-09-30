@@ -7,11 +7,8 @@
   <string name="notes">Appunti</string>
   <string name="settings">Impostazioni</string>
   <!--input-->
-  <string name="title_input">Inserisci</string>
   <string name="hint_input">Inserisci il tuo testo qui</string>
-  <string name="confirm">Conferma</string>
   <!--notes-->
-  <string name="title_notes">Appunti</string>
   <!--report-->
   <string name="basic_stats">Statistiche di base</string>
   <string name="characters">Caratteri</string>
@@ -19,7 +16,7 @@
   <string name="words">Parole</string>
   <string name="paragraphs">Paragrafi</string>
   <string name="size">Dimensione</string>
-  <string name="bookmark_hint">Inserisci il nome del report</string>
+  <string name="bookmark_hint">Enter note name</string>
   <!--Extra Stats-->
   <string name="extra_stats">Statistiche supplementari</string>
   <string name="unique_words">Parole uniche</string>
@@ -30,26 +27,23 @@
   <string name="length_stats">Statistiche sulla lunghezza</string>
   <string name="shortest_sentence">Frase più corta (in parole)</string>
   <string name="longest_sentence">Frase più lunga (in parole)</string>
+  <!--Time Stats-->
   <string name="time_stats">Statistiche di tempo</string>
   <string name="reading_time">Tempo di lettura</string>
   <string name="speaking_time">Tempo di esposizione</string>
   <string name="writing_time">Tempo di scrittura a mano</string>
   <string name="save">Salvare</string>
   <string name="sentences">Frasi</string>
-  <string name="see_more">Visualizza il report completo</string>
-  <string name="action_settings">impostazioni</string>
-  <string name="start_typing">Iniziare a digitare</string>
   <string name="save_dialog_desc">Tutto apposto! Come vorresti chiamarlo?</string>
-  <string name="replace_current_text">Sostituisci testo corrente</string>
   <string name="edit_alert_title">Sei sicuro?</string>
   <string name="yes">sì</string>
   <string name="edit_alert_desc">Questa azione cancellerà il contenuto corrente. Sei sicuro di voler continuare?</string>
   <string name="delete_alert_desc">Sei sicuro di voler eliminare questo rapporto?</string>
   <string name="no">No</string>
   <string name="generic_error_message">Sembra che qualcosa sia andato storto. Per favore riprova più tardi…</string>
-  <string name="deletion_success">Rapporto cancellato con successo</string>
-  <string name="addition_success">Rapporto aggiunto con successo</string>
-  <string name="update_success">Rapporto aggiornato correttamente</string>
+  <string name="deletion_success">Note deleted successfully</string>
+  <string name="addition_success">Note added successfully</string>
+  <string name="update_success">Note updated successfully</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Niente qui!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">Se ti è piaciuta la nostra app, per favore ci valuti nel Play Store?</string>
@@ -74,10 +68,13 @@
   <string name="activity_not_found_error">Non siamo riusciti a trovare un\'app che potrebbe completare questa azione. Scusaci per l\'inconveniente!</string>
   <string name="basic_settings">Impostazioni di base</string>
   <string name="copy_clipboard_title">Copia automaticamente il testo negli Appunti</string>
-  <string name="copy_clipboard_summary">Il testo verrà copiato automaticamente dagli appunti e le statistiche verranno generate automaticamente</string>
+  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
+  <string name="send_usage_stats_title">Send usage stats</string>
+  <string name="send_usage_stats_summary">Send anonymous usage stats to help improve the app</string>
   <string name="stat_settings">Impostazioni iniziali</string>
   <string name="reading_time_wpm">Tempo di lettura (parole al minuto)</string>
   <string name="speaking_time_wpm">Tempo di esposizione (parole al minuto)</string>
   <string name="writing_time_lpm">Tempo di scrittura (lettere al minuto)</string>
   <string name="size_encoding_format">Dimensioni e formato</string>
+  <string name="paste">Paste</string>
 </resources>
