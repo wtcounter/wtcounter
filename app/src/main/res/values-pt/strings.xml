@@ -70,8 +70,6 @@
   <string name="basic_settings">Configurações básicas</string>
   <string name="copy_clipboard_title">Copiar texto da área de transferência automaticamente</string>
   <string name="copy_clipboard_summary">O aplicativo solicitará que você cole o texto da área de transferência automaticamente no lançamento do aplicativo</string>
-  <string name="send_usage_stats_title">Enviar estatísticas de uso</string>
-  <string name="send_usage_stats_summary">Enviar estatísticas de uso anônimas para ajudar a melhorar o aplicativo</string>
   <string name="stat_settings">Configurações de estatísticas</string>
   <string name="reading_time_wpm">Tempo de leitura (palavras por minuto)</string>
   <string name="speaking_time_wpm">Tempo Falando (Palavras Por Minuto)</string>

@@ -71,8 +71,6 @@
   <string name="basic_settings">Grundeinstellungen</string>
   <string name="copy_clipboard_title">Kopieren Sie den Text der Zwischenablage automatisch</string>
   <string name="copy_clipboard_summary">Die App fordert Sie auf, beim Start der App automatisch Text aus der Zwischenablage einzufügen</string>
-  <string name="send_usage_stats_title">Sende Nutzungsstatistiken</string>
-  <string name="send_usage_stats_summary">Senden Sie anonyme Nutzungsstatistiken, um die App zu verbessern</string>
   <string name="stat_settings">Statistikeinstellungen</string>
   <string name="reading_time_wpm">Lesezeit (Wörter pro Minute)</string>
   <string name="speaking_time_wpm">Sprechzeit (Wörter pro Minute)</string>

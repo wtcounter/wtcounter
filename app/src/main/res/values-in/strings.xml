@@ -72,8 +72,6 @@
   <string name="basic_settings">Pengaturan dasar</string>
   <string name="copy_clipboard_title">Salin teks clipboard secara otomatis</string>
   <string name="copy_clipboard_summary">Aplikasi akan meminta Anda untuk menempelkan teks dari clipboard secara otomatis saat peluncuran aplikasi</string>
-  <string name="send_usage_stats_title">Kirim statistik penggunaan</string>
-  <string name="send_usage_stats_summary">Kirim statistik penggunaan anonim untuk membantu meningkatkan aplikasi</string>
   <string name="stat_settings">Pengaturan Stat</string>
   <string name="reading_time_wpm">Waktu Membaca (Words Per Minute)</string>
   <string name="speaking_time_wpm">Waktu Berbicara (Words Per Minute)</string>

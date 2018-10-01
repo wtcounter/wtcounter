@@ -2,28 +2,18 @@ package wordtextcounter.details.main.analytics
 
 import android.content.Context
 import com.google.firebase.analytics.FirebaseAnalytics
+import wordtextcounter.details.main.BuildConfig
 
 object AnalyticsLogger {
-  private var analyticsInstance: FirebaseAnalytics? = null
+  private lateinit var analyticsInstance: FirebaseAnalytics
 
   fun init(context: Context) {
     analyticsInstance = FirebaseAnalytics.getInstance(context)
   }
 
   fun logAnalytics(event: AnalyticsEvents) {
-    analyticsInstance?.logEvent(event.eventName, null)
-  }
-
-  fun disableAnalytics() {
-    analyticsInstance?.setAnalyticsCollectionEnabled(false)
-    analyticsInstance = null
-  }
-
-  fun enableAnalytics(context: Context) {
-    if (analyticsInstance == null) {
-      analyticsInstance = FirebaseAnalytics.getInstance(context)
-    } else {
-      analyticsInstance?.setAnalyticsCollectionEnabled(true)
+    if (!BuildConfig.DEBUG) {
+      analyticsInstance.logEvent(event.eventName, null)
     }
   }
 

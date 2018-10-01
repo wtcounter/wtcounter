@@ -71,8 +71,6 @@
   <string name="basic_settings">Cài đặt cơ bản</string>
   <string name="copy_clipboard_title">Tự động sao chép văn bản clipboard</string>
   <string name="copy_clipboard_summary">Ứng dụng sẽ nhắc bạn dán văn bản từ khay nhớ tạm tự động khi khởi chạy ứng dụng</string>
-  <string name="send_usage_stats_title">Gửi thống kê sử dụng</string>
-  <string name="send_usage_stats_summary">Gửi số liệu thống kê sử dụng ẩn danh để giúp cải thiện ứng dụng</string>
   <string name="stat_settings">Cài đặt Stat</string>
   <string name="reading_time_wpm">Thời gian đọc (từ mỗi phút)</string>
   <string name="speaking_time_wpm">Thời gian nói (từ mỗi phút)</string>

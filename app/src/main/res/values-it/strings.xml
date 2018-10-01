@@ -72,8 +72,6 @@
   <string name="basic_settings">Impostazioni di base</string>
   <string name="copy_clipboard_title">Copia il testo degli appunti automaticamente</string>
   <string name="copy_clipboard_summary">L\'app ti chiederà di incollare automaticamente il testo dagli Appunti all\'avvio dell'app</string>
-  <string name="send_usage_stats_title">Invia statistiche di utilizzo</string>
-  <string name="send_usage_stats_summary">Invia statistiche di utilizzo anonime per migliorare l\'app</string>
   <string name="stat_settings">Impostazioni Stat</string>
   <string name="reading_time_wpm">Tempo di lettura (parole al minuto)</string>
   <string name="speaking_time_wpm">Tempo di parola (parole al minuto)</string>
