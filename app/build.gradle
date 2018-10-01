@@ -35,8 +35,8 @@ android {
     applicationId "wordtextcounter.details.main"
     minSdkVersion 16
     targetSdkVersion 27
-    versionCode 4
-    versionName "3.0"
+    versionCode 5
+    versionName "3.0.1"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
   }
