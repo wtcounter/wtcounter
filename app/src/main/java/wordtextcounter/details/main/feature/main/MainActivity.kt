@@ -130,7 +130,7 @@ class MainActivity : BaseActivity(), OnTabSelectListener {
   override fun onStop() {
     super.onStop()
     val currentFragment = getCurrentFragment()
-    if (currentFragment is InputFragment) {
+    if (currentFragment is InputFragment && !isChangingConfigurations) {
       currentFragment.saveDraft()
     }
   }
