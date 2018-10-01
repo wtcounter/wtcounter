@@ -72,8 +72,6 @@
   <string name="basic_settings">Paramètres de base</string>
   <string name="copy_clipboard_title">Copier le texte du presse-papiers automatiquement</string>
   <string name="copy_clipboard_summary">L\'application vous invite à coller automatiquement le texte du presse-papiers au lancement de l\'application.</string>
-  <string name="send_usage_stats_title">Envoyer des statistiques d\'utilisation</string>
-  <string name="send_usage_stats_summary">Envoyer des statistiques d\'utilisation anonymes pour améliorer l\'application</string>
   <string name="stat_settings">Paramètres de statistiques</string>
   <string name="reading_time_wpm">Temps de lecture (mots à la minute)</string>
   <string name="speaking_time_wpm">Temps de parole (mots à la minute)</string>

@@ -72,8 +72,6 @@
   <string name="basic_settings">Ajustes básicos</string>
   <string name="copy_clipboard_title">Copia el texto del portapapeles automáticamente</string>
   <string name="copy_clipboard_summary">La aplicación le pedirá que pegue el texto del portapapeles automáticamente al iniciar la aplicación</string>
-  <string name="send_usage_stats_title">Enviar estadísticas de uso</string>
-  <string name="send_usage_stats_summary">Envía estadísticas de uso anónimas para ayudar a mejorar la aplicación</string>
   <string name="stat_settings">Configuración de estadísticas</string>
   <string name="reading_time_wpm">Tiempo de lectura (palabras por minuto)</string>
   <string name="speaking_time_wpm">Tiempo de conversación (palabras por minuto)</string>

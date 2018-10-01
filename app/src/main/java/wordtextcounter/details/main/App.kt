@@ -6,7 +6,6 @@ import com.example.rateus.RateusCore
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
-import wordtextcounter.details.main.analytics.AnalyticsConsent.shouldLogAnalytics
 import wordtextcounter.details.main.analytics.AnalyticsLogger
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_NAME
 import wordtextcounter.details.main.store.ReportDatabase.Companion.DB_VERSION
@@ -22,9 +21,7 @@ class App : Application() {
     app = this
     val preferences = getPreference()
     RateusCore.init(this)
-    if (shouldLogAnalytics(this) && !BuildConfig.DEBUG) {
-      AnalyticsLogger.init(this)
-    }
+    AnalyticsLogger.init(this)
     val formatStrategy = PrettyFormatStrategy.newBuilder()
         .methodCount(7)
         .tag(BuildConfig.APPLICATION_ID)

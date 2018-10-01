@@ -3,9 +3,6 @@ package wordtextcounter.details.main.feature.settings
 import android.os.Bundle
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat
 import wordtextcounter.details.main.R
-import wordtextcounter.details.main.analytics.AnalyticsConsent
-import wordtextcounter.details.main.analytics.AnalyticsLogger.disableAnalytics
-import wordtextcounter.details.main.analytics.AnalyticsLogger.enableAnalytics
 import wordtextcounter.details.main.util.Constants
 import wordtextcounter.details.main.util.extensions.logAnalyticsOnClick
 import wordtextcounter.details.main.util.extensions.onPreferenceChanged
@@ -26,19 +23,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
       true
     }
 
-    val usageStatsPref = preferenceManager.findPreference(Constants.PREF_USAGE_STATS)
-    usageStatsPref.logAnalyticsOnClick()
-    usageStatsPref.setOnPreferenceChangeListener { _, newValue ->
-      AnalyticsConsent.markConsentAsked(context!!)
-      if (newValue is Boolean) {
-        if (newValue) {
-          enableAnalytics(context!!)
-        } else {
-          disableAnalytics()
-        }
-      }
-      true
-    }
     val speakingTimePref = preferenceManager.findPreference(
         Constants.PREF_SPEAKING_SPEED_WORDS_PER_MINUTE)
     speakingTimePref.summary = preferenceManager.sharedPreferences.getString(

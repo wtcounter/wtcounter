@@ -72,8 +72,6 @@
   <string name="basic_settings">Podstawowe ustawienia</string>
   <string name="copy_clipboard_title">Skopiuj automatycznie tekst ze schowka</string>
   <string name="copy_clipboard_summary">Aplikacja wyświetli monit o automatyczne wklejenie tekstu ze schowka przy uruchomieniu aplikacji</string>
-  <string name="send_usage_stats_title">Wyślij statystyki użytkowania</string>
-  <string name="send_usage_stats_summary">Wysyłaj anonimowe statystyki użytkowania, aby ulepszyć aplikację</string>
   <string name="stat_settings">Ustawienia statystyk</string>
   <string name="reading_time_wpm">Czas czytania (słowa na minutę)</string>
   <string name="speaking_time_wpm">Czas mówienia (słowa na minutę)</string>

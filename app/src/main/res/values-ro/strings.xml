@@ -71,8 +71,6 @@
   <string name="basic_settings">Setări de bază</string>
   <string name="copy_clipboard_title">Copiați automat textul clipboard</string>
   <string name="copy_clipboard_summary">Aplicația vă va solicita să inserați automat textul din clipboard în momentul lansării aplicației</string>
-  <string name="send_usage_stats_title">Trimiteți statisticile de utilizare</string>
-  <string name="send_usage_stats_summary">Trimiteți statistici de utilizare anonime pentru a îmbunătăți aplicația</string>
   <string name="stat_settings">Stat Settings</string>
   <string name="reading_time_wpm">Timp de citire (cuvinte pe minut)</string>
   <string name="speaking_time_wpm">Timp de vorbire (cuvinte pe minut)</string>

@@ -72,8 +72,6 @@
   <string name="basic_settings">الإعدادات الأساسية</string>
   <string name="copy_clipboard_title">نسخ نص الحافظة تلقائيا</string>
   <string name="copy_clipboard_summary">سيطالبك التطبيق بلصق نص من الحافظة تلقائيًا عند تشغيل التطبيق</string>
-  <string name="send_usage_stats_title">إرسال إحصائيات الاستخدام</string>
-  <string name="send_usage_stats_summary">إرسال إحصائيات استخدام مجهولة الهوية للمساعدة في تحسين التطبيق</string>
   <string name="stat_settings">الإعدادات الإحصائية</string>
   <string name="reading_time_wpm">وقت القراءة (كلمات في الدقيقة)</string>
   <string name="speaking_time_wpm">وقت التحدث (كلمات في الدقيقة)</string>

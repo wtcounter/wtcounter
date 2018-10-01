@@ -71,8 +71,6 @@
   <string name="basic_settings">Základní nastavení</string>
   <string name="copy_clipboard_title">Kopírovat text schránky automaticky</string>
   <string name="copy_clipboard_summary">Aplikace vás vyzve k automatickému vkládání textu ze schránky automaticky při spuštění aplikace</string>
-  <string name="send_usage_stats_title">Odeslat statistiky využití</string>
-  <string name="send_usage_stats_summary">Odeslání anonymních statistik využití, které vám pomohou vylepšit aplikaci</string>
   <string name="stat_settings">Nastavení Stat</string>
   <string name="reading_time_wpm">Čas čtení (slova za minutu)</string>
   <string name="speaking_time_wpm">Mluvení (slova za minutu)</string>

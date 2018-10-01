@@ -72,8 +72,6 @@
   <string name="basic_settings">Базовые настройки</string>
   <string name="copy_clipboard_title">Скопировать текст буфера обмена автоматически</string>
   <string name="copy_clipboard_summary">Приложение предложит вам вставлять текст из буфера обмена автоматически при запуске приложения</string>
-  <string name="send_usage_stats_title">Отправить статистику использования</string>
-  <string name="send_usage_stats_summary">Отправить анонимную статистику использования, чтобы улучшить приложение.</string>
   <string name="stat_settings">Настройки статистики</string>
   <string name="reading_time_wpm">Время чтения (слова в минуту)</string>
   <string name="speaking_time_wpm">Время выступления (слова в минуту)</string>
