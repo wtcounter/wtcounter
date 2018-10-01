@@ -69,8 +69,6 @@
   <string name="basic_settings">Basic Settings</string>
   <string name="copy_clipboard_title">Copy clipboard text automatically</string>
   <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
-  <string name="send_usage_stats_title">Send usage stats</string>
-  <string name="send_usage_stats_summary">Send anonymous usage stats to help improve the app</string>
   <string name="stat_settings">Stat Settings</string>
   <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
   <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
