@@ -46,7 +46,7 @@
   <string name="update_success">Note updated successfully</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you liked our app, would you please rate us on play store?</string>
+  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
   <string name="rate_us_text_short">Rate app on play store</string>
   <string name="rate_us_yes">RATE NOW</string>
   <string name="rate_us_later">LATER</string>
