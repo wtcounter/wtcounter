@@ -90,7 +90,7 @@
   <string name="title_10">Bezpośrednio wklej skopiowany tekst</string>
   <string name="long_desc1">Word Counter to bezpłatne i łatwe w użyciu narzędzie tekstowe do liczenia słów, zdań, akapitów i znaków w tekście podczas pisania.
      Został zaprojektowany w celu zwiększenia wydajności i ułatwienia życia. Aplikacja może być niezwykle przydatna podczas publikowania lub przesyłania na platformy które mają narzucone ograniczenia na liczbę znaków, słów lub rozmiar.</string>
-  <string name="long_desc2">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
+  <string name="long_desc2">Policz liczbę znaków, zdań, słów i akapitów danego tekstu podczas pisania.</string>
   <string name="long_desc3">Generate following advanced stats for the text</string>
   <string name="long_desc4">Time Stats(Reading time, Speaking time, Writing time)</string>
   <string name="long_desc5"> Unique words</string>
