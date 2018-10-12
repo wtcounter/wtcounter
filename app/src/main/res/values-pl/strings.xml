@@ -92,7 +92,7 @@
      Został zaprojektowany w celu zwiększenia wydajności i ułatwienia życia. Aplikacja może być niezwykle przydatna podczas publikowania lub przesyłania na platformy które mają narzucone ograniczenia na liczbę znaków, słów lub rozmiar.</string>
   <string name="long_desc2">Policz liczbę znaków, zdań, słów i akapitów danego tekstu podczas pisania.</string>
   <string name="long_desc3">Generuj następujące zaawansowane statystyki dla tekstu</string>
-  <string name="long_desc4">Time Stats(Reading time, Speaking time, Writing time)</string>
+  <string name="long_desc4">Statystyki czasu (czas czytania, czas mówienia, czas pisania)</string>
   <string name="long_desc5"> Unique words</string>
   <string name="long_desc6">Average word length, Average sentence length</string>
   <string name="long_desc7">Shortest sentence length, Longest sentence length</string>
