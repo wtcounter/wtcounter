@@ -75,4 +75,33 @@
   <string name="writing_time_lpm">Temps d’écriture (mots à la minute)</string>
   <string name="size_encoding_format">Size Encoding Format</string>
   <string name="paste">Coller</string>
+  <!-- Play store texts -->
+  <string name="app_title">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
+  <string name="app_description">Count words, characters, sentences, paragraphs, size and much more from text</string>
+  <string name="title_1">Top Features</string>
+  <string name="title_2">Count as you type</string>
+  <string name="title_3">Access to advanced Stats</string>
+  <string name="title_4">More control to you</string>
+  <string name="title_5">Never lose your typed text</string>
+  <string name="title_6">Save important notes</string>
+  <string name="title_7">Keep notes up to date</string>
+  <string name="title_8">Delete notes when they are no longer needed</string>
+  <string name="title_9">Open directly from another app</string>
+  <string name="title_10">Directly paste copied text</string>
+  <string name="long_desc1">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
+    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
+  <string name="long_desc2">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
+  <string name="long_desc3">Generate following advanced stats for the text</string>
+  <string name="long_desc4">Time Stats(Reading time, Speaking time, Writing time)</string>
+  <string name="long_desc5"> Unique words</string>
+  <string name="long_desc6">Average word length, Average sentence length</string>
+  <string name="long_desc7">Shortest sentence length, Longest sentence length</string>
+  <string name="long_desc8">Control how the stats are calculated from settings screen</string>
+  <string name="long_desc9">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
+  <string name="long_desc10">Save current text with their stats. Always have your important text and notes one click away!</string>
+  <string name="long_desc11">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
+  <string name="long_desc12">Get rid of the any saved notes which is no longer needed by you</string>
+  <string name="long_desc13">Now quickly access Word counter from other apps while sharing text</string>
+  <string name="long_desc14">The app will prompt you to paste recently copied text from clipboard</string>
+  <string name="long_desc15">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
 </resources>
