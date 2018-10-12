@@ -86,10 +86,10 @@
   <string name="title_6">Zapisz ważne notatki</string>
   <string name="title_7">Keep notes up to date</string>
   <string name="title_8">Usuwaj notatki gdy nie są już potrzebne</string>
-  <string name="title_9">Open directly from another app</string>
-  <string name="title_10">Directly paste copied text</string>
-  <string name="long_desc1">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
+  <string name="title_9">Otwórz bezpośrednio z innej aplikacji</string>
+  <string name="title_10">Bezpośrednio wklej skopiowany tekst</string>
+  <string name="long_desc1">Word Counter to bezpłatne i łatwe w użyciu narzędzie tekstowe do liczenia słów, zdań, akapitów i znaków w tekście podczas pisania.
+     Został zaprojektowany w celu zwiększenia wydajności i ułatwienia życia. Aplikacja może być niezwykle przydatna podczas publikowania lub przesyłania na platformy które mają narzucone ograniczenia na liczbę znaków, słów lub rozmiar.</string>
   <string name="long_desc2">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
   <string name="long_desc3">Generate following advanced stats for the text</string>
   <string name="long_desc4">Time Stats(Reading time, Speaking time, Writing time)</string>
