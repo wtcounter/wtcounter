@@ -93,9 +93,9 @@
   <string name="long_desc2">Policz liczbę znaków, zdań, słów i akapitów danego tekstu podczas pisania.</string>
   <string name="long_desc3">Generuj następujące zaawansowane statystyki dla tekstu</string>
   <string name="long_desc4">Statystyki czasu (czas czytania, czas mówienia, czas pisania)</string>
-  <string name="long_desc5"> Unique words</string>
+  <string name="long_desc5"> Unikalne słowa</string>
   <string name="long_desc6">Average word length, Average sentence length</string>
-  <string name="long_desc7">Shortest sentence length, Longest sentence length</string>
+  <string name="long_desc7">Najkrótsza długość zdania, najdłuższa długość zdania</string>
   <string name="long_desc8">Control how the stats are calculated from settings screen</string>
   <string name="long_desc9">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
   <string name="long_desc10">Save current text with their stats. Always have your important text and notes one click away!</string>
