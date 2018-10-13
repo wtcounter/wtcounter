@@ -97,8 +97,8 @@
   <string name="long_desc6">Średnia długość słowa, średnia długość zdania</string>
   <string name="long_desc7">Najkrótsza długość zdania, najdłuższa długość zdania</string>
   <string name="long_desc8">Kontroluj sposób obliczania statystyk na ekranie ustawień</string>
-  <string name="long_desc9">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
-  <string name="long_desc10">Save current text with their stats. Always have your important text and notes one click away!</string>
+  <string name="long_desc9">Automatycznie zapisuj notatki, gdy przypadkowo opuścisz aplikacje. Uzyskaj dostęp do tych tekstów w przyszłości w sekcji Wersje robocze. Edytuj lub usuń te wersje robocze jak chcesz. Wersje robocze będą również miały historię po zmianie istniejących wersji roboczych</string>
+  <string name="long_desc10">Zapisz aktualny tekst ze swoimi statystykami. Zawsze trzymaj swój ważny tekst i notatki jednym kliknięciem!</string>
   <string name="long_desc11">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
   <string name="long_desc12">Get rid of the any saved notes which is no longer needed by you</string>
   <string name="long_desc13">Now quickly access Word counter from other apps while sharing text</string>
