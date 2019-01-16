@@ -9,8 +9,8 @@
 
 
   <string name="basic_stats">Statistiche di base</string>
-  <string name="characters">Personaggi</string>
-  <string name="characters_without_spaces">Personaggi senza spazi</string>
+  <string name="characters">Caratteri</string>
+  <string name="characters_without_spaces">Caratteri senza spazi</string>
   <string name="words">Parole</string>
   <string name="paragraphs">I paragrafi</string>
   <string name="size">Dimensione</string>
@@ -71,7 +71,7 @@
 
   <string name="basic_settings">Impostazioni di base</string>
   <string name="copy_clipboard_title">Copia il testo degli appunti automaticamente</string>
-  <string name="copy_clipboard_summary">L\'app ti chiederà di incollare automaticamente il testo dagli Appunti all\'avvio dell'app</string>
+  <string name="copy_clipboard_summary">L\'app ti chiederà di incollare automaticamente il testo dagli Appunti all\'avvio dell\'app</string>
   <string name="stat_settings">Impostazioni Stat</string>
   <string name="reading_time_wpm">Tempo di lettura (parole al minuto)</string>
   <string name="speaking_time_wpm">Tempo di parola (parole al minuto)</string>
@@ -79,4 +79,38 @@
   <string name="size_encoding_format">Formato di codifica delle dimensioni</string>
 
   <string name="paste">Incolla</string>
+
+  <string name="lets_go_premium">Andiamo Premium</string>
+  <string name="enjoy_benefits">Congratulazioni! Goditi i benefici del nostro piano %s</string>
+  <string name="premium_title_purchased">Hai acquistato un piano premium</string>
+  <string name="premium_message_purchased">Ti godrai i benefici del nostro piano %s</string>
+  <string name="premium_message">Sblocca funzionalità avanzate e aiutaci a migliorare questa app supportandoci direttamente</string>
+  <string name="plan">Piano</string>
+
+  <string name="remove_ads">Rimuovere gli annunci!</string>
+  <string name="frequency_count">Ottieni il conteggio delle frequenze in altre statistiche</string>
+
+  <string name="five_more_themes">Cinque temi di base</string>
+  <string name="support_large_text">Supporto per testi di grandi dimensioni</string>
+  <string name="show_count_in_status_bar">Mostra il conteggio nella barra di stato quando stai digitando altre app</string>
+
+  <string name="ten_more_themes">10 altri temi</string>
+  <string name="audio_input">Audio input</string>
+  <string name="read_from_file">Apri qualsiasi file direttamente da Word Counter</string>
+
+  <string name="buy_yearly_subscription">Sottoscrivi</string>
+  <string name="buy_monthly_subscription_for">Sottoscrivi per</string>
+  <string name="buy_lifetime_premium">Acquistare</string>
+  <string name="buy_lifetime_premium_for">Compra per</string>
+  <string name="buy_premium_title">Acquista Word Counter Premium</string>
+  <string name="buy_premium_message">Le pubblicità sono fastidiose, giusto? Non ci piacciono neanche loro. Acquista le nostre offerte premium per rimuovere gli annunci e sbloccare funzionalità più avanzate. Clicca qui per vedere i piani disponibili</string>
+  <string name="coming_soon">Prossimamente!</string>
+
+  <string name="note_add_limit">Impossibile salvare la nota</string>
+  <string name="benefits_of_silver_plans">Tutti i vantaggi del piano Silver</string>
+  <string name="benefits_of_gold_plans">Tutti i vantaggi del piano Gold</string>
+  <string name="export_to_file">Esporta nota e statistiche come file (pdf, doc)</string>
+  <string name="year">Anno</string>
+  <string name="help_translate_word_counter">Aiuta a tradurre Word Counter</string>
+  <string name="more_apps_by_spians_labs">Altre app di Spians Labs</string>
 </resources>

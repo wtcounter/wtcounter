@@ -9,7 +9,7 @@
 
 
   <string name="basic_stats">Statistici fundamentale</string>
-  <string name="characters">caractere</string>
+  <string name="characters">Caractere</string>
   <string name="characters_without_spaces">Caractere fără spații</string>
   <string name="words">cuvinte</string>
   <string name="paragraphs">alineatele</string>
@@ -78,4 +78,39 @@
   <string name="size_encoding_format">Dimensiune codificare format</string>
 
   <string name="paste">Paste</string>
+
+  <string name="lets_go_premium">Să mergem Premium</string>
+  <string name="enjoy_benefits">Felicitări! Bucurați-vă de avantajele planului %s</string>
+  <string name="premium_title_purchased">Ați achiziționat planul premium</string>
+  <string name="premium_message_purchased">Te bucuri de beneficiile planului nostru %s</string>
+  <string name="premium_message">Deblocați funcțiile avansate și ne ajutați să îmbunătățim această aplicație, sprijinindu-ne direct</string>
+  <string name="plan">Plan</string>
+
+  <string name="remove_ads">Elimina anunțurile!</string>
+  <string name="frequency_count">Obțineți numărul de frecvențe în statisticile suplimentare</string>
+
+  <string name="five_more_themes">Cinci teme de bază</string>
+  <string name="support_large_text">Suport pentru textul mare</string>
+  <string name="show_count_in_status_bar">Afișați numărătoarea în bara de stare atunci când introduceți alte aplicații</string>
+
+  <string name="ten_more_themes">10 mai multe teme</string>
+  <string name="audio_input">Intrare audio</string>
+  <string name="read_from_file">Deschideți orice fișier direct din Word Counter</string>
+
+  <string name="buy_yearly_subscription">Abonați-vă</string>
+  <string name="buy_monthly_subscription_for">Abonați-vă pentru</string>
+  <string name="buy_lifetime_premium">Cumpara</string>
+  <string name="buy_lifetime_premium_for">Cumpara pentru</string>
+  <string name="buy_premium_title">Cumpărați Word Counter Premium</string>
+  <string name="buy_premium_message">Anunțurile sunt enervante, nu? Nici nu le place. Cumpărați ofertele noastre premium pentru a elimina anunțurile și a debloca funcții avansate. Faceți clic aici pentru a vedea planurile disponibile</string>
+  <string name="coming_soon">In curand!</string>
+
+  <string name="note_add_limit">Nu s-a putut salva nota</string>
+  <string name="benefits_of_silver_plans">Toate avantajele planului de Argint</string>
+  <string name="benefits_of_gold_plans">Toate avantajele planului de aur</string>
+  <string name="export_to_file">Nota de export și statisticile ca fișier (pdf, doc)</string>
+  <string name="year">An</string>
+  <string name="help_translate_word_counter">Ajutați-l să traducă Word Counter</string>
+  <string name="more_apps_by_spians_labs">Mai multe aplicații de către laboratoarele Spian</string>
+
 </resources>

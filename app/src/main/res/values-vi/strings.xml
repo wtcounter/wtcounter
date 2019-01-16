@@ -9,8 +9,8 @@
 
 
   <string name="basic_stats">Thống kê cơ bản</string>
-  <string name="characters">Nhân vật</string>
-  <string name="characters_without_spaces">Ký tự không có Spaces</string>
+  <string name="characters">Ký tự</string>
+  <string name="characters_without_spaces">Ký tự không có dấu cách</string>
   <string name="words">Từ ngữ</string>
   <string name="paragraphs">Đoạn</string>
   <string name="size">Kích thước</string>
@@ -78,4 +78,38 @@
   <string name="size_encoding_format">Kích thước định dạng mã hóa</string>
 
   <string name="paste">Dán</string>
+
+  <string name="lets_go_premium">Hãy đi cao cấp</string>
+  <string name="enjoy_benefits">Chúc mừng! Tận hưởng lợi ích của kế hoạch %s của chúng tôi</string>
+  <string name="premium_title_purchased">Bạn đã mua gói cao cấp</string>
+  <string name="premium_message_purchased">Bạn đang tận hưởng lợi ích của kế hoạch %s của chúng tôi</string>
+  <string name="premium_message">Mở khóa các tính năng nâng cao và giúp chúng tôi cải thiện ứng dụng này bằng cách hỗ trợ chúng tôi trực tiếp</string>
+  <string name="plan">Kế hoạch</string>
+
+  <string name="remove_ads">Loại bỏ các quảng cáo!</string>
+  <string name="frequency_count">Nhận tần số đếm trong số liệu thống kê thêm</string>
+
+  <string name="five_more_themes">Năm chủ đề cơ bản</string>
+  <string name="support_large_text">Hỗ trợ văn bản lớn</string>
+  <string name="show_count_in_status_bar">Hiển thị số đếm trên thanh trạng thái khi bạn đang nhập vào các ứng dụng khác</string>
+
+  <string name="ten_more_themes">Thêm 10 chủ đề</string>
+  <string name="audio_input">Đầu vào âm thanh</string>
+  <string name="read_from_file">Mở bất kỳ tệp nào trực tiếp từ Word Counter</string>
+
+  <string name="buy_yearly_subscription">Đăng ký</string>
+  <string name="buy_monthly_subscription_for">Đăng ký cho</string>
+  <string name="buy_lifetime_premium">Mua</string>
+  <string name="buy_lifetime_premium_for">Mua cho</string>
+  <string name="buy_premium_title">Mua Word Counter Premium</string>
+  <string name="buy_premium_message">Quảng cáo thật phiền phức, phải không? Chúng tôi cũng không thích chúng. Mua dịch vụ cao cấp của chúng tôi để xóa quảng cáo và mở khóa các tính năng nâng cao hơn. Nhấn vào đây để xem các kế hoạch có sẵn</string>
+  <string name="coming_soon">Sắp có!</string>
+
+  <string name="note_add_limit">Không thể lưu ghi chú</string>
+  <string name="benefits_of_silver_plans">Tất cả lợi ích của gói bạc</string>
+  <string name="benefits_of_gold_plans">Tất cả lợi ích của kế hoạch vàng</string>
+  <string name="export_to_file">Xuất ghi chú và số liệu thống kê dưới dạng tệp (pdf, doc)</string>
+  <string name="year">Năm</string>
+  <string name="help_translate_word_counter">Trợ giúp dịch Word Counter</string>
+  <string name="more_apps_by_spians_labs">Thêm ứng dụng của Spians Labs</string>
 </resources>

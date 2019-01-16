@@ -10,7 +10,7 @@
 
 
   <string name="basic_stats">Grundlegende Statistiken</string>
-  <string name="characters">Figuren</string>
+  <string name="characters">Zeichen</string>
   <string name="characters_without_spaces">Zeichen ohne Leerzeichen</string>
   <string name="words">Wörter</string>
   <string name="paragraphs">Absätze</string>
@@ -78,4 +78,38 @@
   <string name="size_encoding_format">Größencodierungsformat</string>
 
   <string name="paste">Einfügen</string>
+
+  <string name="lets_go_premium">Lass uns Premium werden</string>
+  <string name="enjoy_benefits">Glückwunsch! Nutzen Sie die Vorteile unseres %s Plan</string>
+  <string name="premium_title_purchased">Sie haben einen Prämienplan erworben</string>
+  <string name="premium_message_purchased">Sie profitieren von unserem %s Plan</string>
+  <string name="premium_message">Schalten Sie die erweiterten Funktionen frei und helfen Sie uns, diese App zu verbessern, indem Sie uns direkt unterstützen</string>
+  <string name="plan">Pläne</string>
+
+  <string name="remove_ads">Anzeigen entfernen!</string>
+  <string name="frequency_count">Holen Sie sich die Häufigkeit in zusätzlichen Statistiken</string>
+
+  <string name="five_more_themes">Fünf grundlegende Themes</string>
+  <string name="support_large_text">Unterstützung für großen Text</string>
+  <string name="show_count_in_status_bar">Zeigt die Zählung in der Statusleiste an, wenn Sie andere Apps eingeben</string>
+
+  <string name="ten_more_themes">10 weitere Themes</string>
+  <string name="audio_input">Audioeingang</string>
+  <string name="read_from_file">Öffnen Sie eine beliebige Datei direkt von Word Counter</string>
+
+  <string name="buy_yearly_subscription">Abonnieren</string>
+  <string name="buy_monthly_subscription_for">Abonnieren für</string>
+  <string name="buy_lifetime_premium">Kaufen</string>
+  <string name="buy_lifetime_premium_for">Kaufen für</string>
+  <string name="buy_premium_title">Word Counter Premium kaufen</string>
+  <string name="buy_premium_message">Anzeigen nerven, oder? Wir mögen sie auch nicht. Kaufen Sie unsere Premium-Angebote, um Anzeigen zu entfernen und erweiterte Funktionen freizuschalten. Klicken Sie hier, um die verfügbaren Pläne anzuzeigen</string>
+  <string name="coming_soon">Demnächst!</string>
+
+  <string name="note_add_limit">Notiz konnte nicht gespeichert werden</string>
+  <string name="benefits_of_silver_plans">Alle Vorteile des Silberplans</string>
+  <string name="benefits_of_gold_plans">Alle Vorteile des Gold-Plans</string>
+  <string name="export_to_file">Notiz und Statistik als Datei exportieren (pdf, doc)</string>
+  <string name="year">Jahr</string>
+  <string name="help_translate_word_counter">Helfen Sie, Word Counter zu übersetzen</string>
+  <string name="more_apps_by_spians_labs">Weitere Apps von Spians Labs</string>
 </resources>

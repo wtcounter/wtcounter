@@ -9,8 +9,8 @@
 
 
   <string name="basic_stats">Estatísticas Básicas</string>
-  <string name="characters">Personagens</string>
-  <string name="characters_without_spaces">Personagens sem espaços</string>
+  <string name="characters">Caracteres</string>
+  <string name="characters_without_spaces">Caracteres sem espaços</string>
   <string name="words">Palavras</string>
   <string name="paragraphs">Parágrafos</string>
   <string name="size">Tamanho</string>
@@ -77,4 +77,38 @@
   <string name="size_encoding_format">Formato de codificação de tamanho</string>
 
   <string name="paste">Colar</string>
+
+  <string name="lets_go_premium">Vamos para o Premium</string>
+  <string name="enjoy_benefits">Parabéns! Aproveite os benefícios do nosso plano de %s</string>
+  <string name="premium_title_purchased">Você comprou o plano premium</string>
+  <string name="premium_message_purchased">Você está aproveitando os benefícios do nosso plano de %s</string>
+  <string name="premium_message">Desbloqueie recursos avançados e ajude-nos a melhorar este aplicativo, apoiando-nos diretamente</string>
+  <string name="plan">Plano</string>
+
+  <string name="remove_ads">Remover propagandas!</string>
+  <string name="frequency_count">Obter contagem de frequência em estatísticas extras</string>
+
+  <string name="five_more_themes">Cinco temas básicos</string>
+  <string name="support_large_text">Suporte para texto grande</string>
+  <string name="show_count_in_status_bar">Mostrar contagem na barra de status quando você está digitando em outros aplicativos</string>
+
+  <string name="ten_more_themes">Mais 10 temas</string>
+  <string name="audio_input">Entrada de áudio</string>
+  <string name="read_from_file">Abra qualquer arquivo diretamente do contador de palavras</string>
+
+  <string name="buy_yearly_subscription">Se inscrever</string>
+  <string name="buy_monthly_subscription_for">Inscrever-se para</string>
+  <string name="buy_lifetime_premium">Comprar</string>
+  <string name="buy_lifetime_premium_for">Comprar para</string>
+  <string name="buy_premium_title">Compre o Word Counter Premium</string>
+  <string name="buy_premium_message">Anúncios são irritantes, certo? Nós não gostamos deles também. Compre nossas ofertas premium para remover anúncios e desbloquear recursos mais avançados. Clique aqui para ver os planos disponíveis</string>
+  <string name="coming_soon">Em breve!</string>
+
+  <string name="note_add_limit">Não foi possível salvar a nota</string>
+  <string name="benefits_of_silver_plans">Todos os benefícios do plano Silver</string>
+  <string name="benefits_of_gold_plans">Todos os benefícios do plano Gold</string>
+  <string name="export_to_file">Exportar nota e estatísticas como arquivo (pdf, doc)</string>
+  <string name="year">Ano</string>
+  <string name="help_translate_word_counter">Ajude a traduzir o Word Counter</string>
+  <string name="more_apps_by_spians_labs">Mais de Spians Labs</string>
 </resources>

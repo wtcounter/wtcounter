@@ -9,8 +9,8 @@
 
 
   <string name="basic_stats">Основная статистика</string>
-  <string name="characters">Персонажи</string>
-  <string name="characters_without_spaces">Персонажи без пробелов</string>
+  <string name="characters">Символы</string>
+  <string name="characters_without_spaces">Символы без пробелов</string>
   <string name="words">слова</string>
   <string name="paragraphs">Пункты</string>
   <string name="size">Размер</string>
@@ -79,4 +79,38 @@
   <string name="size_encoding_format">Формат кодирования размера</string>
 
   <string name="paste">Вставить</string>
+
+  <string name="lets_go_premium">Пойдем Премиум</string>
+  <string name="enjoy_benefits">Congrats! Воспользуйтесь преимуществами нашего плана %s</string>
+  <string name="premium_title_purchased">Вы приобрели премиальный план</string>
+  <string name="premium_message_purchased">Вы пользуетесь преимуществами нашего плана %s</string>
+  <string name="premium_message">Разблокируйте расширенные функции и помогите нам улучшить это приложение, поддерживая нас напрямую</string>
+  <string name="plan">План</string>
+
+  <string name="remove_ads">Убрать рекламу!</string>
+  <string name="frequency_count">Получить частоту в дополнительной статистике</string>
+
+  <string name="five_more_themes">Пять основных тем</string>
+  <string name="support_large_text">Поддержка большого текста</string>
+  <string name="show_count_in_status_bar">Показывать счетчик в строке состояния, когда вы печатаете в других приложениях</string>
+
+  <string name="ten_more_themes">Еще 10 тем</string>
+  <string name="audio_input">Аудио ввод</string>
+  <string name="read_from_file">Откройте любой файл прямо из Word Counter</string>
+
+  <string name="buy_yearly_subscription">Подписывайся</string>
+  <string name="buy_monthly_subscription_for">Подписывайся на</string>
+  <string name="buy_lifetime_premium">купить</string>
+  <string name="buy_lifetime_premium_for">Купить для</string>
+  <string name="buy_premium_title">Купить Word Counter Премиум</string>
+  <string name="buy_premium_message">Реклама раздражает, верно? Нам они тоже не нравятся. Купите наши премиальные предложения, чтобы удалить рекламу и разблокировать более продвинутые функции. Нажмите здесь, чтобы посмотреть доступные планы</string>
+  <string name="coming_soon">Скоро будет!</string>
+
+  <string name="note_add_limit">Не удалось сохранить заметку</string>
+  <string name="benefits_of_silver_plans">Все преимущества плана Silver</string>
+  <string name="benefits_of_gold_plans">Все преимущества плана Gold</string>
+  <string name="export_to_file">Экспорт заметки и статистики в виде файла (pdf, doc)</string>
+  <string name="year">Год</string>
+  <string name="help_translate_word_counter">Помогите перевести Word Counter</string>
+  <string name="more_apps_by_spians_labs">Еще приложения от Spians Labs</string>
 </resources>

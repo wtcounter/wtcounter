@@ -79,4 +79,39 @@
   <string name="size_encoding_format">Ukuran Encoding Format</string>
 
   <string name="paste">Pasta</string>
+
+  <string name="lets_go_premium">Ayo pergi Premium</string>
+  <string name="enjoy_benefits">Selamat! Nikmati manfaat dari paket %s kami</string>
+  <string name="premium_title_purchased">Anda telah membeli paket premium</string>
+  <string name="premium_message_purchased">Anda menikmati manfaat dari paket %s kami</string>
+  <string name="premium_message">Buka fitur-fitur canggih dan bantu kami meningkatkan aplikasi ini dengan mendukung kami secara langsung</string>
+  <string name="plan">Rencana</string>
+
+  <string name="remove_ads">Hilangkan iklan!</string>
+  <string name="frequency_count">Dapatkan penghitungan frekuensi dalam statistik tambahan</string>
+
+  <string name="five_more_themes">Lima tema dasar</string>
+  <string name="support_large_text">Dukungan untuk teks besar</string>
+  <string name="show_count_in_status_bar">Tampilkan hitungan di bilah status saat Anda mengetik di aplikasi lain</string>
+
+  <string name="ten_more_themes">10 tema lainnya</string>
+  <string name="audio_input">Input audio</string>
+  <string name="read_from_file">Buka file apa saja langsung dari Word Counter</string>
+
+  <string name="buy_yearly_subscription">Berlangganan</string>
+  <string name="buy_monthly_subscription_for">Berlangganan Untuk</string>
+  <string name="buy_lifetime_premium">Membeli</string>
+  <string name="buy_lifetime_premium_for">Membeli untuk</string>
+  <string name="buy_premium_title">Beli Word Counter Premium</string>
+  <string name="buy_premium_message">Iklan menjengkelkan, bukan? Kami juga tidak menyukai mereka. Beli penawaran premium kami untuk menghapus iklan dan membuka fitur yang lebih canggih. Klik di sini untuk melihat paket yang tersedia</string>
+  <string name="coming_soon">Segera akan datang!</string>
+
+  <string name="note_add_limit">Tidak dapat menyimpan catatan</string>
+  <string name="benefits_of_silver_plans">Semua manfaat paket Silver</string>
+  <string name="benefits_of_gold_plans">Semua manfaat paket Gold</string>
+  <string name="export_to_file">Ekspor catatan dan statistik sebagai file (pdf, doc)</string>
+  <string name="year">Tahun</string>
+  <string name="help_translate_word_counter">Bantu terjemahkan Word Counter</string>
+  <string name="more_apps_by_spians_labs">Aplikasi lainnya dari Spians Labs</string>
+
 </resources>
