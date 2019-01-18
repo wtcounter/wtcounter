@@ -53,7 +53,7 @@
   <string name="rate_us_never">Nigdy</string>
   <string name="rate_us_error">"O nie. Nie byłem w stanie dotrzeć do sklepu Google Play. Przepraszam za to!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Zmień preferencje reklam</string>
   <!-- Draft strings -->
   <string name="drafts">Wersje robocze</string>
   <string name="draft_deletion_success">Usunięto wersję roboczą</string>
@@ -76,7 +76,7 @@
   <string name="writing_time_lpm">Czas pisania (litery na minutę)</string>
   <string name="size_encoding_format">Rozmiar formatu kodowania</string>
   <string name="paste">Wklej</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="note_add_limit">Nie można zapisać notatki</string>
   <!-- Play store texts -->
   <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Licznik Słów, Zdań i Akapitów</string>
   <string name="app_description" tools:ignore="MissingTranslation">Policz słowa, znaki, zdania, akapity, rozmiar i wiele więcej z tekstu</string>
@@ -106,7 +106,7 @@
   <string name="long_desc13" tools:ignore="MissingTranslation">Teraz uzyskaj szybki dostęp do Word Counter z innych aplikacji podczas udostępniania tekstu</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">Aplikacja wyświetli monit o wklejenie ostatnio skopiowanego tekstu ze schowka</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">Aplikacja licząca słowa działa teraz w wielu językach, takich jak arabski, czeski, niemiecki, hiszpański, francuski, indonezyjski, włoski, polski, portugalski, rumuński, rosyjski i wietnamski.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
+  <string name="lets_go_premium">Przejdź na Premium</string>
   <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
   <string name="premium_title_purchased">You have purchased premium plan</string>
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
