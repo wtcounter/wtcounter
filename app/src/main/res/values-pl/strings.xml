@@ -109,8 +109,8 @@
   <string name="lets_go_premium">Przejdź na Premium</string>
   <string name="enjoy_benefits">Gratulacje! Ciesz się korzyściami z naszego planu %s</string>
   <string name="premium_title_purchased">Kupiłeś płatny abonament</string>
-  <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
+  <string name="premium_message_purchased">Cieszysz się korzyściami z naszego planu %s</string>
+  <string name="premium_message">Odblokuj zaawansowane funkcje i pomóż nam ulepszyć tę aplikację, wspierając nas bezpośrednio</string>
   <string name="plan">Plan</string>
   <string name="remove_ads">Remove Ads!</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
