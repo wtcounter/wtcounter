@@ -123,7 +123,7 @@
   <string name="audio_input">Audio input</string>
   <string name="read_from_file">Otwórz dowolny plik bezpośrednio z Word Counter</string>
   <string name="export_to_file">Eksportuj notatkę i statystyki jako plik (pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
+  <string name="buy_yearly_subscription">Subskrybuj</string>
   <string name="buy_monthly_subscription_for">Subscribe For</string>
   <string name="buy_lifetime_premium">Buy</string>
   <string name="buy_lifetime_premium_for">Buy for </string>
