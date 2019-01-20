@@ -124,10 +124,10 @@
   <string name="read_from_file">Otwórz dowolny plik bezpośrednio z Word Counter</string>
   <string name="export_to_file">Eksportuj notatkę i statystyki jako plik (pdf, doc)</string>
   <string name="buy_yearly_subscription">Subskrybuj</string>
-  <string name="buy_monthly_subscription_for">Subscribe For</string>
-  <string name="buy_lifetime_premium">Buy</string>
-  <string name="buy_lifetime_premium_for">Buy for </string>
-  <string name="year">Year</string>
+  <string name="buy_monthly_subscription_for">Subskrybuj na</string>
+  <string name="buy_lifetime_premium">Kup</string>
+  <string name="buy_lifetime_premium_for">Kup na </string>
+  <string name="year">Rok</string>
   <string name="buy_premium_title">Buy Word Counter Premium</string>
   <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
   <string name="coming_soon">Coming soon!</string>
