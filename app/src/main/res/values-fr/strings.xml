@@ -10,7 +10,7 @@
   <string name="hint_input">Entrez votre texte ici</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Statistiques de base</string>
   <string name="characters">Personnages</string>
   <string name="characters_without_spaces">Caractères sans espaces</string>
   <string name="words">Mots</string>
@@ -120,17 +120,17 @@
   <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
   <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
   <string name="ten_more_themes">10 more themes</string>
-  <string name="audio_input">Audio input</string>
-  <string name="read_from_file">Open any file directly from Word Counter</string>
+  <string name="audio_input">Entrée audio</string>
+  <string name="read_from_file">Ouvrir un fichier depuis Word Counter</string>
   <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
-  <string name="buy_monthly_subscription_for">Subscribe For</string>
-  <string name="buy_lifetime_premium">Buy</string>
-  <string name="buy_lifetime_premium_for">Buy for </string>
-  <string name="year">Year</string>
-  <string name="buy_premium_title">Buy Word Counter Premium</string>
+  <string name="buy_yearly_subscription">Abonnement</string>
+  <string name="buy_monthly_subscription_for">S\'abonner pour</string>
+  <string name="buy_lifetime_premium">Acheter</string>
+  <string name="buy_lifetime_premium_for">Acheter pour </string>
+  <string name="year">Année</string>
+  <string name="buy_premium_title">Acheter Word Counter Premium</string>
   <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
-  <string name="coming_soon">Coming soon!</string>
+  <string name="coming_soon">Bientôt disponible !</string>
   <string name="help_translate_word_counter">Help translate Word Counter</string>
   <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
 </resources>
