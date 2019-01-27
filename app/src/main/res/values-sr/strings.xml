@@ -46,16 +46,16 @@
   <string name="update_success">Белешка је успешно измењена</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ништа овде!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_text">Ако уживаш у коришћењу ове апликације, да ли би издвојио тренутак да га оцениш? Неће трајати дуже од минута. Хвала на подршци!</string>
+  <string name="rate_us_text_short">Оцени апликацију на продавници</string>
+  <string name="rate_us_yes">ОЦЕНИ САДА</string>
+  <string name="rate_us_later">КАСНИЈЕ</string>
+  <string name="rate_us_never">НИКАД</string>
+  <string name="rate_us_error">"О не. Нисмо могли да дођемо до продавнице. Извини за ово!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
   <!-- Draft strings -->
-  <string name="drafts">Drafts</string>
+  <string name="drafts">Радне верзије</string>
   <string name="draft_deletion_success">Draft deleted successfully</string>
   <string name="draft_history_deletion_success">Deletion successful</string>
   <string name="draft_saved">Draft saved</string>
