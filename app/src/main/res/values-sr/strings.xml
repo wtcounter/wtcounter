@@ -5,12 +5,12 @@
   <!--main-->
   <string name="input">Улазни</string>
   <string name="notes">Напомене</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Подешавања</string>
   <!--input-->
   <string name="hint_input">Унесите свој текст овде</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Основне статистике</string>
   <string name="characters">Карактери</string>
   <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Речи</string>
