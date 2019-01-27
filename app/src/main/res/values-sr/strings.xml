@@ -12,26 +12,26 @@
   <!--report-->
   <string name="basic_stats">Основне статистике</string>
   <string name="characters">Карактери</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Знакови без размака</string>
   <string name="words">Речи</string>
   <string name="paragraphs">Параграфи</string>
   <string name="size">Величина</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Унеси име белешке</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="extra_stats">Додатна статистика</string>
+  <string name="unique_words">Јединствене речи</string>
+  <string name="average_word_length">Просечна дужина речи</string>
+  <string name="avg_sentence_length_words">Просечна дужина реченице(Речи)</string>
+  <string name="avg_sentence_length_characters">Просечна дужина реченице(Знакови)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
-  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="length_stats">Статистика о дужини</string>
+  <string name="shortest_sentence">Најкраћа реченица(Речи)</string>
+  <string name="longest_sentence">Најдужа реченица(Речи)</string>
   <!--Time Stats-->
-  <string name="time_stats">Time Stats</string>
-  <string name="reading_time">Reading Time</string>
-  <string name="speaking_time">Speaking Time</string>
-  <string name="writing_time">Hand Writing Time</string>
+  <string name="time_stats">Статистика о времену</string>
+  <string name="reading_time">Време читања</string>
+  <string name="speaking_time">Време говора</string>
+  <string name="writing_time">Време писања руком</string>
   <string name="save">сачувати</string>
   <string name="sentences">Реченице</string>
   <string name="save_dialog_desc">У реду! Шта желите да назовете?</string>
@@ -41,9 +41,9 @@
   <string name="delete_alert_desc">Да ли сте сигурни да желите да избришете овај извештај?</string>
   <string name="no">Не</string>
   <string name="generic_error_message">Изгледа да нешто није у реду. Покушајте поново касније…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Белешка је успешно избрисана</string>
+  <string name="addition_success">Белешка је успешно додата</string>
+  <string name="update_success">Белешка је успешно измењена</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ништа овде!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
