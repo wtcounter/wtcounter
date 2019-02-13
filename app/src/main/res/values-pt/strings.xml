@@ -5,12 +5,12 @@
   <!--main-->
   <string name="input">Entrada</string>
   <string name="notes">Notas</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Configurações</string>
   <!--input-->
   <string name="hint_input">Digite seu texto aqui</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Estatísticas Basicas</string>
   <string name="characters">Personagens</string>
   <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Palavras</string>
