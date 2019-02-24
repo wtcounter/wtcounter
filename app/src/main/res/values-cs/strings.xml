@@ -42,22 +42,22 @@
   <string name="no">Ne</string>
   <string name="generic_error_message">Vypadá to, že se něco pokazilo. Prosím zkuste to znovu později…</string>
   <string name="deletion_success">Poznámka úspěšně odstraněna</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="addition_success">Poznámka úspěšně přidána</string>
+  <string name="update_success">Poznámka úspěšně aktualizována</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nic zde!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_text">Pokud jste spokojeni s používáním této aplikace, nevadilo by Vám udělat si chvíli na její ohodnocení? Nebude to trvat déle než minutu. Děkujeme Vám za Vaši podporu!</string>
+  <string name="rate_us_text_short">Ohodnoťte aplikaci v obchodu play</string>
+  <string name="rate_us_yes">HODNOTIT NYNÍ</string>
+  <string name="rate_us_later">POZDĚJI</string>
+  <string name="rate_us_never">NIKDY</string>
+  <string name="rate_us_error">"Ach ne. Nepodařilo se nám spojit s obchodem play. Omlouváme se za to!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Změnit předvolby reklam</string>
   <!-- Draft strings -->
-  <string name="drafts">Drafts</string>
-  <string name="draft_deletion_success">Draft deleted successfully</string>
-  <string name="draft_history_deletion_success">Deletion successful</string>
+  <string name="drafts">Koncepty</string>
+  <string name="draft_deletion_success">Koncept úspěšně odstraněn</string>
+  <string name="draft_history_deletion_success">Úspěšně odstraněno</string>
   <string name="draft_saved">Draft saved</string>
   <string name="draft_updated">Draft updated</string>
   <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
@@ -115,9 +115,9 @@
   <string name="remove_ads">Remove Ads!</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
-  <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
+  <string name="five_more_themes">Pět základních témat</string>
+  <string name="support_large_text">Podpora pro velké texty</string>
+  <string name="show_count_in_status_bar">Zobrazit počet ve stavovém řádku, když píšete v jiných aplikacích</string>
   <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
   <string name="ten_more_themes">10 more themes</string>
   <string name="audio_input">Audio input</string>
