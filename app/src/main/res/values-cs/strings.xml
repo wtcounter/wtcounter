@@ -81,15 +81,15 @@
   <string name="app_title" tools:ignore="MissingTranslation">Word Counter - počet slov, vět &amp; odstavců</string>
   <string name="app_description" tools:ignore="MissingTranslation">Počet slov, znaků, vět, odstavců, velikost a mnoho dalšího z textu</string>
   <string name="title_1" tools:ignore="MissingTranslation">Nejlepší funkce</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Počítat při psaní</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Přístup k pokročilým statistikám</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Více kontroly pro Vás</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Nikdy nepřijdete o Váš napsaný text</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Uložit důležité poznámky</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Udržovat poznámky aktuální</string>
+  <string name="title_8" tools:ignore="MissingTranslation">Odstranit poznámky, pokud již nějsou nadále potřeba</string>
+  <string name="title_9" tools:ignore="MissingTranslation">Otevřít přímo z jiné aplikace</string>
+  <string name="title_10" tools:ignore="MissingTranslation">Zkopírovaný text vložit přímo</string>
   <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
     It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
