@@ -106,7 +106,7 @@
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
+  <string name="lets_go_premium">Pojďme Premium</string>
   <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
   <string name="premium_title_purchased">You have purchased premium plan</string>
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
