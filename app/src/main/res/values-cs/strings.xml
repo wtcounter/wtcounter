@@ -5,33 +5,33 @@
   <!--main-->
   <string name="input">Vstup</string>
   <string name="notes">Poznámky</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Nastavení</string>
   <!--input-->
   <string name="hint_input">Zadejte svůj text zde</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Základní statistiky</string>
   <string name="characters">Postavy</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Znaky bez mezer</string>
   <string name="words">Slova</string>
   <string name="paragraphs">Odstavce</string>
   <string name="size">Velikost</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Zadejte název poznámky</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="extra_stats">Další statistiky</string>
+  <string name="unique_words">Jedinečná slova</string>
+  <string name="average_word_length">Průměrná délka slova</string>
+  <string name="avg_sentence_length_words">Průměrná délka věty(slova)</string>
+  <string name="avg_sentence_length_characters">Průměrná délka věty(znaky)</string>
   <!--Length Stats-->
   <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
-  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="shortest_sentence">Nejkratší věta(slova)</string>
+  <string name="longest_sentence">Nejdelší věta(slova)</string>
   <!--Time Stats-->
-  <string name="time_stats">Time Stats</string>
-  <string name="reading_time">Reading Time</string>
-  <string name="speaking_time">Speaking Time</string>
-  <string name="writing_time">Hand Writing Time</string>
+  <string name="time_stats">Časové statistiky</string>
+  <string name="reading_time">Doba čtení</string>
+  <string name="speaking_time">Řečnická doba</string>
+  <string name="writing_time">Čas psaní rukou</string>
   <string name="save">Uložit</string>
   <string name="sentences">Věty</string>
   <string name="save_dialog_desc">V pořádku! Co byste chtěl říkat?</string>
@@ -41,7 +41,7 @@
   <string name="delete_alert_desc">Opravdu chcete smazat tento přehled?</string>
   <string name="no">Ne</string>
   <string name="generic_error_message">Vypadá to, že se něco pokazilo. Prosím zkuste to znovu později…</string>
-  <string name="deletion_success">Note deleted successfully</string>
+  <string name="deletion_success">Poznámka úspěšně odstraněna</string>
   <string name="addition_success">Note added successfully</string>
   <string name="update_success">Note updated successfully</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nic zde!</string>
