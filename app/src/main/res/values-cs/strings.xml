@@ -11,7 +11,7 @@
   <!--notes-->
   <!--report-->
   <string name="basic_stats">Základní statistiky</string>
-  <string name="characters">Postavy</string>
+  <string name="characters">Znaky</string>
   <string name="characters_without_spaces">Znaky bez mezer</string>
   <string name="words">Slova</string>
   <string name="paragraphs">Odstavce</string>
@@ -24,7 +24,7 @@
   <string name="avg_sentence_length_words">Průměrná délka věty(slova)</string>
   <string name="avg_sentence_length_characters">Průměrná délka věty(znaky)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
+  <string name="length_stats">Statistika délky</string>
   <string name="shortest_sentence">Nejkratší věta(slova)</string>
   <string name="longest_sentence">Nejdelší věta(slova)</string>
   <!--Time Stats-->
@@ -76,11 +76,11 @@
   <string name="writing_time_lpm">Doba psaní (písmena za minutu)</string>
   <string name="size_encoding_format">Formát kódování velikost</string>
   <string name="paste">Vložit</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="note_add_limit">Poznámku nelze uložit</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - počet slov, vět &amp; odstavců</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Počet slov, znaků, vět, odstavců, velikost a mnoho dalšího z textu</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Nejlepší funkce</string>
   <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
