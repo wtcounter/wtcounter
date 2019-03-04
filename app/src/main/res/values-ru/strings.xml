@@ -28,10 +28,10 @@
   <string name="shortest_sentence">Короткие предложения (кол-во слов)</string>
   <string name="longest_sentence">Длинные предложения (кол-во слов)</string>
   <!--Time Stats-->
-  <string name="time_stats">Статистика за все время</string>
+  <string name="time_stats">Статистика времени</string>
   <string name="reading_time">Время чтения</string>
   <string name="speaking_time">Время чтения</string>
-  <string name="writing_time">Время написания вручную</string>
+  <string name="writing_time">Время написания</string>
   <string name="save">Сохранить</string>
   <string name="sentences">Предложения</string>
   <string name="save_dialog_desc">Хорошо! Что бы вы хотели назвать?</string>
@@ -41,13 +41,13 @@
   <string name="delete_alert_desc">Вы действительно хотите удалить этот отчет?</string>
   <string name="no">нет</string>
   <string name="generic_error_message">Похоже, что что-то пошло не так. Пожалуйста, повторите попытку позже…</string>
-  <string name="deletion_success">Записка удалена</string>
+  <string name="deletion_success">Файл удален</string>
   <string name="addition_success">Файл добавлен</string>
-  <string name="update_success">Файл загружен</string>
+  <string name="update_success">Файл обновлен</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Ничего здесь!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
+  <string name="rate_us_text">Если вам нравится использовать это приложение, могли бы вы уделить минутку и поставить оценку? Спасибо за поддержку!</string>
+  <string name="rate_us_text_short">Оценить приложение в Play store</string>
   <string name="rate_us_yes">RATE NOW</string>
   <string name="rate_us_later">LATER</string>
   <string name="rate_us_never">NEVER</string>
