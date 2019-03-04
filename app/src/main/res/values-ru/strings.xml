@@ -106,24 +106,24 @@
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
-  <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
-  <string name="premium_title_purchased">You have purchased premium plan</string>
-  <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
-  <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
-  <string name="frequency_count">Get frequency count in extra stats</string>
-  <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
-  <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
-  <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
-  <string name="ten_more_themes">10 more themes</string>
-  <string name="audio_input">Audio input</string>
-  <string name="read_from_file">Open any file directly from Word Counter</string>
-  <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
+  <string name="lets_go_premium">Премиум</string>
+  <string name="enjoy_benefits">Поздравляю! Наслаждайтесь своей подпиской</string>
+  <string name="premium_title_purchased">Вы приобрели премиум</string>
+  <string name="premium_message_purchased">Наслаждайтесь возможностями своей подписки</string>
+  <string name="premium_message">Откройте расширенные возможности и помогите нам улучшить это приложение, поддерживая нас напрямую</string>
+  <string name="plan">Подписка</string>
+  <string name="remove_ads">Убери рекламу!</string>
+  <string name="frequency_count">Получить доступ к доп статистике</string>
+  <string name="benefits_of_silver_plans">Все о серебряной подписке</string>
+  <string name="five_more_themes">Пять основных тем</string>
+  <string name="support_large_text">Поддержка большого текста</string>
+  <string name="show_count_in_status_bar">Показывать кол-во в строке статуса когда вы печатаете в другом приложении</string>
+  <string name="benefits_of_gold_plans">Преимущества золотой подписки</string>
+  <string name="ten_more_themes">Больше тем (10)</string>
+  <string name="audio_input">Аудио</string>
+  <string name="read_from_file">Открывай любой файл прямо из приложения</string>
+  <string name="export_to_file">Добавить записку как файл (pdf, doc)</string>
+  <string name="buy_yearly_subscription">Подписаться</string>
   <string name="buy_monthly_subscription_for">Подписаться на</string>
   <string name="buy_lifetime_premium">Купить</string>
   <string name="buy_lifetime_premium_for">Купить за </string>
