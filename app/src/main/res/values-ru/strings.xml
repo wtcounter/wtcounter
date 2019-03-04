@@ -5,12 +5,12 @@
   <!--main-->
   <string name="input">вход</string>
   <string name="notes">Заметки</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Настройки</string>
   <!--input-->
   <string name="hint_input">Введите текст здесь</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Базовые параметры</string>
   <string name="characters">Персонажи</string>
   <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">слова</string>
