@@ -100,12 +100,12 @@
   <string name="long_desc7" tools:ignore="MissingTranslation">Покажет самое короткое и длинное предложение</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Вся статистика находится в настройках</string>
   <string name="long_desc9" tools:ignore="MissingTranslation">Автоматически сохраняет файлы после выхода из приложения. Продолжите редактировать файл в разделе \"черновики\". Добавляйте или удаляйте черновики когда захотите. Также в черновиках есть история всех изменений</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Сохраните текущий текст со своей статистикой. Находи текст и заметки в один клик!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Редактирование сохранённых заметок и сохранение истории их изменения. Вы с лёгкостью можете хранить свою заметку до выбранной вами датой!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Удаляйте заметки которые вам больше не нужны</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">Теперь вы можете быстро получить доступ к счетчику слов из других приложений во время обмена текстом</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">Приложение предложит вам вставить недавно скопированный текст из буфера обмена</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">Приложение для подсчета слов работает с несколькими языками, такими как арабский, чешский, немецкий, испанский, французский, индонезийский, итальянский, польский, португальский, румынский, русский и вьетнамский.</string>
   <string name="lets_go_premium">Премиум</string>
   <string name="enjoy_benefits">Поздравляю! Наслаждайтесь своей подпиской</string>
   <string name="premium_title_purchased">Вы приобрели премиум</string>
