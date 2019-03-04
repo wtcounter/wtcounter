@@ -48,26 +48,26 @@
   <!-- Rate us strings -->
   <string name="rate_us_text">Если вам нравится использовать это приложение, могли бы вы уделить минутку и поставить оценку? Спасибо за поддержку!</string>
   <string name="rate_us_text_short">Оценить приложение в Play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_yes">Оценить сейчас</string>
+  <string name="rate_us_later">Позже</string>
+  <string name="rate_us_never">Никогда</string>
+  <string name="rate_us_error">"О нет! Нет связи с магазином. Извините!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Настройки рекламы</string>
   <!-- Draft strings -->
-  <string name="drafts">Drafts</string>
-  <string name="draft_deletion_success">Draft deleted successfully</string>
-  <string name="draft_history_deletion_success">Deletion successful</string>
-  <string name="draft_saved">Draft saved</string>
-  <string name="draft_updated">Draft updated</string>
-  <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
-  <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
+  <string name="drafts">Черновики</string>
+  <string name="draft_deletion_success">Черновик удалён</string>
+  <string name="draft_history_deletion_success">Удаление завершено</string>
+  <string name="draft_saved">Черновик сохранён</string>
+  <string name="draft_updated">Черновик обновлён</string>
+  <string name="draft_delete">Вы уверены что хотите удалить это? Вся история будет удалена</string>
+  <string name="draft_history_delete">Вы уверены что хотите удалить историю?</string>
   <!-- Share app string -->
-  <string name="share_ui_text">Share app</string>
-  <string name="share_picker_text">Share using</string>
+  <string name="share_ui_text">Рассказать о приложении</string>
+  <string name="share_picker_text">Отправить через</string>
   <!--  Activity not found error -->
-  <string name="activity_not_found_error">We could not find an app that could complete this action. Sorry for that!</string>
-  <string name="basic_settings">Basic Settings</string>
+  <string name="activity_not_found_error">Мы не можем найти приложение которое закончит это действие. Извините!</string>
+  <string name="basic_settings">Основные настройки</string>
   <string name="copy_clipboard_title">Copy clipboard text automatically</string>
   <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
   <string name="stat_settings">Stat Settings</string>
