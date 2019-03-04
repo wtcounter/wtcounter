@@ -124,7 +124,7 @@
   <string name="read_from_file">Open any file directly from Word Counter</string>
   <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
   <string name="buy_yearly_subscription">Subscribe</string>
-  <string name="buy_monthly_subscription_for">Subscribe For</string>
+  <string name="buy_monthly_subscription_for">Подписаться на</string>
   <string name="buy_lifetime_premium">Купить</string>
   <string name="buy_lifetime_premium_for">Купить за </string>
   <string name="year">Год</string>
@@ -132,5 +132,5 @@
   <string name="buy_premium_message">Надоела реклама? Нам она тоже не нравится. Купи премиум чтобы избавиться от рекламы и разблокировать классные функции. Нажми сюда чтобы узнать подробнее</string>
   <string name="coming_soon">Скоро!</string>
   <string name="help_translate_word_counter">Помоги перевести счётчик слов</string>
-  <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
+  <string name="more_apps_by_spians_labs">Больше приложений от Spians Lsbs</string>
 </resources>
