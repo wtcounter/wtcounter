@@ -84,7 +84,7 @@
   <string name="title_2" tools:ignore="MissingTranslation">Conta enquanto digita</string>
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Nunca perca um texto digitado</string>
   <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
   <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
   <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
