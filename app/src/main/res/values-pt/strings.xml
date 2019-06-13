@@ -25,7 +25,7 @@
   <string name="avg_sentence_length_characters">Tamanho Médio das Frases(Caracteres)</string>
   <!--Length Stats-->
   <string name="length_stats">Estatísticas de Comprimento</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
+  <string name="shortest_sentence">Frases mais Curtas(Palavras)</string>
   <string name="longest_sentence">Longest Sentence(Words)</string>
   <!--Time Stats-->
   <string name="time_stats">Time Stats</string>
