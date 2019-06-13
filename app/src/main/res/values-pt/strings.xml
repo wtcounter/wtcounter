@@ -18,7 +18,7 @@
   <string name="size">Tamanho</string>
   <string name="bookmark_hint">Digita o nome da nota</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Estatísticas Extra</string>
+  <string name="extra_stats">Estatísticas Extras</string>
   <string name="unique_words">Palavras Únicas</string>
   <string name="average_word_length">Tamanho Médio das Palavras</string>
   <string name="avg_sentence_length_words">Tamanho Médio das Frases(Palavras)</string>
@@ -34,7 +34,7 @@
   <string name="writing_time">Tempo de Escrita</string>
   <string name="save">Guardar</string>
   <string name="sentences">Frases</string>
-  <string name="save_dialog_desc">Muito bem! O que gostarias de chamar?</string>
+  <string name="save_dialog_desc">Muito bem! O que gostarias de chamá-lo?</string>
   <string name="edit_alert_title">Tens a certeza?</string>
   <string name="yes">Sim</string>
   <string name="edit_alert_desc">Esta ação apagará o conteúdo atual. Tens a certeza de que queres continuar?</string>
@@ -46,12 +46,12 @@
   <string name="update_success">Nota atualizada com sucesso</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNada aqui!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">Se gostas de usar esta aplicação, gostarias de tomar um momento para avaliá-lo? Não levará mais de um minuto. Agradecemos pelo apoio!</string>
+  <string name="rate_us_text">Se gostas de usar esta aplicação, gostarias de tomar um momento para avaliá-lo? Não levará mais do que um minuto. Agradecemos pelo apoio!</string>
   <string name="rate_us_text_short">Avalia a aplicação na Play Store</string>
   <string name="rate_us_yes">AVALIAR AGORA</string>
   <string name="rate_us_later">MAIS TARDE</string>
   <string name="rate_us_never">NUNCA</string>
-  <string name="rate_us_error">"Oh não. Não foi possível alcançar a loja. Lamentamos muito!"</string>
+  <string name="rate_us_error">"Hum!? Não foi possível alcançar a loja. Lamentamos muito!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Alterar as preferências de anúncios</string>
   <!-- Draft strings -->
@@ -69,7 +69,7 @@
   <string name="activity_not_found_error">Não foi possível encontrar uma aplicação que pudesse completar esta ação. Pedimos desculpa!</string>
   <string name="basic_settings">Definições Básicas</string>
   <string name="copy_clipboard_title">Copiar automaticamente texto da área de transferência</string>
-  <string name="copy_clipboard_summary">A aplicação irá pedir-te para copiar texto da área de transferência, automaticamente, na execução da aplicação</string>
+  <string name="copy_clipboard_summary">A aplicação irá pedir-te para colar texto da área de transferência, automaticamente, na execução da aplicação</string>
   <string name="stat_settings">Estatísticas de Definições</string>
   <string name="reading_time_wpm">Tempo de Leitura (Palavras por Minuto)</string>
   <string name="speaking_time_wpm">Tempo de Fala (Palavras por Minuto)</string>
@@ -78,7 +78,7 @@
   <string name="paste">Colar</string>
   <string name="note_add_limit">Não foi possível guardar a nota</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Contador de Palavras - Contagem de Palavras, Frases &amp; Parágrafos</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Contador de Palavras - Contagem de Palavras, Frases e Parágrafos</string>
   <string name="app_description" tools:ignore="MissingTranslation">Conta palavras, caracteres, frases, parágrafos, tamanho e muito mais do texto</string>
   <string name="title_1" tools:ignore="MissingTranslation">Principais Recursos</string>
   <string name="title_2" tools:ignore="MissingTranslation">Contar enquanto digitas</string>
@@ -90,22 +90,22 @@
   <string name="title_8" tools:ignore="MissingTranslation">Apagar notas quando elas não são mais precisas</string>
   <string name="title_9" tools:ignore="MissingTranslation">Abrir diretamente de outra aplicação</string>
   <string name="title_10" tools:ignore="MissingTranslation">Colar diretamente texto copiado</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">O Contador de Palavras é uma ferramenta de texto grátis e fácil de usar para contagem de parágrafos e caracteres no teu texto enquanto digitas.
+  <string name="long_desc1" tools:ignore="MissingTranslation">O Contador de Palavras é uma ferramenta de texto grátis e fácil de usar para contagem de parágrafos e caracteres enquanto digitas.
     Ele foi projetado para aumentar a tua produtividade e facilitar a tua vida. A aplicação pode ser extremamente útil ao postar ou submeter para plataformas que têm limites impostos sobre o número de contador, palavras ou tamanho.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Conta o número de caracteres, frases, palavras e parágrafos do texto que digitas.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Gerar as seguintes estatísticas avançadas para o texto</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Estatísticas de Tempo (Tempo de leitura, fala, escrita)</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">Gera as seguintes estatísticas avançadas para o texto</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">Estatísticas de Tempo(Tempo de leitura, fala, escrita)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Palavras únicas</string>
   <string name="long_desc6" tools:ignore="MissingTranslation">Tamanho médio da palavra, Tamanho médio da frase</string>
   <string name="long_desc7" tools:ignore="MissingTranslation">Tamanho mais curto da frase, Tamanho mais longo da frase</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Controla como as estatísticas são calculadas a partir da tela de definições</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Guarda automaticamente, notas quando acidentalmente saíres das aplicações. Acessa estes textos no futuro na secção de Rascunhos. Edita ou apaga estes rascunhos como desejares. Os rascunhos também terão histórico quando alterares qualquer rascunho existente</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Guarda o texto atual com as suas estatísticas. Tem sempre o teu texto importante e notas, a um clique de distância!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Editar notas guardadas como e quando os dados e conteúdo dessas notas forem alterados. Podes facilmente editar as tuas notas guardadas para manter as anotações atualizadas!</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Guarda automaticamente, notas quando acidentalmente saíres das aplicações. Acessa estes textos no futuro, na secção de Rascunhos. Edita ou apaga estes rascunhos como desejares. Os rascunhos também terão histórico quando alterares qualquer rascunho existente</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Guarda o texto atual com as suas estatísticas. Tem sempre o teu texto e notas importantes, a um clique de distância!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Edita notas guardadas como e quando os dados e conteúdo dessas notas forem alterados. Podes facilmente editar as tuas notas guardadas para manter as anotações atualizadas!</string>
   <string name="long_desc12" tools:ignore="MissingTranslation">Elimina as notas guardadas que não te são mais necessárias</string>
   <string name="long_desc13" tools:ignore="MissingTranslation">Agora acessa rapidamente o contador de Palavras de outras aplicações enquanto compartilhas o texto</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">A aplicação irá solicitar que coles texto recentemente copiado da área de transferência</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">A contagem de palavras de aplicações funciona com múltiplas línguas, tais como, árabe, checo, agora, espanhol, francês, indonésio, italiano, polaco, português, romeno, russo e vietnamita.</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">A contagem de palavras de aplicações funciona com múltiplas línguas, tais como, árabe, checo, alemão, espanhol, francês, indonésio, italiano, polaco, português, romeno, russo e vietnamita.</string>
   <string name="lets_go_premium">Bora para o Premium</string>
   <string name="enjoy_benefits">Parabéns! Aproveita os benefícios do nosso plano %s</string>
   <string name="premium_title_purchased">Compraste o plano premium</string>
