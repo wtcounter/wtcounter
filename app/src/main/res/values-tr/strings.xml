@@ -10,21 +10,21 @@
   <string name="hint_input">Metninizi buraya girin</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Temel İstatistikler</string>
   <string name="characters">Karakterler</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Boşluksuz karakter sayısı</string>
   <string name="words">Kelimeler</string>
   <string name="paragraphs">Paragraflar</string>
   <string name="size">Boyut</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Not adını girin</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
+  <string name="extra_stats">Ekstra İstatistikler</string>
   <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="average_word_length">Ortalama Kelime Uzunluğu</string>
+  <string name="avg_sentence_length_words">Ortalama Cümle Uzunluğu (Kelimeler)</string>
+  <string name="avg_sentence_length_characters">Ortalama Cümle Uzunluğu (Karakterler)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
+  <string name="length_stats">Uzunluk İstatistikleri</string>
   <string name="shortest_sentence">Shortest Sentence(Words)</string>
   <string name="longest_sentence">Longest Sentence(Words)</string>
   <!--Time Stats-->
