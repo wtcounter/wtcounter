@@ -5,7 +5,7 @@
   <!--main-->
   <string name="input">Eingang</string>
   <string name="notes">Anmerkungen</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Einstellungen</string>
   <!--input-->
   <string name="hint_input">Gib deinen Text hier ein</string>
   <!--notes-->
