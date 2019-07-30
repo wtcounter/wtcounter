@@ -18,17 +18,17 @@
   <string name="size">Taille</string>
   <string name="bookmark_hint">Saisir le titre de la note</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
+  <string name="extra_stats">Stats supplémentaires</string>
   <string name="unique_words">Mots uniques</string>
   <string name="average_word_length">Longueur de mot moyenne</string>
   <string name="avg_sentence_length_words">Longueur de phrase moyenne (mots)</string>
   <string name="avg_sentence_length_characters">Longueur de phrase moyenne (caractères)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
-  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="length_stats">Stats de longueur</string>
+  <string name="shortest_sentence">Phrase la plus courte (mots)</string>
+  <string name="longest_sentence">Phrase la plus longue (mots)</string>
   <!--Time Stats-->
-  <string name="time_stats">Time Stats</string>
+  <string name="time_stats">Stats temporelles</string>
   <string name="reading_time">Temps de lecture</string>
   <string name="speaking_time">Temps de parole</string>
   <string name="writing_time">Temps d’écriture à la main</string>
@@ -53,7 +53,7 @@
   <string name="rate_us_never">JAMAIS</string>
   <string name="rate_us_error">"Oh non ! Nous n'avons pas réussi à atteindre le Play Store. Désolé !"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Modifier mes préférences (pubs)</string>
   <!-- Draft strings -->
   <string name="drafts">Brouillons</string>
   <string name="draft_deletion_success">Brouillon supprimé avec succès</string>
@@ -76,7 +76,7 @@
   <string name="writing_time_lpm">Temps d’écriture (mots à la minute)</string>
   <string name="size_encoding_format">Size Encoding Format</string>
   <string name="paste">Coller</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="note_add_limit">Impossible d\'enregistrer la note</string>
   <!-- Play store texts -->
   <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
   <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
@@ -85,9 +85,9 @@
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
   <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Sauvegardez vos notes importantes</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Gardez vos notes à jour</string>
+  <string name="title_8" tools:ignore="MissingTranslation">Supprimez vos notes quand elles deviennent obsolètes</string>
   <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
   <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
   <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
@@ -99,10 +99,10 @@
   <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
   <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Sauvegardez vos notes automatiquement, même si vous quittez l\'application accidentellement. Accédez à ces notes incomplètes dans la catégorie Brouillons. Modifiez ou supprimez ces brouillons à volonté. Les brouillons conservent un historique des modifications.</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Sauvegardez le texte actuel avec ses statistiques. Un clic suffit pour accéder à vos notes les plus importantes !</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Modifiez vos notes sauvegardées dès que les données et contenus de ces notes changent. Vous pouvez facilement modifier vos notes sauvegardées pour garder vos notes à jour !</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Débarrassez-vous des notes obsolètes, qui ne vous servent plus à rien</string>
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
@@ -112,7 +112,7 @@
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
   <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
   <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
+  <string name="remove_ads">Enlevez les Pubs !</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
   <string name="five_more_themes">Five basic themes</string>
@@ -122,7 +122,7 @@
   <string name="ten_more_themes">10 more themes</string>
   <string name="audio_input">Entrée audio</string>
   <string name="read_from_file">Ouvrir un fichier depuis Word Counter</string>
-  <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
+  <string name="export_to_file">Exportez vos notes et statistiques dans un fichier (.pdf, .doc)</string>
   <string name="buy_yearly_subscription">Abonnement</string>
   <string name="buy_monthly_subscription_for">S\'abonner pour</string>
   <string name="buy_lifetime_premium">Acheter</string>
