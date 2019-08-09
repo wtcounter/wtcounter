@@ -90,8 +90,8 @@
   <string name="title_8" tools:ignore="MissingTranslation">Supprimez vos notes quand elles deviennent obsolètes</string>
   <string name="title_9" tools:ignore="MissingTranslation">Ouvrez Word Counter directement depuis une autre application</string>
   <string name="title_10" tools:ignore="MissingTranslation">Collez directement le texte copié</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter est un outil gratuit et simple à utiliser, servant à dénombrer les mots, phrases, paragraphes et caractères au sein de votre texte, pendant que vous écrivez.
+    Il a été conçu pour augmenter votre productivité et vous faciliter la vie. Cette application peut être extrêmement utile lorsque vous souhaitez publier ou soumettre des textes à des plateformes imposant des limites sur la quantité de caractères, de mots ou de taille.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
