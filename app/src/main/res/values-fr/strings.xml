@@ -81,9 +81,9 @@
   <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
   <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
   <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Comptez en écrivant</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Accédez à des statistiques avancées</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Plus de contrôle</string>
   <string name="title_5" tools:ignore="MissingTranslation">Ne perdez jamais vos notes</string>
   <string name="title_6" tools:ignore="MissingTranslation">Sauvegardez vos notes importantes</string>
   <string name="title_7" tools:ignore="MissingTranslation">Gardez vos notes à jour</string>
@@ -92,20 +92,20 @@
   <string name="title_10" tools:ignore="MissingTranslation">Collez directement le texte copié</string>
   <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter est un outil gratuit et simple à utiliser, servant à dénombrer les mots, phrases, paragraphes et caractères au sein de votre texte, pendant que vous écrivez.
     Il a été conçu pour augmenter votre productivité et vous faciliter la vie. Cette application peut être extrêmement utile lorsque vous souhaitez publier ou soumettre des textes à des plateformes imposant des limites sur la quantité de caractères, de mots ou de taille.</string>
-  <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
+  <string name="long_desc2" tools:ignore="MissingTranslation">Comptez le nombre de caractères, de phrases, de mots et de paragraphes de votre texte tout en l\'écrivant.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Mots uniques</string>
   <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
-  <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
-  <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
+  <string name="long_desc7" tools:ignore="MissingTranslation">Longueur de la phrase la plus courte, longueur de la phrase la plus longue</string>
+  <string name="long_desc8" tools:ignore="MissingTranslation">Contrôlez le mode de calcul des statistiques depuis les paramètres</string>
   <string name="long_desc9" tools:ignore="MissingTranslation">Sauvegardez vos notes automatiquement, même si vous quittez l\'application accidentellement. Accédez à ces notes incomplètes dans la catégorie Brouillons. Modifiez ou supprimez ces brouillons à volonté. Les brouillons conservent un historique des modifications.</string>
   <string name="long_desc10" tools:ignore="MissingTranslation">Sauvegardez le texte actuel avec ses statistiques. Un clic suffit pour accéder à vos notes les plus importantes !</string>
   <string name="long_desc11" tools:ignore="MissingTranslation">Modifiez vos notes sauvegardées dès que les données et contenus de ces notes changent. Vous pouvez facilement modifier vos notes sauvegardées pour garder vos notes à jour !</string>
   <string name="long_desc12" tools:ignore="MissingTranslation">Débarrassez-vous des notes obsolètes, qui ne vous servent plus à rien</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">Accédez rapidement à Word Counter depuis d\'autres applications, tout en partageant votre texte</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">L\'application vous invitera à coller votre dernier texte depuis le presse-papiers</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">Word Counter fonctionne désormais avec de multiples langues, telles que l\'arabe, le tchèque, l\'allemand, l\'espagnol, le français, l\'indonésien, le polonais, le portugais, le roumain, le russe et le vietnamien.</string>
   <string name="lets_go_premium">Passons au Premium</string>
   <string name="enjoy_benefits">Félicitations ! Profitez des avantages de notre forfait %s</string>
   <string name="premium_title_purchased">Vous avez acheté un forfait premium</string>
@@ -116,8 +116,8 @@
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">Tous les avantages du forfait Argent</string>
   <string name="five_more_themes">Cinq thèmes de base</string>
-  <string name="support_large_text">Support for large text</string>
-  <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
+  <string name="support_large_text">Prise en charge des grands textes</string>
+  <string name="show_count_in_status_bar">Affichez le compte dans la barre de statut de votre téléphone pendant que vous écrivez dans d\'autres applications</string>
   <string name="benefits_of_gold_plans">Tous les avantages du forfait Or</string>
   <string name="ten_more_themes">10 thèmes supplémentaires</string>
   <string name="audio_input">Entrée audio</string>
