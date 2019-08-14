@@ -69,18 +69,18 @@
   <string name="activity_not_found_error">Nous ne pouvions pas trouver d\'application qui puisse réaliser cette action. Désolé !</string>
   <string name="basic_settings">Paramètres de base</string>
   <string name="copy_clipboard_title">Copier le texte du presse-papiers automatiquement</string>
-  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
-  <string name="stat_settings">Stat Settings</string>
+  <string name="copy_clipboard_summary">L\'application vous invitera à coller le texte de votre presse-papiers automatiquement au lancement de l\'application</string>
+  <string name="stat_settings">Paramètres des Stats</string>
   <string name="reading_time_wpm">Temps de lecture (mots à la minute)</string>
   <string name="speaking_time_wpm">Temps de parole (mots à la minute)</string>
   <string name="writing_time_lpm">Temps d’écriture (mots à la minute)</string>
-  <string name="size_encoding_format">Size Encoding Format</string>
+  <string name="size_encoding_format">Format d\'Encodage de la Taille</string>
   <string name="paste">Coller</string>
   <string name="note_add_limit">Impossible d\'enregistrer la note</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Comptez vos Mots, Phrases &amp; Paragraphes</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Comptez les mots, caractères, phrases, paragraphes, longueur et bien plus de vos textes</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Fonctions Principales</string>
   <string name="title_2" tools:ignore="MissingTranslation">Comptez en écrivant</string>
   <string name="title_3" tools:ignore="MissingTranslation">Accédez à des statistiques avancées</string>
   <string name="title_4" tools:ignore="MissingTranslation">Plus de contrôle</string>
@@ -93,10 +93,10 @@
   <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter est un outil gratuit et simple à utiliser, servant à dénombrer les mots, phrases, paragraphes et caractères au sein de votre texte, pendant que vous écrivez.
     Il a été conçu pour augmenter votre productivité et vous faciliter la vie. Cette application peut être extrêmement utile lorsque vous souhaitez publier ou soumettre des textes à des plateformes imposant des limites sur la quantité de caractères, de mots ou de taille.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Comptez le nombre de caractères, de phrases, de mots et de paragraphes de votre texte tout en l\'écrivant.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">Générez les statistiques avancées suivantes pour votre texte</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">Stats de temps (Durée de lecture, durée de lecture à voix haute, durée d\'écriture)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Mots uniques</string>
-  <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
+  <string name="long_desc6" tools:ignore="MissingTranslation">Longueur moyenne de mot, Longueur moyenne de phrase</string>
   <string name="long_desc7" tools:ignore="MissingTranslation">Longueur de la phrase la plus courte, longueur de la phrase la plus longue</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Contrôlez le mode de calcul des statistiques depuis les paramètres</string>
   <string name="long_desc9" tools:ignore="MissingTranslation">Sauvegardez vos notes automatiquement, même si vous quittez l\'application accidentellement. Accédez à ces notes incomplètes dans la catégorie Brouillons. Modifiez ou supprimez ces brouillons à volonté. Les brouillons conservent un historique des modifications.</string>
