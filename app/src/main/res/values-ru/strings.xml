@@ -133,4 +133,21 @@
   <string name="coming_soon">Скоро!</string>
   <string name="help_translate_word_counter">Помоги перевести счётчик слов</string>
   <string name="more_apps_by_spians_labs">Больше приложений от Spians Lsbs</string>
+  <!-- Frequency dialog strings -->
+  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
+  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
+  <string name="freq_search_hint">Enter text to find frequency</string>
+  <string name="freq_case_sensitive">Case sensitive matching</string>
+  <string name="freq_simple_text_matching">Simple text matching</string>
+  <string name="freq_word_matching">Word matching</string>
+  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
+  <string name="most_frequent_header">Most frequent words</string>
+  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
+  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
+  <string name="label_see_plan">See plan</string>
+  <string name="label_cancel">Cancel</string>
+  <string name="freq_preview_error">Could not load preview image</string>
+  <!-- Auto save draft pref -->
+  <string name="autosave_draft_title">Save draft of your text automatically</string>
+  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
 </resources>
