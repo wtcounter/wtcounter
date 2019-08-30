@@ -29,21 +29,21 @@
   <string name="longest_sentence">Kalimat Terpanjang(Kata)</string>
   <!--Time Stats-->
   <string name="time_stats">Statistik Waktu</string>
-  <string name="reading_time">Reading Time</string>
-  <string name="speaking_time">Speaking Time</string>
-  <string name="writing_time">Hand Writing Time</string>
-  <string name="save">Save</string>
-  <string name="sentences">Sentences</string>
-  <string name="save_dialog_desc">Alright! What would you like to call it?</string>
-  <string name="edit_alert_title">Are you sure?</string>
-  <string name="yes">Yes</string>
-  <string name="edit_alert_desc">This action will erase current content. Are you sure you want to continue?</string>
-  <string name="delete_alert_desc">Are you sure you want to delete this report?</string>
-  <string name="no">No</string>
+  <string name="reading_time">Waktu Membaca</string>
+  <string name="speaking_time">Waktu Berbicara</string>
+  <string name="writing_time">Waktu Tulis Tangan</string>
+  <string name="save">Simpan</string>
+  <string name="sentences">Kalimat</string>
+  <string name="save_dialog_desc">Baiklah! Anda ingin menyebutnya apa?</string>
+  <string name="edit_alert_title">Anda yakin?</string>
+  <string name="yes">Ya</string>
+  <string name="edit_alert_desc">Tindakan ini akan menghapus konten sekarang. Anda yakin untuk melanjutkan?</string>
+  <string name="delete_alert_desc">Anda yakin menghapus laporan ini?</string>
+  <string name="no">Tidak</string>
   <string name="generic_error_message">Looks like something went wrong. Please try again later…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Catatan berhasil dihapus</string>
+  <string name="addition_success">Catatan berhasil ditambahkan</string>
+  <string name="update_success">Catatan berhasil diperbarui</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
