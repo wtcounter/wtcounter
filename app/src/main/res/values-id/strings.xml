@@ -83,16 +83,16 @@
   <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
   <string name="title_2" tools:ignore="MissingTranslation">Menhitung saat anda mengetik</string>
   <string name="title_3" tools:ignore="MissingTranslation">Akses ke Statistik selengkapnya</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
-  <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Kontrol lebih banyak untuk anda</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Tidak pernah kehilangan teks yang sudah anda ketik</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Menyimpan catatan penting</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Menjaga catatan tetap diperbarui</string>
+  <string name="title_8" tools:ignore="MissingTranslation">Menghapus catatan saat tidak dibutuhkan lagi</string>
+  <string name="title_9" tools:ignore="MissingTranslation">Buka langsung dari aplikasi lainnya</string>
+  <string name="title_10" tools:ignore="MissingTranslation">Secara langsung menempel teks tersalin</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">Penghitung Kata adalah alat gratis dan mudah digunakan untuk menghitung kata, kalimat, paragraf dan karakter dalam teks anda selama anda mengetik.
+   Ini didesain untuk meningkatkan produktifitas anda dan membuat hidup anda menjadi mudah. Aplikasi bisa digunakan saat posting atau mengirim ke platform yang punya batasan karakter, kata, atau ukuran.</string>
+  <string name="long_desc2" tools:ignore="MissingTranslation">Menghitung jumlah karakter, kalimat, kata dan paragraf teks selama anda mengetik.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
