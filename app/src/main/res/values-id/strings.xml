@@ -72,17 +72,17 @@
   <string name="copy_clipboard_summary">Aplikasi akan mempercepat anda menempel teks dari papan klip secara otomatis pada peluncuran aplikasi</string>
   <string name="stat_settings">Pengaturan statistik</string>
   <string name="reading_time_wpm">Waktu Membaca (Kata Per Menit)</string>
-  <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
-  <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
-  <string name="size_encoding_format">Size Encoding Format</string>
-  <string name="paste">Paste</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="speaking_time_wpm">Waktu Berbicara (Kata Per Menit)</string>
+  <string name="writing_time_lpm">Waktu Menulis (Huruf Per Menit)</string>
+  <string name="size_encoding_format">Format Ukuran Enkoding</string>
+  <string name="paste">Tempel</string>
+  <string name="note_add_limit">Tidak bisa menyimpan catatan</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Penghitung Kata - Mengitung Kata, Kalimat &amp; Paragraf</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Menghitung kata, karakter, kalimat, paragraf, ukuran dan masih banyak lagi dari teks</string>
   <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Menhitung saat anda mengetik</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Akses ke Statistik selengkapnya</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
   <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
   <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
