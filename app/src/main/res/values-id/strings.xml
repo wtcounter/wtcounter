@@ -40,17 +40,17 @@
   <string name="edit_alert_desc">Tindakan ini akan menghapus konten sekarang. Anda yakin untuk melanjutkan?</string>
   <string name="delete_alert_desc">Anda yakin menghapus laporan ini?</string>
   <string name="no">Tidak</string>
-  <string name="generic_error_message">Looks like something went wrong. Please try again later…</string>
+  <string name="generic_error_message">Ada yang tidak beres. Coba lagi…</string>
   <string name="deletion_success">Catatan berhasil dihapus</string>
   <string name="addition_success">Catatan berhasil ditambahkan</string>
   <string name="update_success">Catatan berhasil diperbarui</string>
-  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nTidak ada apa-apa disini!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
+  <string name="rate_us_text">Jika anda menikmati menggunakan aplikasi ini, maukah anda meluangkan waktu untuk memberikan penilaian? Ini tidak akan lebih dari satu menit. Terima kasih atas dukungan anda!</string>
+  <string name="rate_us_text_short">Beri nilai aplikasi di Play Store</string>
+  <string name="rate_us_yes">BERI PENILAIAN</string>
+  <string name="rate_us_later">NANTI</string>
+  <string name="rate_us_never">TIDAK PERNAH</string>
   <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
