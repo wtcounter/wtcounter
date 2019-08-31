@@ -93,14 +93,14 @@
   <string name="long_desc1" tools:ignore="MissingTranslation">Penghitung Kata adalah alat gratis dan mudah digunakan untuk menghitung kata, kalimat, paragraf dan karakter dalam teks anda selama anda mengetik.
    Ini didesain untuk meningkatkan produktifitas anda dan membuat hidup anda menjadi mudah. Aplikasi bisa digunakan saat posting atau mengirim ke platform yang punya batasan karakter, kata, atau ukuran.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Menghitung jumlah karakter, kalimat, kata dan paragraf teks selama anda mengetik.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
-  <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
-  <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
-  <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
-  <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">Menghasilkan statistik lanjutan untuk teks</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">Statistik Waktu(Membaca, Berbicara, Menulis)</string>
+  <string name="long_desc5" tools:ignore="MissingTranslation"> Kata unik</string>
+  <string name="long_desc6" tools:ignore="MissingTranslation">Rata-rata panjang kata dan kalimat</string>
+  <string name="long_desc7" tools:ignore="MissingTranslation">Ukuran kalimag terpendek dan terpanjang</string>
+  <string name="long_desc8" tools:ignore="MissingTranslation">Kontrol bagaimana statistik menghitung dari layar pengaturan</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Secara otomatis menyimpan catatan saat anda tidak sengaja meninggalkan aplikasi. Akses teks ini di bagian Konsep. Ubah atau hapus konsep ini sesuai keinginan anda. Konsep juga mempunyai riwayat saat anda mengubah konsep yang ada</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Simpan teks sekarang dengan statistiknya. Selalu punya teks dan catatan penting anda satu klik saja!</string>
   <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
   <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
