@@ -134,20 +134,20 @@
   <string name="help_translate_word_counter">Aider à traduire Word Counter</string>
   <string name="more_apps_by_spians_labs">Plus d\'applications par Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
-  <string name="freq_search_hint">Enter text to find frequency</string>
-  <string name="freq_case_sensitive">Case sensitive matching</string>
-  <string name="freq_simple_text_matching">Simple text matching</string>
-  <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_count">%d \u0020\u0020Occurrence trouvée</string>
+  <string name="freq_count_plural">%d \u0020\u0020Occurrences trouvées</string>
+  <string name="freq_search_hint">Entrez du texte pour déterminer la fréquence</string>
+  <string name="freq_case_sensitive">Correspondance sensible à la casse</string>
+  <string name="freq_simple_text_matching">Correspondance de texte simple</string>
+  <string name="freq_word_matching">Correspondance de mots</string>
+  <string name="freq_pattern_matching">Correspondance de séquences (Regex)</string>
+  <string name="most_frequent_header">Mots les plus fréquents</string>
+  <string name="freq_unavailable_dialog_title">Ceci est une fonction Premium</string>
+  <string name="freq_unavailable_dialog_message">Pour débloquer cette fonction, veuillez passer au forfait Argent. Consultez les avantages de ce forfait pour en savoir plus sur cette fonction</string>
+  <string name="label_see_plan">Voir le forfait</string>
+  <string name="label_cancel">Annuler</string>
+  <string name="freq_preview_error">Impossible de charger l\'image de prévisualisation</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Sauvegardez automatiquement vos brouillons texte</string>
+  <string name="autosave_draft_body">L\'application sauvegardera automatiquement vos brouillons texte lorsque vous quitterez l\'appli</string>
 </resources>
