@@ -12,14 +12,14 @@
   <!--report-->
   <string name="basic_stats">Basic Stats</string>
   <string name="characters">caractere</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Caractere fără Spații</string>
   <string name="words">cuvinte</string>
   <string name="paragraphs">alineatele</string>
   <string name="size">mărimea</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Introduce-ți numele notiței</string>
   <!--Extra Stats-->
   <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
+  <string name="unique_words">Cuvine speciale</string>
   <string name="average_word_length">Average Word Length</string>
   <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
   <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
