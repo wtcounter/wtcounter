@@ -143,11 +143,11 @@ Es ist entwickelt, um deine Produktivität zu steigen und dein Leben zu vereinfa
   <string name="freq_pattern_matching">Pattern matching(Regex)</string>
   <string name="most_frequent_header">Most frequent words</string>
   <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_unavailable_dialog_message">Um diese Funktion freizuschalten, upgrade bitte auf unser Silberabonnement. Sehe die Abonnementvorteile an, um mehr über das Feature zu erfahren</string>
+  <string name="label_see_plan">Abonnement anzeigen</string>
+  <string name="label_cancel">Abbrechen</string>
+  <string name="freq_preview_error">Vorschaubild konnte nicht geladen werden</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Entwurf deines Textes automatisch speichern</string>
+  <string name="autosave_draft_body">App wird automatisch den Entwurf deines Textes speichern, wenn du die App verlässt</string>
 </resources>
