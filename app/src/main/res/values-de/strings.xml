@@ -69,29 +69,29 @@
   <string name="activity_not_found_error">Wir konnten keine App finden die diese Aktion abschließen könnte. Entschuldigung!</string>
   <string name="basic_settings">Allgemeine Einstellungen</string>
   <string name="copy_clipboard_title">Zwischenablagentext automatisch kopieren</string>
-  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
-  <string name="stat_settings">Stat Settings</string>
-  <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
-  <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
-  <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
-  <string name="size_encoding_format">Size Encoding Format</string>
-  <string name="paste">Paste</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="copy_clipboard_summary">Die App wird sie beim Start auffordern den Zwischenablagentext automatisch einzufügen</string>
+  <string name="stat_settings">Statistikeinstellungen</string>
+  <string name="reading_time_wpm">Lesezeit (Wörter pro Minute)</string>
+  <string name="speaking_time_wpm">Redezeit (Wörter pro Minute)</string>
+  <string name="writing_time_lpm">Schreibzeit (Zeichen pro Minute)</string>
+  <string name="size_encoding_format">Größen Encoding-Format</string>
+  <string name="paste">Einfügen</string>
+  <string name="note_add_limit">Notiz konnte nicht gespeichert werden</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Zähle Wörter, Sätze &amp; Absätze</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Zähle Wörter, Zeichen, Sätze, Absätze, Größen und vieles mehr aus Texten</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Top Funktionen</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Zähle beim Eingeben</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Zugriff auf fortgeschrittene Statistiken</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Mehr Kontrolle für dich</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Verliere niemals deinen eingegebenen Text</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Speichere wichtige Notizen</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Halte Notizen auf dem aktuellen Stand</string>
+  <string name="title_8" tools:ignore="MissingTranslation">Lösche Notizen, wenn sie nicht mehr gebraucht werden</string>
+  <string name="title_9" tools:ignore="MissingTranslation">Direkt von einer anderen App öffnen</string>
+  <string name="title_10" tools:ignore="MissingTranslation">Füge kopierten Text direkt ein</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter ist ein kostenloses und einfache zu benutzendes Textwerkzeug zum Zählen von Wörtern, Sätzen, Absätzen und Zeichen in deinem Text, direkt beim Eingeben.
+Es ist entwickelt, um deine Produktivität zu steigen und dein Leben zu vereinfachen. Die App kann sehr nützlich sein, wenn du bei Plattformen die ein Zeichen-, Wörter- oder Größenlimit haben Texte veröffentlichst oder einreichst.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
