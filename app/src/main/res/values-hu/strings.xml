@@ -78,10 +78,10 @@
   <string name="paste">Beillesztés</string>
   <string name="note_add_limit">Jegyzet mentése sikertelen</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Szó számláló - Szavak, mondatok &amp; bekezdések számlálása</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Szavak, karakterek, mondatok, bekezdések, méret és más egyéb számlálása szövegből</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Top szolgáltatások</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Számlálás írás közben</string>
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
   <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
@@ -134,9 +134,9 @@
   <string name="help_translate_word_counter">Help translate Word Counter</string>
   <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
-  <string name="freq_search_hint">Enter text to find frequency</string>
+  <string name="freq_count">%d \u0020\u0020Előfordulása felfedezve</string>
+  <string name="freq_count_plural">%d \u0020\u0020Előfordulásai felfedezve</string>
+  <string name="freq_search_hint">Gépelje be a szöveget az előfordulás megtalálásához</string>
   <string name="freq_case_sensitive">Case sensitive matching</string>
   <string name="freq_simple_text_matching">Simple text matching</string>
   <string name="freq_word_matching">Word matching</string>
