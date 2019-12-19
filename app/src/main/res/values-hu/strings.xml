@@ -20,18 +20,18 @@
   <!--Extra Stats-->
   <string name="extra_stats">Extra statisztikák</string>
   <string name="unique_words">Egyedi szavak</string>
-  <string name="average_word_length">Átlag szóhossz</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="average_word_length">Átlag szó hossz</string>
+  <string name="avg_sentence_length_words">Átlag mondat hossz (szavak)</string>
+  <string name="avg_sentence_length_characters">Átlag mondat hossz (karakterek)</string>
   <!--Length Stats-->
-  <string name="length_stats">Length Stats</string>
-  <string name="shortest_sentence">Shortest Sentence(Words)</string>
-  <string name="longest_sentence">Longest Sentence(Words)</string>
+  <string name="length_stats">Hossz statisztikák</string>
+  <string name="shortest_sentence">Legrövidebb mondtad (szavak)</string>
+  <string name="longest_sentence">Leghosszabb mondtad (szavak)</string>
   <!--Time Stats-->
-  <string name="time_stats">Time Stats</string>
-  <string name="reading_time">Reading Time</string>
-  <string name="speaking_time">Speaking Time</string>
-  <string name="writing_time">Hand Writing Time</string>
+  <string name="time_stats">Idő statisztikák</string>
+  <string name="reading_time">Olvasási idő</string>
+  <string name="speaking_time">Beszédi idő</string>
+  <string name="writing_time">Kézírás idő</string>
   <string name="save">Mentés</string>
   <string name="sentences">mondatok</string>
   <string name="save_dialog_desc">Rendben! Mit szeretnél hívni?</string>
@@ -41,9 +41,9 @@
   <string name="delete_alert_desc">Biztosan törölni szeretné ezt a jelentést?</string>
   <string name="no">Nem</string>
   <string name="generic_error_message">Úgy néz ki, valami rosszul ment. Kérlek, próbáld újra később…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Jegyzet sikeresen törölve</string>
+  <string name="addition_success">Jegyzet sikeresen hozzáadva</string>
+  <string name="update_success">Jegyzet sikeresen frissítve</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Semmi sem itt!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
