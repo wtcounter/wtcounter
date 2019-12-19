@@ -5,22 +5,22 @@
   <!--main-->
   <string name="input">Bemenet</string>
   <string name="notes">Megjegyzések</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Beállítások</string>
   <!--input-->
   <string name="hint_input">Írja be ide a szöveget</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Alap statisztikák</string>
   <string name="characters">Karakterek</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">Karakterek szóközök nélkül</string>
   <string name="words">Szavak</string>
   <string name="paragraphs">bekezdések</string>
   <string name="size">Méret</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Adja meg a jegyzet nevét</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
+  <string name="extra_stats">Extra statisztikák</string>
+  <string name="unique_words">Egyedi szavak</string>
+  <string name="average_word_length">Átlag szóhossz</string>
   <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
   <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
   <!--Length Stats-->
