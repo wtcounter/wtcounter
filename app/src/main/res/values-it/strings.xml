@@ -69,17 +69,17 @@
   <string name="activity_not_found_error">Non siamo riusciti a trovare un\'app che potrebbe completare questa azione. Scusaci per l\'inconveniente!</string>
   <string name="basic_settings">Impostazioni di base</string>
   <string name="copy_clipboard_title">Copia automaticamente il testo negli Appunti</string>
-  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
+  <string name="copy_clipboard_summary">L\'app ti chiederà di incollare automaticamente il testo dagli appunti all\'avvio dell\'app</string>
   <string name="stat_settings">Impostazioni iniziali</string>
   <string name="reading_time_wpm">Tempo di lettura (parole al minuto)</string>
   <string name="speaking_time_wpm">Tempo di esposizione (parole al minuto)</string>
   <string name="writing_time_lpm">Tempo di scrittura (lettere al minuto)</string>
   <string name="size_encoding_format">Dimensioni e formato</string>
-  <string name="paste">Paste</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="paste">Incolla</string>
+  <string name="note_add_limit">Impossibile salvare la nota</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Contatore di parole - Conta parole, frasi &amp; paragrafi</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Conta parole, caratteri, frasi, paragrafi, dimensioni e molto altro dal testo</string>
   <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
   <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
