@@ -16,7 +16,7 @@
   <string name="words">Parole</string>
   <string name="paragraphs">Paragrafi</string>
   <string name="size">Dimensione</string>
-  <string name="bookmark_hint">Enter note name</string>
+  <string name="bookmark_hint">Inserisci il titolo della nota</string>
   <!--Extra Stats-->
   <string name="extra_stats">Statistiche supplementari</string>
   <string name="unique_words">Parole uniche</string>
@@ -41,19 +41,19 @@
   <string name="delete_alert_desc">Sei sicuro di voler eliminare questo rapporto?</string>
   <string name="no">No</string>
   <string name="generic_error_message">Sembra che qualcosa sia andato storto. Per favore riprova più tardi…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Nota eliminata correttamente</string>
+  <string name="addition_success">Nota aggiunta correttamente</string>
+  <string name="update_success">Nota aggiornata correttamente</string>
   <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Niente qui!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
+  <string name="rate_us_text">Si ti piace usare questa app, perché non ti prendi un momento per valutarla? Ci vorrà meno di un minuto. Grazie per il supporto!</string>
   <string name="rate_us_text_short">Vota l\'app nel Play Store</string>
   <string name="rate_us_yes">VOTA ORA</string>
   <string name="rate_us_later">DOPO</string>
   <string name="rate_us_never">MAI</string>
   <string name="rate_us_error">"Oh no. Non siamo riusciti a raggiungere il Play Store. Scusaci per l'inconveniente!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Preferenze annunci</string>
   <!-- Draft strings -->
   <string name="drafts">Bozze</string>
   <string name="draft_deletion_success">Bozza cancellata con successo</string>
