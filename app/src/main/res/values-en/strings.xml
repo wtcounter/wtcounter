@@ -13,13 +13,13 @@ Langsung contoh nya saja ya, anda perokok yang ingin berhenti merokok. lalu anda
 3. fikiran bawah sadar</string>
   <!--main-->
   <string name="input">Input</string>
-  <string name="notes">Notes</string>
+  <string name="notes">Hei på deg</string>
   <string name="settings">Settings</string>
   <!--input-->
   <string name="hint_input">Enter your text here</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Basic Stats</string>
+  <string name="basic_stats">Hei folkens</string>
   <string name="characters">Characters</string>
   <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Words</string>
