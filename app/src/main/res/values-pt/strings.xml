@@ -123,8 +123,8 @@
   <string name="audio_input">Entrada de áudio</string>
   <string name="read_from_file">Abra qualquer arquivo pelo Contador de Palavras</string>
   <string name="export_to_file">Exporte notas e estatísticas para outros formatos (pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
-  <string name="buy_monthly_subscription_for">Subscribe For</string>
+  <string name="buy_yearly_subscription">Assinar</string>
+  <string name="buy_monthly_subscription_for">Assinar para</string>
   <string name="buy_lifetime_premium">Comprar</string>
   <string name="buy_lifetime_premium_for">Comprar por </string>
   <string name="year">Ano</string>
@@ -134,19 +134,19 @@
   <string name="help_translate_word_counter">Ajude a traduzir o Contador de Palavras</string>
   <string name="more_apps_by_spians_labs">Mais aplicativos por Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
-  <string name="freq_search_hint">Enter text to find frequency</string>
-  <string name="freq_case_sensitive">Case sensitive matching</string>
-  <string name="freq_simple_text_matching">Simple text matching</string>
-  <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_count">%d \u0020\u0020Ocorrência encontrada</string>
+  <string name="freq_count_plural">%d \u0020\u0020Ocorrências encontradas</string>
+  <string name="freq_search_hint">Digite um texto para descobrir a frequência</string>
+  <string name="freq_case_sensitive">Correspondência com maiúsculas ou minúsculas</string>
+  <string name="freq_simple_text_matching">Correspondência simples de texto</string>
+  <string name="freq_word_matching">Correspondência de palavras</string>
+  <string name="freq_pattern_matching">Padrão de correspondência (Regex)</string>
+  <string name="most_frequent_header">Palavras mais frequentes</string>
+  <string name="freq_unavailable_dialog_title">Esta é uma função premium</string>
+  <string name="freq_unavailable_dialog_message">Para ter esse recurso, mude para o plano Silver. Para saber mais sobre o recurso, veja as vantagens do plano</string>
+  <string name="label_see_plan">Ver planos</string>
+  <string name="label_cancel">Cancelar</string>
+  <string name="freq_preview_error">Não foi possível carregar uma visualização da imagem</string>
   <!-- Auto save draft pref -->
   <string name="autosave_draft_title">Salvar automaticamente o rascunho de seus textos</string>
   <string name="autosave_draft_body">Se você sair do aplicativo, ele vai salvar automaticamente um rascunho de seu texto</string>
