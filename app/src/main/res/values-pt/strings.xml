@@ -99,10 +99,10 @@
   <string name="long_desc6" tools:ignore="MissingTranslation">Média de tamanho de palavras, Média de tamanho de frases</string>
   <string name="long_desc7" tools:ignore="MissingTranslation">Tamanho da frase mais curta, Tamanho da frase mais longa</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Na tela de configurações, você pode controlar como as estatísticas são calculadas</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Salve as notas automaticamente se você sair do aplicativo sem querer. Acesse esses textos novamente na seção Rascunhos. Fique à vontade para editar ou excluir os rascunhos. Se você editar algum rascunho, o aplicativo vai guardar um histórico das alterações</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Salve o texto que você está trabalhando com suas estatísticas. Todos os seus textos e notas importantes estão a um clique de distância!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Edite as notas que já estão salvas se o conteúdo delas tiver alguma mudança. É bem fácil editar suas notas salvas para que elas estejam sempre atualizadas!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Exclua qualquer nota salva que você não precisa mais</string>
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
