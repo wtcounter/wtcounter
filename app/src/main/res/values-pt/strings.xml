@@ -110,26 +110,26 @@
   <string name="enjoy_benefits">Parabéns! Aproveite todas as vantagens de nosso plano %s</string>
   <string name="premium_title_purchased">Você comprou um plano premium</string>
   <string name="premium_message_purchased">Você tem agora as vantagens de nosso plano %s</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
+  <string name="premium_message">Com seu apoio direto, você vai ter acesso a recursos avançados e vai nos ajudar a melhorar o aplicativo</string>
   <string name="plan">Plano</string>
   <string name="remove_ads">Remover Anúncios!</string>
-  <string name="frequency_count">Get frequency count in extra stats</string>
+  <string name="frequency_count">Obter a contagem de frequência nas estatísticas extras</string>
   <string name="benefits_of_silver_plans">Todos os benefícios do plano Prata</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
-  <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
-  <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
+  <string name="five_more_themes">Cinco temas básicos</string>
+  <string name="support_large_text">Funciona em textos grandes</string>
+  <string name="show_count_in_status_bar">Veja a contagem na barra de status enquanto você digita em outros aplicativos</string>
+  <string name="benefits_of_gold_plans">Todas as vantagens do plano Gold</string>
   <string name="ten_more_themes">Mais 10 temas</string>
-  <string name="audio_input">Audio input</string>
-  <string name="read_from_file">Open any file directly from Word Counter</string>
-  <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
+  <string name="audio_input">Entrada de áudio</string>
+  <string name="read_from_file">Abra qualquer arquivo pelo Contador de Palavras</string>
+  <string name="export_to_file">Exporte notas e estatísticas para outros formatos (pdf, doc)</string>
   <string name="buy_yearly_subscription">Subscribe</string>
   <string name="buy_monthly_subscription_for">Subscribe For</string>
-  <string name="buy_lifetime_premium">Buy</string>
+  <string name="buy_lifetime_premium">Comprar</string>
   <string name="buy_lifetime_premium_for">Comprar por </string>
   <string name="year">Ano</string>
   <string name="buy_premium_title">Comprar o Contador de Palavras Premium</string>
-  <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
+  <string name="buy_premium_message">Anúncios são chatos, né? Nós também não gostamos deles. Para se livrar dos anúncios e ter acesso a recursos avançados, compre um de nossos planos premium. Clique aqui para ver os nossos planos</string>
   <string name="coming_soon">Em breve!</string>
   <string name="help_translate_word_counter">Ajude a traduzir o Contador de Palavras</string>
   <string name="more_apps_by_spians_labs">Mais aplicativos por Spians Labs</string>
@@ -148,6 +148,6 @@
   <string name="label_cancel">Cancel</string>
   <string name="freq_preview_error">Could not load preview image</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Salvar automaticamente o rascunho de seus textos</string>
+  <string name="autosave_draft_body">Se você sair do aplicativo, ele vai salvar automaticamente um rascunho de seu texto</string>
 </resources>
