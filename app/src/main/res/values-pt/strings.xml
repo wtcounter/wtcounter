@@ -70,7 +70,7 @@
   <string name="basic_settings">Configurações Básicas</string>
   <string name="copy_clipboard_title">Copiar texto da área de transferência automaticamente</string>
   <string name="copy_clipboard_summary">App irá pedir-lhe para colar texto da área de transferência automaticamente na inicialização do aplicativo</string>
-  <string name="stat_settings">Stat Settings</string>
+  <string name="stat_settings">Configurações de estatísticas</string>
   <string name="reading_time_wpm">Tempo de Leitura (Palavras por Minuto)</string>
   <string name="speaking_time_wpm">Tempo de Fala (Palavras por Minuto)</string>
   <string name="writing_time_lpm">Tempo de Escrita (Letras por Minuto)</string>
@@ -93,7 +93,7 @@
   <string name="long_desc1" tools:ignore="MissingTranslation">O Contador de Palavras é uma ferramenta de texto gratuita e fácil de usar para contar palavras, frases, parágrafos e caracteres em seu texto conforme você digita.
     Foi desenvolvido para aumentar a sua produtividade e facilitar a sua vida. O aplicativo pode ser extremamente útil ao postar ou submeter a plataformas que têm limites de número de caracteres, palavras ou tamanho.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Conta o número de caracteres, frases, palavras e parágrafos do texto que digitas.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">Gerar para o texto as seguintes estatísticas avançadas</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
   <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
