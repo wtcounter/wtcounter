@@ -77,7 +77,7 @@
   <string name="paste">لصق</string>
   <string name="note_add_limit">Could not save note</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
+  <string name="app_title" tools:ignore="MissingTranslation">عداد الكلمات - عد الكلمات، الجمل &amp; الفقرات</string>
   <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
   <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
   <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
