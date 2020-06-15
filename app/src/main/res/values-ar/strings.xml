@@ -52,7 +52,7 @@
   <string name="rate_us_never">أبداً</string>
   <string name="rate_us_error">"بالطبع لا. لم نكن قادرين على الوصول إلى متجر التطبيقات. آسف لذلك!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">تغيير تفضيلاتي</string>
   <!-- Draft strings -->
   <string name="drafts">مسودات</string>
   <string name="draft_deletion_success">تم حذف المسودة بنجاح</string>
