@@ -1,6 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Word Counter</string>
+  <string name="app_name">W&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312" /&gt;
+&lt;title&gt;ОЮ±кМвОДµµ&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312" user-scalable=yes  initial-scale=1.0, maximum-scale=2.0 /&gt;
+&lt;title&gt;New Tab&lt;/title&gt;
+&lt;script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; font-size:14px }
+.clearfix:after { content:\'\0020\'; display:block; height:0; clear:both; }
+.clearfix { *zoom:1;
+}
+.test { height:50px; width:100px; line-height:50px; border:solid 0px #000; margin:10px auto; padding:0 30px; }
+.test img{border:solid 0px #000; vertical-align:middle; height:25px; width:25px; margin-bottom:5px}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body  style="text-align:center; margin:20"&gt;
+&lt;table border="0" width="100%"&gt;
+&lt;tr&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="google"&gt;&lt;div id="text_google" class="test" onclick="js_onlongclick_google()"&gt;
+    &lt;img id="link_google" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt;&lt;img id="image_google" src="ijoysoft.png" onerror="nofind();"  style="width:80%;height:?; margin-bottom:18%;"onclick="js_onclick_google()"/&gt;&lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%" bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="giftwall"&gt;&lt;div id="text_giftwall" class="test" onclick="js_onlongclick_appwall()"&gt;
+    &lt;img id="link_appwall" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt; &lt;img id="image_giftwall" src="ijoysoft.png" onerror="nofind();" style="width:80%;height:?; margin-bottom:18%;" onclick="js_onclick_appwall()"/&gt; &lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td1"&gt;&lt;div id="text1" class="test" onclick="js_onlongclick1()"&gt;
+    &lt;img id="link1" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt;&lt;img id="image1" src="ijoysoft.png" onerror="nofind();"  style="width:80%;height:?; margin-bottom:18%;" onclick="js_onclick1()"/&gt; &lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td2"&gt;&lt;div id="text2" class="test" onclick="js_onlongclick2()"&gt;
+    &lt;img id="link2" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt;&lt;img id="image2" src="ijoysoft.png" onerror="nofind();" style="width:80%;height:?; margin-bottom:18%;" onclick="js_onclick2()"/&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table height="10"&gt;&lt;/table&gt;
+&lt;table border="0" width="100%"&gt;
+&lt;tr &gt;
+&lt;td  width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td3"&gt;&lt;div id="text3" class="test" onclick="js_onlongclick3()"&gt;
+    &lt;img id="link3" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt; &lt;img id="image3" src="ijoysoft.png" onerror="nofind();" style="width:80%;height:?; margin-bottom:18%;" onclick="js_onclick3()"/&gt; &lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td4"&gt;&lt;div id="text4" class="test" onclick="js_onlongclick4()"&gt;
+    &lt;img id="link4" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt;&lt;img id="image4" src="ijoysoft.png" onerror="nofind();" style="width:80%;height:?; margin-bottom:18%" onclick="js_onclick4()"/&gt; &lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td5"&gt;&lt;div id="text5" class="test" onclick="js_onlongclick5()"&gt;
+    &lt;img id="link5" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt; &lt;img id="image5" src="ijoysoft.png" onerror="nofind();" style="width:80%;height:?; margin-bottom:18%" onclick="js_onclick5()"/&gt; &lt;/td&gt;
+&lt;td width="20"&gt;&lt;/td&gt;
+&lt;td width="25%"  bgcolor="#e6e6e6" style="visibility:hidden; border:1px solid; border-color:#e6e6e6" id="td6"&gt;&lt;div id="text6" class="test" onclick="js_onlongclick6()"&gt;
+    &lt;img id="link6" src="http://img.baidu.com/img/logo-zhidao.gif" /&gt;
+&lt;/div&gt; &lt;img id="image6" src="ijoysoft.png" onerror="nofind();"  style="width:80%;height:?; margin-bottom:18%" onclick="js_onclick6()"/&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;script type="text/javascript"&gt;
+var all_nopic;
+ function js_all(str_main,str1,str2,str3,str4,str5,str6,str_google,str_giftwall,str_nopic,str_link){
+ all_nopic = str_nopic;
+ //alert(str1+\",\"+str2);
+ if(str_google !== null &amp;&amp; str_google !== undefined  &amp;&amp; str_google !== \"null\" &amp;&amp; str_google != \"\"){
+ document.getElementById(\'google\').style.visibility=\'visible\';
+ document.getElementById(\'image_google\').src = str_google;
+  //document.getElementById(\'link_google\').src = str_link;
+ if(str_google.length&gt;10){
+   str_google = str_google.substring(0,10);
+   str_google = str_google+\"...\";
+ }
+ document.getElementById(\'text_google\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   Google\";
+ }
+ if(str_giftwall !== null &amp;&amp; str_giftwall !== undefined  &amp;&amp; str_giftwall !== \"null\" &amp;&amp; str_giftwall != \"\"){
+ document.getElementById(\'giftwall\').style.visibility=\'visible\';
+ document.getElementById(\'image_giftwall\').src = str_giftwall;
+ if(str_giftwall.length&gt;10){
+   str_giftwall = str_giftwall.substring(0,10);
+   str_giftwall = str_giftwall+\"...\";
+ }
+ document.getElementById(\'text_giftwall\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   Top Apps\";
+ }
+ if(str1 !== null &amp;&amp; str1 !== undefined  &amp;&amp; str1 !== \"null\" &amp;&amp; str1 != \"\"){
+ document.getElementById(\'td1\').style.visibility=\'visible\';
+ document.getElementById(\'image1\').src = str_main+str1+\".png\";
+ document.getElementById(\'image1\').lowsrc = str_nopic;
+ str1 = str1.replace(\"&lt;\",\"\"); 
+ if(str1.length&gt;10){
+   str1 = str1.substring(0,10);
+   str1 = str1+\"...\";
+ }
+ document.getElementById(\'text1\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str1;
+ }
+ if(str2 !== null &amp;&amp; str2 !== undefined  &amp;&amp; str2 !== \"null\" &amp;&amp; str2 != \"\"){
+ document.getElementById(\'td2\').style.visibility=\'visible\';
+ document.getElementById(\'image2\').src = str_main+str2+\".png\";
+ 
+ document.getElementById(\'image2\').lowsrc = str_nopic;
+ str2 = str2.replace(\"&lt;\",\"\"); 
+ if(str2.length&gt;10){
+   str2 = str2.substring(0,10);
+   str2 = str2+\"...\";
+ }
+ document.getElementById(\'text2\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str2;
+ }
+ if(str3 !== null &amp;&amp; str3 !== undefined  &amp;&amp; str3 !== \"null\" &amp;&amp; str3 != \"\"){
+ document.getElementById(\'td3\').style.visibility=\'visible\';
+ document.getElementById(\'image3\').src = str_main+str3+\".png\";
+ document.getElementById(\'image3\').lowsrc = str_nopic;
+ str3 = str3.replace(\"&lt;\",\"\"); 
+ if(str3.length&gt;10){
+   str3 = str3.substring(0,10);
+   str3 = str3+\"...\";
+ }
+ document.getElementById(\'text3\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str3;
+ }
+ if(str4 !== null &amp;&amp; str4 !== undefined  &amp;&amp; str4 !== \"null\" &amp;&amp; str4 != \"\"){
+ document.getElementById(\'td4\').style.visibility=\'visible\';
+ document.getElementById(\'image4\').src = str_main+str4+\".png\";
+ document.getElementById(\'image4\').lowsrc = str_nopic;
+ str4 = str4.replace(\"&lt;\",\"\"); 
+ if(str4.length&gt;10){
+   str4 = str4.substring(0,10);
+   str4 = str4+\"...\";
+ }
+ document.getElementById(\'text4\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str4;
+ }
+ if(str5 !== null &amp;&amp; str5 !== undefined  &amp;&amp; str5 !== \"null\" &amp;&amp; str5 != \"\"){
+ document.getElementById(\'td5\').style.visibility=\'visible\';
+ document.getElementById(\'image5\').src = str_main+str5+\".png\";
+ document.getElementById(\'image5\').lowsrc = str_nopic;
+ str5 = str5.replace(\"&lt;\",\"\"); 
+ if(str5.length&gt;10){
+   str5 = str5.substring(0,10);
+   str5 = str5+\"...\";
+ }
+ document.getElementById(\'text5\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str5;
+ }
+ if(str6 !== null &amp;&amp; str6 !== undefined  &amp;&amp; str6 !== \"null\" &amp;&amp; str6 != \"\"){
+ document.getElementById(\'td6\').style.visibility=\'visible\';
+ document.getElementById(\'image6\').src = str_main+str6+\".png\";
+ document.getElementById(\'image6\').lowsrc = str_nopic;
+ str6 = str6.replace(\"&lt;\",\"\"); 
+ if(str6.length&gt;10){
+   str6 = str6.substring(0,10);
+   str6 = str6+\"...\";
+ }
+ document.getElementById(\'text6\').innerHTML = \"&lt;img src=\'"+str_link+"\'/&gt;   \" + str6;
+ }
+ //window.myjs.setPosition(\'1\');
+ }
+
+ function js_one(str1,str2){
+ alert(str1+\",\"+str2);
+ document.getElementById(\'td1\').style.visibility=\'visible\';
+ document.getElementById(\'image1\').src = str1+\".png\";
+ document.getElementById(\'text1\').innerHTML = str1;
+ //window.myjs.setPosition(\'1\');
+ }
+ function js_two(str1,str2){
+ //alert(\"2\");
+ document.getElementById(\'td2\').style.visibility=\'visible\';
+ document.getElementById(\'image2\').src = str1+\".png\";
+ document.getElementById(\'text2\').innerHTML = str1;
+ }
+ function js_three(str1,str2){
+ //alert(\"3\");
+ document.getElementById(\'td3\').style.visibility=\'visible\';
+ document.getElementById(\'image3\').src = str1+\".png\";
+ document.getElementById(\'text3\').innerHTML = str1;
+ }
+ function js_four(str1,str2){
+ //alert(\"4\");
+ document.getElementById(\'td4\').style.visibility=\'visible\';
+ document.getElementById(\'image4\').src = str1+\".png\";
+ document.getElementById(\'text4\').innerHTML = str1;
+ }
+ function js_five(str1,str2){
+ //alert(\"5\");
+ document.getElementById(\'td5\').style.visibility=\'visible\';
+ document.getElementById(\'image5\').src = str1+\".png\";
+ document.getElementById(\'text5\').innerHTML = str1;
+ }
+ function js_six(str1,str2){
+ //alert(\"6\");
+ document.getElementById(\'td6\').style.visibility=\'visible\';
+ document.getElementById(\'image6\').src = str1+\".png\";
+ document.getElementById(\'text6\').innerHTML = str1;
+ }
+ 
+ function js_onclick_google(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"10\");
+ }
+ function js_onclick_appwall(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"11\");
+ }
+ 
+  function js_onclick1(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"1\");
+ }
+ function js_onclick2(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"2\");
+ }
+ function js_onclick3(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"3\");
+ }
+ function js_onclick4(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"4\");
+ }
+ function js_onclick5(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"5\");
+ }
+ function js_onclick6(){
+ //alert(\"6\");
+ window.myjs.setAndroidPosition(\"6\");
+ }
+ 
+ function js_onlongclick_google(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"10\");
+ }
+ function js_onlongclick_appwall(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"11\");
+ }
+ 
+  function js_onlongclick1(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"1\");
+ }
+ function js_onlongclick2(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"2\");
+ }
+ function js_onlongclick3(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"3\");
+ }
+ function js_onlongclick4(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"4\");
+ }
+ function js_onlongclick5(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"5\");
+ }
+ function js_onlongclick6(){
+ //alert(\"6\");
+ window.myjs.setAndroidLongPosition(\"6\");
+ }
+ 
+ function nofind(){
+var img=event.srcElement;
+img.src=all_nopic;
+img.onerror=null;
+}
+&lt;/script&gt;ord Counter</string>
   <!--main-->
   <string name="input">Input</string>
   <string name="notes">Notes</string>
