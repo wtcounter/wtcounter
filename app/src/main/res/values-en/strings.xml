@@ -13,13 +13,13 @@ Langsung contoh nya saja ya, anda perokok yang ingin berhenti merokok. lalu anda
   <!--main-->
   <string name="input">Input</string>
   <string name="notes">Hei på deg</string>
-  <string name="settings">Settings</string>
+  <string name="settings">Configuration</string>
   <!--input-->
-  <string name="hint_input">Enter your text here</string>
+  <string name="hint_input">Input text here</string>
   <!--notes-->
   <!--report-->
   <string name="basic_stats">Hei folkens</string>
-  <string name="characters">Characters</string>
+  <string name="characters">Person</string>
   <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">Words</string>
   <string name="paragraphs">Paragraphs</string>
