@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Word Counter</string>
+  <string name="app_name">WordHi Chili,
+Due to your absence regarding our class meeting, let me through these words summarize what you miused during the class. 
+First of all, Mrs. O’Brien talked a little bit about her life as a Undiversity professor, she is our English instructor over this semester.  I defined her as being professionally accomplished because of her experience teaching.  Concerning her family life, she has five kids with a lot of pets among dogs presented at the end of the meeting. 
+Secondly,  our class meeting is scheduled every Monday from 9.am to 9.50 am via zoom except next Monday on September 7 there is no class due to Labor Day.  
+Lastly, I’ll detail what you need to know about the course. Thereby, you need canvas via AACC website or app because it’s where we’ll be working. During the meeting,  the teacher show us how to use canvas especially for those who are comfortable or don’t master online courses.
+Also, she enumerated the outline of the course study such as the syllabus, zoom policies, etc.
+As regards syllabus, there are some essentials learning outcomes required for each student in this class. For example:
+
+Develop and demonstrate skills in close reading, textual analysis, and rhetorical analysis while identifying their cultural, social, and historical contexts.
+
+Compose college-level writing projects for academic audiences. 
+
+Write a sequence of college-level analytical essays that incorporate a clear thesis statement, strong topic sentences, effective transitions, focused and developed paragraphs, logical organization, appropriate modes of exposition, and effective source material. 
+
+Demonstrate an understanding of the writing process by effectively using prewriting, planning, drafting, and revising strategies. 
+
+Demonstrate an understanding of the research process by finding, selecting, and evaluating appropriate sources. 
+
+Incorporate and document primary and secondary source material according to MLA conventions. 
+
+Understand plagiarism and implement strategies to avoid it. 
+
+Consistently use Standard English and other stylistic options appropriate for audience and purpose.
+
+Learn to correct errors in grammar, punctuation, and mechanics.
+
+in addition she also talked about the course materials that are:
+
+From Inquiry to Academic Writing 4th Edition (Greene &amp; Lidinsky) 
+
+Never Let Me Go (Kazuo Ishiguro) 
+Access to Zoom
+
+Access to Internet Monday-Friday
+
+Access to ELMS   Monday-Friday
+
+Access to MS Word/Markup Feature for Workshop
+
+
+ </string>
   <!--main-->
   <string name="input">Contribution</string>
   <string name="notes">Remarques</string>
