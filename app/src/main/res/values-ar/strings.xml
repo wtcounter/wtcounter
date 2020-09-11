@@ -11,7 +11,7 @@
   <!--report-->
   <string name="basic_stats">الإحصائيات الأساسية</string>
   <string name="characters">الأحرف</string>
-  <string name="characters_without_spaces">الأحرف بدون مسافات</string>
+  <string name="characters_without_spaces">Characters without Spaces</string>
   <string name="words">كلمات</string>
   <string name="paragraphs">الفقرات</string>
   <string name="size">الحجم</string>
