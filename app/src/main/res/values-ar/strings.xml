@@ -34,9 +34,9 @@
   <string name="save">حفظ</string>
   <string name="sentences">جمل</string>
   <string name="save_dialog_desc">حسنا! ماذا تريد أن نسميها؟</string>
-  <string name="edit_alert_title">هل أنت واثق؟</string>
-  <string name="yes">نعم فعلا</string>
-  <string name="edit_alert_desc">سيؤدي هذا الإجراء إلى محو المحتوى الحالي. هل أنت متأكد من أنك تريد المتابعة؟</string>
+  <string name="edit_alert_title">هل أنت متأكد؟</string>
+  <string name="yes">نعم</string>
+  <string name="edit_alert_desc">سيؤدي هذا الإجراء إلى حذف المحتوى الحالي. هل أنت متأكد من أنك تريد المتابعة؟</string>
   <string name="delete_alert_desc">هل أنت متأكد من أنك تريد حذف هذا التقرير؟</string>
   <string name="no">لا</string>
   <string name="generic_error_message">يبدو أن هناك خطأ ما. الرجاء معاودة المحاولة في وقت لاحق…</string>
@@ -63,17 +63,17 @@
   <string name="draft_history_delete">هل أنت متأكد من أنك تريد حذف جميع المسودات؟</string>
   <!-- Share app string -->
   <string name="share_ui_text">مشاركة التطبيق</string>
-  <string name="share_picker_text">مشاركة بـ</string>
+  <string name="share_picker_text">مشاركة باستخدام</string>
   <!--  Activity not found error -->
-  <string name="activity_not_found_error">لم نتمكن من العثور على تطبيق يمكن إكمال هذا الإجراء. آسف لذلك!</string>
+  <string name="activity_not_found_error">لم نتمكن من العثور على تطبيق يمكن إكمال هذا الإجراء. ناسف لذلك!</string>
   <string name="basic_settings">الإعدادات الأساسيّة</string>
-  <string name="copy_clipboard_title">نسخ النص إلى الحافظة تلقائياً</string>
+  <string name="copy_clipboard_title">نسخ نص الحافظة تلقائياً</string>
   <string name="copy_clipboard_summary">التطبيق سوف يطالبك بلصق نص من الحافظة تلقائياً عند بدء التطبيق</string>
   <string name="stat_settings">إعدادات الحالة</string>
-  <string name="reading_time_wpm">وقت القراءة (كلمة في الدقيقة)</string>
-  <string name="speaking_time_wpm">وقت الكلام (كلمة في الدقيقة)</string>
-  <string name="writing_time_lpm">وقت الكتابة (أحرف للدقيقة الواحدة)</string>
-  <string name="size_encoding_format">حجم ملف النص</string>
+  <string name="reading_time_wpm">وقت القراءة (الكلمات في الدقيقة)</string>
+  <string name="speaking_time_wpm">وقت التحدث (الكلمات في الدقيقة)</string>
+  <string name="writing_time_lpm">وقت الكتابة (أحرف في الدقيقة الواحدة)</string>
+  <string name="size_encoding_format">تنسيق ترميز الحجم</string>
   <string name="paste">لصق</string>
   <string name="note_add_limit">تعذر حفظ الملاحظة</string>
   <!-- Play store texts -->
