@@ -6,12 +6,12 @@
   <string name="notes">ملاحظات</string>
   <string name="settings">الإعدادات</string>
   <!--input-->
-  <string name="hint_input">أدخل النص هنا</string>
+  <string name="hint_input">أدخل نصك هنا</string>
   <!--notes-->
   <!--report-->
   <string name="basic_stats">الإحصائيات الأساسية</string>
   <string name="characters">الأحرف</string>
-  <string name="characters_without_spaces">Characters without Spaces</string>
+  <string name="characters_without_spaces">الأحرف بدون مسافات</string>
   <string name="words">كلمات</string>
   <string name="paragraphs">الفقرات</string>
   <string name="size">الحجم</string>
@@ -20,10 +20,10 @@
   <string name="extra_stats">إحصائيات إضافية</string>
   <string name="unique_words">كلمات فريدة من نوعها</string>
   <string name="average_word_length">متوسط طول الكلمة</string>
-  <string name="avg_sentence_length_words">متوسط طول الجملة (أحرف)</string>
-  <string name="avg_sentence_length_characters">متوسط طول الجملة (كلمات)</string>
+  <string name="avg_sentence_length_words">متوسط طول الجملة (كلمات)</string>
+  <string name="avg_sentence_length_characters">متوسط طول الجملة (الأحرف)</string>
   <!--Length Stats-->
-  <string name="length_stats">طول الإحصائيات</string>
+  <string name="length_stats">إحصائيات الطول</string>
   <string name="shortest_sentence">أقصر جملة (كلمات)</string>
   <string name="longest_sentence">أطول جملة (كلمات)</string>
   <!--Time Stats-->
@@ -135,18 +135,18 @@
   <!-- Frequency dialog strings -->
   <string name="freq_count">%d \u0020\u0020العثور على تكرار</string>
   <string name="freq_count_plural">%d \u0020\u0020العثور على تكرارات</string>
-  <string name="freq_search_hint">Enter text to find frequency</string>
-  <string name="freq_case_sensitive">Case sensitive matching</string>
-  <string name="freq_simple_text_matching">Simple text matching</string>
-  <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_search_hint">أدخل النص للعثور على التردد (التكرار)</string>
+  <string name="freq_case_sensitive">مطابقة لحالة الاحرف الكبيرة والصغيرة</string>
+  <string name="freq_simple_text_matching">مطابقة نص بسيطة</string>
+  <string name="freq_word_matching">مطابقة الكلمات</string>
+  <string name="freq_pattern_matching">مطابقة النمط (التعبير العادي)</string>
+  <string name="most_frequent_header">الكلمات الأكثر إستعمالاً (شيوعاً)</string>
+  <string name="freq_unavailable_dialog_title">هذه خاصة مميزة</string>
+  <string name="freq_unavailable_dialog_message">لفتح هذه الخاصية، يرجى التطوير إلى باقتنا الفضية. راجع مزايا الباقة لمعرفة المزيد عن هذه الخاصية.</string>
+  <string name="label_see_plan">مشاهدة الخطة</string>
+  <string name="label_cancel">إلغاء</string>
+  <string name="freq_preview_error">تعذر فتح معاينة الصورة</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">حفظ مسودة النص الخاص بك تلقائياً</string>
+  <string name="autosave_draft_body">التطبيق سيقوم تلقائياً بحفظ مسودة النص الخاص بك عند مغادرة التطبيق</string>
 </resources>
