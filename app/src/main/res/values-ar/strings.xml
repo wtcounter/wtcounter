@@ -75,11 +75,11 @@
   <string name="writing_time_lpm">وقت الكتابة (أحرف للدقيقة الواحدة)</string>
   <string name="size_encoding_format">حجم ملف النص</string>
   <string name="paste">لصق</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="note_add_limit">تعذر حفظ الملاحظة</string>
   <!-- Play store texts -->
   <string name="app_title" tools:ignore="MissingTranslation">عداد الكلمات - عد الكلمات، الجمل &amp; الفقرات</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
+  <string name="app_description" tools:ignore="MissingTranslation">عد الكلمات والأحرف والجمل والفقرات والحجم وأكثر بكثير من النص</string>
+  <string name="title_1" tools:ignore="MissingTranslation">أهم الميزات</string>
   <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
   <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
   <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
