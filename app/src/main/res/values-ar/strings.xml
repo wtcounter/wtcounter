@@ -102,39 +102,39 @@
   <string name="long_desc10" tools:ignore="MissingTranslation">احفظ النص الحالي مع إحصاءاته. لديك دائما نصك الهام وملاحظاتك بنقرة واحدة!</string>
   <string name="long_desc11" tools:ignore="MissingTranslation">تعديل الملاحظات المحفوظة عندما تتغير البيانات ومحتوى تلك الملاحظات. يمكنك بسهولة تعديل ملاحظاتك المحفوظة للحفاظ على ملاحظاتك محدثة!</string>
   <string name="long_desc12" tools:ignore="MissingTranslation">التخلص من أي ملاحظات محفوظة لم تعد بحاجة إليها من قبلك</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
-  <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
-  <string name="premium_title_purchased">You have purchased premium plan</string>
-  <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
-  <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
-  <string name="frequency_count">Get frequency count in extra stats</string>
-  <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
-  <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
-  <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
-  <string name="ten_more_themes">10 more themes</string>
-  <string name="audio_input">Audio input</string>
-  <string name="read_from_file">Open any file directly from Word Counter</string>
-  <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
-  <string name="buy_monthly_subscription_for">Subscribe For</string>
-  <string name="buy_lifetime_premium">Buy</string>
-  <string name="buy_lifetime_premium_for">Buy for </string>
-  <string name="year">Year</string>
-  <string name="buy_premium_title">Buy Word Counter Premium</string>
-  <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
-  <string name="coming_soon">Coming soon!</string>
-  <string name="help_translate_word_counter">Help translate Word Counter</string>
-  <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">الآن الوصول بسرعة إلى عداد الكلمات من التطبيقات الأخرى أثناء مشاركة النص</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">سيطلبك التطبيق لصق النص الذي تم نسخه مؤخرا من الحافظة</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">يعمل تطبيق إحصاء الكلمات الآن بلغات متعددة مثل العربية والتشيكية والألمانية والإسبانية والفرنسية والإندونيسية والإيطالية والبولندية والبرتغالية والرومانية والروسية والفييتنامية.</string>
+  <string name="lets_go_premium">اذهب الى النسخة المدفوعة</string>
+  <string name="enjoy_benefits">تهانينا! استمتع بالفوائد من خطتنا %s</string>
+  <string name="premium_title_purchased">لقد قمت بشراء خطة (نسخة) المدفوعةالمميزة</string>
+  <string name="premium_message_purchased">أنت تستمتع بالفوائد من خطتنا %s</string>
+  <string name="premium_message">فتح الميزات المتقدمة ومساعدتنا على تحسين هذا التطبيق عن طريق دعمنا مباشرة</string>
+  <string name="plan">الباقة</string>
+  <string name="remove_ads">إزالة الإعلانات!</string>
+  <string name="frequency_count">احصل على عدد الترددات في الإحصائيات الإضافية</string>
+  <string name="benefits_of_silver_plans">جميع فوائد باقة الفضة</string>
+  <string name="five_more_themes">خمسة وضعيات أساسية</string>
+  <string name="support_large_text">دعم للنص الكبير</string>
+  <string name="show_count_in_status_bar">إظهار العد في شريط الحالة عندما تكتب في تطبيقات أخرى</string>
+  <string name="benefits_of_gold_plans">جميع فوائد الباقة الذهبية</string>
+  <string name="ten_more_themes">المزيد من الثيمات (وضعيات)</string>
+  <string name="audio_input">الإدخال الصوتي</string>
+  <string name="read_from_file">فتح أي ملف مباشرة من عداد الكلمات</string>
+  <string name="export_to_file">تصدير ملاحظة وإحصائيات كملف(pdf, doc)</string>
+  <string name="buy_yearly_subscription">اشتراك</string>
+  <string name="buy_monthly_subscription_for">اشتراك لـ</string>
+  <string name="buy_lifetime_premium">شراء</string>
+  <string name="buy_lifetime_premium_for">شراء ب </string>
+  <string name="year">سنة</string>
+  <string name="buy_premium_title">شراء عداد الكلمات المميز (المدفوع)</string>
+  <string name="buy_premium_message">الإعلانات مزعجة، أليس كذلك؟ نحن لا نحبهم أيضا. اشتري عروضنا المميزة لإزالة الإعلانات وفتح المزيد من الميزات المتقدمة. انقر هنا لعرض الباقات المتاحة</string>
+  <string name="coming_soon">سيأتي قريبا!</string>
+  <string name="help_translate_word_counter">ساعد في ترجمة عداد الكلمات</string>
+  <string name="more_apps_by_spians_labs">المزيد من التطبيقات بواسطة Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
+  <string name="freq_count">%d \u0020\u0020العثور على تكرار</string>
+  <string name="freq_count_plural">%d \u0020\u0020العثور على تكرارات</string>
   <string name="freq_search_hint">Enter text to find frequency</string>
   <string name="freq_case_sensitive">Case sensitive matching</string>
   <string name="freq_simple_text_matching">Simple text matching</string>
