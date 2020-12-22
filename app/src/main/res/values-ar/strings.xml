@@ -80,28 +80,28 @@
   <string name="app_title" tools:ignore="MissingTranslation">عداد الكلمات - عد الكلمات، الجمل &amp; الفقرات</string>
   <string name="app_description" tools:ignore="MissingTranslation">عد الكلمات والأحرف والجمل والفقرات والحجم وأكثر بكثير من النص</string>
   <string name="title_1" tools:ignore="MissingTranslation">أهم الميزات</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
-  <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
-  <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
-  <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
-  <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
-  <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
+  <string name="title_2" tools:ignore="MissingTranslation">عد عندما تكتب</string>
+  <string name="title_3" tools:ignore="MissingTranslation">الوصول إلى الإحصائيات المتقدمة</string>
+  <string name="title_4" tools:ignore="MissingTranslation">المزيد من التحكم لك</string>
+  <string name="title_5" tools:ignore="MissingTranslation">لاتفقد ابداً نصك المكتوب</string>
+  <string name="title_6" tools:ignore="MissingTranslation">حفظ الملاحظات المهمة</string>
+  <string name="title_7" tools:ignore="MissingTranslation">إبقاء الملاحظات محدثة</string>
+  <string name="title_8" tools:ignore="MissingTranslation">حذف الملاحظات عندما لا تكون مطلوبة</string>
+  <string name="title_9" tools:ignore="MissingTranslation">فتح مباشرة من تطبيق آخر</string>
+  <string name="title_10" tools:ignore="MissingTranslation">مباشرة انسخ النص الملتصق</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">عداد الكلمات هو أداة نصية مجانية وسهلة الاستخدام لحساب الكلمات والجمل والفقرات والأحرف في النص الخاص بك كما تكتب.
+    تم تصميمه لزيادة إنتاجيتك وجعل حياتك أسهل. يمكن أن يكون التطبيق مفيدا للغاية عند النشر أو التقديم إلى المنصات التي لها حدود مفروضة على عدد الأحرف أو الكلمات أو الحجم.</string>
+  <string name="long_desc2" tools:ignore="MissingTranslation">عد عدد الأحرف والجمل والكلمات والفقرات من النص المحدد كما تكتب.</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">إنشاء الإحصائيات التالية المتقدمة للنص</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">إحصائيات الوقت (وقت القراءة، وقت الكلام، وقت الكتابة)</string>
+  <string name="long_desc5" tools:ignore="MissingTranslation"> كلمات فريدة</string>
+  <string name="long_desc6" tools:ignore="MissingTranslation">متوسط طول الكلمة، متوسط طول الجملة</string>
+  <string name="long_desc7" tools:ignore="MissingTranslation">أقصر طول للجملة، طول الجملة الأطول</string>
+  <string name="long_desc8" tools:ignore="MissingTranslation">التحكم في كيفية حساب الإحصائيات من شاشة الإعدادات</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">حفظ الملاحظات تلقائياً عندما تترك التطبيقات عن طريق الخطأ. الوصول إلى هذه النصوص في المستقبل تحت قسم المسودات. تعديل أو حذف هذه المسودات كما تريد. المسودات سوف تحتوي أيضًا على سجل عندما تقوم بتغيير أي مسودات موجودة</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">احفظ النص الحالي مع إحصاءاته. لديك دائما نصك الهام وملاحظاتك بنقرة واحدة!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">تعديل الملاحظات المحفوظة عندما تتغير البيانات ومحتوى تلك الملاحظات. يمكنك بسهولة تعديل ملاحظاتك المحفوظة للحفاظ على ملاحظاتك محدثة!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">التخلص من أي ملاحظات محفوظة لم تعد بحاجة إليها من قبلك</string>
   <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
