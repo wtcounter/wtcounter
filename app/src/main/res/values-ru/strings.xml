@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Счетчик слов</string>
+  <string name="app_name">Подсчет слов</string>
   <!--main-->
-  <string name="input">Вход</string>
+  <string name="input">Ввод</string>
   <string name="notes">Заметки</string>
   <string name="settings">Настройки</string>
   <!--input-->
@@ -145,8 +145,8 @@
   <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
   <string name="label_see_plan">See plan</string>
   <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_preview_error">Не удалось загрузить выбранное изображение</string>
   <!-- Auto save draft pref -->
   <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_body">Приложение автоматически сохраняет черновик текста при выходе из приложения</string>
 </resources>
