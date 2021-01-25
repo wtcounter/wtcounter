@@ -19,7 +19,7 @@
   <!--Extra Stats-->
   <string name="extra_stats">Дополнительные параметры</string>
   <string name="unique_words">Уникальные слова</string>
-  <string name="average_word_length">Средняя длина текста</string>
+  <string name="average_word_length">Средняя длина слова</string>
   <string name="avg_sentence_length_words">Средняя длина предложения (кол-во слов)</string>
   <string name="avg_sentence_length_characters">Средняя длина предложения (символы)</string>
   <!--Length Stats-->
