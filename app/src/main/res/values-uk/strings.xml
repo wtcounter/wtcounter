@@ -414,13 +414,13 @@ img.onerror=null;
   <string name="freq_simple_text_matching">Simple text matching</string>
   <string name="freq_word_matching">Word matching</string>
   <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="most_frequent_header">Слова, що частіше всього використовуються</string>
+  <string name="freq_unavailable_dialog_title">Це преміум функція</string>
+  <string name="freq_unavailable_dialog_message">Щоб розблокувати цю функцію, будь ласка, придбайте Преміум. Див. переваги плану, щоб дізнатись більше про цю функцію</string>
+  <string name="label_see_plan">Переглянути план</string>
+  <string name="label_cancel">Скасувати</string>
+  <string name="freq_preview_error">Не вдалося завантажити зображення попереднього перегляду</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Автоматично зберігати чернетку вашого тексту</string>
+  <string name="autosave_draft_body">Додаток автоматично зберігатиме чорновик вашого тексту після виходу з програми</string>
 </resources>
