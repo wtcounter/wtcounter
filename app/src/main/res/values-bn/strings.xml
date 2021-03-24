@@ -22,7 +22,7 @@
   <!--report-->
   <string name="basic_stats">প্রাথমিক পরিসংখ্যান</string>
   <string name="characters">অক্ষর</string>
-  <string name="characters_without_spaces">শূন্য স্থান ছাড়া অক্ষর</string>
+  <string name="characters_without_spaces">শূন্য স্থান ব্যতীত অক্ষর</string>
   <string name="words">শব্দ</string>
   <string name="paragraphs">অনুচ্ছেদ</string>
   <string name="size">আকার</string>
@@ -58,9 +58,9 @@
   <!-- Rate us strings -->
   <string name="rate_us_text">যদি আপনি এই অ্যাপ ব্যবহার করে আনন্দ লাভ করে থাকেন, তবে অনুগ্রহ করে এটিকে রেট প্রদান করুন। এতে এক মিনিটের বেশি সময় লাগবে না। আপনার সহযোগিতার জন্য ধন্যবাদ!</string>
   <string name="rate_us_text_short">প্লে স্টোর এ অ্যাপটির রেটিং দিন</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
+  <string name="rate_us_yes">এখনি রেটিং দিন</string>
+  <string name="rate_us_later">পরে</string>
+  <string name="rate_us_never">কখনো না</string>
   <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
