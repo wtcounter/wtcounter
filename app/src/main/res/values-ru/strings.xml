@@ -133,20 +133,20 @@
   <string name="help_translate_word_counter">Помоги перевести счётчик слов</string>
   <string name="more_apps_by_spians_labs">Больше приложений от Spians Lsbs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
-  <string name="freq_search_hint">Enter text to find frequency</string>
-  <string name="freq_case_sensitive">Case sensitive matching</string>
-  <string name="freq_simple_text_matching">Simple text matching</string>
-  <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
+  <string name="freq_count">%d \u0020\u0020Найдено</string>
+  <string name="freq_count_plural">%d \u0020\u0020Найдено события</string>
+  <string name="freq_search_hint">Введите текст, чтобы найти частоту</string>
+  <string name="freq_case_sensitive">Совпадение с учетом регистра</string>
+  <string name="freq_simple_text_matching">Простой текст совпадает</string>
+  <string name="freq_word_matching">Подбор слов</string>
+  <string name="freq_pattern_matching">Сопоставление шаблона (Regex)</string>
+  <string name="most_frequent_header">Часто встречающиеся слова</string>
+  <string name="freq_unavailable_dialog_title">Это функция версии Pro</string>
+  <string name="freq_unavailable_dialog_message">Чтобы разблокировать эту функцию, пожалуйста, обновитесь до Серебряного плана. Смотрите план, чтобы узнать больше о возможностях</string>
+  <string name="label_see_plan">Смотреть план</string>
+  <string name="label_cancel">Отмена</string>
   <string name="freq_preview_error">Не удалось загрузить выбранное изображение</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
+  <string name="autosave_draft_title">Автоматически сохранять черновик текста</string>
   <string name="autosave_draft_body">Приложение автоматически сохраняет черновик текста при выходе из приложения</string>
 </resources>
