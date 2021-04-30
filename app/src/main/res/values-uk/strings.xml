@@ -363,16 +363,16 @@ img.onerror=null;
   <string name="title_8" tools:ignore="MissingTranslation">Видаліть нотатки, коли вони більше не потрібні</string>
   <string name="title_9" tools:ignore="MissingTranslation">Відкрити безпосередньо з іншого додатку</string>
   <string name="title_10" tools:ignore="MissingTranslation">Вставляти скопійований текст</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
-    It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
-  <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">Лічильник слів - це безкоштовний і легкий у використанні текстовий інструмент для підрахунку слів, речень, абзаців і символів у вашому тексті під час набору тексту.
+    Він розроблений, щоб підвищити вашу продуктивність та зробити ваше життя простішим. Додаток може бути надзвичайно корисним при публікації або відправці на платформи, що обмежують кількість символів, слів та розміру.</string>
+  <string name="long_desc2" tools:ignore="MissingTranslation">Порахуйте кількість символів, речень, слів і абзаців при наборі заданого тексту.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
-  <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
-  <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
-  <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
-  <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Automatically save notes when you accidentally leave the apps. Access these texts in future under Drafts section. Edit or delete these drafts as you want. Drafts will also have history when you change any existing drafts</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">Статистика часу (час читання, час розмови, час написання)</string>
+  <string name="long_desc5" tools:ignore="MissingTranslation"> Унікальні слова</string>
+  <string name="long_desc6" tools:ignore="MissingTranslation">Середня довжина слова, середня довжина речення</string>
+  <string name="long_desc7" tools:ignore="MissingTranslation">Найкоротша довжина речення, Найдовша тривалість речення</string>
+  <string name="long_desc8" tools:ignore="MissingTranslation">На екрані налаштувань контролюйте спосіб обчислення статистики</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Автоматично зберігати нотатки, коли ви випадково залишаєте додатки. Доступ до цих текстів надалі в розділі Чернетки. Редагувати або видалити ці чернетки якщо хочете. Чернетки будуть мати історію при зміні будь-яких існуючих чернеток</string>
   <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
   <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
   <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
