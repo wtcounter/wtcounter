@@ -295,12 +295,12 @@ but it\'s not the same today.</string>
   <string name="words">शब्द</string>
   <string name="paragraphs">पैराग्राफ</string>
   <string name="size">साइज</string>
-  <string name="bookmark_hint">Enter n नोट का नाम दर्ज करें</string>
+  <string name="bookmark_hint">नोट का नाम दर्ज करें</string>
   <!--Extra Stats-->
   <string name="extra_stats">अतिरिक्त आँकड़े</string>
   <string name="unique_words">अनोखे शब्द</string>
   <string name="average_word_length">औसत शब्द की लंबाई</string>
-  <string name="avg_sentence_length_words">Average sentence length (words)</string>
+  <string name="avg_sentence_length_words">औसत वाक्य लंबाई (शब्द)</string>
   <string name="avg_sentence_length_characters">औसत वाक्य लंबाई (शब्द)</string>
   <!--Length Stats-->
   <string name="length_stats">लंबाई के आँकड़े</string>
@@ -390,7 +390,7 @@ For- (§~q (Y) r le !r Jhee \' r>\'C e I Lolli\'. ! r/); I k ,e~t</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Generate following advanced stats for the text</string>
   <string name="long_desc4" tools:ignore="MissingTranslation">Time Stats(Reading time, Speaking time, Writing time)</string>
-  <string name="long_desc5" tools:ignore="MissingTranslation"> Unique words</string>
+  <string name="long_desc5" tools:ignore="MissingTranslation"> अनोखे शब्द</string>
   <string name="long_desc6" tools:ignore="MissingTranslation">Average word length, Average sentence length</string>
   <string name="long_desc7" tools:ignore="MissingTranslation">Shortest sentence length, Longest sentence length</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Control how the stats are calculated from settings screen</string>
@@ -407,7 +407,7 @@ For- (§~q (Y) r le !r Jhee \' r>\'C e I Lolli\'. ! r/); I k ,e~t</string>
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
   <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
   <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
+  <string name="remove_ads">विज्ञापन हटाएँ</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
   <string name="five_more_themes">Five basic themes</string>
@@ -418,15 +418,15 @@ For- (§~q (Y) r le !r Jhee \' r>\'C e I Lolli\'. ! r/); I k ,e~t</string>
   <string name="audio_input">Audio input</string>
   <string name="read_from_file">Open any file directly from Word Counter</string>
   <string name="export_to_file">Export note and stats as file(pdf, doc)</string>
-  <string name="buy_yearly_subscription">Subscribe</string>
+  <string name="buy_yearly_subscription">सब्स्क्राइब करें</string>
   <string name="buy_monthly_subscription_for">Subscribe For</string>
-  <string name="buy_lifetime_premium">Buy</string>
+  <string name="buy_lifetime_premium">खरीदें</string>
   <string name="buy_lifetime_premium_for">Buy for </string>
-  <string name="year">Year</string>
-  <string name="buy_premium_title">Buy Word Counter Premium</string>
+  <string name="year">वर्ष</string>
+  <string name="buy_premium_title">वर्ड काउंटर प्रीमियम खरीदें।</string>
   <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
-  <string name="coming_soon">Coming soon!</string>
-  <string name="help_translate_word_counter">Help translate Word Counter</string>
+  <string name="coming_soon">जल्द आ रहा है!</string>
+  <string name="help_translate_word_counter">वर्ड काउंटर को अनुवादित करने में सहायता करें।</string>
   <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
   <!-- Frequency dialog strings -->
   <string name="freq_count">%d \u0020\u0020Occurrence found</string>
