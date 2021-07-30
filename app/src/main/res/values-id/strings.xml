@@ -127,26 +127,26 @@
   <string name="buy_lifetime_premium">Beli</string>
   <string name="buy_lifetime_premium_for">Beli untuk </string>
   <string name="year">Tahun</string>
-  <string name="buy_premium_title">Buy Word Counter Premium</string>
-  <string name="buy_premium_message">Ads are annoying, right? We don\'t like them either. Buy our premium offerings to remove ads and unlock more advanced features. Click here to view available plans</string>
-  <string name="coming_soon">Coming soon!</string>
-  <string name="help_translate_word_counter">Help translate Word Counter</string>
-  <string name="more_apps_by_spians_labs">More apps by Spians Labs</string>
+  <string name="buy_premium_title">Beli Penghitungan Kata Premium</string>
+  <string name="buy_premium_message">Iklan mengganggu, bukan? Kami juga tidak menyukai mereka. Beli penawaran premium kami untuk menghapus iklan dan membuka fitur yang lebih canggih. Klik di sini untuk melihat paket yang tersedia</string>
+  <string name="coming_soon">Segera hadir!</string>
+  <string name="help_translate_word_counter">Bantu terjemahkan Penghitungan Kata</string>
+  <string name="more_apps_by_spians_labs">Aplikasi lainnya oleh Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
-  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
+  <string name="freq_count">%d \u0020\u0020Kejadian ditemukan</string>
+  <string name="freq_count_plural">%d \u0020\u0020Kejadian-kejadian ditemukan</string>
   <string name="freq_search_hint">Enter text to find frequency</string>
-  <string name="freq_case_sensitive">Case sensitive matching</string>
-  <string name="freq_simple_text_matching">Simple text matching</string>
-  <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_case_sensitive">Pencocokan peka huruf besar/kecil</string>
+  <string name="freq_simple_text_matching">Pencocokan teks sederhana</string>
+  <string name="freq_word_matching">Pencocokan kata</string>
+  <string name="freq_pattern_matching">Pencocokan pola (Regex)</string>
+  <string name="most_frequent_header">Kata-kata yang paling sering</string>
+  <string name="freq_unavailable_dialog_title">Ini adalah fitur premium</string>
+  <string name="freq_unavailable_dialog_message">Untuk membuka fitur ini, Mohon tingkatkan ke paket Perak kami. Lihat keuntungan paket untuk mengetahui selengkapnya tentang fitur</string>
+  <string name="label_see_plan">Lihat paket</string>
+  <string name="label_cancel">Batal</string>
+  <string name="freq_preview_error">Tidak bisa memuat gambar pratinjau</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Simpan konsep dari teks Anda secara otomatis</string>
+  <string name="autosave_draft_body">Aplikasi akan secara otomatis menyimpan konsep dari teks Anda saat Anda meninggalkan aplikasi</string>
 </resources>
