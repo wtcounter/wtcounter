@@ -105,8 +105,8 @@
   <string name="long_desc13" tools:ignore="MissingTranslation">Sekarang akses Penghitung Kata dengan cepat dari aplikasi lain sambil berbagi teks</string>
   <string name="long_desc14" tools:ignore="MissingTranslation">Aplikasi akan meminta Anda untuk menempelkan teks yang baru saja disalin dari papan klip</string>
   <string name="long_desc15" tools:ignore="MissingTranslation">Aplikasi penghitungan kata sekarang berfungsi dengan berbagai bahasa seperti Arab, Ceko, Jerman, Spanyol, Prancis, Indonesia, Italia, Polandia, Portugis, Rumania, Rusia, dan Vietnam.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
-  <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
+  <string name="lets_go_premium">Ayo Premium</string>
+  <string name="enjoy_benefits">Selamat! Nikmati manfaat dari paket %s kami</string>
   <string name="premium_title_purchased">You have purchased premium plan</string>
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
   <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
