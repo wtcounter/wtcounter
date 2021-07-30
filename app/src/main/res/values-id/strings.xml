@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Penghitung Kata</string>
+  <string name="app_name">Penghitungan Kata</string>
   <!--main-->
   <string name="input">Masukan</string>
   <string name="notes">Catatan</string>
@@ -107,15 +107,15 @@
   <string name="long_desc15" tools:ignore="MissingTranslation">Aplikasi penghitungan kata sekarang berfungsi dengan berbagai bahasa seperti Arab, Ceko, Jerman, Spanyol, Prancis, Indonesia, Italia, Polandia, Portugis, Rumania, Rusia, dan Vietnam.</string>
   <string name="lets_go_premium">Ayo Premium</string>
   <string name="enjoy_benefits">Selamat! Nikmati manfaat dari paket %s kami</string>
-  <string name="premium_title_purchased">You have purchased premium plan</string>
-  <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
-  <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
-  <string name="frequency_count">Get frequency count in extra stats</string>
-  <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
+  <string name="premium_title_purchased">Anda telah membeli paket premium</string>
+  <string name="premium_message_purchased">Anda menikmati manfaat dari paket %s kami</string>
+  <string name="premium_message">Buka fitur-fitur canggih dan bantu kami meningkatkan aplikasi ini dengan mendukung kami secara langsung</string>
+  <string name="plan">Paket</string>
+  <string name="remove_ads">Hilangkan Iklan!</string>
+  <string name="frequency_count">Dapatkan jumlah frekuensi dalam statistik tambahan</string>
+  <string name="benefits_of_silver_plans">Semua keuntungan dari paket Perak</string>
+  <string name="five_more_themes">Lima tema dasar</string>
+  <string name="support_large_text">Dukungan untuk teks besar</string>
   <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
   <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
   <string name="ten_more_themes">10 more themes</string>
