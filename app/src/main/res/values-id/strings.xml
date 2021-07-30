@@ -50,7 +50,7 @@
   <string name="rate_us_yes">BERI PENILAIAN</string>
   <string name="rate_us_later">NANTI</string>
   <string name="rate_us_never">TIDAK PERNAH</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_error">"Oh tidak. Kami tidak dapat mencapai Play Store. Maaf untuk itu!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Ubah preferensi iklan</string>
   <!-- Draft strings -->
@@ -79,7 +79,7 @@
   <!-- Play store texts -->
   <string name="app_title" tools:ignore="MissingTranslation">Penghitung Kata - Mengitung Kata, Kalimat &amp; Paragraf</string>
   <string name="app_description" tools:ignore="MissingTranslation">Menghitung kata, karakter, kalimat, paragraf, ukuran dan masih banyak lagi dari teks</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Fitur Teratas</string>
   <string name="title_2" tools:ignore="MissingTranslation">Menhitung saat anda mengetik</string>
   <string name="title_3" tools:ignore="MissingTranslation">Akses ke Statistik selengkapnya</string>
   <string name="title_4" tools:ignore="MissingTranslation">Kontrol lebih banyak untuk anda</string>
@@ -100,11 +100,11 @@
   <string name="long_desc8" tools:ignore="MissingTranslation">Kontrol bagaimana statistik menghitung dari layar pengaturan</string>
   <string name="long_desc9" tools:ignore="MissingTranslation">Secara otomatis menyimpan catatan saat anda tidak sengaja meninggalkan aplikasi. Akses teks ini di bagian Konsep. Ubah atau hapus konsep ini sesuai keinginan anda. Konsep juga mempunyai riwayat saat anda mengubah konsep yang ada</string>
   <string name="long_desc10" tools:ignore="MissingTranslation">Simpan teks sekarang dengan statistiknya. Selalu punya teks dan catatan penting anda satu klik saja!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Edit catatan yang disimpan saat dan ketika data dan konten catatan tersebut berubah. Anda dapat dengan mudah mengedit catatan yang disimpan agar catatan tetap terbarui!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Singkirkan semua catatan tersimpan yang tidak lagi Anda butuhkan</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">Sekarang akses Penghitung Kata dengan cepat dari aplikasi lain sambil berbagi teks</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">Aplikasi akan meminta Anda untuk menempelkan teks yang baru saja disalin dari papan klip</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">Aplikasi penghitungan kata sekarang berfungsi dengan berbagai bahasa seperti Arab, Ceko, Jerman, Spanyol, Prancis, Indonesia, Italia, Polandia, Portugis, Rumania, Rusia, dan Vietnam.</string>
   <string name="lets_go_premium">Let\'s go Premium</string>
   <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
   <string name="premium_title_purchased">You have purchased premium plan</string>
