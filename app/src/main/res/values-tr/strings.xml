@@ -70,25 +70,25 @@
   <string name="copy_clipboard_title">Yazıyı otomatik panoya kopyala</string>
   <string name="copy_clipboard_summary">Uygulamayı başlattığınızda panodan otomatik olarak metin yapıştırmanızı isteyecek</string>
   <string name="stat_settings">İstatistik Ayarları</string>
-  <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
-  <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
-  <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
-  <string name="size_encoding_format">Size Encoding Format</string>
-  <string name="paste">Paste</string>
-  <string name="note_add_limit">Could not save note</string>
+  <string name="reading_time_wpm">Okuma Süresi (Dakika Başına Kelime)</string>
+  <string name="speaking_time_wpm">Sesli Okuma Süresi (Dakika Başına Kelime)</string>
+  <string name="writing_time_lpm">Yazma Hızı (Dakika Başına Kelime)</string>
+  <string name="size_encoding_format">Kod formunda boyut</string>
+  <string name="paste">Yapıştır</string>
+  <string name="note_add_limit">Not kaydedilemedi</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Word Counter - Count Words, Sentences &amp; Paragraphs</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Count words, characters, sentences, paragraphs, size and much more from text</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Top Features</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Count as you type</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Access to advanced Stats</string>
-  <string name="title_4" tools:ignore="MissingTranslation">More control to you</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Never lose your typed text</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Kelime Hesaplayıcı - Kelimeleri, Cümleleri Paragrafları &amp; Hesapla</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Metinden kelimeleri, karakterleri, cümleleri, paragrafları, boyutu ve çok daha fazlasını sayın</string>
+  <string name="title_1" tools:ignore="MissingTranslation">En İyi Özellikler</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Yazarken sayın</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Gelişmiş istatistiklere erişin</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Kontrolü alın</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Yazdığınız metinleri asla kaybetmeyin</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Önemli notları kaydedin</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Notları güncel tutun</string>
+  <string name="title_8" tools:ignore="MissingTranslation">İhtiyacınız kalmadığında notları silin</string>
+  <string name="title_9" tools:ignore="MissingTranslation">Başka bir uygulamadan kolayca açın</string>
+  <string name="title_10" tools:ignore="MissingTranslation">Kopyaladığınız metni kolayca yapıştırın</string>
   <string name="long_desc1" tools:ignore="MissingTranslation">Word Counter is a free and easy to use text tool for counting words, sentences, paragraphs and characters in your text as you type.
     It is designed to boost your productivity and make your life easier. The app can be extremely useful when posting or submitting to platforms which have limits imposed on number of characters, words or size.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Count number of characters, sentences, words and paragraphs of the given text as you type.</string>
