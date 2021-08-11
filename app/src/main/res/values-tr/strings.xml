@@ -18,7 +18,7 @@
   <string name="bookmark_hint">Not adını girin</string>
   <!--Extra Stats-->
   <string name="extra_stats">Ekstra İstatistikler</string>
-  <string name="unique_words">Unique Words</string>
+  <string name="unique_words">Farklı Kelimeler</string>
   <string name="average_word_length">Ortalama Kelime Uzunluğu</string>
   <string name="avg_sentence_length_words">Ortalama Cümle Uzunluğu (Kelimeler)</string>
   <string name="avg_sentence_length_characters">Ortalama Cümle Uzunluğu (Karakterler)</string>
@@ -40,9 +40,9 @@
   <string name="delete_alert_desc">Bu raporu silmek istediğinizden emin misiniz?</string>
   <string name="no">Yok hayır</string>
   <string name="generic_error_message">Bir şeyler ters gitti gibi görünüyor. Lütfen daha sonra tekrar deneyiniz…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
+  <string name="deletion_success">Not başarıyla silindi</string>
+  <string name="addition_success">Not başarıyla eklendi</string>
+  <string name="update_success">Note başarıyla yüklendi</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nBurada bir şey yok!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
