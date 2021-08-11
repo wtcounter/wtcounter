@@ -45,7 +45,7 @@
   <string name="update_success">Note başarıyla yüklendi</string>
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nBurada bir şey yok!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
+  <string name="rate_us_text">Eğer uygulamamızı beğendiyseniz, birazcık zaman ayırıp bize puan verir misiniz? Bir dakikadan fazla sürmeyecek. Desteğiniz için teşekkürler!</string>
   <string name="rate_us_text_short">Rate app on play store</string>
   <string name="rate_us_yes">RATE NOW</string>
   <string name="rate_us_later">LATER</string>
