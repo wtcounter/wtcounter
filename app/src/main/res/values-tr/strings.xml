@@ -99,14 +99,14 @@
   <string name="long_desc7" tools:ignore="MissingTranslation">En kısa cümlenin uzunluğu, En uzun cümlenin uzunluğu</string>
   <string name="long_desc8" tools:ignore="MissingTranslation">Ayarlar ekranından istatistiklerin nasıl hesaplandığını ayarlayın</string>
   <string name="long_desc9" tools:ignore="MissingTranslation">Uygulamadan yanlışlıkla çıkarsanız notları otomatik kaydeder. Bu metinlere daha sonrasında Taslaklar sekmesinden erişebilirsiniz. Taslakları isterseniz düzenleyin isterseniz silin. Mevcut taslaklardan herhangi birini değiştirdiğinizde, taslakların geçmiş hallerini görebilirsiniz</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Save current text with their stats. Always have your important text and notes one click away!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edit saved notes as and when data and content of those notes change. You can easily edit your saved notes to keep the notes up to date!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Get rid of the any saved notes which is no longer needed by you</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">The app will prompt you to paste recently copied text from clipboard</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">The word counting app now works with multiple languages such as Arabic, Czech, German, Spanish, French, Indonesian, Italian, Polish, Portuguese, Romanian, Russian and Vietnamese.</string>
-  <string name="lets_go_premium">Let\'s go Premium</string>
-  <string name="enjoy_benefits">Congrats! Enjoy benefits of our %s plan</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Mevcut metni istatistikleriyle kaydedin. Önemli metniniz ve notlarınız her zaman bir tık uzağınızda!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Kaydedilen notları, bu notların verileri ve içeriği değiştiğinde düzenleyin. Notları güncel tutmak için kaydettiğiniz notları kolayca düzenleyebilirsiniz!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Artık ihtiyacınız olmayan kayıtlı notlardan kurtulun</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">Artık diğer uygulamalardan metin paylaşırken Kelime Hesaplayıcı\'ya hızlıca erişin</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">Uygulama sizden panoya kopyalanan son metni yapıştırmanızı isteyecek</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">Kelime sayıcı uygulamamız birçok dili destekler. Bunlar Arapça, Çekçe, Almanca, İspanyolca, Fransızca, Endonezya Dili, İtalyanca, Lehçe, Portekizce, Romence, Rusça ve Vietnamca\'dır.</string>
+  <string name="lets_go_premium">Haydi Premium\'a geç</string>
+  <string name="enjoy_benefits">Tebrikler! %s planımızın avantajlarının keyfini çıkarın</string>
   <string name="premium_title_purchased">You have purchased premium plan</string>
   <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
   <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
