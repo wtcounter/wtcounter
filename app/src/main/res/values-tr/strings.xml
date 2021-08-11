@@ -89,7 +89,7 @@
   <string name="title_8" tools:ignore="MissingTranslation">İhtiyacınız kalmadığında notları silin</string>
   <string name="title_9" tools:ignore="MissingTranslation">Başka bir uygulamadan kolayca açın</string>
   <string name="title_10" tools:ignore="MissingTranslation">Kopyaladığınız metni kolayca yapıştırın</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">Kelime Hesaplayıcı, yazdığınız metinlerdeki kelimeleri, cümleleri, paragrafları ve karakteleri saymaya yarayan ücretsiz ve kolay kullanılabilir bir metin aracıdır.
+  <string name="long_desc1" tools:ignore="MissingTranslation">Kelime Hesaplayıcı, yazdığınız metinlerdeki kelimeleri, cümleleri, paragrafları ve karakterleri saymaya yarayan ücretsiz ve kolay kullanılabilir bir metin aracıdır.
     Verimliliğinizi arttırmak ve hayatınızı kolaylaştırmak için tasarlanmıştır. Karakter, kelime veya boyut sınırı olan platformlarda paylaşmak istediğiniz yazılar için bu uygulama oldukça kullanışlıdır.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Yazdığınız metinlerdeki karakter, cümle, kelime ve paragraf sayılarını hesaplayın.</string>
   <string name="long_desc3" tools:ignore="MissingTranslation">Metin için gelişmiş istatistikler oluşturun</string>
