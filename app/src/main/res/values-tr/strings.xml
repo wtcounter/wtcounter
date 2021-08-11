@@ -46,30 +46,30 @@
   <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nBurada bir şey yok!</string>
   <!-- Rate us strings -->
   <string name="rate_us_text">Eğer uygulamamızı beğendiyseniz, birazcık zaman ayırıp bize puan verir misiniz? Bir dakikadan fazla sürmeyecek. Desteğiniz için teşekkürler!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_text_short">Uygulamayı Play Store\'da puanla</string>
+  <string name="rate_us_yes">ŞİMDİ OYLA</string>
+  <string name="rate_us_later">SONRA</string>
+  <string name="rate_us_never">ASLA</string>
+  <string name="rate_us_error">"Maalesef şu anda Play Store'a erişemiyoruz. Üzgünüz!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Reklam tercihlerimi değiştir</string>
   <!-- Draft strings -->
-  <string name="drafts">Drafts</string>
-  <string name="draft_deletion_success">Draft deleted successfully</string>
-  <string name="draft_history_deletion_success">Deletion successful</string>
-  <string name="draft_saved">Draft saved</string>
-  <string name="draft_updated">Draft updated</string>
-  <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
-  <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
+  <string name="drafts">Taslaklar</string>
+  <string name="draft_deletion_success">Taslak başarıyla silindi</string>
+  <string name="draft_history_deletion_success">Başarıyla silindi</string>
+  <string name="draft_saved">Taslak kaydedildi</string>
+  <string name="draft_updated">Taslak güncellendi</string>
+  <string name="draft_delete">Bu taslağı silmek istediğinize emin misiniz? Saklanan tüm kayıtlar da silinecek</string>
+  <string name="draft_history_delete">Taslak geçmişini silmek istediğinize emin misiniz?</string>
   <!-- Share app string -->
-  <string name="share_ui_text">Share app</string>
-  <string name="share_picker_text">Share using</string>
+  <string name="share_ui_text">Uygulamayı paylaş</string>
+  <string name="share_picker_text">Şununla paylaş</string>
   <!--  Activity not found error -->
-  <string name="activity_not_found_error">We could not find an app that could complete this action. Sorry for that!</string>
-  <string name="basic_settings">Basic Settings</string>
-  <string name="copy_clipboard_title">Copy clipboard text automatically</string>
-  <string name="copy_clipboard_summary">App will prompt you to paste text from clipboard automatically on app launch</string>
-  <string name="stat_settings">Stat Settings</string>
+  <string name="activity_not_found_error">Bu işlemi gerçekleştirecek bir uygulama bulamadık. Üzgünüz!</string>
+  <string name="basic_settings">Temel Ayarlar</string>
+  <string name="copy_clipboard_title">Yazıyı otomatik panoya kopyala</string>
+  <string name="copy_clipboard_summary">Uygulamayı başlattığınızda panodan otomatik olarak metin yapıştırmanızı isteyecek</string>
+  <string name="stat_settings">İstatistik Ayarları</string>
   <string name="reading_time_wpm">Reading Time (Words Per Minute)</string>
   <string name="speaking_time_wpm">Speaking Time (Words Per Minute)</string>
   <string name="writing_time_lpm">Writing Time (Letters Per Minute)</string>
