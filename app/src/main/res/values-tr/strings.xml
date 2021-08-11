@@ -107,11 +107,11 @@
   <string name="long_desc15" tools:ignore="MissingTranslation">Kelime sayıcı uygulamamız birçok dili destekler. Bunlar Arapça, Çekçe, Almanca, İspanyolca, Fransızca, Endonezya Dili, İtalyanca, Lehçe, Portekizce, Romence, Rusça ve Vietnamca\'dır.</string>
   <string name="lets_go_premium">Haydi Premium\'a geç</string>
   <string name="enjoy_benefits">Tebrikler! %s planımızın avantajlarının keyfini çıkarın</string>
-  <string name="premium_title_purchased">You have purchased premium plan</string>
-  <string name="premium_message_purchased">You\'re enjoying benefits of our %s plan</string>
-  <string name="premium_message">Unlock advanced features and help us improve this app by supporting us directly</string>
+  <string name="premium_title_purchased">Premium planı satın aldınız</string>
+  <string name="premium_message_purchased">%s planın avantajlarının keyfini çıkarıyorsunuz</string>
+  <string name="premium_message">Gelişmiş özelliklerin kilidini açın ve bize doğrudan destek olarak uygulamayı geliştirmemize yardım edin</string>
   <string name="plan">Plan</string>
-  <string name="remove_ads">Remove Ads!</string>
+  <string name="remove_ads">Reklamları Kaldır!</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
   <string name="five_more_themes">Five basic themes</string>
