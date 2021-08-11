@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Kelime Metni Sayacı</string>
+  <string name="app_name">Kelime Hesaplayıcı</string>
   <!--main-->
   <string name="input">Giriş</string>
-  <string name="notes">notlar</string>
+  <string name="notes">Notlar</string>
   <string name="settings">Ayarlar</string>
   <!--input-->
   <string name="hint_input">Metninizi buraya girin</string>
@@ -68,7 +68,7 @@
   <string name="activity_not_found_error">Bu işlemi gerçekleştirecek bir uygulama bulamadık. Üzgünüz!</string>
   <string name="basic_settings">Temel Ayarlar</string>
   <string name="copy_clipboard_title">Yazıyı otomatik panoya kopyala</string>
-  <string name="copy_clipboard_summary">Uygulamayı başlattığınızda panodan otomatik olarak metin yapıştırmanızı isteyecek</string>
+  <string name="copy_clipboard_summary">Uygulama, uygulamayı başlattığınızda panodan otomatik olarak metin yapıştırmanızı isteyecek</string>
   <string name="stat_settings">İstatistik Ayarları</string>
   <string name="reading_time_wpm">Okuma Süresi (Dakika Başına Kelime)</string>
   <string name="speaking_time_wpm">Sesli Okuma Süresi (Dakika Başına Kelime)</string>
@@ -139,14 +139,14 @@
   <string name="freq_case_sensitive">Büyük/küçük harf duyarlı eşleştirme</string>
   <string name="freq_simple_text_matching">Temel yazı eşleştirmesi</string>
   <string name="freq_word_matching">Kelime eşleştirme</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
-  <string name="most_frequent_header">Most frequent words</string>
-  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
-  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
-  <string name="label_see_plan">See plan</string>
-  <string name="label_cancel">Cancel</string>
-  <string name="freq_preview_error">Could not load preview image</string>
+  <string name="freq_pattern_matching">Desen eşleştirme(Regex)</string>
+  <string name="most_frequent_header">En sık kullanılan kelimeler</string>
+  <string name="freq_unavailable_dialog_title">Bu premium bir özellik</string>
+  <string name="freq_unavailable_dialog_message">Bu özelliğin kilidini açmak için lütfen Silver planı satın alın. Avantajları görün ve daha fazlasını öğrenin</string>
+  <string name="label_see_plan">Planı gör</string>
+  <string name="label_cancel">İptal</string>
+  <string name="freq_preview_error">Önizleme resmi yüklenemedi</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Save draft of your text automatically</string>
-  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
+  <string name="autosave_draft_title">Metninizin taslağını otomatik kaydedin</string>
+  <string name="autosave_draft_body">Uygulamadan çıktığınızda metninizin taslağı otomatik olarak kaydedilecek</string>
 </resources>
