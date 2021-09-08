@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Word Counter</string>
+  <string name="app_name">Terve onko kaikki hyvin</string>
   <!--main-->
   <string name="input">Input</string>
   <string name="notes">Notes</string>
@@ -139,7 +139,7 @@
   <string name="freq_case_sensitive">Case sensitive matching</string>
   <string name="freq_simple_text_matching">Simple text matching</string>
   <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Pattern matching(Regex)</string>
   <string name="most_frequent_header">Most frequent words</string>
   <string name="freq_unavailable_dialog_title">This is a premium feature</string>
   <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
