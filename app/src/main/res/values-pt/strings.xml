@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Contador de texto de palavras</string>
+  <string name="app_name">Contador de Palavras</string>
   <!--main-->
   <string name="input">Entrada</string>
   <string name="notes">Notas</string>
-  <string name="settings">Configurações</string>
+  <string name="settings">Definições</string>
   <!--input-->
-  <string name="hint_input">Digite seu texto aqui</string>
+  <string name="hint_input">Digita aqui o texto</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Estatísticas Basicas</string>
-  <string name="characters">Personagens</string>
-  <string name="characters_without_spaces">Caracteres_sem_espaços</string>
+  <string name="basic_stats">Estatísticas Básicas</string>
+  <string name="characters">Caracteres</string>
+  <string name="characters_without_spaces">Caracteres sem Espaços</string>
   <string name="words">Palavras</string>
   <string name="paragraphs">Parágrafos</string>
   <string name="size">Tamanho</string>
-  <string name="bookmark_hint">Digite o nome da nota</string>
+  <string name="bookmark_hint">Digita o nome da nota</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Estatísticas extras</string>
-  <string name="unique_words">Palavras únicas</string>
-  <string name="average_word_length">Tamanho médio das palavras</string>
-  <string name="avg_sentence_length_words">Tamanho médio das frases (palavras)</string>
-  <string name="avg_sentence_length_characters">Tamanho médio das frases (letras)</string>
+  <string name="extra_stats">Estatísticas Extras</string>
+  <string name="unique_words">Palavras Únicas</string>
+  <string name="average_word_length">Tamanho Médio das Palavras</string>
+  <string name="avg_sentence_length_words">Tamanho Médio das Frases(Palavras)</string>
+  <string name="avg_sentence_length_characters">Tamanho Médio das Frases(Caracteres)</string>
   <!--Length Stats-->
-  <string name="length_stats">Estatísticas de comprimento</string>
-  <string name="shortest_sentence">Frase mais curta</string>
-  <string name="longest_sentence">Frase mais longa</string>
+  <string name="length_stats">Estatísticas de Comprimento</string>
+  <string name="shortest_sentence">Frases mais Curta(Palavras)</string>
+  <string name="longest_sentence">Palavras mais Comprida(Palavras)</string>
   <!--Time Stats-->
-  <string name="time_stats">Estatísticas de tempo</string>
-  <string name="reading_time">Tempo de leitura</string>
-  <string name="speaking_time">Tempo de leitura (voz alta)</string>
-  <string name="writing_time">Tempo de escritura</string>
-  <string name="save">Salve </string>
+  <string name="time_stats">Estatísticas de Tempo</string>
+  <string name="reading_time">Tempo de Leitura</string>
+  <string name="speaking_time">Tempo de Fala</string>
+  <string name="writing_time">Tempo de Escrita</string>
+  <string name="save">Guardar</string>
   <string name="sentences">Frases</string>
-  <string name="save_dialog_desc">Bem! O que você gostaria de chamar?</string>
-  <string name="edit_alert_title">Você tem certeza?</string>
-  <string name="yes">sim</string>
-  <string name="edit_alert_desc">Esta ação irá apagar o conteúdo atual. Você tem certeza que quer continuar?</string>
-  <string name="delete_alert_desc">Tem certeza de que deseja excluir este relatório?</string>
+  <string name="save_dialog_desc">Muito bem! O que gostarias de chamá-lo?</string>
+  <string name="edit_alert_title">Tens a certeza?</string>
+  <string name="yes">Sim</string>
+  <string name="edit_alert_desc">Esta ação apagará o conteúdo atual. Tens a certeza de que queres continuar?</string>
+  <string name="delete_alert_desc">Tens a certeza de que queres apagar este relatório?</string>
   <string name="no">Não</string>
-  <string name="generic_error_message">Parece que algo deu errado. Por favor, tente novamente mais tarde…</string>
-  <string name="deletion_success">Nota excluída com sucesso</string>
+  <string name="generic_error_message">Parece que algo deu errado. Por favor, tenta novamente, mais tarde…</string>
+  <string name="deletion_success">Nota apagada com sucesso</string>
   <string name="addition_success">Nota adicionada com sucesso</string>
   <string name="update_success">Nota atualizada com sucesso</string>
-  <string name="no_saved_notes">¯ \ _ (ツ) _ / ¯ Nada aqui!</string>
+  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNada aqui!</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">Se você gosta de usar este aplicativo, gostaria de tomar um momento para avaliá-lo? Não levará mais de um minuto. Obrigado pelo seu apoio!</string>
-  <string name="rate_us_text_short">Avalie o aplicativo na Play Store</string>
+  <string name="rate_us_text">Se gostas de usar esta aplicação, gostarias de tomar um momento para avaliá-lo? Não levará mais do que um minuto. Agradecemos pelo apoio!</string>
+  <string name="rate_us_text_short">Avalia a aplicação na Play Store</string>
   <string name="rate_us_yes">AVALIAR AGORA</string>
   <string name="rate_us_later">MAIS TARDE</string>
   <string name="rate_us_never">NUNCA</string>
-  <string name="rate_us_error">"Ah não. Não foi possível alcançar a loja. Sentimos muito!"</string>
+  <string name="rate_us_error">"Hum!? Não foi possível alcançar a loja. Lamentamos muito!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Alterar as preferências de anúncio</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Alterar as preferências de anúncios</string>
   <!-- Draft strings -->
   <string name="drafts">Rascunhos</string>
-  <string name="draft_deletion_success">Rascunho excluído com sucesso</string>
-  <string name="draft_history_deletion_success">Excluído com sucesso</string>
-  <string name="draft_saved">Rascunho salvo</string>
+  <string name="draft_deletion_success">Rascunho apagado com sucesso</string>
+  <string name="draft_history_deletion_success">Eliminado com sucesso</string>
+  <string name="draft_saved">Rascunho guardado</string>
   <string name="draft_updated">Rascunho atualizado</string>
-  <string name="draft_delete">Tem certeza que deseja excluir este rascunho? Todas as histórias serão excluídas também</string>
-  <string name="draft_history_delete">Tem certeza que deseja excluir o histórico deste rascunho?</string>
+  <string name="draft_delete">Tens a certeza de que queres apagar este rascunho? Todas as histórias também serão apagadas</string>
+  <string name="draft_history_delete">Tens a certeza de que queres apagar este histórico de rascunho?</string>
   <!-- Share app string -->
-  <string name="share_ui_text">Compartilhar o aplicativo</string>
-  <string name="share_picker_text">Compartilhar usando</string>
+  <string name="share_ui_text">Compartilhar aplicação</string>
+  <string name="share_picker_text">Compartilhar uso</string>
   <!--  Activity not found error -->
-  <string name="activity_not_found_error">Não foi possível encontrar um aplicativo que possa completar esta ação. Desculpe por isso!</string>
-  <string name="basic_settings">Configurações Básicas</string>
-  <string name="copy_clipboard_title">Copiar texto da área de transferência automaticamente</string>
-  <string name="copy_clipboard_summary">App irá pedir-lhe para colar texto da área de transferência automaticamente na inicialização do aplicativo</string>
-  <string name="stat_settings">Configurações de estatísticas</string>
+  <string name="activity_not_found_error">Não foi possível encontrar uma aplicação que pudesse completar esta ação. Pedimos desculpa!</string>
+  <string name="basic_settings">Definições Básicas</string>
+  <string name="copy_clipboard_title">Copiar automaticamente texto da área de transferência</string>
+  <string name="copy_clipboard_summary">A aplicação irá pedir-te para colar texto da área de transferência, automaticamente, na execução da aplicação</string>
+  <string name="stat_settings">Estatísticas de Definições</string>
   <string name="reading_time_wpm">Tempo de Leitura (Palavras por Minuto)</string>
   <string name="speaking_time_wpm">Tempo de Fala (Palavras por Minuto)</string>
   <string name="writing_time_lpm">Tempo de Escrita (Letras por Minuto)</string>
   <string name="size_encoding_format">Formato de Codificação de Tamanho</string>
   <string name="paste">Colar</string>
-  <string name="note_add_limit">Não foi possível salvar a nota</string>
+  <string name="note_add_limit">Não foi possível guardar a nota</string>
   <!-- Play store texts -->
-  <string name="app_title" tools:ignore="MissingTranslation">Contador de Palavras - Contagem de Palavras, Sentenças &amp; Parágrafos</string>
-  <string name="app_description" tools:ignore="MissingTranslation">Número de palavras, caracteres, frases, parágrafos, tamanho e muito mais do texto</string>
-  <string name="title_1" tools:ignore="MissingTranslation">Principais recursos</string>
-  <string name="title_2" tools:ignore="MissingTranslation">Conta enquanto digita</string>
-  <string name="title_3" tools:ignore="MissingTranslation">Acesso a estatísticas avançadas</string>
-  <string name="title_4" tools:ignore="MissingTranslation">Mais controle para você</string>
-  <string name="title_5" tools:ignore="MissingTranslation">Nunca perca um texto digitado</string>
-  <string name="title_6" tools:ignore="MissingTranslation">Salvar notas importantes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Mantenha anotações atualizadas</string>
-  <string name="title_8" tools:ignore="MissingTranslation">Excluir notas quando não forem mais necessárias</string>
-  <string name="title_9" tools:ignore="MissingTranslation">Abrir diretamente de outro aplicativo</string>
-  <string name="title_10" tools:ignore="MissingTranslation">Colar diretamente o texto copiado</string>
-  <string name="long_desc1" tools:ignore="MissingTranslation">O Contador de Palavras é uma ferramenta de texto gratuita e fácil de usar para contar palavras, frases, parágrafos e caracteres em seu texto conforme você digita.
-    Foi desenvolvido para aumentar a sua produtividade e facilitar a sua vida. O aplicativo pode ser extremamente útil ao postar ou submeter a plataformas que têm limites de número de caracteres, palavras ou tamanho.</string>
+  <string name="app_title" tools:ignore="MissingTranslation">Contador de Palavras - Contagem de Palavras, Frases e Parágrafos</string>
+  <string name="app_description" tools:ignore="MissingTranslation">Conta palavras, caracteres, frases, parágrafos, tamanho e muito mais do texto</string>
+  <string name="title_1" tools:ignore="MissingTranslation">Principais Recursos</string>
+  <string name="title_2" tools:ignore="MissingTranslation">Contar enquanto digitas</string>
+  <string name="title_3" tools:ignore="MissingTranslation">Acesso às Estatísticas avançadas</string>
+  <string name="title_4" tools:ignore="MissingTranslation">Mais controlo para ti</string>
+  <string name="title_5" tools:ignore="MissingTranslation">Nunca percas um texto digitado</string>
+  <string name="title_6" tools:ignore="MissingTranslation">Guardar notas importantes</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Manter anotações atualizadas</string>
+  <string name="title_8" tools:ignore="MissingTranslation">Apagar notas quando elas não são mais precisas</string>
+  <string name="title_9" tools:ignore="MissingTranslation">Abrir diretamente de outra aplicação</string>
+  <string name="title_10" tools:ignore="MissingTranslation">Colar diretamente texto copiado</string>
+  <string name="long_desc1" tools:ignore="MissingTranslation">O Contador de Palavras é uma ferramenta de texto grátis e fácil de usar para contagem de parágrafos e caracteres enquanto digitas.
+    Ele foi projetado para aumentar a tua produtividade e facilitar a tua vida. A aplicação pode ser extremamente útil ao postar ou submeter para plataformas que têm limites impostos sobre o número de contador, palavras ou tamanho.</string>
   <string name="long_desc2" tools:ignore="MissingTranslation">Conta o número de caracteres, frases, palavras e parágrafos do texto que digitas.</string>
-  <string name="long_desc3" tools:ignore="MissingTranslation">Gerar para o texto as seguintes estatísticas avançadas</string>
-  <string name="long_desc4" tools:ignore="MissingTranslation">Estatísticas de tempo (tempo de leitura, de fala e de escrita)</string>
+  <string name="long_desc3" tools:ignore="MissingTranslation">Gera as seguintes estatísticas avançadas para o texto</string>
+  <string name="long_desc4" tools:ignore="MissingTranslation">Estatísticas de Tempo(Tempo de leitura, fala, escrita)</string>
   <string name="long_desc5" tools:ignore="MissingTranslation"> Palavras únicas</string>
-  <string name="long_desc6" tools:ignore="MissingTranslation">Média de tamanho de palavras, Média de tamanho de frases</string>
-  <string name="long_desc7" tools:ignore="MissingTranslation">Tamanho da frase mais curta, Tamanho da frase mais longa</string>
-  <string name="long_desc8" tools:ignore="MissingTranslation">Na tela de configurações, você pode controlar como as estatísticas são calculadas</string>
-  <string name="long_desc9" tools:ignore="MissingTranslation">Salve as notas automaticamente se você sair do aplicativo sem querer. Acesse esses textos novamente na seção Rascunhos. Fique à vontade para editar ou excluir os rascunhos. Se você editar algum rascunho, o aplicativo vai guardar um histórico das alterações</string>
-  <string name="long_desc10" tools:ignore="MissingTranslation">Salve o texto que você está trabalhando com suas estatísticas. Todos os seus textos e notas importantes estão a um clique de distância!</string>
-  <string name="long_desc11" tools:ignore="MissingTranslation">Edite as notas que já estão salvas se o conteúdo delas tiver alguma mudança. É bem fácil editar suas notas salvas para que elas estejam sempre atualizadas!</string>
-  <string name="long_desc12" tools:ignore="MissingTranslation">Exclua qualquer nota salva que você não precisa mais</string>
-  <string name="long_desc13" tools:ignore="MissingTranslation">Now quickly access Word counter from other apps while sharing text</string>
-  <string name="long_desc14" tools:ignore="MissingTranslation">O aplicativo vai pedir para você colar o texto que copiou de algum lugar</string>
-  <string name="long_desc15" tools:ignore="MissingTranslation">O contador de palavras funciona com vários idiomas, como alemão, árabe, espanhol, francês, indonésio, italiano, polonês, português, romeno, russo, tcheco e vietnamita.</string>
-  <string name="lets_go_premium">Seja Premium!</string>
-  <string name="enjoy_benefits">Parabéns! Aproveite todas as vantagens de nosso plano %s</string>
-  <string name="premium_title_purchased">Você comprou um plano premium</string>
-  <string name="premium_message_purchased">Você tem agora as vantagens de nosso plano %s</string>
-  <string name="premium_message">Com seu apoio direto, você vai ter acesso a recursos avançados e vai nos ajudar a melhorar o aplicativo</string>
+  <string name="long_desc6" tools:ignore="MissingTranslation">Tamanho médio da palavra, Tamanho médio da frase</string>
+  <string name="long_desc7" tools:ignore="MissingTranslation">Tamanho mais curto da frase, Tamanho mais longo da frase</string>
+  <string name="long_desc8" tools:ignore="MissingTranslation">Controla como as estatísticas são calculadas a partir da tela de definições</string>
+  <string name="long_desc9" tools:ignore="MissingTranslation">Guarda automaticamente, notas quando acidentalmente saíres das aplicações. Acessa estes textos no futuro, na secção de Rascunhos. Edita ou apaga estes rascunhos como desejares. Os rascunhos também terão histórico quando alterares qualquer rascunho existente</string>
+  <string name="long_desc10" tools:ignore="MissingTranslation">Guarda o texto atual com as suas estatísticas. Tem sempre o teu texto e notas importantes, a um clique de distância!</string>
+  <string name="long_desc11" tools:ignore="MissingTranslation">Edita notas guardadas como e quando os dados e conteúdo dessas notas forem alterados. Podes facilmente editar as tuas notas guardadas para manter as anotações atualizadas!</string>
+  <string name="long_desc12" tools:ignore="MissingTranslation">Elimina as notas guardadas que não te são mais necessárias</string>
+  <string name="long_desc13" tools:ignore="MissingTranslation">Agora acessa rapidamente o contador de Palavras de outras aplicações enquanto compartilhas o texto</string>
+  <string name="long_desc14" tools:ignore="MissingTranslation">A aplicação irá solicitar que coles texto recentemente copiado da área de transferência</string>
+  <string name="long_desc15" tools:ignore="MissingTranslation">A contagem de palavras de aplicações funciona com múltiplas línguas, tais como, árabe, checo, alemão, espanhol, francês, indonésio, italiano, polaco, português, romeno, russo e vietnamita.</string>
+  <string name="lets_go_premium">Bora para o Premium</string>
+  <string name="enjoy_benefits">Parabéns! Aproveita os benefícios do nosso plano %s</string>
+  <string name="premium_title_purchased">Compraste o plano premium</string>
+  <string name="premium_message_purchased">Estás a desfrutar dos benefícios do nosso plano %s</string>
+  <string name="premium_message">Desbloqueia recursos avançados e ajuda-nos a melhorar esta aplicação, ao apoiar-nos diretamente</string>
   <string name="plan">Plano</string>
   <string name="remove_ads">Remover Anúncios!</string>
   <string name="frequency_count">Obter a contagem de frequência nas estatísticas extras</string>
   <string name="benefits_of_silver_plans">Todos os benefícios do plano Prata</string>
   <string name="five_more_themes">Cinco temas básicos</string>
-  <string name="support_large_text">Funciona em textos grandes</string>
-  <string name="show_count_in_status_bar">Veja a contagem na barra de status enquanto você digita em outros aplicativos</string>
-  <string name="benefits_of_gold_plans">Todas as vantagens do plano Gold</string>
+  <string name="support_large_text">Suporte para texto grande</string>
+  <string name="show_count_in_status_bar">Mostrar a contagem na barra de estado quando estiveres noutras aplicações</string>
+  <string name="benefits_of_gold_plans">Todos os benefícios do plano Ouro</string>
   <string name="ten_more_themes">Mais 10 temas</string>
   <string name="audio_input">Entrada de áudio</string>
-  <string name="read_from_file">Abra qualquer arquivo pelo Contador de Palavras</string>
-  <string name="export_to_file">Exporte notas e estatísticas para outros formatos (pdf, doc)</string>
+  <string name="read_from_file">Abrir qualquer ficheiro diretamente do Contador de Palavras</string>
+  <string name="export_to_file">Exportar nota e estatísticas como ficheiro(pdf, doc)</string>
   <string name="buy_yearly_subscription">Assinar</string>
-  <string name="buy_monthly_subscription_for">Assinar para</string>
+  <string name="buy_monthly_subscription_for">Assinar Por</string>
   <string name="buy_lifetime_premium">Comprar</string>
   <string name="buy_lifetime_premium_for">Comprar por </string>
   <string name="year">Ano</string>
   <string name="buy_premium_title">Comprar o Contador de Palavras Premium</string>
-  <string name="buy_premium_message">Anúncios são chatos, né? Nós também não gostamos deles. Para se livrar dos anúncios e ter acesso a recursos avançados, compre um de nossos planos premium. Clique aqui para ver os nossos planos</string>
+  <string name="buy_premium_message">Os anúncios estão a irritar, certo? Também não gostamos deles. Compra as nossas ofertas para remover os anúncios e desbloquear recursos mais avançados. Clica aqui para ver os planos disponíveis</string>
   <string name="coming_soon">Em breve!</string>
-  <string name="help_translate_word_counter">Ajude a traduzir o Contador de Palavras</string>
-  <string name="more_apps_by_spians_labs">Mais aplicativos por Spians Labs</string>
+  <string name="help_translate_word_counter">Ajuda a traduzir o Contador de Palavras</string>
+  <string name="more_apps_by_spians_labs">Mais aplicações por Spians Labs</string>
   <!-- Frequency dialog strings -->
-  <string name="freq_count">%d \u0020\u0020Ocorrência encontrada</string>
-  <string name="freq_count_plural">%d \u0020\u0020Ocorrências encontradas</string>
-  <string name="freq_search_hint">Digite um texto para descobrir a frequência</string>
-  <string name="freq_case_sensitive">Correspondência com maiúsculas ou minúsculas</string>
-  <string name="freq_simple_text_matching">Correspondência simples de texto</string>
-  <string name="freq_word_matching">Correspondência de palavras</string>
-  <string name="freq_pattern_matching">Padrão de correspondência (Regex)</string>
-  <string name="most_frequent_header">Palavras mais frequentes</string>
-  <string name="freq_unavailable_dialog_title">Esta é uma função premium</string>
-  <string name="freq_unavailable_dialog_message">Para ter esse recurso, mude para o plano Silver. Para saber mais sobre o recurso, veja as vantagens do plano</string>
-  <string name="label_see_plan">Ver planos</string>
-  <string name="label_cancel">Cancelar</string>
-  <string name="freq_preview_error">Não foi possível carregar uma visualização da imagem</string>
+  <string name="freq_count">%d \u0020\u0020Occurrence found</string>
+  <string name="freq_count_plural">%d \u0020\u0020Occurrences found</string>
+  <string name="freq_search_hint">Enter text to find frequency</string>
+  <string name="freq_case_sensitive">Case sensitive matching</string>
+  <string name="freq_simple_text_matching">Simple text matching</string>
+  <string name="freq_word_matching">Word matching</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Pattern matching(Regex)</string>
+  <string name="most_frequent_header">Most frequent words</string>
+  <string name="freq_unavailable_dialog_title">This is a premium feature</string>
+  <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
+  <string name="label_see_plan">See plan</string>
+  <string name="label_cancel">Cancel</string>
+  <string name="freq_preview_error">Could not load preview image</string>
   <!-- Auto save draft pref -->
-  <string name="autosave_draft_title">Salvar automaticamente o rascunho de seus textos</string>
-  <string name="autosave_draft_body">Se você sair do aplicativo, ele vai salvar automaticamente um rascunho de seu texto</string>
+  <string name="autosave_draft_title">Save draft of your text automatically</string>
+  <string name="autosave_draft_body">App will automatically save draft of your text when you leave the app</string>
 </resources>
