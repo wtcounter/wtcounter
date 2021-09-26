@@ -381,7 +381,11 @@ for Gi~lflpie \'.~ te,e..1, bool{s
 t-0h ;-- i_,h ~e. c.o.nno t c.ou l)t . 
 For- (§~q (Y) r le !r Jhee \' r>\'C e I Lolli\'. ! r/); I k ,e~t</string>
   <string name="title_6" tools:ignore="MissingTranslation">Save important notes</string>
-  <string name="title_7" tools:ignore="MissingTranslation">Keep notes up to date</string>
+  <string name="title_7" tools:ignore="MissingTranslation">Bhopal disaster, chemical leak in 1984 in the city of Bhopal, Madhya Pradesh state, India. At the time, it was called the worst industrial accident in history.
+
+On December 3, 1984, about 45 tons of the dangerous gas methyl isocyanate escaped from an insecticide plant that was owned by the Indian subsidiary of the American firm Union Carbide Corporation. The gas drifted over the densely populated neighbourhoods around the plant, killing thousands of people immediately and creating a panic as tens of thousands of others attempted to flee Bhopal. The final death toll was estimated to be between 15,000 and 20,000. Some half a million survivors suffered respiratory problems, eye irritation or blindness, and other maladies resulting from exposure to the toxic gas; many were awarded compensation of a few hundred dollars. Investigations later established that substandard operating and safety procedures at the understaffed plant had led to the catastrophe. In 1998 the former factory site was turned over to the state of Madhya Pradesh.
+
+In the early 21st century more than 400 tons of industrial waste were still present on the site. Despite continued protests and attempts at litigation, neither the Dow Chemical Company, which bought out the Union Carbide Corporation in 2001, nor the Indian government had properly cleaned the site. Soil and water contamination in the area was blamed for chronic health problems and high instances of birth defects in the area’s inhabitants. In 2004 the Indian Supreme Court ordered the state to supply clean drinking water to the residents of Bhopal because of groundwater contamination. In 2010 several former executives of Union Carbide’s India subsidiary—all Indian citizens—were convicted by a Bhopal court of negligence in the disaster</string>
   <string name="title_8" tools:ignore="MissingTranslation">Delete notes when they are no longer needed</string>
   <string name="title_9" tools:ignore="MissingTranslation">Open directly from another app</string>
   <string name="title_10" tools:ignore="MissingTranslation">Directly paste copied text</string>
@@ -435,7 +439,7 @@ For- (§~q (Y) r le !r Jhee \' r>\'C e I Lolli\'. ! r/); I k ,e~t</string>
   <string name="freq_case_sensitive">केस संवेदनशील मिलान</string>
   <string name="freq_simple_text_matching">सरल पाठ मिलान</string>
   <string name="freq_word_matching">शब्द मिलान</string>
-  <string name="freq_pattern_matching">पैटर्न मिलान (रेगेक्स)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">पैटर्न मिलान (रेगेक्स)</string>
   <string name="most_frequent_header">सबसे लगातार शब्द</string>
   <string name="freq_unavailable_dialog_title">Tis एक प्रीमियम फीचर है</string>
   <string name="freq_unavailable_dialog_message">इस सुविधा को अनलॉक करने के लिए, कृपया हमारी रजत योजना में अपग्रेड करें। सुविधा के बारे में अधिक जानने के लिए योजना के लाभ देखें</string>
