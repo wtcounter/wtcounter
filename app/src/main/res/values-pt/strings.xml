@@ -31,7 +31,7 @@
   <string name="reading_time">Tempo de leitura</string>
   <string name="speaking_time">Tempo de leitura (voz alta)</string>
   <string name="writing_time">Tempo de escritura</string>
-  <string name="save">Salve </string>
+  <string name="save">Salvar</string>
   <string name="sentences">Frases</string>
   <string name="save_dialog_desc">Bem! O que você gostaria de chamar?</string>
   <string name="edit_alert_title">Você tem certeza?</string>
