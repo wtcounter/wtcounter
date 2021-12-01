@@ -24,8 +24,8 @@
   <string name="avg_sentence_length_characters">Tamanho médio das frases (letras)</string>
   <!--Length Stats-->
   <string name="length_stats">Estatísticas de comprimento</string>
-  <string name="shortest_sentence">Frase mais curta</string>
-  <string name="longest_sentence">Frase mais longa</string>
+  <string name="shortest_sentence">Frase mais curta(Palavras)</string>
+  <string name="longest_sentence">Frase mais longa(Palavras)</string>
   <!--Time Stats-->
   <string name="time_stats">Estatísticas de tempo</string>
   <string name="reading_time">Tempo de leitura</string>
@@ -50,7 +50,7 @@
   <string name="rate_us_yes">AVALIAR AGORA</string>
   <string name="rate_us_later">MAIS TARDE</string>
   <string name="rate_us_never">NUNCA</string>
-  <string name="rate_us_error">"Ah não. Não foi possível alcançar a loja. Sentimos muito!"</string>
+  <string name="rate_us_error">"Ah não. Não foi possível carregar a loja. Sentimos muito!"</string>
   <!-- Consent -->
   <string name="change_ad_preference" tools:ignore="MissingTranslation">Alterar as preferências de anúncio</string>
   <!-- Draft strings -->
@@ -68,7 +68,7 @@
   <string name="activity_not_found_error">Não foi possível encontrar um aplicativo que possa completar esta ação. Desculpe por isso!</string>
   <string name="basic_settings">Configurações Básicas</string>
   <string name="copy_clipboard_title">Copiar texto da área de transferência automaticamente</string>
-  <string name="copy_clipboard_summary">App irá pedir-lhe para colar texto da área de transferência automaticamente na inicialização do aplicativo</string>
+  <string name="copy_clipboard_summary">O App irá pedir-lhe para colar texto da área de transferência automaticamente na inicialização do aplicativo</string>
   <string name="stat_settings">Configurações de estatísticas</string>
   <string name="reading_time_wpm">Tempo de Leitura (Palavras por Minuto)</string>
   <string name="speaking_time_wpm">Tempo de Fala (Palavras por Minuto)</string>
