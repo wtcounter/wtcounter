@@ -9,8 +9,8 @@
   <string name="hint_input">Digite seu texto aqui</string>
   <!--notes-->
   <!--report-->
-  <string name="basic_stats">Estatísticas Basicas</string>
-  <string name="characters">Personagens</string>
+  <string name="basic_stats">Estatísticas Básicas</string>
+  <string name="characters">Caracteres</string>
   <string name="characters_without_spaces">Caracteres sem espaços</string>
   <string name="words">Palavras</string>
   <string name="paragraphs">Parágrafos</string>
