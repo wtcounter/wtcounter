@@ -297,11 +297,11 @@ but it\'s not the same today.</string>
   <string name="size">tamaño</string>
   <string name="bookmark_hint">How are you doing</string>
   <!--Extra Stats-->
-  <string name="extra_stats">Extra Stats</string>
-  <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
-  <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
+  <string name="extra_stats">Estadísticas Extra</string>
+  <string name="unique_words">X</string>
+  <string name="average_word_length">Longitud media de zancada</string>
+  <string name="avg_sentence_length_words">X</string>
+  <string name="avg_sentence_length_characters">Longitud media de oración (caracteres)</string>
   <!--Length Stats-->
   <string name="length_stats">Length Stats</string>
   <string name="shortest_sentence">Shortest Sentence(Words)</string>
