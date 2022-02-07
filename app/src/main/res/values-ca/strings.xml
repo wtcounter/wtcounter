@@ -39,27 +39,27 @@
   <string name="edit_alert_desc">Aquesta acció no es pot desfer. N\'estàs segur de què vols continuar?</string>
   <string name="delete_alert_desc">Estàs segur que vols suprimir aquest informe?</string>
   <string name="no">No</string>
-  <string name="generic_error_message">Looks like something went wrong. Please try again later…</string>
-  <string name="deletion_success">Note deleted successfully</string>
-  <string name="addition_success">Note added successfully</string>
-  <string name="update_success">Note updated successfully</string>
-  <string name="no_saved_notes">¯\\_(ツ)_/¯ \n\nNothing here!</string>
+  <string name="generic_error_message">Alguna cosa ha anat malament. Siusplau, intenta-ho més tard…</string>
+  <string name="deletion_success">Eliminat amb èxit</string>
+  <string name="addition_success">S\'ha afegit correctament</string>
+  <string name="update_success">S\'ha actualitzat amb èxit</string>
+  <string name="no_saved_notes">Aquí no hi ha res</string>
   <!-- Rate us strings -->
-  <string name="rate_us_text">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
-  <string name="rate_us_text_short">Rate app on play store</string>
-  <string name="rate_us_yes">RATE NOW</string>
-  <string name="rate_us_later">LATER</string>
-  <string name="rate_us_never">NEVER</string>
-  <string name="rate_us_error">"Oh no. We were not able to reach play store. Sorry for that!"</string>
+  <string name="rate_us_text">Si t\'agrada Moviebase, podries puntuar-ho? No et prendrà més d\'un minut. Gràcies pel teu suport!</string>
+  <string name="rate_us_text_short">Qualifiqueu-la a la botiga</string>
+  <string name="rate_us_yes">Valora\'ns</string>
+  <string name="rate_us_later">MÉS TARD</string>
+  <string name="rate_us_never">Mai</string>
+  <string name="rate_us_error">"Ens sap greu. No hem pogut entrar a la botiga!"</string>
   <!-- Consent -->
-  <string name="change_ad_preference" tools:ignore="MissingTranslation">Change ad preference</string>
+  <string name="change_ad_preference" tools:ignore="MissingTranslation">Canvia la configuració dels anuncis</string>
   <!-- Draft strings -->
-  <string name="drafts">Drafts</string>
-  <string name="draft_deletion_success">Draft deleted successfully</string>
-  <string name="draft_history_deletion_success">Deletion successful</string>
-  <string name="draft_saved">Draft saved</string>
-  <string name="draft_updated">Draft updated</string>
-  <string name="draft_delete">Are you sure you want to delete this draft? All the histories will be deleted too</string>
+  <string name="drafts">Esborranys</string>
+  <string name="draft_deletion_success">Esborranys descartats amb èxit</string>
+  <string name="draft_history_deletion_success">Esborrat amb èxit</string>
+  <string name="draft_saved">Esborrany desat</string>
+  <string name="draft_updated">Esborrany actualitzat</string>
+  <string name="draft_delete">Estàs segur que vols eliminar l\'esborrany? També eliminaràs totes les històries</string>
   <string name="draft_history_delete">Are you sure you want to delete this draft history?</string>
   <!-- Share app string -->
   <string name="share_ui_text">Share app</string>
@@ -114,8 +114,8 @@
   <string name="remove_ads">Remove Ads!</string>
   <string name="frequency_count">Get frequency count in extra stats</string>
   <string name="benefits_of_silver_plans">All benefits of Silver plan</string>
-  <string name="five_more_themes">Five basic themes</string>
-  <string name="support_large_text">Support for large text</string>
+  <string name="five_more_themes">Cinc temes bàsics</string>
+  <string name="support_large_text">Suport per text llarg</string>
   <string name="show_count_in_status_bar">Show count in status bar when you are typing in other apps</string>
   <string name="benefits_of_gold_plans">All benefits of Gold plan</string>
   <string name="ten_more_themes">10 more themes</string>
