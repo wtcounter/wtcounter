@@ -28,8 +28,8 @@ Langsung contoh nya saja ya, anda perokok yang ingin berhenti merokok. lalu anda
   <!--Extra Stats-->
   <string name="extra_stats">Extra Stats</string>
   <string name="unique_words">Unique Words</string>
-  <string name="average_word_length">Average Word Length</string>
-  <string name="avg_sentence_length_words">Average Sentence Length(Words)</string>
+  <string name="average_word_length">Average Length</string>
+  <string name="avg_sentence_length_words">Average Sentence Length(Word) </string>
   <string name="avg_sentence_length_characters">Average Sentence Length(Characters)</string>
   <!--Length Stats-->
   <string name="length_stats">Length Stats</string>
@@ -148,7 +148,7 @@ Langsung contoh nya saja ya, anda perokok yang ingin berhenti merokok. lalu anda
   <string name="freq_case_sensitive">Case sensitive matching</string>
   <string name="freq_simple_text_matching">Simple text matching</string>
   <string name="freq_word_matching">Word matching</string>
-  <string name="freq_pattern_matching">Pattern matching(Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Pattern matching(Regex)</string>
   <string name="most_frequent_header">Most frequent words</string>
   <string name="freq_unavailable_dialog_title">This is a premium feature</string>
   <string name="freq_unavailable_dialog_message">To unlock this feature, Please upgrade to our Silver plan. See plan benefits to know more about the feature</string>
