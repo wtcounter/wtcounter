@@ -139,7 +139,7 @@
   <string name="freq_case_sensitive">Dopasowanie uwzględniające wielkość liter</string>
   <string name="freq_simple_text_matching">Prosty tekst pasujący</string>
   <string name="freq_word_matching">Dopasowanie słów</string>
-  <string name="freq_pattern_matching">Wzorzec dopasowania (Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Wzorzec dopasowania (Regex)</string>
   <string name="most_frequent_header">Najczęstsze słowa</string>
   <string name="freq_unavailable_dialog_title">Jest to funkcja Pro</string>
   <string name="freq_unavailable_dialog_message">Aby odblokować tę funkcję, proszę ulepszyć do Naszego Srebrnego Planu. Zobacz zalety planu, aby dowiedzieć się więcej o tej funkcji</string>
