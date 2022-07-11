@@ -139,7 +139,7 @@
   <string name="freq_case_sensitive">Совпадение с учетом регистра</string>
   <string name="freq_simple_text_matching">Простой текст совпадает</string>
   <string name="freq_word_matching">Подбор слов</string>
-  <string name="freq_pattern_matching">Сопоставление шаблона (Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Сопоставление шаблона (Regex)</string>
   <string name="most_frequent_header">Часто встречающиеся слова</string>
   <string name="freq_unavailable_dialog_title">Это функция версии Pro</string>
   <string name="freq_unavailable_dialog_message">Чтобы разблокировать эту функцию, пожалуйста, обновитесь до Серебряного плана. Смотрите план, чтобы узнать больше о возможностях</string>
