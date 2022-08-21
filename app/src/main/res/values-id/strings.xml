@@ -139,7 +139,7 @@
   <string name="freq_case_sensitive">Pencocokan peka huruf besar/kecil</string>
   <string name="freq_simple_text_matching">Pencocokan teks sederhana</string>
   <string name="freq_word_matching">Pencocokan kata</string>
-  <string name="freq_pattern_matching">Pencocokan pola (Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Pencocokan pola (Regex)</string>
   <string name="most_frequent_header">Kata-kata yang paling sering</string>
   <string name="freq_unavailable_dialog_title">Ini adalah fitur premium</string>
   <string name="freq_unavailable_dialog_message">Untuk membuka fitur ini, Mohon tingkatkan ke paket Perak kami. Lihat keuntungan paket untuk mengetahui selengkapnya tentang fitur</string>
