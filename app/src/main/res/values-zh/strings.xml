@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">Word Counter</string>
+  <string name="app_name">在不同的人生階段，我們各自固執且癡迷的編織著自己得意作品，但到後來卻發現自己愈陷愈深，原來一切的痛苦是來自我們不願意放棄、不忍割捨的盲目情感與貪婪。 我們日復一日，為了家庭、工作而忙碌。 尤其在工作事業上有更好的表現、更好的收入，整天忙。 我們知道，其實是該放慢腳步，或見好就收。 我們知道，其實不該貪婪地尋求更多財富、聲望、成就、掌聲，以及更多更多的戰利品，可是我們卻做不到，記得小時候你一定寫過這樣的作文題目：我的志願，幾 每個人寫出來的志願都十分的宏大，這是因為我們從小就被教育要在人生的路上站得穩穩的，就要定訂目標，勇往直前，努才追求，永不放棄，執著著一切的一切，不能停下，更不能跌倒才是對的。</string>
   <!--main-->
   <string name="input">Input</string>
   <string name="notes">Notes</string>
