@@ -139,7 +139,7 @@
   <string name="freq_case_sensitive">Büyük/küçük harf duyarlı eşleştirme</string>
   <string name="freq_simple_text_matching">Temel yazı eşleştirmesi</string>
   <string name="freq_word_matching">Kelime eşleştirme</string>
-  <string name="freq_pattern_matching">Desen eşleştirme(Regex)</string>
+  <string name="freq_pattern_matching" comment="Regex is a pattern for string matching. I think it can be left as it is because people who might need it will only understand by `Regex`. So we can keep `Regex` as it is and translated `Pattern matching`">Desen eşleştirme(Regex)</string>
   <string name="most_frequent_header">En sık kullanılan kelimeler</string>
   <string name="freq_unavailable_dialog_title">Bu premium bir özellik</string>
   <string name="freq_unavailable_dialog_message">Bu özelliğin kilidini açmak için lütfen Silver planı satın alın. Avantajları görün ve daha fazlasını öğrenin</string>
